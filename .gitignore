@@ -1,0 +1,4 @@
+# Dữ liệu cá nhân (giọng, mặt) và file nặng — không đưa lên git
+*.mp4
+*.wav
+*.zip
