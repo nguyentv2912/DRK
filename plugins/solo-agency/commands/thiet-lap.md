@@ -30,6 +30,6 @@ Tạo thêm các thư mục làm việc, mỗi thư mục có một file `.gitke
 Tạo `customers/leads.md` với bảng trống: Ngày | Tên | Kênh | Nhu cầu | Trạng thái | Hẹn liên hệ lại.
 
 ## Bước 3: Chào phòng ban
-Giới thiệu ngắn 8 nhân sự và việc đầu tiên mỗi người có thể làm ngay cho thương hiệu này. Gợi ý chủ chạy tiếp `/solo-agency:ke-hoach-tuan`.
+Giới thiệu ngắn 10 nhân sự và việc đầu tiên mỗi người có thể làm ngay cho thương hiệu này. Gợi ý chủ chạy tiếp `/solo-agency:ke-hoach-tuan`.
 
 Nhắc chủ rằng `customers/` có thể chứa thông tin khách hàng. Nếu chia sẻ thư mục này công khai thì nên thêm `customers/` vào `.gitignore`.

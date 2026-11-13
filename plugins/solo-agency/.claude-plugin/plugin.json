@@ -1,7 +1,7 @@
 {
   "name": "solo-agency",
-  "version": "1.0.0",
-  "description": "Phòng ban AI 8 nhân sự cho doanh nghiệp một người xây thương hiệu cá nhân: video, đăng bài, cộng đồng, CSKH, bán hàng, website, khóa học, số liệu.",
+  "version": "1.1.0",
+  "description": "Phòng ban AI 10 nhân sự cho doanh nghiệp một người xây thương hiệu cá nhân: video, đăng bài, cộng đồng, CSKH, bán hàng, website, khóa học, số liệu.",
   "author": { "name": "DRK" },
   "keywords": ["agency", "personal-brand", "vietnamese", "marketing", "sales", "course"]
 }

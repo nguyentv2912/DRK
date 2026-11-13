@@ -6,8 +6,8 @@
     {
       "name": "solo-agency",
       "source": "./plugins/solo-agency",
-      "description": "Phòng ban AI cho doanh nghiệp một người: video, đăng bài, trả lời bình luận, CSKH, tư vấn bán hàng, website, khóa học, phân tích số liệu.",
-      "version": "1.0.0"
+      "description": "Phòng ban AI cho doanh nghiệp một người: video, đăng bài, trả lời bình luận, CSKH, tư vấn bán hàng, website, khóa học, phân tích số liệu, bản sao AI trả lời bằng gương mặt của bạn, kiểm soát tuân thủ.",
+      "version": "1.1.0"
     }
   ]
 }

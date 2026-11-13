@@ -20,13 +20,16 @@ Nếu mục tiêu trống, hỏi chủ muốn đạt điều gì rồi mới là
 | IT và Website | `web-developer` | landing page, trang bán hàng |
 | Đào tạo | `course-creator` | khóa học, bài giảng, quiz |
 | Phân tích Số liệu | `data-analyst` | báo cáo, đề xuất |
+| Bản sao AI | `ai-twin` | trả lời tin nhắn bằng giọng và gương mặt của chủ |
+| Kiểm soát Tuân thủ | `compliance-reviewer` | rà mọi nội dung tài chính, crypto trước khi duyệt |
 
 ## Cách làm
 1. Đọc `brand/`. Nếu chưa có, dừng lại và yêu cầu chủ chạy `/solo-agency:thiet-lap` trước.
 2. **Lập kế hoạch** trước khi giao: chia mục tiêu thành các đầu việc. Mỗi việc có phòng ban phụ trách, kết quả cần nộp, thứ tự (việc nào phải xong trước việc nào). Trình kế hoạch ngắn gọn cho chủ.
 3. **Giao việc** bằng cách gọi đúng subagent. Các việc không phụ thuộc nhau thì giao song song. Mỗi lần giao, nêu rõ: bối cảnh, đầu ra cần nộp, đường dẫn file lưu kết quả, kết quả của phòng ban khác cần dùng (nếu có).
-4. **Kiểm tra** kết quả từng phòng: có đúng giọng thương hiệu, đúng giá và chính sách, có chỗ nào bịa số liệu không. Chưa đạt thì giao lại.
-5. **Báo cáo cho chủ:**
+4. Nội dung nào có yếu tố tài chính, đầu tư, crypto hay thu nhập thì giao `compliance-reviewer` rà soát trước.
+5. **Kiểm tra** kết quả từng phòng: có đúng giọng thương hiệu, đúng giá và chính sách, có chỗ nào bịa số liệu không. Chưa đạt thì giao lại.
+6. **Báo cáo cho chủ:**
    - Đã xong gì, file nằm ở đâu.
    - **Việc cần chủ duyệt** (bài đăng, tin nhắn gửi khách, giá, hoàn tiền).
    - Việc chỉ chủ làm được (quay video, ký hợp đồng, nối tài khoản thanh toán).

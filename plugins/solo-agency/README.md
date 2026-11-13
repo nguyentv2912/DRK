@@ -1,6 +1,6 @@
 # Solo Agency: phòng ban AI cho doanh nghiệp một người
 
-Một plugin Claude Code gồm 8 "nhân sự" AI, giúp một người vận hành cả agency xây thương hiệu cá nhân.
+Một plugin Claude Code gồm 10 "nhân sự" AI, giúp một người vận hành cả agency xây thương hiệu cá nhân.
 
 | Phòng ban | Agent | Việc chính |
 |---|---|---|
@@ -12,6 +12,8 @@ Một plugin Claude Code gồm 8 "nhân sự" AI, giúp một người vận hà
 | IT và Website | `web-developer` | Landing page bán hàng chuyển đổi |
 | Đào tạo | `course-creator` | Khóa học, bài giảng, quiz, workbook |
 | Phân tích Số liệu | `data-analyst` | Báo cáo tuần/tháng, đề xuất |
+| Bản sao AI | `ai-twin` | Trả lời tin nhắn bằng giọng, gương mặt và kiến thức của bạn |
+| Kiểm soát Tuân thủ | `compliance-reviewer` | Rà nội dung tài chính, crypto: không hứa lợi nhuận, không tư vấn cá nhân, có công khai AI |
 
 ## Cài đặt (1 phút)
 
@@ -31,6 +33,18 @@ Sau đó khởi động lại Claude Code.
 3. `/solo-agency:giao-viec <mục tiêu>`: giao việc lớn cho cả phòng ban. Ví dụ: `/solo-agency:giao-viec ra mắt khóa học Canva cơ bản giá 399k trong 14 ngày`.
 4. `/solo-agency:tra-loi-binh-luan <dán bình luận>`: soạn trả lời bình luận hàng loạt.
 5. `/solo-agency:bao-cao tuan`: báo cáo hiệu quả và 3 việc nên làm tiếp.
+6. `/solo-agency:tao-ban-sao`: tạo Bản sao AI của bạn (chuyên môn, quan điểm, câu chuyện, giới hạn) và danh sách 20 video trả lời cần quay sẵn.
+7. `/solo-agency:tra-loi-tin-nhan <dán tin nhắn>`: Bản sao AI trả lời bằng chữ, kèm video có sẵn hoặc kịch bản để tạo video gương mặt bạn; tự rà soát tuân thủ trước khi đưa bạn duyệt.
+
+### Bản sao AI trả lời bằng video gương mặt của bạn
+
+| Cấp | Cách làm | Chi phí | Thời gian |
+|---|---|---|---|
+| 1. Thư viện video quay sẵn | Bạn quay 20 video trả lời câu hỏi hay gặp; bản sao chọn đúng video để gửi | Miễn phí | Gửi ngay |
+| 2. Video AI theo yêu cầu | Bản sao viết `kichban.txt`, bạn chạy notebook clone giọng và khớp môi trên Kaggle | Miễn phí (GPU Kaggle) | 20–30 phút/video |
+| 3. Gọi video trực tiếp | Avatar thời gian thực (HeyGen Interactive, Tavus, D-ID…) | Tính phí theo phút | Trực tiếp |
+
+Video do AI tạo luôn kèm dòng chữ "Video trả lời bởi trợ lý AI của <tên>".
 
 Bạn cũng có thể gọi thẳng từng nhân sự, ví dụ: "nhờ web-developer làm landing page cho gói coaching".
 
@@ -50,6 +64,7 @@ reports/     báo cáo
 
 - **Bạn duyệt trước khi gửi.** Phòng ban chỉ soạn nháp vào `outbox/`. Bài đăng, tin nhắn cho khách, hoàn tiền hay giảm giá đều cần bạn duyệt.
 - **Không bịa:** không bịa số liệu, lời chứng thực, kết quả hay khan hiếm giả. Chỗ thiếu bằng chứng được đánh dấu `[CẦN SỐ LIỆU THẬT]`.
+- **Tài chính và crypto chỉ ở mức giáo dục:** bản sao không bảo ai mua hay bán gì, không hứa lợi nhuận, không nhận giữ tiền, không bao giờ hỏi seed phrase. Muốn bán dịch vụ tư vấn cá nhân, nhóm tín hiệu hay quản lý vốn thì hỏi luật sư trước.
 - **Minh bạch về AI:** khi khách hỏi, trợ lý nói thật nó là AI (có thể chỉnh trong `brand/thuong-hieu.md`).
 - **Bảo mật:** không xin mật khẩu, OTP hay số thẻ. Không đưa dữ liệu khách lên nội dung công khai.
 
