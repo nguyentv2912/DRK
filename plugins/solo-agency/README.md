@@ -18,7 +18,7 @@ Một plugin Claude Code gồm 8 "nhân sự" AI, giúp một người vận hà
 Trong Claude Code, mở thư mục dự án của bạn rồi gõ:
 
 ```
-/plugin marketplace add nguyentv2912/drk
+/plugin marketplace add nguyentv2912/DRK
 /plugin install solo-agency@drk
 ```
 
