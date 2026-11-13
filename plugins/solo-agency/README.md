@@ -35,6 +35,7 @@ Sau đó khởi động lại Claude Code.
 5. `/solo-agency:bao-cao tuan`: báo cáo hiệu quả và 3 việc nên làm tiếp.
 6. `/solo-agency:tao-ban-sao`: tạo Bản sao AI của bạn (chuyên môn, quan điểm, câu chuyện, giới hạn) và danh sách 20 video trả lời cần quay sẵn.
 7. `/solo-agency:tra-loi-tin-nhan <dán tin nhắn>`: Bản sao AI trả lời bằng chữ, kèm video có sẵn hoặc kịch bản để tạo video gương mặt bạn; tự rà soát tuân thủ trước khi đưa bạn duyệt.
+8. `/solo-agency:lo-trinh`: lộ trình 23 bước xây doanh nghiệp một người. Xác định bạn đang ở bước nào và giao việc tuần này cho đúng phòng ban (`tuan`, `cập nhật`, `bước <số>`). Bản đồ trực quan nằm ở `ban-do-ai-23-buoc.html`.
 
 ### Bản sao AI trả lời bằng video gương mặt của bạn
 

@@ -1,0 +1,271 @@
+<title>Bản Đồ AI 23 Bước</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,800&family=Be+Vietnam+Pro:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a trading-journal ledger. Summary + stage ribbon on top, then 7 stage sections of step rows; a 90-day plan and revenue plan close it. */
+:root{
+  --bg:#F2F4F1; --paper:#FFFFFF; --ink:#10201C; --muted:#56665F; --line:#D3DCD6;
+  --rule:#E3E9E5; --accent:#0E7A6A; --accent-soft:#DDEFEA; --gain:#1F8A4C; --loss:#B8403A; --loss-soft:#F8E4E1;
+  --display:"Archivo",ui-sans-serif,system-ui,sans-serif;
+  --body:"Be Vietnam Pro",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1513; --paper:#141E1B; --ink:#E4ECE8; --muted:#94A6A0; --line:#273632; --rule:#17221F;
+  --accent:#4CC3AE; --accent-soft:#16332D; --gain:#5BCB86; --loss:#F0857B; --loss-soft:#3A1E1B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1513; --paper:#141E1B; --ink:#E4ECE8; --muted:#94A6A0; --line:#273632; --rule:#17221F;
+  --accent:#4CC3AE; --accent-soft:#16332D; --gain:#5BCB86; --loss:#F0857B; --loss-soft:#3A1E1B; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;
+  background-image:linear-gradient(var(--rule) 1px,transparent 1px);background-size:100% 32px;background-attachment:local}
+.wrap{max-width:980px;margin:0 auto;padding-block:32px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;flex-direction:column;gap:28px}
+.sheet{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px}
+@media (max-width:560px){.sheet{padding:18px}}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:clamp(30px,6vw,48px);line-height:1.05;letter-spacing:-.02em;margin:8px 0 12px;text-wrap:balance}
+h2{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:24px;line-height:1.15;margin:0 0 6px;text-wrap:balance}
+h3{font-family:var(--display);font-weight:600;font-stretch:112%;font-size:17px;margin:0;line-height:1.3}
+p{margin:0;max-width:68ch}
+.lede{font-size:17px;color:var(--muted)}
+.split{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+@media (max-width:720px){.split{grid-template-columns:minmax(0,1fr)}}
+.split div{border-top:3px solid var(--accent);padding-top:10px}
+.split b{display:block;font-family:var(--display);font-stretch:112%;font-size:15px}
+.split span{font-size:14px;color:var(--muted)}
+/* stage ribbon */
+.ribbon{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+@media (max-width:720px){.ribbon{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.ribbon a{display:flex;flex-direction:column;gap:4px;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0}
+.ribbon a:hover{border-color:var(--accent)}
+.ribbon .n{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.ribbon .t{font-size:13px;font-weight:600;line-height:1.3}
+.bar{height:5px;border-radius:3px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--gain);width:0;transition:width .3s}
+.progress-line{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.progress-line strong{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.reset{font:inherit;font-size:13px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer}
+/* stage + steps */
+.stage-head{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:6px}
+.stage-head .n{font-family:var(--mono);font-size:13px;color:var(--accent)}
+.stage-goal{color:var(--muted);font-size:14px;margin-bottom:14px}
+.step{display:grid;grid-template-columns:28px 44px minmax(0,1fr);gap:10px;padding:16px 0;border-top:1px dashed var(--line)}
+.step:first-of-type{border-top:0}
+@media (max-width:560px){.step{grid-template-columns:22px 30px minmax(0,1fr);gap:8px}.step .num{font-size:16px}}
+.step input{width:20px;height:20px;margin-top:2px;accent-color:var(--gain);cursor:pointer}
+.step .num{font-family:var(--mono);font-size:20px;color:var(--muted);line-height:1.2}
+.step.done h3{text-decoration:line-through;text-decoration-color:var(--gain);color:var(--muted)}
+.step.done .num{color:var(--gain)}
+.step .body{display:flex;flex-direction:column;gap:8px;min-width:0}
+.for-you{font-size:14.5px}
+.for-you b{color:var(--accent);font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
+.lbl{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.chip{background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:2px 10px;font-size:12.5px;white-space:nowrap}
+.you{font-size:13.5px;color:var(--ink)}
+code{font-family:var(--mono);font-size:12.5px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+.warn{background:var(--loss-soft);border-radius:8px;padding:6px 10px;font-size:13px}
+.warn b{color:var(--loss)}
+/* 90 days */
+.days{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+@media (max-width:720px){.days{grid-template-columns:minmax(0,1fr)}}
+.day{border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.day .when{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.day ul{margin:0;padding-left:18px;font-size:14px}
+.day .target{margin-top:auto;font-size:13.5px;border-top:1px solid var(--line);padding-top:8px}
+/* revenue */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 20px;margin-top:12px;font-size:14px}
+@media (max-width:640px){.rules{grid-template-columns:minmax(0,1fr)}}
+.rules div{padding-left:12px;border-left:3px solid var(--loss)}
+.cmds{display:flex;flex-direction:column;gap:8px;margin-top:12px;font-size:14px}
+.cmds div{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:12px}
+@media (max-width:640px){.cmds div{grid-template-columns:minmax(0,1fr);gap:2px}}
+footer{font-size:12.5px;color:var(--muted)}
+a{color:var(--accent)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+
+<div class="wrap">
+  <header class="sheet">
+    <div class="eyebrow">Kế hoạch riêng · đầu tư, crypto và AI</div>
+    <h1>Bản đồ 23 bước xây doanh nghiệp một người, chạy bằng 10 nhân sự AI</h1>
+    <p class="lede">Bạn giữ phần chỉ con người làm được: gương mặt, chuyên môn, quyết định và mối quan hệ với khách. Phòng ban AI làm phần lặp lại: kịch bản, đăng bài, trả lời, chăm sóc, bán hàng, website, khóa học và báo cáo.</p>
+    <div class="split">
+      <div><b>Ngách đề xuất</b><span>Giáo dục đầu tư kỷ luật và quản lý rủi ro crypto cho người Việt, kể bằng video AI mang gương mặt bạn.</span></div>
+      <div><b>Thời gian của bạn</b><span>60–90 phút mỗi ngày: quay video, duyệt nội dung, trò chuyện trực tiếp với khách nóng.</span></div>
+      <div><b>Ranh giới</b><span>Chia sẻ kiến thức, không gọi kèo, không hứa lợi nhuận, không giữ tiền hộ khách.</span></div>
+    </div>
+  </header>
+
+  <section class="sheet" aria-label="Tiến độ">
+    <div class="progress-line">
+      <h2 style="margin:0">Tiến độ của bạn</h2>
+      <span><strong id="doneCount">0/23</strong> bước <button class="reset" id="reset" type="button">Bỏ đánh dấu</button></span>
+    </div>
+    <nav class="ribbon" id="ribbon" aria-label="7 giai đoạn"></nav>
+  </section>
+
+  <div id="stages" style="display:flex;flex-direction:column;gap:28px"></div>
+
+  <section class="sheet" id="d90">
+    <div class="eyebrow">Áp dụng ngay</div>
+    <h2>90 ngày đầu tiên</h2>
+    <p class="stage-goal">Các con số dưới đây là mục tiêu để đo, không phải cam kết kết quả.</p>
+    <div class="days">
+      <div class="day"><span class="when">Ngày 1–30 · Nền</span><h3>Dựng phòng ban, tìm giọng</h3>
+        <ul><li>Chạy <code>/solo-agency:thiet-lap</code> và <code>/solo-agency:tao-ban-sao</code></li><li>Quay 20 video trả lời câu hỏi hay gặp bằng mặt thật</li><li>1 video ngắn mỗi ngày về kỷ luật, rủi ro, công cụ AI</li><li>Mỗi tối thứ Sáu: <code>/solo-agency:bao-cao tuan</code></li></ul>
+        <div class="target"><b>Mục tiêu:</b> 30 video, 30 bài viết, danh sách 10 câu hỏi khách hỏi lặp lại.</div></div>
+      <div class="day"><span class="when">Ngày 31–60 · Lớn</span><h3>Dịch vụ 1-1 đầu tiên</h3>
+        <ul><li>Mở 10 suất "Rà soát kế hoạch đầu tư cá nhân" 60 phút, giá thấp</li><li>Bản sao AI trả lời inbox, bạn chỉ nói chuyện với khách đã đặt lịch</li><li>Xin 3–5 testimonial thật</li><li>Tăng giá gấp đôi khi đủ testimonial</li></ul>
+        <div class="target"><b>Mục tiêu:</b> 10 buổi 1-1 đầu tiên, 3–5 testimonial thật.</div></div>
+      <div class="day"><span class="when">Ngày 61–90 · Thu</span><h3>Sản phẩm số làm bẫy niềm tin</h3>
+        <ul><li>Mini-course "Kỷ luật vốn trong 7 ngày" kèm mẫu nhật ký giao dịch</li><li>Landing page và chuỗi email do phòng ban AI làm</li><li>Thu case study từ người học, sau đó tăng giá</li></ul>
+        <div class="target"><b>Mục tiêu:</b> sản phẩm số có đơn đều mỗi tuần.</div></div>
+    </div>
+  </section>
+
+  <section class="sheet">
+    <div class="eyebrow">Đề xuất, chưa phải số thật</div>
+    <h2>Cấu trúc doanh thu bạn nhắm tới</h2>
+    <p class="stage-goal">Năm dòng thu nhập theo thứ tự xây dựng. Giá là điểm khởi đầu gợi ý; điều chỉnh theo phản hồi của khách.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Dòng thu nhập</th><th>Bước</th><th>Giá khởi điểm gợi ý</th><th>Phòng ban AI chính</th></tr></thead>
+      <tbody>
+        <tr><td>Rà soát kế hoạch đầu tư 1-1 (giáo dục, không tư vấn mã cụ thể)</td><td class="num">3–6</td><td class="num">990.000đ / buổi</td><td>Tư vấn bán hàng, Bản sao AI</td></tr>
+        <tr><td>Mini-course "Kỷ luật vốn 7 ngày"</td><td class="num">8–11</td><td class="num">199.000–499.000đ</td><td>Đào tạo, Website</td></tr>
+        <tr><td>Cộng đồng kín cho học viên</td><td class="num">14</td><td class="num">1.990.000đ / năm</td><td>Cộng đồng, Bản sao AI</td></tr>
+        <tr><td>Membership công cụ AI và bản tin tuần</td><td class="num">18–19</td><td class="num">99.000đ / tháng</td><td>Nội dung, Số liệu</td></tr>
+        <tr><td>Khóa flagship "Hệ thống đầu tư cá nhân"</td><td class="num">21–22</td><td class="num">Định giá sau khi có case study</td><td>Đào tạo, cả phòng ban khi ra mắt</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="sheet">
+    <div class="eyebrow">Bắt buộc với ngành tài chính</div>
+    <h2>Luật chơi để giữ uy tín lâu dài</h2>
+    <div class="rules">
+      <div>Không bảo ai mua hay bán mã cụ thể, không đưa giá mục tiêu hay tín hiệu vào lệnh.</div>
+      <div>Không hứa lợi nhuận. Nói rõ crypto có thể mất toàn bộ vốn.</div>
+      <div>Video do AI tạo luôn ghi "Video trả lời bởi trợ lý AI của bạn".</div>
+      <div>Công khai khi nhắc tới coin bạn đang nắm giữ, dự án tài trợ hay link giới thiệu.</div>
+      <div>Không giữ tiền, không quản lý vốn hộ, không bao giờ hỏi seed phrase.</div>
+      <div>Muốn bán nhóm tín hiệu hay tư vấn cá nhân có phí thì hỏi luật sư trước.</div>
+    </div>
+  </section>
+
+  <section class="sheet">
+    <div class="eyebrow">Trong Claude Code</div>
+    <h2>Lệnh dùng hằng ngày</h2>
+    <div class="cmds">
+      <div><code>/solo-agency:lo-trinh</code><span>Xem bạn đang ở bước nào và 3 việc tuần này.</span></div>
+      <div><code>/solo-agency:lo-trinh tuan</code><span>Giao việc tuần cho cả phòng ban theo bước hiện tại.</span></div>
+      <div><code>/solo-agency:lo-trinh cập nhật</code><span>Đánh dấu bước xong, chuyển sang bước tiếp.</span></div>
+      <div><code>/solo-agency:tra-loi-tin-nhan</code><span>Bản sao AI trả lời inbox bằng chữ và video, có rà soát tuân thủ.</span></div>
+      <div><code>/solo-agency:giao-viec &lt;mục tiêu&gt;</code><span>Giao một việc lớn, ví dụ ra mắt mini-course.</span></div>
+    </div>
+  </section>
+
+  <footer>Khung 23 bước tham khảo hành trình công khai của Justin Welsh, qua bản Việt hoá của Thanh Nguyễn. Phần áp dụng cho ngách đầu tư, crypto và phòng ban AI là kế hoạch riêng của bạn. Đánh dấu tiến độ chỉ lưu trên trình duyệt này.</footer>
+</div>
+
+<script>
+const AG = {video:"Video", post:"Nội dung & Đăng bài", comm:"Cộng đồng", care:"CSKH", sales:"Tư vấn bán hàng", web:"Website", course:"Đào tạo", data:"Số liệu", twin:"Bản sao AI", law:"Tuân thủ"};
+const STAGES = [
+ {name:"Xuất phát", goal:"Tìm giọng nói và ngách bằng khối lượng nội dung.", steps:[
+  {t:"Khối lượng trước, hoàn hảo sau", you:"Mỗi ngày 1 video ngắn: một sai lầm đầu tư phổ biến, một nguyên tắc quản lý vốn, hoặc một công cụ AI giúp nhà đầu tư. Dựng bằng quy trình clone giọng và khớp môi bạn đang có.", ai:["video","post","law"], me:"Quay hoặc duyệt video, bấm đăng.", cmd:"/solo-agency:ke-hoach-tuan"},
+  {t:"Tìm tín hiệu giữa tiếng ồn", you:"Đo bình luận, lượt lưu, chia sẻ và inbox, không chỉ lượt xem. Chủ đề nào kéo được câu hỏi thật thì làm thêm chuỗi về chủ đề đó.", ai:["data","comm"], me:"Đọc báo cáo tuần 10 phút.", cmd:"/solo-agency:bao-cao tuan"}]},
+ {name:"Kiếm tiền đầu tiên", goal:"Dịch vụ 1-1 để hiểu khách và có dòng tiền ngay.", steps:[
+  {t:"Dịch vụ 1-1 đầu tiên", you:"Buổi \"Rà soát kế hoạch đầu tư cá nhân\" 60 phút: xem cách khách phân bổ vốn, đặt cắt lỗ, giữ ví an toàn. Dạy cách làm, không chỉ mã cần mua.", ai:["sales","web","law"], me:"Trực tiếp làm buổi 1-1.", cmd:"/solo-agency:giao-viec mở dịch vụ rà soát 1-1", warn:"Không quản lý vốn hộ và không gọi kèo trong buổi 1-1."},
+  {t:"Khách hàng lý tưởng", you:"Ví dụ: người đi làm 25–40 tuổi, đã từng thua vì FOMO, muốn đầu tư có hệ thống. Ngách càng hẹp, lời nói càng trúng.", ai:["sales","data"], me:"Chọn ngách, ghi vào hồ sơ thương hiệu.", cmd:"/solo-agency:thiet-lap"},
+  {t:"Nhân đôi giá", you:"Có 3–5 testimonial thật thì tăng giá gấp đôi. Từ chối khách ngoài ngách, nhất là người chỉ muốn tín hiệu.", ai:["care","law"], me:"Quyết định giá mới.", cmd:"/solo-agency:giao-viec cập nhật bảng giá"},
+  {t:"Tối ưu thời gian", you:"Mỗi tuần liệt kê việc bạn làm lặp lại từ 3 lần trở lên và giao cho phòng ban AI. Giờ dư dùng để làm sản phẩm.", ai:["data"], me:"Giữ khung 60–90 phút mỗi ngày.", cmd:"/solo-agency:lo-trinh cập nhật"}]},
+ {name:"Lắng nghe và kiểm chứng", goal:"Biến câu hỏi lặp lại thành sản phẩm số giá thấp.", steps:[
+  {t:"Đọc inbox", you:"Bản sao AI ghi mọi câu hỏi mới. Câu nào lặp lại nhiều nhất là sản phẩm tiếp theo.", ai:["twin","data"], me:"Đọc tổng hợp câu hỏi mỗi tuần.", cmd:"/solo-agency:tra-loi-tin-nhan"},
+  {t:"Sản phẩm số đầu tiên giá thấp", you:"Mini-course \"Kỷ luật vốn 7 ngày\": 7 video ngắn, mẫu nhật ký giao dịch, checklist an toàn ví. Làm trong 2 tuần, không cầu toàn.", ai:["course","web","law"], me:"Quay 7 bài giảng.", cmd:"/solo-agency:giao-viec làm mini-course kỷ luật vốn 7 ngày"},
+  {t:"Đồng tiền đầu tiên từ sản phẩm số", you:"Ra mắt cho người đã theo dõi và khách 1-1 trước. Đi theo thứ họ sẵn sàng trả tiền, kể cả khi khác dự đoán của bạn.", ai:["sales","post"], me:"Livestream hoặc video ra mắt.", cmd:"/solo-agency:giao-viec ra mắt mini-course"},
+  {t:"Cái gì hiệu quả thì làm tiếp", you:"Kênh nào, chủ đề nào ra đơn thì dồn thêm lực, ngừng nghi ngờ.", ai:["data"], me:"Chọn 1 việc để nhân đôi.", cmd:"/solo-agency:bao-cao thang"}]},
+ {name:"Tăng tốc", goal:"Xây niềm tin, dồn lực, để khách bán giúp.", steps:[
+  {t:"Bẫy niềm tin", you:"Giá thấp nhưng giao giá trị vượt xa: tặng thêm buổi hỏi đáp, mẫu bảng tính, bản cập nhật. Khách trung thành rồi mới tăng giá.", ai:["course","care"], me:"Hỏi đáp trực tiếp mỗi tháng.", cmd:"/solo-agency:giao-viec nâng giá trị mini-course"},
+  {t:"Dồn lực một nền tảng", you:"Chọn một nền tảng chính (ví dụ TikTok hoặc YouTube Shorts). Mỗi nội dung dẫn thẳng về sản phẩm.", ai:["post","video"], me:"Chỉ quay cho nền tảng chính.", cmd:"/solo-agency:ke-hoach-tuan dồn lực nền tảng chính"},
+  {t:"Đội quân giới thiệu", you:"Học viên giới thiệu bạn bè nhận hoa hồng. Bắt buộc công khai \"link giới thiệu\".", ai:["sales","web","law"], me:"Duyệt mức hoa hồng.", cmd:"/solo-agency:giao-viec chương trình giới thiệu", warn:"Không nhận link giới thiệu sàn giao dịch khi chưa tìm hiểu kỹ uy tín và pháp lý của sàn."}]},
+ {name:"Cộng đồng và quyết định lớn", goal:"Cộng đồng kín cho học viên và dám cắt cái phá cuộc sống.", steps:[
+  {t:"Cộng đồng kín", you:"Nhóm Telegram hoặc Zalo cho học viên: thử thách kỷ luật tuần, nhật ký giao dịch chung, hỏi đáp. Bản sao AI trả lời câu hỏi thường gặp.", ai:["comm","twin","course"], me:"Một buổi live mỗi tháng.", cmd:"/solo-agency:giao-viec mở cộng đồng học viên", warn:"Cấm thành viên gọi kèo hay rủ góp vốn trong nhóm."},
+  {t:"Quyết định khó", you:"Dòng thu nhập nào bắt bạn trực 24/7 mà doanh thu trên mỗi giờ thấp thì cân nhắc đóng.", ai:["data"], me:"Tự quyết theo cuộc sống bạn muốn.", cmd:"/solo-agency:bao-cao thang"},
+  {t:"Nền tảng thứ hai", you:"Khi nền tảng chính chạy đều, chuyển thể nội dung sang nền tảng thứ hai (ví dụ Facebook hoặc X).", ai:["post"], me:"Duyệt bản chuyển thể.", cmd:"/solo-agency:ke-hoach-tuan thêm nền tảng thứ hai"}]},
+ {name:"Đa dạng doanh thu", goal:"Thêm dòng tiền định kỳ khi đã có khán giả.", steps:[
+  {t:"Khóa học thứ hai", you:"Theo điều học viên xin học tiếp, ví dụ \"Dùng AI để nghiên cứu dự án và tránh lừa đảo\".", ai:["course","data"], me:"Quay bài giảng.", cmd:"/solo-agency:lo-trinh bước 17"},
+  {t:"Doanh thu định kỳ", you:"Membership nhỏ: bộ công cụ AI, mẫu bảng tính và bản tin phân tích hằng tuần mang tính giáo dục.", ai:["course","web"], me:"Duyệt nội dung hằng tháng.", cmd:"/solo-agency:lo-trinh bước 18"},
+  {t:"Newsletter", you:"Bản tin tuần tổng hợp bài học, sai lầm, công cụ. Đều đặn hơn hoàn hảo.", ai:["post"], me:"Viết 3 câu mở đầu cá nhân.", cmd:"/solo-agency:lo-trinh bước 19"},
+  {t:"Tài trợ", you:"Chỉ nhận nhà tài trợ minh bạch (công cụ, sách, phần mềm). Luôn ghi \"được tài trợ\".", ai:["sales","law"], me:"Duyệt từng nhà tài trợ.", cmd:"/solo-agency:lo-trinh bước 20", warn:"Từ chối quảng bá token mới, dự án hứa lãi cố định hay sàn chưa rõ pháp lý."}]},
+ {name:"Sản phẩm chủ lực và làm mới", goal:"Một tác phẩm tốt nhất và ra mắt có kế hoạch.", steps:[
+  {t:"Sản phẩm chủ lực", you:"Khóa \"Hệ thống đầu tư cá nhân\" từ case study học viên thật. Không vội.", ai:["course"], me:"Quay toàn bộ khóa.", cmd:"/solo-agency:lo-trinh bước 21"},
+  {t:"Ra mắt có kế hoạch", you:"Kế hoạch nhiều tuần: nội dung khởi động, danh sách chờ, buổi live, ưu đãi rõ ràng. Việc chính nằm trước ngày ra mắt.", ai:["video","post","sales","web","law"], me:"Xuất hiện trong video và live.", cmd:"/solo-agency:giao-viec kế hoạch ra mắt khóa flagship"},
+  {t:"Không ngừng thử nghiệm", you:"Mỗi quý thử một định dạng hoặc sản phẩm nhỏ mới, giữ lại cái bạn thích làm.", ai:["data"], me:"Chọn thử nghiệm của quý.", cmd:"/solo-agency:lo-trinh cập nhật"}]}
+];
+
+let done = {};
+try { done = JSON.parse(localStorage.getItem("bando23") || "{}"); } catch (e) {}
+const save = () => { try { localStorage.setItem("bando23", JSON.stringify(done)); } catch (e) {} };
+
+function el(tag, cls, text){ const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+function build(){
+  const host = document.getElementById("stages"); host.textContent = "";
+  const rib = document.getElementById("ribbon"); rib.textContent = "";
+  let n = 0;
+  STAGES.forEach((s, si) => {
+    const sec = el("section", "sheet"); sec.id = "gd" + (si + 1);
+    const head = el("div", "stage-head");
+    head.append(el("span", "n", "Giai đoạn " + (si + 1)), el("h2", null, s.name));
+    sec.append(head, el("p", "stage-goal", s.goal));
+    const a = el("a"); a.href = "#gd" + (si + 1);
+    a.append(el("span", "n", "GĐ " + (si + 1) + " · " + s.steps.length + " bước"), el("span", "t", s.name));
+    const bar = el("span", "bar"); const fill = el("i"); fill.dataset.stage = si; bar.append(fill); a.append(bar);
+    rib.append(a);
+    s.steps.forEach(st => {
+      n++; const id = "b" + n;
+      const row = el("div", "step"); row.dataset.stage = si;
+      const cb = el("input"); cb.type = "checkbox"; cb.id = id; cb.checked = !!done[id];
+      cb.setAttribute("aria-label", "Đánh dấu bước " + n + " xong");
+      cb.addEventListener("change", () => { done[id] = cb.checked; save(); refresh(); });
+      const body = el("div", "body");
+      const h = el("h3"); const lab = el("label", null, st.t); lab.htmlFor = id; h.append(lab);
+      const fy = el("p", "for-you"); fy.append(el("b", null, "Với bạn: "), document.createTextNode(st.you));
+      const chips = el("div", "row"); chips.append(el("span", "lbl", "AI làm"));
+      st.ai.forEach(k => chips.append(el("span", "chip", AG[k])));
+      const me = el("div", "row"); me.append(el("span", "lbl", "Bạn làm"), el("span", "you", st.me));
+      const cmd = el("div", "row"); cmd.append(el("span", "lbl", "Lệnh"), el("code", null, st.cmd));
+      body.append(h, fy, chips, me, cmd);
+      if (st.warn) { const w = el("p", "warn"); w.append(el("b", null, "Lưu ý: "), document.createTextNode(st.warn)); body.append(w); }
+      row.append(cb, el("span", "num", String(n).padStart(2, "0")), body);
+      if (cb.checked) row.classList.add("done");
+      sec.append(row);
+    });
+    host.append(sec);
+  });
+  refresh();
+}
+
+function refresh(){
+  let total = 0;
+  document.querySelectorAll(".step").forEach(r => { const c = r.querySelector("input").checked; r.classList.toggle("done", c); if (c) total++; });
+  document.getElementById("doneCount").textContent = total + "/23";
+  document.querySelectorAll(".bar i").forEach(f => {
+    const rows = [...document.querySelectorAll('.step[data-stage="' + f.dataset.stage + '"]')];
+    const d = rows.filter(r => r.querySelector("input").checked).length;
+    f.style.width = (rows.length ? d / rows.length * 100 : 0) + "%";
+  });
+}
+
+document.getElementById("reset").addEventListener("click", () => { done = {}; save(); build(); });
+build();
+</script>
