@@ -28,6 +28,11 @@ Sau đó khởi động lại Claude Code.
 
 ## Bắt đầu
 
+**Cách đơn giản nhất:** mỗi ngày chỉ gõ `/solo-agency:hom-nay`. Lần đầu lệnh này hỏi bạn 5 câu, sau đó mỗi ngày AI làm sẵn kịch bản video, caption và trả lời khách, rồi chỉ cho bạn 3 việc cần làm.
+
+Các lệnh chi tiết hơn:
+
+
 1. `/solo-agency:thiet-lap`: trả lời phỏng vấn để tạo hồ sơ thương hiệu trong `brand/`. Mọi phòng ban đều đọc hồ sơ này, nên mỗi người cài sẽ có một phòng ban mang đúng giọng của mình.
 2. `/solo-agency:ke-hoach-tuan`: kế hoạch tuần gồm 5 video, lịch đăng 7 ngày và danh sách lead cần follow-up.
 3. `/solo-agency:giao-viec <mục tiêu>`: giao việc lớn cho cả phòng ban. Ví dụ: `/solo-agency:giao-viec ra mắt khóa học Canva cơ bản giá 399k trong 14 ngày`.
