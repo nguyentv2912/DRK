@@ -1,0 +1,349 @@
+<title>Voxa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap">
+<style>
+/* Layout: a "call card" (avatar + controls) beside a live transcript; stacks on phones. */
+:root{
+  --bg:#EDF1F6; --surface:#FFFFFF; --ink:#16203A; --muted:#5B6680;
+  --line:#D6DDE8; --accent:#2F5BEA; --accent-ink:#FFFFFF;
+  --fix:#B4560B; --fix-bg:#FFF1E2; --ok:#1E7A4F; --stage:#1A2547; --stage-ink:#E8EDFA;
+  --skin:#F1C7A5; --hair-f:#3B2A22; --hair-m:#22252E; --shirt-f:#E86A5B; --shirt-m:#3E7CB1;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Be Vietnam Pro",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1322; --surface:#161D31; --ink:#E6EAF4; --muted:#9AA4BD; --line:#29324B;
+  --accent:#6E8EFF; --accent-ink:#0E1322; --fix:#FFB070; --fix-bg:#3A2614; --ok:#5FD39A;
+  --stage:#0A0F1E; --stage-ink:#DDE4F7; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1322; --surface:#161D31; --ink:#E6EAF4; --muted:#9AA4BD; --line:#29324B;
+  --accent:#6E8EFF; --accent-ink:#0E1322; --fix:#FFB070; --fix-bg:#3A2614; --ok:#5FD39A;
+  --stage:#0A0F1E; --stage-ink:#DDE4F7; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1080px;margin:0 auto;padding-block:20px 28px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;flex-direction:column;gap:16px}
+header{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h1{font-family:var(--display);font-weight:700;font-size:28px;letter-spacing:-.02em;margin:0}
+h1 small{font-family:var(--body);font-weight:500;font-size:14px;color:var(--muted);letter-spacing:0;margin-left:8px}
+.ai-badge{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
+  border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+.call{background:var(--stage);color:var(--stage-ink);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.call-top{display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.live{display:inline-flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums}
+.live i{width:8px;height:8px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 3px rgba(74,222,128,.2)}
+.avatar{width:100%;max-width:100%;aspect-ratio:1/1;border-radius:16px;background:radial-gradient(circle at 50% 40%,#2C3A6B,#141B36);display:grid;place-items:center;overflow:hidden}
+.avatar svg{width:86%;height:auto}
+.mouth{transform-box:fill-box;transform-origin:center;transition:transform .12s}
+.talking .mouth{animation:talk .28s ease-in-out infinite alternate}
+@keyframes talk{from{transform:scaleY(.35)}to{transform:scaleY(1.25)}}
+.eyes{transform-box:fill-box;transform-origin:center;animation:blink 5s infinite}
+@keyframes blink{0%,95%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.thinking .avatar{box-shadow:inset 0 0 0 3px rgba(110,142,255,.55)}
+@media (prefers-reduced-motion:reduce){.talking .mouth,.eyes{animation:none}}
+.who{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.who b{font-family:var(--display);font-size:22px;font-weight:700}
+.who span{font-size:13px;opacity:.75}
+.status{font-size:13px;min-height:20px;opacity:.85}
+.settings{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.settings label{min-width:0;display:flex;flex-direction:column;gap:4px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
+select{font:inherit;font-size:14px;letter-spacing:0;text-transform:none;color:var(--stage-ink);background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:8px 10px;min-width:0;width:100%}
+select option{color:#16203A;background:#fff}
+.mic-row{display:flex;gap:10px;align-items:center}
+.mic{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:600;font-size:15px;
+  background:var(--accent);color:var(--accent-ink);border:0;border-radius:999px;padding:14px 18px;cursor:pointer}
+.mic.listening{background:#E5484D;color:#fff}
+.mic:disabled{opacity:.5;cursor:not-allowed}
+.icon-btn{font:inherit;font-size:13px;background:transparent;color:var(--stage-ink);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:12px 14px;cursor:pointer}
+button:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;display:flex;flex-direction:column;min-height:560px;max-height:calc(100vh - 120px)}
+@media (max-width:820px){.panel{max-height:none;min-height:420px}}
+.panel-head{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.panel-head h2{font-family:var(--display);font-size:17px;margin:0;font-weight:700}
+.toggle{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.log{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px}
+.msg{max-width:min(560px,88%);display:flex;flex-direction:column;gap:6px}
+.msg.me{align-self:flex-end;align-items:flex-end}
+.bubble{padding:10px 14px;border-radius:16px;background:var(--bg);overflow-wrap:anywhere}
+.me .bubble{background:var(--accent);color:var(--accent-ink);border-bottom-right-radius:4px}
+.agent .bubble{border-bottom-left-radius:4px}
+.trans{font-size:13px;color:var(--muted);padding:0 4px}
+.fix{background:var(--fix-bg);color:var(--ink);border-radius:12px;padding:8px 12px;font-size:13px;max-width:100%}
+.fix b{color:var(--fix);font-weight:600;display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.good{font-size:12px;color:var(--ok);font-weight:600;padding:0 4px}
+.replay{align-self:flex-start;font:inherit;font-size:12px;color:var(--muted);background:none;border:0;padding:0 4px;cursor:pointer;text-decoration:underline}
+.compose{border-top:1px solid var(--line);padding:12px;display:flex;gap:10px}
+textarea{flex:1;min-width:0;font:inherit;resize:none;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:10px 12px;height:46px}
+.send{font:inherit;font-weight:600;background:var(--ink);color:var(--bg);border:0;border-radius:14px;padding:0 18px;cursor:pointer}
+.send:disabled{opacity:.45;cursor:not-allowed}
+.notice{font-size:13px;color:var(--muted);padding:0 18px 12px}
+footer{font-size:12px;color:var(--muted);max-width:70ch}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Voxa<small>Bạn luyện nói ngoại ngữ, 24/7</small></h1>
+    <span class="ai-badge">Trợ lý AI · không phải người thật</span>
+  </header>
+
+  <div class="grid">
+    <section class="call" id="call" aria-label="Cuộc gọi">
+      <div class="call-top">
+        <span class="live"><i></i><span id="timer">Sẵn sàng</span></span>
+        <span id="langTag">English · B1</span>
+      </div>
+      <div class="avatar" id="avatar" aria-hidden="true"></div>
+      <div class="who"><b id="agentName">Lina</b><span id="agentFrom">London</span></div>
+      <div class="status" id="status" role="status">Bấm nút micro và bắt đầu nói.</div>
+      <div class="mic-row">
+        <button class="mic" id="mic" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+          <span id="micLabel">Bấm để nói</span>
+        </button>
+        <button class="icon-btn" id="hush" type="button" title="Dừng giọng nói">Dừng</button>
+      </div>
+      <div class="settings">
+        <label for="userGender">Bạn là
+          <select id="userGender"><option value="m">Nam</option><option value="f">Nữ</option><option value="x">Khác / không nói</option></select>
+        </label>
+        <label for="partner">Bạn trò chuyện
+          <select id="partner"><option value="auto">Tự động (khác giới)</option><option value="f">Lina (nữ)</option><option value="m">Leo (nam)</option></select>
+        </label>
+        <label for="lang">Luyện ngôn ngữ
+          <select id="lang"></select>
+        </label>
+        <label for="level">Trình độ
+          <select id="level"><option value="A2">Mới bắt đầu</option><option value="B1" selected>Trung bình</option><option value="C1">Nâng cao</option></select>
+        </label>
+        <label for="voice">Giọng đọc
+          <select id="voice"><option value="auto">Theo nhân vật</option><option value="airy">Airy</option><option value="buttery">Buttery</option><option value="glassy">Glassy</option><option value="rounded">Rounded</option></select>
+        </label>
+        <label for="mode">Chủ đề
+          <select id="mode"><option value="free">Nói chuyện tự do</option><option value="travel">Du lịch</option><option value="work">Phỏng vấn, công việc</option><option value="ielts">Luyện IELTS Speaking</option><option value="news">Tin tức, kiến thức</option></select>
+        </label>
+      </div>
+    </section>
+
+    <section class="panel" aria-label="Hội thoại">
+      <div class="panel-head">
+        <h2>Hội thoại</h2>
+        <label class="toggle" for="showTrans"><input type="checkbox" id="showTrans" checked> Hiện bản dịch tiếng Việt</label>
+      </div>
+      <div class="log" id="log" aria-live="polite"></div>
+      <div class="notice" id="notice" hidden></div>
+      <form class="compose" id="compose">
+        <textarea id="text" placeholder="Hoặc gõ câu của bạn ở đây…" aria-label="Tin nhắn"></textarea>
+        <button class="send" id="send" type="submit">Gửi</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>Voxa là trợ lý AI. Nó có thể sai, nhất là với thông tin mới hoặc chuyên sâu. Với vấn đề y tế, pháp lý, tài chính, hãy hỏi chuyên gia. Không chia sẻ mật khẩu hay thông tin nhạy cảm.</footer>
+</div>
+
+<script>
+const LANGS = {
+  en:{label:"English", tag:"en", from:{f:"London",m:"Sydney"}, hi:"Hi! I'm {n}. How's your day going? What would you like to talk about?", hiVi:"Chào bạn! Mình là {n}. Hôm nay của bạn thế nào? Bạn muốn nói về chủ đề gì?"},
+  ja:{label:"日本語", tag:"ja", from:{f:"Tokyo",m:"Osaka"}, hi:"こんにちは！{n}です。今日はどんな一日でしたか？", hiVi:"Xin chào! Mình là {n}. Hôm nay của bạn thế nào?"},
+  ko:{label:"한국어", tag:"ko", from:{f:"Seoul",m:"Busan"}, hi:"안녕하세요! 저는 {n}예요. 오늘 하루 어땠어요?", hiVi:"Xin chào! Mình là {n}. Hôm nay của bạn thế nào?"},
+  zh:{label:"中文", tag:"zh", from:{f:"Shanghai",m:"Taipei"}, hi:"你好！我是{n}。你今天过得怎么样？", hiVi:"Xin chào! Mình là {n}. Hôm nay bạn thế nào?"},
+  es:{label:"Español", tag:"es", from:{f:"Madrid",m:"Ciudad de México"}, hi:"¡Hola! Soy {n}. ¿Qué tal tu día? ¿De qué quieres hablar?", hiVi:"Chào bạn! Mình là {n}. Hôm nay thế nào? Bạn muốn nói về gì?"},
+  fr:{label:"Français", tag:"fr", from:{f:"Paris",m:"Montréal"}, hi:"Salut ! Je suis {n}. Comment se passe ta journée ?", hiVi:"Chào bạn! Mình là {n}. Hôm nay của bạn thế nào?"},
+  de:{label:"Deutsch", tag:"de", from:{f:"Berlin",m:"Wien"}, hi:"Hallo! Ich bin {n}. Wie war dein Tag bisher?", hiVi:"Xin chào! Mình là {n}. Hôm nay của bạn thế nào?"},
+  vi:{label:"Tiếng Việt", tag:"vi", from:{f:"Hà Nội",m:"Đà Nẵng"}, hi:"Xin chào! Mình là {n}. Hôm nay bạn thế nào?", hiVi:""}
+};
+const PERSONA = {f:{name:"Lina", voice:"airy"}, m:{name:"Leo", voice:"rounded"}};
+const MODES = {free:"open conversation about anything the learner likes", travel:"travel situations: airports, hotels, ordering food, asking directions", work:"job interviews and workplace conversation", ielts:"IELTS Speaking practice (Parts 1-3); occasionally give a band estimate", news:"current affairs, science, history and general knowledge"};
+const LEVEL_TXT = {A2:"beginner (CEFR A2): very short, simple sentences", B1:"intermediate (CEFR B1): everyday vocabulary", C1:"advanced (CEFR C1): natural, idiomatic language"};
+const ERR = {rate_limited:"Đang quá tải hoặc bạn đã dùng hết lượt. Đợi một lúc rồi thử lại.", session_expired:"Phiên đăng nhập đã hết. Hãy đăng nhập lại claude.ai.", refused:"Mình không thể trả lời câu đó. Hãy thử chủ đề khác.", upstream_error:"Kết nối bị gián đoạn. Hãy gửi lại."};
+
+const $ = id => document.getElementById(id);
+const use = n => (window.claude && window.claude.use) ? window.claude.use(n).catch(() => null) : Promise.resolve(null);
+const S = {history:[], busy:false, startedAt:0, ctl:null, sample:null, tts:null, dict:null, dictBuf:"", dictOk:true};
+
+let saved = {}; try { saved = JSON.parse(localStorage.getItem("voxa") || "{}"); } catch(e) {}
+for (const [k,v] of Object.entries(LANGS)) $("lang").add(new Option(v.label, k));
+["userGender","partner","lang","level","voice","mode"].forEach(id => { if (saved[id]) $(id).value = saved[id]; });
+if (saved.showTrans === false) $("showTrans").checked = false;
+function persist(){ try { localStorage.setItem("voxa", JSON.stringify({userGender:$("userGender").value, partner:$("partner").value, lang:$("lang").value, level:$("level").value, voice:$("voice").value, mode:$("mode").value, showTrans:$("showTrans").checked})); } catch(e) {} }
+
+function agentGender(){ const p = $("partner").value; if (p !== "auto") return p; return $("userGender").value === "f" ? "m" : "f"; }
+function agent(){ const g = agentGender(); const L = LANGS[$("lang").value]; return {g, name:PERSONA[g].name, from:L.from[g], voice:$("voice").value === "auto" ? PERSONA[g].voice : $("voice").value}; }
+
+function drawAvatar(g){
+  const hair = g === "f"
+    ? `<path d="M60 112c0-46 28-72 60-72s60 26 60 72v58c-10-6-16-30-18-56-14 8-46 10-84-6-2 30-8 56-18 62z" fill="var(--hair-f)"/>`
+    : `<path d="M66 104c0-38 24-60 54-60s54 22 54 60c-8-14-22-22-36-24-16 8-44 10-72 24z" fill="var(--hair-m)"/>`;
+  const front = g === "f" ? `<path d="M74 100c18-30 58-38 92-4-26-6-58-4-92 4z" fill="var(--hair-f)"/>` : "";
+  $("avatar").innerHTML = `<svg viewBox="0 0 240 240" role="img" aria-label="${agent().name}">
+    <path d="M40 240c4-44 38-64 80-64s76 20 80 64z" fill="${g === "f" ? "var(--shirt-f)" : "var(--shirt-m)"}"/>
+    <rect x="104" y="150" width="32" height="34" rx="10" fill="var(--skin)"/>
+    ${hair}
+    <ellipse cx="120" cy="118" rx="46" ry="52" fill="var(--skin)"/>
+    ${front}
+    <g class="eyes"><ellipse cx="102" cy="118" rx="5" ry="6" fill="#1D1B22"/><ellipse cx="138" cy="118" rx="5" ry="6" fill="#1D1B22"/></g>
+    <path d="M94 104q8-5 16 0M130 104q8-5 16 0" stroke="#3A2A22" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <ellipse cx="94" cy="136" rx="7" ry="4" fill="#E9A08A" opacity=".55"/><ellipse cx="146" cy="136" rx="7" ry="4" fill="#E9A08A" opacity=".55"/>
+    <ellipse class="mouth" cx="120" cy="146" rx="11" ry="6" fill="#A8433F"/>
+  </svg>`;
+}
+
+function render(){
+  const log = $("log"); log.textContent = "";
+  const showT = $("showTrans").checked;
+  S.history.forEach((m, i) => {
+    const box = document.createElement("div"); box.className = "msg " + (m.role === "user" ? "me" : "agent");
+    const b = document.createElement("div"); b.className = "bubble"; b.textContent = m.text; box.append(b);
+    if (m.role === "user" && m.fix) {
+      const f = document.createElement("div"); f.className = "fix";
+      const h = document.createElement("b"); h.textContent = "Nói tự nhiên hơn";
+      const t = document.createElement("div"); t.textContent = m.fix;
+      f.append(h, t);
+      if (m.tip) { const tp = document.createElement("div"); tp.style.color = "var(--muted)"; tp.textContent = m.tip; f.append(tp); }
+      box.append(f);
+    } else if (m.role === "user" && m.checked) {
+      const g = document.createElement("div"); g.className = "good"; g.textContent = "Chuẩn rồi"; box.append(g);
+    }
+    if (m.role === "agent") {
+      if (showT && m.trans) { const tr = document.createElement("div"); tr.className = "trans"; tr.textContent = m.trans; box.append(tr); }
+      if (S.tts || window.speechSynthesis) { const r = document.createElement("button"); r.type = "button"; r.className = "replay"; r.textContent = "Nghe lại"; r.onclick = () => speak(m.text); box.append(r); }
+    }
+    log.append(box);
+  });
+  log.scrollTop = log.scrollHeight;
+}
+
+function reset(){
+  const a = agent(), L = LANGS[$("lang").value];
+  if (S.ctl) S.ctl.abort();
+  stopSpeech();
+  drawAvatar(a.g);
+  $("agentName").textContent = a.name; $("agentFrom").textContent = a.from;
+  $("langTag").textContent = L.label + " · " + $("level").value;
+  S.history = [{role:"agent", text:L.hi.replace("{n}", a.name), trans:L.hiVi.replace("{n}", a.name)}];
+  render(); persist();
+}
+
+function setStatus(t){ $("status").textContent = t; }
+function setBusy(b){ S.busy = b; $("send").disabled = b; $("call").classList.toggle("thinking", b); }
+
+function buildPrompt(){
+  const a = agent(), L = LANGS[$("lang").value];
+  const turns = S.history.slice(-14).map(m => (m.role === "user" ? "LEARNER: " : a.name.toUpperCase() + ": ") + m.text).join("\n");
+  return `You are ${a.name}, a friendly ${a.g === "f" ? "female" : "male"} AI conversation partner from ${a.from} inside the language app Voxa. You are an AI and must never claim to be human.
+The learner's native language is Vietnamese. They practise ${L.label}. Level: ${LEVEL_TXT[$("level").value]}. Focus: ${MODES[$("mode").value]}.
+Rules:
+- Reply ONLY in ${L.label}, 1-3 short spoken-style sentences, then one natural follow-up question. No lists, no markdown, no emoji.
+- You know a lot about the world and can discuss any topic. If you are not sure about a fact, say so. For medical, legal or financial questions, give general information and suggest a professional.
+- Stay warm and respectful like a good tutor or friend. Never flirt or role-play romance or sexual content; politely steer back to the conversation.
+- Look at the learner's LAST message. If it has grammar, word-choice or naturalness problems in ${L.label}, or if they wrote in Vietnamese, put a corrected natural ${L.label} version in "correction" and a very short explanation in Vietnamese in "tip". If it is already correct, use empty strings.
+- "translation": your reply translated into Vietnamese.
+Return JSON only: {"reply":"...","correction":"...","tip":"...","translation":"..."}
+
+Conversation so far:
+${turns}`;
+}
+
+async function send(text){
+  text = (text || "").trim();
+  if (!text || S.busy) return;
+  if (!S.sample) { showNotice(); return; }
+  if (!S.startedAt) startTimer();
+  stopSpeech();
+  const userMsg = {role:"user", text}; S.history.push(userMsg); render();
+  $("text").value = "";
+  setBusy(true); setStatus(agent().name + " đang nghĩ…");
+  S.ctl = new AbortController();
+  try {
+    const out = await S.sample.json(buildPrompt(), {modelTier:"quick", cache:false, signal:S.ctl.signal});
+    const reply = String(out && out.reply || "").trim();
+    if (!reply) throw {code:"upstream_error"};
+    userMsg.fix = String(out.correction || "").trim(); userMsg.tip = String(out.tip || "").trim(); userMsg.checked = !userMsg.fix;
+    S.history.push({role:"agent", text:reply, trans:String(out.translation || "").trim()});
+    render(); setStatus("");
+    speak(reply);
+  } catch (e) {
+    const c = e && e.code;
+    if (c === "cancelled") { setStatus(""); }
+    else if (["not_granted","sampling_disabled","not_declared","capability_disabled"].includes(c)) { S.sample = null; showNotice(); setStatus(""); }
+    else setStatus(ERR[c] || ERR.upstream_error);
+  } finally { setBusy(false); }
+}
+
+function showNotice(){
+  const n = $("notice"); n.hidden = false;
+  n.textContent = "Trang này cần quyền dùng Claude để trò chuyện. Hãy mở trên claude.ai khi đã đăng nhập và cho phép khi được hỏi.";
+}
+
+/* Speech output: Claude voice when available, browser voice only when that capability is absent. */
+function speak(text){
+  const a = agent(), lang = LANGS[$("lang").value].tag;
+  if (S.tts) {
+    S.tts.speak(text, {voice:a.voice, language:lang}).catch(e => { if (e && e.code === "not_granted") S.tts = null; });
+  } else if (window.speechSynthesis) {
+    try {
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text); u.lang = lang;
+      u.onstart = () => $("call").classList.add("talking");
+      u.onend = u.onerror = () => $("call").classList.remove("talking");
+      speechSynthesis.speak(u);
+    } catch(e) {}
+  }
+}
+function stopSpeech(){
+  if (S.tts) S.tts.stop().catch(() => {});
+  try { window.speechSynthesis && speechSynthesis.cancel(); } catch(e) {}
+  $("call").classList.remove("talking");
+}
+
+function startTimer(){
+  S.startedAt = Date.now();
+  setInterval(() => { const s = Math.floor((Date.now() - S.startedAt) / 1000); $("timer").textContent = "Đang gọi " + String(Math.floor(s/60)).padStart(2,"0") + ":" + String(s%60).padStart(2,"0"); }, 1000);
+}
+
+/* Microphone via dictation: tap to talk, tap again to send. */
+$("mic").addEventListener("click", () => {
+  if (!S.dict) { setStatus("Micro không có trên thiết bị này. Hãy gõ chữ ở khung bên cạnh."); return; }
+  if (S.dict.active()) { S.dict.stop().catch(() => {}); return; }
+  stopSpeech(); S.dictBuf = "";
+  S.dict.start({language:LANGS[$("lang").value].tag}).catch(e => {
+    if (e && e.code === "not_granted") { S.dictOk = false; $("mic").disabled = true; setStatus("Micro bị tắt. Bạn vẫn có thể gõ chữ."); }
+    else if (e && e.code === "unavailable") setStatus("Ngôn ngữ này chưa hỗ trợ nói qua micro. Hãy gõ chữ.");
+    else if (e && e.code !== "stopped") setStatus("Chưa bật được micro. Bấm lại để thử.");
+  });
+});
+$("hush").addEventListener("click", stopSpeech);
+$("compose").addEventListener("submit", e => { e.preventDefault(); send($("text").value); });
+$("text").addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send($("text").value); } });
+["userGender","partner","lang","level","voice","mode"].forEach(id => $(id).addEventListener("change", () => { if (id === "voice") persist(); else reset(); }));
+$("showTrans").addEventListener("change", () => { persist(); render(); });
+
+reset();
+
+(async () => {
+  const [sample, tts, dict] = await Promise.all([use("sample"), use("tts"), use("dictation")]);
+  S.sample = sample; S.tts = tts; S.dict = dict;
+  if (!sample) showNotice();
+  if (tts) tts.onState(({state}) => $("call").classList.toggle("talking", state === "speaking"));
+  if (dict) {
+    dict.onPartial(({text}) => { $("text").value = (S.dictBuf + " " + text).trim(); });
+    dict.onFinal(({text}) => { S.dictBuf = (S.dictBuf + " " + text).trim(); $("text").value = S.dictBuf; });
+    dict.onState(({state}) => {
+      const on = state === "listening" || state === "starting";
+      $("mic").classList.toggle("listening", on);
+      $("micLabel").textContent = on ? "Đang nghe… bấm để gửi" : "Bấm để nói";
+      if (on) setStatus("Đang nghe bạn nói…");
+      if (state === "idle") { const t = S.dictBuf || $("text").value; S.dictBuf = ""; if (t.trim()) send(t); else setStatus(""); }
+    });
+  } else {
+    $("micLabel").textContent = "Micro chưa hỗ trợ ở đây";
+  }
+  render();
+})();
+</script>
