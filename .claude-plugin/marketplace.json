@@ -1,0 +1,13 @@
+{
+  "name": "drk",
+  "owner": { "name": "DRK" },
+  "metadata": { "description": "Bộ công cụ vận hành doanh nghiệp một người bằng AI" },
+  "plugins": [
+    {
+      "name": "solo-agency",
+      "source": "./plugins/solo-agency",
+      "description": "Phòng ban AI cho doanh nghiệp một người: video, đăng bài, trả lời bình luận, CSKH, tư vấn bán hàng, website, khóa học, phân tích số liệu.",
+      "version": "1.0.0"
+    }
+  ]
+}
