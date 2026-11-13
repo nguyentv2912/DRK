@@ -87,7 +87,7 @@ cmd = [f"{T}/f5env/bin/f5-tts_infer-cli", "--model", "F5TTS_Base",
        "--output_dir", W, "--output_file", "giong_raw.wav"]
 subprocess.run(cmd, check=True, cwd=f"{T}/F5-TTS-Vietnamese")
 # chuẩn hoá âm lượng
-!ffmpeg -v error -y -i {W}/giong_raw.wav -af loudnorm=I=-16:TP=-1.5 -ar 44100 {W}/giong.wav
+!ffmpeg -nostdin -v error -y -i {W}/giong_raw.wav -af loudnorm=I=-16:TP=-1.5 -ar 44100 {W}/giong.wav
 import IPython.display as ipd
 !ffprobe -v error -show_entries format=duration -of csv=p=0 {W}/giong.wav
 ipd.display(ipd.Audio(f"{W}/giong.wav"))
@@ -100,8 +100,9 @@ md("## 4. Khớp môi → `noi.mp4`"),
 code('''
 %%bash
 set -e
+export MPLBACKEND=Agg
 cd /kaggle/temp/LatentSync
-ffmpeg -v error -y -i /kaggle/working/giong.wav -ar 16000 -ac 1 /kaggle/temp/giong16k.wav
+ffmpeg -nostdin -v error -y -i /kaggle/working/giong.wav -ar 16000 -ac 1 /kaggle/temp/giong16k.wav
 time ../lsenv/bin/python -m scripts.inference \\
   --unet_config_path configs/unet/stage2.yaml \\
   --inference_ckpt_path checkpoints/latentsync_unet.pt \\
@@ -110,7 +111,7 @@ time ../lsenv/bin/python -m scripts.inference \\
   --audio_path /kaggle/temp/giong16k.wav \\
   --video_out_path /kaggle/temp/noi_raw.mp4
 # ghép lại giọng chất lượng cao 44.1kHz thay cho bản 16kHz
-ffmpeg -v error -y -i /kaggle/temp/noi_raw.mp4 -i /kaggle/working/giong.wav -map 0:v -map 1:a \\
+ffmpeg -nostdin -v error -y -i /kaggle/temp/noi_raw.mp4 -i /kaggle/working/giong.wav -map 0:v -map 1:a \\
   -c:v libx264 -crf 18 -pix_fmt yuv420p -c:a aac -b:a 192k -shortest /kaggle/working/noi.mp4
 ls -lh /kaggle/working
 echo "XONG — tải noi.mp4 ở mục Output bên phải"
