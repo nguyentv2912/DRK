@@ -137,13 +137,10 @@ Skool có bảng xếp hạng và cấp độ theo điểm (lượt thích bài/
 Tên cấp dùng từ đời thường, **không dùng danh xưng tôn giáo** (sư, thầy, đạo hữu…).
 
 ### 2.3 Nghi thức hằng tuần
-| Khi nào | Nghi thức | Ai làm |
-|---|---|---|
-| Mỗi sáng | Đăng lại video kênh + 1 câu hỏi thảo luận | Đội content |
-| Thứ Tư tối (đề xuất) | **Live học viên 60 phút**: 30 phút giảng + 30 phút hỏi đáp | Anh |
-| Thứ Sáu | Nộp "nhật ký kỷ luật tuần" (mẫu 5 dòng) | Học viên |
-| Chủ Nhật | Vinh danh 3 thành viên tích cực; chọn câu hỏi cho video Thứ Bảy (KENH) | Đội content |
-| Cuối tháng | Live mở cho cả thành viên miễn phí (cửa sổ mời nâng cấp) | Anh |
+- **Thứ Tư tối (đề xuất):** live học viên 60 phút (30 phút giảng + 30 phút hỏi đáp) — anh.
+- **Thứ Sáu:** học viên nộp "nhật ký kỷ luật tuần" 5 dòng.
+- **Cuối tháng:** live mở cho thành viên miễn phí (cửa sổ mời nâng cấp).
+- Đội content lo phần còn lại: đăng lại video mỗi sáng, vinh danh thành viên, chọn câu hỏi cho video Thứ Bảy (KENH).
 
 ### 2.4 Quy tắc cộng đồng (ghim ở trang About và đầu Community)
 1. Đây là cộng đồng **giáo dục**. Không ai ở đây tư vấn đầu tư hay khuyến nghị mua/bán.
@@ -217,6 +214,8 @@ Lý do: học xong trong ~2 tháng thì tháng 3 trở đi người học ở l�
 | Giao dịch | Chấm nhật ký giao dịch theo kỷ luật (có kế hoạch? có cắt lỗ? có đúng tỷ trọng?) — không chấm "lời hay lỗ" |
 | Lợi nhuận | Dạy **quản trị lợi nhuận của chính học viên**: chốt theo kế hoạch, giữ thành quả, không để lãi thành lỗ (cách diễn đạt mục 4) |
 
+**Tận dụng văn phòng và ngân hàng hỗ trợ:** văn phòng có sẵn (chi phí mặt bằng 0 — brief) dùng cho buổi định hướng 1:1 và **live offline mỗi quý** cho học viên 1.000 USD ở gần; người ở xa dự online. Ngân hàng hỗ trợ: trước mắt hỏi về nhận tiền payout ngoại tệ (7.1); mời chuyên gia ngân hàng nói về quản lý tài chính cá nhân trong live offline nếu ngân hàng đồng ý. **Chỉ nêu tên ngân hàng khi có văn bản đồng ý.**
+
 Năng lực phục vụ (tự tính, giả định 1:1 mỗi năm 45 phút): 100 người đồng hành ≈ 75 giờ 1:1/năm. Cơ sở có 15 người mua luỹ kế cuối năm 2 (TC), vẫn trong sức anh.
 
 ### 3.5 Mục lục ebook (~1.000.000 đ)
@@ -246,7 +245,7 @@ Nội dung ebook lấy từ bản ghi bài giảng của anh, đội biên tập
 
 ## 4. Diễn đạt an toàn: "216 lần" và "đồng hành về lợi nhuận"
 
-**Kết luận: 3 phương án câu chữ cho mỗi nơi dùng (video, trang bán, Skool), 7 điều cấm, 1 câu miễn trừ cố định; "216" chỉ được gọi là khung chu kỳ, "lợi nhuận" chỉ đi với "quản trị", "kỷ luật", "giữ thành quả".** Căn cứ: NQ 05/2025/NQ-CP chỉ tổ chức được cấp phép mới được quảng cáo/tiếp thị crypto; Luật Quảng cáo sửa đổi 75/2025 bắt người chuyển tải chịu trách nhiệm độ trung thực (NC).
+**Kết luận: 3 phương án câu chữ cho mỗi nơi dùng (video, trang bán, Skool), 7 điều cấm, 3 câu miễn trừ (video, Skool, trang bán 1.000 USD); "216" chỉ được gọi là khung chu kỳ, "lợi nhuận" chỉ đi với "quản trị", "kỷ luật", "giữ thành quả".** Căn cứ: NQ 05/2025/NQ-CP chỉ tổ chức được cấp phép mới được quảng cáo/tiếp thị crypto; Luật Quảng cáo sửa đổi 75/2025 bắt người chuyển tải chịu trách nhiệm độ trung thực (NC).
 
 ### 4.1 "216 lần" — anh chọn 1 phương án mỗi nơi
 | Nơi dùng | Phương án A (an toàn nhất) | Phương án B | Phương án C |
@@ -327,19 +326,14 @@ Không lặp trụ cột 2 ngày liền (brand.md), và lớp dẫn dắt cũng 
 Không nhắc giá 100 USD / 1.000 USD trên video. Giá chỉ xuất hiện trong Skool.
 Thời lượng giữ 90–180 giây, giờ đăng giữ 11:30 FB / 12:00 TikTok (KENH).
 
-### 5.3 Mười ý tưởng video mẫu dẫn về Skool
+### 5.3 Năm ý tưởng video mẫu dẫn về Skool
 | # | Hook | ĐẠO | CTA · Thứ |
 |---|---|---|---|
 | 1 | "Bạn đang đứng ở tầng thứ mấy của dòng tiền?" | Chánh kiến (Phật) | Bài nhập môn · Hai |
 | 2 | "Tin nóng tới tay bạn là tin thứ mấy?" (tầng 4) | Luận Ngữ 4.16 | Bài nhập môn · Tư |
 | 3 | "Lão Tử: biết dừng thì không nguy" | Đạo Đức Kinh ch. 44 | Thử thách ngày 5 · Ba |
-| 4 | "Khổng Tử dặn: muốn nhanh thì không tới" | Luận Ngữ 13.17 | Bài nhập môn · Năm |
-| 5 | "Tham, sân, si — ba thứ trên biểu đồ của bạn" | Tam độc (Phật) | Thử thách 7 ngày · Hai |
-| 6 | "Không có gì đứng yên, kể cả thị trường" | Vô thường; ch. 40 | Theo dõi · CN |
-| 7 | "Tu thân, tề gia rồi mới đầu tư" | Đại Học | Thử thách ngày 2 · Năm |
-| 8 | "Ngày mình hiểu ra mình chỉ là tầng 5" | [chờ anh: câu chuyện thật] | Bài nhập môn · Sáu |
-| 9 | "Nước mềm nhưng mài mòn đá" | Đạo Đức Kinh ch. 78 (và ch. 43) | Theo dõi · CN |
-| 10 | "Câu hỏi hay nhất tuần từ cộng đồng" | Câu Đạo của tuần | Hỏi tiếp trong cộng đồng · Bảy |
+| 4 | "Tham, sân, si — ba thứ trên biểu đồ của bạn" | Tam độc (Phật) | Thử thách 7 ngày · Hai |
+| 5 | "Câu hỏi hay nhất tuần từ cộng đồng" | Câu Đạo của tuần | Hỏi tiếp trong cộng đồng · Bảy |
 
 Quay số 1–2 trong tuần 1 làm video ghim "Bắt đầu từ đây".
 
@@ -452,7 +446,7 @@ Kịch bản thận trọng và "không đáng làm": **không thuê ai trong 24
 
 ## 8. Rủi ro
 
-**Kết luận: 5/10 rủi ro ở mức Cao, đều xuất hiện ngay trong 90 ngày đầu (thanh toán, vào Skool, giá 100 USD, huỷ, câu chữ nội dung); rủi ro tài chính nhỏ vì vốn chỉ 78,0 tr và lỗ luỹ kế xấu nhất 93,6 tr (TC).**
+**Kết luận: 5/11 rủi ro ở mức Cao, đều xuất hiện ngay trong 90 ngày đầu (thanh toán, vào Skool, giá 100 USD, huỷ, câu chữ nội dung); rủi ro tài chính nhỏ vì vốn chỉ 78,0 tr và lỗ luỹ kế xấu nhất 93,6 tr (TC).**
 
 | Rủi ro | Mức | Dấu hiệu sớm | Giảm thiểu |
 |---|---|---|---|
