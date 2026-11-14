@@ -1,13 +1,12 @@
-# Phiếu giao việc — 2026-11-14-khung-chuong-trinh-chuyen-doi
+# Phiếu giao việc — phiên bản 2 (Đầu Tư Bình An trên Skool)
 
-| # | Nhân viên | Nhiệm vụ | Cần đầu vào | Giao nộp | Chạy |
+Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Nguồn: brief.md mục "Hiện trạng chủ dự án"
+
+| # | Nhân viên | Nhiệm vụ cụ thể | Cần đầu vào | Giao nộp | Chạy song song với |
 |---|---|---|---|---|---|
-| 1 | Lan – Nghiên cứu | Chân dung khách 25–40 quan tâm crypto & quản lý tài chính ở VN; đối thủ (khoá học, cộng đồng, coaching tài chính) và mức giá; pháp lý crypto & quảng cáo dịch vụ tài chính ở VN; mô hình hợp tác ngân hàng phổ biến | brief.md | nghien-cuu.md | Đầu tiên |
-| 2 | Bảo – Giám sát | Chấm phần của Lan | hồ sơ Lan | giam-sat/nghien-cuu-vong1.md | Sau 1 |
-| 3 | Hùng – Tài chính | Mô hình tài chính chương trình (gói, giá, phễu, hoà vốn, 3 kịch bản) **+ kế hoạch tài chính phòng ban**: cơ cấu nhân sự theo giai đoạn (thực thi/coaching, bán hàng, CSKH, nội dung, quản lý), lương thị trường, chi phí, doanh số cần để nuôi đội | brief + nghiên cứu | mo_hinh.py, tai-chinh.md, tai-chinh.json | Sau 2 |
-| 4 | Bảo – Giám sát | Chấm phần của Hùng | hồ sơ Hùng | giam-sat/tai-chinh-vong1.md | Sau 3 |
-| 5 | Mai – Chiến lược & Kế hoạch | Kế hoạch đầy đủ (khung chương trình theo phễu, gói, uy tín, pháp lý, lộ trình, KPI, rủi ro, sơ đồ phòng ban) **+ chiến lược & kế hoạch nội dung** (định vị, kênh, trụ cột, định dạng, lịch 30 ngày, nội dung theo tầng phễu, KPI, tuân thủ) | brief + nghiên cứu + tài chính | ke-hoach.md | Sau 4 |
-| 6 | Bảo – Giám sát | Chấm phần của Mai | hồ sơ Mai | giam-sat/chien-luoc-vong1.md | Sau 5 |
-| 7 | Hà – Kiểm định | Rà sản phẩm cuối: đủ yêu cầu, số khớp, nguồn, pháp lý | toàn bộ hồ sơ | kiem-dinh.md | Sau 6 |
-| 8 | Minh – Quản lý | Bàn giao: tài liệu Claude Docs + báo cáo | toàn bộ | bao-cao.md | Sau 7 |
-| 9 | Trang – Phản biện | Phản biện từng nhân viên sau khi bàn giao | toàn bộ | phan-bien.md, gop-y.jsonl | Sau 8 |
+| 1 | Lan – Nghiên cứu | Phí Skool (gói, phí giao dịch, cách nhận tiền về VN), giá các cộng đồng Skool/khoá đầu tư crypto tương tự, cách người Việt trả USD, lưu ý pháp lý khi dạy crypto và khi dùng nội dung tôn giáo/triết học | brief.md | nghien-cuu.md | Hùng |
+| 2 | Hùng – Tài chính | Mô hình gọn chi phí thấp: 100 USD/tháng, 1.000 USD chuyên sâu, ebook ~1 triệu; chi phí thực tế; số học viên cần để có lãi; 3 kịch bản; khi nào mới thuê thêm người | brief.md (phí Skool để dạng tham số) | tai-chinh.md, mo_hinh.py, tai-chinh.json | Lan |
+| 3 | Mai – Chiến lược | Kế hoạch chuyển đổi: video ngắn → Skool miễn phí → khoá 100 USD → khoá 1.000 USD + ebook; đề cương 2 khoá + ebook theo ghi chép của anh; chiến lược nội dung ĐẠO + ĐỜI + ĐẦU TƯ; cách nói "216 lần" an toàn; lộ trình 90 ngày, KPI | brief.md, nghien-cuu.md, tai-chinh.md, fanpage/KENH.md | ke-hoach.md | — |
+| 4 | Hà – Kiểm định | Số khớp giữa các file, đúng giá anh chốt, không hứa lợi nhuận, chính tả | tất cả | kiem-dinh.md | — |
+
+Bảo chấm từng phần ngay khi nộp. Trang phản biện sau khi bàn giao.
