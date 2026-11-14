@@ -6,7 +6,7 @@ Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Ngày: 14/11/2026 · Ng�
 "Minh ơi, nghiên cứu dùm cho anh, bây giờ anh muốn xây dựng một cái nội dung, cái khung chương trình để dành cho những khách hàng mà đến với mình để chuyển đổi ấy. Thì thứ nhất là cái độ tuổi của anh là từ 25 cho tới 40 tuổi nè. Thứ hai là những người mà quan tâm đến lĩnh vực đầu tư tài chính, đặc biệt là crypto, anh đều chuyên về crypto. Đấy. Thứ ba đó là phần quản lý tài chính. Rồi thứ tư đó là về cái phần mà background của anh ấy, thì phía sau anh là ngân hàng có hỗ trợ rồi, về văn phòng mặt bằng các thứ là anh đã có sẵn rồi. Đấy, bây giờ anh muốn phát triển cái đó, giới thiệu của đó cho nó cho uy tín hơn. Đấy, thì em lên cho anh một cái kế hoạch."
 
 ## Sản phẩm cuối
-Bản kế hoạch (tài liệu) gồm: khung chương trình chuyển đổi khách hàng (phễu từ người quan tâm → khách hàng → khách hàng gắn bó), nội dung chương trình theo từng bước, gói sản phẩm và giá đề xuất, cách xây uy tín (tận dụng ngân hàng hỗ trợ, văn phòng có sẵn), pháp lý cần lưu ý, mô hình tài chính sơ bộ, lộ trình triển khai và KPI.
+Bản kế hoạch (tài liệu) gồm: khung chương trình chuyển đổi khách hàng (phễu từ người quan tâm → khách hàng → khách hàng gắn bó), nội dung chương trình theo từng bước, gói sản phẩm và giá (phiên bản 2: do anh chốt, xem mục Hiện trạng), cách xây uy tín (tận dụng ngân hàng hỗ trợ, văn phòng có sẵn), pháp lý cần lưu ý, mô hình tài chính sơ bộ, lộ trình triển khai và KPI.
 
 ## Người đọc
 Chủ dự án — chuyên về crypto, có ngân hàng hỗ trợ phía sau, đã có văn phòng/mặt bằng.

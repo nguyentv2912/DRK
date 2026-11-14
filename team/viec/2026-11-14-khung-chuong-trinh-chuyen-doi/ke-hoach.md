@@ -27,7 +27,7 @@ Giá, tên chương trình, nền tảng, thông điệp là **anh chốt**, b�
 2. **Tuần 0 phải thử thanh toán thật** (bán khoá 1 USD, chờ payout thứ Tư về VND). Chưa qua cổng này thì chưa mở bán (NC).
 3. **Câu chữ an toàn:** "216" là khung chu kỳ, không phải lợi nhuận. TikTok cấm nội dung thương hiệu tài chính/crypto (NC), nên video chỉ mời vào **cộng đồng miễn phí**, không chào bán khoá trên video.
 
-**24 tháng (TC):** cơ sở (tham vọng) 114 học viên, lãi 269,9 tr/tháng, luỹ kế 2.824,4 tr · thận trọng 10 học viên, lãi 22,5 tr/tháng, luỹ kế 175,7 tr · không đáng làm ~1 học viên, lỗ luỹ kế 93,6 tr. Lãi 50 / 100 / 200 tr/tháng cần 22 / 42 / 90 học viên (26 / 47 / 102 nếu chỉ có khoá cơ bản).
+**24 tháng (TC, giả định gói 1.000 USD là phương án A — gói bổ sung; chờ anh chốt mục 9):** cơ sở (tham vọng) 114 học viên, lãi 269,9 tr/tháng, luỹ kế 2.824,4 tr · thận trọng 10 học viên, lãi 22,5 tr/tháng, luỹ kế 175,7 tr · không đáng làm ~1 học viên, lỗ luỹ kế 93,6 tr. Lãi 50 / 100 / 200 tr/tháng cần 22 / 42 / 90 học viên (26 / 47 / 102 nếu chỉ có khoá cơ bản).
 
 **Hai mốc dừng:** tháng 3 đổi cách bán, tháng 6 dừng mở rộng — ngưỡng chi tiết ở 7.4.
 
