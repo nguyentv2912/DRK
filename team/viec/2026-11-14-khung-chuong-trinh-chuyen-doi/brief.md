@@ -37,3 +37,9 @@ Minh hiểu (giả định, chủ dự án chỉnh nếu khác):
 - "Lan Danh" = "lên giùm" (lỗi nhận giọng nói). Hùng lập **kế hoạch tài chính cho phòng ban/đội ngũ** vận hành chương trình: bộ phận thực thi (đào tạo/coaching), bán hàng (tư vấn, chốt khách), chăm sóc khách hàng, sản xuất nội dung, quản lý. Gồm cơ cấu nhân sự theo giai đoạn, lương thị trường, chi phí, doanh số cần để nuôi đội, hoà vốn phòng ban.
 - "Kênh mà Minh đưa xuống" = khách hàng đến từ các kênh nội dung/phễu trong kế hoạch này (không lấy số liệu kênh Đạo Đức Đầu Tư).
 - Mai bổ sung **chiến lược + kế hoạch nội dung** phát triển chủ đề đầu tư/crypto/quản lý tài chính: định vị, kênh, trụ cột, định dạng, lịch, nội dung theo từng tầng phễu, KPI nội dung, quy tắc tuân thủ.
+
+## Trạng thái (14/11/2026, tối)
+**TẠM DỪNG — chờ hiện trạng của chủ dự án.** Chủ dự án nhắc: anh chưa đưa giá và nội dung khoá học, đội chưa biết anh đã làm những gì. Giá các gói (990.000 đ / 12 triệu / 3,6 triệu/năm), nội dung khoá học và toàn bộ mô hình tài chính trong `ke-hoach.md`, `tai-chinh.md` chỉ là **phương án nháp do đội tự đặt, chưa được anh duyệt**. Không dùng các con số này. Khi anh gửi hiện trạng, ghi vào mục "Hiện trạng chủ dự án" bên dưới rồi làm lại.
+
+## Hiện trạng chủ dự án
+(chưa có)

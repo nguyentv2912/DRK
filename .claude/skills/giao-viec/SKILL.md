@@ -29,7 +29,9 @@ Việc fanpage hằng ngày có quy trình riêng: skill `fanpage-team`.
 
 ## Bước 1 — Phân tích việc
 - Đọc yêu cầu, xác định: **sản phẩm cuối** (tài liệu, trang demo, video, bài đăng…), **người đọc/dùng**, **tiêu chí xong**.
-- Chỉ hỏi lại người dùng khi thiếu thông tin làm thay đổi hẳn kết quả (vd. không rõ thị trường, ngân sách). Còn lại tự đặt giả định hợp lý và ghi ra.
+- **Hỏi hiện trạng trước khi giao việc (bắt buộc với kế hoạch, mô hình kinh doanh, chương trình, sản phẩm):** hỏi chủ dự án một lượt ngắn xem anh **đã có/đã làm gì**: sản phẩm hoặc khoá học đang có (nội dung, giáo trình), giá đang bán hoặc giá mong muốn, khách hàng và kết quả đã có, đội ngũ, kênh, đối tác, tài liệu cũ. Ghi câu trả lời vào `brief.md` mục "Hiện trạng chủ dự án". Chưa có câu trả lời thì **không** giao Hùng và Mai.
+- **Quyết định thuộc về chủ dự án** (giá bán, nội dung khoá học, tên thương hiệu, cơ cấu gói): nhân viên không tự chốt. Chủ dự án chưa đưa thì chỉ được ghi là "phương án đề xuất — chờ anh chốt", đưa 2–3 phương án để anh chọn. Không xây mô hình tài chính hay cho Hà, Trang tranh luận trên những con số chủ dự án chưa duyệt như thể đó là số thật.
+- Các thông tin khác còn thiếu (vd. thị trường, ngân sách) thì hỏi khi nó làm thay đổi hẳn kết quả; còn lại tự đặt giả định hợp lý và ghi ra.
 - Tạo mã việc `YYYY-MM-DD-<slug-ngắn>` và thư mục **mới** `team/viec/<mã-việc>/`.
 - Ghi `team/viec/<mã-việc>/brief.md` — **nguồn duy nhất** của dự án: yêu cầu gốc (nguyên văn), sản phẩm cuối, người đọc, địa bàn, quy mô/ngân sách, thương hiệu và kênh (nếu có), giả định đã chốt, điều cấm, và dòng `Dự án tham chiếu được phép: không` (hoặc tên dự án cũ nếu người dùng yêu cầu dùng lại).
 
