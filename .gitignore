@@ -4,3 +4,5 @@
 *.zip
 *.mp3
 output/
+*.jpg
+!fanpage/runs/*/video_cover.jpg

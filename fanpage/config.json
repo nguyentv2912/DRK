@@ -1,0 +1,16 @@
+{
+  "brand_name": "ĐẠO ĐỨC ĐẦU TƯ",
+  "metricool_brand_id": "7808796",
+  "timezone": "Asia/Bangkok",
+  "network": "facebook",
+  "facebook_type": "REEL",
+  "publish_mode": "nhap",
+  "_publish_mode_help": "nhap = tạo bản NHÁP trong Metricool để bạn duyệt rồi bấm đăng | tu-dong = lên lịch tự đăng",
+  "posts_per_day": 1,
+  "preferred_hours": ["11:30", "20:00"],
+  "cta_link": "",
+  "_cta_link_help": "Link muốn gắn vào bình luận đầu tiên (nhóm Zalo, khoá học, affiliate...). Để trống = không gắn.",
+  "video_host": "google_drive",
+  "drive_folder_name": "Fanpage - Video tu dong",
+  "language": "vi"
+}

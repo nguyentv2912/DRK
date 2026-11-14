@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-14",
+  "chosen": {
+    "pillar": "Quản trị rủi ro",
+    "topic": "Gồng lỗ — thói quen âm thầm giết tài khoản",
+    "angle": "Gồng lỗ không phải kiên nhẫn, đó là hy vọng đội lốt kỷ luật",
+    "hook": "Bạn không thua vì một lệnh sai. Bạn thua vì không chịu cắt.",
+    "format": "danh-sach",
+    "key_points": ["Đặt điểm cắt lỗ trước khi vào lệnh", "Lỗ nhỏ là học phí, lỗ lớn là bài học đắt", "Cắt xong thì nghỉ, không gỡ ngay"],
+    "why": "Hôm qua/gần nhất là trụ cột Tâm lý (lòng tham); đổi sang Quản trị rủi ro, dạng danh sách dễ làm video"
+  },
+  "candidates": [
+    {"topic": "Gồng lỗ — thói quen âm thầm giết tài khoản", "pillar": "Quản trị rủi ro", "score": 9},
+    {"topic": "3 dấu hiệu nhóm kèo bao lời là lừa đảo", "pillar": "Đạo đức & tỉnh táo", "score": 8},
+    {"topic": "Nhật ký giao dịch 5 phút mỗi tối", "pillar": "Kỷ luật & thói quen", "score": 7},
+    {"topic": "FOMO khi thấy người khác khoe lãi", "pillar": "Tâm lý", "score": 7},
+    {"topic": "Ngày mình cháy tài khoản đầu tiên", "pillar": "Câu chuyện & bài học", "score": 6}
+  ]
+}
