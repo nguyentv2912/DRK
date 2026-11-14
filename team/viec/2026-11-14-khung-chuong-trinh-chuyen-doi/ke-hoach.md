@@ -158,7 +158,7 @@ Tên cấp dùng từ đời thường, **không dùng danh xưng tôn giáo** (
 
 ## 3. Đề cương khoá học và ebook
 
-**Kết luận: 15 bài (7 bài Phần 1, 8 bài Phần 2) học trong ~8 tuần, theo đúng 2 phần trong ghi chép của anh; 15 ô [chờ anh] ở Phần 1–2 là phương pháp của anh, đội không tự viết.** Đội chỉ thêm lớp ĐẠO + ĐỜI và bài tập.
+**Kết luận: 15 bài (7 bài Phần 1, 8 bài Phần 2) học trong ~8 tuần, theo đúng 2 phần trong ghi chép của anh; 16 ô [chờ anh] ở Phần 1–2 là phương pháp của anh, đội không tự viết.** Đội chỉ thêm lớp ĐẠO + ĐỜI và bài tập.
 
 Mỗi bài theo 1 mẫu: **ĐẠO** (1 nguyên lý, có xuất xứ) → **ĐỜI** (ví dụ đời thường) → **ĐẦU TƯ** (anh giảng) → **Bài tập** (5 phút).
 Trích kinh điển dưới đây là đề xuất; trước khi quay phải đối chiếu bản dịch và ghi xuất xứ (NC).
@@ -457,7 +457,7 @@ Kịch bản thận trọng và "không đáng làm": **không thuê ai trong 24
 | Rủi ro | Mức | Dấu hiệu sớm | Giảm thiểu |
 |---|---|---|---|
 | Payout Skool về VN không chạy | Cao | Giao dịch 1 USD không về sau 2 thứ Tư | Cổng 0; dự phòng thu VND + mời thủ công (NC) |
-| Ít người vào Skool (rào cản tài khoản, không có tiếng Việt) | Cao | Theo dõi mới → Skool thấp hơn giả định thận trọng 2,5% (TC) | Video hướng dẫn 3 bước, About tiếng Việt, comment từ khoá nhận link |
+| Ít người vào Skool (rào cản tài khoản, không có tiếng Việt) | Cao | Tỷ lệ theo dõi mới → Skool thấp hơn giả định thận trọng của TC (đây là giả định, không phải ngưỡng dừng) | Video hướng dẫn 3 bước, About tiếng Việt, comment từ khoá nhận link |
 | 100 USD/tháng quá cao với người 25–40 ở VN | Cao | Miễn phí mới → 100 USD < 2,5% (xem 7.4) | Tăng giá trị live; thu VND song song; cân nhắc gói năm ở cổng 3 (anh quyết, không đổi giá) |
 | Huỷ cao | Cao | Huỷ > 12%/tháng (xem 7.4) | Nghi thức tuần, nhật ký, live; đo từ tháng 2 |
 | Nội dung bị coi là quảng cáo crypto / hứa lợi nhuận | Cao | Video bị gỡ, cảnh cáo nền tảng | Câu chữ mục 4, luật sư duyệt, không chào bán trên video |
