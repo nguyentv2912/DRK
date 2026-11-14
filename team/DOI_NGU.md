@@ -5,7 +5,7 @@
       │
       ▼
  ┌─────────────┐   phiếu giao việc    ┌──────────────────────────────────────────────┐
- │ TRƯỞNG NHÓM │ ───────────────────▶ │ NHÂN VIÊN (mỗi bạn một hồ sơ, một công việc) │
+ │ MINH–QUẢN LÝ│ ───────────────────▶ │ NHÂN VIÊN (mỗi bạn một hồ sơ, một công việc) │
  └─────────────┘                      │ Lan · Hùng · Mai · Tùng · Ngọc · Phong ·     │
    ▲       ▲                          │ Khoa · Vy · Quân · Hà                        │
    │       │                          └──────────────────────┬───────────────────────┘
@@ -22,6 +22,7 @@
 
 | Nhân viên | Mã gọi | Bộ phận | Công việc | Hồ sơ |
 |---|---|---|---|---|
+| **Minh – Quản lý** | (phiên chính) | Điều hành | Nhận việc từ bạn, phân công, giám sát tiến độ, bàn giao, nâng cấp đội | [hồ sơ](nhan-su/quan-ly/ho-so.md) |
 | Lan – Nghiên cứu | `nghien-cuu` | Dự án | Thị trường, đối thủ, giá, pháp lý — có nguồn | [hồ sơ](nhan-su/nghien-cuu/ho-so.md) |
 | Hùng – Tài chính | `tai-chinh` | Dự án | Vốn, hoà vốn, hoàn vốn, NPV/IRR, độ nhạy | [hồ sơ](nhan-su/tai-chinh/ho-so.md) |
 | Mai – Chiến lược & Kế hoạch | `chien-luoc` | Dự án | Kế hoạch, mô hình kinh doanh, rủi ro, lộ trình, KPI | [hồ sơ](nhan-su/chien-luoc/ho-so.md) |
@@ -34,12 +35,13 @@
 | Hà – Kiểm định | `kiem-dinh` | Chất lượng | Rà sản phẩm cuối của cả nhóm | [hồ sơ](nhan-su/kiem-dinh/ho-so.md) |
 | **Bảo – Giám sát** | `giam-sat` | Chất lượng | Chấm từng phần việc: xong hay làm lại | [hồ sơ](nhan-su/giam-sat/ho-so.md) |
 | **Đức – Phân tích hiệu suất** | `phan-tich` | Hội đồng cải tiến | Phân tích bảng điểm, tìm nguyên nhân, đề xuất | [hồ sơ](nhan-su/phan-tich/ho-so.md) |
-| **Trang – Phản biện** | `phan-bien` | Hội đồng cải tiến | Phản biện prompt, sản phẩm và đề xuất | [hồ sơ](nhan-su/phan-bien/ho-so.md) |
+| **Trang – Phản biện** | `phan-bien` | Hội đồng cải tiến | Phản biện từng nhân viên sau mỗi việc (ghi `gop-y.jsonl`) và phản biện đề xuất nâng cấp | [hồ sơ](nhan-su/phan-bien/ho-so.md) |
 
 ## Hồ sơ nhân sự
 Mỗi bạn có thư mục `team/nhan-su/<mã>/`:
 - `ho-so.md` — công việc, nhận gì, nộp gì, **tiêu chuẩn hoàn thành** (tiêu chí có trọng số, tiêu chí Chặn), phiên bản prompt, lịch sử nâng cấp.
 - `nhat-ky.jsonl` — mỗi lần Bảo chấm là một dòng: việc, vòng, điểm, đạt hay không, lỗi.
+- `gop-y.jsonl` — góp ý của Trang sau mỗi việc: vấn đề, bằng chứng, cách làm tốt hơn.
 - Prompt làm việc: `.claude/agents/<mã>.md`.
 
 **ĐẠT** = điểm ≥ 80 và không tiêu chí Chặn nào dưới 60%. Chưa đạt thì làm lại, tối đa 3 vòng.

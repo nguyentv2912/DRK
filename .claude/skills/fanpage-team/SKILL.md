@@ -23,7 +23,7 @@ Phiên chính là **trưởng nhóm**: giao việc cho nhân viên (Agent tool),
 5. **Vy** (`dang-link`): "run_dir=$RUN. Đăng Facebook + TikTok theo config (publish_mode)." → Bảo chấm. Kênh TikTok chưa nối đúng `daoducdautu` → Vy bỏ qua TikTok và báo; Facebook vẫn đăng.
 6. Chuyển video thô đã xử lý vào `processed_folder_id` (`update_file` đổi `parentId`) — chỉ khi Vy đăng thành công ít nhất một kênh.
 7. **Quân** (`tra-loi-bao-cao`): báo cáo ngày (số liệu Facebook + TikTok, KPI trong KENH.md, trả lời bình luận mẫu). **Hà** (`kiem-dinh`) rà nhanh caption và publish.json.
-8. `python3 team/tools/bang_diem.py`; commit + push (không có video). Kết thúc bằng một dòng: kênh nào đã đăng lúc mấy giờ, link, việc chủ page cần làm (nếu có lỗi).
+8. Chủ Nhật: gọi **Trang** (`phan-bien`) chế độ A cho cả tuần (các `fanpage/runs/` trong 7 ngày). `python3 team/tools/bang_diem.py`; commit + push (không có video). Kết thúc bằng một dòng: kênh nào đã đăng lúc mấy giờ, link, việc chủ page cần làm (nếu có lỗi).
 
 ## Quy tắc
 - Không bao giờ đăng Instagram hay TikTok/Instagram của brand 7808796 (Mr Pump). Xem `never_post_to`.

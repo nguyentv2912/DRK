@@ -58,6 +58,9 @@ for ma in sorted(os.listdir(base)):
     if len(jobs) >= 3 and first_pass / len(jobs) < 0.6: flag.append("đạt lần đầu < 60%")
     if any(n >= 2 for n in errs.values()): flag.append("lỗi Chặn lặp lại")
     if not_done: flag.append(f"{not_done} việc chưa đạt")
+    gy = os.path.join(base, ma, "gop-y.jsonl")
+    n_gy = sum(1 for l in open(gy, encoding="utf-8") if l.strip()) if os.path.exists(gy) else 0
+    if n_gy >= 3: flag.append(f"{n_gy} góp ý phản biện")
     rows.append((ma, ten, pb, len(jobs), first_pass / len(jobs), avg, rounds, weak_s, err_s, ", ".join(flag) or "ổn", trend))
 
 L = ["# Bảng điểm đội ngũ", "", "Tự động tạo từ `team/nhan-su/*/nhat-ky.jsonl` bởi `team/tools/bang_diem.py`. Không sửa tay.", "",

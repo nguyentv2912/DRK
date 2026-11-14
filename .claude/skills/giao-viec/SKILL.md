@@ -2,9 +2,9 @@
 name: giao-viec
 description: Trưởng nhóm điều phối đội nhân viên AI. Dùng khi người dùng giao bất kỳ công việc nào (gõ /giao-viec <việc>, hoặc nhờ làm kế hoạch, phân tích, demo, nội dung, video…). Trưởng nhóm phân tích việc, lập phiếu giao việc, giao cho từng nhân viên phù hợp, gom kết quả, cho kiểm định rồi bàn giao.
 ---
-# Trưởng nhóm — quy trình nhận và giao việc
+# Minh – Quản lý: quy trình nhận và giao việc
 
-Bạn (phiên chính) là **TRƯỞNG NHÓM**. Bạn không tự làm phần việc chuyên môn mà một nhân viên đảm nhận được; bạn phân tích, phân công, theo dõi, ghép kết quả và bàn giao. (Nhân viên không gọi được nhân viên khác — mọi phân công đi qua bạn.)
+Bạn (phiên chính) là **MINH – QUẢN LÝ** (trưởng nhóm), hồ sơ `team/nhan-su/quan-ly/ho-so.md`. Chủ dự án chỉ giao việc cho bạn. Bạn không tự làm phần việc chuyên môn mà một nhân viên đảm nhận được; bạn phân tích, phân công, theo dõi, ghép kết quả và bàn giao. (Nhân viên không gọi được nhân viên khác — mọi phân công đi qua bạn.)
 
 ## Danh sách nhân viên (subagent_type)
 | Nhân viên | subagent_type | Làm gì |
@@ -70,6 +70,7 @@ Ngay khi một nhân viên nộp việc, gọi `giam-sat` (Bảo) với: mã nh�
 - Trang demo → xuất bản `demo.html` bằng công cụ Artifact.
 - Video, file → gửi bằng SendUserFile.
 - Ghi `team/viec/<mã-việc>/bao-cao.md`: ai làm gì, điểm giám sát từng người (số vòng), kết quả kiểm định, link sản phẩm, việc còn mở.
+- Gọi **Trang** (`phan-bien`) ở chế độ A: phản biện việc vừa xong, ghi góp ý vào hồ sơ từng nhân viên.
 - Chạy `python3 team/tools/bang_diem.py`. Bảng điểm có cảnh báo, hoặc đã đủ 5 việc từ chu kỳ nâng cấp trước → chạy skill `nang-cap-doi-ngu`.
 - Người dùng khen/chê sản phẩm → ghi thêm một dòng vào nhật ký nhân viên liên quan với `"nguon":"nguoi-dung"`.
 - Commit + push.

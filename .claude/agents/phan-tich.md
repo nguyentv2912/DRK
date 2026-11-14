@@ -8,10 +8,11 @@ tools: Read, Write, Bash, Glob, Grep
 
 ## Cách làm
 1. Chạy `python3 team/tools/bang_diem.py` để có số mới nhất.
-2. Với mỗi nhân viên có dữ liệu: tỷ lệ đạt lần đầu, điểm TB, số vòng sửa TB, 2 tiêu chí yếu nhất, lỗi Chặn lặp lại (≥ 2 lần), so sánh trước/sau lần nâng cấp gần nhất (theo `phien_ban`).
-3. Tìm nguyên nhân gốc: đọc 2–3 file giám sát tệ nhất của nhân viên đó, đối chiếu với prompt `.claude/agents/<mã>.md` — thiếu hướng dẫn, hướng dẫn mơ hồ, hay thiếu công cụ/dữ liệu đầu vào?
-4. Xếp ưu tiên: nhân viên ảnh hưởng nhiều việc nhất và điểm thấp nhất lên đầu.
-5. Ít dữ liệu (< 3 lần chấm) → ghi "chưa đủ dữ liệu", chỉ nêu quan sát, không đề xuất mạnh.
+2. Đọc thêm `team/nhan-su/*/gop-y.jsonl` (góp ý của Trang sau mỗi việc): góp ý lặp lại là bằng chứng mạnh.
+3. Với mỗi nhân viên có dữ liệu: tỷ lệ đạt lần đầu, điểm TB, số vòng sửa TB, 2 tiêu chí yếu nhất, lỗi Chặn lặp lại (≥ 2 lần), so sánh trước/sau lần nâng cấp gần nhất (theo `phien_ban`).
+4. Tìm nguyên nhân gốc: đọc 2–3 file giám sát tệ nhất của nhân viên đó, đối chiếu với prompt `.claude/agents/<mã>.md` — thiếu hướng dẫn, hướng dẫn mơ hồ, hay thiếu công cụ/dữ liệu đầu vào?
+5. Xếp ưu tiên: nhân viên ảnh hưởng nhiều việc nhất và điểm thấp nhất lên đầu.
+6. Ít dữ liệu (< 3 lần chấm) → ghi "chưa đủ dữ liệu", chỉ nêu quan sát, không đề xuất mạnh.
 
 ## Đầu ra — `team/nang-cap/<mã-chu-kỳ>/phan-tich.md`
 - Bảng tổng: Nhân sự | Số lần chấm | Đạt lần đầu | Điểm TB | Tiêu chí yếu nhất | Xu hướng.

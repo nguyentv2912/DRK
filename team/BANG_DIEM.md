@@ -13,6 +13,7 @@ Tự động tạo từ `team/nhan-su/*/nhat-ky.jsonl` bởi `team/tools/bang_di
 | Lan (Nghiên cứu) | 1.0 | 0 | — | — | — | — | — | chưa có dữ liệu |
 | Trang (Phản biện) | 1.0 | 0 | — | — | — | — | — | chưa có dữ liệu |
 | Đức (Phân tích Hiệu suất) | 1.0 | 0 | — | — | — | — | — | chưa có dữ liệu |
+| Minh (Quản lý) | ? | 0 | — | — | — | — | — | chưa có dữ liệu |
 | Hùng (Phân tích Tài chính) | 1.0 | 0 | — | — | — | — | — | chưa có dữ liệu |
 | Tùng (Thiết kế Demo) | 1.0 | 0 | — | — | — | — | — | chưa có dữ liệu |
 | Quân (Cộng đồng & Báo cáo) | 1.0 | 0 | — | — | — | — | — | chưa có dữ liệu |
