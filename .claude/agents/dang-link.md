@@ -27,7 +27,8 @@ tools: Read, Write, Bash, mcp__Metricool_Social_Media_Management__getBrandSettin
 - `python3 fanpage/tools/media_repo.py check <URL>` phải trả HTTP 200. Không được → dừng, ghi lỗi.
 
 ## 3. Giờ đăng
-- `getBestTimeToPostByNetwork` cho từng mạng (brand tương ứng, timezone Asia/Ho_Chi_Minh, hôm nay → +1 ngày). Chọn giờ điểm cao nhất còn cách hiện tại ≥ 30 phút và trong 18:00–22:30 nếu có; không có số liệu → `preferred_hours`. Nếu đã quá 22:30 → đăng ngay sau 15 phút.
+- **Lượt sáng** (chạy trước 12:00): đăng trong buổi sáng cùng ngày. Gọi `getBestTimeToPostByNetwork` cho hôm nay; chọn giờ điểm cao nhất trong **11:00–12:30** còn cách hiện tại ≥ 30 phút. Không có số liệu → `preferred_hours.buoi_sang` (Facebook 11:30, TikTok 12:00). Đã quá 12:00 → đăng sau 15 phút.
+- **Lượt tối** (21:17): chọn giờ điểm cao nhất trong **18:00–22:30** còn cách hiện tại ≥ 30 phút; không có → `preferred_hours.buoi_toi`; đã quá 22:30 → đăng sau 15 phút.
 
 ## 4. Tạo bài — `createScheduledPost` (mỗi kênh một lần)
 Facebook (`info`):

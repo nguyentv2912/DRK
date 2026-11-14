@@ -33,16 +33,17 @@
 | 3 giây đầu | Hook bằng câu nói + chữ to trên màn hình | Hook phải có chữ trên màn hình ngay khung đầu; không chào hỏi |
 | Caption | 150–250 chữ, có đoạn, câu hỏi cuối bài, miễn trừ, 3–6 hashtag | 1–2 câu (≤ 150 ký tự) + câu hỏi gợi bình luận + 3–5 hashtag; miễn trừ ngắn |
 | Hashtag | #daoducdautu #quanlyvon #tamlygiaodich … | #daoducdautu #taichinhcanhan #dautu #kyluat #learnontiktok |
-| Giờ đăng | 20:00 (hoặc giờ vàng từ Metricool) | 20:30 (hoặc giờ vàng từ Metricool) |
+| Giờ đăng | 11:30 nếu nộp video buổi sáng; 20:00 nếu nộp muộn (hoặc giờ vàng Metricool) | 12:00 buổi sáng; 20:30 nếu nộp muộn |
 | Tương tác sau đăng | Ghim bình luận đầu (link nếu có) | Trả lời 5 bình luận đầu bằng chữ; chọn 1 câu để làm video Thứ Bảy |
 
 ## Quy trình mỗi ngày
 ```
 05:05  Ngọc chọn ý tưởng + viết caption FB/TikTok → Phong viết kịch bản → Bảo giám sát
 05:30  Kịch bản lên Google Drive "1. Kịch bản mỗi ngày" + thông báo về điện thoại
-Trong ngày  Chủ page quay 90–180 giây, bỏ file vào Drive "2. Video thô - bỏ video quay vào đây"
-13:17 và 21:17  Đội kiểm tra thư mục video thô. Có video mới → Khoa edit → Bảo giám sát
+08:00–09:00  Chủ page quay 90–180 giây, bỏ file vào Drive "2. Video thô - bỏ video quay vào đây"
+09:17 (dự phòng 10:17, vét 21:17)  Đội kiểm tra thư mục video thô. Có video mới → Khoa edit → Bảo giám sát
                → Vy đăng Facebook Reel + TikTok → Quân báo cáo → Hà kiểm định
+11:30 / 12:00  Bài lên Facebook / TikTok
 Sáng hôm sau  Báo cáo số liệu của bài hôm trước nằm trong kịch bản mới
 ```
 Tên file video thô: bất kỳ; đội lấy file mới nhất chưa xử lý. Quay nhiều đoạn thì đặt tên theo thứ tự (`1.mp4`, `2.mp4`…).

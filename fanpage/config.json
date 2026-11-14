@@ -31,14 +31,14 @@
   ],
   "_never_post_to_help": "Brand 7808796 còn nối TikTok mr.sol56 và Instagram mrpumpsolana của dự án Mr Pump. Không bao giờ đưa instagram hoặc tiktok của brand 7808796 vào providers.",
   "preferred_hours": {
-    "facebook": [
-      "20:00",
-      "11:30"
-    ],
-    "tiktok": [
-      "20:30",
-      "12:00"
-    ]
+    "buoi_sang": {
+      "facebook": "11:30",
+      "tiktok": "12:00"
+    },
+    "buoi_toi": {
+      "facebook": "20:00",
+      "tiktok": "20:30"
+    }
   },
   "cta_link": "",
   "drive": {
@@ -50,5 +50,11 @@
     "processed_folder_id": "1uRTnyFB-pEIgw7se4G-LuPEKqsrG6SZ4"
   },
   "media_repo": "nguyentv2912/dddt-media",
-  "_media_repo_help": "Repo GitHub công khai chỉ để Metricool lấy video đã edit. Dùng fanpage/tools/media_repo.py put/clear. Xoá video khỏi repo ngay khi Metricool đã sao chép (media chuyển sang static.metricool.com)."
+  "_media_repo_help": "Repo GitHub công khai chỉ để Metricool lấy video đã edit. Dùng fanpage/tools/media_repo.py put/clear. Xoá video khỏi repo ngay khi Metricool đã sao chép (media chuyển sang static.metricool.com).",
+  "processing_runs": [
+    "09:17",
+    "10:17",
+    "21:17"
+  ],
+  "_processing_help": "Chủ kênh quay 8:00–9:00 và nộp lên Drive; lượt 09:17 xử lý và hẹn đăng buổi sáng; 10:17 dự phòng; 21:17 vét video nộp muộn."
 }

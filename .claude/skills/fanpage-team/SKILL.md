@@ -1,6 +1,6 @@
 ---
 name: fanpage-team
-description: Vận hành mỗi ngày kênh ĐẠO ĐỨC ĐẦU TƯ trên Facebook + TikTok. "kich-ban" (05:05 hằng ngày) — chọn chủ đề, viết caption 2 nền tảng, viết kịch bản 90–180 giây, đưa lên Google Drive cho chủ page quay. "xu-ly" (13:17 và 21:17) — tìm video thô mới trên Drive, edit, đăng Facebook Reel + TikTok, báo cáo. Gọi /fanpage-team kich-ban | xu-ly | <chủ đề>.
+description: Vận hành mỗi ngày kênh ĐẠO ĐỨC ĐẦU TƯ trên Facebook + TikTok. "kich-ban" (05:05 hằng ngày) — chọn chủ đề, viết caption 2 nền tảng, viết kịch bản 90–180 giây, đưa lên Google Drive cho chủ page quay. "xu-ly" (09:17, 10:17 và 21:17) — tìm video thô mới trên Drive, edit, đăng Facebook Reel + TikTok, báo cáo. Gọi /fanpage-team kich-ban | xu-ly | <chủ đề>.
 ---
 # Vận hành kênh ĐẠO ĐỨC ĐẦU TƯ mỗi ngày
 
@@ -15,7 +15,7 @@ Phiên chính là **trưởng nhóm**: giao việc cho nhân viên (Agent tool),
 5. Đưa kịch bản lên Drive: `create_file` với `parentId = scripts_folder_id`, `contentMimeType: text/plain` (để Drive đổi thành Google Doc), tiêu đề `$DAY | <chuyên mục> | <chủ đề>`, nội dung = phần teleprompter + checklist ngắn trong `huong_dan_quay.md`, đầu file ghi: "QUAY XONG: bỏ video vào thư mục '2. Video thô - bỏ video quay vào đây'".
 6. Commit + push thư mục `fanpage/` nếu được (không có video). Kết thúc bằng một dòng: chủ đề hôm nay + link Google Doc (dòng này là nội dung thông báo gửi về điện thoại).
 
-## Chế độ `xu-ly` (13:17 và 21:17 mỗi ngày, hoặc /fanpage-team xu-ly)
+## Chế độ `xu-ly` (09:17, 10:17 và 21:17 mỗi ngày — chủ kênh quay 8:00–9:00; lượt sáng đăng trước 12:30, hoặc /fanpage-team xu-ly)
 1. `search_files`: `parentId = '<raw_folder_id>' and mimeType contains 'video/'`. Không có file → kết thúc ngay với "Chưa có video mới." (không gọi nhân viên nào).
 2. Ghép video với kịch bản: kịch bản mới nhất trong `scripts_folder` chưa được đăng (chưa có dòng `posted` trong `fanpage/memory/history.jsonl`, hoặc ngày ≥ ngày của kịch bản gần nhất đã đăng). Không có repo state cho ngày đó (phiên mới) → đọc Google Doc kịch bản bằng `read_file_content`, ghi lại `$RUN/kichban.txt`; tạo lại `edit_plan.json`, `post.md`, `tiktok.md` bằng cách giao **Phong** và **Ngọc** làm lại từ kịch bản đó (không đổi lời thoại).
 3. Chia sẻ từng video thô: `share_file` `permissionId: anyoneWithLink`, `role: reader`.
