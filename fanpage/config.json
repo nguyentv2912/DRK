@@ -49,6 +49,6 @@
     "_help": "Kịch bản: Google Doc tên 'YYYY-MM-DD | chuyên mục | chủ đề' trong scripts_folder (đây cũng là lịch sử chủ đề). Video thô: share anyoneWithLink rồi curl https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t; xử lý xong chuyển vào processed_folder (update_file parentId). Không tải video lên Drive qua connector (giới hạn ~3 MB/lần); video đã edit đi qua media_repo.",
     "processed_folder_id": "1uRTnyFB-pEIgw7se4G-LuPEKqsrG6SZ4"
   },
-  "media_repo": "nguyentv2912/ddtt-media",
+  "media_repo": "nguyentv2912/dddt-media",
   "_media_repo_help": "Repo GitHub công khai chỉ để Metricool lấy video đã edit. Dùng fanpage/tools/media_repo.py put/clear. Xoá video khỏi repo ngay khi Metricool đã sao chép (media chuyển sang static.metricool.com)."
 }
