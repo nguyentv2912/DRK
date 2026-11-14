@@ -25,7 +25,13 @@ Việc fanpage hằng ngày có quy trình riêng: skill `fanpage-team`.
 ## Bước 1 — Phân tích việc
 - Đọc yêu cầu, xác định: **sản phẩm cuối** (tài liệu, trang demo, video, bài đăng…), **người đọc/dùng**, **tiêu chí xong**.
 - Chỉ hỏi lại người dùng khi thiếu thông tin làm thay đổi hẳn kết quả (vd. không rõ thị trường, ngân sách). Còn lại tự đặt giả định hợp lý và ghi ra.
-- Tạo mã việc `YYYY-MM-DD-<slug-ngắn>` và thư mục `team/viec/<mã-việc>/`.
+- Tạo mã việc `YYYY-MM-DD-<slug-ngắn>` và thư mục **mới** `team/viec/<mã-việc>/`.
+- Ghi `team/viec/<mã-việc>/brief.md` — **nguồn duy nhất** của dự án: yêu cầu gốc (nguyên văn), sản phẩm cuối, người đọc, địa bàn, quy mô/ngân sách, thương hiệu và kênh (nếu có), giả định đã chốt, điều cấm, và dòng `Dự án tham chiếu được phép: không` (hoặc tên dự án cũ nếu người dùng yêu cầu dùng lại).
+
+### Mỗi việc là một dự án độc lập
+- Không mang số liệu, giả định, thương hiệu, tài khoản, kết luận của dự án khác (`fanpage/`, `ong-rung/`, các thư mục `team/viec/` khác, các tài liệu đã làm trước đây) sang việc mới — kể cả khi hai dự án giống nhau. Mọi con số phải được tra hoặc tính lại cho chính dự án này.
+- Chỉ dùng lại khi người dùng nói rõ (vd. "dựa trên dự án mật ong"); khi đó ghi tên dự án vào `brief.md`.
+- Trưởng nhóm cũng không tự điền thông tin từ trí nhớ của cuộc trò chuyện trước vào brief.
 
 ## Bước 2 — Phiếu giao việc
 Ghi `team/viec/<mã-việc>/phieu-giao-viec.md` và **hiển thị cho người dùng** bảng:
@@ -42,7 +48,7 @@ Thứ tự hay dùng:
 - Nội dung & video: Ngọc → Phong → (người dùng quay) → Khoa → Vy → Quân
 
 ## Bước 3 — Giao việc
-Gọi Agent với `subagent_type` tương ứng. Prompt cho nhân viên phải tự đủ nghĩa: mã việc, thư mục việc, yêu cầu gốc của người dùng (trích nguyên văn), nhiệm vụ riêng, giả định đã chốt, file đầu vào, file phải nộp. Báo người dùng một dòng khi mỗi nhân viên bắt đầu / xong.
+Gọi Agent với `subagent_type` tương ứng. Prompt cho nhân viên phải tự đủ nghĩa: mã việc, thư mục việc, yêu cầu gốc của người dùng (trích nguyên văn), nhiệm vụ riêng, giả định đã chốt, file đầu vào, file phải nộp, và câu: "Đây là dự án độc lập: chỉ dùng brief.md và file trong thư mục việc này cùng dữ kiện tự tra mới." Với đội nội dung, run_dir = thư mục việc (không phải `fanpage/runs/`). Báo người dùng một dòng khi mỗi nhân viên bắt đầu / xong.
 
 ## Bước 4 — Gom & kiểm định
 - Đọc kết quả; số liệu mâu thuẫn giữa các bạn → giao lại cho đúng người sửa (tối đa 2 vòng).

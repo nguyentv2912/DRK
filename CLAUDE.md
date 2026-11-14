@@ -6,6 +6,7 @@ Repo này có một đội nhân viên AI (`.claude/agents/`) do **trưởng nh�
 
 Câu hỏi nhanh, sửa nhỏ, hoặc khi người dùng nói "tự làm" thì trả lời trực tiếp, không cần chia việc.
 
+- **Mỗi việc là một dự án độc lập:** hồ sơ riêng trong `team/viec/<mã-việc>/` với `brief.md` là nguồn duy nhất. Không lấy số liệu, giả định, thương hiệu hay kênh từ dự án khác (`fanpage/`, `ong-rung/`, việc cũ) trừ khi người dùng yêu cầu rõ.
 - Danh sách nhân viên: `team/DOI_NGU.md`
 - Hồ sơ mỗi việc: `team/viec/<YYYY-MM-DD-slug>/`
 - Việc fanpage hằng ngày: skill `fanpage-team`, tài nguyên ở `fanpage/`

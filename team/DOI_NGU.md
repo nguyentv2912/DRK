@@ -24,6 +24,9 @@
 | Quân – Cộng đồng & Báo cáo | `tra-loi-bao-cao` | Số liệu kênh, trả lời bình luận | `report.md` |
 | Hà – Kiểm định | `kiem-dinh` | Rà số liệu, nguồn, chính tả, đủ yêu cầu | `kiem-dinh.md` |
 
+## Dự án độc lập
+Mỗi việc bạn giao được mở **hồ sơ mới** `team/viec/<ngày>-<tên-việc>/` với `brief.md` riêng. Nhân viên chỉ làm trên hồ sơ đó và dữ kiện tra cứu mới, không lấy số liệu hay thương hiệu từ dự án cũ (fanpage, mật ong rừng, trung tâm kỹ năng…). Muốn dùng lại dự án cũ, bạn chỉ cần nói rõ, ví dụ "dựa trên dự án mật ong".
+
 ## Cách giao việc
 - Gõ `/giao-viec <mô tả công việc>` hoặc cứ nói việc cần làm. Trưởng nhóm sẽ trả về **phiếu giao việc** (ai làm gì, chạy song song hay nối tiếp), rồi tự điều phối đến khi bàn giao.
 - Ví dụ: `/giao-viec Lập kế hoạch mở quán cà phê sách 80 m² ở Hội An, vốn tối đa 800 triệu, có demo tính hoàn vốn`
