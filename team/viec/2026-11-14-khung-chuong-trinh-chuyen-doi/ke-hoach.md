@@ -30,9 +30,9 @@ Mọi số tài chính lấy nguyên từ TC, không đổi. Số Mai tự suy r
    - Thận trọng (chuyển đổi ×0,7): **không qua cổng nào**. T6 chỉ có 4,7 khách/tháng, chạm mốc dừng. Dừng ở đây thì lỗ **~1.440 trđ**.
    - Độ nhạy của lộ trình theo cổng (TC bảng 8A):
      - Chuyển đổi chỉ cần thấp hơn **5%** là hoàn vốn lùi từ T26 về **T31**.
+     - Chuyển đổi **−10%** thì hoàn vốn **T41**, NPV chỉ còn khoảng **+21 trđ**.
      - Chuyển đổi **−20%** hoặc giá gói đồng hành **−20%** thì **không hoàn vốn**.
      - CPL **+20%** thì hoàn vốn lùi về **T34**.
-   - Cổng quảng cáo ở T6 chỉ **vừa đủ** qua: T5 đạt 14,03 khách/1.000 lead, so với ngưỡng 14,0. Phễu thật hụt một chút là cổng mở muộn hơn.
    - Phương án tham chiếu "giữ đội 8, quảng cáo 30 trđ" cần **1.519 trđ** và hoàn vốn T29, tức kém hơn lộ trình theo cổng.
 5. **Ngân hàng là nguồn uy tín, không phải nguồn tiền.** Hoa hồng giới thiệu chưa tới 0,5% doanh thu (TC). Giá trị thật của ngân hàng là đồng tổ chức, tài trợ sự kiện và cử diễn giả. Hiện **chưa có văn bản** nào. Chưa có văn bản thì không được nói "ngân hàng đứng sau" ra công chúng.
 6. **Rủi ro lớn nhất là bị nhìn như một "lớp học tài chính" lừa đảo.** Ví dụ: vụ Mr Pips, **bị cáo buộc** chiếm đoạt >1.568 tỷ đ của 2.661 bị hại, đang xét xử; vụ FTXF, khởi tố 5 bị can vì dùng hội thảo để bán token (NC). Bộ minh bạch ở §4.4 phải xong trước khi chạy quảng cáo.
@@ -197,7 +197,7 @@ Những điều chương trình **không** làm trong mọi buổi: nêu mã mua
 |---|---|---|---|---|
 | A. Đồng tổ chức / tài trợ hội thảo giáo dục tài chính | BIDV Money Day; Sacombank S-FinFest; VIFC-HCM + VBI Academy "Phổ cập Tài sản số 2026" | Uy tín cao nhất; TC Lạc quan tính 10 trđ/tháng tài trợ | Ngân hàng kiểm soát dùng logo; có thể không muốn gắn với crypto | **Cao** |
 | B. Diễn giả ngân hàng tại hội thảo | Chủ đề: tiết kiệm, an toàn tài khoản, chống lừa đảo | Uy tín, chi phí thấp | Diễn giả nói về sản phẩm của họ, chương trình không bán thay | **Cao** |
-| C. Giới thiệu khách có hợp đồng (referral) | TCBS iWealth Partner 0,4% chứng chỉ quỹ; VPBank NEO ~64–72 nghìn đ/tài khoản | Doanh thu nhỏ (9–27 trđ/năm, TC) | iWealth Partner dành cho **cá nhân**; doanh nghiệp phải ký hợp đồng riêng; **không tư vấn** chứng khoán/chứng chỉ quỹ; phải công khai hoa hồng | Trung bình |
+| C. Giới thiệu khách có hợp đồng (referral) | TCBS iWealth Partner 0,4% chứng chỉ quỹ; VPBank NEO ~64–72 nghìn đ/tài khoản | Doanh thu nhỏ (10–33 trđ/năm theo lộ trình cổng, TC) | iWealth Partner dành cho **cá nhân**; doanh nghiệp phải ký hợp đồng riêng; **không tư vấn** chứng khoán/chứng chỉ quỹ; phải công khai hoa hồng | Trung bình |
 | D. Ưu đãi riêng cho học viên (mở tài khoản, tiết kiệm) | — (chưa có mẫu cụ thể, cần hỏi ngân hàng) | Giá trị cho học viên | Chỉ giới thiệu, không tư vấn | Thấp |
 | Không làm | Đại lý bảo hiểm, đại lý chứng chỉ quỹ, bán bảo hiểm liên kết đầu tư | — | Cần chứng chỉ đại lý bảo hiểm (cá nhân) / đại lý CCQ phải là tổ chức đăng ký UBCKNN (NC) | — |
 
@@ -403,7 +403,7 @@ Tỷ lệ mục tiêu của từng khâu phễu nằm ở **§3.2**. Cổng và 
 
 ## 7. Lộ trình 12 tháng với cổng kiểm tra
 
-**Lộ trình có 1 cổng pháp lý, 1 cổng quảng cáo, 1 mốc dừng và 2 cổng tuyển. Theo kịch bản cơ sở, quảng cáo tăng lên 70 trđ ở T6, đội lên Tăng trưởng ở T15 và Mở rộng ở T18, hoàn vốn T26 (TC mục 7A).** Đây là **nơi duy nhất** ghi cổng và ngưỡng trong tài liệu.
+**Bảng cổng có 7 dòng: 2 cổng chuẩn bị (pháp lý, sẵn sàng), 1 cổng quảng cáo, 1 mốc công suất, 1 mốc dừng và 2 cổng tuyển. Theo kịch bản cơ sở, quảng cáo tăng lên 70 trđ ở T6, đội lên Tăng trưởng ở T15 và Mở rộng ở T18, hoàn vốn T26 (TC mục 7A).** Đây là **nơi duy nhất** ghi cổng và ngưỡng trong tài liệu.
 
 ### 7.1 Bảng cổng (quy tắc trong `mo_hinh.py`, biến `CONG`)
 
@@ -435,24 +435,24 @@ Lưu ý khi đọc tỷ lệ (Mai tính từ bảng dưới): tháng đầu sau 
 
 ### 7.3 Số tham chiếu T1–T12 (lộ trình theo cổng, cơ sở)
 
-Dùng bảng này để so với số thật mỗi tháng.
+Đây là **bảng số theo tháng duy nhất** của tài liệu. Dùng nó để so với số thật mỗi tháng. KPI nội dung ở §15 cũng dẫn chiếu về đây.
 
-| Tháng | Người | Quảng cáo (trđ) | Lead | Tham dự | Nền tảng | Đồng hành | Doanh thu (trđ) | EBITDA (trđ) | Luỹ kế (trđ) |
-|---|---|---|---|---|---|---|---|---|---|
-| T1 | 8 | 10 | 167 | 0 | 0 | 0 | 0 | −224,8 | −531 |
-| T2 | 8 | 30 | 550 | 220 | 15,8 | 2,6 | 48,8 | −153,9 | −685 |
-| T3 | 8 | 30 | 589 | 235 | 19,8 | 6,5 | 97,2 | −111,6 | −796 |
-| T4 | 8 | 30 | 627 | 251 | 24,1 | 8,0 | 119,4 | −92,0 | −888 |
-| T5 | 8 | 30 | 666 | 266 | 27,2 | 9,3 | 142,6 | −71,5 | −960 |
-| T6 | 9 | 70 | 1.371 | 548 | 59,2 | 15,3 | 253,9 | −32,4 | −1.004 |
-| T7 | 11 | 70 | 1.410 | 564 | 67,7 | 23,1 | 355,5 | +11,0 | −1.017 |
-| T8 | 11 | 70 | 1.448 | 579 | 69,5 | 25,1 | 382,5 | +50,8 | −967 |
-| T9 | 11 | 70 | 1.487 | 595 | 71,4 | 25,8 | 401,0 | +67,5 | −899 |
-| T10 | 11 | 70 | 1.526 | 610 | 73,2 | 26,5 | 422,2 | +86,7 | −812 |
-| T11 | 11 | 70 | 1.564 | 626 | 75,1 | 27,2 | 435,1 | +98,1 | −714 |
-| T12 | 13 | 70 | 1.603 | 641 | 76,9 | 27,8 | 446,0 | +54,1 | −684 |
+| Tháng | Người | Quảng cáo (trđ) | Tiếp cận | Lead (quảng cáo / tự nhiên) | CPL bình quân* | Tham dự | Nền tảng | Đồng hành | Khách/1.000 lead* | Doanh thu (trđ) | EBITDA (trđ) | Luỹ kế (trđ) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| T1 | 8 | 10 | 8.333 | 167 (167 / 0) | ~59.900 đ | 0 | 0,0 | 0,0 | — (thử nghiệm) | 0,0 | −224,8 | −531 |
+| T2 | 8 | 30 | 27.500 | 550 (500 / 50) | ~54.500 đ | 220 | 15,8 | 2,6 | 4,7 | 48,8 | −153,9 | −685 |
+| T3 | 8 | 30 | 29.432 | 589 (500 / 89) | ~50.900 đ | 235 | 19,8 | 6,5 | 11,0 | 97,2 | −111,6 | −796 |
+| T4 | 8 | 30 | 31.364 | 627 (500 / 127) | ~47.800 đ | 251 | 24,1 | 8,0 | 12,8 | 119,4 | −92,0 | −888 |
+| T5 | 8 | 30 | 33.295 | 666 (500 / 166) | ~45.000 đ | 266 | 27,2 | 9,3 | 14,0 | 142,6 | −71,5 | −960 |
+| T6 | 9 | 70 | 68.561 | 1.371 (1.167 / 205) | ~51.100 đ | 548 | 59,2 | 15,3 | 11,2 | 253,9 | −32,4 | −1.004 |
+| T7 | 11 | 70 | 70.492 | 1.410 (1.167 / 243) | ~49.600 đ | 564 | 67,7 | 23,1 | 16,4 | 355,5 | +11,0 | −1.017 |
+| T8 | 11 | 70 | 72.424 | 1.448 (1.167 / 282) | ~48.300 đ | 579 | 69,5 | 25,1 | 17,3 | 382,5 | +50,8 | −966 |
+| T9 | 11 | 70 | 74.356 | 1.487 (1.167 / 320) | ~47.100 đ | 595 | 71,4 | 25,8 | 17,4 | 401,0 | +67,5 | −899 |
+| T10 | 11 | 70 | 76.288 | 1.526 (1.167 / 359) | ~45.900 đ | 610 | 73,2 | 26,5 | 17,4 | 422,2 | +86,7 | −812 |
+| T11 | 11 | 70 | 78.220 | 1.564 (1.167 / 398) | ~44.800 đ | 626 | 75,1 | 27,2 | 17,4 | 435,1 | +98,1 | −714 |
+| T12 | 13 | 70 | 80.152 | 1.603 (1.167 / 436) | ~43.700 đ | 641 | 76,9 | 27,8 | 17,3 | 446,0 | +54,1 | −684 |
 
-Nguồn: các cột người, quảng cáo, đồng hành và luỹ kế lấy từ `tai-chinh.json` → `lo_trinh_theo_cong`. Các cột lead, tham dự, nền tảng, doanh thu và EBITDA **chưa có trong JSON**. Mai lấy chúng bằng cách chạy hàm `chay()` của `mo_hinh.py` trên bản sao, với lộ trình theo cổng ở kịch bản cơ sở; luỹ kế ra khớp JSON. Đề nghị Hùng xuất thêm các cột này vào JSON để Hà đối chiếu.
+Nguồn: `tai-chinh.json` → `khuyen_nghi.theo_thang_24t`. Hai cột có dấu \* là Mai tính từ các cột trong bảng: CPL bình quân = quảng cáo ÷ tổng lead; khách/1.000 lead = đồng hành ÷ lead × 1.000. Hai cột này tính trên số đã làm tròn trong JSON, nên có thể lệch 0,1 so với TC. Ví dụ TC ghi khách/1.000 lead ở T4 / T5 / T6 là 12,71 / 14,03 / 11,16.
 
 Việc làm song song suốt 12 tháng:
 - Xin văn bản tài trợ từ ngân hàng.
@@ -530,7 +530,7 @@ Việc làm song song suốt 12 tháng:
 | Webinar (Zoom/YouTube Live) | Cân nhắc → Mua | 90–120 phút | 1 buổi/tuần (giả định Mai) | Phục vụ lead ngoài địa bàn |
 | Google Search (quảng cáo) | Quan tâm | Quảng cáo từ khoá "khoá học quản lý tài chính cá nhân" | Thử từ T2 | Không từ khoá crypto (cần chứng nhận — NC) |
 
-Phân bổ quảng cáo đề xuất (giả định Mai, trong tổng ngân sách TC 10 / 30 / 60 / 100 trđ/tháng): Facebook/Instagram 70%, TikTok 20%, Google Search 10%. Chuyên viên quảng cáo điều chỉnh theo CPL thật từ T7.
+Phân bổ quảng cáo đề xuất (giả định Mai, trong tổng ngân sách của lộ trình theo cổng, TC: 10 / 30 / 70 / 100 / 130 trđ/tháng): Facebook/Instagram 70%, TikTok 20%, Google Search 10%. Chuyên viên quảng cáo điều chỉnh theo CPL thật từ T7.
 
 Khảo sát riêng "người 25–40 học đầu tư qua kênh nào": **chưa có** (NC). Thêm câu "Bạn biết chương trình qua đâu?" vào form đăng ký để đo.
 
@@ -669,24 +669,9 @@ Cần xác minh: danh sách quốc gia của Meta/TikTok/Google có Việt Nam k
 
 ## 15. KPI nội dung theo tháng
 
-**Theo lộ trình cơ sở, nội dung và quảng cáo phải mang về 1.371 lead ở T6 (205 lead tự nhiên) và 1.603 lead ở T12 (436 lead tự nhiên), với CPL quảng cáo ≤ 60.000 đ.** Cổng tăng quảng cáo nằm ở §7.
+**Theo lộ trình cơ sở, nội dung và quảng cáo phải mang về 1.371 lead ở T6 (205 lead tự nhiên) và 1.603 lead ở T12 (436 lead tự nhiên), với CPL quảng cáo ≤ 60.000 đ.** Cổng tăng quảng cáo nằm ở §7.1.
 
-Nguồn: cột quảng cáo lấy từ `tai-chinh.json` → `lo_trinh_theo_cong.ngan_sach_qc_24t`. Các cột tiếp cận, lead, lead quảng cáo, lead tự nhiên, tham dự, nền tảng và đồng hành lấy từ `mo_hinh.py` (lộ trình theo cổng, cơ sở; ghi chú nguồn ở §7.3). Hai cột "CPL bình quân" và "khách/1.000 lead" do Mai tính từ các cột này.
-
-| Tháng | Quảng cáo (trđ) | Tiếp cận | Lead | Lead quảng cáo | Lead tự nhiên | CPL bình quân (quảng cáo ÷ tổng lead) | Tham dự | Nền tảng | Đồng hành | Khách/1.000 lead |
-|---|---|---|---|---|---|---|---|---|---|---|
-| T1 | 10 | 8.333 | 167 | 167 | 0 | ~60.000 đ | 0 | 0 | 0 | — (thử nghiệm) |
-| T2 | 30 | 27.500 | 550 | 500 | 50 | ~54.500 đ | 220 | 15,8 | 2,6 | 4,8 |
-| T3 | 30 | 29.432 | 589 | 500 | 89 | ~51.000 đ | 235 | 19,8 | 6,5 | 11,0 |
-| T4 | 30 | 31.364 | 627 | 500 | 127 | ~47.800 đ | 251 | 24,1 | 8,0 | 12,7 |
-| T5 | 30 | 33.295 | 666 | 500 | 166 | ~45.100 đ | 266 | 27,2 | 9,3 | 14,0 |
-| T6 | 70 | 68.561 | 1.371 | 1.167 | 205 | ~51.000 đ | 548 | 59,2 | 15,3 | 11,2 |
-| T7 | 70 | 70.492 | 1.410 | 1.167 | 243 | ~49.700 đ | 564 | 67,7 | 23,1 | 16,4 |
-| T8 | 70 | 72.424 | 1.448 | 1.167 | 282 | ~48.300 đ | 579 | 69,5 | 25,1 | 17,3 |
-| T9 | 70 | 74.356 | 1.487 | 1.167 | 320 | ~47.100 đ | 595 | 71,4 | 25,8 | 17,4 |
-| T10 | 70 | 76.288 | 1.526 | 1.167 | 359 | ~45.900 đ | 610 | 73,2 | 26,5 | 17,4 |
-| T11 | 70 | 78.220 | 1.564 | 1.167 | 398 | ~44.700 đ | 626 | 75,1 | 27,2 | 17,4 |
-| T12 | 70 | 80.152 | 1.603 | 1.167 | 436 | ~43.700 đ | 641 | 76,9 | 27,8 | 17,4 |
+Bảng KPI theo tháng (tiếp cận, lead quảng cáo, lead tự nhiên, CPL bình quân, tham dự, nền tảng, đồng hành, khách/1.000 lead) nằm ở **§7.3**. Nguồn: `khuyen_nghi.theo_thang_24t`. Đội nội dung chịu trực tiếp ba cột: tiếp cận, lead tự nhiên và CPL.
 
 Nếu chưa qua cổng quảng cáo thì giữ ngân sách 30 trđ. Khi đó vẫn phải đạt chỉ tiêu lead tự nhiên như bảng, tăng ~39 lead/tháng.
 
@@ -713,5 +698,5 @@ Chỉ số nội dung bổ trợ (giả định Mai, xem lại sau T3):
    - Đánh dấu đáy cơ sở −1.017 trđ ở T7, mốc tăng quảng cáo ở T6, các mốc lên giai đoạn ở T15 và T18.
 4. **Lộ trình có cổng** (dòng thời gian ngang, §7.1–7.2): Tuần 0 (Cổng 0) → T1 Chuẩn bị (Cổng 1) → T2–T5 Chạy thử → T6 Cổng quảng cáo và Mốc dừng → T7–T14 Khởi động mở rộng quảng cáo → T15 Cổng tuyển 1 → T18 Cổng tuyển 2. Bên dưới vẽ cột số người và ngân sách quảng cáo theo tháng. Nguồn: `lo_trinh_theo_cong.so_nguoi_24t`, `ngan_sach_qc_24t`, `khach_dong_hanh_24t`.
 5. (Tuỳ chọn) **Biểu đồ "ngân sách quảng cáo cần"**: 30 trđ → ~12,4 khách; 54–66 trđ → 19,5 khách; 73–85 trđ → 25 khách; 108–120 trđ → 35,2 khách. Nguồn: `ngan_sach_qc_can`.
-6. (Tuỳ chọn) **Biểu đồ cột lead T1–T12**, tách lead quảng cáo và lead tự nhiên. Nguồn: bảng §15.
+6. (Tuỳ chọn) **Biểu đồ cột lead T1–T12**, tách lead quảng cáo và lead tự nhiên. Nguồn: `khuyen_nghi.theo_thang_24t` (bảng §7.3).
 
