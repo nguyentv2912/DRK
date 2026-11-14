@@ -3507,14 +3507,36 @@
   }
  },
  "nguong_dung": {
+  "muc_lai_t24_toi_thieu_tr": 50.0,
+  "ty_le_vao_skool_tuong_ung": 0.009383267264121966,
   "thang_3": {
-   "free_toi_thieu": 70.0,
+   "free_toi_thieu": 55,
    "hv_toi_thieu": 1
   },
   "thang_6": {
+   "free_toi_thieu": 110,
    "hv_toi_thieu": 3,
-   "huy_toi_da": 0.15,
-   "lai_toi_thieu_tr": 10
+   "lai_toi_thieu_tr": 6.2
+  },
+  "cd_toi_thieu": 0.025,
+  "huy_toi_da": 0.12,
+  "ket_qua": {
+   "khong_dang_lam": {
+    "thang_3": false,
+    "thang_6": false
+   },
+   "than_trong": {
+    "thang_3": false,
+    "thang_6": false
+   },
+   "co_so": {
+    "thang_3": true,
+    "thang_6": true
+   },
+   "lac_quan": {
+    "thang_3": true,
+    "thang_6": true
+   }
   }
  },
  "do_nhay_ty_gia_5pct": {

@@ -8,24 +8,26 @@ Giá, tên chương trình, nền tảng, thông điệp là **anh chốt**, b�
 
 ## Tóm tắt (1 trang)
 
-**Mục tiêu 90 ngày: có ~933 thành viên Skool miễn phí và ~22 học viên 100 USD/tháng (TC, kịch bản cơ sở, tháng 3).** Mốc thận trọng: ~613 thành viên, ~9 học viên (TC).
+**Mục tiêu 90 ngày (bám kịch bản thận trọng theo khuyến nghị của Hùng): ≥ 72 thành viên Skool miễn phí và ≥ 1 học viên 100 USD/tháng vào tháng 3 (TC).** Mốc tham vọng (kịch bản cơ sở): 293 thành viên, ~7 học viên (TC). Dưới mốc thận trọng là đang đi theo hướng "không đáng làm" (TC mục 5b).
 
 **Phễu 5 bước (anh chốt sản phẩm, tỷ lệ là giả định của TC):**
 
 | Bước | Ưu đãi | Tỷ lệ sang bước sau |
 |---|---|---|
-| 1. Video ngắn FB/TikTok | 1 video/ngày, ĐẠO → ĐỜI → ĐẦU TƯ | 8% người theo dõi mới vào Skool (TC) |
+| 1. Video ngắn FB/TikTok | 1 video/ngày, ĐẠO → ĐỜI → ĐẦU TƯ | 5% người theo dõi mới vào Skool (cơ sở); thận trọng 2,5% (TC) |
 | 2. Bài ghim / link bio | Bài "Bắt đầu từ đây" + link Skool | (gộp vào bước 1) |
 | 3. Skool miễn phí | Bài nhập môn "Vị thế mình là ai" + thử thách 7 ngày | 3% tháng đầu, sau đó 0,3%/tháng (TC) |
 | 4. Khoá cơ bản 100 USD/tháng | Con đường đầu tư + Công thức đầu tư | 1,5%/tháng nâng cấp (TC); huỷ 9%/tháng (TC) |
 | 5. Chuyên sâu 1.000 USD + ebook ~1 tr đ | Đồng hành 10 năm; ebook bán kèm | Ebook: 25% học viên mới, 40% người mua 1.000 USD (TC) |
 
-**Tiền:** vốn ban đầu 78,0 tr (gồm 32,0 tr dự phòng). Hoà vốn tháng chỉ cần 1 học viên. Hoàn vốn tháng 4 (cơ sở) hoặc tháng 6 (thận trọng) (TC).
+**Tiền:** vốn ban đầu 78,0 tr (gồm 32,0 tr dự phòng). Hoà vốn tháng cần 2 học viên nếu chỉ có khoá cơ bản. Hoàn vốn tháng 6 (cơ sở) hoặc tháng 15 (thận trọng); kịch bản "không đáng làm" chưa hoàn vốn sau 24 tháng, lỗ luỹ kế 93,6 tr (TC). Chi phí chính bị mất nếu thất bại là **thời gian của anh**.
 
 **Ba việc quyết định thành bại:**
-1. **Giữ chân:** huỷ 9% hay 15%/tháng làm học viên tháng 24 chênh 191 so với 139 (TC, lưới huỷ × chuyển đổi). Nghi thức hằng tuần trên Skool là để giữ người.
+1. **Kéo người vào Skool và giữ chân:** tỷ lệ vào Skool 2% / 4% / 8% cho 46 / 91 / 183 học viên tháng 24; huỷ 9% hay 15%/tháng cho 114 hay 84 học viên (TC). Hướng dẫn vào Skool bằng tiếng Việt và nghi thức tuần là 2 đòn bẩy chính.
 2. **Tuần 0 phải thử thanh toán thật** (bán khoá 1 USD, chờ payout thứ Tư về VND). Chưa qua cổng này thì chưa mở bán (NC).
 3. **Câu chữ an toàn:** "216" là khung chu kỳ, không phải lợi nhuận. TikTok cấm nội dung thương hiệu tài chính/crypto (NC), nên video chỉ mời vào **cộng đồng miễn phí**, không chào bán khoá trên video.
+
+**Hai mốc dừng (TC):** tháng 3 đổi cách bán nếu < 70 thành viên miễn phí hoặc < 1 học viên; tháng 6 xem lại mô hình nếu < 3 học viên, huỷ > 15%/tháng hoặc lãi < 10 tr/tháng.
 
 **Cần anh chốt ngay (chi tiết cuối bài):** gói 1.000 USD là gói bổ sung hay gồm luôn khoá cơ bản; câu chữ "216" và "đồng hành lợi nhuận"; nội dung phương pháp ở các ô [chờ anh].
 
@@ -40,7 +42,7 @@ Lịch ra mắt theo TC: tháng 1 mở cộng đồng miễn phí; tháng 2 mở
 ### Bước 1 — Video ngắn (Facebook Reel + TikTok)
 | Mục | Nội dung |
 |---|---|
-| Mục tiêu | Người lạ → người theo dõi. Cơ sở: 2.000 người theo dõi mới/tháng, tăng 5%/tháng (TC, giả định) |
+| Mục tiêu | Người lạ → người theo dõi. Cơ sở: 2.000 người theo dõi mới/tháng, tăng 5%/tháng; thận trọng 1.000/tháng, tăng 3% (TC, giả định). Mô hình tính từ 0 người theo dõi vì kênh đang xây lại (TC) |
 | Nội dung | Kịch bản đội content gửi 05:30, anh quay 08:00–09:00, đăng 11:30 (FB) / 12:00 (TikTok) (KENH) |
 | Cấu trúc | Câu Đạo (hook) → Đời (ví dụ đời thường) → Đầu tư (áp dụng) → CTA |
 | Lời kêu gọi | 4/7 video: "Bài nhập môn miễn phí ở link bio". 3/7 video: theo dõi / lưu bài (giữ CTA cũ của KENH) |
@@ -49,10 +51,11 @@ Lịch ra mắt theo TC: tháng 1 mở cộng đồng miễn phí; tháng 2 mở
 ### Bước 2 — Bài ghim / link bio
 | Mục | Nội dung |
 |---|---|
-| Mục tiêu | Người theo dõi → bấm link Skool |
+| Mục tiêu | Người theo dõi → vào Skool. Đây là **điểm nghẽn lớn nhất**: chỉ 5% (cơ sở), 2,5% (thận trọng) (TC) vì Skool không có tiếng Việt, phải tạo tài khoản, video ngắn khó gắn link (TC, NC) |
 | Nội dung | FB: thêm link Skool vào bài ghim "Bắt đầu từ đây" có sẵn (KENH). TikTok: link Skool ở bio |
 | Lời kêu gọi | "Bắt đầu từ câu hỏi: mình là ai trong thị trường? Bài nhập môn miễn phí trong cộng đồng Đầu Tư Bình An." |
 | Chỉ số | Lượt bấm link/tuần; tỷ lệ xem trang About → tham gia (tham khảo ~18–20% với group miễn phí, độ tin cậy Thấp — NC) |
+| Gỡ nghẽn | Video 60 giây "cách vào cộng đồng trong 3 bước" bằng tiếng Việt, ghim đầu kênh; trang About viết tiếng Việt; câu hỏi đăng ký chỉ 1 câu |
 | Lưu ý | TikTok có thể yêu cầu số người theo dõi tối thiểu để gắn link bio — **cần xác minh** trong cài đặt TikTok. Dự phòng: bình luận ghim + "comment VỊ THẾ để nhận link" |
 
 ### Bước 3 — Cộng đồng Skool miễn phí
@@ -77,7 +80,7 @@ Lịch ra mắt theo TC: tháng 1 mở cộng đồng miễn phí; tháng 2 mở
 ### Bước 4 — Khoá cơ bản 100 USD/tháng
 | Mục | Nội dung |
 |---|---|
-| Mục tiêu | Học xong 2 phần và ở lại. Huỷ cơ sở 9%/tháng, ở lại trung bình ≈ 11,1 tháng (TC) |
+| Mục tiêu | Học xong 2 phần và ở lại. Huỷ cơ sở 9%/tháng (ở lại TB ≈ 11,1 tháng); thận trọng 15%; không đáng làm 20% (TC) |
 | Nội dung | Phần 1 Con đường đầu tư + Phần 2 Công thức đầu tư (đề cương mục 3) + live tuần + nhật ký kỷ luật |
 | Lời kêu gọi | Vào Skool: "Mở khoá 2 phần, live hỏi đáp mỗi tuần. Huỷ bất cứ lúc nào." Thêm: "Mua kèm ebook để học lại khi ngoại tuyến" |
 | Chỉ số | Học viên đang trả phí; huỷ/tháng (≥ 15% là báo động — NC/Circle); % học xong Phần 1 trong 30 ngày; % dự live |
@@ -92,14 +95,14 @@ Lịch ra mắt theo TC: tháng 1 mở cộng đồng miễn phí; tháng 2 mở
 | Chỉ số | Số người nâng cấp/tháng; số buổi tư vấn → chốt; số ebook bán; tỷ lệ hoàn tiền |
 | Ebook | Skool không bán file lẻ: gói ebook thành khoá trả một lần trên Skool, hoặc bán VND ngoài Skool (NC). Ebook bán ra là xuất bản phẩm điện tử, phải qua nhà xuất bản (NC) |
 
-**Ước lượng phễu 3 tháng đầu (TC):**
-| Tháng | Người theo dõi | Skool miễn phí | HV 100 USD | Doanh thu |
+**Ước lượng phễu 3 tháng đầu (TC; thứ tự: không đáng làm / thận trọng / cơ sở):**
+| Tháng | Người theo dõi | Skool miễn phí | HV 100 USD | Doanh thu (tr) |
 |---|---:|---:|---:|---:|
-| 1 (cơ sở / thận trọng) | 12.000 / 11.000 | 327 / 217 | 0 / 0 | 0 / 0 tr |
-| 2 | 14.100 / 12.030 | 634 / 419 | 11 / ~5 | 28,5 / 12,4 tr |
-| 3 | 16.305 / 13.091 | 933 / 613 | 22 / ~9 | 66,7 / 27,1 tr |
+| 1 | 500 / 1.000 / 2.000 | 10 / 25 / 100 | 0 / 0 / 0 | 0 / 0 / 0 |
+| 2 | 1.000 / 2.030 / 4.100 | 19 / 49 / 197 | 0,1 / 0,6 / 3,4 | 0,3 / 1,5 / 8,9 |
+| 3 | 1.500 / 3.091 / 6.305 | 28 / 72 / 293 | 0,2 / 1,1 / 7,0 | 0,6 / 3,2 / 21,1 |
 
-Số người theo dõi ban đầu 10.000 là giả định của TC. **Tuần 0 thay bằng số thật của kênh và chạy lại `mo_hinh.py`.**
+Mô hình tính từ 0 người theo dõi ban đầu (TC). **Tuần 0 gửi Hùng số thật của kênh để chạy lại `mo_hinh.py`.** Nhìn bảng: 90 ngày đầu là giai đoạn **đo tỷ lệ thật**, chưa phải giai đoạn kiếm tiền.
 
 ---
 
@@ -216,7 +219,7 @@ Lý do: học xong trong ~2 tháng thì tháng 3 trở đi người học ở l�
 | Giao dịch | Chấm nhật ký giao dịch theo kỷ luật (có kế hoạch? có cắt lỗ? có đúng tỷ trọng?) — không chấm "lời hay lỗ" |
 | Lợi nhuận | Dạy **quản trị lợi nhuận của chính học viên**: chốt theo kế hoạch, giữ thành quả, không để lãi thành lỗ (cách diễn đạt mục 4) |
 
-Năng lực phục vụ (tự tính, giả định 1:1 mỗi năm 45 phút): 100 người đồng hành ≈ 75 giờ 1:1/năm. Cơ sở có 28 người mua luỹ kế cuối năm 2 (TC), vẫn trong sức anh.
+Năng lực phục vụ (tự tính, giả định 1:1 mỗi năm 45 phút): 100 người đồng hành ≈ 75 giờ 1:1/năm. Cơ sở có 15 người mua luỹ kế cuối năm 2 (TC), vẫn trong sức anh.
 
 ### 3.5 Mục lục ebook (~1.000.000 đ)
 **Tên tạm:** *Đầu Tư Bình An — Con đường và Công thức 10 năm* [chờ anh: tên chính thức].
@@ -351,15 +354,15 @@ Kịch bản số 1–2 nên quay trong tuần 1 để làm video ghim "Bắt đ
 
 ## 6. Gói 1.000 USD — 2 phương án để anh chốt
 
-**Kết luận: Hùng đề xuất Phương án A (gói bổ sung): giữ 191 học viên 100 USD ở tháng 24 thay vì 127–175, và giữ nghĩa vụ phục vụ thấp hơn (TC).**
+**Kết luận: Hùng đề xuất Phương án A (gói bổ sung): giữ 114 học viên 100 USD ở tháng 24 thay vì 77–105, và giữ nghĩa vụ phục vụ thấp hơn (TC).**
 
 | Tiêu chí (TC, kịch bản cơ sở) | **A. Gói bổ sung** (vẫn trả 100 USD/tháng) | **B. Gồm luôn khoá cơ bản** (ngừng trả 100 USD) |
 |---|---|---|
-| HV 100 USD tháng 24 | 191 | 175 (nếu chuyển hàng loạt 8%/tháng: 127) |
-| Lãi tháng 24 | 472,2 tr | 435,7 tr (hàng loạt: 481,1 tr) |
-| Lãi luỹ kế 24 tháng | 5.173,5 tr | 4.854,1 tr (hàng loạt: 5.652,0 tr) |
-| Doanh thu chưa phục vụ T24 | 538,9 tr | 538,9 tr (hàng loạt: 2.206,8 tr) |
-| Người phải phục vụ T60 | 1.211 | 1.391 (hàng loạt: 1.901) |
+| HV 100 USD tháng 24 | 114 | 105 (nếu chuyển hàng loạt 8%/tháng: 77) |
+| Lãi tháng 24 | 269,9 tr | 248,9 tr (hàng loạt: 279,0 tr) |
+| Lãi luỹ kế 24 tháng | 2.824,4 tr | 2.645,0 tr (hàng loạt: 3.153,1 tr) |
+| Doanh thu chưa phục vụ T24 | 300,5 tr | 300,5 tr (hàng loạt: 1.244,1 tr) |
+| Người phải phục vụ T60 | 756 | 866 (hàng loạt: 1.177) |
 | Giá trị trọn đời 1 HV mới | 1.254 USD | 1.095 USD (hàng loạt: 1.059 USD) |
 | Dễ bán | Khó hơn: học viên trả 1.000 USD **và** 100 USD/tháng | Dễ hơn: "trả 1 lần, học 10 năm" |
 | Rủi ro | Học viên thấy "trả 2 lần"; cần nói rõ gói gồm gì thêm | Tiền về sớm nhưng phục vụ không thu phí hằng tháng 10 năm |
@@ -368,16 +371,16 @@ Ghi chú (tự tính): với A, người theo đủ 10 năm trả 1.000 + 100 ×
 
 **Áp dụng cho cả 2 phương án (TC):**
 - Ghi nhận doanh thu: 20% ngay khi bán (định hướng, tài liệu), 80% phân bổ đều 120 tháng.
-- Quỹ phục vụ dài hạn: trích 30% tiền thực nhận mỗi lần bán vào tài khoản riêng. Cơ sở: quỹ đạt 189,4 tr ở tháng 24.
+- Quỹ phục vụ dài hạn: trích 30% tiền thực nhận mỗi lần bán vào tài khoản riêng. Cơ sở: quỹ đạt 104,4 tr ở tháng 24.
 - Thu trên Skool: phí 3,9% + 0,30 USD với giao dịch > 900 USD, nhận ~960,70 USD (NC).
-- Phương án phụ: trả góp 4 kỳ × 250 USD — lãi luỹ kế 24 tháng 5.063,4 tr, gần bằng A (TC).
+- Phương án phụ: trả góp 4 kỳ × 250 USD — lãi luỹ kế 24 tháng 2.759,1 tr, gần bằng A (TC).
 - Thay thế an toàn hơn để cân nhắc: gói 1.000 USD cho 12 tháng, gia hạn được (TC). Không đổi giá anh chốt, chỉ đổi thời hạn — anh quyết.
 
 ---
 
 ## 7. Lộ trình 90 ngày, KPI, ngưỡng thuê người
 
-**Kết luận: 4 cổng kiểm tra. Không qua cổng thanh toán (tuần 0) thì không mở bán; không qua cổng huỷ (cuối tháng 2) thì chưa đẩy gói 1.000 USD.**
+**Kết luận: 4 cổng kiểm tra, ngưỡng theo kịch bản thận trọng (TC). Không qua cổng thanh toán (tuần 0) thì không mở bán; tháng 3 dưới ngưỡng thì đổi cách bán; tháng 6 dưới ngưỡng thì dừng mở rộng.**
 
 ### 7.1 Tuần 0 — chuẩn bị (7 ngày)
 | Việc | Chi tiết | Nguồn |
@@ -397,47 +400,52 @@ Ghi chú (tự tính): với A, người theo đủ 10 năm trả 1.000 + 100 ×
 - Anh quay: bài nhập môn "Vị thế mình là ai" + 7 bài thử thách (mỗi bài 3–5 phút).
 - Kênh: áp mẫu kịch bản mục 5.2; quay ý tưởng 1–2 làm video ghim.
 - Skool: gói Hobby (TC). Live mở cuối tháng.
-- **Cổng 1 (cuối tháng 1):** ≥ 217 thành viên miễn phí (thận trọng, TC); ≥ 30% thành viên mới xong bài nhập môn (đề xuất). Anh quay xong ít nhất Phần 1.
+- Đo ngay tỷ lệ người theo dõi mới → Skool; gửi Hùng mỗi tuần.
+- **Cổng 1 (cuối tháng 1):** ≥ 25 thành viên miễn phí (thận trọng, TC); ≥ 30% thành viên mới xong bài nhập môn (đề xuất). Anh quay xong ít nhất Phần 1.
 
 ### 7.3 Tháng 2 (tuần 5–8) — mở khoá 100 USD
 - Mở hạng Học viên 100 USD. Live tuần bắt đầu.
 - Anh quay Phần 2 trong tháng.
-- **Cổng 2 (cuối tháng 2):** ≥ 5 học viên trả phí (thận trọng, TC). Đo huỷ thật: nếu ≥ 15%/tháng (ngưỡng "cần xử lý" — NC) thì tạm hoãn gói 1.000 USD, sửa nghi thức giữ chân trước.
+- **Cổng 2 (cuối tháng 2):** ≥ 49 thành viên miễn phí và có học viên trả phí đầu tiên (thận trọng 0,6 kỳ vọng — TC). Nếu tháng 3 có huỷ ≥ 15%/tháng (ngưỡng "cần xử lý" — NC) thì tạm hoãn gói 1.000 USD, sửa nghi thức giữ chân trước.
 
 ### 7.4 Tháng 3 (tuần 9–12) — mở 1.000 USD + ebook
 - Mở gói đồng hành (theo phương án anh chốt ở mục 6). Chỉ mời học viên đã học xong Phần 2.
-- Ebook: chỉ mở khi NXB đã cấp phép. Nếu chưa, lùi ebook; tháng 3 chỉ mất ~5,0 tr doanh thu ebook (TC, cơ sở).
-- Chuyển Skool Hobby → Pro khi doanh thu qua Skool > ~1.268 USD/tháng (≈ 13 học viên) (TC, NC).
-- **Cổng 3 (cuối tháng 3):** ≥ 9 học viên (thận trọng) / 22 (cơ sở) (TC). Chạy lại mô hình bằng số thật, chốt kế hoạch tháng 4–6.
+- Ebook: chỉ mở khi NXB đã cấp phép. Nếu chưa, lùi ebook; tháng 3 chỉ mất ~1,6 tr doanh thu ebook (TC, cơ sở).
+- Giữ Skool Hobby đến khi doanh thu qua Skool > ~1.268 USD/tháng (≈ 13 học viên); cơ sở chuyển Pro ở tháng 5 (TC, NC).
+- **Cổng 3 (cuối tháng 3) — mốc đổi cách bán (TC 5b):** nếu < 70 thành viên miễn phí **hoặc** < 1 học viên: thêm thu VND (chuyển khoản/QR rồi mời vào Skool), hướng dẫn vào Skool bằng tiếng Việt, live miễn phí để chốt, cân nhắc gói năm. Giá anh chốt giữ nguyên trừ khi anh quyết khác. Chạy lại mô hình bằng số thật.
+- **Cổng 4 (cuối tháng 6) — mốc dừng mở rộng (TC 5b):** nếu < 3 học viên **hoặc** huỷ > 15%/tháng **hoặc** lãi < 10 tr/tháng: không thuê, không chi quảng cáo, trình anh phương án đổi giá/định dạng.
 
 ### 7.5 KPI từng tháng
+Số TC ghi theo thứ tự **thận trọng (mức sàn) / cơ sở (tham vọng)**.
 | KPI | Tháng 1 | Tháng 2 | Tháng 3 | Nguồn |
 |---|---|---|---|---|
 | Ngày đăng đủ 2 kênh | ≥ 25 | ≥ 25 | ≥ 25 (≥ 80 trong 90 ngày) | KENH |
 | Xem qua 3 giây (TikTok) | ≥ 50% | ≥ 55% | ≥ 60% | KENH |
 | Bình luận/video | ≥ 5 | ≥ 10 | ≥ 20 | KENH |
-| Người theo dõi (thận trọng / cơ sở) | 11.000 / 12.000 | 12.030 / 14.100 | 13.091 / 16.305 | TC |
-| Thành viên Skool miễn phí | 217 / 327 | 419 / 634 | 613 / 933 | TC |
-| HV 100 USD đang trả phí | 0 / 0 | ~5 / 11 | ~9 / 22 | TC |
-| Huỷ/tháng | — | đo mốc | ≤ 9% (cơ sở) | TC |
-| Người mua 1.000 USD | — | — | ≥ 0 (cơ sở 0,2 kỳ vọng) | TC |
-| Doanh thu | 0 | 12,4 / 28,5 tr | 27,1 / 66,7 tr | TC |
-| Lãi | −2,3 tr | 7,7 / 20,7 tr | 19,8 / 54,1 tr | TC |
+| Người theo dõi | 1.000 / 2.000 | 2.030 / 4.100 | 3.091 / 6.305 | TC |
+| Theo dõi mới → Skool | ≥ 2,5% / 5% | ≥ 2,5% / 5% | ≥ 2,5% / 5% | TC |
+| Thành viên Skool miễn phí | 25 / 100 | 49 / 197 | 72 / 293 | TC |
+| HV 100 USD đang trả phí | 0 / 0 | ~1 / ~3 | ≥ 1 / ~7 | TC |
+| Huỷ/tháng | — | — | ≤ 15% / ≤ 9% | TC |
+| Người mua 1.000 USD | — | — | 0 / 0,05 kỳ vọng | TC |
+| Doanh thu | 0 | 1,5 / 8,9 tr | 3,2 / 21,1 tr | TC |
+| Lãi | −2,3 tr | −1,1 / 4,9 tr | 0,3 / 14,9 tr | TC |
 | % dự live tuần (đề xuất) | — | ≥ 40% HV | ≥ 40% HV | đề xuất, chưa có chuẩn |
 
-Mốc người mua 1.000 USD trong 90 ngày gần 0 là bình thường theo mô hình. Đừng đánh giá gói này trước tháng 6.
+Mốc tháng 6 (TC 5b): thận trọng 140 thành viên miễn phí, 2,6 học viên, lãi 3,9 tr; cơ sở 585 / 18,4 / 42,0 tr.
+Người mua 1.000 USD trong 90 ngày gần 0 là bình thường theo mô hình. Đừng đánh giá gói này trước tháng 6.
 
 ### 7.6 Ngưỡng thuê người (TC — chỉ thuê khi số tháng trước chạm ngưỡng, tổng lương ≤ 25% doanh thu tháng trước)
 | Vị trí | Lương giả định | Ngưỡng | Tháng thuê (cơ sở) |
 |---|---|---|---|
-| Kế toán dịch vụ (thuê ngoài) | 2,5 tr | Doanh thu ≥ 40 tr/tháng | 4 |
-| Trợ giảng/CSKH bán thời gian | 6,0 tr | ≥ 60 học viên trả phí | 10 |
-| Dựng video/trợ lý nội dung | 9,0 tr | Doanh thu ≥ 200 tr/tháng | 11 |
-| Tư vấn/chốt đơn 1.000 USD | 7,0 tr + 5% | Doanh thu ≥ 150 tr và ≥ 2.000 thành viên miễn phí | 12 |
+| Kế toán dịch vụ (thuê ngoài) | 2,5 tr | Doanh thu ≥ 40 tr/tháng | 6 |
+| Trợ giảng/CSKH bán thời gian | 6,0 tr | ≥ 60 học viên trả phí | 17 |
+| Dựng video/trợ lý nội dung | 9,0 tr | Doanh thu ≥ 200 tr/tháng | 18 |
+| Tư vấn/chốt đơn 1.000 USD | 7,0 tr + 5% | Doanh thu ≥ 150 tr và ≥ 2.000 thành viên miễn phí | 20 |
 | CSKH toàn thời gian | 10,0 tr | ≥ 200 học viên | không (24 tháng) |
 | CSKH thứ 2 | 10,0 tr | ≥ 500 học viên | không (24 tháng) |
 
-Trong 90 ngày đầu: **không thuê ai**. Anh + đội AI làm hết (TC).
+Kịch bản thận trọng và "không đáng làm": **không thuê ai trong 24 tháng** (TC). Trong 90 ngày đầu, mọi kịch bản đều không thuê; anh + đội AI làm hết.
 
 ---
 
@@ -446,7 +454,8 @@ Trong 90 ngày đầu: **không thuê ai**. Anh + đội AI làm hết (TC).
 | Rủi ro | Mức | Dấu hiệu sớm | Giảm thiểu |
 |---|---|---|---|
 | Payout Skool về VN không chạy | Cao | Giao dịch 1 USD không về sau 2 thứ Tư | Cổng 0; dự phòng thu VND + mời thủ công (NC) |
-| 100 USD/tháng quá cao với người 25–40 ở VN | Cao | Nhiều người xong thử thách, < 1% trả phí | Tăng giá trị live; xem lại phương án trả năm (anh quyết, không đổi giá) |
+| Ít người vào Skool (rào cản tài khoản, không có tiếng Việt) | Cao | Theo dõi mới → Skool < 2,5% (TC) | Video hướng dẫn 3 bước, About tiếng Việt, comment từ khoá nhận link |
+| 100 USD/tháng quá cao với người 25–40 ở VN | Cao | Nhiều người xong thử thách, < 1% trả phí | Tăng giá trị live; thu VND song song; xem lại gói năm ở mốc tháng 3 (anh quyết, không đổi giá) |
 | Huỷ cao | Cao | Huỷ ≥ 15%/tháng (NC) | Nghi thức tuần, nhật ký, live; đo từ tháng 2 |
 | Nội dung bị coi là quảng cáo crypto / hứa lợi nhuận | Cao | Video bị gỡ, cảnh cáo nền tảng | Câu chữ mục 4, luật sư duyệt, không chào bán trên video |
 | Phản ứng về dùng Phật – Nho – Đạo để bán khoá | Trung bình | Bình luận "lợi dụng tôn giáo" | Quy tắc 4.5; không hình ảnh tôn giáo; gọi là triết lý sống |
@@ -454,6 +463,7 @@ Trong 90 ngày đầu: **không thuê ai**. Anh + đội AI làm hết (TC).
 | Nghĩa vụ 10 năm gói 1.000 USD | Trung bình (dài hạn) | Doanh thu chưa phục vụ tăng nhanh | Quỹ phục vụ 30%; phương án A (TC) |
 | Kẻ giả mạo nhắn tin xin tiền học viên | Trung bình | Học viên báo tin nhắn lạ | Quy tắc 5 mục 2.4, ghim cảnh báo |
 | Anh quá tải (quay + live + 1:1) | Trung bình | Lỡ lịch quay > 3 ngày/tuần | Quay theo lô 2–3 kịch bản/ngày (KENH); thuê theo ngưỡng TC |
+| Đi theo hướng "không đáng làm" (~1 học viên tháng 24, lãi 0,3 tr — TC) | Trung bình | Dưới ngưỡng thận trọng ở tháng 3 | Mốc đổi cách bán tháng 3, mốc dừng tháng 6 (mục 7) |
 
 ---
 
@@ -472,10 +482,10 @@ Trong 90 ngày đầu: **không thuê ai**. Anh + đội AI làm hết (TC).
 ---
 
 ## Gợi ý hình minh hoạ
-1. **Sơ đồ phễu 5 bước** (hình phễu): video → link bio → Skool miễn phí → 100 USD → 1.000 USD + ebook, ghi tỷ lệ 8% / 3% + 0,3% / 1,5% / 25–40% (TC).
+1. **Sơ đồ phễu 5 bước** (hình phễu): video → link bio → Skool miễn phí → 100 USD → 1.000 USD + ebook, ghi tỷ lệ 5% (thận trọng 2,5%) / 3% + 0,3% / 1,5% / 25–40% (TC).
 2. **Sơ đồ 5 tầng dòng tiền** (bậc thang từ trên xuống): FED → VCs → Protocol & dev → KOLs & media → Retail; chấm "Bạn ở đây" ở tầng 5. Dùng làm thumbnail bài nhập môn.
-3. **Biểu đồ cột 3 tháng:** thành viên miễn phí và học viên 100 USD, 2 kịch bản thận trọng/cơ sở (bảng 7.5, TC).
+3. **Biểu đồ cột 3 và 6 tháng:** thành viên miễn phí và học viên 100 USD theo 3 kịch bản không đáng làm / thận trọng / cơ sở, vẽ đường ngưỡng dừng (bảng 1 và 7.5, TC mục 5b).
 4. **Biểu đồ cột so sánh 2 phương án gói 1.000 USD:** HV 100 USD T24, lãi luỹ kế 24 tháng, người phục vụ T60 (bảng mục 6, TC).
 5. **Sơ đồ khung 10 năm** (dòng thời gian): chu kỳ 1–2–3, mỗi chu kỳ tách BTC → altcoin — **chỉ vẽ sau khi anh giảng mục 2.2**, không ghi số lợi nhuận.
 6. **Lịch tuần 1 hình:** 7 ngày, chuyên mục KENH + lớp ĐẠO/ĐỜI/ĐẦU TƯ + loại CTA (bảng 5.1).
-7. **Lưới nhiệt huỷ × chuyển đổi** (TC mục 6) để anh thấy vì sao giữ chân quan trọng hơn kéo người.
+7. **Lưới nhiệt huỷ × chuyển đổi** và bảng tỷ lệ vào Skool 2% / 4% / 8% (TC mục 6) để anh thấy 2 điểm nghẽn: vào Skool và giữ chân.

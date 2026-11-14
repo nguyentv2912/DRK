@@ -528,13 +528,36 @@ def main():
                 d.setdefault(ma, row["thang"])
         moc_thue[kb] = d
 
-    # Nguong dung / doi cach ban: lay muc cua kich ban THAN TRONG o thang 3 va 6
-    tt = kq["than_trong"]["rows"]
+    # Nguong dung / doi cach ban: "duong toi thieu dang lam" = duong (nen co so, chi ha ty le vao Skool)
+    # cho lai thang 24 vua dat MUC_DANG_LAM. Doc so thang 3 va 6 cua duong do lam nguong.
+    MUC_DANG_LAM = 50 * TR
+    lo_, hi_ = 0.001, p["ty_le_vao_skool_moi"]
+    for _ in range(40):
+        mid = (lo_ + hi_) / 2
+        if tom_tat(voi(p, ty_le_vao_skool_moi=mid))["lai_t24"] >= MUC_DANG_LAM:
+            hi_ = mid
+        else:
+            lo_ = mid
+    duong_tt = tom_tat(voi(p, ty_le_vao_skool_moi=hi_))["rows"]
     nguong_dung = {
-        "thang_3": {"free_toi_thieu": round(tt[2]["free"], -1), "hv_toi_thieu": max(1, round(tt[2]["hv"]))},
-        "thang_6": {"hv_toi_thieu": max(1, round(tt[5]["hv"])), "huy_toi_da": KICH_BAN["than_trong"]["huy_thang"],
-                    "lai_toi_thieu_tr": 10},
+        "muc_lai_t24_toi_thieu_tr": MUC_DANG_LAM / TR, "ty_le_vao_skool_tuong_ung": hi_,
+        "thang_3": {"free_toi_thieu": round(duong_tt[2]["free"]), "hv_toi_thieu": round(duong_tt[2]["hv"])},
+        "thang_6": {"free_toi_thieu": round(duong_tt[5]["free"]), "hv_toi_thieu": round(duong_tt[5]["hv"]),
+                    "lai_toi_thieu_tr": round(duong_tt[5]["lai"] / TR, 1)},
+        # ty le: diem giua than trong va co so
+        "cd_toi_thieu": (KICH_BAN["than_trong"]["cd_free_sang_tra_phi_thang_dau"] + p["cd_free_sang_tra_phi_thang_dau"]) / 2,
+        "huy_toi_da": (KICH_BAN["than_trong"]["huy_thang"] + p["huy_thang"]) / 2,
     }
+
+    def qua_nguong(kb, t):
+        q, r = voi(p, **KICH_BAN[kb]), kq[kb]["rows"][t - 1]
+        n = nguong_dung[f"thang_{t}"]
+        ok = r["free"] >= n["free_toi_thieu"] and r["hv"] >= n["hv_toi_thieu"] \
+            and q["cd_free_sang_tra_phi_thang_dau"] >= nguong_dung["cd_toi_thieu"]
+        if t == 6:
+            ok = ok and q["huy_thang"] <= nguong_dung["huy_toi_da"] and r["lai"] >= n["lai_toi_thieu_tr"] * TR
+        return ok
+    nguong_dung["ket_qua"] = {kb: {"thang_3": qua_nguong(kb, 3), "thang_6": qua_nguong(kb, 6)} for kb in KICH_BAN}
 
     # ---------------- JSON ----------------
     def gon(r):
@@ -730,18 +753,24 @@ def main():
       f"khác biệt nằm ở **số người phải phục vụ không thu phí hằng tháng trong 10 năm**.\n")
 
     a("### 5b. Ngưỡng dừng / đổi cách bán (đo bằng số thật)\n")
-    a("Ngưỡng lấy theo mức của kịch bản **thận trọng** tại cùng thời điểm: thấp hơn thận trọng nghĩa là đang đi theo hướng \"không đáng làm\".\n")
+    a(f"Ngưỡng = mức tháng 3 và tháng 6 của **đường tối thiểu đáng làm**: giữ giả định cơ sở, chỉ hạ tỷ lệ vào Skool xuống {pct(nguong_dung['ty_le_vao_skool_tuong_ung'])} "
+      f"để lãi tháng 24 vừa đạt {so(nguong_dung['muc_lai_t24_toi_thieu_tr'])} tr (mức giả định đủ bù công anh). "
+      f"Vì số lượng tháng 3 còn nhỏ, phải xét kèm **tỷ lệ**: chuyển đổi miễn phí mới → 100 USD ≥ {pct(nguong_dung['cd_toi_thieu'])} và tỷ lệ huỷ ≤ {pct(nguong_dung['huy_toi_da'], 1)}/tháng "
+      "(điểm giữa thận trọng và cơ sở).\n")
     a(f"| Chỉ số | Tháng | {HDR} |\n|---|---:|{SEP}")
     for t in (3, 6):
         a(f"| Thành viên Skool miễn phí | {t} | " + " | ".join(so(kq[k]["rows"][t - 1]["free"]) for k in KICH_BAN) + " |")
         a(f"| HV 100 USD đang trả | {t} | " + " | ".join(so(kq[k]["rows"][t - 1]["hv"], 1) for k in KICH_BAN) + " |")
         a(f"| Lãi tháng (tr) | {t} | " + " | ".join(m(kq[k]["rows"][t - 1]["lai"]) for k in KICH_BAN) + " |")
+    for t in (3, 6):
+        a(f"| **Qua ngưỡng?** | {t} | " + " | ".join("Đạt" if nguong_dung["ket_qua"][k][f"thang_{t}"] else "Không" for k in KICH_BAN) + " |")
     n3, n6 = nguong_dung["thang_3"], nguong_dung["thang_6"]
     a("")
-    a(f"- **Mốc tháng 3 — đổi cách bán** nếu Skool miễn phí < {so(n3['free_toi_thieu'])} người **hoặc** < {n3['hv_toi_thieu']} học viên trả 100 USD: "
+    a(f"- **Mốc tháng 3 — đổi cách bán** nếu Skool miễn phí < {so(n3['free_toi_thieu'])} người **hoặc** < {n3['hv_toi_thieu']} học viên trả 100 USD **hoặc** chuyển đổi < {pct(nguong_dung['cd_toi_thieu'])}: "
       "thêm thu VND (chuyển khoản/QR rồi mời vào Skool), hướng dẫn vào Skool bằng tiếng Việt, buổi live miễn phí để chốt, cân nhắc gói năm. Giá anh chốt giữ nguyên trừ khi anh quyết khác.")
-    a(f"- **Mốc tháng 6 — dừng mở rộng / xem lại mô hình** nếu < {n6['hv_toi_thieu']} học viên trả phí, **hoặc** tỷ lệ huỷ thực > {pct(n6['huy_toi_da'], 0)}/tháng, "
-      f"**hoặc** lãi < {n6['lai_toi_thieu_tr']} tr/tháng: không thuê người, không chi quảng cáo; trình anh phương án đổi giá/định dạng (gói năm, khoá trả một lần) trước khi làm tiếp.")
+    a(f"- **Mốc tháng 6 — dừng mở rộng / xem lại mô hình** nếu < {so(n6['free_toi_thieu'])} thành viên miễn phí, < {n6['hv_toi_thieu']} học viên trả phí, **hoặc** tỷ lệ huỷ thực > {pct(nguong_dung['huy_toi_da'], 1)}/tháng, "
+      f"**hoặc** lãi < {so(n6['lai_toi_thieu_tr'], 1)} tr/tháng: không thuê người, không chi quảng cáo; trình anh phương án đổi giá/định dạng (gói năm, khoá trả một lần) trước khi làm tiếp.")
+    a("- Kết quả: kịch bản **thận trọng không qua ngưỡng** (chuyển đổi và huỷ kém) dù số thành viên tháng 3 có thể đủ — nếu số thật giống thận trọng thì đổi cách bán ngay ở tháng 3, chưa mở rộng.")
     a("- Ở mức \"không đáng làm\", tiền không mất nhiều (vốn nhỏ) nhưng **thời gian của anh** là chi phí chính bị mất.\n")
     a("## 6. Độ nhạy ±20% (kịch bản cơ sở)\n")
     a(f"Gốc: lãi tháng 24 = {m(base['lai_t24'])} tr; lãi luỹ kế 24 tháng = {m(base['luy_ke_24'])} tr.\n")
@@ -801,7 +830,7 @@ def main():
     a("- **Thay thế an toàn hơn để anh cân nhắc:** gói 1.000 USD cho 12 tháng gia hạn được, hoặc trả góp — xem kịch bản phụ ở mục 5.\n")
 
     a("## 9. Nhận định\n")
-    a(f"- Về chi phí, dự án gần như không thể lỗ nặng: vốn {m(von)} tr, hoà vốn từ {can['co_so']['0']} học viên. Rủi ro thật là **doanh thu bằng 0** nếu không ai trả 100 USD/tháng.")
+    a(f"- Về chi phí, dự án gần như không thể lỗ nặng: vốn {m(von)} tr, hoà vốn từ {can_khong_upsell['0']} học viên nếu chỉ có khoá cơ bản. Kịch bản cơ sở là tham vọng; nên lập kế hoạch theo thận trọng và kiểm tra ngưỡng ở tháng 3, tháng 6 (mục 5b). Rủi ro thật là **doanh thu bằng 0** nếu không ai trả 100 USD/tháng.")
     a(f"- 100 USD/tháng (≈{m(gcb * fx, 1)} tr) là giá cao với người 25–40 tuổi ở VN; tỷ lệ huỷ quyết định quy mô: huỷ {pct(huy_ds[0], 0)} vs {pct(huy_ds[-1], 0)} làm số học viên tháng 24 chênh "
       f"{so(luoi[0][2]['hv_t24'])} vs {so(luoi[-1][2]['hv_t24'])}. Cần đo tỷ lệ huỷ thật ngay 2–3 tháng đầu.")
     a("- Số người theo dõi và tỷ lệ chuyển đổi là giả định — thay bằng số thật của kênh trong tháng 1 rồi chạy lại `mo_hinh.py`.")

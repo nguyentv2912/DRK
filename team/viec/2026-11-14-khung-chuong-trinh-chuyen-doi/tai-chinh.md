@@ -167,7 +167,7 @@ Giá trị trọn đời 1 học viên 100 USD mới (USD): gói bổ sung 1.254
 
 ### 5b. Ngưỡng dừng / đổi cách bán (đo bằng số thật)
 
-Ngưỡng lấy theo mức của kịch bản **thận trọng** tại cùng thời điểm: thấp hơn thận trọng nghĩa là đang đi theo hướng "không đáng làm".
+Ngưỡng = mức tháng 3 và tháng 6 của **đường tối thiểu đáng làm**: giữ giả định cơ sở, chỉ hạ tỷ lệ vào Skool xuống 0,9% để lãi tháng 24 vừa đạt 50 tr (mức giả định đủ bù công anh). Vì số lượng tháng 3 còn nhỏ, phải xét kèm **tỷ lệ**: chuyển đổi miễn phí mới → 100 USD ≥ 2,5% và tỷ lệ huỷ ≤ 12,0%/tháng (điểm giữa thận trọng và cơ sở).
 
 | Chỉ số | Tháng | Không đáng làm | Thận trọng | Cơ sở (tham vọng) | Lạc quan |
 |---|---:|---:|---:|---:|---:|
@@ -177,9 +177,12 @@ Ngưỡng lấy theo mức của kịch bản **thận trọng** tại cùng th�
 | Thành viên Skool miễn phí | 6 | 52 | 140 | 585 | 1.656 |
 | HV 100 USD đang trả | 6 | 0,4 | 2,6 | 18,4 | 81,7 |
 | Lãi tháng (tr) | 6 | -1,3 | 3,9 | 42,0 | 208,0 |
+| **Qua ngưỡng?** | 3 | Không | Không | Đạt | Đạt |
+| **Qua ngưỡng?** | 6 | Không | Không | Đạt | Đạt |
 
-- **Mốc tháng 3 — đổi cách bán** nếu Skool miễn phí < 70 người **hoặc** < 1 học viên trả 100 USD: thêm thu VND (chuyển khoản/QR rồi mời vào Skool), hướng dẫn vào Skool bằng tiếng Việt, buổi live miễn phí để chốt, cân nhắc gói năm. Giá anh chốt giữ nguyên trừ khi anh quyết khác.
-- **Mốc tháng 6 — dừng mở rộng / xem lại mô hình** nếu < 3 học viên trả phí, **hoặc** tỷ lệ huỷ thực > 15%/tháng, **hoặc** lãi < 10 tr/tháng: không thuê người, không chi quảng cáo; trình anh phương án đổi giá/định dạng (gói năm, khoá trả một lần) trước khi làm tiếp.
+- **Mốc tháng 3 — đổi cách bán** nếu Skool miễn phí < 55 người **hoặc** < 1 học viên trả 100 USD **hoặc** chuyển đổi < 2,5%: thêm thu VND (chuyển khoản/QR rồi mời vào Skool), hướng dẫn vào Skool bằng tiếng Việt, buổi live miễn phí để chốt, cân nhắc gói năm. Giá anh chốt giữ nguyên trừ khi anh quyết khác.
+- **Mốc tháng 6 — dừng mở rộng / xem lại mô hình** nếu < 110 thành viên miễn phí, < 3 học viên trả phí, **hoặc** tỷ lệ huỷ thực > 12,0%/tháng, **hoặc** lãi < 6,2 tr/tháng: không thuê người, không chi quảng cáo; trình anh phương án đổi giá/định dạng (gói năm, khoá trả một lần) trước khi làm tiếp.
+- Kết quả: kịch bản **thận trọng không qua ngưỡng** (chuyển đổi và huỷ kém) dù số thành viên tháng 3 có thể đủ — nếu số thật giống thận trọng thì đổi cách bán ngay ở tháng 3, chưa mở rộng.
 - Ở mức "không đáng làm", tiền không mất nhiều (vốn nhỏ) nhưng **thời gian của anh** là chi phí chính bị mất.
 
 ## 6. Độ nhạy ±20% (kịch bản cơ sở)
@@ -254,7 +257,7 @@ Quy tắc: chỉ thuê khi số liệu **tháng trước** chạm ngưỡng, và
 
 ## 9. Nhận định
 
-- Về chi phí, dự án gần như không thể lỗ nặng: vốn 78,0 tr, hoà vốn từ 1 học viên. Rủi ro thật là **doanh thu bằng 0** nếu không ai trả 100 USD/tháng.
+- Về chi phí, dự án gần như không thể lỗ nặng: vốn 78,0 tr, hoà vốn từ 2 học viên nếu chỉ có khoá cơ bản. Kịch bản cơ sở là tham vọng; nên lập kế hoạch theo thận trọng và kiểm tra ngưỡng ở tháng 3, tháng 6 (mục 5b). Rủi ro thật là **doanh thu bằng 0** nếu không ai trả 100 USD/tháng.
 - 100 USD/tháng (≈2,6 tr) là giá cao với người 25–40 tuổi ở VN; tỷ lệ huỷ quyết định quy mô: huỷ 4% vs 20% làm số học viên tháng 24 chênh 157 vs 68. Cần đo tỷ lệ huỷ thật ngay 2–3 tháng đầu.
 - Số người theo dõi và tỷ lệ chuyển đổi là giả định — thay bằng số thật của kênh trong tháng 1 rồi chạy lại `mo_hinh.py`.
 - Chưa xác minh (nghien-cuu.md mới ở mức tin cậy Trung bình/Thấp): phí Skool, payout Stripe Express về VN (phải thử 1 giao dịch thật), thuế khi bán qua nền tảng nước ngoài, chi phí liên kết xuất bản ebook. Khách trả USD còn chịu thêm ~1–4% phí đổi ngoại tệ phía thẻ — làm giá thực tế với khách cao hơn 100 USD, có thể kéo chuyển đổi xuống.
