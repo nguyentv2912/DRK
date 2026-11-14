@@ -75,6 +75,7 @@ GD = {
     "may_tinh_moi_nguoi": 12.0,  # GD: thiết bị cho mỗi người mới (capex)
     "hv_toi_da_moi_coach": 40,   # GD: 1 coach + 1 trợ giảng phụ trách tối đa 40 học viên đồng hành đang học
                                  # (học nhóm 8–10 người/lớp + 1 buổi 1:1/tháng). Vượt -> tự thêm cặp coach+TG.
+    "lead_toi_da_moi_tvv": 600,  # GD: 1 tư vấn viên xử lý tối đa 600 lead/tháng. Vượt -> tự thêm tư vấn viên.
 
     # --- Thuế, tài chính ---
     "thue_tndn": 0.20,         # GD: thuế TNDN 20%, chuyển lỗ luỹ kế
@@ -110,7 +111,7 @@ NHAN_SU = {
     "Tăng trưởng": {"Quản lý vận hành": 1, "Coach tài chính": 2, "Trợ giảng": 2, "Trưởng nhóm bán hàng": 1,
                     "Tư vấn viên": 4, "Chăm sóc khách hàng": 2, "Content creator": 2, "Video editor": 1,
                     "Chuyên viên quảng cáo": 1, "Kế toán – hành chính": 1},
-    "Mở rộng":     {"Quản lý vận hành": 1, "Coach tài chính": 4, "Trợ giảng": 3, "Trưởng nhóm bán hàng": 1,
+    "Mở rộng":     {"Quản lý vận hành": 1, "Coach tài chính": 4, "Trợ giảng": 4, "Trưởng nhóm bán hàng": 1,
                     "Tư vấn viên": 6, "Chăm sóc khách hàng": 3, "Content creator": 2, "Video editor": 2,
                     "Chuyên viên quảng cáo": 1, "Kế toán – hành chính": 1},
 }
@@ -130,7 +131,8 @@ SO_HOI_THAO_OFFLINE = {"Khởi động": 4, "Tăng trưởng": 8, "Mở rộng":
 VON_BAN_DAU = {
     "Thiết bị quay dựng (máy quay, mic, đèn, phông)": 80,
     "Thiết bị cho đội khởi động (8 người x 12)": None,   # tính theo nhân sự
-    "Pháp lý khởi tạo (ngành nghề, hợp đồng mẫu, rà soát tuân thủ)": 30,
+    "Pháp lý khởi tạo: luật sư rà soát nội dung, hợp đồng mẫu, ý kiến bằng văn bản (GD, chưa có báo giá)": 30,
+    "Lệ phí pháp nhân/bổ sung ngành nghề + tra cứu, đăng ký nhãn hiệu (GD, cần báo giá)": 10,
     "Nhận diện, website, LMS, phễu đăng ký": 40,
     "Sản xuất nội dung nền tảng (bài giảng khoá nền tảng)": 30,
     "Cải tạo nhỏ không gian hội thảo trong VP có sẵn": 20,
@@ -190,8 +192,21 @@ def so_nguoi(gd_ten):
     return sum(NHAN_SU[gd_ten].values())
 
 
+# Lộ trình THEO CỔNG (khuyến nghị chính thức) — GD
+# - Bắt đầu với đội Khởi động; T1 quảng cáo 10 (thử nghiệm), T2+ 30 trđ/tháng.
+# - Cổng quảng cáo: khi tháng trước đạt >= 14 khách đồng hành / 1.000 lead (80% giả định 17,6)
+#   thì nâng ngân sách Khởi động lên 'qc_khoi_dong_mo' (giữ CPL); 2 tháng liền < 11,2 thì hạ về 30.
+# - Cổng tuyển: 2 tháng liên tiếp đạt >= 80% ngưỡng hoà vốn (có công suất coach) của giai đoạn kế
+#   -> tháng sau chuyển giai đoạn. Không quay lui.
+CONG = {
+    "qc_khoi_dong": 30, "qc_khoi_dong_mo": 70, "qc_tang_truong": 100, "qc_mo_rong": 130,
+    "ty_le_cong_qc": 14.0, "ty_le_nguong_tuyen": 0.80, "so_thang_lien_tiep": 2,
+}
+
+
 def chay(p_override=None, kb="Cơ sở", he_so_cd=None, he_so_gia_dh=None, he_so_luong_sales=1.0,
-         he_so_cpl=None, he_so_ngan_sach=1.0, he_so_lead_tn=None):
+         he_so_cpl=None, he_so_ngan_sach=1.0, he_so_lead_tn=None, cong=None, nguong_cong=None):
+    """cong: dict như CONG để chạy lộ trình theo cổng; nguong_cong: {giai_doan: khách/tháng hoà vốn}."""
     p = copy.deepcopy(GD)
     k = KICH_BAN[kb]
     p["ty_le_hoan_tien"] = k["ty_le_hoan_tien"]
@@ -220,13 +235,36 @@ def chay(p_override=None, kb="Cơ sở", he_so_cd=None, he_so_gia_dh=None, he_so
     lo_luy_ke = 0.0
     thue_tich = 0.0
     them_truoc = 0
+    them_tvv_truoc = 0
+    gd_truoc = None
+    gd_cong = "Khởi động"
+    dat_lien_tiep = 0
+    qc_mo, duoi = False, 0
+    lead_hist = [0.0] * (THANG + 2)
     for t in range(1, THANG + 1):
-        gd_ten = giai_doan(t)
+        if cong is None:
+            gd_ten = giai_doan(t)
+        else:
+            gd_ten = gd_cong
         ramp = p["he_so_ramp_cd"].get(t, 1.0)
         c = hcd * ramp
         # T1 = tháng chuẩn bị: 10 trđ quảng cáo là chi phí thử nghiệm (test mẫu quảng cáo/CPL),
         # lead T1 KHÔNG tạo khách và không chuyển sang T2 (thận trọng).
-        ngan_sach = (10 if t == 1 else p["ngan_sach_qc"][gd_ten]) * he_so_ngan_sach
+        if cong is None:
+            ns_gd = p["ngan_sach_qc"][gd_ten]
+        elif gd_ten == "Khởi động":
+            ty_le_truoc = dh_hist[t - 1] / lead_hist[t - 1] * 1000 if t > 2 and lead_hist[t - 1] else 0
+            # Có độ trễ: mở khi >= ngưỡng; chỉ đóng lại khi 2 tháng liền < 80% ngưỡng
+            if not qc_mo and ty_le_truoc >= cong["ty_le_cong_qc"]:
+                qc_mo, duoi = True, 0
+            elif qc_mo:
+                duoi = duoi + 1 if ty_le_truoc < 0.8 * cong["ty_le_cong_qc"] else 0
+                if duoi >= 2:
+                    qc_mo, duoi = False, 0
+            ns_gd = cong["qc_khoi_dong_mo"] if qc_mo else cong["qc_khoi_dong"]
+        else:
+            ns_gd = cong["qc_tang_truong"] if gd_ten == "Tăng trưởng" else cong["qc_mo_rong"]
+        ngan_sach = (10 if t == 1 else ns_gd) * he_so_ngan_sach
         lead_qc = ngan_sach / cpl
         if t == 1:
             lead_tn = 0.0
@@ -235,6 +273,7 @@ def chay(p_override=None, kb="Cơ sở", he_so_cd=None, he_so_gia_dh=None, he_so
             lead_tn = (p["lead_tu_nhien_dau"] + (p["lead_tu_nhien_cuoi"] - p["lead_tu_nhien_dau"])
                        * (tt - 2) / (BAO_CAO - 2)) * hltn
         lead = lead_qc + lead_tn
+        lead_hist[t] = lead
         tiep_can = lead / p["ty_le_tiep_can_dk"]
         # Tỷ lệ tham dự giữ nguyên; các bước mua nhân hệ số chuyển đổi c (gồm ramp-up)
         tham_du = lead * p["ty_le_dk_tham_du"] if t >= 2 else 0.0
@@ -280,10 +319,10 @@ def chay(p_override=None, kb="Cơ sở", he_so_cd=None, he_so_gia_dh=None, he_so
         capex = 0.0
         if t == 1:
             moi = so_nguoi("Khởi động")
-        elif t == GD_HIEN[gd_ten][0]:
-            truoc = giai_doan(t - 1)
-            moi = max(0, so_nguoi(gd_ten) - so_nguoi(truoc))
+        elif gd_ten != gd_truoc:
+            moi = max(0, so_nguoi(gd_ten) - so_nguoi(gd_truoc))
             capex = moi * p["may_tinh_moi_nguoi"]
+        gd_truoc = gd_ten
         cp_tuyen = (moi + so_nguoi(gd_ten) * p["nghi_viec_nam"] / 12) * p["chi_phi_tuyen_dao_tao"]
 
         # Bổ sung cặp coach + trợ giảng khi vượt công suất
@@ -291,11 +330,20 @@ def chay(p_override=None, kb="Cơ sở", he_so_cd=None, he_so_gia_dh=None, he_so
         can = math.ceil(dang_hoc / p["hv_toi_da_moi_coach"] - 1e-9) if dang_hoc > 0 else 0
         them = max(0, can - NHAN_SU[gd_ten]["Coach tài chính"])
         cp_them = them * (VI_TRI["Coach tài chính"][1] + VI_TRI["Trợ giảng"][1]) * (1 + p["ty_le_bh_dn"])
-        moi_them = max(0, them - them_truoc) * 2
+        # Cặp thêm đã tuyển trước đó được tính vào đội giai đoạn mới (không tuyển lại)
+        moi_them = max(0, them - them_truoc) * 2 if moi == 0 else 0
         cp_tuyen += moi_them * p["chi_phi_tuyen_dao_tao"]
         capex += moi_them * p["may_tinh_moi_nguoi"]
         them_truoc = them
         cp_ns += cp_them
+        # Bổ sung tư vấn viên khi lead/tư vấn viên vượt công suất
+        can_tvv = math.ceil(lead / p["lead_toi_da_moi_tvv"] - 1e-9) if lead > 0 else 0
+        them_tvv = max(0, can_tvv - NHAN_SU[gd_ten]["Tư vấn viên"])
+        cp_ns += them_tvv * VI_TRI["Tư vấn viên"][1] * he_so_luong_sales * (1 + p["ty_le_bh_dn"])
+        moi_tvv = max(0, them_tvv - them_tvv_truoc) if moi == 0 else 0
+        cp_tuyen += moi_tvv * p["chi_phi_tuyen_dao_tao"]
+        capex += moi_tvv * p["may_tinh_moi_nguoi"]
+        them_tvv_truoc = them_tvv
 
         cp_co_dinh = cp_ns + cp_khac + cp_tuyen
         ebitda = doanh_thu - cp_bien_doi - cp_qc - cp_hoi_thao - cp_co_dinh
@@ -310,6 +358,17 @@ def chay(p_override=None, kb="Cơ sở", he_so_cd=None, he_so_gia_dh=None, he_so
                 thue_tich += thue
         dong_tien = ebitda - thue - capex
 
+        # Cổng tuyển (chỉ khi chạy lộ trình theo cổng)
+        if cong is not None and gd_cong != "Mở rộng":
+            ke = "Tăng trưởng" if gd_cong == "Khởi động" else "Mở rộng"
+            if dong_hanh >= cong["ty_le_nguong_tuyen"] * nguong_cong[ke]:
+                dat_lien_tiep += 1
+            else:
+                dat_lien_tiep = 0
+            if dat_lien_tiep >= cong["so_thang_lien_tiep"]:
+                gd_cong = ke
+                dat_lien_tiep = 0
+
         rows.append(dict(
             thang=t, giai_doan=gd_ten, tiep_can=tiep_can, lead=lead, lead_qc=lead_qc, lead_tn=lead_tn,
             tham_du=tham_du, tu_van=tu_van, nen_tang=nen_tang, dong_hanh=dong_hanh, thanh_vien=thanh_vien,
@@ -318,7 +377,8 @@ def chay(p_override=None, kb="Cơ sở", he_so_cd=None, he_so_gia_dh=None, he_so
             cp_qc=cp_qc, cp_hoi_thao=cp_hoi_thao, cp_bien_doi=cp_bien_doi, hoa_hong=hh,
             cp_nhan_su=cp_ns, cp_khac=cp_khac, cp_tuyen=cp_tuyen, cp_co_dinh=cp_co_dinh,
             ebitda=ebitda, thue=thue, capex=capex, dong_tien=dong_tien,
-            so_nguoi=so_nguoi(gd_ten) + 2 * them, coach_them=them,
+            so_nguoi=so_nguoi(gd_ten) + 2 * them + them_tvv, coach_them=them, tvv_them=them_tvv,
+            ngan_sach_qc=ngan_sach,
             hv_dong_hanh_dang_hoc=dang_hoc,
         ))
 
@@ -339,7 +399,7 @@ def chay(p_override=None, kb="Cơ sở", he_so_cd=None, he_so_gia_dh=None, he_so
     hoan_von = next((r["thang"] for r in rows if r["luy_ke"] >= 0 and r["thang"] > thang_day), None)
 
     # Quỹ dự phòng = 2 tháng chi phí cố định tại tháng đáy (tối thiểu giai đoạn 1)
-    gd_day = giai_doan(max(1, thang_day))
+    gd_day = rows[max(1, thang_day) - 1]["giai_doan"]
     cp_cd_day = chi_phi_nhan_su(gd_day, p, he_so_luong_sales) + sum(CP_CO_DINH_KHAC[gd_day].values())
     du_phong = 2 * cp_cd_day
     von_luu_dong = -day - von_ban_dau  # phần lỗ vận hành phải bù trước khi hoà vốn
@@ -403,19 +463,36 @@ KICH_BAN_HIEN = {}
 
 
 def hoa_von_phong_ban(kq):
-    global KICH_BAN_HIEN
+    """Ngưỡng hoà vốn phòng ban CÓ xét công suất coach: lặp tới khi số cặp coach + trợ giảng ổn định.
+    Học viên đang học = 3 x khách đồng hành mới/tháng (khoá 3 tháng); 1 cặp phụ trách tối đa 40."""
     ue = don_vi_kinh_te(kq)
     p = kq["p"]
+    chi_phi_cap = (VI_TRI["Coach tài chính"][1] + VI_TRI["Trợ giảng"][1]) * (1 + p["ty_le_bh_dn"]) \
+        + 2 * p["nghi_viec_nam"] / 12 * p["chi_phi_tuyen_dao_tao"]
     out = {}
     for gd_ten in GIAI_DOAN:
-        cd = (chi_phi_nhan_su(gd_ten, p) + sum(CP_CO_DINH_KHAC[gd_ten].values())
-              + so_nguoi(gd_ten) * p["nghi_viec_nam"] / 12 * p["chi_phi_tuyen_dao_tao"]
-              + SO_HOI_THAO_OFFLINE[gd_ten] * p["chi_phi_hoi_thao"])
-        kh = cd / ue["dong_gop_moi_dh"]
+        cd0 = (chi_phi_nhan_su(gd_ten, p) + sum(CP_CO_DINH_KHAC[gd_ten].values())
+               + so_nguoi(gd_ten) * p["nghi_viec_nam"] / 12 * p["chi_phi_tuyen_dao_tao"]
+               + SO_HOI_THAO_OFFLINE[gd_ten] * p["chi_phi_hoi_thao"])
+        kh0 = cd0 / ue["dong_gop_moi_dh"]
+        ke_hoach = NHAN_SU[gd_ten]["Coach tài chính"]
+        them = 0
+        for _ in range(50):
+            cd = cd0 + them * chi_phi_cap
+            kh = cd / ue["dong_gop_moi_dh"]
+            moi = max(0, math.ceil(3 * kh / p["hv_toi_da_moi_coach"] - 1e-9) - ke_hoach)
+            if moi == them:
+                break
+            them = moi
         out[gd_ten] = dict(
-            so_nguoi=so_nguoi(gd_ten),
+            so_nguoi=so_nguoi(gd_ten) + 2 * them,
+            so_nguoi_ke_hoach=so_nguoi(gd_ten),
+            cap_coach_them=them,
             chi_phi_co_dinh=cd,
+            chi_phi_co_dinh_chua_cong_suat=cd0,
+            khach_hoa_von_chua_cong_suat=kh0,
             khach_dong_hanh_hoa_von=kh,
+            khach_toi_da_khong_them_coach=ke_hoach * p["hv_toi_da_moi_coach"] / 3,
             khach_nen_tang_di_kem=kh * ue["nen_tang"] / ue["dong_hanh"],
             lead_can=kh * 1000 / ue["dong_hanh"],
             doanh_so_can=kh * ue["dt_moi_dh"],
@@ -466,6 +543,29 @@ def main():
     pa_lui = {kb: chay(kb=kb) for kb in KICH_BAN}
     GD_HIEN = GIAI_DOAN
 
+    # Lộ trình THEO CỔNG (khuyến nghị chính thức). Ngưỡng cổng lấy từ hoà vốn có công suất (cơ sở).
+    nguong_kh = {g: d["khach_dong_hanh_hoa_von"] for g, d in hv.items()}
+    theo_cong = {}
+    for kb in KICH_BAN:
+        KICH_BAN_HIEN = KICH_BAN[kb]
+        theo_cong[kb] = chay(kb=kb, cong=CONG, nguong_cong=nguong_kh)
+    KICH_BAN_HIEN = KICH_BAN["Cơ sở"]
+    # Tham chiếu: giữ đội Khởi động suốt 48 tháng, quảng cáo 30 (cách Hà chạy thử)
+    c_giu = dict(CONG, qc_khoi_dong_mo=CONG["qc_khoi_dong"], ty_le_nguong_tuyen=1e9)
+    giu_doi_8 = chay(kb="Cơ sở", cong=c_giu, nguong_cong=nguong_kh)
+    # Mốc dừng T6 (Thận trọng): lỗ luỹ kế T6 + 1 tháng lương trợ cấp/thanh lý (GD)
+    tt6 = theo_cong["Thận trọng"]["rows"][5]
+    lo_dung_t6 = -tt6["luy_ke"] + tt6["cp_nhan_su"]
+
+    # Ngân sách quảng cáo cần (CPL cơ sở) để đạt X khách đồng hành/tháng ở trạng thái ổn định
+    lead_tn_t6 = cs["rows"][5]["lead_tn"]
+    ns_can = {}
+    for x in (nguong_kh["Khởi động"], 25.0, nguong_kh["Tăng trưởng"]):
+        lead_can = x * 1000 / ue["dong_hanh"]
+        ns_can[f"{x:.1f}"] = dict(khach=x, lead_can=lead_can,
+                                  ngan_sach_neu_toan_bo_tra_phi=lead_can * cs["cpl"],
+                                  ngan_sach_tru_lead_tu_nhien_T6=max(0, lead_can - lead_tn_t6) * cs["cpl"])
+
     print("=== VỐN BAN ĐẦU (trđ) ===")
     for k, v in cs["von"].items():
         print(f"  {k}: {f0(v)}")
@@ -501,7 +601,7 @@ def main():
     print(f"{'':<30}" + "".join(f"{'Năm ' + str(i + 1):>12}" for i in range(4)))
     for ten, k in dong:
         print(f"{ten:<30}" + "".join(f"{f0(sum(r[k] for r in cs['rows'][i * 12:(i + 1) * 12])):>12}" for i in range(4)))
-    print(f"{'Luỹ kế cuối năm (gồm vốn 296)':<30}" + "".join(f"{f0(cs['rows'][i * 12 + 11]['luy_ke']):>12}" for i in range(4)))
+    print(f"{'Luỹ kế cuối năm (gồm vốn ' + f0(cs['von_ban_dau']) + ')':<30}" + "".join(f"{f0(cs['rows'][i * 12 + 11]['luy_ke']):>12}" for i in range(4)))
 
     print("\n=== THEO NĂM — 3 KỊCH BẢN (trđ) ===")
     for kb, (kq, _, _) in ket_qua.items():
@@ -516,7 +616,38 @@ def main():
     for g, d in hv.items():
         print(f"  {g}: {d['so_nguoi']} người, CP cố định {f1(d['chi_phi_co_dinh'])} trđ/th -> "
               f"{d['khach_dong_hanh_hoa_von']:.1f} khách đồng hành/th (+{d['khach_nen_tang_di_kem']:.0f} nền tảng), "
-              f"{d['lead_can']:.0f} lead/th, doanh số {f1(d['doanh_so_can'])} trđ/th")
+              f"{d['lead_can']:.0f} lead/th, doanh số {f1(d['doanh_so_can'])} trđ/th "
+              f"[chưa xét công suất: {d['khach_hoa_von_chua_cong_suat']:.1f} khách; kế hoạch {d['so_nguoi_ke_hoach']} người, "
+              f"+{d['cap_coach_them']} cặp coach; 1 đội kế hoạch tối đa {d['khach_toi_da_khong_them_coach']:.1f} khách/th]")
+
+    print("\n=== NGÂN SÁCH QUẢNG CÁO CẦN (CPL cơ sở, trạng thái ổn định 17,6 khách/1.000 lead) ===")
+    for k_, d in ns_can.items():
+        print(f"  {d['khach']:.1f} khách/th: {d['lead_can']:.0f} lead -> {f1(d['ngan_sach_neu_toan_bo_tra_phi'])} trđ/th nếu toàn bộ "
+              f"trả phí; {f1(d['ngan_sach_tru_lead_tu_nhien_T6'])} trđ/th nếu trừ {lead_tn_t6:.0f} lead tự nhiên (mức T6)")
+    print(f"  Ngân sách 30 trđ (T2–T6): trạng thái ổn định ~{(30 / cs['cpl'] + lead_tn_t6) * ue['dong_hanh'] / 1000:.1f} khách/th")
+
+    print("\n=== LỘ TRÌNH THEO CỔNG (khuyến nghị) ===")
+    print(f"  Cổng: QC Khởi động {CONG['qc_khoi_dong']} -> {CONG['qc_khoi_dong_mo']} khi >= {CONG['ty_le_cong_qc']} khách/1.000 lead;"
+          f" lên Tăng trưởng khi {CONG['so_thang_lien_tiep']} tháng >= {CONG['ty_le_nguong_tuyen'] * nguong_kh['Tăng trưởng']:.1f} khách;"
+          f" lên Mở rộng khi {CONG['so_thang_lien_tiep']} tháng >= {CONG['ty_le_nguong_tuyen'] * nguong_kh['Mở rộng']:.1f} khách;"
+          f" QC Tăng trưởng {CONG['qc_tang_truong']}, Mở rộng {CONG['qc_mo_rong']}")
+    for kb, kq in list(theo_cong.items()) + [("Giữ đội 8, QC 30 (tham chiếu)", giu_doi_8)]:
+        s_ = tom_tat(kq)
+        gd_seq = [r["giai_doan"] for r in kq["rows"]]
+        mo_tt = next((r["thang"] for r in kq["rows"] if r["giai_doan"] == "Tăng trưởng"), None)
+        mo_mr = next((r["thang"] for r in kq["rows"] if r["giai_doan"] == "Mở rộng"), None)
+        mo_qc = next((r["thang"] for r in kq["rows"] if r["ngan_sach_qc"] > CONG["qc_khoi_dong"]), None)
+        print(f"  {kb}: Tổng vốn {f0(s_['tong_von'])} | Đáy {f0(s_['day'])} (T{s_['thang_day']}) | HV vận hành T{s_['hoa_von_vh']}"
+              f" | Hoàn vốn T{s_['hoan_von']} | Luỹ kế T24 {f0(s_['luy_ke_24'])} | NPV48 {f0(s_['npv'])} | "
+              f"IRR {('%.0f%%' % (s_['irr_nam'] * 100)) if s_['irr_nam'] is not None else 'n/a'} | "
+              f"mở QC T{mo_qc}, lên TT T{mo_tt}, lên MR T{mo_mr} | đội T6/T12/T24: "
+              f"{kq['rows'][5]['so_nguoi']}/{kq['rows'][11]['so_nguoi']}/{kq['rows'][23]['so_nguoi']}")
+        for i in range(2):
+            rr = kq["rows"][i * 12:(i + 1) * 12]
+            print(f"      Năm {i + 1}: DT {f0(sum(r['doanh_thu'] for r in rr))} | EBITDA {f0(sum(r['ebitda'] for r in rr))}"
+                  f" | Dòng tiền {f0(sum(r['dong_tien'] for r in rr))}")
+    print(f"  Thận trọng theo cổng + mốc dừng T6 (khách T6 = {tt6['dong_hanh']:.1f} < 8): lỗ khi dừng ~{f0(lo_dung_t6)} trđ"
+          f" (luỹ kế T6 {f0(tt6['luy_ke'])} + 1 tháng lương {f0(tt6['cp_nhan_su'])})")
 
     print("\n=== 3 KỊCH BẢN ===")
     for kb, (kq, u, h) in ket_qua.items():
@@ -575,7 +706,7 @@ def main():
         tai = r["hv_dong_hanh_dang_hoc"] / (NHAN_SU[r["giai_doan"]]["Coach tài chính"] + r["coach_them"])
         if tai > 40:
             print(f"  CẢNH BÁO T{r['thang']}: {tai:.0f} học viên đồng hành/coach (>40)")
-        lead_sale = r["lead"] / NHAN_SU[r["giai_doan"]]["Tư vấn viên"]
+        lead_sale = r["lead"] / (NHAN_SU[r["giai_doan"]]["Tư vấn viên"] + r["tvv_them"])
         if lead_sale > 600:
             print(f"  CẢNH BÁO T{r['thang']}: {lead_sale:.0f} lead/tư vấn viên (>600)")
     thu_nhap_sale = []
@@ -644,6 +775,22 @@ def main():
             luy_ke_co_so_24t=[round(r["luy_ke"], 1) for r in pa_lui["Cơ sở"]["rows"][:BAO_CAO]],
         ),
         nguong_hoan_von_24t=nguong,
+        lo_trinh_theo_cong=dict(
+            mo_ta="Khuyến nghị chính thức: giữ đội Khởi động; nâng QC khi đạt >= 14 khách/1.000 lead; "
+                  "lên giai đoạn kế khi 2 tháng liên tiếp đạt >= 80% ngưỡng hoà vốn (có công suất coach) của giai đoạn đó",
+            cong=CONG,
+            nguong_cong_khach_thang={g: round(CONG["ty_le_nguong_tuyen"] * v, 1) for g, v in nguong_kh.items()},
+            kich_ban={kb: {k: (round(v, 3) if isinstance(v, float) else v) for k, v in tom_tat(kq).items()}
+                      for kb, kq in theo_cong.items()},
+            luy_ke_24t={kb: [round(r["luy_ke"], 1) for r in kq["rows"][:BAO_CAO]] for kb, kq in theo_cong.items()},
+            giai_doan_24t={kb: [r["giai_doan"] for r in kq["rows"][:BAO_CAO]] for kb, kq in theo_cong.items()},
+            so_nguoi_24t={kb: [r["so_nguoi"] for r in kq["rows"][:BAO_CAO]] for kb, kq in theo_cong.items()},
+            ngan_sach_qc_24t={kb: [round(r["ngan_sach_qc"], 1) for r in kq["rows"][:BAO_CAO]] for kb, kq in theo_cong.items()},
+            khach_dong_hanh_24t={kb: [round(r["dong_hanh"], 1) for r in kq["rows"][:BAO_CAO]] for kb, kq in theo_cong.items()},
+            than_trong_dung_T6=dict(khach_T6=round(tt6["dong_hanh"], 1), lo_khi_dung=round(lo_dung_t6, 1)),
+            tham_chieu_giu_doi_8_qc30={k: (round(v, 3) if isinstance(v, float) else v) for k, v in tom_tat(giu_doi_8).items()},
+        ),
+        ngan_sach_qc_can={k: {kk: round(vv, 1) for kk, vv in d.items()} for k, d in ns_can.items()},
         do_nhay=[{k: (round(v, 1) if isinstance(v, float) else v) for k, v in d.items()} for d in do_nhay],
         thang_san_pham=[
             dict(tang="Miễn phí", ten="Nội dung + hội thảo miễn phí tại VP/online", gia=0),
