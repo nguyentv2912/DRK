@@ -4,11 +4,11 @@ Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Người lập: Hùng �
 
 ## 5 kết luận chính
 
-1. **Vốn ban đầu rất thấp: 63,0 tr**, trong đó 32,0 tr là quỹ dự phòng (tiền vẫn nằm trong tài khoản). Chi phí cố định khi chưa thuê ai chỉ ~2,1 tr/tháng + phí Skool.
-2. **Hoà vốn hằng tháng chỉ cần 1 học viên trả 100 USD** (chưa thuê người). Mỗi học viên 100 USD/tháng (≈2,60 tr) để lại ≈2,28 tr sau phí Skool Pro, phí chuyển tiền, thuế (gói Hobby: 2,11 tr). Rủi ro không nằm ở chi phí mà ở **có kéo được người trả 100 USD/tháng và giữ họ hay không**.
-3. **Mốc thu nhập (lãi sau thuế, phí, lương nhân viên) — kịch bản cơ sở:** 50 tr/tháng cần ~22 học viên, 100 tr cần ~41, 200 tr cần ~90 học viên 100 USD đang hoạt động (đã tính bán kèm gói 1.000 USD và ebook). Nếu không bán được gói chuyên sâu/ebook: 26 / 47 / 102 học viên.
-4. **Kịch bản cơ sở:** tháng 24 có ~161 học viên 100 USD, doanh thu 491,1 tr/tháng, lãi 397,0 tr/tháng; lãi luỹ kế 24 tháng (sau khi trừ vốn) 4.504,3 tr; hoàn vốn tháng 3. Thận trọng: ~20 học viên, lãi tháng 24 46,0 tr, hoàn vốn tháng 5. Lạc quan: ~707 học viên, lãi tháng 24 1.932,9 tr. **Biến quyết định là tỷ lệ huỷ và tỷ lệ chuyển đổi**, không phải chi phí.
-5. **Gói 1.000 USD "đồng hành 10 năm" là rủi ro lớn nhất về cấu trúc:** 1.000 USD/120 tháng ≈ 8,3 USD/tháng, rẻ hơn 12 lần gói cơ bản; học viên chỉ cần ở lại 10 tháng là gói 10 năm đã rẻ hơn. Nếu gói này bao gồm luôn khoá cơ bản và học viên chuyển sang hàng loạt (8%/tháng), tiền mặt 24 tháng **trông đẹp hơn** (luỹ kế 5.114,0 tr so với 4.504,3 tr) vì thu trước, nhưng người trả 100 USD tháng 24 chỉ còn ~112 (thay vì 161), đến tháng 60 lãi tháng còn 2.727,4 tr so với 2.607,0 tr của phương án gói bổ sung, trong khi vẫn phải phục vụ người đã trả trước 10 năm. Đề xuất: gói 1.000 USD là **gói bổ sung**, yêu cầu duy trì thuê bao 100 USD; ghi nhận doanh thu phân bổ và trích 30% tiền thu vào quỹ phục vụ dài hạn (chờ anh chốt).
+1. **Vốn ban đầu rất thấp: 78,0 tr**, trong đó 32,0 tr là quỹ dự phòng (tiền vẫn nằm trong tài khoản). Chi phí cố định khi chưa thuê ai chỉ ~2,1 tr/tháng + phí Skool.
+2. **Hoà vốn hằng tháng chỉ cần 1 học viên trả 100 USD** (chưa thuê người, và vì công của anh không tính vào chi phí). Mỗi học viên 100 USD/tháng (≈2,60 tr) để lại ≈2,28 tr sau phí Skool Pro, phí chuyển tiền, thuế (gói Hobby: 2,10 tr). Rủi ro không nằm ở chi phí mà ở **có kéo được người trả 100 USD/tháng và giữ họ hay không**.
+3. **Mốc thu nhập (lãi sau thuế, phí, lương nhân viên) — kịch bản cơ sở:** 50 tr/tháng cần ~22 học viên, 100 tr cần ~42, 200 tr cần ~90 học viên 100 USD đang hoạt động (đã tính bán kèm gói 1.000 USD và ebook). Nếu không bán được gói chuyên sâu/ebook: 26 / 47 / 102 học viên.
+4. **Kịch bản cơ sở:** tháng 24 có ~191 học viên 100 USD, doanh thu 577,9 tr/tháng, lãi 472,2 tr/tháng; lãi luỹ kế 24 tháng (sau khi trừ vốn) 5.173,5 tr; hoàn vốn tháng 4. Thận trọng: ~24 học viên, lãi tháng 24 54,1 tr, hoàn vốn tháng 6. Lạc quan: ~800 học viên, lãi tháng 24 2.177,6 tr. **Biến quyết định là tỷ lệ huỷ và tỷ lệ chuyển đổi**, không phải chi phí. Lưu ý: kịch bản cơ sở cần kênh đạt ~99.004 người theo dõi và ~4.607 thành viên Skool miễn phí vào tháng 24 — đây là giả định, chưa có số thật của kênh.
+5. **Gói 1.000 USD "đồng hành 10 năm" mang tiền về sớm nhưng tạo nghĩa vụ dài hạn:** 1.000 USD/120 tháng ≈ 8,3 USD/tháng, rẻ hơn 12 lần gói cơ bản. Kịch bản cơ sở: cuối tháng 24 có 538,9 tr doanh thu "chưa phục vụ" (rủi ro hoàn tiền nếu dừng). Nếu gói này bao gồm luôn khoá cơ bản và học viên chuyển sang hàng loạt (8%/tháng), tiền mặt 24 tháng trông đẹp hơn (5.652,0 so với 5.173,5 tr) nhưng người trả 100 USD tháng 24 còn ~127 (thay vì 191), doanh thu chưa phục vụ lên 2.206,8 tr, và đến tháng 60 phải phục vụ ~1.901 người so với 1.211. Đề xuất: gói 1.000 USD là **gói bổ sung**, yêu cầu duy trì thuê bao 100 USD; ghi nhận doanh thu phân bổ và trích 30% tiền thu vào quỹ phục vụ dài hạn (chờ anh chốt).
 
 ## 1. Giá (anh chốt) và giả định
 
@@ -21,11 +21,11 @@ Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Người lập: Hùng �
 | Giả định | Giá trị | Nguồn / lý do |
 |---|---|---|
 | Tỷ giá | 26.000 đ/USD | Giả định trong vùng 25.000–26.500; chờ Lan cập nhật tỷ giá ngày |
-| Skool Hobby | 9 USD/tháng + 10% mỗi giao dịch | Thông tin công khai phổ biến — **chờ Lan xác minh** |
-| Skool Pro | 99 USD/tháng + 2,9% + 0,30 USD/giao dịch | **Chờ Lan xác minh**. Mô hình tự chọn gói rẻ hơn mỗi tháng |
-| Phí rút tiền về VN | 2,0% | Giả định (trung gian rút USD + chênh lệch quy đổi). Cách nhận tiền từ Skool về VN chờ Lan xác minh |
-| Phí thu ebook | 1,0% | Giả định |
-| Thuế | 7,0% doanh thu | Giả định: cá nhân/hộ kinh doanh dịch vụ 5% GTGT + 2% TNCN, tính từ đồng đầu tiên (thận trọng, chưa trừ ngưỡng miễn thuế doanh thu thấp). Cần kế toán xác nhận; có thể phải lập doanh nghiệp khi lớn |
+| Skool Hobby | 9 USD/tháng + 10% + 0,30 USD/giao dịch | nghien-cuu.md (tin cậy Trung bình, trích đoạn tìm kiếm — cần mở skool.com/pricing xác nhận) |
+| Skool Pro | 99 USD/tháng + 2,9% + 0,30 USD/giao dịch; giao dịch > 900 USD: 3,9% + 0,30 USD (áp cho khoá 1.000 USD) | nghien-cuu.md (Trung bình, trích đoạn help.skool.com Payments FAQ). Mô hình tự chọn gói rẻ hơn mỗi tháng |
+| Phí nhận tiền về VN | 2,0% | Giả định. nghien-cuu.md: payout qua Stripe Express do Skool tạo, VN có trong danh sách, về VND thứ Tư hằng tuần — chưa kiểm thử; phí quy đổi chưa rõ nên đặt 2% |
+| Phí thu ebook | 1,0% | Giả định. Skool không bán file lẻ (nghien-cuu.md) → ebook bán VND qua chuyển khoản/cổng nội địa, hoặc gói thành khoá trả một lần trên Skool |
+| Thuế | 7,0% doanh thu | Giả định: hộ/cá nhân kinh doanh dịch vụ 5% GTGT + 2% TNCN, tính từ đồng đầu tiên (thận trọng). nghien-cuu.md: ngưỡng không chịu thuế 500 tr/năm, báo chí nói NĐ 141/2026 nâng lên 1 tỷ — chưa đối chiếu; thuế khi bán qua nền tảng nước ngoài các nguồn mâu thuẫn. Hỏi cơ quan thuế |
 | Công cụ AI, phần mềm | 1,6 tr/tháng | Giả định ~60 USD: 2 gói AI + Canva/CapCut Pro |
 | Chi phí khác | 0,5 tr/tháng | Giả định: tên miền, email, họp online |
 | Quảng cáo | 0,0 tr/tháng | Mặc định 0 — đầu phễu là video tự nhiên (brief) |
@@ -36,9 +36,9 @@ Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Người lập: Hùng �
 | Theo dõi mới → Skool miễn phí | 8% | Giả định: link trong hồ sơ/video, cộng đồng miễn phí, không rào cản |
 | Theo dõi sẵn có → Skool miễn phí | 5% (rải 3 tháng đầu) | Giả định: lượt kêu gọi ra mắt |
 | Thành viên miễn phí rời/ngủ | 5%/tháng | Giả định |
-| Miễn phí mới → 100 USD (tháng đầu) | 3% | Giả định: 100 USD/tháng (≈2,6 tr) cao so với thu nhập 25–40 tuổi ở VN nên đặt thấp (2–5% là vùng hay gặp ở cộng đồng trả phí) |
+| Miễn phí mới → 100 USD (tháng đầu) | 3% | Giả định, nằm trong vùng tham khảo 2–5% (nghien-cuu.md, số SaaS); 100 USD/tháng (≈2,6 tr) cao so với thu nhập 25–40 tuổi ở VN nên lấy phía thấp |
 | Kho miễn phí → 100 USD (mỗi tháng) | 0,3% | Giả định: chuyển đổi chậm nhờ nội dung + buổi live |
-| Tỷ lệ huỷ 100 USD | 12%/tháng | Giả định: thời gian ở lại TB ≈ 8,3 tháng; giá cao + thị trường crypto biến động dễ huỷ |
+| Tỷ lệ huỷ 100 USD | 9%/tháng | nghien-cuu.md: cộng đồng trả phí 4–9%/tháng (TB ~5,8%; Circle: 10% là trung bình, ≥15% cần xử lý). Lấy cận trên vì giá cao với thu nhập VN và crypto biến động. Thời gian ở lại TB ≈ 11,1 tháng |
 | Nâng cấp 1.000 USD | 1,5% học viên 100 USD/tháng | Giả định: ~1 trong 67 học viên/tháng; vé lớn cần tư vấn |
 | Mua kèm ebook | 25% học viên 100 USD mới; 40% người mua 1.000 USD; 0,2% kho miễn phí/tháng | Giả định |
 | Chiết khấu | 12%/năm | Giả định chi phí cơ hội vốn |
@@ -49,58 +49,58 @@ Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Người lập: Hùng �
 |---|---:|---|
 | Thiết kế, dàn trang ebook | 8,0 | Giả định |
 | Biên tập ebook | 5,0 | Giả định |
-| ISBN / xuất bản (tuỳ chọn) | 0,0 | Tuỳ chọn, mặc định không làm (~15 tr nếu xuất bản có ISBN — giả định) |
+| Liên kết xuất bản qua nhà xuất bản (bắt buộc) | 15,0 | Ebook bán ra là xuất bản phẩm điện tử, cá nhân không tự xuất bản được (nghien-cuu.md). Số tiền là giả định — chờ báo giá NXB |
 | Tư vấn pháp lý (điều khoản, nội dung tài chính/crypto) | 10,0 | Giả định |
 | Thiết bị quay bổ sung (mic, đèn) | 5,0 | = 0 nếu anh đã đủ thiết bị |
 | Nhận diện Skool, trang giới thiệu | 3,0 | Giả định |
 | Quỹ dự phòng vận hành (3 tháng chi phí cố định + 1 CSKH bán thời gian) | 32,0 | Giả định |
-| **Tổng** | **63,0** | |
+| **Tổng** | **78,0** | |
 
 ## 3. Kết quả kịch bản cơ sở theo năm
 
 | Chỉ tiêu (tr) | Năm 1 | Năm 2 |
 |---|---:|---:|
-| Doanh thu khoá 100 USD | 1.254,5 | 3.678,1 |
-| Doanh thu khoá 1.000 USD (tiền thu) | 153,6 | 482,6 |
-| Doanh thu ebook | 61,2 | 151,3 |
-| **Tổng doanh thu** | 1.469,4 | 4.312,0 |
-| Thuế | 102,9 | 301,8 |
-| Lương nhân viên thuê thêm | 55,2 | 359,4 |
-| Tổng chi phí (gồm thuế, phí Skool, chuyển tiền) | 283,3 | 930,6 |
-| **Lãi (tiền mặt)** | 1.186,0 | 3.381,3 |
-| Trích quỹ phục vụ gói 10 năm | 39,9 | 126,8 |
-| Biên lãi | 80,7% | 78,4% |
-| Học viên 100 USD cuối năm | 73 | 161 |
-| Học viên 1.000 USD luỹ kế | 6 | 24 |
+| Doanh thu khoá 100 USD | 1.366,0 | 4.289,1 |
+| Doanh thu khoá 1.000 USD (tiền thu) | 166,0 | 556,6 |
+| Doanh thu ebook | 61,4 | 152,4 |
+| **Tổng doanh thu** | 1.593,4 | 4.998,1 |
+| Thuế | 111,5 | 349,9 |
+| Lương nhân viên thuê thêm | 72,3 | 363,1 |
+| Tổng chi phí (gồm thuế, phí Skool, chuyển tiền) | 317,2 | 1.022,8 |
+| **Lãi (tiền mặt)** | 1.276,3 | 3.975,2 |
+| Trích quỹ phục vụ gói 10 năm | 43,1 | 146,2 |
+| Biên lãi | 80,1% | 79,5% |
+| Học viên 100 USD cuối năm | 82 | 191 |
+| Học viên 1.000 USD luỹ kế | 6 | 28 |
 
 ### Theo tháng (kịch bản cơ sở)
 
 | Tháng | Skool free | HV 100 USD | Mua 1.000 USD | Ebook | Doanh thu | Chi phí | Lãi | Luỹ kế (sau vốn) | Gói Skool | Nhân sự |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
-| 1 | 327 | 0 | 0,0 | 0,0 | 0,0 | 2,3 | -2,3 | -65,4 | Hobby | — |
-| 2 | 634 | 11 | 0,0 | 0,0 | 28,5 | 7,7 | 20,8 | -44,5 | Hobby | — |
-| 3 | 933 | 22 | 0,2 | 5,0 | 65,8 | 12,4 | 53,4 | 8,9 | Pro | — |
-| 4 | 1.064 | 27 | 0,3 | 4,3 | 83,9 | 17,1 | 66,8 | 75,7 | Pro | ke_toan |
-| 5 | 1.196 | 33 | 0,4 | 4,8 | 100,9 | 19,1 | 81,8 | 157,4 | Pro | ke_toan |
-| 6 | 1.331 | 39 | 0,5 | 5,2 | 117,9 | 21,2 | 96,7 | 254,2 | Pro | ke_toan |
-| 7 | 1.469 | 44 | 0,6 | 5,7 | 135,0 | 23,2 | 111,8 | 365,9 | Pro | ke_toan |
-| 8 | 1.609 | 50 | 0,6 | 6,2 | 152,2 | 25,3 | 126,9 | 492,8 | Pro | ke_toan |
-| 9 | 1.754 | 55 | 0,7 | 6,7 | 169,6 | 27,4 | 142,2 | 635,0 | Pro | ke_toan |
-| 10 | 1.902 | 61 | 0,8 | 7,2 | 187,2 | 29,5 | 157,7 | 792,7 | Pro | ke_toan |
-| 11 | 2.054 | 67 | 0,9 | 7,8 | 205,1 | 37,6 | 167,4 | 960,2 | Pro | cskh_bt, ke_toan |
-| 12 | 2.211 | 73 | 1,0 | 8,3 | 223,3 | 60,5 | 162,8 | 1.123,0 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
-| 13 | 2.373 | 79 | 1,0 | 8,9 | 242,0 | 62,8 | 179,2 | 1.302,2 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
-| 14 | 2.540 | 86 | 1,1 | 9,5 | 261,2 | 65,2 | 195,9 | 1.498,1 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
-| 15 | 2.713 | 92 | 1,2 | 10,1 | 280,8 | 67,7 | 213,1 | 1.711,2 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
-| 16 | 2.892 | 99 | 1,3 | 10,7 | 301,1 | 70,3 | 230,8 | 1.942,0 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
-| 17 | 3.078 | 106 | 1,4 | 11,4 | 322,0 | 72,9 | 249,1 | 2.191,1 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
-| 18 | 3.271 | 113 | 1,5 | 12,1 | 343,6 | 75,6 | 268,0 | 2.459,1 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
-| 19 | 3.472 | 120 | 1,6 | 12,8 | 365,9 | 78,4 | 287,5 | 2.746,7 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
-| 20 | 3.681 | 128 | 1,7 | 13,5 | 389,1 | 81,3 | 307,8 | 3.054,5 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
-| 21 | 3.898 | 136 | 1,8 | 14,3 | 413,1 | 84,3 | 328,8 | 3.383,3 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
-| 22 | 4.124 | 144 | 1,9 | 15,1 | 438,1 | 87,4 | 350,7 | 3.733,9 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
-| 23 | 4.360 | 152 | 2,0 | 16,0 | 464,1 | 90,7 | 373,4 | 4.107,3 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
-| 24 | 4.607 | 161 | 2,1 | 16,9 | 491,1 | 94,1 | 397,0 | 4.504,3 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
+| 1 | 327 | 0 | 0,0 | 0,0 | 0,0 | 2,3 | -2,3 | -80,4 | Hobby | — |
+| 2 | 634 | 11 | 0,0 | 0,0 | 28,5 | 7,8 | 20,7 | -59,6 | Hobby | — |
+| 3 | 933 | 22 | 0,2 | 5,0 | 66,7 | 12,5 | 54,1 | -5,5 | Pro | — |
+| 4 | 1.064 | 28 | 0,3 | 4,3 | 86,5 | 17,5 | 69,0 | 63,5 | Pro | ke_toan |
+| 5 | 1.196 | 35 | 0,4 | 4,8 | 105,7 | 19,8 | 85,8 | 149,3 | Pro | ke_toan |
+| 6 | 1.331 | 41 | 0,5 | 5,2 | 125,1 | 22,2 | 103,0 | 252,3 | Pro | ke_toan |
+| 7 | 1.469 | 48 | 0,6 | 5,7 | 144,9 | 24,6 | 120,4 | 372,6 | Pro | ke_toan |
+| 8 | 1.609 | 54 | 0,7 | 6,2 | 165,1 | 27,0 | 138,1 | 510,7 | Pro | ke_toan |
+| 9 | 1.754 | 61 | 0,8 | 6,7 | 185,7 | 29,5 | 156,2 | 666,9 | Pro | ke_toan |
+| 10 | 1.902 | 68 | 0,9 | 7,3 | 206,7 | 38,1 | 168,6 | 835,5 | Pro | cskh_bt, ke_toan |
+| 11 | 2.054 | 75 | 1,0 | 7,8 | 228,2 | 51,6 | 176,6 | 1.012,1 | Pro | cskh_bt, dung_video, ke_toan |
+| 12 | 2.211 | 82 | 1,1 | 8,4 | 250,3 | 64,2 | 186,1 | 1.198,3 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
+| 13 | 2.373 | 90 | 1,2 | 8,9 | 273,0 | 67,0 | 205,9 | 1.404,2 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
+| 14 | 2.540 | 98 | 1,3 | 9,5 | 296,3 | 70,0 | 226,3 | 1.630,5 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
+| 15 | 2.713 | 106 | 1,4 | 10,2 | 320,3 | 73,0 | 247,3 | 1.877,7 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
+| 16 | 2.892 | 114 | 1,5 | 10,8 | 345,1 | 76,2 | 268,9 | 2.146,6 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
+| 17 | 3.078 | 122 | 1,6 | 11,5 | 370,7 | 79,4 | 291,2 | 2.437,9 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
+| 18 | 3.271 | 131 | 1,7 | 12,2 | 397,1 | 82,8 | 314,3 | 2.752,2 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
+| 19 | 3.472 | 140 | 1,8 | 12,9 | 424,5 | 86,3 | 338,3 | 3.090,5 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
+| 20 | 3.681 | 150 | 1,9 | 13,6 | 452,9 | 89,9 | 363,1 | 3.453,6 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
+| 21 | 3.898 | 159 | 2,1 | 14,4 | 482,4 | 93,6 | 388,8 | 3.842,4 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
+| 22 | 4.124 | 169 | 2,2 | 15,2 | 513,0 | 97,5 | 415,5 | 4.257,9 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
+| 23 | 4.360 | 180 | 2,3 | 16,1 | 544,8 | 101,5 | 443,3 | 4.701,3 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
+| 24 | 4.607 | 191 | 2,5 | 17,0 | 577,9 | 105,7 | 472,2 | 5.173,5 | Pro | cskh_bt, chot_don, dung_video, ke_toan |
 
 (Số học viên lẻ là trung bình kỳ vọng của mô hình, làm tròn khi hiển thị.)
 
@@ -110,22 +110,22 @@ Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Người lập: Hùng �
 |---|---:|---:|---:|
 | HV 100 USD cần để hoà vốn tháng | 2 | 1 | 1 |
 | Tháng đầu tiên có lãi | 2 | 2 | 2 |
-| Tháng hoàn vốn (luỹ kế ≥ 0) | 5 | 3 | 3 |
-| NPV 24 tháng @12%/năm (tr) | 560,7 | 3.851,8 | 16.883,1 |
-| IRR (năm) | 1.454% | 22.061% | 387.459% |
+| Tháng hoàn vốn (luỹ kế ≥ 0) | 6 | 4 | 3 |
+| NPV 24 tháng @12%/năm (tr) | 627,3 | 4.413,6 | 18.528,0 |
+| IRR (năm) | 1.136% | 15.190% | 222.082% |
 
 IRR rất cao vì vốn ban đầu rất nhỏ — chỉ số này không có ý nghĩa so sánh; nên nhìn số học viên và lãi tháng.
 
-Đóng góp mỗi học viên 100 USD/tháng: gói Pro 2,28 tr, gói Hobby 2,11 tr. Chuyển Skool Hobby → Pro khi doanh thu qua Skool vượt ~1.268 USD/tháng (≈13 học viên).
+Đóng góp mỗi học viên 100 USD/tháng: gói Pro 2,28 tr, gói Hobby 2,10 tr. Chuyển Skool Hobby → Pro khi doanh thu qua Skool vượt ~1.268 USD/tháng (≈13 học viên).
 
 ### Số học viên 100 USD cần cho các mốc thu nhập (trạng thái ổn định, đã trừ lương người thuê theo ngưỡng)
 
 | Lãi mục tiêu/tháng | Thận trọng | Cơ sở | Lạc quan | Cơ sở, không bán được 1.000 USD/ebook |
 |---|---:|---:|---:|---:|
 | Hoà vốn | 2 | 1 | 1 | 2 |
-| 50 tr | 23 | 22 | 21 | 26 |
-| 100 tr | 44 | 41 | 39 | 47 |
-| 200 tr | 94 | 90 | 86 | 102 |
+| 50 tr | 24 | 22 | 22 | 26 |
+| 100 tr | 44 | 42 | 40 | 47 |
+| 200 tr | 95 | 90 | 87 | 102 |
 
 Khác biệt giữa các kịch bản ở đây do tỷ lệ huỷ (ảnh hưởng số người mua ebook) và tỷ lệ nâng cấp 1.000 USD.
 
@@ -138,43 +138,47 @@ Khác biệt giữa các kịch bản ở đây do tỷ lệ huỷ (ảnh hưở
 | Theo dõi mới → Skool miễn phí | 5,0% | 8,0% | 10,0% |
 | Miễn phí mới → 100 USD (tháng đầu) | 2,0% | 3,0% | 4,5% |
 | Kho miễn phí → 100 USD (mỗi tháng) | 0,2% | 0,3% | 0,4% |
-| Tỷ lệ huỷ/tháng | 18,0% | 12,0% | 8,0% |
+| Tỷ lệ huỷ/tháng | 15,0% | 9,0% | 6,0% |
 | Nâng cấp 1.000 USD/tháng | 0,8% | 1,5% | 2,5% |
 | Mua kèm ebook (HV 100 USD mới) | 15,0% | 25,0% | 35,0% |
 | Người theo dõi tháng 24 | 44.426 | 99.004 | 187.855 |
 | Thành viên Skool miễn phí tháng 24 | 1.203 | 4.607 | 11.262 |
-| **HV 100 USD tháng 24** | 20 | 161 | 707 |
-| **Doanh thu tháng 24 (tr)** | 60,3 | 491,1 | 2.274,9 |
-| **Lãi tháng 24 (tr)** | 46,0 | 397,0 | 1.932,9 |
-| Doanh thu năm 1 / năm 2 (tr) | 354,4 / 612,3 | 1.469,4 / 4.312,0 | 5.035,4 / 18.703,7 |
-| Lãi năm 1 / năm 2 (tr) | 262,5 / 454,0 | 1.186,0 / 3.381,3 | 4.114,2 / 15.797,3 |
-| **Lãi luỹ kế 24 tháng sau vốn (tr)** | 653,5 | 4.504,3 | 19.848,5 |
+| **HV 100 USD tháng 24** | 24 | 191 | 800 |
+| **Doanh thu tháng 24 (tr)** | 69,5 | 577,9 | 2.560,4 |
+| **Lãi tháng 24 (tr)** | 54,1 | 472,2 | 2.177,6 |
+| Doanh thu năm 1 / năm 2 (tr) | 384,4 / 701,7 | 1.593,4 / 4.998,1 | 5.315,3 / 20.767,2 |
+| Lãi năm 1 / năm 2 (tr) | 280,2 / 532,0 | 1.276,3 / 3.975,2 | 4.350,2 / 17.538,0 |
+| **Lãi luỹ kế 24 tháng sau vốn (tr)** | 734,2 | 5.173,5 | 21.810,2 |
 
 ### Kịch bản phụ gói 1.000 USD (trên nền cơ sở)
 
-| Phương án | HV 100 USD tháng 24 | Lãi tháng 24 (tr) | Lãi luỹ kế 24 tháng (tr) | Doanh thu chưa ghi nhận T24 (tr) | HV 100 USD tháng 60 | Lãi tháng 60 (tr) |
-|---|---:|---:|---:|---:|---:|---:|
-| Cơ sở: trả 1 lần, gói bổ sung | 161 | 397,0 | 4.504,3 | 473,8 | 998 | 2.607,0 |
-| Trả góp 4 kỳ × 250 USD (10% bỏ ngang sau kỳ 1) | 161 | 390,2 | 4.402,7 | — | 998 | 2.567,8 |
-| Gói 1.000 USD GỒM luôn khoá cơ bản (người nâng cấp ngừng trả 100 USD) | 149 | 369,8 | 4.255,3 | 473,8 | 918 | 2.422,5 |
-| Gói GỒM khoá cơ bản và học viên chuyển sang hàng loạt (nâng cấp 8%/tháng) | 112 | 425,9 | 5.114,0 | 1.986,7 | 679 | 2.727,4 |
+| Phương án | HV 100 USD tháng 24 | Lãi tháng 24 (tr) | Lãi luỹ kế 24 tháng (tr) | Doanh thu chưa ghi nhận T24 (tr) | HV 100 USD tháng 60 | Người phải phục vụ T60 | Lãi tháng 60 (tr) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Cơ sở: trả 1 lần, gói bổ sung | 191 | 472,2 | 5.173,5 | 538,9 | 1.211 | 1.211 | 3.145,4 |
+| Trả góp 4 kỳ × 250 USD (10% bỏ ngang sau kỳ 1) | 191 | 464,8 | 5.063,4 | — | 1.211 | 1.211 | 3.102,6 |
+| Gói 1.000 USD GỒM luôn khoá cơ bản (người nâng cấp ngừng trả 100 USD) | 175 | 435,7 | 4.854,1 | 538,9 | 1.095 | 1.391 | 2.878,7 |
+| Gói GỒM khoá cơ bản và học viên chuyển sang hàng loạt (nâng cấp 8%/tháng) | 127 | 481,1 | 5.652,0 | 2.206,8 | 772 | 1.901 | 3.078,7 |
 
-Cột tháng 60 chạy cùng giả định phễu đến năm thứ 5 (người theo dõi tiếp tục tăng) — chỉ để so sánh cấu trúc gói, không phải dự báo.
+Cột tháng 60 chạy cùng giả định phễu đến năm thứ 5 (người theo dõi tiếp tục tăng) — chỉ để so sánh cấu trúc gói, không phải dự báo. "Người phải phục vụ" với phương án GỒM = HV 100 USD + toàn bộ người đã mua gói 10 năm (giả định họ ở lại, mức trần).
+
+Giá trị trọn đời 1 học viên 100 USD mới (USD): gói bổ sung 1.254 (ở lại TB 11,1 tháng); gói GỒM, nâng cấp 1,5%/tháng 1.095; gói GỒM, nâng cấp 8%/tháng 1.059 — chênh lệch nhỏ về tiền, khác biệt nằm ở **số người phải phục vụ không thu phí hằng tháng trong 10 năm**.
 
 ## 6. Độ nhạy ±20% (kịch bản cơ sở)
 
-Gốc: lãi tháng 24 = 397,0 tr; lãi luỹ kế 24 tháng = 4.504,3 tr.
+Gốc: lãi tháng 24 = 472,2 tr; lãi luỹ kế 24 tháng = 5.173,5 tr.
 
 | Biến | Giá trị gốc | Lãi T24 khi −20% | Lãi T24 khi +20% | Luỹ kế 24T khi −20% | Luỹ kế 24T khi +20% |
 |---|---:|---:|---:|---:|---:|
-| Tỷ lệ vào Skool miễn phí | 8,0% | 314,1 | 479,9 | 3.669,5 | 5.376,3 |
-| Người theo dõi mới/tháng | 2.000 | 314,1 | 479,9 | 3.669,5 | 5.376,3 |
-| Chuyển đổi miễn phí mới → 100 USD | 3,0% | 351,1 | 442,9 | 3.941,8 | 5.083,8 |
-| Tỷ lệ huỷ/tháng | 12,0% | 455,8 | 350,2 | 5.046,1 | 4.061,1 |
-| Chuyển đổi kho miễn phí → 100 USD | 0,3% | 360,5 | 433,3 | 4.142,0 | 4.881,4 |
-| Tỷ lệ nâng cấp 1.000 USD | 1,5% | 388,3 | 405,5 | 4.400,8 | 4.605,4 |
+| Người theo dõi mới/tháng | 2.000 | 375,5 | 562,9 | 4.208,2 | 6.152,9 |
+| Tỷ lệ vào Skool miễn phí | 8,0% | 375,5 | 562,9 | 4.208,2 | 6.152,9 |
+| Chuyển đổi miễn phí mới → 100 USD | 3,0% | 417,6 | 526,9 | 4.521,9 | 5.842,1 |
+| Tỷ lệ huỷ/tháng | 9,0% | 524,0 | 424,1 | 5.682,4 | 4.746,0 |
+| Chuyển đổi kho miễn phí → 100 USD | 0,3% | 429,7 | 514,5 | 4.761,8 | 5.599,6 |
+| Tỷ lệ nâng cấp 1.000 USD | 1,5% | 462,2 | 481,9 | 5.057,9 | 5.286,0 |
 
-Tỷ giá ±5%: lãi luỹ kế 24 tháng 4.275,1 tr (−5%) / 4.744,5 tr (+5%).
+Tỷ giá ±5%: lãi luỹ kế 24 tháng 4.909,3 tr (−5%) / 5.448,7 tr (+5%).
+
+Nếu được áp ngưỡng không chịu thuế 1 tỷ đ/năm (chỉ tính thuế phần vượt — cách tính giả định, chờ cơ quan thuế): lãi luỹ kế 24 tháng Thận trọng 810,2 tr (+76,0) / Cơ sở 5.313,5 tr (+140,0) / Lạc quan 21.950,2 tr (+140,0).
 
 ### Lưới tỷ lệ huỷ × chuyển đổi — học viên 100 USD và lãi tháng 24 (tr)
 
@@ -182,12 +186,12 @@ Hệ số chuyển đổi nhân cả hai tỷ lệ chuyển đổi miễn phí �
 
 | Huỷ/tháng \ Chuyển đổi | ×0,50 (1,5%) | ×0,75 (2,2%) | ×1,00 (3,0%) | ×1,25 (3,8%) | ×1,50 (4,5%) |
 |---|---:|---:|---:|---:|---:|
-| 6% | 117 HV / 279,4 | 175 HV / 428,5 | 232 HV / 570,0 | 288 HV / 716,2 | 344 HV / 860,9 |
-| 9% | 96 HV / 227,3 | 144 HV / 350,7 | 191 HV / 472,9 | 237 HV / 587,6 | 283 HV / 707,2 |
-| 12% | 81 HV / 189,0 | 122 HV / 293,6 | 161 HV / 397,0 | 200 HV / 499,3 | 239 HV / 594,4 |
-| 15% | 70 HV / 160,2 | 105 HV / 250,6 | 139 HV / 339,9 | 173 HV / 428,3 | 206 HV / 515,7 |
-| 18% | 62 HV / 154,9 | 92 HV / 217,4 | 122 HV / 295,9 | 151 HV / 373,6 | 180 HV / 450,4 |
-| 24% | 49 HV / 123,2 | 73 HV / 170,1 | 97 HV / 233,2 | 121 HV / 295,6 | 144 HV / 357,3 |
+| 4% | 135 HV / 324,5 | 201 HV / 496,0 | 267 HV / 659,7 | 332 HV / 827,8 | 397 HV / 994,2 |
+| 6% | 117 HV / 279,0 | 175 HV / 428,0 | 232 HV / 569,3 | 288 HV / 715,3 | 344 HV / 859,8 |
+| 9% | 96 HV / 226,9 | 144 HV / 350,2 | 191 HV / 472,2 | 237 HV / 586,8 | 283 HV / 706,3 |
+| 12% | 81 HV / 188,7 | 122 HV / 293,2 | 161 HV / 396,5 | 200 HV / 498,7 | 239 HV / 593,6 |
+| 15% | 70 HV / 159,9 | 105 HV / 250,2 | 139 HV / 339,5 | 173 HV / 427,7 | 206 HV / 515,0 |
+| 20% | 57 HV / 142,6 | 85 HV / 199,0 | 112 HV / 271,5 | 140 HV / 343,2 | 167 HV / 414,1 |
 
 ## 7. Khi nào mới thuê người
 
@@ -195,27 +199,27 @@ Quy tắc: chỉ thuê khi số liệu **tháng trước** chạm ngưỡng, và
 
 | Vị trí | Lương giả định (tr/tháng) | Ngưỡng thuê | Tháng thuê — Thận trọng | Cơ sở | Lạc quan |
 |---|---:|---|---:|---:|---:|
-| Trợ giảng/CSKH cộng đồng (bán thời gian) | 6,0 | ≥ 60 học viên trả phí (thay bằng bản toàn thời gian khi ≥ 200) | không | 11 | 5 |
+| Trợ giảng/CSKH cộng đồng (bán thời gian) | 6,0 | ≥ 60 học viên trả phí (thay bằng bản toàn thời gian khi ≥ 200) | không | 10 | 5 |
 | Trợ giảng/CSKH cộng đồng (toàn thời gian) | 10,0 | ≥ 200 học viên trả phí | không | không | 11 |
 | Tư vấn/chốt đơn gói 1.000 USD (lương cứng + 5% hoa hồng) | 7,0 | Doanh thu ≥ 150 tr/tháng và ≥ 2.000 thành viên miễn phí | không | 12 | 6 |
-| Dựng video/trợ lý nội dung | 9,0 | Doanh thu ≥ 200 tr/tháng (giải phóng thời gian anh) | không | 12 | 5 |
-| CSKH cộng đồng thứ 2 | 10,0 | ≥ 500 học viên trả phí | không | không | 21 |
-| Kế toán dịch vụ (thuê ngoài) | 2,5 | Doanh thu ≥ 40 tr/tháng | 13 | 4 | 3 |
+| Dựng video/trợ lý nội dung | 9,0 | Doanh thu ≥ 200 tr/tháng (giải phóng thời gian anh) | không | 11 | 5 |
+| CSKH cộng đồng thứ 2 | 10,0 | ≥ 500 học viên trả phí | không | không | 19 |
+| Kế toán dịch vụ (thuê ngoài) | 2,5 | Doanh thu ≥ 40 tr/tháng | 10 | 4 | 3 |
 
 "không" = trong 24 tháng chưa chạm ngưỡng, anh và đội AI tự làm. Không thuê trước doanh thu.
 
 ## 8. Gói "đồng hành 10 năm" thu một lần — rủi ro dòng tiền và cách xử lý
 
 - **Nghĩa vụ dài hạn:** thu 1.000 USD một lần nhưng phải phục vụ 120 tháng. Doanh thu thực chất ≈ 8,3 USD/tháng/người. Nếu tiêu hết tiền thu ngay, các năm sau sẽ phục vụ không công; nếu dừng chương trình có thể phát sinh yêu cầu hoàn tiền phần chưa phục vụ.
-- **Đề xuất ghi nhận:** ghi nhận ngay 20% (onboarding, tài liệu), phần 80% phân bổ đều 120 tháng. Kịch bản cơ sở: cuối tháng 24 còn **473,8 tr doanh thu chưa ghi nhận** (nghĩa vụ phải phục vụ).
-- **Quỹ phục vụ dài hạn:** trích 30% tiền thực nhận (sau phí, thuế) mỗi lần bán gói 1.000 USD vào tài khoản riêng; cơ sở tháng 24 quỹ đạt **166,7 tr**. Lãi "tiêu được" = lãi tiền mặt − trích quỹ.
+- **Đề xuất ghi nhận:** ghi nhận ngay 20% (onboarding, tài liệu), phần 80% phân bổ đều 120 tháng. Kịch bản cơ sở: cuối tháng 24 còn **538,9 tr doanh thu chưa ghi nhận** (nghĩa vụ phải phục vụ).
+- **Quỹ phục vụ dài hạn:** trích 30% tiền thực nhận (sau phí, thuế) mỗi lần bán gói 1.000 USD vào tài khoản riêng; cơ sở tháng 24 quỹ đạt **189,4 tr**. Lãi "tiêu được" = lãi tiền mặt − trích quỹ.
 - **Điều khoản cần chốt (chờ anh + luật sư):** gói 1.000 USD có bao gồm khoá 100 USD không (mô hình giả định KHÔNG); "đồng hành" gồm gì cụ thể (số buổi live/năm, hỏi đáp), điều kiện chấm dứt/hoàn tiền, xử lý khi Skool đổi chính sách. Không cam kết lợi nhuận, không gọi kèo, không giữ tiền/ví hộ.
 - **Thay thế an toàn hơn để anh cân nhắc:** gói 1.000 USD cho 12 tháng gia hạn được, hoặc trả góp — xem kịch bản phụ ở mục 5.
 
 ## 9. Nhận định
 
-- Về chi phí, dự án gần như không thể lỗ nặng: vốn 63,0 tr, hoà vốn từ 1 học viên. Rủi ro thật là **doanh thu bằng 0** nếu không ai trả 100 USD/tháng.
-- 100 USD/tháng (≈2,6 tr) là giá cao với người 25–40 tuổi ở VN; tỷ lệ huỷ quyết định quy mô: huỷ 6% vs 24% làm số học viên tháng 24 chênh 232 vs 97. Cần đo tỷ lệ huỷ thật ngay 2–3 tháng đầu.
+- Về chi phí, dự án gần như không thể lỗ nặng: vốn 78,0 tr, hoà vốn từ 1 học viên. Rủi ro thật là **doanh thu bằng 0** nếu không ai trả 100 USD/tháng.
+- 100 USD/tháng (≈2,6 tr) là giá cao với người 25–40 tuổi ở VN; tỷ lệ huỷ quyết định quy mô: huỷ 4% vs 20% làm số học viên tháng 24 chênh 267 vs 112. Cần đo tỷ lệ huỷ thật ngay 2–3 tháng đầu.
 - Số người theo dõi và tỷ lệ chuyển đổi là giả định — thay bằng số thật của kênh trong tháng 1 rồi chạy lại `mo_hinh.py`.
-- Chưa xác minh: phí Skool, cách rút tiền Skool về VN, thuế cá nhân kinh doanh online. Đây là 3 điểm có thể làm lệch 5–15% doanh thu thực nhận.
+- Chưa xác minh (nghien-cuu.md mới ở mức tin cậy Trung bình/Thấp): phí Skool, payout Stripe Express về VN (phải thử 1 giao dịch thật), thuế khi bán qua nền tảng nước ngoài, chi phí liên kết xuất bản ebook. Khách trả USD còn chịu thêm ~1–4% phí đổi ngoại tệ phía thẻ — làm giá thực tế với khách cao hơn 100 USD, có thể kéo chuyển đổi xuống.
 - Không cần dựng bộ máy: theo quy tắc ngưỡng, người đầu tiên (CSKH bán thời gian) chỉ thuê khi có ~60 học viên trả phí.
