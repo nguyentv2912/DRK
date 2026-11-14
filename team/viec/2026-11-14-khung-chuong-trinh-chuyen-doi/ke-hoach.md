@@ -214,7 +214,7 @@ Lý do: học xong trong ~2 tháng thì tháng 3 trở đi người học ở l�
 | Giao dịch | Chấm nhật ký giao dịch theo kỷ luật (có kế hoạch? có cắt lỗ? có đúng tỷ trọng?) — không chấm "lời hay lỗ" |
 | Lợi nhuận | Dạy **quản trị lợi nhuận của chính học viên**: chốt theo kế hoạch, giữ thành quả, không để lãi thành lỗ (cách diễn đạt mục 4) |
 
-**Tận dụng văn phòng và ngân hàng hỗ trợ:** văn phòng có sẵn (chi phí mặt bằng 0 — brief) dùng cho buổi định hướng 1:1 và **live offline mỗi quý** cho học viên 1.000 USD ở gần; người ở xa dự online. Ngân hàng hỗ trợ: trước mắt hỏi về nhận tiền payout ngoại tệ (7.1); mời chuyên gia ngân hàng nói về quản lý tài chính cá nhân trong live offline nếu ngân hàng đồng ý. **Chỉ nêu tên ngân hàng khi có văn bản đồng ý.**
+**Tận dụng văn phòng và ngân hàng hỗ trợ:** văn phòng có sẵn (chi phí mặt bằng 0 — brief) dùng cho buổi định hướng 1:1 và **live offline mỗi quý** cho học viên 1.000 USD ở gần; người ở xa dự online. Ngân hàng hỗ trợ: trước mắt hỏi về nhận tiền payout ngoại tệ (7.1); mời chuyên gia ngân hàng nói về quản lý tài chính cá nhân trong live offline nếu ngân hàng đồng ý — chỉ kiến thức, không giới thiệu sản phẩm đầu tư hay crypto. **Chỉ nêu tên ngân hàng khi có văn bản đồng ý.**
 
 Năng lực phục vụ (tự tính, giả định 1:1 mỗi năm 45 phút): 100 người đồng hành ≈ 75 giờ 1:1/năm. Cơ sở có 15 người mua luỹ kế cuối năm 2 (TC), vẫn trong sức anh.
 
@@ -410,7 +410,7 @@ Ghi chú (tự tính): với A, người theo đủ 10 năm trả 1.000 + 100 ×
 - Chạy lại mô hình bằng số thật sau mỗi cổng.
 
 ### 7.5 KPI từng tháng
-Số TC ghi theo thứ tự **thận trọng (mức sàn) / cơ sở (tham vọng)**.
+Số TC ghi theo thứ tự **thận trọng (không phải sàn; sàn cổng là 55 thành viên / 1 học viên — xem 7.4) / cơ sở (tham vọng)**.
 | KPI | Tháng 1 | Tháng 2 | Tháng 3 | Nguồn |
 |---|---|---|---|---|
 | Ngày đăng đủ 2 kênh | ≥ 25 | ≥ 25 | ≥ 25 (≥ 80 trong 90 ngày) | KENH |

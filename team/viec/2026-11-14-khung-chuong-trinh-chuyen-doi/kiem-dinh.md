@@ -47,3 +47,46 @@ Ghi chú: phương án "gói 1.000 USD cho 12 tháng" (TC mục 8, ke-hoach mụ
 - Chặn: 1 (#1)
 - Nên sửa: 5 (#2–#6)
 - Gợi ý: 9 (#7–#15)
+
+---
+
+# Lần 2 — kiểm lại sau khi sửa (14/11/2026)
+
+## Kết luận lần 2: **ĐẠT** — 0 lỗi Chặn, 0 lỗi Nên sửa, 4 Gợi ý còn lại (không chặn bàn giao)
+
+## Chạy lại mô hình
+- Chạy lại mo_hinh.py trên bản sao: tai-chinh.json và tai-chinh.md sinh ra **giống từng byte** bản đang nộp.
+- Sửa phí âm làm vài số đổi nhẹ ở tai-chinh.md: luỹ kế tháng 13 từ 654,2 thành 654,1 tr; NPV thận trọng từ 137,7 thành 137,6 tr; IRR lạc quan từ 62.356% thành 62.351%. ke-hoach.md **không dẫn** các số này. Mọi số chính khác giữ nguyên.
+- Đối chiếu lại ke-hoach ↔ JSON: tất cả khớp. Gồm: vốn 78,0 tr; hoà vốn 2 HV; hoàn vốn tháng 6 và 15; số tháng 24 (114 / 10 / ~1 HV; 269,9 / 22,5 tr; 2.824,4 / 175,7 / −93,6 tr); bảng phễu tháng 1–3; ngưỡng 55 / 1 / 110 / 3 / 6,2 tr; `cd_toi_thieu` 2,5%, `huy_toi_da` 12%; `ket_qua` (thận trọng không qua cả 2 cổng); bảng phương án A/B; quỹ 104,4 tr; 1.268 USD; tháng thuê 6/17/18/20. Câu "5/11 rủi ro mức Cao" ở mục 8 đúng: đếm lại có 5 dòng Cao trên tổng 11 dòng.
+
+## Trạng thái từng lỗi lần 1
+| # | Lỗi lần 1 | Trạng thái | Ghi chú kiểm |
+|---|---|---|---|
+| 1 | Chặn: ghi sai chỉ số mốc dừng | **Đã sửa** | Tóm tắt, 7.4, 7.5, mục 8 đều ghi "miễn phí mới → 100 USD ≥ 2,5%" và "huỷ ≤ 12%". "Theo dõi → Skool" được ghi là giả định, không phải ngưỡng. Có ghi rõ thận trọng không qua cổng. Khớp `nguong_dung` trong JSON |
+| 2 | Xuất xứ "nước mài mòn đá" (ch. 8) | Đã sửa | Ý tưởng này đã bỏ (5.3 còn 5 ý tưởng). Ch. 8 còn dùng ở bài 2.4 với đúng câu "Thượng thiện nhược thuỷ" |
+| 3 | Câu dẫn thuế 500 tr / 1 tỷ | Đã sửa | tai-chinh.md dẫn đúng NĐ 141/2026, 1 tỷ, ghi "chưa có toàn văn" |
+| 4 | 1:1 review danh mục / chuyển pha chưa có trong việc cần luật sư | Đã sửa | Đã thêm ở 4.4 (mục 1) và 7.1 |
+| 5 | Ngầm hiểu 3 chu kỳ | Đã sửa | Bài 2.5, mục lục và hình 5 đều để [chờ anh] |
+| 6 | Câu "chuyển đổi" mơ hồ ở TC 5b | Đã sửa | Ghi rõ "thành viên miễn phí mới → khoá 100 USD" kèm huỷ ≤ 12% |
+| 7 | Lớp dẫn dắt lặp ngày liền | Đã sửa | Lịch mới: ĐẠO – ĐẦU TƯ – ĐẠO – ĐỜI – ĐẠO – ĐẦU TƯ – ĐỜI, không lặp ngày liền, kể cả Chủ Nhật → Thứ Hai. Tỷ lệ vẫn 3/2/2 |
+| 8 | KPI tháng 2 nội suy | Đã sửa | Ghi "tháng 2 nội suy" |
+| 9 | Phép tính 75 giờ 1:1 chỉ tính buổi hằng năm | **Còn** (Gợi ý) | Mục 3.4 giữ nguyên. Không chặn: đã ghi rõ giả định, và với 15 người mua thì sức anh vẫn đủ |
+| 10 | Bài ghim "có sẵn" | Đã sửa | Ghi "KENH lên kế hoạch ghim sau tuần 2, chưa có sẵn", trước đó dùng bình luận ghim |
+| 11 | Thiếu chữ "tắc" trong Luận Ngữ 13.17 | Đã sửa | |
+| 12 | "Âm – dương" ở bài 2.2 | Đã sửa | Cột ĐẠO của bài 2.2 đổi thành [chờ anh] |
+| 13 | Câu "không thể lỗ nặng" | Đã sửa | Đổi thành "lỗ xấu nhất 93,6 tr, chưa tính công anh"; khớp JSON |
+| 14 | Phí chuyển tiền âm | Đã sửa | `max(0.0, …)`; giá trị nhỏ nhất của `cp_chuyen_tien` = 0 |
+| 15 | nghien-cuu: khoảng hở 899/900 USD, NĐ 141 viết chắc | **Còn** (Gợi ý) | Lần này Lan không được giao sửa. Không ảnh hưởng số |
+
+## Lỗi mới do sửa
+| # | Mức | Vị trí | Vấn đề | Cách sửa |
+|---|---|---|---|---|
+| 16 | Gợi ý | ke-hoach.md mục 7.5, câu đầu "thận trọng (mức sàn) / cơ sở" | Tóm tắt và 7.4 nay định nghĩa "sàn" là 55 thành viên / 1 học viên, còn 72 là số của kịch bản thận trọng. Gọi cả cột thận trọng là "mức sàn" dễ làm nhầm 72 với sàn | Đổi thành "thận trọng / cơ sở (tham vọng); sàn và ngưỡng xem 7.4" |
+| 17 | Gợi ý | ke-hoach.md mục 3.4, đoạn "Tận dụng văn phòng và ngân hàng hỗ trợ" (mới) | Nội dung hợp brief: không bịa tên đối tác, chỉ nêu tên ngân hàng khi có văn bản. Riêng ý mời chuyên gia ngân hàng nói trong live nên ghi thêm: không giới thiệu sản phẩm đầu tư hay crypto | Thêm 1 vế: "chỉ nói quản lý tài chính cá nhân, không giới thiệu sản phẩm đầu tư/crypto" |
+
+Rà lại các điểm tuân thủ sau khi sửa: không thêm tên sàn; không thêm câu hứa lợi nhuận; giá anh chốt giữ nguyên ở cả 4 file; không có số từ ban-nhap-cu/; dữ kiện kênh vẫn khớp KENH.md và brand.md; chính tả ổn.
+
+## Tóm tắt số lỗi lần 2
+- Chặn: 0
+- Nên sửa: 0
+- Gợi ý: 4 (#9, #15 còn từ lần 1; #16, #17 mới)
