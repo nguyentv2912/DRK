@@ -8,7 +8,7 @@ Mọi số tài chính lấy nguyên từ TC, không đổi. Số Mai tự suy r
 
 > **Độ tin cậy.** Lan không mở được trang gốc nào vì mạng bị chặn. Mọi dữ kiện thị trường, pháp lý trong tài liệu này **tối đa ở mức Trung bình**. Giám sát đánh giá phần nghiên cứu "chưa đạt do môi trường". Mọi điều khoản luật phải được luật sư đối chiếu toàn văn (Công báo, vbpl.vn, thuvienphapluat.vn) trước khi dùng với khách. Tỷ lệ phễu, giá gói đồng hành và gói thành viên là **giả định** của Hùng, chưa có dữ liệu thật.
 >
-> **Vòng 2 (14/11/2026).** Bản này đã cập nhật theo mô hình vòng 2 của Hùng. Lộ trình theo cổng giờ là phương án chính. Ngưỡng hoà vốn đã tính cả công suất coach. Số vốn 1.316 trđ có thể được Hùng điều chỉnh lại (quỹ dự phòng).
+> **Vòng 2 (14/11/2026).** Bản này đã cập nhật theo mô hình vòng 2 của Hùng. Lộ trình theo cổng giờ là phương án chính. Ngưỡng hoà vốn đã tính cả công suất coach. Vốn cần đã chốt ở 1.413 trđ, sau khi Hùng tính lại quỹ dự phòng theo chi phí của tháng đáy.
 
 ---
 
@@ -16,10 +16,10 @@ Mọi số tài chính lấy nguyên từ TC, không đổi. Số Mai tự suy r
 
 ## 1. Tóm tắt
 
-**Kết luận: đi theo lộ trình mở rộng theo cổng của Hùng. Theo kịch bản cơ sở, lộ trình này cần ~1,32 tỷ đ (1.316 trđ), hoàn vốn ở tháng 26, NPV 48 tháng +1.677 trđ.**
+**Kết luận: đi theo lộ trình mở rộng theo cổng của Hùng. Theo kịch bản cơ sở, lộ trình này cần ~1,41 tỷ đ (1.413 trđ), hoàn vốn ở tháng 26, NPV 48 tháng +1.677 trđ.**
 
 1. **Phương án chính là lộ trình theo cổng (TC mục 7A, kịch bản cơ sở).**
-   - Vốn cần **1.316 trđ**. Đáy luỹ kế **−1.017 trđ ở T7**.
+   - Vốn cần **1.413 trđ** = 306 vốn ban đầu + 711 bù lỗ + 396 dự phòng (2 tháng chi phí cố định của tháng đáy T7, khi đội có 11 người). Đáy luỹ kế **−1.017 trđ ở T7**.
    - EBITDA dương từ **T7**. Riêng hai tháng chuyển giai đoạn (T15, T18) bị âm. Dương liên tục từ **T19**.
    - Hoàn vốn **T26**. Luỹ kế T24 **−78 trđ**. NPV 48 tháng **+1.677 trđ**, IRR ~79%/năm.
    - Đội: **9 người ở T6, 13 ở T12, 25 ở T24**.
@@ -28,6 +28,12 @@ Mọi số tài chính lấy nguyên từ TC, không đổi. Số Mai tự suy r
 4. **Kết quả phụ thuộc vào việc phễu thật có đạt giả định hay không.**
    - Lạc quan: vốn **1.004 trđ**, hoàn vốn **T10**.
    - Thận trọng (chuyển đổi ×0,7): **không qua cổng nào**. T6 chỉ có 4,7 khách/tháng, chạm mốc dừng. Dừng ở đây thì lỗ **~1.440 trđ**.
+   - Độ nhạy của lộ trình theo cổng (TC bảng 8A):
+     - Chuyển đổi chỉ cần thấp hơn **5%** là hoàn vốn lùi từ T26 về **T31**.
+     - Chuyển đổi **−20%** hoặc giá gói đồng hành **−20%** thì **không hoàn vốn**.
+     - CPL **+20%** thì hoàn vốn lùi về **T34**.
+   - Cổng quảng cáo ở T6 chỉ **vừa đủ** qua: T5 đạt 14,03 khách/1.000 lead, so với ngưỡng 14,0. Phễu thật hụt một chút là cổng mở muộn hơn.
+   - Phương án tham chiếu "giữ đội 8, quảng cáo 30 trđ" cần **1.519 trđ** và hoàn vốn T29, tức kém hơn lộ trình theo cổng.
 5. **Ngân hàng là nguồn uy tín, không phải nguồn tiền.** Hoa hồng giới thiệu chưa tới 0,5% doanh thu (TC). Giá trị thật của ngân hàng là đồng tổ chức, tài trợ sự kiện và cử diễn giả. Hiện **chưa có văn bản** nào. Chưa có văn bản thì không được nói "ngân hàng đứng sau" ra công chúng.
 6. **Rủi ro lớn nhất là bị nhìn như một "lớp học tài chính" lừa đảo.** Ví dụ: vụ Mr Pips, **bị cáo buộc** chiếm đoạt >1.568 tỷ đ của 2.661 bị hại, đang xét xử; vụ FTXF, khởi tố 5 bị can vì dùng hội thảo để bán token (NC). Bộ minh bạch ở §4.4 phải xong trước khi chạy quảng cáo.
 
@@ -37,7 +43,7 @@ Các cổng, ngưỡng và mốc dừng **chỉ ghi ở §7**. Các tỷ lệ ph
 
 | | **Theo cổng — Cơ sở (chính)** | Theo cổng — Lạc quan | Theo cổng — Thận trọng | Tuyển theo lịch — Cơ sở (so sánh) |
 |---|---|---|---|---|
-| Vốn cần chuẩn bị | **1.316** | 1.004 | dừng ở T6, lỗ ~1.440 | 3.008 |
+| Vốn cần chuẩn bị | **1.413** | 1.004 | dừng ở T6, lỗ ~1.440 | 3.008 |
 | Trong đó vốn ban đầu (chi ở tuần 0) | 306 | 306 | 306 | 306 |
 | Doanh thu năm 1 / năm 2 | 3.104 / 8.546 | 8.376 / 18.165 | 765 / 1.534 | 2.684 / 7.320 |
 | EBITDA năm 1 / năm 2 | −318 / +934 | +1.952 / +7.149 | −1.719 / −1.013 | −1.305 / −150 |
@@ -351,14 +357,14 @@ Hoa hồng bán hàng tính trên **doanh thu sau hoàn tiền** (đề xuất M
 | 1. Thu lead | Form (tên, Zalo, tuổi, thu nhập khoảng, mục tiêu, đã từng lỗ?) + đồng ý xử lý dữ liệu | Hệ thống | Tức thì | CPL |
 | 2. Chào mừng | Tin Zalo OA tự động: quà học + lịch hội thảo | Hệ thống | ≤5 phút | Tỷ lệ mở |
 | 3. Gọi xác nhận | Gọi 3–5 phút, mời hội thảo gần nhất | Tư vấn viên | ≤24 giờ | % liên hệ được |
-| 4. Nhắc lịch | Zalo nhắc 24 giờ và 2 giờ trước hội thảo | CSKH / hệ thống | — | Lead → tham dự **40%** |
-| 5. Hội thảo | 90 phút kiến thức + 20 phút giới thiệu gói + 10 phút hỏi đáp; ưu đãi khoá nền tảng tại chỗ | Chủ dự án / coach | — | Tham dự → nền tảng **12%** |
-| 6. Đặt 1:1 | Mời đặt tư vấn 1:1 miễn phí 30 phút | Tư vấn viên | ≤48 giờ sau hội thảo | Tham dự → 1:1 **8%** |
+| 4. Nhắc lịch | Zalo nhắc 24 giờ và 2 giờ trước hội thảo | CSKH / hệ thống | — | Lead → tham dự (§3.2) |
+| 5. Hội thảo | 90 phút kiến thức + 20 phút giới thiệu gói + 10 phút hỏi đáp; ưu đãi khoá nền tảng tại chỗ | Chủ dự án / coach | — | Tham dự → nền tảng (§3.2) |
+| 6. Đặt 1:1 | Mời đặt tư vấn 1:1 miễn phí 30 phút | Tư vấn viên | ≤48 giờ sau hội thảo | Tham dự → 1:1 (§3.2) |
 | 7. Tư vấn 1:1 | Hỏi theo bảng "phù hợp": có quỹ khẩn cấp? có nợ tiêu dùng lãi cao? đang vay để đầu tư? Kỳ vọng lợi nhuận? | Tư vấn viên (+ coach nếu cần) | 30 phút | — |
-| 8. Đề xuất | Chưa phù hợp → khuyên khoá nền tảng hoặc ổn định tài chính trước. Phù hợp → đề xuất đồng hành | Tư vấn viên | Trong buổi | 1:1 → đồng hành **25%** |
+| 8. Đề xuất | Chưa phù hợp → khuyên khoá nền tảng hoặc ổn định tài chính trước. Phù hợp → đề xuất đồng hành | Tư vấn viên | Trong buổi | 1:1 → đồng hành (§3.2) |
 | 9. Chốt | Gửi hợp đồng + chính sách hoàn tiền + quy tắc đạo đức; chuyển khoản vào tài khoản công ty | Tư vấn viên + kế toán | ≤72 giờ | Thời gian chốt |
 | 10. Bàn giao | Chuyển hồ sơ sang CSKH và coach | Tư vấn viên | Ngày ký | — |
-| Song song | Học viên nền tảng → mời 1:1 sau buổi Live 2 | Tư vấn viên | Trễ ~1 tháng | Nền tảng → đồng hành **20%** |
+| Song song | Học viên nền tảng → mời 1:1 sau buổi Live 2 | Tư vấn viên | Trễ ~1 tháng | Nền tảng → đồng hành (§3.2) |
 
 Kịch bản tư vấn **cấm** các câu: "chắc chắn lãi", "thu hồi học phí sau 1 tháng", "anh/chị vào lệnh theo em", "suất cuối". Trưởng nhóm nghe lại ngẫu nhiên **10% cuộc tư vấn** mỗi tuần (giả định Mai).
 
@@ -374,7 +380,7 @@ Kịch bản tư vấn **cấm** các câu: "chắc chắn lãi", "thu hồi h�
 | Yêu cầu hoàn tiền | Xử lý theo chính sách, hoàn ≤7 ngày làm việc | CSKH + kế toán |
 | Tuần 12 | Tốt nghiệp; mời thành viên năm; xin đồng ý viết câu chuyện học viên | CSKH + coach |
 | Tháng 3, 6, 9 sau tốt nghiệp | Tin hỏi thăm, mời hội thảo chuyên đề | CSKH |
-| Tháng 11 thành viên | Nhắc gia hạn (mục tiêu gia hạn **50%**, TC) | CSKH |
+| Tháng 11 thành viên | Nhắc gia hạn (mục tiêu ở §3.2) | CSKH |
 
 ### 6.5 KPI từng bộ phận
 
