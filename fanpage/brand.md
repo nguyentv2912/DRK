@@ -23,3 +23,6 @@ Người đọc: nhà đầu tư/trader cá nhân Việt Nam 22–45 tuổi, t�
 - Số liệu không có nguồn. Bịa câu nói của người nổi tiếng.
 - Bôi nhọ cá nhân/sàn cụ thể. Chính trị, tôn giáo.
 - Luôn kèm câu miễn trừ ngắn khi bàn chuyện vốn: *"Nội dung mang tính chia sẻ, không phải lời khuyên đầu tư."*
+
+## Hai nền tảng
+Một video, hai caption: `post.md` cho Facebook, `tiktok.md` cho TikTok. Quy tắc riêng từng nền tảng, lịch chuyên mục theo thứ và KPI: xem `fanpage/KENH.md`.

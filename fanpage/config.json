@@ -1,16 +1,54 @@
 {
   "brand_name": "ĐẠO ĐỨC ĐẦU TƯ",
-  "metricool_brand_id": "7808796",
-  "timezone": "Asia/Bangkok",
-  "network": "facebook",
-  "facebook_type": "REEL",
-  "publish_mode": "nhap",
-  "_publish_mode_help": "nhap = tạo bản NHÁP trong Metricool để bạn duyệt rồi bấm đăng | tu-dong = lên lịch tự đăng",
-  "posts_per_day": 1,
-  "preferred_hours": ["11:30", "20:00"],
+  "timezone": "Asia/Ho_Chi_Minh",
+  "publish_mode": "tu-dong",
+  "_publish_mode_help": "tu-dong = đội tự đăng sau khi edit và giám sát đạt | nhap = tạo bản nháp trên Metricool để chủ page duyệt",
+  "video_seconds": [
+    90,
+    180
+  ],
+  "script_delivery_time": "05:30",
+  "channels": [
+    {
+      "network": "facebook",
+      "metricool_brand_id": "7808796",
+      "facebook_type": "REEL",
+      "fallback_type": "POST",
+      "verify": "Chủ page xác nhận fanpage Đạo Đức Đầu Tư đã nối vào brand 7808796",
+      "enabled": true
+    },
+    {
+      "network": "tiktok",
+      "metricool_brand_id": "",
+      "expected_username": "daoducdautu",
+      "enabled": true,
+      "verify": "Trước mỗi lần đăng: getBrandSettings của brand này phải có networksData.tiktokData == expected_username. Sai hoặc trống → KHÔNG đăng TikTok, báo chủ page."
+    }
+  ],
+  "never_post_to": [
+    "instagram:mrpumpsolana",
+    "tiktok:mr.sol56"
+  ],
+  "_never_post_to_help": "Brand 7808796 còn nối TikTok mr.sol56 và Instagram mrpumpsolana của dự án Mr Pump. Không bao giờ đưa instagram hoặc tiktok của brand 7808796 vào providers.",
+  "preferred_hours": {
+    "facebook": [
+      "20:00",
+      "11:30"
+    ],
+    "tiktok": [
+      "20:30",
+      "12:00"
+    ]
+  },
   "cta_link": "",
-  "_cta_link_help": "Link muốn gắn vào bình luận đầu tiên (nhóm Zalo, khoá học, affiliate...). Để trống = không gắn.",
-  "video_host": "google_drive",
-  "drive_folder_name": "Fanpage - Video tu dong",
-  "language": "vi"
+  "drive": {
+    "root_folder_id": "1Wi6LILdKR6GIhP7q2pBMX0wKqarLNhhh",
+    "scripts_folder_id": "1_bf58L68EYb4FNFJUotHtLl_DeI2GE1C",
+    "raw_folder_id": "1UQedh3qGOSnlDlwOc44aaB2qC30olnSo",
+    "edited_folder_id": "1BLSy4zRcFzKtfVM5YsS7SyG0OQPXogGO",
+    "_help": "Kịch bản: Google Doc tên 'YYYY-MM-DD | chuyên mục | chủ đề' trong scripts_folder (đây cũng là lịch sử chủ đề). Video thô: share anyoneWithLink rồi curl https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t; xử lý xong chuyển vào processed_folder (update_file parentId). Không tải video lên Drive qua connector (giới hạn ~3 MB/lần); video đã edit đi qua media_repo.",
+    "processed_folder_id": "1uRTnyFB-pEIgw7se4G-LuPEKqsrG6SZ4"
+  },
+  "media_repo": "nguyentv2912/ddtt-media",
+  "_media_repo_help": "Repo GitHub công khai chỉ để Metricool lấy video đã edit. Dùng fanpage/tools/media_repo.py put/clear. Xoá video khỏi repo ngay khi Metricool đã sao chép (media chuyển sang static.metricool.com)."
 }

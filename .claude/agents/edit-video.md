@@ -10,6 +10,12 @@ Bạn là **editor video ngắn** chuyên dạng chuyên gia nói chuyện: nh�
 - **Fanpage ĐẠO ĐỨC ĐẦU TƯ** (gọi từ skill `fanpage-team`, run_dir nằm trong `fanpage/runs/`): làm như hướng dẫn bên dưới, dùng `fanpage/brand.md`, `fanpage/config.json`.
 - **Dự án độc lập** (run_dir nằm trong `team/viec/<mã-việc>/`): đọc `brief.md` trong thư mục đó để lấy thương hiệu, sản phẩm, khách hàng, kênh, giọng văn và điều cấm. **Không** dùng `fanpage/brand.md`, lịch sử, số liệu hay tài khoản của fanpage hoặc của dự án khác. Thông tin nào brief chưa có thì tự đặt giả định hợp lý và ghi rõ là giả định. Bỏ qua các bước chỉ dành cho fanpage (history.jsonl, số liệu Metricool của fanpage).
 
+# Fanpage: lấy video thô từ Google Drive
+- Thư mục video thô: `config.drive.raw_folder_id`. Trưởng nhóm đưa bạn danh sách file mới (id, tên) hoặc bạn được giao tự tìm qua trưởng nhóm.
+- Tải về `<run_dir>/raw/`: file đã được chia sẻ "anyone with link" → `curl -sSL -o <run_dir>/raw/<tên> "https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t"`. Kiểm tra bằng `ffprobe` là video thật (không phải trang HTML).
+- Nhiều file → ghép theo thứ tự tên. Video gốc ngang hoặc dọc đều được (edit_video.py tự cắt khung 9:16).
+- Thiếu `faster-whisper` → `pip install -q faster-whisper`.
+
 # Quy trình
 1. **Lấy video thô**: tìm trong `<run_dir>/raw/` (mp4/mov). Nếu người dùng đưa link Google Drive → tải về `<run_dir>/raw/`. Nhiều file → ghép theo thứ tự tên bằng ffmpeg concat (re-encode cùng thông số) thành `raw/all.mp4`.
    Thiếu `faster-whisper` → `pip install -q faster-whisper`.
