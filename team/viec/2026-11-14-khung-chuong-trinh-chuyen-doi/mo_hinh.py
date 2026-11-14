@@ -61,10 +61,10 @@ P = {
     "thang_mo_ebook": 3,        # ebook xong sau ~2 thang
 
     # --- Pheu (gia dinh, xem ly do trong tai-chinh.md) ---
-    "nguoi_theo_doi_dau": 10_000,     # gia dinh - THAY BANG SO THAT cua kenh
+    "nguoi_theo_doi_dau": 0,          # mac dinh 0: kenh dang xay lai (KENH.md) - CHO SO THAT, nhap vao day roi chay lai
     "theo_doi_moi_thang_dau": 2_000,  # gia dinh: nguoi theo doi moi thang 1
     "tang_theo_doi_thang": 0.05,      # gia dinh: nguoi theo doi moi tang 5%/thang (ramp-up)
-    "ty_le_vao_skool_moi": 0.08,      # % nguoi theo doi MOI vao Skool mien phi
+    "ty_le_vao_skool_moi": 0.05,      # % nguoi theo doi MOI vao Skool mien phi (Skool khong co tieng Viet, phai tao tai khoan -> co rao can)
     "ty_le_vao_skool_ton": 0.05,      # % nguoi theo doi SAN CO vao Skool, rai deu 3 thang dau
     "free_roi_thang": 0.05,           # % thanh vien mien phi roi / ngung hoat dong moi thang
     "cd_free_sang_tra_phi_thang_dau": 0.03,  # % thanh vien mien phi MOI mua 100 USD ngay thang dau
@@ -374,11 +374,15 @@ def ltv_usd(p, gom, u=None):
 # 4. KICH BAN & DO NHAY
 # =====================================================================
 KICH_BAN = {
-    "than_trong": {"theo_doi_moi_thang_dau": 1_000, "tang_theo_doi_thang": 0.03, "ty_le_vao_skool_moi": 0.05,
+    # "Khong dang lam": truy cap thap + chuyen doi thap + huy cao -> dung de dat nguong dung/doi cach ban
+    "khong_dang_lam": {"theo_doi_moi_thang_dau": 500, "tang_theo_doi_thang": 0.0, "ty_le_vao_skool_moi": 0.02,
+                       "cd_free_sang_tra_phi_thang_dau": 0.01, "cd_free_sang_tra_phi_ton": 0.001,
+                       "huy_thang": 0.20, "nang_cap_chuyen_sau_thang": 0.005, "ebook_kem_co_ban": 0.10},
+    "than_trong": {"theo_doi_moi_thang_dau": 1_000, "tang_theo_doi_thang": 0.03, "ty_le_vao_skool_moi": 0.025,
                    "cd_free_sang_tra_phi_thang_dau": 0.02, "cd_free_sang_tra_phi_ton": 0.002,
                    "huy_thang": 0.15, "nang_cap_chuyen_sau_thang": 0.008, "ebook_kem_co_ban": 0.15},
     "co_so": {},
-    "lac_quan": {"theo_doi_moi_thang_dau": 3_500, "tang_theo_doi_thang": 0.06, "ty_le_vao_skool_moi": 0.10,
+    "lac_quan": {"theo_doi_moi_thang_dau": 3_500, "tang_theo_doi_thang": 0.06, "ty_le_vao_skool_moi": 0.08,
                  "cd_free_sang_tra_phi_thang_dau": 0.045, "cd_free_sang_tra_phi_ton": 0.004,
                  "huy_thang": 0.06, "nang_cap_chuyen_sau_thang": 0.025, "ebook_kem_co_ban": 0.35},
 }
@@ -388,8 +392,10 @@ NHAN_KB = {
     "cd_free_sang_tra_phi_ton": "Kho miễn phí → 100 USD (mỗi tháng)", "huy_thang": "Tỷ lệ huỷ/tháng",
     "nang_cap_chuyen_sau_thang": "Nâng cấp 1.000 USD/tháng", "ebook_kem_co_ban": "Mua kèm ebook (HV 100 USD mới)",
 }
-TEN_KB_VN = {"than_trong": "Thận trọng", "co_so": "Cơ sở", "lac_quan": "Lạc quan"}
-TEN_KB = {"than_trong": "Than trong", "co_so": "Co so", "lac_quan": "Lac quan"}
+TEN_KB_VN = {"khong_dang_lam": "Không đáng làm", "than_trong": "Thận trọng", "co_so": "Cơ sở (tham vọng)", "lac_quan": "Lạc quan"}
+HDR = " | ".join(TEN_KB_VN[k] for k in KICH_BAN)
+SEP = "---:|" * len(KICH_BAN)
+TEN_KB = {"khong_dang_lam": "Khong dang lam", "than_trong": "Than trong", "co_so": "Co so", "lac_quan": "Lac quan"}
 
 BIEN_NHAY = {
     "huy_thang": "Ty le huy thang",
@@ -485,6 +491,8 @@ def main():
         nhay.append({"bien": k, "ten": ten, "gia_tri": p[k],
                      "lai_t24_-20": lo["lai_t24"], "lai_t24_+20": hi["lai_t24"],
                      "luy_ke_-20": lo["luy_ke_24"], "luy_ke_+20": hi["luy_ke_24"]})
+    vao_skool = {v: tom_tat(voi(p, ty_le_vao_skool_moi=v)) for v in (0.02, 0.04, 0.08)}
+    thue_2 = {kb: tom_tat(voi(p, thue_tren_doanh_thu=0.02, **KICH_BAN[kb]))["luy_ke_24"] for kb in KICH_BAN}
     thue_nguong = {kb: tom_tat(voi(p, ap_nguong_mien_thue=True, **KICH_BAN[kb]))["luy_ke_24"] for kb in KICH_BAN}
     fx_lo = tom_tat(voi(p, ty_gia=fx * 0.95))
     fx_hi = tom_tat(voi(p, ty_gia=fx * 1.05))
@@ -520,6 +528,14 @@ def main():
                 d.setdefault(ma, row["thang"])
         moc_thue[kb] = d
 
+    # Nguong dung / doi cach ban: lay muc cua kich ban THAN TRONG o thang 3 va 6
+    tt = kq["than_trong"]["rows"]
+    nguong_dung = {
+        "thang_3": {"free_toi_thieu": round(tt[2]["free"], -1), "hv_toi_thieu": max(1, round(tt[2]["hv"]))},
+        "thang_6": {"hv_toi_thieu": max(1, round(tt[5]["hv"])), "huy_toi_da": KICH_BAN["than_trong"]["huy_thang"],
+                    "lai_toi_thieu_tr": 10},
+    }
+
     # ---------------- JSON ----------------
     def gon(r):
         return {k: (v if not isinstance(v, float) else round(v, 2)) for k, v in r.items()}
@@ -546,6 +562,10 @@ def main():
         "co_so_60_thang": {"lai_t60": dai_han["co_so"]["lai_t24"], "hv_t60": dai_han["co_so"]["hv_t24"]},
         "do_nhay": nhay,
         "luy_ke_24_neu_ap_nguong_mien_thue_1ty": thue_nguong,
+        "luy_ke_24_neu_thue_2pct": thue_2,
+        "do_nhay_vao_skool": {str(v): {"hv_t24": r["hv_t24"], "lai_t24": r["lai_t24"], "luy_ke_24": r["luy_ke_24"]}
+                              for v, r in vao_skool.items()},
+        "nguong_dung": nguong_dung,
         "do_nhay_ty_gia_5pct": {"-5": fx_lo["luy_ke_24"], "+5": fx_hi["luy_ke_24"]},
         "luoi_huy_chuyen_doi": {"huy": huy_ds, "he_so_chuyen_doi": cd_he, "gia_tri": luoi},
     }
@@ -566,16 +586,18 @@ def main():
     a("## 5 kết luận chính\n")
     a(f"1. **Vốn ban đầu rất thấp: {m(von)} tr**, trong đó {m(hm['Quy du phong van hanh (3 thang chi phi co dinh + CSKH)'])} tr là quỹ dự phòng (tiền vẫn nằm trong tài khoản). "
       f"Chi phí cố định khi chưa thuê ai chỉ ~{m(p['cp_cong_cu_ai'] + p['cp_khac_thang'])} tr/tháng + phí Skool.")
-    a(f"2. **Hoà vốn hằng tháng chỉ cần {can['co_so']['0']} học viên trả 100 USD** (chưa thuê người, và vì công của anh không tính vào chi phí). "
+    a(f"2. **Hoà vốn hằng tháng: {can_khong_upsell['0']} học viên trả 100 USD nếu chỉ có khoá cơ bản** (chưa thuê người; công của anh không tính vào chi phí). "
       f"Mỗi học viên 100 USD/tháng (≈{m(gcb * fx, 2)} tr) để lại ≈{m(dg['Pro'], 2)} tr sau phí Skool Pro, phí chuyển tiền, thuế "
       f"(gói Hobby: {m(dg['Hobby'], 2)} tr). Rủi ro không nằm ở chi phí mà ở **có kéo được người trả 100 USD/tháng và giữ họ hay không**.")
     a(f"3. **Mốc thu nhập (lãi sau thuế, phí, lương nhân viên) — kịch bản cơ sở:** 50 tr/tháng cần ~{can['co_so']['50']} học viên, "
       f"100 tr cần ~{can['co_so']['100']}, 200 tr cần ~{can['co_so']['200']} học viên 100 USD đang hoạt động (đã tính bán kèm gói 1.000 USD và ebook). "
       f"Nếu không bán được gói chuyên sâu/ebook: {can_khong_upsell['50']} / {can_khong_upsell['100']} / {can_khong_upsell['200']} học viên.")
-    a(f"4. **Kịch bản cơ sở:** tháng 24 có ~{so(base['hv_t24'])} học viên 100 USD, doanh thu {m(base['dt_t24'])} tr/tháng, lãi {m(base['lai_t24'])} tr/tháng; "
+    pk = kq["khong_dang_lam"]
+    a(f"4. **Kịch bản cơ sở là kịch bản tham vọng:** tháng 24 có ~{so(base['hv_t24'])} học viên 100 USD, doanh thu {m(base['dt_t24'])} tr/tháng, lãi {m(base['lai_t24'])} tr/tháng; "
       f"lãi luỹ kế 24 tháng (sau khi trừ vốn) {m(base['luy_ke_24'])} tr; hoàn vốn tháng {base['hoan_von_thang']}. "
       f"Thận trọng: ~{so(pt['hv_t24'])} học viên, lãi tháng 24 {m(pt['lai_t24'])} tr, hoàn vốn tháng {pt['hoan_von_thang']}. "
-      f"Lạc quan: ~{so(pl['hv_t24'])} học viên, lãi tháng 24 {m(pl['lai_t24'])} tr. **Biến quyết định là tỷ lệ huỷ và tỷ lệ chuyển đổi**, không phải chi phí. "
+      f"Lạc quan: ~{so(pl['hv_t24'])} học viên, lãi tháng 24 {m(pl['lai_t24'])} tr. "
+      f"**Không đáng làm** (ít người xem, chuyển đổi thấp, huỷ cao): chỉ ~{so(pk['hv_t24'])} học viên, lãi tháng 24 {m(pk['lai_t24'])} tr — không đủ trả công anh; ngưỡng dừng/đổi cách bán ở tháng 3 và 6 xem mục 5b. **Biến quyết định là tỷ lệ huỷ và tỷ lệ chuyển đổi**, không phải chi phí. "
       f"Lưu ý: kịch bản cơ sở cần kênh đạt ~{so(base['rows'][-1]['theo_doi'])} người theo dõi và ~{so(base['rows'][-1]['free'])} thành viên Skool miễn phí vào tháng 24 — đây là giả định, chưa có số thật của kênh.")
     k3n = list(phu)[2]
     k3 = phu[k3n]
@@ -599,15 +621,15 @@ def main():
         ("Skool Pro", f"{so(p['skool_pro_phi_thang_usd'])} USD/tháng + {pct(p['skool_pro_phi_gd'])} + {so(p['skool_pro_phi_co_dinh_usd'], 2)} USD/giao dịch; giao dịch > {so(p['skool_nguong_gd_lon_usd'])} USD: {pct(p['skool_pro_phi_gd_lon'])} + {so(p['skool_pro_phi_co_dinh_usd'], 2)} USD (áp cho khoá 1.000 USD)", "nghien-cuu.md (Trung bình, trích đoạn help.skool.com Payments FAQ). Mô hình tự chọn gói rẻ hơn mỗi tháng"),
         ("Phí nhận tiền về VN", pct(p["phi_chuyen_ve_vn"]), "Giả định. nghien-cuu.md: payout qua Stripe Express do Skool tạo, VN có trong danh sách, về VND thứ Tư hằng tuần — chưa kiểm thử; phí quy đổi chưa rõ nên đặt 2%"),
         ("Phí thu ebook", pct(p["phi_cong_tt_ebook"]), "Giả định. Skool không bán file lẻ (nghien-cuu.md) → ebook bán VND qua chuyển khoản/cổng nội địa, hoặc gói thành khoá trả một lần trên Skool"),
-        ("Thuế", pct(p["thue_tren_doanh_thu"]) + " doanh thu", "Giả định: hộ/cá nhân kinh doanh dịch vụ 5% GTGT + 2% TNCN, tính từ đồng đầu tiên (thận trọng). nghien-cuu.md: ngưỡng không chịu thuế 500 tr/năm, báo chí nói NĐ 141/2026 nâng lên 1 tỷ — chưa đối chiếu; thuế khi bán qua nền tảng nước ngoài các nguồn mâu thuẫn. Hỏi cơ quan thuế"),
+        ("Thuế", pct(p["thue_tren_doanh_thu"]) + " doanh thu", "Giả định: hộ/cá nhân kinh doanh dịch vụ 5% GTGT + 2% TNCN, tính từ đồng đầu tiên (thận trọng). Skool là \"merchant of record\" tự xử lý VAT ở vùng áp dụng (nghien-cuu.md) → phần 5% GTGT có thể trùng; độ nhạy 2% vs 7% ở mục 6. nghien-cuu.md: ngưỡng không chịu thuế 500 tr/năm, báo chí nói NĐ 141/2026 nâng lên 1 tỷ — chưa đối chiếu; thuế khi bán qua nền tảng nước ngoài các nguồn mâu thuẫn. Hỏi cơ quan thuế"),
         ("Công cụ AI, phần mềm", f"{m(p['cp_cong_cu_ai'])} tr/tháng", "Giả định ~60 USD: 2 gói AI + Canva/CapCut Pro"),
         ("Chi phí khác", f"{m(p['cp_khac_thang'])} tr/tháng", "Giả định: tên miền, email, họp online"),
         ("Quảng cáo", f"{m(p['cp_quang_cao_thang'])} tr/tháng", "Mặc định 0 — đầu phễu là video tự nhiên (brief)"),
         ("Nhân công chủ dự án, đội AI, văn phòng", "0", "Brief: anh tự quay, đội AI có sẵn, hạ tầng có sẵn. Lãi trong mô hình = thu nhập của anh, chưa trừ công anh"),
         ("Lịch ra mắt", f"Tháng 1 cộng đồng miễn phí; tháng {p['thang_mo_co_ban']} mở 100 USD; tháng {p['thang_mo_chuyen_sau']} mở 1.000 USD và ebook", "Giả định"),
-        ("Người theo dõi hiện có", so(p["nguoi_theo_doi_dau"]), "Giả định — **thay bằng số thật của kênh**"),
+        ("Người theo dõi hiện có", so(p["nguoi_theo_doi_dau"]), "Mặc định 0 — **chờ số thật**: kênh đang xây lại (KENH.md). Nhập số thật vào `nguoi_theo_doi_dau` rồi chạy lại"),
         ("Người theo dõi mới", f"{so(p['theo_doi_moi_thang_dau'])}/tháng, tăng {pct(p['tang_theo_doi_thang'], 0)}/tháng", "Giả định: 1 video ngắn/ngày, tăng dần nhờ đều đặn (ramp-up)"),
-        ("Theo dõi mới → Skool miễn phí", pct(p["ty_le_vao_skool_moi"], 0), "Giả định: link trong hồ sơ/video, cộng đồng miễn phí, không rào cản"),
+        ("Theo dõi mới → Skool miễn phí", pct(p["ty_le_vao_skool_moi"], 1), "Giả định. Có rào cản: Skool không có giao diện tiếng Việt, phải tạo tài khoản, video ngắn khó gắn link (nghien-cuu.md). Thận trọng 2,5%, không đáng làm 2%; độ nhạy 2%/4%/8% ở mục 6"),
         ("Theo dõi sẵn có → Skool miễn phí", pct(p["ty_le_vao_skool_ton"], 0) + " (rải 3 tháng đầu)", "Giả định: lượt kêu gọi ra mắt"),
         ("Thành viên miễn phí rời/ngủ", pct(p["free_roi_thang"], 0) + "/tháng", "Giả định"),
         ("Miễn phí mới → 100 USD (tháng đầu)", pct(p["cd_free_sang_tra_phi_thang_dau"], 0), "Giả định, nằm trong vùng tham khảo 2–5% (nghien-cuu.md, số SaaS); 100 USD/tháng (≈2,6 tr) cao so với thu nhập 25–40 tuổi ở VN nên lấy phía thấp"),
@@ -655,7 +677,7 @@ def main():
     a("\n(Số học viên lẻ là trung bình kỳ vọng của mô hình, làm tròn khi hiển thị.)\n")
 
     a("## 4. Hoà vốn, hoàn vốn, NPV/IRR\n")
-    a("| Chỉ tiêu | Thận trọng | Cơ sở | Lạc quan |\n|---|---:|---:|---:|")
+    a(f"| Chỉ tiêu | {HDR} |\n|---|{SEP}")
     a("| HV 100 USD cần để hoà vốn tháng | " + " | ".join(str(can[k]["0"]) for k in KICH_BAN) + " |")
     a("| Tháng đầu tiên có lãi | " + " | ".join(str(kq[k]["thang_dau_co_lai"]) for k in KICH_BAN) + " |")
     a("| Tháng hoàn vốn (luỹ kế ≥ 0) | " + " | ".join(str(kq[k]["hoan_von_thang"] or "chưa hoàn vốn") for k in KICH_BAN) + " |")
@@ -666,14 +688,15 @@ def main():
       f"Chuyển Skool Hobby → Pro khi doanh thu qua Skool vượt ~{so(nguong_pro_usd)} USD/tháng (≈{so(nguong_pro_usd / gcb)} học viên).\n")
 
     a("### Số học viên 100 USD cần cho các mốc thu nhập (trạng thái ổn định, đã trừ lương người thuê theo ngưỡng)\n")
-    a("| Lãi mục tiêu/tháng | Thận trọng | Cơ sở | Lạc quan | Cơ sở, không bán được 1.000 USD/ebook |\n|---|---:|---:|---:|---:|")
+    a(f"| Lãi mục tiêu/tháng | {HDR} | Cơ sở, chỉ có khoá cơ bản |\n|---|{SEP}---:|")
     for mt in ("0", "50", "100", "200"):
         nhan = "Hoà vốn" if mt == "0" else f"{mt} tr"
         a(f"| {nhan} | " + " | ".join(str(can[k][mt]) for k in KICH_BAN) + f" | {can_khong_upsell[mt]} |")
     a("\nKhác biệt giữa các kịch bản ở đây do tỷ lệ huỷ (ảnh hưởng số người mua ebook) và tỷ lệ nâng cấp 1.000 USD.\n")
 
-    a("## 5. Ba kịch bản (24 tháng)\n")
-    a("| Biến | Thận trọng | Cơ sở | Lạc quan |\n|---|---:|---:|---:|")
+    a("## 5. Bốn kịch bản (24 tháng)\n")
+    a("Kịch bản cơ sở là **kịch bản tham vọng** (giả định kênh tăng đều 24 tháng, chưa có số thật). Kế hoạch nên bám thận trọng; \"không đáng làm\" dùng để đặt ngưỡng dừng ở mục 5b.\n")
+    a(f"| Biến | {HDR} |\n|---|{SEP}")
     for k in ["theo_doi_moi_thang_dau", "tang_theo_doi_thang", "ty_le_vao_skool_moi", "cd_free_sang_tra_phi_thang_dau",
               "cd_free_sang_tra_phi_ton", "huy_thang", "nang_cap_chuyen_sau_thang", "ebook_kem_co_ban"]:
         vals = [voi(p, **KICH_BAN[kb])[k] for kb in KICH_BAN]
@@ -706,6 +729,20 @@ def main():
       f"gói GỒM, nâng cấp 1,5%/tháng {so(ltv['gom_1_5'][0])}; gói GỒM, nâng cấp 8%/tháng {so(ltv['gom_8'][0])} — chênh lệch nhỏ về tiền, "
       f"khác biệt nằm ở **số người phải phục vụ không thu phí hằng tháng trong 10 năm**.\n")
 
+    a("### 5b. Ngưỡng dừng / đổi cách bán (đo bằng số thật)\n")
+    a("Ngưỡng lấy theo mức của kịch bản **thận trọng** tại cùng thời điểm: thấp hơn thận trọng nghĩa là đang đi theo hướng \"không đáng làm\".\n")
+    a(f"| Chỉ số | Tháng | {HDR} |\n|---|---:|{SEP}")
+    for t in (3, 6):
+        a(f"| Thành viên Skool miễn phí | {t} | " + " | ".join(so(kq[k]["rows"][t - 1]["free"]) for k in KICH_BAN) + " |")
+        a(f"| HV 100 USD đang trả | {t} | " + " | ".join(so(kq[k]["rows"][t - 1]["hv"], 1) for k in KICH_BAN) + " |")
+        a(f"| Lãi tháng (tr) | {t} | " + " | ".join(m(kq[k]["rows"][t - 1]["lai"]) for k in KICH_BAN) + " |")
+    n3, n6 = nguong_dung["thang_3"], nguong_dung["thang_6"]
+    a("")
+    a(f"- **Mốc tháng 3 — đổi cách bán** nếu Skool miễn phí < {so(n3['free_toi_thieu'])} người **hoặc** < {n3['hv_toi_thieu']} học viên trả 100 USD: "
+      "thêm thu VND (chuyển khoản/QR rồi mời vào Skool), hướng dẫn vào Skool bằng tiếng Việt, buổi live miễn phí để chốt, cân nhắc gói năm. Giá anh chốt giữ nguyên trừ khi anh quyết khác.")
+    a(f"- **Mốc tháng 6 — dừng mở rộng / xem lại mô hình** nếu < {n6['hv_toi_thieu']} học viên trả phí, **hoặc** tỷ lệ huỷ thực > {pct(n6['huy_toi_da'], 0)}/tháng, "
+      f"**hoặc** lãi < {n6['lai_toi_thieu_tr']} tr/tháng: không thuê người, không chi quảng cáo; trình anh phương án đổi giá/định dạng (gói năm, khoá trả một lần) trước khi làm tiếp.")
+    a("- Ở mức \"không đáng làm\", tiền không mất nhiều (vốn nhỏ) nhưng **thời gian của anh** là chi phí chính bị mất.\n")
     a("## 6. Độ nhạy ±20% (kịch bản cơ sở)\n")
     a(f"Gốc: lãi tháng 24 = {m(base['lai_t24'])} tr; lãi luỹ kế 24 tháng = {m(base['luy_ke_24'])} tr.\n")
     a("| Biến | Giá trị gốc | Lãi T24 khi −20% | Lãi T24 khi +20% | Luỹ kế 24T khi −20% | Luỹ kế 24T khi +20% |\n|---|---:|---:|---:|---:|---:|")
@@ -718,6 +755,16 @@ def main():
     a(f"\nTỷ giá ±5%: lãi luỹ kế 24 tháng {m(fx_lo['luy_ke_24'])} tr (−5%) / {m(fx_hi['luy_ke_24'])} tr (+5%).\n")
     a("Nếu được áp ngưỡng không chịu thuế 1 tỷ đ/năm (chỉ tính thuế phần vượt — cách tính giả định, chờ cơ quan thuế): lãi luỹ kế 24 tháng " +
       " / ".join(f"{TEN_KB_VN[k]} {m(thue_nguong[k])} tr (+{m(thue_nguong[k] - kq[k]['luy_ke_24'])})" for k in KICH_BAN) + ".\n")
+    a("**Tỷ lệ theo dõi mới → Skool miễn phí (nền cơ sở):**\n")
+    a("| Tỷ lệ vào Skool | HV 100 USD tháng 24 | Lãi tháng 24 (tr) | Lãi luỹ kế 24 tháng (tr) |\n|---:|---:|---:|---:|")
+    for v, r in vao_skool.items():
+        a(f"| {pct(v, 0)} | {so(r['hv_t24'])} | {m(r['lai_t24'])} | {m(r['luy_ke_24'])} |")
+    a("")
+    a("**Thuế 2% (chỉ TNCN, nếu VAT đã do Skool thu) vs 7%** — lãi luỹ kế 24 tháng (tr):\n")
+    a(f"| Thuế | {HDR} |\n|---|{SEP}")
+    a("| 7% (mặc định) | " + " | ".join(m(kq[k]["luy_ke_24"]) for k in KICH_BAN) + " |")
+    a("| 2% | " + " | ".join(m(thue_2[k]) for k in KICH_BAN) + " |")
+    a("\nCả hai cách chưa được cơ quan thuế xác nhận; mô hình giữ 7% cho thận trọng.\n")
     a("### Lưới tỷ lệ huỷ × chuyển đổi — học viên 100 USD và lãi tháng 24 (tr)\n")
     a("Hệ số chuyển đổi nhân cả hai tỷ lệ chuyển đổi miễn phí → 100 USD của kịch bản cơ sở.\n")
     a("| Huỷ/tháng \\ Chuyển đổi | " + " | ".join(f"×{so(c, 2)} ({pct(p['cd_free_sang_tra_phi_thang_dau'] * c)})" for c in cd_he) + " |")
@@ -729,7 +776,7 @@ def main():
     a("## 7. Khi nào mới thuê người\n")
     a(f"Quy tắc: chỉ thuê khi số liệu **tháng trước** chạm ngưỡng, và tổng lương không vượt {pct(p['tran_chi_nhan_su'], 0)} doanh thu tháng trước. "
       f"Nhân viên chính thức tính thêm {pct(p['he_so_bhxh'] - 1)} chi phí bảo hiểm phía người sử dụng lao động. Lương là **giả định mặt bằng thị trường 2026**, chờ xác minh.\n")
-    a("| Vị trí | Lương giả định (tr/tháng) | Ngưỡng thuê | Tháng thuê — Thận trọng | Cơ sở | Lạc quan |\n|---|---:|---|---:|---:|---:|")
+    a(f"| Vị trí | Lương giả định (tr/tháng) | Ngưỡng thuê | Tháng thuê — {HDR} |\n|---|---:|---|{SEP}")
     NG_VN = {"cskh_bt": "≥ 60 học viên trả phí (thay bằng bản toàn thời gian khi ≥ 200)", "cskh_ft": "≥ 200 học viên trả phí",
              "cskh_ft2": "≥ 500 học viên trả phí", "chot_don": "Doanh thu ≥ 150 tr/tháng và ≥ 2.000 thành viên miễn phí",
              "dung_video": "Doanh thu ≥ 200 tr/tháng (giải phóng thời gian anh)", "ke_toan": "Doanh thu ≥ 40 tr/tháng"}
