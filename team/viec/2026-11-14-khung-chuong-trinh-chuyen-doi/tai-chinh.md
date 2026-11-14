@@ -9,12 +9,15 @@ Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Người lập: Hùng (T
 
 ## 1. Nhận định (đọc trước)
 
-1. **Lộ trình khuyến nghị là mở rộng theo cổng, và theo kịch bản cơ sở thì lộ trình này khả thi.**
-   - Cần chuẩn bị **khoảng 1,32 tỷ đ**.
+1. **Lộ trình khuyến nghị là mở rộng theo cổng. Theo kịch bản cơ sở thì lộ trình này khả thi, nhưng biên an toàn mỏng:**
+   - Chỉ cần chuyển đổi thấp hơn giả định 5% là hoàn vốn lùi tới **T31**. Thấp hơn 20% thì **không hoàn vốn**, và vốn cần lên khoảng 2,1 tỷ.
+   - Cổng mở quảng cáo ở T6 mở được là nhờ tỷ lệ T5 đạt **14,03 khách/1.000 lead**, chỉ vừa qua ngưỡng 14,0.
+   - Cần chuẩn bị **khoảng 1,41 tỷ đ**.
    - EBITDA dương từ T7. Riêng hai tháng chuyển giai đoạn (T15, T18) bị âm, sau đó dương liên tục từ **T19**.
    - **Hoàn vốn ở T26.** Luỹ kế T24 còn −78 trđ. NPV 48 tháng **+1.677 trđ**, IRR khoảng 79%/năm.
    - Đội: 8 người lúc đầu, 13 người ở T12, 25 người từ T18.
    - Kịch bản lạc quan theo cổng: vốn khoảng 1,0 tỷ, hoàn vốn T10.
+   - Độ nhạy của lộ trình theo cổng xem ở mục 8.
 2. **Tuyển theo lịch cứng (các mục 4, 6, 7 và 8) thì kịch bản cơ sở không đạt.**
    - Cần **khoảng 3,0 tỷ**. Hoà vốn vận hành T20, hoàn vốn T48. Luỹ kế T24 là **−1,97 tỷ**.
    - NPV −514 trđ, IRR khoảng 2%/năm.
@@ -140,11 +143,13 @@ Mô hình chưa tính lương cho người nhận việc từ tuần 0, trước
 |---|---|---|
 | Vốn ban đầu (tuần 0) | 306 | 306 |
 | Vốn lưu động: lỗ vận hành phải bù tới đáy dòng tiền | 711 (đáy −1.017 ở T7) | 1.840 (đáy −2.146 ở T19) |
-| Quỹ dự phòng: 2 tháng chi phí cố định của đội tại tháng đáy | 298 | 862 |
-| **TỔNG (cơ sở)** | **1.316** | **3.008** |
+| Quỹ dự phòng: 2 tháng chi phí cố định của đội tại tháng đáy | 396 | 862 |
+| **TỔNG (cơ sở)** | **1.413** | **3.008** |
 | Tổng (lạc quan) | 1.004 | 1.485 |
 
-Quỹ dự phòng của lộ trình theo cổng được tính theo đội Khởi động. Khi lên Tăng trưởng hoặc Mở rộng thì chương trình đã có lãi vận hành, nhưng tháng chuyển giai đoạn vẫn âm khoảng 45–62 trđ. Nên giữ quỹ dự phòng này cho tới khi đội ổn định ở quy mô mới.
+Với lộ trình theo cổng, quỹ dự phòng tính theo **chi phí cố định thực** ở tháng đáy T7: lương + BH + chi phí cố định khác của đội 11 người (8 người gốc, thêm 1 cặp coach + trợ giảng và 1 tư vấn viên), khoảng 197,8 trđ/tháng × 2 = 396. Không tính chi phí tuyển dụng một lần. Phương án tuyển theo lịch vẫn tính dự phòng theo đội kế hoạch của giai đoạn tại tháng đáy, như các vòng trước.
+
+Khi lên Tăng trưởng hoặc Mở rộng thì chương trình đã có lãi vận hành. Riêng tháng chuyển giai đoạn vẫn âm khoảng 45–62 trđ, nên giữ quỹ dự phòng cho tới khi đội ổn định ở quy mô mới.
 
 ---
 
@@ -270,7 +275,7 @@ Quy tắc chạy trong `mo_hinh.py`, biến `CONG`:
 | EBITDA năm 1 / năm 2 | −318 / +934 | +1.952 / +7.149 | −1.719 / −1.013 | −815 / +667 |
 | Dòng tiền năm 3 / năm 4 | +1.312 / +1.616 | +7.388 / +7.833 | — | — |
 | Đáy luỹ kế | −1.017 (T7) | −705 (T3) | — | −1.145 (T12) |
-| **Tổng vốn cần** | **1.316** | **1.004** | **dừng ở T6: lỗ khoảng 1.440** (luỹ kế −1.309 + 1 tháng lương) | 1.444 |
+| **Tổng vốn cần** (dự phòng theo chi phí thực của tháng đáy) | **1.413** | **1.004** | **dừng ở T6: lỗ khoảng 1.440** (luỹ kế −1.309 + 1 tháng lương) | 1.519 |
 | Hoà vốn vận hành (dương liên tục) | **T19**. Dương từ T7, chỉ âm ở 2 tháng chuyển giai đoạn T15, T18 | T4 | không đạt | T13 |
 | **Hoàn vốn** | **T26** | T10 | không đạt | T29 |
 | Luỹ kế T24 | **−78** | +6.627 | −3.038 (nếu không dừng) | −490 |
@@ -279,6 +284,31 @@ Quy tắc chạy trong `mo_hinh.py`, biến `CONG`:
 
 Luỹ kế theo tháng (theo cổng, cơ sở, T1→T24):
 −531, −685, −796, −888, −960, −1.004, −1.017, −966, −899, −812, −714, −684, −604, −514, −684, −616, −538, −679, −595, −515, −425, −318, −202, −78.
+
+Bảng 4 năm của lộ trình theo cổng (cơ sở; script in ở mục "BẢNG THEO NĂM CHI TIẾT — LỘ TRÌNH THEO CỔNG"):
+
+| trđ | Năm 1 | Năm 2 | Năm 3 | Năm 4 |
+|---|---|---|---|---|
+| Lead | 13.008 | 30.750 | 36.800 | 36.800 |
+| Người tiếp cận (ước) | 650.417 | 1.537.500 | 1.840.000 | 1.840.000 |
+| Khách nền tảng / đồng hành / thành viên | 580 / 197 / 75 | 1.476 / 527 / 291 | 1.766 / 648 / 492 | 1.766 / 648 / 593 |
+| Doanh thu nền tảng | 574 | 1.461 | 1.749 | 1.749 |
+| Doanh thu đồng hành (sau hoàn tiền) | 2.249 | 6.009 | 7.384 | 7.384 |
+| Doanh thu thành viên | 271 | 1.049 | 1.771 | 2.136 |
+| Doanh thu ngân hàng | 10 | 27 | 33 | 33 |
+| **Tổng doanh thu** | **3.104** | **8.546** | **10.936** | **11.301** |
+| Quảng cáo | 620 | 1.350 | 1.560 | 1.560 |
+| Hội thảo offline | 176 | 464 | 576 | 576 |
+| Chi phí biến đổi (gồm hoa hồng) | 372 | 1.123 | 1.431 | 1.462 |
+| Lương cứng + BH | 1.915 | 4.129 | 5.190 | 5.190 |
+| Chi phí cố định khác | 216 | 363 | 432 | 432 |
+| Tuyển dụng | 123 | 184 | 76 | 60 |
+| **EBITDA** | **−318** | **934** | **1.670** | **2.020** |
+| Thuế TNDN | 0 | 123 | 334 | 404 |
+| Thiết bị (capex) | 60 | 204 | 24 | 0 |
+| Dòng tiền | −378 | 607 | 1.312 | 1.616 |
+| Số người cuối năm | 13 | 25 | 27 | 27 |
+| Luỹ kế cuối năm (gồm vốn 306) | −684 | −78 | +1.235 | +2.851 |
 
 Hà đã chạy thử phương án "giữ đội 8, quảng cáo 30" và ra T13 / T28 / −395. Script ra T13 / T29 / −490. Chênh lệch đến từ hai điểm: vốn ban đầu đã cộng thêm 10 trđ lệ phí, và mô hình tự thêm tư vấn viên khi lead vượt 600 người/tư vấn viên.
 
@@ -304,7 +334,35 @@ Phương án lùi lịch tuyển cứng (Tăng trưởng từ T10, Mở rộng t
 
 ---
 
-## 8. Độ nhạy ±20% (tuyển theo lịch, cơ sở)
+## 8. Độ nhạy ±20%
+
+### 8A. Lộ trình theo cổng, cơ sở (BẢNG CHÍNH)
+
+| Biến | Hệ số | NPV 48t | Luỹ kế T24 | Vốn cần | Hoà vốn vận hành | Hoàn vốn | Mở quảng cáo 70 / lên Tăng trưởng |
+|---|---|---|---|---|---|---|---|
+| **Tỷ lệ chuyển đổi (toàn phễu)** | −20% | −1.256 | −1.693 | 2.100 | T23 | **không đạt** | không mở / không lên |
+| | −5% | +976 | −548 | 1.499 | T22 | **T31** | T8 / T18 |
+| | +5% | +2.764 | +184 | 1.286 | T16 | T23 | T6 / T12 |
+| | +20% | +6.613 | +2.123 | 1.209 | T5 | T15 | T4 / T9 |
+| **Giá gói đồng hành** | −20% | −708 | −1.425 | 2.409 | T21 | **không đạt** | T6 / T15 |
+| | +20% | +4.030 | +1.099 | 1.239 | T7 | T17 | T6 / T15 |
+| **Lương cứng tư vấn viên** | −20% | +1.978 | +82 | 1.365 | T19 | T24 | T6 / T15 |
+| | +20% | +1.376 | −237 | 1.461 | T19 | T28 | T6 / T15 |
+| **Chi phí quảng cáo / lead (CPL)** | −20% | +4.261 | +936 | 1.184 | T11 | T19 | T6 / T10 |
+| | +20% | +500 | −600 | 1.556 | T24 | T34 | T7 / T20 |
+| Ngân sách quảng cáo (×, mọi giai đoạn) | −20% | +757 | −392 | 1.514 | T25 | T31 | T7 / T21 |
+| | +20% | +3.210 | +343 | 1.640 | T14 | T22 | T6 / T10 |
+| Lead tự nhiên | −20% | +1.385 | −297 | 1.443 | T22 | T28 | T6 / T18 |
+| | +20% | +2.344 | −30 | 1.314 | T17 | T25 | T7 / T13 |
+
+Nhận xét:
+- Đi theo cổng thì lương tư vấn viên, lead tự nhiên và ngân sách quảng cáo ±20% đều vẫn hoàn vốn, trong khoảng T22–T31.
+- **Hai biến làm lộ trình hỏng là tỷ lệ chuyển đổi −20% và giá gói đồng hành −20%**: không hoàn vốn, NPV âm. Chuyển đổi −20% thì cổng quảng cáo không bao giờ mở và đội nằm yên ở Khởi động. Khi đó mốc dừng T6 là cơ chế chặn lỗ.
+- Tỷ lệ khách/1.000 lead (cơ sở) ở T4 / T5 / T6 là **12,71 / 14,03 / 11,16**:
+  - T5 chỉ vừa qua cổng 14,0.
+  - T6 tụt xuống vì lead tăng ngay khi nâng quảng cáo, còn khách từ nhánh nền tảng → đồng hành phải trễ 1 tháng mới tới. Vì vậy cổng quảng cáo chỉ nên đóng lại khi **2 tháng liền dưới 11,2**, không đóng vì một tháng tụt.
+
+### 8B. Tuyển theo lịch, cơ sở (để so sánh)
 
 | Biến | Hệ số | NPV 48t | Luỹ kế T24 | Vốn cần | Hoà vốn vận hành | Hoàn vốn |
 |---|---|---|---|---|---|---|
@@ -352,6 +410,7 @@ Lộ trình theo cổng đã gần đạt mức này mà không cần đổi gi�
 
 - Script: `/home/user/DRK/team/viec/2026-11-14-khung-chuong-trinh-chuyen-doi/mo_hinh.py`
 - Dữ liệu biểu đồ: `/home/user/DRK/team/viec/2026-11-14-khung-chuong-trinh-chuyen-doi/tai-chinh.json`.
-  - Các khoá cũ vẫn giữ nguyên; số bên trong là bản tuyển theo lịch.
+  - **Số khuyến nghị nằm ở khoá `khuyen_nghi`**: tong_von, hoa_von_vh, ebitda_duong_dau_tien, hoan_von, npv, irr_nam, luy_ke_24, dong_tien_luy_ke_24t, doanh_thu_thang_24t, doi_theo_thang, giai_doan_theo_thang, ty_le_khach_1000_lead_T5, và độ nhạy theo cổng.
+  - Các khoá cấp cao cũ vẫn giữ để biểu đồ không bị vỡ, nhưng là số của **phương án tuyển theo lịch**. Khoá `ghi_chu_khoa_goc` có ghi chú điều này.
   - Khoá mới: `lo_trinh_theo_cong` (gồm tóm tắt từng kịch bản, luỹ kế, giai đoạn, số người, ngân sách quảng cáo và số khách theo tháng, mốc dừng của Thận trọng) và `ngan_sach_qc_can`.
   - `hoa_von_phong_ban` đã có thêm các trường về công suất coach.

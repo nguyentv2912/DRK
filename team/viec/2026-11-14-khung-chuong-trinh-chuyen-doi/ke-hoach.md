@@ -7,6 +7,8 @@ Nguồn dùng: `brief.md`, `nghien-cuu.md` (Lan, ký hiệu **NC**), `tai-chinh.
 Mọi số tài chính lấy nguyên từ TC, không đổi. Số Mai tự suy ra từ TC ghi "(Mai tính từ TC)". Chỉ tiêu Mai tự đặt ghi "(giả định Mai)".
 
 > **Độ tin cậy.** Lan không mở được trang gốc nào vì mạng bị chặn. Mọi dữ kiện thị trường, pháp lý trong tài liệu này **tối đa ở mức Trung bình**. Giám sát đánh giá phần nghiên cứu "chưa đạt do môi trường". Mọi điều khoản luật phải được luật sư đối chiếu toàn văn (Công báo, vbpl.vn, thuvienphapluat.vn) trước khi dùng với khách. Tỷ lệ phễu, giá gói đồng hành và gói thành viên là **giả định** của Hùng, chưa có dữ liệu thật.
+>
+> **Vòng 2 (14/11/2026).** Bản này đã cập nhật theo mô hình vòng 2 của Hùng. Lộ trình theo cổng giờ là phương án chính. Ngưỡng hoà vốn đã tính cả công suất coach. Số vốn 1.316 trđ có thể được Hùng điều chỉnh lại (quỹ dự phòng).
 
 ---
 
@@ -14,24 +16,44 @@ Mọi số tài chính lấy nguyên từ TC, không đổi. Số Mai tự suy r
 
 ## 1. Tóm tắt
 
-**Kết luận: chưa nên dựng ngay đội 24 người. Chạy thử với đội 8 người, mở rộng theo chỉ tiêu, dừng ở tháng 6 nếu dưới 8 khách đồng hành/tháng.**
+**Kết luận: đi theo lộ trình mở rộng theo cổng của Hùng. Theo kịch bản cơ sở, lộ trình này cần ~1,32 tỷ đ (1.316 trđ), hoàn vốn ở tháng 26, NPV 48 tháng +1.677 trđ.**
 
-1. **Kịch bản cơ sở của Hùng chưa khả thi.** Cần chuẩn bị **~2,9 tỷ đ** (2.903 trđ). Hoà vốn vận hành **tháng 19**, hoàn vốn **tháng 44**. Luỹ kế tháng 24 vẫn **−1.813 trđ**. NPV 48 tháng **−233 trđ**, IRR **~9%/năm** (dưới suất chiết khấu 15%).
-2. **Mọi thứ phụ thuộc vào tỷ lệ chuyển đổi và giá mỗi lead.** Chỉ cần **một** trong ba điều: chuyển đổi toàn phễu **+17%**, hoặc CPL **−28%** (~43.000 đ), hoặc giá đồng hành **+31%** (~15,7 trđ), là hoàn vốn trong 24 tháng. Chuyển đổi thấp hơn 30% thì không bao giờ hoà vốn.
-3. **Đề xuất: chạy thử đội 8 người, có cổng mở rộng.**
-   - Chỉ tiêu tháng 6: **≥16 khách đồng hành/tháng** (hoà vốn đội 8) và **CPL ≤ 60.000 đ**.
-   - Lên đội 17: **≥25 khách đồng hành/tháng, 2 tháng liên tiếp**.
-   - Lên đội 24: **≥36 khách/tháng, 2 tháng liên tiếp**.
-   - Dừng hoặc tái cấu trúc: tháng 6 **<8 khách/tháng**. Lỗ tối đa khi dừng **~1,0–1,3 tỷ**.
-4. **Lưu ý thẳng thắn (Mai tính từ TC).** Theo số cơ sở, đội 8 người chỉ đạt **10,5 khách** ở tháng 6. Con số này trên mốc dừng (8) nhưng dưới hoà vốn (15,8) và dưới cổng 25. Nghĩa là: nếu thực tế giống cơ sở, đội sẽ **giữ nguyên 8 người**. Muốn qua cổng, phễu thật phải tốt hơn cơ sở khoảng **2,4 lần** (25 ÷ 10,5), tức gần với kịch bản Lạc quan. Chạy thử chính là để biết ta đang ở kịch bản nào.
-5. **Ngân hàng là nguồn uy tín, không phải nguồn tiền.** Hoa hồng giới thiệu chỉ **9–27 trđ/năm** (<0,5% doanh thu). Giá trị thật là đồng tổ chức, tài trợ sự kiện, diễn giả. Hiện **chưa có văn bản** nào. Chưa có văn bản thì chưa được nói "ngân hàng đứng sau" ra công chúng.
-6. **Rủi ro lớn nhất không phải tài chính mà là bị nhìn như "lớp học tài chính" lừa đảo** (Mr Pips >1.568 tỷ đ, 2.661 bị hại; FTXF dùng hội thảo bán token — NC). Bộ minh bạch ở mục 4 là điều kiện bắt buộc trước khi chạy quảng cáo.
+1. **Phương án chính là lộ trình theo cổng (TC mục 7A, kịch bản cơ sở).**
+   - Vốn cần **1.316 trđ**. Đáy luỹ kế **−1.017 trđ ở T7**.
+   - EBITDA dương từ **T7**. Riêng hai tháng chuyển giai đoạn (T15, T18) bị âm. Dương liên tục từ **T19**.
+   - Hoàn vốn **T26**. Luỹ kế T24 **−78 trđ**. NPV 48 tháng **+1.677 trđ**, IRR ~79%/năm.
+   - Đội: **9 người ở T6, 13 ở T12, 25 ở T24**.
+2. **Tuyển theo lịch cứng thì không đạt.** Phương án này chỉ để so sánh: vốn **3.008 trđ**, hoà vốn vận hành T20, hoàn vốn T48, NPV **−514 trđ**. Đội tăng gấp đôi trước khi lead kịp tăng theo.
+3. **30 trđ quảng cáo/tháng không nuôi nổi đội.** Mức này chỉ ra ~**12,4 khách đồng hành/tháng**, dưới ngưỡng hoà vốn **19,5** (đội Khởi động đã thêm 1 cặp coach, thành 10 người). Muốn đạt 19,5 khách cần **54–66 trđ/tháng** quảng cáo. Muốn đạt 25 khách cần **73–85 trđ** (TC). Vì vậy việc đầu tiên là **tăng quảng cáo khi phễu đã được chứng minh**, sau đó mới tuyển người.
+4. **Kết quả phụ thuộc vào việc phễu thật có đạt giả định hay không.**
+   - Lạc quan: vốn **1.004 trđ**, hoàn vốn **T10**.
+   - Thận trọng (chuyển đổi ×0,7): **không qua cổng nào**. T6 chỉ có 4,7 khách/tháng, chạm mốc dừng. Dừng ở đây thì lỗ **~1.440 trđ**.
+5. **Ngân hàng là nguồn uy tín, không phải nguồn tiền.** Hoa hồng giới thiệu chưa tới 0,5% doanh thu (TC). Giá trị thật của ngân hàng là đồng tổ chức, tài trợ sự kiện và cử diễn giả. Hiện **chưa có văn bản** nào. Chưa có văn bản thì không được nói "ngân hàng đứng sau" ra công chúng.
+6. **Rủi ro lớn nhất là bị nhìn như một "lớp học tài chính" lừa đảo.** Ví dụ: vụ Mr Pips, **bị cáo buộc** chiếm đoạt >1.568 tỷ đ của 2.661 bị hại, đang xét xử; vụ FTXF, khởi tố 5 bị can vì dùng hội thảo để bán token (NC). Bộ minh bạch ở §4.4 phải xong trước khi chạy quảng cáo.
+
+Các cổng, ngưỡng và mốc dừng **chỉ ghi ở §7**. Các tỷ lệ phễu **chỉ ghi ở §3.2**. Mọi chỗ khác trong tài liệu dẫn chiếu về hai mục này.
+
+**Mô hình tài chính sơ bộ: bảng gom một chỗ** (TC mục 4, 7A, 7B; trđ)
+
+| | **Theo cổng — Cơ sở (chính)** | Theo cổng — Lạc quan | Theo cổng — Thận trọng | Tuyển theo lịch — Cơ sở (so sánh) |
+|---|---|---|---|---|
+| Vốn cần chuẩn bị | **1.316** | 1.004 | dừng ở T6, lỗ ~1.440 | 3.008 |
+| Trong đó vốn ban đầu (chi ở tuần 0) | 306 | 306 | 306 | 306 |
+| Doanh thu năm 1 / năm 2 | 3.104 / 8.546 | 8.376 / 18.165 | 765 / 1.534 | 2.684 / 7.320 |
+| EBITDA năm 1 / năm 2 | −318 / +934 | +1.952 / +7.149 | −1.719 / −1.013 | −1.305 / −150 |
+| Hoà vốn vận hành (dương liên tục) | T19 | T4 | không đạt | T20 |
+| Hoàn vốn | **T26** | T10 | không đạt | T48 |
+| Luỹ kế T24 | −78 | +6.627 | −3.038 (nếu không dừng) | −1.965 |
+| NPV 48 tháng | **+1.677** | +15.297 | −3.629 (nếu không dừng) | −514 |
+| Đội T6 / T12 / T24 (người) | 9 / 13 / 25 | 13 / 29 / 32 | 8 / 8 / 8 | 8 / 17 / 25 |
+
+Chi phí chưa có trong mô hình: lương chủ dự án (~30 trđ/tháng thì vốn cần tăng thêm ~0,6–0,7 tỷ trong 18 tháng), kinh phí công đoàn 2%, và VAT nếu khoá học không được miễn (TC). Cả ba khoản đều làm kết quả xấu đi.
 
 ---
 
 ## 2. Định vị chương trình
 
-**Định vị: chương trình giáo dục và đồng hành quản lý tài chính cá nhân, trong đó crypto được dạy như một tài sản rủi ro cao cần quản trị — không phải nơi "gọi kèo".**
+**Kết luận: nhắm vào nhóm khách mà 88% dưới 35 tuổi và khoảng 55% thua lỗ năm 2025 (NC). Chương trình bán phương pháp giữ tiền và quản trị rủi ro, không bán "kèo".** Đây là chương trình giáo dục và đồng hành quản lý tài chính cá nhân. Crypto được dạy như một tài sản rủi ro cao, cần quản trị.
 
 ### 2.1 Khách hàng và nỗi đau (NC, độ tin cậy TB)
 
@@ -121,7 +143,7 @@ Ba đường mua chính, tính trên 1.000 lead (Mai tính từ TC):
 | 3 | Quỹ khẩn cấp và trả nợ tiêu dùng | Video | Mục tiêu quỹ 3–6 tháng chi tiêu |
 | 4 | Các lớp tài sản: tiết kiệm, trái phiếu, chứng chỉ quỹ, cổ phiếu, vàng, tài sản số — rủi ro và thanh khoản | Video | Bảng so sánh rủi ro |
 | 5 | Tài sản số cơ bản: blockchain, ví nóng/ví lạnh, khoá riêng, pháp lý tại VN | Video | Checklist an toàn ví |
-| 6 | Nhận diện lừa đảo: "1 vốn 4 lời", nhóm chat "chuyên gia", token tự phát hành | Video + tình huống thật (Mr Pips, FTXF) | Bài kiểm tra 10 câu |
+| 6 | Nhận diện lừa đảo: "1 vốn 4 lời", nhóm chat "chuyên gia", token tự phát hành | Video + tình huống từ các vụ án (ghi "bị cáo buộc" với vụ chưa có bản án; luật sư duyệt) | Bài kiểm tra 10 câu |
 | Live 1 | Hỏi đáp quản lý dòng tiền | Zoom 90 phút | — |
 | Live 2 | Hỏi đáp an toàn tài sản số + giới thiệu chương trình đồng hành | Zoom 90 phút | Mời đặt 1:1 |
 
@@ -161,7 +183,7 @@ Những điều chương trình **không** làm trong mọi buổi: nêu mã mua
 
 ## 4. Xây uy tín
 
-**Uy tín đến từ ba thứ kiểm chứng được: văn bản của ngân hàng, văn phòng thật, và bộ minh bạch công khai. Thiếu cái nào thì không được nói về cái đó.**
+**Kết luận: uy tín dựa trên 3 thứ kiểm chứng được. Thứ nhất là văn bản của ngân hàng (10 điểm cần xác nhận, §4.2). Thứ hai là văn phòng thật, vì 27% nhà đầu tư muốn gặp chuyên gia trực tiếp (NC). Thứ ba là bộ minh bạch 10 hạng mục (§4.4).** Thiếu thứ nào thì không được nói về thứ đó.
 
 ### 4.1 Phương án hợp tác ngân hàng hợp pháp (theo NC)
 
@@ -194,8 +216,8 @@ Cho tới khi có văn bản: **không dùng tên, logo ngân hàng** trên mọ
 
 | Hoạt động | Tần suất | Quy mô | Mục tiêu phễu |
 |---|---|---|---|
-| Hội thảo offline miễn phí 2 giờ | 4 buổi/tháng (Khởi động), 8 (Tăng trưởng), 12 (Mở rộng) — TC; 4 trđ/buổi | Sức chứa phòng: **cần xác minh** (giả định Mai 25–30 người) | Cân nhắc → Mua |
-| Tư vấn 1:1 miễn phí 30 phút tại văn phòng (hoặc online) | Theo lịch đặt | ~18–23 buổi/tháng ở T2–T6 (Mai tính từ TC: tham dự × 8%) | Mua |
+| Hội thảo offline miễn phí 2 giờ | 4 buổi/tháng (Khởi động), 8 (Tăng trưởng), 12 (Mở rộng) — TC; 4 trđ/buổi | Sức chứa phòng: **cần xác minh** (giả định Mai 25–30 người). Từ T6 có ~550–640 người tham dự/tháng (§7.3), nên webinar phải gánh phần lớn | Cân nhắc → Mua |
+| Tư vấn 1:1 miễn phí 30 phút tại văn phòng (hoặc online) | Theo lịch đặt | ~18–21 buổi/tháng ở T2–T5; ~44–51 buổi/tháng ở T6–T12 sau khi tăng quảng cáo (Mai tính: tham dự ở §7.3 × 8%) | Mua |
 | Buổi học nhóm đồng hành | 1 buổi/tuần/lớp | 8–10 người | Gắn bó |
 | "Ngày mở cửa văn phòng" | 1 lần/quý | Học viên + người thân | Giới thiệu |
 | Quay nội dung tại văn phòng | Hằng tuần | — | Nhận biết (cho thấy văn phòng thật) |
@@ -221,17 +243,17 @@ Cho tới khi có văn bản: **không dùng tên, logo ngân hàng** trên mọ
 
 ## 5. Pháp lý
 
-**Kết luận: chương trình chỉ an toàn khi đứng hẳn ở vai giáo dục. Tính đến 28/10/2026 chưa có sàn trong nước nào được cấp phép (NC), nên mọi hoạt động "tiếp thị" tài sản mã hoá đều rủi ro, mức phạt tới 200 trđ (tổ chức).**
+**Kết luận: chương trình chỉ an toàn khi đứng hẳn ở vai giáo dục. Tính đến 28/10/2026 chưa có sàn trong nước nào được cấp phép (NC), nên mọi hoạt động "tiếp thị" tài sản mã hoá đều rủi ro, mức phạt tới 200 trđ với tổ chức (cần luật sư xác nhận).**
 
 ### 5.1 Được / không được làm (theo NC, cần luật sư xác nhận)
 
 | Được làm | Không được làm | Căn cứ (NC) |
 |---|---|---|
-| Dạy kiến thức tài chính cá nhân, quản lý rủi ro, an toàn ví, pháp lý | Cung cấp, quảng cáo, tiếp thị dịch vụ tài sản mã hoá khi chưa được Bộ Tài chính cấp phép | NQ 05/2025/NQ-CP; NĐ 284/2026 (phạt tới 200 trđ tổ chức, 100 trđ cá nhân) |
+| Dạy kiến thức tài chính cá nhân, quản lý rủi ro, an toàn ví, pháp lý | Cung cấp, quảng cáo, tiếp thị dịch vụ tài sản mã hoá khi chưa được Bộ Tài chính cấp phép | NQ 05/2025/NQ-CP; NĐ 284/2026 (phạt tới 200 trđ tổ chức, 100 trđ cá nhân — cần luật sư xác nhận) |
 | Giải thích tình trạng cấp phép sàn tại VN | Giới thiệu, đặt link, nhận affiliate từ sàn chưa được cấp phép | NQ 05/2025; NĐ 284/2026 |
 | Dạy nguyên tắc phân bổ tài sản theo tỷ lệ, không nêu mã | Tư vấn đầu tư chứng khoán, chứng chỉ quỹ cụ thể (nghiệp vụ phải có phép) | Luật Chứng khoán 2019 (sửa bởi Luật 56/2024); ví dụ ITP bị phạt 225 trđ |
 | Giới thiệu sản phẩm ngân hàng theo hợp đồng, có công khai | Làm đại lý chứng chỉ quỹ; tư vấn bảo hiểm khi không có chứng chỉ đại lý | Luật KDBH 2022; quy định đại lý CCQ (NC: độ tin cậy Thấp) |
-| Quảng cáo khoá học trung thực, có gắn nhãn | Hứa lợi nhuận, dùng lời chứng về lãi, quảng cáo sai sự thật | Luật Quảng cáo sửa đổi 75/2025/QH15 (hiệu lực 01/01/2026) |
+| Quảng cáo khoá học trung thực, có gắn nhãn | Hứa lợi nhuận, dùng lời chứng về lãi, quảng cáo sai sự thật | Luật Quảng cáo sửa đổi 75/2025/QH15 (hiệu lực 01/01/2026); Điều 19 về nội dung trung thực (cần luật sư xác nhận) |
 | Thu học phí qua hợp đồng | Nhận uỷ thác, giữ tiền, quản lý tài khoản/ví hộ | Brief (điều cấm) |
 | Nói về Bitcoin như ví dụ công nghệ trong bài giảng | Phát hành, chào bán token cho học viên (như vụ FTXF) | NQ 05/2025 Điều 6 |
 
@@ -245,7 +267,7 @@ Cho tới khi có văn bản: **không dùng tên, logo ngân hàng** trên mọ
 | 4 | Doanh nghiệp nhận hoa hồng giới thiệu từ ngân hàng/CTCK: hợp đồng nào, ranh giới "giới thiệu" và "tư vấn" | iWealth Partner chỉ cho cá nhân |
 | 5 | Hợp đồng dịch vụ đào tạo mẫu, chính sách hoàn tiền, điều khoản miễn trừ | Bắt buộc trước khi bán |
 | 6 | Chương trình giới thiệu học viên 1 tầng có rơi vào quy định bán hàng đa cấp không | Tránh rủi ro mô hình "leader" |
-| 7 | Nghĩa vụ gắn nhãn quảng cáo khi chủ dự án (người nổi tiếng của kênh) nói về khoá học của chính mình; khi có tài trợ ngân hàng | Luật 75/2025, Điều 15a, khoản 16 Điều 1 |
+| 7 | Nghĩa vụ gắn nhãn quảng cáo khi chủ dự án tự giới thiệu khoá học của mình trên kênh cá nhân; khi có tài trợ ngân hàng | Luật 75/2025: Điều 15a, khoản 16 Điều 1 (cần luật sư xác nhận) |
 | 8 | Bảo vệ dữ liệu cá nhân khi thu lead, ghi âm buổi 1:1 | Cần xác minh văn bản hiện hành về bảo vệ dữ liệu cá nhân |
 | 9 | Trạng thái VAT của khoá học; BH 21,5%, kinh phí công đoàn 2% (kế toán) | TC: chưa đưa vào mô hình, làm kết quả xấu hơn |
 | 10 | Có sàn nào được cấp phép sau 28/10/2026 không; mốc "6 tháng sau giấy phép đầu tiên" | Đổi nội dung bài giảng tuần 6 và quy tắc nói về sàn |
@@ -256,22 +278,28 @@ Chi phí: nằm trong **30 trđ pháp lý khởi tạo** và **5–6 trđ/tháng
 
 ## 6. Phòng ban
 
-**Đội đi theo ba giai đoạn 8 → 17 → 24 người (TC). Chi phí cố định 166,8 → 332,6 → 470,3 trđ/tháng. Chỉ chuyển giai đoạn khi qua cổng ở mục 7.**
+**Đội đi theo ba giai đoạn: 8 → 17 → 25 người theo kế hoạch (TC). Tính cả công suất coach thì ở ngưỡng hoà vốn đội thực tế là 10 → 19 → 25 người, cần 19,5 → 35,2 → 45,9 khách đồng hành/tháng. Chỉ chuyển giai đoạn khi qua cổng ở §7.**
 
 ### 6.1 Sơ đồ tổ chức theo giai đoạn (số người TC)
 
-**Khởi động — 8 người (166,8 trđ/tháng; cần 15,8 khách đồng hành/tháng để hoà vốn)**
+| Giai đoạn | Người theo kế hoạch → ở ngưỡng hoà vốn | Lương + BH (trđ/tháng) | Chi phí cố định ở ngưỡng (trđ/tháng) | Hoà vốn: khách đồng hành/tháng | Doanh số cần (trđ/tháng) | Công suất đội kế hoạch (khách/tháng) |
+|---|---|---|---|---|---|---|
+| Khởi động | 8 → **10** (thêm 1 cặp coach + trợ giảng) | 131,2 | 204,9 | **19,5** | 312,9 | 13,3 |
+| Tăng trưởng | 17 → **19** (thêm 1 cặp) | 272,2 | 370,6 | **35,2** | 565,9 | 26,7 |
+| Mở rộng | 25 → **25** | 394,9 | 483,9 | **45,9** | 738,9 | 53,3 |
+
+**Khởi động: 8 người theo kế hoạch**
 
 ```
-Chủ dự án (chuyên gia chính, gương mặt chương trình — ngoài bảng lương)
-└── Quản lý vận hành (1)  — kiêm phụ trách tuân thủ, tạm chạy quảng cáo
-    ├── Thực thi:  Coach tài chính (1) · Trợ giảng (1)
-    ├── Bán hàng:  Tư vấn viên (2)
+Chủ dự án (chuyên gia chính, gương mặt chương trình, ngoài bảng lương)
+└── Quản lý vận hành (1): kiêm phụ trách tuân thủ, tạm chạy quảng cáo
+    ├── Thực thi:  Coach tài chính (1) · Trợ giảng (1)   [+1 cặp khi vượt 13,3 khách/tháng]
+    ├── Bán hàng:  Tư vấn viên (2)                        [+1 khi lead vượt 1.200/tháng]
     ├── CSKH:      Chăm sóc khách hàng (1)
     └── Nội dung:  Content creator (1) · Video editor (1)
 ```
 
-**Tăng trưởng — 17 người (332,6 trđ/tháng; cần 31,6 khách/tháng)**
+**Tăng trưởng: 17 người**
 
 ```
 Chủ dự án
@@ -283,19 +311,19 @@ Chủ dự án
     └── Nội dung:  Content creator (2) · Video editor (1) · Chuyên viên quảng cáo (1)
 ```
 
-**Mở rộng — 24 người (470,3 trđ/tháng; cần 44,7 khách/tháng)**
+**Mở rộng: 25 người**
 
 ```
 Chủ dự án
 └── Quản lý vận hành (1)
     ├── Kế toán – hành chính (1)
-    ├── Thực thi:  Coach (4) · Trợ giảng (3)
+    ├── Thực thi:  Coach (4) · Trợ giảng (4)
     ├── Bán hàng:  Trưởng nhóm bán hàng (1) → Tư vấn viên (6)
     ├── CSKH:      Chăm sóc khách hàng (3)
     └── Nội dung:  Content creator (2) · Video editor (2) · Chuyên viên quảng cáo (1)
 ```
 
-Công suất: mỗi cặp coach + trợ giảng nhận **40 học viên đồng hành đang học** (TC). Vì một khoá kéo dài 3 tháng, **~13 khách mới/tháng** đã lấp đầy một cặp (Mai tính từ TC: 40 ÷ 3). Ở chỉ tiêu 16 khách/tháng, đội 8 người sẽ cần thêm coach theo công suất — mô hình TC tự cộng thêm cặp coach khi vượt mức.
+Quy tắc công suất (TC): coach và trợ giảng luôn đi theo cặp 1:1. Mỗi cặp nhận **40 học viên đang học**, tương đương ~13,3 khách mới/tháng. Mỗi tư vấn viên xử lý **600 lead/tháng**. Vượt mức thì mô hình tự thêm người. Vì thế lộ trình theo cổng cơ sở có **9 người ở T6** (thêm tư vấn viên), **11 người ở T7** (thêm cặp coach) và **13 người ở T12** (thêm cặp coach thứ hai).
 
 ### 6.2 Vai trò từng vị trí (lương cứng TC, trđ/tháng)
 
@@ -350,90 +378,103 @@ Kịch bản tư vấn **cấm** các câu: "chắc chắn lãi", "thu hồi h�
 
 ### 6.5 KPI từng bộ phận
 
-| Bộ phận | KPI | Mục tiêu | Nguồn |
+Tỷ lệ mục tiêu của từng khâu phễu nằm ở **§3.2**. Cổng và ngưỡng nằm ở **§7**. Bảng dưới chỉ ghi ai chịu KPI nào, cộng các KPI không thuộc phễu.
+
+| Bộ phận | KPI chịu trách nhiệm | Mục tiêu | Nguồn |
 |---|---|---|---|
-| Ban quản lý | Khách đồng hành mới/tháng | T6 ≥16 (hoà vốn đội 8); cổng 25 / 36 | TC |
-| | Chi phí cố định/tháng | ≤166,8 / 332,6 / 470,3 trđ theo giai đoạn | TC |
-| Nội dung + quảng cáo | CPL | ≤60.000 đ | TC |
-| | Lead/tháng | T2: 550 → T6: 705 (cơ sở) | TC |
-| | Lead tự nhiên/tháng | T2: 50 → T6: 205 | Mai tính từ TC |
-| Bán hàng | Lead → tham dự | ≥40% | TC |
-| | Tham dự → nền tảng | ≥12% | TC |
-| | Tham dự → 1:1 | ≥8% | TC |
-| | 1:1 → đồng hành | ≥25% | TC |
-| | Nền tảng → đồng hành | ≥20% | TC |
+| Ban quản lý | Khách đồng hành mới/tháng; khách/1.000 lead; chi phí cố định | Theo cổng §7; chi phí ≤ mức ở §6.1 | TC |
+| Nội dung + quảng cáo | CPL; lead/tháng; lead tự nhiên | Theo §15 | TC |
+| Bán hàng | Lead → tham dự; tham dự → nền tảng; tham dự → 1:1; 1:1 → đồng hành; nền tảng → đồng hành | Theo §3.2 | TC |
 | | Vi phạm kịch bản (hứa lãi, ép mua) | 0 | Giả định Mai |
 | Thực thi | Tỷ lệ hoàn thành khoá đồng hành | ≥85% | Giả định Mai |
-| | Học viên có kế hoạch tài chính bản cuối | ≥80% | Giả định Mai |
-| | Học viên/cặp coach + trợ giảng | ≤40 | TC |
-| CSKH | Tỷ lệ hoàn tiền | ≤5% doanh thu đồng hành | TC |
-| | Đồng hành → thành viên | ≥40% | TC |
-| | Gia hạn thành viên | ≥50% | TC |
+| | Học viên nộp kế hoạch tài chính bản cuối | ≥80% | Giả định Mai |
+| | Học viên đang học trên mỗi cặp coach + trợ giảng | ≤40 | TC |
+| CSKH | Hoàn tiền; đồng hành → thành viên; gia hạn thành viên | Theo §3.2 | TC |
 | | NPS cuối khoá | ≥50 | Giả định Mai |
-| | Phản hồi khiếu nại | ≤24 giờ làm việc | Giả định Mai |
+| | Thời gian phản hồi khiếu nại | ≤24 giờ làm việc | Giả định Mai |
 
 ---
 
 ## 7. Lộ trình 12 tháng với cổng kiểm tra
 
-**Lộ trình mở rộng theo chỉ tiêu, không theo lịch. Mô hình cơ sở của Hùng tuyển theo lịch (17 người ở T7, 24 ở T16); lộ trình này thay bằng cổng.**
+**Lộ trình có 1 cổng pháp lý, 1 cổng quảng cáo, 1 mốc dừng và 2 cổng tuyển. Theo kịch bản cơ sở, quảng cáo tăng lên 70 trđ ở T6, đội lên Tăng trưởng ở T15 và Mở rộng ở T18, hoàn vốn T26 (TC mục 7A).** Đây là **nơi duy nhất** ghi cổng và ngưỡng trong tài liệu.
 
-| Giai đoạn | Thời gian | Việc chính | Cổng kiểm tra cuối giai đoạn |
+### 7.1 Bảng cổng (quy tắc trong `mo_hinh.py`, biến `CONG`)
+
+| Cổng | Khi nào xét | Điều kiện | Hành động | Theo cơ sở (TC) |
+|---|---|---|---|---|
+| **Cổng 0: pháp lý** | Cuối tuần 0, trước T1 | Có ý kiến luật sư bằng văn bản cho câu 1, 2, 5 ở §5.2 | **Chỉ ký hợp đồng lao động với đội 8 người sau khi qua cổng này.** Chưa qua thì hoãn T1 và chưa chạy quảng cáo | — |
+| Cổng 1: sẵn sàng | Cuối T1 | Bộ minh bạch (§4.4) đã công khai; khoá nền tảng sẵn sàng; hội thảo đầu tiên có lịch | Mở hội thảo từ T2. Lead của T1 (~167, 10 trđ quảng cáo) chỉ dùng để thử mẫu quảng cáo, không tính ra khách | — |
+| **Cổng quảng cáo** | Hằng tháng từ T2 | **≥14 khách đồng hành / 1.000 lead** (80% của 17,6) **và CPL ≤ 60.000 đ** | Tăng quảng cáo từ 30 lên **70 trđ/tháng**. Hạ về 30 nếu 2 tháng liền dưới 11,2/1.000 lead | Đạt ở T5, tăng quảng cáo ở **T6** |
+| Mốc công suất | Hằng tháng | Vượt 13,3 khách mới/tháng; lead vượt 1.200/tháng | Tuyển thêm 1 cặp coach + trợ giảng; tuyển tư vấn viên thứ ba | 9 người ở T6, 11 ở T7, 13 ở T12 |
+| **Mốc dừng** | Cuối T6 | **<8 khách/tháng và <14 khách/1.000 lead** | Dừng hoặc tái cấu trúc phễu. Lỗ tối đa ~1,0–1,44 tỷ | Cơ sở: 15,3 khách ở T6, đi tiếp. Thận trọng: 4,7 khách, dừng, lỗ ~1.440 trđ |
+| **Cổng tuyển 1** | Hằng tháng | **2 tháng liên tiếp ≥28 khách/tháng** (80% của 35,2; TC ghi 28,2) | Lên Tăng trưởng: 17 người theo kế hoạch, 19 người ở ngưỡng; quảng cáo 100 trđ/tháng. Tuyển theo bậc, không tuyển gấp đôi trong 1 tháng | **T15** |
+| **Cổng tuyển 2** | Hằng tháng | **2 tháng liên tiếp ≥37 khách/tháng** (80% của 45,9; TC ghi 36,8) | Lên Mở rộng: 25 người; quảng cáo 130 trđ/tháng | **T18** |
+
+Vì sao đo hai cổng bằng hai cách khác nhau (TC):
+- **Cổng quảng cáo đo bằng tỷ lệ.** Số khách tuyệt đối chủ yếu do ngân sách quyết định, nên nó không cho biết phễu tốt hay xấu.
+- **Cổng tuyển đo bằng số khách tuyệt đối.** Lương phải trả bằng khách thật.
+
+Lưu ý khi đọc tỷ lệ (Mai tính từ bảng dưới): tháng đầu sau khi tăng quảng cáo, tỷ lệ khách/1.000 lead **tụt xuống** vì lead mới chưa kịp mua (T5 là 14,0, T6 chỉ còn 11,2). Đừng hạ ngân sách chỉ vì một tháng thấp. Quy tắc là phải 2 tháng liền dưới 11,2 mới hạ.
+
+### 7.2 Lộ trình 12 tháng
+
+| Giai đoạn | Thời gian | Việc chính | Cổng cuối giai đoạn |
 |---|---|---|---|
-| Tuần 0 | Trước T1 (2–4 tuần) | Pháp nhân, mã ngành; luật sư trả lời 10 câu mục 5.2; hợp đồng mẫu; chốt tên; gặp ngân hàng xin văn bản | **Cổng 0:** có ý kiến luật sư bằng văn bản về câu 1, 2, 5. Chưa có → không chạy quảng cáo |
-| Chuẩn bị | T1 | Tuyển đủ 8 người; quay khoá nền tảng; LMS, CRM, Zalo OA, website; bộ minh bạch công khai; bắt đầu nội dung organic; quảng cáo 10 trđ (~167 lead) | **Cổng 1:** bộ minh bạch đã công khai; khoá nền tảng sẵn sàng; hội thảo đầu đã có lịch |
-| Chạy thử | T2–T4 | 4 hội thảo offline/tháng + webinar; quảng cáo 30 trđ/tháng; mở lớp đồng hành đầu tiên | **Cổng 2 (cuối T4):** đo số thật so với giả định: CPL, lead → tham dự, tham dự → nền tảng, 1:1 → đồng hành. Chỉ số nào thấp hơn giả định >30% → sửa trước khi đi tiếp |
-| Tối ưu | T5–T6 | Sửa khâu yếu nhất; thử 2 mẫu hội thảo; thử giá khung đồng hành (nếu TC đồng ý) | **Cổng 3 (cuối T6) — quyết định lớn** (bảng dưới) |
-| Tăng trưởng (nếu qua cổng) | Sau khi đạt ≥25 khách/tháng × 2 tháng | Tuyển bậc lên 17 người (không tuyển gấp đôi trong 1 tháng); quảng cáo 60 trđ/tháng; 8 hội thảo/tháng | **Cổng 4:** ≥36 khách/tháng × 2 tháng → đội 24 |
-| Giữ đội 8 (nếu chưa qua cổng) | T7–T12 | Tối ưu phễu, tăng lead tự nhiên, xin tài trợ ngân hàng | Xét lại cổng mỗi tháng |
+| Tuần 0 | 2–4 tuần trước T1 | Chủ dự án làm cùng luật sư: pháp nhân, mã ngành, trả lời 10 câu ở §5.2, hợp đồng mẫu, tra nhãn hiệu, gặp ngân hàng xin văn bản. Chi phí nằm trong vốn ban đầu 306 trđ, gồm 30 trđ pháp lý và 10 trđ lệ phí, nhãn hiệu (TC; **cần báo giá**). Nếu quản lý vận hành vào làm sớm thì tốn thêm ~15–30 trđ (TC) | Cổng 0 |
+| Chuẩn bị | T1 | Ký hợp đồng lao động 8 người. Quay khoá nền tảng. Dựng LMS, CRM, Zalo OA, website. Công khai bộ minh bạch. Bắt đầu nội dung tự nhiên. Chạy thử quảng cáo 10 trđ | Cổng 1 |
+| Chạy thử | T2–T5 | Mỗi tháng 4 hội thảo offline và webinar. Quảng cáo 30 trđ/tháng. Mở lớp đồng hành đầu tiên. Đo CPL, tỷ lệ tham dự, khách/1.000 lead | Cổng quảng cáo (xét hằng tháng) |
+| Tăng quảng cáo | T6–T12 | Quảng cáo 70 trđ/tháng. Thêm cặp coach và tư vấn viên theo công suất. Xin tài trợ ngân hàng | Mốc dừng (T6); cổng tuyển 1 (xét hằng tháng) |
+| Sau 12 tháng | T13–T18 | Theo cơ sở: lên Tăng trưởng ở T15, Mở rộng ở T18 | Cổng tuyển 1, 2 |
 
-**Cổng 3 — quyết định cuối T6 (theo TC):**
+### 7.3 Số tham chiếu T1–T12 (lộ trình theo cổng, cơ sở)
 
-| Khách đồng hành mới/tháng ở T6 | Quyết định | Hệ quả tài chính (TC) |
-|---|---|---|
-| **<8** | Dừng hoặc tái cấu trúc (giảm đội, chuyển sang chỉ online) | Lỗ tối đa ~1,0 tỷ (cơ sở) – 1,3 tỷ (thận trọng) |
-| 8 – <16 | Giữ đội 8, không tuyển; sửa phễu; xét lại mỗi tháng | Mô hình cơ sở T6: 10,5 khách — nằm ở vùng này |
-| 16 – <25 | Đội 8 tự nuôi được (hoà vốn 15,8); chỉ thêm coach theo công suất | — |
-| **≥25, 2 tháng liên tiếp** | Mở giai đoạn Tăng trưởng (17 người) | Hoà vốn đội 17 cần 31,6 khách/tháng |
-| **≥36, 2 tháng liên tiếp** (sau khi đã ở đội 17) | Mở giai đoạn Mở rộng (24 người) | Hoà vốn đội 24 cần 44,7 khách/tháng |
+Dùng bảng này để so với số thật mỗi tháng.
 
-Mốc phụ đi kèm Cổng 3: **CPL ≤ 60.000 đ**. Nếu CPL cao hơn 20%, TC cho thấy hoà vốn lùi về T24 và không hoàn vốn.
+| Tháng | Người | Quảng cáo (trđ) | Lead | Tham dự | Nền tảng | Đồng hành | Doanh thu (trđ) | EBITDA (trđ) | Luỹ kế (trđ) |
+|---|---|---|---|---|---|---|---|---|---|
+| T1 | 8 | 10 | 167 | 0 | 0 | 0 | 0 | −224,8 | −531 |
+| T2 | 8 | 30 | 550 | 220 | 15,8 | 2,6 | 48,8 | −153,9 | −685 |
+| T3 | 8 | 30 | 589 | 235 | 19,8 | 6,5 | 97,2 | −111,6 | −796 |
+| T4 | 8 | 30 | 627 | 251 | 24,1 | 8,0 | 119,4 | −92,0 | −888 |
+| T5 | 8 | 30 | 666 | 266 | 27,2 | 9,3 | 142,6 | −71,5 | −960 |
+| T6 | 9 | 70 | 1.371 | 548 | 59,2 | 15,3 | 253,9 | −32,4 | −1.004 |
+| T7 | 11 | 70 | 1.410 | 564 | 67,7 | 23,1 | 355,5 | +11,0 | −1.017 |
+| T8 | 11 | 70 | 1.448 | 579 | 69,5 | 25,1 | 382,5 | +50,8 | −967 |
+| T9 | 11 | 70 | 1.487 | 595 | 71,4 | 25,8 | 401,0 | +67,5 | −899 |
+| T10 | 11 | 70 | 1.526 | 610 | 73,2 | 26,5 | 422,2 | +86,7 | −812 |
+| T11 | 11 | 70 | 1.564 | 626 | 75,1 | 27,2 | 435,1 | +98,1 | −714 |
+| T12 | 13 | 70 | 1.603 | 641 | 76,9 | 27,8 | 446,0 | +54,1 | −684 |
 
-Số tham chiếu cơ sở T1–T6 (TC) để so sánh với số thật mỗi tháng:
+Nguồn: các cột người, quảng cáo, đồng hành và luỹ kế lấy từ `tai-chinh.json` → `lo_trinh_theo_cong`. Các cột lead, tham dự, nền tảng, doanh thu và EBITDA **chưa có trong JSON**. Mai lấy chúng bằng cách chạy hàm `chay()` của `mo_hinh.py` trên bản sao, với lộ trình theo cổng ở kịch bản cơ sở; luỹ kế ra khớp JSON. Đề nghị Hùng xuất thêm các cột này vào JSON để Hà đối chiếu.
 
-| Tháng | Lead | Tham dự | Nền tảng | Đồng hành | Doanh thu (trđ) | Luỹ kế (trđ) |
-|---|---|---|---|---|---|---|
-| T1 | 167 | 0 | 0 | 0 | 0 | −521 |
-| T2 | 550 | 220 | 15,8 | 2,6 | 48,8 | −675 |
-| T3 | 589 | 235 | 19,8 | 6,5 | 97,2 | −786 |
-| T4 | 627 | 251 | 24,1 | 8,0 | 119,4 | −878 |
-| T5 | 666 | 266 | 27,2 | 9,3 | 142,6 | −950 |
-| T6 | 705 | 282 | 30,4 | 10,5 | 165,2 | −1.001 |
-
-Việc song song suốt 12 tháng: xin văn bản ngân hàng (tài trợ 10 trđ/tháng cải thiện rõ kịch bản Lạc quan — TC); hạch toán lương chủ dự án (~30 trđ/tháng làm vốn cần tăng ~0,6–0,7 tỷ trong 18 tháng — TC).
+Việc làm song song suốt 12 tháng:
+- Xin văn bản tài trợ từ ngân hàng.
+- Hạch toán lương chủ dự án.
+- Nhờ kế toán xác nhận các khoản BH 21,5%, kinh phí công đoàn 2% và VAT.
 
 ---
 
 ## 8. Rủi ro
 
-**Rủi ro số 1 là uy tín: chỉ một bài viết so sánh với Mr Pips hay FTXF có thể làm CPL tăng vọt và tỷ lệ chốt giảm — hai biến nhạy nhất của mô hình.**
+**Có 14 rủi ro; 5 rủi ro ở mức Cao trở lên. Rủi ro số 1 là uy tín. Chỉ cần một bài so sánh chương trình với các vụ bị cáo buộc lừa đảo như Mr Pips (>1.568 tỷ đ, 2.661 bị hại, đang xét xử) là CPL có thể tăng và tỷ lệ chốt giảm. Đây đúng là hai biến nhạy nhất của mô hình.**
 
-| Rủi ro | Mức độ | Dấu hiệu sớm | Giảm thiểu |
-|---|---|---|---|
-| Bị coi như các vụ lừa đảo "lớp học tài chính" (Mr Pips, FTXF) | **Rất cao** | Bình luận "lùa gà", "lại một lớp học"; tỷ lệ tham dự <30%; tin nhắn hỏi "có cam kết lãi không" | Bộ minh bạch trước quảng cáo; quy tắc "không gọi kèo, không giữ tiền, không hứa lãi" ghi ở mọi hội thảo; không "khoe của"; không bán token; nội dung cảnh báo lừa đảo là trụ cột riêng; chỉ thu qua tài khoản công ty |
-| Nội dung crypto bị coi là "quảng cáo, tiếp thị tài sản mã hoá" không phép | **Cao** | Nền tảng gỡ bài, cảnh báo; cơ quan chức năng nhắc nhở | Ý kiến luật sư (Cổng 0); không nêu tên sàn, mã mua/bán, link; checklist tuân thủ trước mỗi bài |
-| Tư vấn viên/coach nói quá (hứa lãi, khuyến nghị mã) | **Cao** | Khiếu nại; ghi âm có câu cấm; hoàn tiền >5% | Kịch bản chuẩn; nghe lại 10% cuộc gọi; hoa hồng tính sau hoàn tiền; kỷ luật rõ |
-| Tỷ lệ chuyển đổi thấp hơn giả định | **Cao** | Cổng 2: chỉ số thấp hơn giả định >30% | Chạy thử với đội 8; cổng T6; sửa từng khâu (TC: −20% chuyển đổi → không hoà vốn) |
-| CPL cao hơn 60.000 đ / tài khoản quảng cáo bị hạn chế | **Cao** | CPL tuần >72.000 đ; quảng cáo bị từ chối | Quảng cáo chỉ nói giáo dục tài chính, hội thảo; tăng lead tự nhiên; Zalo, giới thiệu |
-| Ngân hàng không ký văn bản hoặc rút tên | Trung bình | Trì hoãn >1 tháng; chỉ đồng ý phần "quản lý tài chính", không đồng ý phần crypto | Không dùng tên khi chưa có văn bản; kế hoạch tài chính cơ sở đã để tài trợ = 0 |
-| Phụ thuộc chủ dự án (một gương mặt, chi phí ẩn) | Trung bình | Chủ dự án quá tải, lịch quay trễ | Coach đứng lớp thay; hạch toán lương chủ dự án; quay sẵn ngân hàng nội dung 4 tuần |
-| Thị trường crypto sụp mạnh | Trung bình | Giá giảm sâu, lượt tìm kiếm giảm; học viên trách người dạy | Định vị "quản lý tiền trước"; nội dung đi trước về rủi ro; không bao giờ gắn chương trình với giá coin |
-| Học viên thua lỗ rồi khiếu nại, đòi bồi thường | Trung bình | Khiếu nại nêu "theo lời khuyên của coach" | Hợp đồng ghi rõ dịch vụ giáo dục; không khuyến nghị mã; ghi âm buổi 1:1 (có đồng ý) |
-| Chương trình giới thiệu bị coi là đa cấp | Trung bình | Học viên tự lập "nhóm" tuyển người | Chỉ 1 tầng, thưởng bằng dịch vụ; luật sư duyệt |
-| Lộ dữ liệu cá nhân của lead/học viên | Trung bình | Lead phàn nàn bị gọi từ nơi khác | Phân quyền CRM; chính sách dữ liệu; luật sư rà quy định hiện hành |
-| Nghỉ việc 30%/năm (TC), mất tư vấn viên giỏi | Trung bình | Doanh số dồn vào 1 người | Quy trình chuẩn hoá, CRM ghi đủ lịch sử |
-| Chi phí chưa vào mô hình (VAT, công đoàn 2%, lương chủ dự án) | Trung bình | Kế toán xác nhận VAT phải nộp | Kế toán xác nhận trước T1; Hùng chạy lại mô hình |
-| Sàn trong nước được cấp phép → luật chơi đổi | Thấp–Trung bình | Thông cáo Bộ Tài chính/UBCKNN | Theo dõi hằng tuần; cập nhật bài giảng tuần 6; luật sư rà lại quy tắc nói về sàn |
+| Rủi ro | Mức độ | Dấu hiệu sớm | Giảm thiểu | Người chịu trách nhiệm |
+|---|---|---|---|---|
+| Bị coi như các "lớp học tài chính" bị cáo buộc lừa đảo (Mr Pips đang xét xử; FTXF đã khởi tố) | **Rất cao** | Bình luận "lùa gà", "lại một lớp học"; tham dự <30% số lead; tin nhắn hỏi "có cam kết lãi không" | Công khai bộ minh bạch trước quảng cáo. Nhắc quy tắc "3 không" ở mọi hội thảo. Không "khoe của". Không bán token. Có trụ cột riêng về cảnh báo lừa đảo. Chỉ thu tiền qua tài khoản công ty | Chủ dự án + Quản lý vận hành |
+| Nội dung crypto bị coi là "quảng cáo, tiếp thị tài sản mã hoá" không phép | **Cao** | Nền tảng gỡ bài hoặc cảnh báo; cơ quan chức năng nhắc nhở | Qua Cổng 0. Không nêu tên sàn, mã mua/bán, link. Chạy checklist §14 trước mỗi bài | Quản lý vận hành |
+| Tư vấn viên hoặc coach nói quá (hứa lãi, khuyến nghị mã) | **Cao** | Có khiếu nại; ghi âm có câu cấm; hoàn tiền >5% | Kịch bản chuẩn. Nghe lại 10% cuộc tư vấn. Hoa hồng tính sau hoàn tiền. Kỷ luật rõ | Trưởng nhóm bán hàng (Khởi động: Quản lý vận hành) |
+| Tỷ lệ chuyển đổi thấp hơn giả định | **Cao** | Dưới 14 khách/1.000 lead sau T3 | Không tăng quảng cáo, không tuyển khi chưa qua cổng §7. Sửa từng khâu. Thận trọng (×0,7) thì dừng ở T6 | Quản lý vận hành |
+| CPL vượt 60.000 đ, tài khoản quảng cáo bị hạn chế | **Cao** | CPL tuần >72.000 đ; quảng cáo bị từ chối | Quảng cáo chỉ nói giáo dục tài chính và hội thảo. Tăng lead tự nhiên, lead từ Zalo và giới thiệu | Chuyên viên quảng cáo (Khởi động: Quản lý vận hành) |
+| Ngân hàng không ký văn bản hoặc rút tên | Trung bình | Trì hoãn quá 1 tháng; chỉ đồng ý phần quản lý tài chính, không đồng ý phần crypto | Không dùng tên ngân hàng khi chưa có văn bản. Mô hình cơ sở đã để tài trợ = 0 | Chủ dự án |
+| Phụ thuộc vào chủ dự án (một gương mặt duy nhất, chi phí ẩn) | Trung bình | Chủ dự án quá tải, lịch quay trễ | Coach đứng lớp thay được. Hạch toán lương chủ dự án. Quay sẵn kho nội dung 4 tuần | Chủ dự án |
+| Thị trường crypto giảm mạnh | Trung bình | Giá giảm sâu, lượt tìm kiếm giảm; học viên trách người dạy | Định vị "quản lý tiền trước". Nói về rủi ro trước khi nó xảy ra. Không bao giờ gắn chương trình với giá coin | Chủ dự án + Coach |
+| Học viên thua lỗ rồi khiếu nại, đòi bồi thường | Trung bình | Khiếu nại có câu "làm theo lời khuyên của coach" | Hợp đồng ghi rõ đây là dịch vụ giáo dục. Không khuyến nghị mã. Ghi âm buổi 1:1 khi học viên đồng ý | CSKH + Quản lý vận hành |
+| Chương trình giới thiệu bị coi là đa cấp | Trung bình | Học viên tự lập "nhóm" để tuyển người | Chỉ 1 tầng, thưởng bằng dịch vụ. Luật sư duyệt | Quản lý vận hành |
+| Lộ dữ liệu cá nhân của lead hoặc học viên | Trung bình | Lead phàn nàn bị nơi khác gọi tới | Phân quyền CRM. Có chính sách dữ liệu. Luật sư rà quy định hiện hành | Quản lý vận hành |
+| Nghỉ việc 30%/năm (TC), mất tư vấn viên giỏi | Trung bình | Doanh số dồn vào 1 người | Chuẩn hoá quy trình. CRM ghi đủ lịch sử khách | Trưởng nhóm bán hàng |
+| Chi phí chưa có trong mô hình (VAT, công đoàn 2%, lương chủ dự án) | Trung bình | Kế toán xác nhận phải nộp VAT | Kế toán xác nhận trước T1. Hùng chạy lại mô hình | Kế toán (Khởi động: Quản lý vận hành) |
+| Sàn trong nước được cấp phép, luật chơi thay đổi | Thấp–Trung bình | Thông cáo của Bộ Tài chính hoặc UBCKNN | Theo dõi hằng tuần. Cập nhật bài giảng tuần 6. Luật sư rà lại quy tắc nói về sàn | Coach + Quản lý vận hành |
 
 ---
 
@@ -461,7 +502,7 @@ Việc song song suốt 12 tháng: xin văn bản ngân hàng (tài trợ 10 tr�
 |---|---|---|---|
 | 1. Quản lý dòng tiền | 30% | Kéo người mới, quảng cáo được | "Lương 15 triệu chia thế nào", "Quỹ khẩn cấp bao nhiêu là đủ" |
 | 2. Crypto an toàn | 25% | Đúng chuyên môn chủ dự án, tạo khác biệt | "5 lỗi mất ví phổ biến", "Pháp lý tài sản số VN 2026 nói gì" |
-| 3. Cảnh báo lừa đảo | 20% | Xây uy tín, chia sẻ nhiều | "Giải phẫu vụ Mr Pips", "7 câu mời gọi đầu tư cần chạy ngay" |
+| 3. Cảnh báo lừa đảo | 20% | Xây uy tín, chia sẻ nhiều | "Dấu hiệu chung trong các vụ bị cáo buộc lừa đảo đầu tư" (luật sư duyệt), "7 câu mời gọi đầu tư cần chạy ngay" |
 | 4. Tâm lý đầu tư | 15% | Chạm nỗi đau 55% thua lỗ | "Vì sao mua đỉnh bán đáy", "Nhật ký quyết định" |
 | 5. Câu chuyện học viên (có đồng ý bằng văn bản) | 10% | Bằng chứng xã hội (từ T3) | "Từ nợ thẻ đến có quỹ khẩn cấp 3 tháng" — **không nêu lợi nhuận đầu tư** |
 
@@ -490,6 +531,8 @@ Khảo sát riêng "người 25–40 học đầu tư qua kênh nào": **chưa c
 ---
 
 ## 11. Nội dung theo từng tầng phễu
+
+**Kết luận: mỗi tầng có 3 chủ đề mẫu và 1 lời kêu gọi. Trong lịch 30 ngày (§12), tầng Nhận biết và Quan tâm chiếm 21/30 ngày (70%), vì T1 là tháng dựng kho nội dung và gom lead, chưa bán.**
 
 | Tầng | Ví dụ chủ đề cụ thể | Định dạng | Lời kêu gọi hành động |
 |---|---|---|---|
@@ -531,7 +574,7 @@ Lịch chi tiết — nội dung chính mỗi ngày (Mai đề xuất):
 | 7 | Nhóm Facebook | Mở nhóm, đăng quy tắc nhóm | Bài ghim | Quan tâm |
 | 8 | YouTube | Quản lý dòng tiền cho người 25–40 | Video dài 15 phút | Cân nhắc |
 | 9 | TikTok, Reels | 7 câu mời gọi đầu tư cần chạy ngay | Video ngắn | Nhận biết |
-| 10 | Facebook | Giải phẫu vụ Mr Pips: các dấu hiệu | Carousel | Nhận biết |
+| 10 | Facebook | 6 dấu hiệu chung trong các lời mời đầu tư bị Bộ Công an cảnh báo ("1 vốn 4 lời", nhóm chat "chuyên gia"…) — không nêu tên vụ đang xét xử | Carousel | Nhận biết |
 | 11 | Zalo OA | Chào lead mới + gửi bảng tính | Tin nhắn | Quan tâm |
 | 12 | TikTok, Reels | Ví nóng và ví lạnh khác nhau thế nào | Video ngắn | Nhận biết |
 | 13 | Facebook | Ra mắt checklist 12 bước bảo vệ ví | Lead magnet | Quan tâm |
@@ -543,7 +586,7 @@ Lịch chi tiết — nội dung chính mỗi ngày (Mai đề xuất):
 | 19 | Facebook | Giới thiệu người dạy: kinh nghiệm, chứng chỉ thật | Bài + ảnh | Cân nhắc |
 | 20 | TikTok, Reels | Seed phrase: 3 cách giữ sai | Video ngắn | Nhận biết |
 | 21 | Nhóm Facebook | Thử thách 7 ngày ghi chi tiêu | Bài thử thách | Quan tâm |
-| 22 | YouTube | Giải phẫu 3 vụ lừa đảo "lớp học tài chính" | Video dài 15 phút | Cân nhắc |
+| 22 | YouTube | Các vụ án về "lớp học tài chính": vụ Mr Pips **bị cáo buộc** (đang xét xử), vụ FTXF đã khởi tố. **Bắt buộc luật sư duyệt trước** | Video dài 15 phút | Cân nhắc |
 | 23 | Zalo OA | Nhắc đăng ký hội thảo, còn bao nhiêu chỗ (số thật) | Tin nhắn | Cân nhắc |
 | 24 | TikTok, Reels | Có nên vay để đầu tư? | Video ngắn | Nhận biết |
 | 25 | Facebook | Hỏi đáp: "Có cam kết lãi không?" | Bài FAQ | Cân nhắc |
@@ -585,7 +628,7 @@ Quy trình sản xuất – duyệt:
 | 8 | Đăng, trả lời bình luận 24 giờ đầu | Content creator | Theo lịch |
 | 9 | Lưu bản gốc, kịch bản, nguồn (≥2 năm, giả định Mai) | Content creator | Sau đăng |
 | Livestream | Kịch bản khung + một người kiểm duyệt bình luận; câu trả lời mẫu khi bị hỏi kèo: "Chương trình không khuyến nghị mã cụ thể" | Content creator | Mỗi buổi |
-| Nội dung nhạy cảm | Bài về pháp lý, sàn, sự kiện lừa đảo đang xét xử → luật sư xem trước | Quản lý vận hành | Trước đăng 3 ngày |
+| Nội dung nhạy cảm | Bài về pháp lý, sàn, vụ án đang xét xử (chỉ dùng chữ "bị cáo buộc" cho tới khi có bản án) → luật sư xem trước | Quản lý vận hành | Trước đăng 3 ngày |
 
 ---
 
@@ -596,13 +639,13 @@ Quy trình sản xuất – duyệt:
 | # | Câu kiểm tra | Căn cứ (NC) |
 |---|---|---|
 | 1 | Có nêu mã crypto/cổ phiếu kèm ý mua, bán, giữ, giá mục tiêu không? | Không gọi kèo; tư vấn chứng khoán cần phép (Luật Chứng khoán) |
-| 2 | Có nêu tên, logo, link, mã giới thiệu của sàn crypto chưa được cấp phép tại VN không? | NQ 05/2025; NĐ 284/2026 (tới 200 trđ) |
+| 2 | Có nêu tên, logo, link, mã giới thiệu của sàn crypto chưa được cấp phép tại VN không? | NQ 05/2025; NĐ 284/2026 (tới 200 trđ — cần luật sư xác nhận) |
 | 3 | Có hứa, gợi ý lợi nhuận, "thu hồi học phí", "x lần" không? | Luật Quảng cáo 75/2025 (trung thực, có chứng minh) |
 | 4 | Có khoe lãi, ảnh tài khoản lời, tài sản xa xỉ không? | Tín hiệu giống các vụ lừa đảo (NC 2.2) |
 | 5 | Có lời chứng của học viên về lợi nhuận đầu tư không? | Luật Quảng cáo 75/2025 |
 | 6 | Có dùng tên/logo ngân hàng khi chưa có văn bản, hoặc dùng chữ mạnh hơn văn bản cho phép không? | Mục 4.2 |
-| 7 | Bài có tài trợ, hợp tác, hoặc quảng bá khoá học của chính mình đã gắn nhãn rõ (vd. "Quảng cáo", "Nội dung hợp tác với [tên]") chưa? | Luật 75/2025: khoản 16 Điều 1 (nhận diện quảng cáo trên mạng), Điều 15a (người chuyển tải sản phẩm quảng cáo) |
-| 8 | Mọi con số đã có nguồn ghi trên bài chưa? | Luật 75/2025 Điều 19 |
+| 7 | Bài có tài trợ, hợp tác, hoặc quảng bá khoá học của chính mình đã gắn nhãn rõ (vd. "Quảng cáo", "Nội dung hợp tác với [tên]") chưa? | Luật 75/2025: khoản 16 Điều 1 (nhận diện quảng cáo trên mạng), Điều 15a (người chuyển tải sản phẩm quảng cáo) — cần luật sư xác nhận |
+| 8 | Mọi con số đã có nguồn ghi trên bài chưa? | Luật 75/2025 Điều 19 (cần luật sư xác nhận) |
 | 9 | Đã có câu miễn trừ: "Nội dung nhằm mục đích giáo dục, không phải khuyến nghị đầu tư. Tài sản số có rủi ro cao, có thể mất toàn bộ vốn." chưa? | Mẫu DSC (NC) + quy tắc đạo đức |
 | 10 | Câu chuyện học viên đã có đồng ý bằng văn bản, ẩn thông tin nhạy cảm chưa? | Bảo vệ dữ liệu cá nhân (cần xác minh văn bản hiện hành) |
 
@@ -620,50 +663,49 @@ Cần xác minh: danh sách quốc gia của Meta/TikTok/Google có Việt Nam k
 
 ## 15. KPI nội dung theo tháng
 
-**KPI nội dung bám đúng phễu cơ sở của Hùng: T6 phải có 705 lead/tháng, trong đó ~205 lead tự nhiên, CPL quảng cáo ≤60.000 đ.**
+**Theo lộ trình cơ sở, nội dung và quảng cáo phải mang về 1.371 lead ở T6 (205 lead tự nhiên) và 1.603 lead ở T12 (436 lead tự nhiên), với CPL quảng cáo ≤ 60.000 đ.** Cổng tăng quảng cáo nằm ở §7.
 
-Tháng 1–6 (đội 8 người, số TC; cột "lead tự nhiên" và "CPL bình quân" Mai tính từ TC):
+Nguồn: cột quảng cáo lấy từ `tai-chinh.json` → `lo_trinh_theo_cong.ngan_sach_qc_24t`. Các cột tiếp cận, lead, lead quảng cáo, lead tự nhiên, tham dự, nền tảng và đồng hành lấy từ `mo_hinh.py` (lộ trình theo cổng, cơ sở; ghi chú nguồn ở §7.3). Hai cột "CPL bình quân" và "khách/1.000 lead" do Mai tính từ các cột này.
 
-| Tháng | Ngân sách QC (trđ) | Lượt tiếp cận | Lead | Lead quảng cáo | Lead tự nhiên | CPL quảng cáo | CPL bình quân (QC ÷ tổng lead) | Tham dự (40%) | Nền tảng | Đồng hành |
+| Tháng | Quảng cáo (trđ) | Tiếp cận | Lead | Lead quảng cáo | Lead tự nhiên | CPL bình quân (quảng cáo ÷ tổng lead) | Tham dự | Nền tảng | Đồng hành | Khách/1.000 lead |
 |---|---|---|---|---|---|---|---|---|---|---|
-| T1 | 10 | 8.333 | 167 | 167 | 0 | 60.000 đ | ~60.000 đ | 0 | 0 | 0 |
-| T2 | 30 | 27.500 | 550 | 500 | 50 | 60.000 đ | ~54.500 đ | 220 | 15,8 | 2,6 |
-| T3 | 30 | 29.432 | 589 | 500 | 89 | 60.000 đ | ~50.900 đ | 235 | 19,8 | 6,5 |
-| T4 | 30 | 31.364 | 627 | 500 | 127 | 60.000 đ | ~47.800 đ | 251 | 24,1 | 8,0 |
-| T5 | 30 | 33.295 | 666 | 500 | 166 | 60.000 đ | ~45.000 đ | 266 | 27,2 | 9,3 |
-| T6 | 30 | 35.227 | 705 | 500 | 205 | 60.000 đ | ~42.600 đ | 282 | 30,4 | 10,5 |
+| T1 | 10 | 8.333 | 167 | 167 | 0 | ~60.000 đ | 0 | 0 | 0 | — (thử nghiệm) |
+| T2 | 30 | 27.500 | 550 | 500 | 50 | ~54.500 đ | 220 | 15,8 | 2,6 | 4,8 |
+| T3 | 30 | 29.432 | 589 | 500 | 89 | ~51.000 đ | 235 | 19,8 | 6,5 | 11,0 |
+| T4 | 30 | 31.364 | 627 | 500 | 127 | ~47.800 đ | 251 | 24,1 | 8,0 | 12,7 |
+| T5 | 30 | 33.295 | 666 | 500 | 166 | ~45.100 đ | 266 | 27,2 | 9,3 | 14,0 |
+| T6 | 70 | 68.561 | 1.371 | 1.167 | 205 | ~51.000 đ | 548 | 59,2 | 15,3 | 11,2 |
+| T7 | 70 | 70.492 | 1.410 | 1.167 | 243 | ~49.700 đ | 564 | 67,7 | 23,1 | 16,4 |
+| T8 | 70 | 72.424 | 1.448 | 1.167 | 282 | ~48.300 đ | 579 | 69,5 | 25,1 | 17,3 |
+| T9 | 70 | 74.356 | 1.487 | 1.167 | 320 | ~47.100 đ | 595 | 71,4 | 25,8 | 17,4 |
+| T10 | 70 | 76.288 | 1.526 | 1.167 | 359 | ~45.900 đ | 610 | 73,2 | 26,5 | 17,4 |
+| T11 | 70 | 78.220 | 1.564 | 1.167 | 398 | ~44.700 đ | 626 | 75,1 | 27,2 | 17,4 |
+| T12 | 70 | 80.152 | 1.603 | 1.167 | 436 | ~43.700 đ | 641 | 76,9 | 27,8 | 17,4 |
 
-Tháng 7–12 — **chỉ áp dụng nếu qua cổng lên đội 17** (số TC cơ sở, quảng cáo 60 trđ/tháng):
+Nếu chưa qua cổng quảng cáo thì giữ ngân sách 30 trđ. Khi đó vẫn phải đạt chỉ tiêu lead tự nhiên như bảng, tăng ~39 lead/tháng.
 
-| Tháng | Lượt tiếp cận | Lead | Lead tự nhiên | CPL bình quân | Tham dự | Nền tảng | Đồng hành |
-|---|---|---|---|---|---|---|---|
-| T7 | 62.159 | 1.243 | 243 | ~48.300 đ | 497 | 59,7 | 16,0 |
-| T8 | 64.091 | 1.282 | 282 | ~46.800 đ | 513 | 61,5 | 22,2 |
-| T9 | 66.023 | 1.320 | 320 | ~45.500 đ | 528 | 63,4 | 22,9 |
-| T10 | 67.955 | 1.359 | 359 | ~44.200 đ | 544 | 65,2 | 23,5 |
-| T11 | 69.886 | 1.398 | 398 | ~42.900 đ | 559 | 67,1 | 24,2 |
-| T12 | 71.818 | 1.436 | 436 | ~41.800 đ | 575 | 68,9 | 24,9 |
-
-Nếu giữ đội 8 người ở T7–T12: giữ ngân sách 30 trđ, chỉ tiêu lead tự nhiên tiếp tục tăng ~39 lead/tháng (nhịp TC).
-
-Chỉ số nội dung bổ trợ (giả định Mai, kiểm lại sau Cổng 2):
+Chỉ số nội dung bổ trợ (giả định Mai, xem lại sau T3):
 
 | Chỉ số | Mục tiêu T3 | Mục tiêu T6 |
 |---|---|---|
-| Tỷ lệ chuyển tiếp cận → lead (TC: 2%) | ≥2% | ≥2% |
+| Tỷ lệ tiếp cận → lead (TC: 2%) | ≥2% | ≥2% |
 | Tỷ lệ xem hết video ngắn | ≥25% | ≥30% |
 | Thời lượng xem trung bình video dài | ≥5 phút | ≥6 phút |
-| Người theo dõi Zalo OA (cộng dồn lead đã đồng ý) | ≥1.000 | ≥3.000 |
-| Bài bị nền tảng gỡ / vi phạm checklist | 0 | 0 |
-| Tỷ lệ lead nói biết chương trình qua "bạn bè giới thiệu" | đo nền | ≥10% |
+| Người theo dõi Zalo OA (cộng dồn số lead đã đồng ý nhận tin) | ≥1.000 | ≥3.000 |
+| Số bài bị nền tảng gỡ hoặc vi phạm checklist | 0 | 0 |
+| Tỷ lệ lead biết chương trình qua "bạn bè giới thiệu" | đo mức nền | ≥10% |
 
 ---
 
 ## Gợi ý hình minh hoạ
 
-1. **Sơ đồ phễu 6 tầng** (mục 3.2): từ trên xuống — Tiếp cận 50.000 → Lead 1.000 (2%) → Tham dự 400 (40%) → 1:1 32 (8%) / Nền tảng 48 (12%) → Đồng hành 17,6 (8,0 từ 1:1 + 9,6 từ nền tảng) → Thành viên 9,4 → Giới thiệu (lead tự nhiên 50 → 900/tháng). Ghi doanh thu 283 trđ/1.000 lead. Nguồn: `tai-chinh.json` → `kinh_te_don_vi_1000_lead`.
-2. **Sơ đồ tổ chức 3 giai đoạn** (mục 6.1): ba cây đặt cạnh nhau 8 → 17 → 24 người, tô màu theo bộ phận (Quản lý, Thực thi, Bán hàng, CSKH, Nội dung); ghi dưới mỗi cây chi phí cố định 166,8 / 332,6 / 470,3 trđ và ngưỡng hoà vốn 15,8 / 31,6 / 44,7 khách. Nguồn: `nhan_su_theo_bo_phan`, `hoa_von_phong_ban`.
-3. **Biểu đồ dòng tiền luỹ kế 24 tháng** (đường): 3 kịch bản Thận trọng / Cơ sở / Lạc quan, đánh dấu đáy cơ sở −2.068 trđ ở T18, hai cú lao T7 và T16, vạch dọc ở T6 (mốc dừng). Nguồn: `luy_ke_theo_kich_ban_24t`, `day_dong_tien`.
-4. **Lộ trình có cổng** (dòng thời gian ngang): Tuần 0 → T1 Chuẩn bị (Cổng 0, 1) → T2–T4 Chạy thử (Cổng 2) → T5–T6 Tối ưu (Cổng 3: <8 dừng / 8–16 giữ / ≥16 hoà vốn / ≥25×2 tháng → 17 người) → Tăng trưởng (Cổng 4: ≥36×2 tháng → 24 người). Nguồn: mục 7.
-5. (Tuỳ chọn) **Biểu đồ cột lead theo tháng T1–T12**, tách lead quảng cáo và lead tự nhiên. Nguồn: `phieu_thang_co_so_24t` (lead) trừ ngân sách ÷ 0,06 trđ.
-6. (Tuỳ chọn) **Biểu đồ lốc xoáy độ nhạy ±20%** theo NPV: chuyển đổi, giá đồng hành, CPL, ngân sách quảng cáo, lead tự nhiên, lương tư vấn viên. Nguồn: `do_nhay`.
+1. **Sơ đồ phễu 6 tầng** (§3.2). Từ trên xuống: Tiếp cận 50.000 → Lead 1.000 (2%) → Tham dự 400 (40%) → 1:1 32 (8%) và Nền tảng 48 (12%) → Đồng hành 17,6 (8,0 từ 1:1 + 9,6 từ nền tảng) → Thành viên 9,4 → Giới thiệu (lead tự nhiên 50 → 900/tháng). Ghi doanh thu 283 trđ cho mỗi 1.000 lead. Nguồn: `tai-chinh.json` → `kinh_te_don_vi_1000_lead`.
+2. **Sơ đồ tổ chức 3 giai đoạn** (§6.1). Vẽ ba cây cạnh nhau: 8 → 17 → 25 người theo kế hoạch, kèm số người ở ngưỡng 10 / 19 / 25. Tô màu theo bộ phận. Dưới mỗi cây ghi chi phí cố định ở ngưỡng (204,9 / 370,6 / 483,9 trđ) và ngưỡng hoà vốn (19,5 / 35,2 / 45,9 khách). Nguồn: `nhan_su_theo_bo_phan`, `hoa_von_phong_ban`.
+3. **Biểu đồ dòng tiền luỹ kế 24 tháng** (đường).
+   - Ba đường của lộ trình theo cổng (Thận trọng / Cơ sở / Lạc quan), nguồn `lo_trinh_theo_cong.luy_ke_24t`.
+   - Thêm một đường nét đứt "tuyển theo lịch, cơ sở", nguồn `dong_tien_luy_ke_co_so_24t`, để thấy khác biệt (−78 so với −1.965 ở T24).
+   - Đánh dấu đáy cơ sở −1.017 trđ ở T7, mốc tăng quảng cáo ở T6, các mốc lên giai đoạn ở T15 và T18.
+4. **Lộ trình có cổng** (dòng thời gian ngang, §7.1–7.2): Tuần 0 (Cổng 0) → T1 Chuẩn bị (Cổng 1) → T2–T5 Chạy thử → T6 Cổng quảng cáo và Mốc dừng → T7–T14 Khởi động mở rộng quảng cáo → T15 Cổng tuyển 1 → T18 Cổng tuyển 2. Bên dưới vẽ cột số người và ngân sách quảng cáo theo tháng. Nguồn: `lo_trinh_theo_cong.so_nguoi_24t`, `ngan_sach_qc_24t`, `khach_dong_hanh_24t`.
+5. (Tuỳ chọn) **Biểu đồ "ngân sách quảng cáo cần"**: 30 trđ → ~12,4 khách; 54–66 trđ → 19,5 khách; 73–85 trđ → 25 khách; 108–120 trđ → 35,2 khách. Nguồn: `ngan_sach_qc_can`.
+6. (Tuỳ chọn) **Biểu đồ cột lead T1–T12**, tách lead quảng cáo và lead tự nhiên. Nguồn: bảng §15.
+

@@ -378,7 +378,7 @@ def chay(p_override=None, kb="Cơ sở", he_so_cd=None, he_so_gia_dh=None, he_so
             cp_nhan_su=cp_ns, cp_khac=cp_khac, cp_tuyen=cp_tuyen, cp_co_dinh=cp_co_dinh,
             ebitda=ebitda, thue=thue, capex=capex, dong_tien=dong_tien,
             so_nguoi=so_nguoi(gd_ten) + 2 * them + them_tvv, coach_them=them, tvv_them=them_tvv,
-            ngan_sach_qc=ngan_sach,
+            ngan_sach_qc=ngan_sach, qc_mo=bool(cong is not None and qc_mo),
             hv_dong_hanh_dang_hoc=dang_hoc,
         ))
 
@@ -400,7 +400,14 @@ def chay(p_override=None, kb="Cơ sở", he_so_cd=None, he_so_gia_dh=None, he_so
 
     # Quỹ dự phòng = 2 tháng chi phí cố định tại tháng đáy (tối thiểu giai đoạn 1)
     gd_day = rows[max(1, thang_day) - 1]["giai_doan"]
-    cp_cd_day = chi_phi_nhan_su(gd_day, p, he_so_luong_sales) + sum(CP_CO_DINH_KHAC[gd_day].values())
+    if cong is None:
+        # Tuyển theo lịch: theo đội kế hoạch của giai đoạn tại tháng đáy (giữ như các vòng trước)
+        cp_cd_day = chi_phi_nhan_su(gd_day, p, he_so_luong_sales) + sum(CP_CO_DINH_KHAC[gd_day].values())
+    else:
+        # Theo cổng: chi phí cố định THỰC của tháng đáy (gồm cặp coach + tư vấn viên tự thêm,
+        # không gồm chi phí tuyển một lần)
+        r_day = rows[max(1, thang_day) - 1]
+        cp_cd_day = r_day["cp_nhan_su"] + r_day["cp_khac"]
     du_phong = 2 * cp_cd_day
     von_luu_dong = -day - von_ban_dau  # phần lỗ vận hành phải bù trước khi hoà vốn
     tong_von = -day + du_phong
@@ -551,7 +558,7 @@ def main():
         theo_cong[kb] = chay(kb=kb, cong=CONG, nguong_cong=nguong_kh)
     KICH_BAN_HIEN = KICH_BAN["Cơ sở"]
     # Tham chiếu: giữ đội Khởi động suốt 48 tháng, quảng cáo 30 (cách Hà chạy thử)
-    c_giu = dict(CONG, qc_khoi_dong_mo=CONG["qc_khoi_dong"], ty_le_nguong_tuyen=1e9)
+    c_giu = dict(CONG, qc_khoi_dong_mo=CONG["qc_khoi_dong"], ty_le_nguong_tuyen=1e9, ty_le_cong_qc=1e9)
     giu_doi_8 = chay(kb="Cơ sở", cong=c_giu, nguong_cong=nguong_kh)
     # Mốc dừng T6 (Thận trọng): lỗ luỹ kế T6 + 1 tháng lương trợ cấp/thanh lý (GD)
     tt6 = theo_cong["Thận trọng"]["rows"][5]
@@ -590,7 +597,15 @@ def main():
         print(f"{nam}: DT {f0(dt)} | QC {f0(sum(r['cp_qc'] for r in rr))} | Nhân sự {f0(sum(r['cp_nhan_su'] for r in rr))}"
               f" | EBITDA {f0(eb)} ({eb / dt * 100:.0f}%) | Dòng tiền {f0(sum(r['dong_tien'] for r in rr))}")
 
-    print("\n=== BẢNG THEO NĂM CHI TIẾT — CƠ SỞ (trđ) ===")
+    def in_bang_nam(kq, tieu_de):
+        print(f"\n=== {tieu_de} ===")
+        print(f"{'':<30}" + "".join(f"{'Năm ' + str(i + 1):>12}" for i in range(4)))
+        for ten, k in dong:
+            print(f"{ten:<30}" + "".join(f"{f0(sum(r[k] for r in kq['rows'][i * 12:(i + 1) * 12])):>12}" for i in range(4)))
+        print(f"{'Số người cuối năm':<30}" + "".join(f"{kq['rows'][i * 12 + 11]['so_nguoi']:>12}" for i in range(4)))
+        print(f"{'Luỹ kế cuối năm (gồm vốn ' + f0(kq['von_ban_dau']) + ')':<30}"
+              + "".join(f"{f0(kq['rows'][i * 12 + 11]['luy_ke']):>12}" for i in range(4)))
+
     dong = [("Lead", "lead"), ("Người tiếp cận", "tiep_can"), ("Khách nền tảng", "nen_tang"),
             ("Khách đồng hành", "dong_hanh"), ("Thành viên", "thanh_vien"),
             ("DT nền tảng", "dt_nen_tang"), ("DT đồng hành (sau hoàn tiền)", "dt_dong_hanh"),
@@ -598,10 +613,9 @@ def main():
             ("Quảng cáo", "cp_qc"), ("Hội thảo offline", "cp_hoi_thao"), ("CP biến đổi (gồm hoa hồng)", "cp_bien_doi"),
             ("Lương cứng + BH", "cp_nhan_su"), ("CP cố định khác", "cp_khac"), ("Tuyển dụng", "cp_tuyen"),
             ("EBITDA", "ebitda"), ("Thuế TNDN", "thue"), ("Thiết bị (capex)", "capex"), ("Dòng tiền", "dong_tien")]
-    print(f"{'':<30}" + "".join(f"{'Năm ' + str(i + 1):>12}" for i in range(4)))
-    for ten, k in dong:
-        print(f"{ten:<30}" + "".join(f"{f0(sum(r[k] for r in cs['rows'][i * 12:(i + 1) * 12])):>12}" for i in range(4)))
-    print(f"{'Luỹ kế cuối năm (gồm vốn ' + f0(cs['von_ban_dau']) + ')':<30}" + "".join(f"{f0(cs['rows'][i * 12 + 11]['luy_ke']):>12}" for i in range(4)))
+    in_bang_nam(cs, "BẢNG THEO NĂM CHI TIẾT — TUYỂN THEO LỊCH, CƠ SỞ (trđ)")
+    in_bang_nam(theo_cong["Cơ sở"], "BẢNG THEO NĂM CHI TIẾT — LỘ TRÌNH THEO CỔNG (KHUYẾN NGHỊ), CƠ SỞ (trđ)")
+    in_bang_nam(theo_cong["Lạc quan"], "BẢNG THEO NĂM CHI TIẾT — LỘ TRÌNH THEO CỔNG, LẠC QUAN (trđ)")
 
     print("\n=== THEO NĂM — 3 KỊCH BẢN (trđ) ===")
     for kb, (kq, _, _) in ket_qua.items():
@@ -636,7 +650,7 @@ def main():
         gd_seq = [r["giai_doan"] for r in kq["rows"]]
         mo_tt = next((r["thang"] for r in kq["rows"] if r["giai_doan"] == "Tăng trưởng"), None)
         mo_mr = next((r["thang"] for r in kq["rows"] if r["giai_doan"] == "Mở rộng"), None)
-        mo_qc = next((r["thang"] for r in kq["rows"] if r["ngan_sach_qc"] > CONG["qc_khoi_dong"]), None)
+        mo_qc = next((r["thang"] for r in kq["rows"] if r["qc_mo"] or r["giai_doan"] != "Khởi động"), None)
         print(f"  {kb}: Tổng vốn {f0(s_['tong_von'])} | Đáy {f0(s_['day'])} (T{s_['thang_day']}) | HV vận hành T{s_['hoa_von_vh']}"
               f" | Hoàn vốn T{s_['hoan_von']} | Luỹ kế T24 {f0(s_['luy_ke_24'])} | NPV48 {f0(s_['npv'])} | "
               f"IRR {('%.0f%%' % (s_['irr_nam'] * 100)) if s_['irr_nam'] is not None else 'n/a'} | "
@@ -673,8 +687,26 @@ def main():
         "Ngân sách quảng cáo (giữ CPL)": "he_so_ngan_sach",
         "Lead tự nhiên (nội dung organic)": "he_so_lead_tn",
     }
+    # Độ nhạy chính: trên LỘ TRÌNH THEO CỔNG (khuyến nghị)
+    do_nhay_cong = []
+    print("\n=== ĐỘ NHẠY ±20% — LỘ TRÌNH THEO CỔNG, CƠ SỞ (bảng chính) ===")
+    for ten, arg in bien.items():
+        for h in (0.8, 0.95, 1.05, 1.2) if arg == "he_so_cd" else (0.8, 1.2):
+            kq = chay(kb="Cơ sở", cong=CONG, nguong_cong=nguong_kh, **{arg: h})
+            mo_qc = next((r["thang"] for r in kq["rows"] if r["qc_mo"] or r["giai_doan"] != "Khởi động"), None)
+            mo_tt = next((r["thang"] for r in kq["rows"] if r["giai_doan"] == "Tăng trưởng"), None)
+            do_nhay_cong.append(dict(bien=ten, he_so=h, npv=kq["npv"], luy_ke_24=kq["luy_ke_24"],
+                                     tong_von=kq["tong_von"], hoan_von=kq["hoan_von"], hoa_von_vh=kq["hoa_von_vh"],
+                                     mo_qc=mo_qc, len_tang_truong=mo_tt))
+            print(f"  {ten} x{h}: NPV {f0(kq['npv'])} | Luỹ kế T24 {f0(kq['luy_ke_24'])} | Tổng vốn {f0(kq['tong_von'])}"
+                  f" | HV vận hành T{kq['hoa_von_vh']} | Hoàn vốn T{kq['hoan_von']} | mở QC T{mo_qc} | lên TT T{mo_tt}")
+    r_cs = theo_cong["Cơ sở"]["rows"]
+    ty_le_t5 = r_cs[4]["dong_hanh"] / r_cs[4]["lead"] * 1000
+    print(f"  Tỷ lệ khách đồng hành/1.000 lead T4/T5/T6: {r_cs[3]['dong_hanh'] / r_cs[3]['lead'] * 1000:.2f} / "
+          f"{ty_le_t5:.2f} / {r_cs[5]['dong_hanh'] / r_cs[5]['lead'] * 1000:.2f} (cổng {CONG['ty_le_cong_qc']})")
+
     do_nhay = []
-    print("\n=== ĐỘ NHẠY ±20% (cơ sở) ===")
+    print("\n=== ĐỘ NHẠY ±20% — TUYỂN THEO LỊCH, CƠ SỞ (so sánh) ===")
     for ten, arg in bien.items():
         for h in (0.8, 1.2):
             kq = chay(kb="Cơ sở", **{arg: h})
@@ -737,6 +769,29 @@ def main():
     out = dict(
         ma_viec="2026-11-14-khung-chuong-trinh-chuyen-doi",
         don_vi="triệu đồng",
+        ghi_chu_khoa_goc="Các khoá cấp cao cũ (tong_von_can_chuan_bi, hoa_von_van_hanh_thang, hoan_von_thang, "
+                         "npv_48_thang, irr_nam, dong_tien_*_24t, kich_ban, do_nhay, nguong_hoan_von_24t...) là của "
+                         "PHƯƠNG ÁN TUYỂN THEO LỊCH (để so sánh). Số khuyến nghị nằm ở khoá 'khuyen_nghi'.",
+        khuyen_nghi=dict(
+            phuong_an="Lộ trình theo cổng, kịch bản cơ sở",
+            tong_von=round(theo_cong["Cơ sở"]["tong_von"], 1),
+            von_ban_dau=round(theo_cong["Cơ sở"]["von_ban_dau"], 1),
+            von_luu_dong=round(theo_cong["Cơ sở"]["von_luu_dong"], 1),
+            quy_du_phong=round(theo_cong["Cơ sở"]["du_phong"], 1),
+            day_dong_tien=dict(gia_tri=round(theo_cong["Cơ sở"]["day"], 1), thang=theo_cong["Cơ sở"]["thang_day"]),
+            hoa_von_vh=theo_cong["Cơ sở"]["hoa_von_vh"],
+            ebitda_duong_dau_tien=next(r["thang"] for r in theo_cong["Cơ sở"]["rows"] if r["ebitda"] >= 0),
+            hoan_von=theo_cong["Cơ sở"]["hoan_von"],
+            npv=round(theo_cong["Cơ sở"]["npv"], 1),
+            irr_nam=round(theo_cong["Cơ sở"]["irr_nam"], 4) if theo_cong["Cơ sở"]["irr_nam"] is not None else None,
+            luy_ke_24=round(theo_cong["Cơ sở"]["luy_ke_24"], 1),
+            dong_tien_luy_ke_24t=[round(r["luy_ke"], 1) for r in theo_cong["Cơ sở"]["rows"][:BAO_CAO]],
+            doanh_thu_thang_24t=[round(r["doanh_thu"], 1) for r in theo_cong["Cơ sở"]["rows"][:BAO_CAO]],
+            doi_theo_thang=[r["so_nguoi"] for r in theo_cong["Cơ sở"]["rows"][:BAO_CAO]],
+            giai_doan_theo_thang=[r["giai_doan"] for r in theo_cong["Cơ sở"]["rows"][:BAO_CAO]],
+            ty_le_khach_1000_lead_T5=round(ty_le_t5, 2),
+            do_nhay=[{k: (round(v, 1) if isinstance(v, float) else v) for k, v in d.items()} for d in do_nhay_cong],
+        ),
         ghi_chu="Mọi số thị trường từ nghien-cuu.md có độ tin cậy tối đa Trung bình (chưa mở được trang gốc); "
                 "tỷ lệ phễu, giá đồng hành/thành viên, lương quản lý là giả định.",
         tong_von_can_chuan_bi=round(cs["tong_von"], 1),
