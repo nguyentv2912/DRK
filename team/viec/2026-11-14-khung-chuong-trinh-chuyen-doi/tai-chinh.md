@@ -3,7 +3,7 @@
 Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Người lập: Hùng (Tài chính) · Ngày 14/11/2026
 Đơn vị: **triệu đồng (trđ)** nếu không ghi khác. Script: `mo_hinh.py` (chạy `python3 mo_hinh.py`, mọi số dưới đây lấy từ lần chạy này). Số liệu cho biểu đồ nằm trong `tai-chinh.json`.
 
-> **Độ tin cậy dữ liệu.** Lan không mở được trang gốc nào vì mạng bị chặn. Mọi số lấy từ `nghien-cuu.md` (NC) vì thế có độ tin cậy **tối đa là Trung bình**. Tỷ lệ chuyển đổi của phễu, giá gói đồng hành và gói thành viên, lương quản lý vận hành và lương coach đều là **giả định** (GĐ) của Hùng, chưa có dữ liệu thực nào kiểm chứng. Mô hình này dùng để ra quyết định có nên đi tiếp hay không và đặt chỉ tiêu. Nó không phải dự báo.
+> **Độ tin cậy dữ liệu.** Lan không mở được trang gốc nào vì mạng bị chặn. Mọi số lấy từ `nghien-cuu.md` (NC) vì thế có độ tin cậy **tối đa là Trung bình**. Tỷ lệ chuyển đổi của phễu, giá gói đồng hành và gói thành viên đều là **giả định** (GĐ) của Hùng, chưa có dữ liệu thực nào kiểm chứng. Lương coach và quản lý vận hành chỉ có số tham chiếu gần từ nghiên cứu vòng 2, không phải số cho đúng chức danh. Mô hình này dùng để ra quyết định có nên đi tiếp hay không và đặt chỉ tiêu. Nó không phải dự báo.
 
 ---
 
@@ -55,6 +55,7 @@ Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Người lập: Hùng (T
 | Phễu | Tỷ lệ hoàn tiền gói đồng hành | 5% | doanh thu | giả định | — |
 | Lead | CPL (quảng cáo giáo dục tài chính, **không quảng cáo crypto**) | 60.000 | đ/lead | giả định (NC 2.7: Meta/TikTok hạn chế quảng cáo crypto) | — |
 | Lead | Ngân sách quảng cáo | T1: 10 · Khởi động: 30 · Tăng trưởng: 60 · Mở rộng: 100 | trđ/tháng | giả định | — |
+| Lead | Tháng 1 là tháng chuẩn bị | 10 trđ quảng cáo ở T1 là **chi phí thử nghiệm** (thử mẫu quảng cáo, đo CPL). Khoảng 167 lead thu được ở T1 không tạo khách và không được chuyển sang T2 | | giả định (thận trọng) | — |
 | Lead | Lead tự nhiên (organic, giới thiệu) | 50 ở T2, tăng tuyến tính lên 900 ở T24, sau đó giữ nguyên | lead/tháng | giả định | — |
 | Ngân hàng | Khách đồng hành mở tài khoản qua link | 30% × 0,068 trđ | | NC (VPBank NEO/Ecomobi) + tỷ lệ giả định | TB |
 | Ngân hàng | Khách đồng hành mua chứng chỉ quỹ | 15% × 50 trđ × 0,4% | | NC (TCBS 0,4%) + tỷ lệ và giá trị giả định | TB |
@@ -82,12 +83,12 @@ Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Người lập: Hùng (T
 
 | Vị trí | Bộ phận | Lương cứng | Nguồn | Độ tin cậy |
 |---|---|---|---|---|
-| Quản lý vận hành | Quản lý | 25 | giả định (NC chưa tìm được) | — |
+| Quản lý vận hành | Quản lý | 25 | NC vòng 2: trưởng phòng vận hành 13–30, mốc khoảng 21,7 (TB); tin trưởng phòng vận hành logistics HCM 40 (Thấp). Mức 25 nằm trong khoảng | TB |
 | Kế toán – hành chính | Quản lý | 10 | giả định | — |
-| Coach tài chính | Thực thi | 20 | giả định. NC tham chiếu chuyên viên phân tích tài chính HCM, trung bình 18 (12–24) | Thấp |
+| Coach tài chính | Thực thi | 20 | NC vòng 2: giảng viên HCM trung bình 21,9 (15–30) (TB); huấn luyện viên HCM trung bình 19,0 (10–30) (Thấp). Chưa có số cho đúng chức danh coach tài chính | TB |
 | Trợ giảng | Thực thi | 11 | NC: HCM trung bình 10,9; HN 13,4 | TB |
 | Trưởng nhóm bán hàng | Bán hàng | 20 + 1,5% doanh thu | NC: trưởng phòng KD B2C 20–40 | Thấp |
-| Tư vấn viên | Bán hàng | 9 + hoa hồng | NC: lương hỗ trợ 7–12 + hoa hồng (AIA, SVFC, Chubb 12–30) | TB |
+| Tư vấn viên | Bán hàng | 9 + hoa hồng | NC: SVFC 7–20, AIA lương hỗ trợ 8–24, Chubb 12–30 (các mức này đã gồm hoa hồng). Lương cứng 9 nằm ở cận dưới | TB |
 | Chăm sóc khách hàng | CSKH | 9 | NC: HCM 8–10 | Thấp–TB |
 | Content creator | Nội dung | 13 | NC: 12–15 | Thấp |
 | Video editor | Nội dung | 12 | NC: HCM trung bình khoảng 12 | TB |
@@ -148,8 +149,8 @@ Kinh tế đơn vị ở trạng thái ổn định, tính trên 1.000 lead (cơ
 | Khách mua nền tảng | 48 |
 | Khách mua đồng hành | 17,6 |
 | Thành viên năm | 9,4 |
-| Doanh thu | 283 trđ |
-| Chi phí biến đổi (phí thanh toán, học liệu, hoa hồng, hoàn tiền) | 38 trđ |
+| Doanh thu (sau hoàn tiền) | 283 trđ |
+| Chi phí biến đổi (phí thanh toán, học liệu, hoa hồng; hoàn tiền đã trừ vào doanh thu) | 38 trđ |
 | Quảng cáo (nếu toàn bộ lead đều mua) | 60 trđ |
 | Đóng góp | 185 trđ |
 | Doanh thu đi kèm mỗi khách đồng hành | 16,1 trđ |
@@ -170,27 +171,32 @@ Bảng này tính như thể mọi lead đều phải mua bằng quảng cáo. T
 
 ## 6. Kết quả theo năm (kịch bản cơ sở)
 
+Bảng này do script in ra, ở mục "BẢNG THEO NĂM CHI TIẾT".
+
 | trđ | Năm 1 | Năm 2 | Năm 3 | Năm 4 |
 |---|---|---|---|---|
-| Lead | 11.342 | 26.250 | — | — |
-| Người tiếp cận (ước) | 567 nghìn | 1,31 triệu | — | — |
-| Khách nền tảng / đồng hành / thành viên | 503 / 171 / 64 | 1.260 / 451 / 252 | — | — |
-| Doanh thu nền tảng | 498 | 1.247 | | |
-| Doanh thu đồng hành (sau hoàn tiền) | 1.946 | 5.143 | | |
-| Doanh thu thành viên | 232 | 906 | | |
-| Doanh thu ngân hàng | 8,6 | 22,7 | 27,3 | 27,3 |
+| Lead | 11.342 | 26.250 | 30.800 | 30.800 |
+| Người tiếp cận (ước) | 567.083 | 1.312.500 | 1.540.000 | 1.540.000 |
+| Khách nền tảng / đồng hành / thành viên | 503 / 171 / 64 | 1.260 / 451 / 252 | 1.478 / 542 / 415 | 1.478 / 542 / 498 |
+| Doanh thu nền tảng | 498 | 1.247 | 1.464 | 1.464 |
+| Doanh thu đồng hành (sau hoàn tiền) | 1.946 | 5.143 | 6.180 | 6.180 |
+| Doanh thu thành viên | 232 | 906 | 1.495 | 1.794 |
+| Doanh thu ngân hàng | 9 | 23 | 27 | 27 |
 | **Tổng doanh thu** | **2.684** | **7.320** | **9.166** | **9.465** |
 | Quảng cáo | 520 | 1.080 | 1.200 | 1.200 |
-| Hội thảo offline | 272 | 528 | | |
-| Chi phí biến đổi (gồm hoa hồng) | 354 | 973 | | |
-| Lương cứng + BH | 2.420 | 4.250 | | |
-| Chi phí cố định khác + tuyển dụng | 424 | 508 | | |
+| Hội thảo offline | 272 | 528 | 576 | 576 |
+| Chi phí biến đổi (gồm hoa hồng) | 354 | 973 | 1.199 | 1.224 |
+| Lương cứng + BH | 2.420 | 4.250 | 4.578 | 4.578 |
+| Chi phí cố định khác | 258 | 399 | 432 | 432 |
+| Tuyển dụng | 166 | 109 | 58 | 58 |
 | **EBITDA** | **−1.305 (−49%)** | **−20 (−0%)** | **1.124 (12%)** | **1.397 (15%)** |
-| Dòng tiền (sau thuế, thiết bị) | −1.413 | −104 | 1.124 | 1.158 |
+| Thuế TNDN | 0 | 0 | 0 | 239 |
+| Thiết bị (capex) | 108 | 84 | 0 | 0 |
+| Dòng tiền | −1.413 | −104 | 1.124 | 1.158 |
 | Luỹ kế cuối năm (gồm vốn ban đầu 296) | −1.709 | −1.813 | −690 | +468 |
 
 Dòng tiền luỹ kế theo tháng (cơ sở, trđ, T1→T24):
-−521, −675, −786, −878, −950, −1.001, −1.345, −1.444, −1.533, −1.606, −1.662, −1.709, −1.747, −1.774, −1.791, −2.030, −2.055, −2.068, −2.062, −2.036, −1.999, −1.950, −1.887, −1.813.
+−521, −675, −786, −878, −950, −1.001, −1.345, −1.444, −1.533, −1.606, −1.662, −1.709, −1.747, −1.774, −1.791, −2.030, −2.055, −2.068, −2.062, −2.036, −1.999, −1.950, −1.886, −1.813.
 
 Hai cú lao dốc ở T7 và T16 xảy ra vì đội tăng gấp đôi trước khi lead kịp tăng theo.
 
@@ -211,12 +217,13 @@ Hai cú lao dốc ở T7 và T16 xảy ra vì đội tăng gấp đôi trước 
 |---|---|---|---|
 | Hệ số chuyển đổi / CPL / giá đồng hành / lead tự nhiên | ×0,7 / ×1,3 / ×0,85 / ×0,7 | ×1 | ×1,25 / ×0,85 / ×1,1 / ×1,3 |
 | Hoàn tiền / tài trợ ngân hàng | 8% / 0 | 5% / 0 | 4% / 10 trđ/tháng |
-| Doanh thu năm 1 / năm 2 | 1.074 / 2.861 | 2.684 / 7.320 | 4.936 / 13.669 |
-| EBITDA năm 1 / năm 2 | −2.708 / −3.896 | −1.305 / −20 | +279 / +4.745 |
+| Doanh thu năm 1 / 2 / 3 / 4 | 1.074 / 2.861 / 3.539 / 3.643 | 2.684 / 7.320 / 9.166 / 9.465 | 4.936 / 13.669 / 17.273 / 17.883 |
+| EBITDA năm 1 / 2 / 3 / 4 | −2.708 / −3.896 / −3.781 / −3.685 | −1.305 / −20 / +1.124 / +1.397 | +279 / +4.745 / +7.320 / +7.878 |
+| Dòng tiền năm 1 / 2 / 3 / 4 | −2.816 / −3.980 / −3.781 / −3.685 | −1.413 / −104 / +1.124 / +1.158 | +43 / +3.664 / +5.856 / +6.303 |
 | Luỹ kế T24 | **−7.091** | **−1.813** | **+3.412** |
 | Hoà vốn vận hành | không đạt | T19 | T8 |
 | Hoàn vốn | không đạt | T44 | T14 |
-| Vốn cần chuẩn bị | không giới hạn nếu không dừng (lỗ T6 khoảng 1.299) | **2.903** | 1.475 |
+| Vốn cần chuẩn bị | **15.392 trđ nếu chạy hết 48 tháng mà không dừng**. Nếu dừng ở T6 thì lỗ khoảng 1.299 | **2.903** | 1.475 |
 | NPV 48 tháng | −10.999 | −233 | +10.558 |
 | IRR/năm | n/a | khoảng 9% | khoảng 341% (vốn bỏ ra nhỏ nên con số bị phóng đại, không nên dùng để so sánh) |
 | Đội tối đa | 24 | 24 | 28 |

@@ -90,11 +90,11 @@ GIAI_DOAN = {
 
 # Vị trí: (bộ phận, lương cứng trđ/tháng, nguồn)
 VI_TRI = {
-    "Quản lý vận hành":        ("Quản lý", 25.0, "GD (NC chưa tìm được)"),
-    "Coach tài chính":         ("Thực thi", 20.0, "GD; NC tham chiếu CV phân tích TC HCM TB 18 (12–24)"),
+    "Quản lý vận hành":        ("Quản lý", 25.0, "NC v2: trưởng phòng vận hành 13–30, mốc ~21,7 (TB); tin logistics HCM 40 (Thấp)"),
+    "Coach tài chính":         ("Thực thi", 20.0, "NC v2: giảng viên HCM TB 21,9 (15–30) (TB); huấn luyện viên HCM TB 19,0 (10–30) (Thấp)"),
     "Trợ giảng":               ("Thực thi", 11.0, "NC: trợ giảng HCM TB 10,9; HN 13,4"),
     "Trưởng nhóm bán hàng":    ("Bán hàng", 20.0, "NC: TP KD B2C 20–40 (Thấp)"),
-    "Tư vấn viên":             ("Bán hàng", 9.0, "NC: lương hỗ trợ 7–12 + hoa hồng (AIA, SVFC)"),
+    "Tư vấn viên":             ("Bán hàng", 9.0, "NC: SVFC 7–20, AIA lương hỗ trợ 8–24, Chubb 12–30 (gồm hoa hồng)"),
     "Chăm sóc khách hàng":     ("CSKH", 9.0, "NC: CSKH HCM 8–10"),
     "Content creator":         ("Nội dung", 13.0, "NC: content TikTok HCM 12–15 (Thấp)"),
     "Video editor":            ("Nội dung", 12.0, "NC: video editor HCM TB ~12"),
@@ -224,6 +224,8 @@ def chay(p_override=None, kb="Cơ sở", he_so_cd=None, he_so_gia_dh=None, he_so
         gd_ten = giai_doan(t)
         ramp = p["he_so_ramp_cd"].get(t, 1.0)
         c = hcd * ramp
+        # T1 = tháng chuẩn bị: 10 trđ quảng cáo là chi phí thử nghiệm (test mẫu quảng cáo/CPL),
+        # lead T1 KHÔNG tạo khách và không chuyển sang T2 (thận trọng).
         ngan_sach = (10 if t == 1 else p["ngan_sach_qc"][gd_ten]) * he_so_ngan_sach
         lead_qc = ngan_sach / cpl
         if t == 1:
@@ -487,6 +489,25 @@ def main():
         eb = sum(r["ebitda"] for r in rr)
         print(f"{nam}: DT {f0(dt)} | QC {f0(sum(r['cp_qc'] for r in rr))} | Nhân sự {f0(sum(r['cp_nhan_su'] for r in rr))}"
               f" | EBITDA {f0(eb)} ({eb / dt * 100:.0f}%) | Dòng tiền {f0(sum(r['dong_tien'] for r in rr))}")
+
+    print("\n=== BẢNG THEO NĂM CHI TIẾT — CƠ SỞ (trđ) ===")
+    dong = [("Lead", "lead"), ("Người tiếp cận", "tiep_can"), ("Khách nền tảng", "nen_tang"),
+            ("Khách đồng hành", "dong_hanh"), ("Thành viên", "thanh_vien"),
+            ("DT nền tảng", "dt_nen_tang"), ("DT đồng hành (sau hoàn tiền)", "dt_dong_hanh"),
+            ("DT thành viên", "dt_thanh_vien"), ("DT ngân hàng", "dt_ngan_hang"), ("Tổng doanh thu", "doanh_thu"),
+            ("Quảng cáo", "cp_qc"), ("Hội thảo offline", "cp_hoi_thao"), ("CP biến đổi (gồm hoa hồng)", "cp_bien_doi"),
+            ("Lương cứng + BH", "cp_nhan_su"), ("CP cố định khác", "cp_khac"), ("Tuyển dụng", "cp_tuyen"),
+            ("EBITDA", "ebitda"), ("Thuế TNDN", "thue"), ("Thiết bị (capex)", "capex"), ("Dòng tiền", "dong_tien")]
+    print(f"{'':<30}" + "".join(f"{'Năm ' + str(i + 1):>12}" for i in range(4)))
+    for ten, k in dong:
+        print(f"{ten:<30}" + "".join(f"{f0(sum(r[k] for r in cs['rows'][i * 12:(i + 1) * 12])):>12}" for i in range(4)))
+    print(f"{'Luỹ kế cuối năm (gồm vốn 296)':<30}" + "".join(f"{f0(cs['rows'][i * 12 + 11]['luy_ke']):>12}" for i in range(4)))
+
+    print("\n=== THEO NĂM — 3 KỊCH BẢN (trđ) ===")
+    for kb, (kq, _, _) in ket_qua.items():
+        for ten, k in [("Doanh thu", "doanh_thu"), ("EBITDA", "ebitda"), ("Dòng tiền", "dong_tien")]:
+            print(f"  {kb:<11} {ten:<10}" + "".join(f"{f0(sum(r[k] for r in kq['rows'][i * 12:(i + 1) * 12])):>10}" for i in range(4)))
+        print(f"  {kb:<11} {'Luỹ kế T6':<10}{f0(kq['rows'][5]['luy_ke']):>10}")
 
     print("\n=== KINH TẾ ĐƠN VỊ (trên 1.000 lead, cơ sở) ===")
     for k, v in ue.items():
