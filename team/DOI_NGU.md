@@ -1,28 +1,53 @@
 # Đội ngũ
 
 ```
-                         ┌──────────────┐
-          Bạn giao việc ─▶│  TRƯỞNG NHÓM │── phiếu giao việc ─▶ bàn giao sản phẩm
-                         └──────┬───────┘
-     ┌──────────────┬──────────┼───────────┬──────────────┐
-  KHỐI DỰ ÁN     KHỐI DỰ ÁN   KHỐI NỘI DUNG  KHỐI KÊNH     CHẤT LƯỢNG
-  Lan  Nghiên cứu  Mai Chiến lược  Ngọc Ý tưởng   Vy   Đăng         Hà Kiểm định
-  Hùng Tài chính   Tùng Demo       Phong Kịch bản  Quân Báo cáo
-                                   Khoa Edit video
+ Bạn giao việc
+      │
+      ▼
+ ┌─────────────┐   phiếu giao việc    ┌──────────────────────────────────────────────┐
+ │ TRƯỞNG NHÓM │ ───────────────────▶ │ NHÂN VIÊN (mỗi bạn một hồ sơ, một công việc) │
+ └─────────────┘                      │ Lan · Hùng · Mai · Tùng · Ngọc · Phong ·     │
+   ▲       ▲                          │ Khoa · Vy · Quân · Hà                        │
+   │       │                          └──────────────────────┬───────────────────────┘
+   │       │ ĐẠT / làm lại (≤ 3 vòng)                         │ nộp việc
+   │       └──────────────── BẢO – GIÁM SÁT ◀────────────────┘ chấm theo tiêu chí trong hồ sơ
+   │                              │ ghi nhật ký
+   │                              ▼
+   │                     team/nhan-su/<mã>/nhat-ky.jsonl ──▶ team/BANG_DIEM.md
+   │                                                              │
+   │   đề xuất nâng cấp       HỘI ĐỒNG CẢI TIẾN                   │
+   └───────────────────── Đức – Phân tích hiệu suất ◀─────────────┘
+                          Trang – Phản biện
 ```
 
-| Nhân viên | Mã gọi | Chuyên môn | Giao nộp |
-|---|---|---|---|
-| Lan – Nghiên cứu | `nghien-cuu` | Thị trường, đối thủ, giá, pháp lý — có nguồn và độ tin cậy | `nghien-cuu.md` |
-| Hùng – Tài chính | `tai-chinh` | Vốn, hoà vốn, hoàn vốn, NPV/IRR, độ nhạy, 3 kịch bản | `mo_hinh.py`, `tai-chinh.md`, `tai-chinh.json` |
-| Mai – Chiến lược & Kế hoạch | `chien-luoc` | Kế hoạch, mô hình kinh doanh, SWOT, rủi ro, lộ trình, KPI, nhân rộng | `ke-hoach.md` |
-| Tùng – Thiết kế Demo | `thiet-ke-demo` | Trang HTML tương tác, máy tính tài chính, dashboard | `demo.html` |
-| Ngọc – Ý tưởng & Content | `y-tuong-content` | Ý tưởng, hook, caption | `ideas.json`, `post.md` |
-| Phong – Kịch bản Quay | `kich-ban-quay` | Kịch bản video 90–180s, hướng dẫn quay | `kichban.txt`, `huong_dan_quay.md`, `edit_plan.json` |
-| Khoa – Edit Video | `edit-video` | Dựng video 9:16 từ video thô | `video.mp4` |
-| Vy – Đăng & Phân phối | `dang-link` | Lên lịch Metricool, Google Drive, link | `publish.json` |
-| Quân – Cộng đồng & Báo cáo | `tra-loi-bao-cao` | Số liệu kênh, trả lời bình luận | `report.md` |
-| Hà – Kiểm định | `kiem-dinh` | Rà số liệu, nguồn, chính tả, đủ yêu cầu | `kiem-dinh.md` |
+| Nhân viên | Mã gọi | Bộ phận | Công việc | Hồ sơ |
+|---|---|---|---|---|
+| Lan – Nghiên cứu | `nghien-cuu` | Dự án | Thị trường, đối thủ, giá, pháp lý — có nguồn | [hồ sơ](nhan-su/nghien-cuu/ho-so.md) |
+| Hùng – Tài chính | `tai-chinh` | Dự án | Vốn, hoà vốn, hoàn vốn, NPV/IRR, độ nhạy | [hồ sơ](nhan-su/tai-chinh/ho-so.md) |
+| Mai – Chiến lược & Kế hoạch | `chien-luoc` | Dự án | Kế hoạch, mô hình kinh doanh, rủi ro, lộ trình, KPI | [hồ sơ](nhan-su/chien-luoc/ho-so.md) |
+| Tùng – Thiết kế Demo | `thiet-ke-demo` | Dự án | Trang tương tác, máy tính tài chính, dashboard | [hồ sơ](nhan-su/thiet-ke-demo/ho-so.md) |
+| Ngọc – Ý tưởng & Content | `y-tuong-content` | Nội dung | Ý tưởng, hook, caption | [hồ sơ](nhan-su/y-tuong-content/ho-so.md) |
+| Phong – Kịch bản Quay | `kich-ban-quay` | Nội dung | Kịch bản video 90–180s, hướng dẫn quay | [hồ sơ](nhan-su/kich-ban-quay/ho-so.md) |
+| Khoa – Edit Video | `edit-video` | Nội dung | Dựng video 9:16 từ video thô | [hồ sơ](nhan-su/edit-video/ho-so.md) |
+| Vy – Đăng & Phân phối | `dang-link` | Kênh | Lên lịch đăng, media, link | [hồ sơ](nhan-su/dang-link/ho-so.md) |
+| Quân – Cộng đồng & Báo cáo | `tra-loi-bao-cao` | Kênh | Số liệu kênh, trả lời bình luận | [hồ sơ](nhan-su/tra-loi-bao-cao/ho-so.md) |
+| Hà – Kiểm định | `kiem-dinh` | Chất lượng | Rà sản phẩm cuối của cả nhóm | [hồ sơ](nhan-su/kiem-dinh/ho-so.md) |
+| **Bảo – Giám sát** | `giam-sat` | Chất lượng | Chấm từng phần việc: xong hay làm lại | [hồ sơ](nhan-su/giam-sat/ho-so.md) |
+| **Đức – Phân tích hiệu suất** | `phan-tich` | Hội đồng cải tiến | Phân tích bảng điểm, tìm nguyên nhân, đề xuất | [hồ sơ](nhan-su/phan-tich/ho-so.md) |
+| **Trang – Phản biện** | `phan-bien` | Hội đồng cải tiến | Phản biện prompt, sản phẩm và đề xuất | [hồ sơ](nhan-su/phan-bien/ho-so.md) |
+
+## Hồ sơ nhân sự
+Mỗi bạn có thư mục `team/nhan-su/<mã>/`:
+- `ho-so.md` — công việc, nhận gì, nộp gì, **tiêu chuẩn hoàn thành** (tiêu chí có trọng số, tiêu chí Chặn), phiên bản prompt, lịch sử nâng cấp.
+- `nhat-ky.jsonl` — mỗi lần Bảo chấm là một dòng: việc, vòng, điểm, đạt hay không, lỗi.
+- Prompt làm việc: `.claude/agents/<mã>.md`.
+
+**ĐẠT** = điểm ≥ 80 và không tiêu chí Chặn nào dưới 60%. Chưa đạt thì làm lại, tối đa 3 vòng.
+
+## Vòng cải tiến
+- `team/BANG_DIEM.md` (tạo bằng `python3 team/tools/bang_diem.py`): tỷ lệ đạt lần đầu, điểm TB, số vòng sửa, tiêu chí yếu nhất, lỗi lặp lại, điểm theo từng phiên bản prompt.
+- Chu kỳ nâng cấp (`/nang-cap-doi-ngu`, hoặc tự chạy khi có cảnh báo / sau mỗi 5 việc): Đức phân tích ∥ Trang phản biện → trưởng nhóm quyết định → sửa prompt và tiêu chí → tăng phiên bản → chu kỳ sau đo lại, kém hơn thì hoàn tác.
+- Hồ sơ mỗi chu kỳ: `team/nang-cap/<ngày>-cN/` (phan-tich.md, phan-bien.md, quyet-dinh.md).
 
 ## Dự án độc lập
 Mỗi việc bạn giao được mở **hồ sơ mới** `team/viec/<ngày>-<tên-việc>/` với `brief.md` riêng. Nhân viên chỉ làm trên hồ sơ đó và dữ kiện tra cứu mới, không lấy số liệu hay thương hiệu từ dự án cũ (fanpage, mật ong rừng, trung tâm kỹ năng…). Muốn dùng lại dự án cũ, bạn chỉ cần nói rõ, ví dụ "dựa trên dự án mật ong".
