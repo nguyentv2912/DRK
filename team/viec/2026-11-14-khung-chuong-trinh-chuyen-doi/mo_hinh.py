@@ -691,7 +691,7 @@ def main():
     do_nhay_cong = []
     print("\n=== ĐỘ NHẠY ±20% — LỘ TRÌNH THEO CỔNG, CƠ SỞ (bảng chính) ===")
     for ten, arg in bien.items():
-        for h in (0.8, 0.95, 1.05, 1.2) if arg == "he_so_cd" else (0.8, 1.2):
+        for h in (0.8, 0.9, 0.95, 1.05, 1.2) if arg == "he_so_cd" else (0.8, 1.2):
             kq = chay(kb="Cơ sở", cong=CONG, nguong_cong=nguong_kh, **{arg: h})
             mo_qc = next((r["thang"] for r in kq["rows"] if r["qc_mo"] or r["giai_doan"] != "Khởi động"), None)
             mo_tt = next((r["thang"] for r in kq["rows"] if r["giai_doan"] == "Tăng trưởng"), None)
@@ -790,7 +790,16 @@ def main():
             doi_theo_thang=[r["so_nguoi"] for r in theo_cong["Cơ sở"]["rows"][:BAO_CAO]],
             giai_doan_theo_thang=[r["giai_doan"] for r in theo_cong["Cơ sở"]["rows"][:BAO_CAO]],
             ty_le_khach_1000_lead_T5=round(ty_le_t5, 2),
-            do_nhay=[{k: (round(v, 1) if isinstance(v, float) else v) for k, v in d.items()} for d in do_nhay_cong],
+            do_nhay=[{k: (round(v, 2) if k == "he_so" else round(v, 1) if isinstance(v, float) else v)
+                      for k, v in d.items()} for d in do_nhay_cong],
+            theo_thang_24t=[dict(thang=r["thang"], giai_doan=r["giai_doan"], tiep_can=round(r["tiep_can"]),
+                                 lead=round(r["lead"]), lead_quang_cao=round(r["lead_qc"]),
+                                 lead_tu_nhien=round(r["lead_tn"]), tham_du=round(r["tham_du"]),
+                                 mua_nen_tang=round(r["nen_tang"], 1), khach_dong_hanh=round(r["dong_hanh"], 1),
+                                 doanh_thu=round(r["doanh_thu"], 1), ebitda=round(r["ebitda"], 1),
+                                 ngan_sach_qc=round(r["ngan_sach_qc"], 1), so_nguoi=r["so_nguoi"],
+                                 luy_ke=round(r["luy_ke"], 1))
+                            for r in theo_cong["Cơ sở"]["rows"][:BAO_CAO]],
         ),
         ghi_chu="Mọi số thị trường từ nghien-cuu.md có độ tin cậy tối đa Trung bình (chưa mở được trang gốc); "
                 "tỷ lệ phễu, giá đồng hành/thành viên, lương quản lý là giả định.",

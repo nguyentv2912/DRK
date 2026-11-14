@@ -10,7 +10,7 @@ Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Người lập: Hùng (T
 ## 1. Nhận định (đọc trước)
 
 1. **Lộ trình khuyến nghị là mở rộng theo cổng. Theo kịch bản cơ sở thì lộ trình này khả thi, nhưng biên an toàn mỏng:**
-   - Chỉ cần chuyển đổi thấp hơn giả định 5% là hoàn vốn lùi tới **T31**. Thấp hơn 20% thì **không hoàn vốn**, và vốn cần lên khoảng 2,1 tỷ.
+   - Chỉ cần chuyển đổi thấp hơn giả định 5% là hoàn vốn lùi tới **T31**. Thấp hơn 10% thì lùi tới **T41**, NPV gần bằng 0 (+21). Thấp hơn 20% thì **không hoàn vốn**, và vốn cần lên khoảng 2,1 tỷ.
    - Cổng mở quảng cáo ở T6 mở được là nhờ tỷ lệ T5 đạt **14,03 khách/1.000 lead**, chỉ vừa qua ngưỡng 14,0.
    - Cần chuẩn bị **khoảng 1,41 tỷ đ**.
    - EBITDA dương từ T7. Riêng hai tháng chuyển giai đoạn (T15, T18) bị âm, sau đó dương liên tục từ **T19**.
@@ -341,6 +341,7 @@ Phương án lùi lịch tuyển cứng (Tăng trưởng từ T10, Mở rộng t
 | Biến | Hệ số | NPV 48t | Luỹ kế T24 | Vốn cần | Hoà vốn vận hành | Hoàn vốn | Mở quảng cáo 70 / lên Tăng trưởng |
 |---|---|---|---|---|---|---|---|
 | **Tỷ lệ chuyển đổi (toàn phễu)** | −20% | −1.256 | −1.693 | 2.100 | T23 | **không đạt** | không mở / không lên |
+| | −10% | +21 | −570 | 1.606 | T23 | **T41** | T9 / T22 |
 | | −5% | +976 | −548 | 1.499 | T22 | **T31** | T8 / T18 |
 | | +5% | +2.764 | +184 | 1.286 | T16 | T23 | T6 / T12 |
 | | +20% | +6.613 | +2.123 | 1.209 | T5 | T15 | T4 / T9 |
@@ -410,7 +411,7 @@ Lộ trình theo cổng đã gần đạt mức này mà không cần đổi gi�
 
 - Script: `/home/user/DRK/team/viec/2026-11-14-khung-chuong-trinh-chuyen-doi/mo_hinh.py`
 - Dữ liệu biểu đồ: `/home/user/DRK/team/viec/2026-11-14-khung-chuong-trinh-chuyen-doi/tai-chinh.json`.
-  - **Số khuyến nghị nằm ở khoá `khuyen_nghi`**: tong_von, hoa_von_vh, ebitda_duong_dau_tien, hoan_von, npv, irr_nam, luy_ke_24, dong_tien_luy_ke_24t, doanh_thu_thang_24t, doi_theo_thang, giai_doan_theo_thang, ty_le_khach_1000_lead_T5, và độ nhạy theo cổng.
+  - **Số khuyến nghị nằm ở khoá `khuyen_nghi`**: tong_von, hoa_von_vh, ebitda_duong_dau_tien, hoan_von, npv, irr_nam, luy_ke_24, dong_tien_luy_ke_24t, doanh_thu_thang_24t, doi_theo_thang, giai_doan_theo_thang, ty_le_khach_1000_lead_T5, độ nhạy theo cổng, và `theo_thang_24t`. Khoá `theo_thang_24t` chứa các cột theo tháng: tiếp cận, lead, lead quảng cáo, lead tự nhiên, tham dự, mua nền tảng, khách đồng hành, doanh thu, EBITDA, ngân sách quảng cáo, số người, luỹ kế.
   - Các khoá cấp cao cũ vẫn giữ để biểu đồ không bị vỡ, nhưng là số của **phương án tuyển theo lịch**. Khoá `ghi_chu_khoa_goc` có ghi chú điều này.
   - Khoá mới: `lo_trinh_theo_cong` (gồm tóm tắt từng kịch bản, luỹ kế, giai đoạn, số người, ngân sách quảng cáo và số khách theo tháng, mốc dừng của Thận trọng) và `ngan_sach_qc_can`.
   - `hoa_von_phong_ban` đã có thêm các trường về công suất coach.
