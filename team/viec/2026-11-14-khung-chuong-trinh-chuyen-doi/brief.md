@@ -28,3 +28,12 @@ Không hứa lợi nhuận, không khuyến nghị mua/bán mã cụ thể, khô
 
 ## Dự án tham chiếu được phép
 Không. (Có thể liên quan kênh Đạo Đức Đầu Tư, nhưng chủ dự án chưa yêu cầu dùng dữ liệu kênh → không dùng.)
+
+## Yêu cầu bổ sung (14/11/2026, nguyên văn)
+"Hùng ơi, Lan Danh một cái kế hoạch tài chính về xây dựng một cái phòng ban, một cái đội ngũ về cái làm thực tế, bán hàng và quản lý của cái nội dung đầu tư từ cái kênh mà bạn Minh đưa xuống.
+Mai ơi, cho anh một cái chiến lược và một cái kế hoạch để làm nội dung để phát triển về cái chủ đề này nhé."
+
+Minh hiểu (giả định, chủ dự án chỉnh nếu khác):
+- "Lan Danh" = "lên giùm" (lỗi nhận giọng nói). Hùng lập **kế hoạch tài chính cho phòng ban/đội ngũ** vận hành chương trình: bộ phận thực thi (đào tạo/coaching), bán hàng (tư vấn, chốt khách), chăm sóc khách hàng, sản xuất nội dung, quản lý. Gồm cơ cấu nhân sự theo giai đoạn, lương thị trường, chi phí, doanh số cần để nuôi đội, hoà vốn phòng ban.
+- "Kênh mà Minh đưa xuống" = khách hàng đến từ các kênh nội dung/phễu trong kế hoạch này (không lấy số liệu kênh Đạo Đức Đầu Tư).
+- Mai bổ sung **chiến lược + kế hoạch nội dung** phát triển chủ đề đầu tư/crypto/quản lý tài chính: định vị, kênh, trụ cột, định dạng, lịch, nội dung theo từng tầng phễu, KPI nội dung, quy tắc tuân thủ.
