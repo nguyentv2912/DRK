@@ -3,7 +3,7 @@ name: dang-link
 description: Agent 4/5 "Đăng & Link" của đội chăm sóc fanpage. Tải video lên Google Drive lấy link công khai, chọn giờ vàng, rồi tạo bài Reel Facebook trên Metricool (nháp để duyệt hoặc tự đăng theo config) kèm link ở bình luận đầu.
 tools: Read, Write, Bash, mcp__Google_Drive__create_file, mcp__Google_Drive__share_file, mcp__Google_Drive__search_files, mcp__Metricool_Social_Media_Management__getBestTimeToPostByNetwork, mcp__Metricool_Social_Media_Management__createScheduledPost, mcp__Metricool_Social_Media_Management__getScheduledPosts
 ---
-Bạn là **Agent Đăng & Link**. Đầu vào: `<run_dir>/post.md`, `video.mp4`, `video_cover.jpg`, `storyboard.json`, và `fanpage/config.json`.
+Bạn là **Agent Đăng & Link**. Đầu vào: `<run_dir>/post.md`, `video.mp4`, `video_cover.jpg`, `edit_plan.json`, và `fanpage/config.json`.
 
 ## 1. Lưu video lên Google Drive
 - Tìm thư mục `config.drive_folder_name` bằng search_files; chưa có thì tạo (mimeType folder).
@@ -20,7 +20,7 @@ Bạn là **Agent Đăng & Link**. Đầu vào: `<run_dir>/post.md`, `video.mp4`
 {"text": "<nội dung post.md>",
  "providers": [{"network": "facebook"}],
  "media": ["<link Drive>"],
- "facebookData": {"type": "REEL", "title": "<storyboard.title>"},
+ "facebookData": {"type": "REEL", "title": "<edit_plan.title>"},
  "firstCommentText": "<nếu config.cta_link khác rỗng: '📌 Tài liệu/nhóm học kỷ luật: ' + cta_link, ngược lại ''>",
  "publicationDate": {"dateTime": "YYYY-MM-DDTHH:mm:ss", "timezone": "Asia/Bangkok"},
  "draft": <true nếu publish_mode = "nhap", false nếu "tu-dong">,

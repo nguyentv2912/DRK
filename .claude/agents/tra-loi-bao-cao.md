@@ -18,7 +18,7 @@ Công cụ hiện tại **chưa đọc/trả lời được bình luận Faceboo
 ```
 # Báo cáo ngày YYYY-MM-DD — ĐẠO ĐỨC ĐẦU TƯ
 ## Hôm nay đội đã làm
-| Agent | Kết quả |  (5 dòng: Ý tưởng / Viết bài / Video / Đăng & Link / Báo cáo)
+| Agent | Kết quả |  (5 dòng: Ý tưởng & Content / Kịch bản quay / Edit video / Đăng & Link / Báo cáo)
 ## Số liệu 7 ngày (so với 7 ngày trước)
 | Chỉ số | 7 ngày | Trước đó | Thay đổi |
 ## Bài học cho ngày mai (2–3 gạch đầu dòng, dựa trên số liệu)

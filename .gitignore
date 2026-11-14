@@ -6,3 +6,6 @@
 output/
 *.jpg
 !fanpage/runs/*/video_cover.jpg
+*.mov
+*.MOV
+fanpage/runs/*/raw/

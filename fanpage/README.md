@@ -1,30 +1,29 @@
-# Đội Agent tự động chăm sóc fanpage — ĐẠO ĐỨC ĐẦU TƯ
+# Đội Agent chăm sóc fanpage — ĐẠO ĐỨC ĐẦU TƯ (bản nâng cấp: video tự quay 90–180s)
 
-| # | Agent | Làm gì | File |
+| # | Agent | Làm gì | Đầu ra |
 |---|---|---|---|
-| 1 | 🔵 Tìm Ý Tưởng | Xoay vòng 5 trụ cột, tránh trùng 30 ngày, học từ báo cáo cũ | `.claude/agents/tim-y-tuong.md` |
-| 2 | 🟡 Viết Bài | Caption Facebook + kịch bản cảnh video | `.claude/agents/viet-bai.md` |
-| 3 | 🔴 Dựng Video | Reel 9:16 chữ động nền đen-vàng + nhạc nền | `.claude/agents/dung-video.md`, `tools/make_video.py` |
-| 4 | 🟢 Đăng & Link | Video lên Google Drive → Metricool, giờ vàng, link ở bình luận đầu | `.claude/agents/dang-link.md` |
-| 5 | 🟠 Trả Lời & Báo Cáo | Số liệu 7 ngày, bài học, câu trả lời bình luận mẫu | `.claude/agents/tra-loi-bao-cao.md` |
+| 1 | 🔵 Ý Tưởng & Content | Gom 10 ý → lọc → chấm điểm → chọn 1; viết/viết lại caption 2 vòng biên tập | `ideas.json`, `post.md` |
+| 2 | 🟡 Kịch Bản Quay | Lời thoại 90–180s (mỗi câu 1 dòng), hướng dẫn quay + bảng cảnh + teleprompter, kế hoạch edit | `kichban.txt`, `huong_dan_quay.md`, `edit_plan.json` |
+| — | 🎥 **Bạn quay** | Quay theo hướng dẫn, vấp thì dừng 2 giây rồi nói lại cả câu | `raw/*.mp4` |
+| 3 | 🔴 Edit Video | Bóc lời (Whisper) → tự cắt câu vấp/quay lại + khoảng lặng → khung 9:16, zoom nhịp, phụ đề to tô màu từ khoá, thẻ chữ viền vàng, nhạc nền → tự kiểm tra chất lượng | `video.mp4`, `video_cover.jpg`, `edit_log.md` |
+| 4 | 🟢 Đăng & Link | (giữ nguyên) Drive → Metricool Reel, giờ vàng, link bình luận đầu | `publish.json` |
+| 5 | 🟠 Trả Lời & Báo Cáo | (giữ nguyên) số liệu 7 ngày, bài học, câu trả lời bình luận mẫu | `report.md` |
 
-Điều phối: skill **`/fanpage-team`** (`.claude/skills/fanpage-team/SKILL.md`).
+Prompt chi tiết từng agent: `.claude/agents/*.md`. Điều phối: `.claude/skills/fanpage-team/SKILL.md`.
 
-## Dùng
-- `/fanpage-team` — chạy cả đội, tạo **bản nháp** trong Metricool để bạn duyệt.
-- `/fanpage-team thu` — chạy thử, không đăng gì.
-- `/fanpage-team tu-dong` — đăng thật lần này.
-- `/fanpage-team FOMO khi thị trường tăng nóng` — ép chủ đề.
+## Dùng mỗi ngày
+1. **`/fanpage-team`** (hoặc `/fanpage-team <chủ đề>` / dán bài cũ cần viết lại) → nhận kịch bản + hướng dẫn quay.
+2. Quay video, bỏ file vào `fanpage/runs/<ngày>/raw/` hoặc upload Google Drive.
+3. **`/fanpage-team edit <link Drive>`** → nhận video đã edit, bản nháp trên Metricool, báo cáo.
+   Thêm `tu-dong` để đăng thật, `thu` để chỉ edit không đăng.
 
-## Tuỳ chỉnh (`config.json`)
-- `publish_mode`: `nhap` (an toàn, mặc định) → đổi sang `tu-dong` khi đã tin chất lượng.
-- `cta_link`: link gắn ở bình luận đầu (nhóm, khoá học, affiliate).
-- `preferred_hours`: giờ dự phòng khi Metricool chưa có số liệu giờ vàng.
-- Giọng văn, trụ cột, điều cấm: `brand.md`.
+## Công cụ
+- `tools/edit_video.py` — `transcribe` (bóc lời có mốc từng chữ) và `render` (dựng). Cần `pip install faster-whisper`.
+- `tools/make_video.py` — video chữ động không cần quay, dùng dự phòng hôm không quay được.
 
-## Mỗi ngày tạo ra
-`runs/YYYY-MM-DD/`: `ideas.json`, `post.md`, `storyboard.json`, `video.mp4` (không lên git), `video_cover.jpg`, `publish.json`, `report.md`.
+## Tuỳ chỉnh
+`config.json` (chế độ đăng, link CTA, giờ dự phòng) · `brand.md` (giọng văn, trụ cột, điều cấm).
 
-## Giới hạn hiện tại
-- Trả lời bình luận: Metricool/Buffer chưa cho đọc–trả lời bình luận Facebook, nên Agent 5 soạn sẵn câu trả lời mẫu. Muốn tự trả lời thật cần thêm kịch bản Make (Facebook Pages → Watch comments).
-- Video là dạng chữ động + nhạc tổng hợp, chưa có giọng đọc. Có thể ghép giọng clone từ `kaggle/` sau.
+## Giới hạn
+- Chưa tự trả lời bình luận thật (Metricool/Buffer không hỗ trợ) — Agent 5 soạn câu trả lời mẫu.
+- Facebook có thể không nhận Reel dài hơn giới hạn của họ; khi đó Agent 4 tự chuyển sang đăng video thường (POST).
