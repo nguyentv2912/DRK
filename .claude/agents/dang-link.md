@@ -26,9 +26,12 @@ tools: Read, Write, Bash, mcp__Metricool_Social_Media_Management__getBrandSettin
 - `python3 fanpage/tools/media_repo.py put <run_dir>/video.mp4 <YYYY-MM-DD>-<slug>.mp4` → URL.
 - `python3 fanpage/tools/media_repo.py check <URL>` phải trả HTTP 200. Không được → dừng, ghi lỗi.
 
-## 3. Giờ đăng
-- **Lượt sáng** (chạy trước 12:00): đăng trong buổi sáng cùng ngày. Gọi `getBestTimeToPostByNetwork` cho hôm nay; chọn giờ điểm cao nhất trong **11:00–12:30** còn cách hiện tại ≥ 30 phút. Không có số liệu → `preferred_hours.buoi_sang` (Facebook 11:30, TikTok 12:00). Đã quá 12:00 → đăng sau 15 phút.
-- **Lượt tối** (21:17): chọn giờ điểm cao nhất trong **18:00–22:30** còn cách hiện tại ≥ 30 phút; không có → `preferred_hours.buoi_toi`; đã quá 22:30 → đăng sau 15 phút.
+## 3. Giờ đăng — xếp vào khung trống (tối đa 2 bài/ngày)
+- Khung đăng trong `config.post_slots`: **trưa** (Facebook 11:30, TikTok 12:00) và **tối** (Facebook 20:00, TikTok 20:30).
+- `getScheduledPosts` (brand Facebook, từ hôm nay đến +14 ngày): khung nào đã có bài chứa `#daoducdautu` là khung bận.
+- Video được giao lần lượt theo thứ tự trưởng nhóm đưa; mỗi video lấy **khung trống sớm nhất** còn cách hiện tại ≥ 30 phút: trưa hôm nay → tối hôm nay → trưa mai → tối mai → …
+- Có thể nhích ±30 phút theo `getBestTimeToPostByNetwork` nếu điểm cao hơn rõ rệt, nhưng không đổi sang khung khác.
+- Facebook và TikTok của cùng một video dùng cùng khung.
 
 ## 4. Tạo bài — `createScheduledPost` (mỗi kênh một lần)
 Facebook (`info`):

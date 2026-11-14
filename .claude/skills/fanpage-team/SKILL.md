@@ -1,29 +1,37 @@
 ---
 name: fanpage-team
-description: Vận hành mỗi ngày kênh ĐẠO ĐỨC ĐẦU TƯ trên Facebook + TikTok. "kich-ban" (05:05 hằng ngày) — chọn chủ đề, viết caption 2 nền tảng, viết kịch bản 90–180 giây, đưa lên Google Drive cho chủ page quay. "xu-ly" (09:17, 10:17 và 21:17) — tìm video thô mới trên Drive, edit, đăng Facebook Reel + TikTok, báo cáo. Gọi /fanpage-team kich-ban | xu-ly | <chủ đề>.
+description: Vận hành mỗi ngày kênh ĐẠO ĐỨC ĐẦU TƯ trên Facebook + TikTok. "kich-ban" (05:05 hằng ngày) — giữ kho luôn có 3 kịch bản 90–180 giây chưa quay trên Google Drive. "xu-ly" (09:17, 10:17 và 21:17) — tìm các video thô mới, tự ghép với kịch bản, edit, xếp lịch đăng Facebook Reel + TikTok (tối đa 2 bài/ngày), báo cáo. Gọi /fanpage-team kich-ban | xu-ly | <chủ đề>.
 ---
 # Vận hành kênh ĐẠO ĐỨC ĐẦU TƯ mỗi ngày
 
 Đọc trước: `fanpage/config.json`, `fanpage/brand.md`, `fanpage/KENH.md`. Ngày giờ theo `Asia/Ho_Chi_Minh`.
 Phiên chính là **trưởng nhóm**: giao việc cho nhân viên (Agent tool), sau mỗi phần việc gọi **Bảo – Giám sát** (`giam-sat`) chấm theo hồ sơ `team/nhan-su/<mã>/ho-so.md`; CHƯA ĐẠT → trả lại đúng người kèm phản hồi (tối đa 3 vòng). Chỉ trưởng nhóm gọi công cụ Google Drive (nhân viên không có).
 
-## Chế độ `kich-ban` (05:05 mỗi ngày, hoặc khi được gọi kèm chủ đề)
-1. `DAY=$(TZ=Asia/Ho_Chi_Minh date +%F)`, `RUN=fanpage/runs/$DAY`, `mkdir -p $RUN`.
-2. Lịch sử chủ đề: `search_files` với `parentId = '<scripts_folder_id>'` → tên file dạng `YYYY-MM-DD | chuyên mục | chủ đề`. Ghi danh sách 30 ngày gần nhất vào `$RUN/lich-su.txt` cho Ngọc (Ngọc không đọc Drive được). Đã có kịch bản của hôm nay → dừng, không làm trùng.
-3. **Ngọc** (`y-tuong-content`): "run_dir=$RUN. Chế độ fanpage. Lịch sử chủ đề ở $RUN/lich-su.txt. Chọn chủ đề theo chuyên mục của thứ hôm nay trong KENH.md[, chủ đề bắt buộc: …]. Nộp ideas.json, post.md, tiktok.md." → Bảo chấm.
-4. **Phong** (`kich-ban-quay`): "run_dir=$RUN. Kịch bản 90–180 giây, hướng dẫn quay, edit_plan.json." → Bảo chấm.
-5. Đưa kịch bản lên Drive: `create_file` với `parentId = scripts_folder_id`, `contentMimeType: text/plain` (để Drive đổi thành Google Doc), tiêu đề `$DAY | <chuyên mục> | <chủ đề>`, nội dung = phần teleprompter + checklist ngắn trong `huong_dan_quay.md`, đầu file ghi: "QUAY XONG: bỏ video vào thư mục '2. Video thô - bỏ video quay vào đây'".
-6. Commit + push thư mục `fanpage/` nếu được (không có video). Kết thúc bằng một dòng: chủ đề hôm nay + link Google Doc (dòng này là nội dung thông báo gửi về điện thoại).
+## Chế độ `kich-ban` (05:05 mỗi ngày, hoặc khi được gọi) — giữ kho luôn có 3 kịch bản chưa quay
+Chủ kênh có thể quay 2–3 video một ngày, nên luôn phải có sẵn kịch bản.
+1. `search_files` với `parentId = '<scripts_folder_id>'` và không phải thư mục → các kịch bản **chưa quay** (tên `KB-YYYYMMDD-N | chuyên mục | chủ đề`). Thêm `search_files` trong `scripts_done_folder_id` → các kịch bản **đã quay**. Ghi cả hai danh sách (30 ngày gần nhất) vào `fanpage/runs/lich-su.txt` cho Ngọc.
+2. `can_viet = script_buffer (3) − số kịch bản chưa quay`. Bằng 0 → kết thúc: "Kho đang có 3 kịch bản chưa quay." Có chủ đề bắt buộc từ người dùng → viết thêm 1 bài dù kho đã đủ.
+3. Với mỗi bài cần viết (lần lượt, bài sau tránh trùng chủ đề và chuyên mục với bài trước): mã `KB-<ngày hôm nay YYYYMMDD>-<N>` (N tiếp theo trong ngày), `RUN=fanpage/runs/<mã>`.
+   - Chuyên mục: bài thứ k lấy chuyên mục của **ngày đăng dự kiến** (hôm nay + k − 1 theo lịch trong KENH.md).
+   - **Ngọc** (`y-tuong-content`): "run_dir=$RUN. Chế độ fanpage. Lịch sử ở fanpage/runs/lich-su.txt. Chuyên mục: … Nộp ideas.json, post.md, tiktok.md." → Bảo chấm.
+   - **Phong** (`kich-ban-quay`): "run_dir=$RUN. Kịch bản 90–180 giây, hướng dẫn quay, edit_plan.json." → Bảo chấm.
+   - `create_file` lên `scripts_folder_id`, `contentMimeType: text/plain`, tiêu đề `<mã> | <chuyên mục> | <chủ đề>`, nội dung = teleprompter + checklist ngắn; dòng đầu: "QUAY XONG: bỏ video vào thư mục '2. Video thô'. Không cần đặt tên file."
+4. Commit + push `fanpage/`. Kết thúc bằng một dòng: "Kho có <n> kịch bản chưa quay: <danh sách mã + chủ đề + link>".
 
-## Chế độ `xu-ly` (09:17, 10:17 và 21:17 mỗi ngày — chủ kênh quay 8:00–9:00; lượt sáng đăng trước 12:30, hoặc /fanpage-team xu-ly)
-1. `search_files`: `parentId = '<raw_folder_id>' and mimeType contains 'video/'`. Không có file → kết thúc ngay với "Chưa có video mới." (không gọi nhân viên nào).
-2. Ghép video với kịch bản: kịch bản mới nhất trong `scripts_folder` chưa được đăng (chưa có dòng `posted` trong `fanpage/memory/history.jsonl`, hoặc ngày ≥ ngày của kịch bản gần nhất đã đăng). Không có repo state cho ngày đó (phiên mới) → đọc Google Doc kịch bản bằng `read_file_content`, ghi lại `$RUN/kichban.txt`; tạo lại `edit_plan.json`, `post.md`, `tiktok.md` bằng cách giao **Phong** và **Ngọc** làm lại từ kịch bản đó (không đổi lời thoại).
-3. Chia sẻ từng video thô: `share_file` `permissionId: anyoneWithLink`, `role: reader`.
-4. **Khoa** (`edit-video`): "run_dir=$RUN. Video thô: <danh sách id + tên theo thứ tự>. Tải bằng drive.usercontent, edit theo edit_plan.json." → Bảo chấm. Gửi video cho người dùng bằng SendUserFile nếu phiên có công cụ đó.
-5. **Vy** (`dang-link`): "run_dir=$RUN. Đăng Facebook + TikTok theo config (publish_mode)." → Bảo chấm. Kênh TikTok chưa nối đúng `daoducdautu` → Vy bỏ qua TikTok và báo; Facebook vẫn đăng.
-6. Chuyển video thô đã xử lý vào `processed_folder_id` (`update_file` đổi `parentId`) — chỉ khi Vy đăng thành công ít nhất một kênh.
-7. **Quân** (`tra-loi-bao-cao`): báo cáo ngày (số liệu Facebook + TikTok, KPI trong KENH.md, trả lời bình luận mẫu). **Hà** (`kiem-dinh`) rà nhanh caption và publish.json.
-8. Chủ Nhật: gọi **Trang** (`phan-bien`) chế độ A cho cả tuần (các `fanpage/runs/` trong 7 ngày). `python3 team/tools/bang_diem.py`; commit + push (không có video). Kết thúc bằng một dòng: kênh nào đã đăng lúc mấy giờ, link, việc chủ page cần làm (nếu có lỗi).
+## Chế độ `xu-ly` (09:17, 10:17 và 21:17 mỗi ngày — có thể có nhiều video)
+1. `search_files`: `parentId = '<raw_folder_id>' and mimeType contains 'video/'`. Không có → kết thúc "Chưa có video mới."
+2. Tải về và ghép với kịch bản:
+   - `share_file` từng video (anyoneWithLink, reader) rồi `curl` về `fanpage/runs/raw-<ngày>/` (cách tải trong config).
+   - Lấy danh sách kịch bản chưa quay (scripts_folder, không tính "Đã quay"). Với kịch bản không có thư mục `fanpage/runs/<mã>/` trong repo: đọc Google Doc bằng `read_file_content`, ghi `fanpage/runs/<mã>/kichban.txt`.
+   - Mỗi video: `python3 fanpage/tools/edit_video.py transcribe <video> <video>.json --model small`, rồi `python3 fanpage/tools/khop_kich_ban.py <video>.json fanpage/runs/*/kichban.txt` (chỉ các kịch bản chưa quay).
+   - `chac_chan: true` → gán video cho kịch bản đó. Nhiều file cùng khớp một kịch bản → là các đoạn của một video, ghép theo thứ tự tên file. Không chắc chắn → **không xử lý video đó**, ghi vào dòng kết thúc để chủ kênh xem (có thể là quay ngoài kịch bản).
+3. Với mỗi kịch bản có video (theo thứ tự mã KB tăng dần), `RUN=fanpage/runs/<mã>`:
+   - Thiếu `edit_plan.json`, `post.md`, `tiktok.md` (phiên mới) → giao **Phong** tạo lại edit_plan từ kichban.txt và **Ngọc** viết lại caption (không đổi lời thoại) → Bảo chấm.
+   - Chép transcript vào `$RUN/transcript.json`. **Khoa** (`edit-video`): "run_dir=$RUN. Video thô đã tải: <đường dẫn>. transcript.json đã có, không cần bóc lời lại." → Bảo chấm.
+4. **Vy** (`dang-link`): đưa danh sách các `$RUN` đã edit xong theo thứ tự; Vy xếp mỗi video vào khung trống sớm nhất (tối đa 2 bài/ngày, video dư sang các ngày sau) → Bảo chấm.
+5. Video đã hẹn đăng thành công ít nhất một kênh → chuyển video thô vào `processed_folder_id` và chuyển Google Doc kịch bản vào `scripts_done_folder_id` (`update_file` đổi `parentId`).
+6. **Quân** báo cáo; **Hà** rà nhanh caption và publish.json. Chủ Nhật lượt 21:17: gọi **Trang** (`phan-bien`) chế độ A cho cả tuần. `python3 team/tools/bang_diem.py`; commit + push (không có video).
+7. Kết thúc bằng một dòng: mỗi video → mã kịch bản, kênh, giờ hẹn đăng; video không ghép được (nếu có); kho còn mấy kịch bản chưa quay.
 
 ## Quy tắc
 - Không bao giờ đăng Instagram hay TikTok/Instagram của brand 7808796 (Mr Pump). Xem `never_post_to`.

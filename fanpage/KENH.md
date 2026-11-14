@@ -38,15 +38,15 @@
 
 ## Quy trình mỗi ngày
 ```
-05:05  Ngọc chọn ý tưởng + viết caption FB/TikTok → Phong viết kịch bản → Bảo giám sát
-05:30  Kịch bản lên Google Drive "1. Kịch bản mỗi ngày" + thông báo về điện thoại
+05:05  Kiểm tra kho kịch bản; thiếu thì Ngọc + Phong viết thêm cho đủ 3 bài chưa quay → Bảo giám sát
+05:30  Kịch bản mới lên Google Drive "1. Kịch bản mỗi ngày" + thông báo về điện thoại
 08:00–09:00  Chủ page quay 90–180 giây, bỏ file vào Drive "2. Video thô - bỏ video quay vào đây"
 09:17 (dự phòng 10:17, vét 21:17)  Đội kiểm tra thư mục video thô. Có video mới → Khoa edit → Bảo giám sát
                → Vy đăng Facebook Reel + TikTok → Quân báo cáo → Hà kiểm định
 11:30 / 12:00  Bài lên Facebook / TikTok
 Sáng hôm sau  Báo cáo số liệu của bài hôm trước nằm trong kịch bản mới
 ```
-Tên file video thô: bất kỳ; đội lấy file mới nhất chưa xử lý. Quay nhiều đoạn thì đặt tên theo thứ tự (`1.mp4`, `2.mp4`…).
+Một ngày quay được 2–3 kịch bản bất kỳ trong kho. Không cần đặt tên file: đội nghe lời nói trong video để tự ghép với kịch bản. Một kịch bản quay nhiều đoạn thì đặt tên theo thứ tự (`1.mp4`, `2.mp4`…). Đăng tối đa 2 bài/ngày (trưa 11:30–12:00, tối 20:00–20:30); video dư được xếp sang các ngày sau.
 
 ## KPI
 | Chỉ số | 30 ngày | 90 ngày |
