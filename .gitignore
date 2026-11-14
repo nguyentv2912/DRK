@@ -9,3 +9,4 @@ output/
 *.mov
 *.MOV
 fanpage/runs/*/raw/
+__pycache__/
