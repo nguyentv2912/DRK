@@ -36,7 +36,7 @@ P = {
     # Thue: ca nhan/ho kinh doanh online, dich vu: 5% GTGT + 2% TNCN tren doanh thu = 7%.
     # Gia dinh than trong: ap tu dong dau tien (chua tru nguong mien thue doanh thu thap) - can ke toan xac nhan.
     "thue_tren_doanh_thu": 0.07,
-    # nghien-cuu.md: nguong khong chiu thue ho KD 500 tr/nam (Luat TNCN 2025), bao chi neu ND 141/2026 nang len 1 ty (chua doi chieu).
+    # nghien-cuu.md: ND 141/2026/ND-CP nang nguong khong chiu GTGT/TNCN ho KD len 1 ty d/nam tu 1/1/2026 (chua co toan van).
     "ap_nguong_mien_thue": False,     # mac dinh KHONG ap (than trong); True = chi tinh thue phan doanh thu nam vuot nguong
     "nguong_mien_thue_nam": 1_000_000_000,
 
@@ -246,7 +246,7 @@ def mo_phong(p):
 
         # --- Chi phi ---
         cp_skool = skool_usd * fx
-        cp_chuyen = (gross_usd - skool_usd) * fx * p["phi_chuyen_ve_vn"]
+        cp_chuyen = max(0.0, gross_usd - skool_usd) * fx * p["phi_chuyen_ve_vn"]  # chan >= 0 (thang chua co doanh thu)
         cp_tt_eb = dt_eb * p["phi_cong_tt_ebook"]
         if (t - 1) % 12 == 0:
             dt_nam_luy_ke = 0.0
@@ -644,7 +644,7 @@ def main():
         ("Skool Pro", f"{so(p['skool_pro_phi_thang_usd'])} USD/tháng + {pct(p['skool_pro_phi_gd'])} + {so(p['skool_pro_phi_co_dinh_usd'], 2)} USD/giao dịch; giao dịch > {so(p['skool_nguong_gd_lon_usd'])} USD: {pct(p['skool_pro_phi_gd_lon'])} + {so(p['skool_pro_phi_co_dinh_usd'], 2)} USD (áp cho khoá 1.000 USD)", "nghien-cuu.md (Trung bình, trích đoạn help.skool.com Payments FAQ). Mô hình tự chọn gói rẻ hơn mỗi tháng"),
         ("Phí nhận tiền về VN", pct(p["phi_chuyen_ve_vn"]), "Giả định. nghien-cuu.md: payout qua Stripe Express do Skool tạo, VN có trong danh sách, về VND thứ Tư hằng tuần — chưa kiểm thử; phí quy đổi chưa rõ nên đặt 2%"),
         ("Phí thu ebook", pct(p["phi_cong_tt_ebook"]), "Giả định. Skool không bán file lẻ (nghien-cuu.md) → ebook bán VND qua chuyển khoản/cổng nội địa, hoặc gói thành khoá trả một lần trên Skool"),
-        ("Thuế", pct(p["thue_tren_doanh_thu"]) + " doanh thu", "Giả định: hộ/cá nhân kinh doanh dịch vụ 5% GTGT + 2% TNCN, tính từ đồng đầu tiên (thận trọng). Skool là \"merchant of record\" tự xử lý VAT ở vùng áp dụng (nghien-cuu.md) → phần 5% GTGT có thể trùng; độ nhạy 2% vs 7% ở mục 6. nghien-cuu.md: ngưỡng không chịu thuế 500 tr/năm, báo chí nói NĐ 141/2026 nâng lên 1 tỷ — chưa đối chiếu; thuế khi bán qua nền tảng nước ngoài các nguồn mâu thuẫn. Hỏi cơ quan thuế"),
+        ("Thuế", pct(p["thue_tren_doanh_thu"]) + " doanh thu", "Giả định: hộ/cá nhân kinh doanh dịch vụ 5% GTGT + 2% TNCN, tính từ đồng đầu tiên (thận trọng). Skool là \"merchant of record\" tự xử lý VAT ở vùng áp dụng (nghien-cuu.md) → phần 5% GTGT có thể trùng; độ nhạy 2% vs 7% ở mục 6. nghien-cuu.md: NĐ 141/2026/NĐ-CP (29/4/2026) nâng ngưỡng không chịu GTGT/TNCN của hộ kinh doanh từ 500 tr lên 1 tỷ đ/năm, áp từ 1/1/2026 (tin cậy Trung bình, **chưa có toàn văn**). Mô hình vẫn giữ 7% mặc định cho thận trọng; kịch bản áp ngưỡng ở mục 6. Cách kê khai doanh thu từ Skool: hỏi Đội thuế"),
         ("Công cụ AI, phần mềm", f"{m(p['cp_cong_cu_ai'])} tr/tháng", "Giả định ~60 USD: 2 gói AI + Canva/CapCut Pro"),
         ("Chi phí khác", f"{m(p['cp_khac_thang'])} tr/tháng", "Giả định: tên miền, email, họp online"),
         ("Quảng cáo", f"{m(p['cp_quang_cao_thang'])} tr/tháng", "Mặc định 0 — đầu phễu là video tự nhiên (brief)"),
@@ -766,7 +766,7 @@ def main():
         a(f"| **Qua ngưỡng?** | {t} | " + " | ".join("Đạt" if nguong_dung["ket_qua"][k][f"thang_{t}"] else "Không" for k in KICH_BAN) + " |")
     n3, n6 = nguong_dung["thang_3"], nguong_dung["thang_6"]
     a("")
-    a(f"- **Mốc tháng 3 — đổi cách bán** nếu Skool miễn phí < {so(n3['free_toi_thieu'])} người **hoặc** < {n3['hv_toi_thieu']} học viên trả 100 USD **hoặc** chuyển đổi < {pct(nguong_dung['cd_toi_thieu'])}: "
+    a(f"- **Mốc tháng 3 — đổi cách bán** nếu Skool miễn phí < {so(n3['free_toi_thieu'])} người **hoặc** < {n3['hv_toi_thieu']} học viên trả 100 USD **hoặc** tỷ lệ chuyển đổi \"thành viên miễn phí mới → khoá 100 USD\" < {pct(nguong_dung['cd_toi_thieu'])}, đồng thời theo dõi tỷ lệ huỷ (ngưỡng ≤ {pct(nguong_dung['huy_toi_da'], 0)}/tháng): "
       "thêm thu VND (chuyển khoản/QR rồi mời vào Skool), hướng dẫn vào Skool bằng tiếng Việt, buổi live miễn phí để chốt, cân nhắc gói năm. Giá anh chốt giữ nguyên trừ khi anh quyết khác.")
     a(f"- **Mốc tháng 6 — dừng mở rộng / xem lại mô hình** nếu < {so(n6['free_toi_thieu'])} thành viên miễn phí, < {n6['hv_toi_thieu']} học viên trả phí, **hoặc** tỷ lệ huỷ thực > {pct(nguong_dung['huy_toi_da'], 1)}/tháng, "
       f"**hoặc** lãi < {so(n6['lai_toi_thieu_tr'], 1)} tr/tháng: không thuê người, không chi quảng cáo; trình anh phương án đổi giá/định dạng (gói năm, khoá trả một lần) trước khi làm tiếp.")
@@ -830,7 +830,7 @@ def main():
     a("- **Thay thế an toàn hơn để anh cân nhắc:** gói 1.000 USD cho 12 tháng gia hạn được, hoặc trả góp — xem kịch bản phụ ở mục 5.\n")
 
     a("## 9. Nhận định\n")
-    a(f"- Về chi phí, dự án gần như không thể lỗ nặng: vốn {m(von)} tr, hoà vốn từ {can_khong_upsell['0']} học viên nếu chỉ có khoá cơ bản. Kịch bản cơ sở là tham vọng; nên lập kế hoạch theo thận trọng và kiểm tra ngưỡng ở tháng 3, tháng 6 (mục 5b). Rủi ro thật là **doanh thu bằng 0** nếu không ai trả 100 USD/tháng.")
+    a(f"- Về tiền, mức lỗ xấu nhất trong mô hình là **{m(-kq['khong_dang_lam']['luy_ke_24'])} tr luỹ kế 24 tháng** (kịch bản không đáng làm, đã gồm vốn {m(von)} tr) — chưa tính công của anh; hoà vốn từ {can_khong_upsell['0']} học viên nếu chỉ có khoá cơ bản. Kịch bản cơ sở là tham vọng; nên lập kế hoạch theo thận trọng và kiểm tra ngưỡng ở tháng 3, tháng 6 (mục 5b). Rủi ro thật là **doanh thu bằng 0** nếu không ai trả 100 USD/tháng.")
     a(f"- 100 USD/tháng (≈{m(gcb * fx, 1)} tr) là giá cao với người 25–40 tuổi ở VN; tỷ lệ huỷ quyết định quy mô: huỷ {pct(huy_ds[0], 0)} vs {pct(huy_ds[-1], 0)} làm số học viên tháng 24 chênh "
       f"{so(luoi[0][2]['hv_t24'])} vs {so(luoi[-1][2]['hv_t24'])}. Cần đo tỷ lệ huỷ thật ngay 2–3 tháng đầu.")
     a("- Số người theo dõi và tỷ lệ chuyển đổi là giả định — thay bằng số thật của kênh trong tháng 1 rồi chạy lại `mo_hinh.py`.")

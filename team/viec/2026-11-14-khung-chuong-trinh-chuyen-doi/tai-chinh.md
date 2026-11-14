@@ -25,7 +25,7 @@ Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Người lập: Hùng �
 | Skool Pro | 99 USD/tháng + 2,9% + 0,30 USD/giao dịch; giao dịch > 900 USD: 3,9% + 0,30 USD (áp cho khoá 1.000 USD) | nghien-cuu.md (Trung bình, trích đoạn help.skool.com Payments FAQ). Mô hình tự chọn gói rẻ hơn mỗi tháng |
 | Phí nhận tiền về VN | 2,0% | Giả định. nghien-cuu.md: payout qua Stripe Express do Skool tạo, VN có trong danh sách, về VND thứ Tư hằng tuần — chưa kiểm thử; phí quy đổi chưa rõ nên đặt 2% |
 | Phí thu ebook | 1,0% | Giả định. Skool không bán file lẻ (nghien-cuu.md) → ebook bán VND qua chuyển khoản/cổng nội địa, hoặc gói thành khoá trả một lần trên Skool |
-| Thuế | 7,0% doanh thu | Giả định: hộ/cá nhân kinh doanh dịch vụ 5% GTGT + 2% TNCN, tính từ đồng đầu tiên (thận trọng). Skool là "merchant of record" tự xử lý VAT ở vùng áp dụng (nghien-cuu.md) → phần 5% GTGT có thể trùng; độ nhạy 2% vs 7% ở mục 6. nghien-cuu.md: ngưỡng không chịu thuế 500 tr/năm, báo chí nói NĐ 141/2026 nâng lên 1 tỷ — chưa đối chiếu; thuế khi bán qua nền tảng nước ngoài các nguồn mâu thuẫn. Hỏi cơ quan thuế |
+| Thuế | 7,0% doanh thu | Giả định: hộ/cá nhân kinh doanh dịch vụ 5% GTGT + 2% TNCN, tính từ đồng đầu tiên (thận trọng). Skool là "merchant of record" tự xử lý VAT ở vùng áp dụng (nghien-cuu.md) → phần 5% GTGT có thể trùng; độ nhạy 2% vs 7% ở mục 6. nghien-cuu.md: NĐ 141/2026/NĐ-CP (29/4/2026) nâng ngưỡng không chịu GTGT/TNCN của hộ kinh doanh từ 500 tr lên 1 tỷ đ/năm, áp từ 1/1/2026 (tin cậy Trung bình, **chưa có toàn văn**). Mô hình vẫn giữ 7% mặc định cho thận trọng; kịch bản áp ngưỡng ở mục 6. Cách kê khai doanh thu từ Skool: hỏi Đội thuế |
 | Công cụ AI, phần mềm | 1,6 tr/tháng | Giả định ~60 USD: 2 gói AI + Canva/CapCut Pro |
 | Chi phí khác | 0,5 tr/tháng | Giả định: tên miền, email, họp online |
 | Quảng cáo | 0,0 tr/tháng | Mặc định 0 — đầu phễu là video tự nhiên (brief) |
@@ -89,7 +89,7 @@ Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Người lập: Hùng �
 | 10 | 990 | 35 | 0,4 | 4,0 | 107,1 | 20,0 | 87,1 | 318,9 | Pro | ke_toan |
 | 11 | 1.096 | 40 | 0,5 | 4,3 | 120,9 | 21,7 | 99,2 | 418,1 | Pro | ke_toan |
 | 12 | 1.204 | 44 | 0,6 | 4,7 | 135,1 | 23,4 | 111,6 | 529,7 | Pro | ke_toan |
-| 13 | 1.314 | 49 | 0,6 | 5,1 | 149,6 | 25,2 | 124,4 | 654,2 | Pro | ke_toan |
+| 13 | 1.314 | 49 | 0,6 | 5,1 | 149,6 | 25,2 | 124,4 | 654,1 | Pro | ke_toan |
 | 14 | 1.428 | 54 | 0,7 | 5,5 | 164,7 | 27,0 | 137,7 | 791,8 | Pro | ke_toan |
 | 15 | 1.544 | 59 | 0,8 | 5,9 | 180,2 | 28,9 | 151,3 | 943,1 | Pro | ke_toan |
 | 16 | 1.664 | 65 | 0,8 | 6,3 | 196,2 | 30,8 | 165,4 | 1.108,4 | Pro | ke_toan |
@@ -111,8 +111,8 @@ Mã việc: 2026-11-14-khung-chuong-trinh-chuyen-doi · Người lập: Hùng �
 | HV 100 USD cần để hoà vốn tháng | 2 | 2 | 1 | 1 |
 | Tháng đầu tiên có lãi | 19 | 3 | 2 | 2 |
 | Tháng hoàn vốn (luỹ kế ≥ 0) | chưa hoàn vốn | 15 | 6 | 3 |
-| NPV 24 tháng @12%/năm (tr) | -92,9 | 137,7 | 2.394,5 | 13.969,4 |
-| IRR (năm) | -93% | 137% | 2.978% | 62.356% |
+| NPV 24 tháng @12%/năm (tr) | -92,9 | 137,6 | 2.394,5 | 13.969,4 |
+| IRR (năm) | -93% | 137% | 2.978% | 62.351% |
 
 IRR rất cao vì vốn ban đầu rất nhỏ — chỉ số này không có ý nghĩa so sánh; nên nhìn số học viên và lãi tháng.
 
@@ -180,7 +180,7 @@ Ngưỡng = mức tháng 3 và tháng 6 của **đường tối thiểu đáng l
 | **Qua ngưỡng?** | 3 | Không | Không | Đạt | Đạt |
 | **Qua ngưỡng?** | 6 | Không | Không | Đạt | Đạt |
 
-- **Mốc tháng 3 — đổi cách bán** nếu Skool miễn phí < 55 người **hoặc** < 1 học viên trả 100 USD **hoặc** chuyển đổi < 2,5%: thêm thu VND (chuyển khoản/QR rồi mời vào Skool), hướng dẫn vào Skool bằng tiếng Việt, buổi live miễn phí để chốt, cân nhắc gói năm. Giá anh chốt giữ nguyên trừ khi anh quyết khác.
+- **Mốc tháng 3 — đổi cách bán** nếu Skool miễn phí < 55 người **hoặc** < 1 học viên trả 100 USD **hoặc** tỷ lệ chuyển đổi "thành viên miễn phí mới → khoá 100 USD" < 2,5%, đồng thời theo dõi tỷ lệ huỷ (ngưỡng ≤ 12%/tháng): thêm thu VND (chuyển khoản/QR rồi mời vào Skool), hướng dẫn vào Skool bằng tiếng Việt, buổi live miễn phí để chốt, cân nhắc gói năm. Giá anh chốt giữ nguyên trừ khi anh quyết khác.
 - **Mốc tháng 6 — dừng mở rộng / xem lại mô hình** nếu < 110 thành viên miễn phí, < 3 học viên trả phí, **hoặc** tỷ lệ huỷ thực > 12,0%/tháng, **hoặc** lãi < 6,2 tr/tháng: không thuê người, không chi quảng cáo; trình anh phương án đổi giá/định dạng (gói năm, khoá trả một lần) trước khi làm tiếp.
 - Kết quả: kịch bản **thận trọng không qua ngưỡng** (chuyển đổi và huỷ kém) dù số thành viên tháng 3 có thể đủ — nếu số thật giống thận trọng thì đổi cách bán ngay ở tháng 3, chưa mở rộng.
 - Ở mức "không đáng làm", tiền không mất nhiều (vốn nhỏ) nhưng **thời gian của anh** là chi phí chính bị mất.
@@ -257,7 +257,7 @@ Quy tắc: chỉ thuê khi số liệu **tháng trước** chạm ngưỡng, và
 
 ## 9. Nhận định
 
-- Về chi phí, dự án gần như không thể lỗ nặng: vốn 78,0 tr, hoà vốn từ 2 học viên nếu chỉ có khoá cơ bản. Kịch bản cơ sở là tham vọng; nên lập kế hoạch theo thận trọng và kiểm tra ngưỡng ở tháng 3, tháng 6 (mục 5b). Rủi ro thật là **doanh thu bằng 0** nếu không ai trả 100 USD/tháng.
+- Về tiền, mức lỗ xấu nhất trong mô hình là **93,6 tr luỹ kế 24 tháng** (kịch bản không đáng làm, đã gồm vốn 78,0 tr) — chưa tính công của anh; hoà vốn từ 2 học viên nếu chỉ có khoá cơ bản. Kịch bản cơ sở là tham vọng; nên lập kế hoạch theo thận trọng và kiểm tra ngưỡng ở tháng 3, tháng 6 (mục 5b). Rủi ro thật là **doanh thu bằng 0** nếu không ai trả 100 USD/tháng.
 - 100 USD/tháng (≈2,6 tr) là giá cao với người 25–40 tuổi ở VN; tỷ lệ huỷ quyết định quy mô: huỷ 4% vs 20% làm số học viên tháng 24 chênh 157 vs 68. Cần đo tỷ lệ huỷ thật ngay 2–3 tháng đầu.
 - Số người theo dõi và tỷ lệ chuyển đổi là giả định — thay bằng số thật của kênh trong tháng 1 rồi chạy lại `mo_hinh.py`.
 - Chưa xác minh (nghien-cuu.md mới ở mức tin cậy Trung bình/Thấp): phí Skool, payout Stripe Express về VN (phải thử 1 giao dịch thật), thuế khi bán qua nền tảng nước ngoài, chi phí liên kết xuất bản ebook. Khách trả USD còn chịu thêm ~1–4% phí đổi ngoại tệ phía thẻ — làm giá thực tế với khách cao hơn 100 USD, có thể kéo chuyển đổi xuống.

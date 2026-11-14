@@ -54,7 +54,7 @@ Lịch ra mắt theo TC: tháng 1 mở cộng đồng miễn phí; tháng 2 mở
 | Mục | Nội dung |
 |---|---|
 | Mục tiêu | Người theo dõi → vào Skool. Đây là **điểm nghẽn lớn nhất**: chỉ 5% (cơ sở), 2,5% (thận trọng) (TC) vì Skool không có tiếng Việt, phải tạo tài khoản, video ngắn khó gắn link (TC, NC) |
-| Nội dung | FB: thêm link Skool vào bài ghim "Bắt đầu từ đây" có sẵn (KENH). TikTok: link Skool ở bio |
+| Nội dung | FB: thêm link Skool vào bài ghim "Bắt đầu từ đây" — KENH lên kế hoạch ghim bài này sau tuần 2, chưa có sẵn. Trước đó: link ở bình luận ghim. TikTok: link Skool ở bio |
 | Lời kêu gọi | "Bắt đầu từ câu hỏi: mình là ai trong thị trường? Bài nhập môn miễn phí trong cộng đồng Đầu Tư Bình An." |
 | Chỉ số | Lượt bấm link/tuần; tỷ lệ xem trang About → tham gia (tham khảo ~18–20% với group miễn phí, độ tin cậy Thấp — NC) |
 | Gỡ nghẽn | Video 60 giây "cách vào cộng đồng trong 3 bước" bằng tiếng Việt, ghim đầu kênh; trang About viết tiếng Việt; câu hỏi đăng ký chỉ 1 câu |
@@ -181,12 +181,12 @@ Ghi chép của anh: mỗi chu kỳ (2 × 3) × (2 × 3) × (2 × 3) = 216 lần
 
 | Bài | Chủ đề | ĐẠO (đề xuất) | ĐỜI | ĐẦU TƯ |
 |---|---|---|---|---|
-| 2.0 | Vì sao 10 năm, không phải 10 ngày | "Dục tốc bất đạt, kiến tiểu lợi tắc đại sự bất thành" (Luận Ngữ 13.17) | Trồng cây, nuôi con | [chờ anh: lý do chọn khung 10 năm] |
+| 2.0 | Vì sao 10 năm, không phải 10 ngày | "Dục tốc tắc bất đạt, kiến tiểu lợi tắc đại sự bất thành" (Luận Ngữ 13.17) | Trồng cây, nuôi con | [chờ anh: lý do chọn khung 10 năm] |
 | 2.1 | Chu kỳ là gì | Vô thường (Phật) · "Phản giả Đạo chi động" — trở lại là vận động của Đạo (Đạo Đức Kinh ch. 40) | Bốn mùa, lên xuống của nghề nghiệp | [chờ anh: định nghĩa chu kỳ của anh, 10 năm gồm mấy chu kỳ, mỗi chu kỳ dài bao lâu] |
-| 2.2 | Đọc công thức 6 × 6 × 6 | Âm – dương, hai mặt của một sự việc (Đạo gia) | — | [chờ anh: "6" là gì; "2" và "3" trong (2 × 3) là gì; "216 lần" đo cái gì (số lần ra quyết định? bước? …)] |
+| 2.2 | Đọc công thức 6 × 6 × 6 | [chờ anh: nguyên lý Đạo anh muốn gắn với công thức] | — | [chờ anh: "6" là gì; "2" và "3" trong (2 × 3) là gì; "216 lần" đo cái gì (số lần ra quyết định? bước? …)] |
 | 2.3 | Chu kỳ BTC | Trung đạo — không cực đoan (Phật) | Không vay hết sức mua nhà khi giá đang sốt | [chờ anh: các pha của chu kỳ BTC và việc retail làm ở mỗi pha] |
 | 2.4 | Chu kỳ altcoin | "Thượng thiện nhược thuỷ" — nước mềm, chảy theo địa hình (Đạo Đức Kinh ch. 8) | Biết lúc nào nên đổi việc, lúc nào nên ở yên | [chờ anh: quan hệ chu kỳ BTC → altcoin, dấu hiệu chuyển pha theo nguyên tắc] |
-| 2.5 | Lặp lại ở 2 chu kỳ tiếp theo | "Thiên lý chi hành, thuỷ ư túc hạ" — ngàn dặm bắt đầu từ bước chân (Đạo Đức Kinh ch. 64) | Kỷ luật lặp lại mới thành thói quen | [chờ anh: chu kỳ 2 và 3 khác chu kỳ 1 thế nào; điều chỉnh gì khi lặp lại] |
+| 2.5 | Lặp lại ở 2 chu kỳ tiếp theo | "Thiên lý chi hành, thuỷ ư túc hạ" — ngàn dặm bắt đầu từ bước chân (Đạo Đức Kinh ch. 64) | Kỷ luật lặp lại mới thành thói quen | [chờ anh: "2 chu kỳ tiếp theo" nối với chu kỳ đầu thế nào (khớp bài 2.1: 10 năm gồm mấy chu kỳ); điều chỉnh gì khi lặp lại] |
 | 2.6 | Quản trị rủi ro trong công thức | Biết dừng (Đạo Đức Kinh ch. 44); "Tri chỉ nhi hậu hữu định" — biết chỗ dừng rồi mới định (Đại Học) | Quỹ dự phòng của gia đình | [chờ anh: tỷ trọng vốn, cắt lỗ, chốt lời theo nguyên tắc của anh] |
 | 2.7 | Kế hoạch 10 năm của riêng tôi | Tu thân → tề gia (Đại Học) | Kế hoạch tài chính gia đình | Bài tập: điền mẫu kế hoạch 10 năm + nhật ký kỷ luật · [chờ anh: mẫu kế hoạch] |
 
@@ -280,7 +280,7 @@ Không dùng: "giúp bạn có lợi nhuận", "lợi nhuận đều", "đồng 
 | "Bao lời", "chắc thắng", "thu nhập thụ động", "không rủi ro" | NC; Luật Quảng cáo Điều 8 k.9 |
 | Nhận tiền đầu tư hộ, giữ ví, xin khoá ví | brief |
 
-**Cần luật sư xác nhận (chi phí tư vấn 10,0 tr đã có trong TC):** video mời vào cộng đồng miễn phí — nơi có bán khoá — có bị coi là nội dung "có lợi ích thương mại" phải gắn nhãn theo Luật 75/2025 không (NC). Nếu có, xung đột với quy định TikTok ở trên cần cách xử lý riêng.
+**Cần luật sư xác nhận (chi phí tư vấn 10,0 tr đã có trong TC):** (1) buổi 1:1 "review danh mục theo nguyên tắc" và buổi "chuyển pha" của gói 1.000 USD (mục 3.4) có bị coi là tư vấn đầu tư/crypto không, cần câu chữ và giới hạn gì; (2) video mời vào cộng đồng miễn phí — nơi có bán khoá — có bị coi là nội dung "có lợi ích thương mại" phải gắn nhãn theo Luật 75/2025 không (NC). Nếu có, xung đột với quy định TikTok ở trên cần cách xử lý riêng.
 
 ### 4.5 Khi dùng Phật – Nho – Đạo
 - Gọi là **triết lý sống / kim chỉ nam**, không gọi là tu tập, không hứa "giác ngộ" hay "phước báu" đi kèm tiền.
@@ -303,12 +303,12 @@ Không dùng: "giúp bạn có lợi nhuận", "lợi nhuận đều", "đồng 
 | Ba | Quản trị rủi ro | ĐẦU TƯ | Đạo gia: biết dừng | Theo dõi / lưu |
 | Tư | Cảnh giác & đạo đức | **ĐẠO** | Nho: nghĩa trước lợi | Skool: thử thách 7 ngày |
 | Năm | Kỷ luật & thói quen | ĐỜI | Nho: tu thân, tề gia | Skool: thử thách 7 ngày |
-| Sáu | Câu chuyện & bài học | ĐỜI | Câu chuyện thật của anh | Theo dõi / lưu |
+| Sáu | Câu chuyện & bài học | **ĐẠO** | Câu chuyện thật của anh + 1 nguyên lý | Theo dõi / lưu |
 | Bảy | Trả lời bình luận | ĐẦU TƯ | Câu hỏi từ kênh + Skool | Skool: "hỏi tiếp trong cộng đồng" |
-| CN | Nguyên tắc vàng | **ĐẠO** | Đạo gia: nước, chu kỳ | Theo dõi / lưu |
+| CN | Nguyên tắc vàng | ĐỜI | Đạo gia: nước, chu kỳ → nguyên tắc sống | Theo dõi / lưu |
 
 Tỷ lệ tuần: **ĐẠO 3 · ĐỜI 2 · ĐẦU TƯ 2** (≈ 43% / 29% / 29%). Đúng ý anh "mở bằng Đạo".
-Không lặp trụ cột 2 ngày liền (brand.md) — lịch trên đã thoả.
+Không lặp trụ cột 2 ngày liền (brand.md), và lớp dẫn dắt cũng không lặp 2 ngày liền, kể cả Chủ Nhật → Thứ Hai.
 
 ### 5.2 Mẫu kịch bản buổi sáng (đội content gửi 05:30)
 ```
@@ -338,7 +338,7 @@ Thời lượng giữ 90–180 giây, giờ đăng giữ 11:30 FB / 12:00 TikTok
 | 6 | "Không có gì đứng yên, kể cả thị trường" | Vô thường; ch. 40 | Theo dõi · CN |
 | 7 | "Tu thân, tề gia rồi mới đầu tư" | Đại Học | Thử thách ngày 2 · Năm |
 | 8 | "Ngày mình hiểu ra mình chỉ là tầng 5" | [chờ anh: câu chuyện thật] | Bài nhập môn · Sáu |
-| 9 | "Nước mềm nhưng mài mòn đá" | Đạo Đức Kinh ch. 8 | Theo dõi · CN |
+| 9 | "Nước mềm nhưng mài mòn đá" | Đạo Đức Kinh ch. 78 (và ch. 43) | Theo dõi · CN |
 | 10 | "Câu hỏi hay nhất tuần từ cộng đồng" | Câu Đạo của tuần | Hỏi tiếp trong cộng đồng · Bảy |
 
 Quay số 1–2 trong tuần 1 làm video ghim "Bắt đầu từ đây".
@@ -386,7 +386,7 @@ Ghi chú (tự tính): với A, người theo đủ 10 năm trả 1.000 + 100 ×
 | Thử thanh toán Skool → VN | Tạo group, bán khoá 1 USD, kết nối Stripe Express, chờ payout thứ Tư về VND | NC |
 | Hỏi ngân hàng hỗ trợ | Nhận tiền từ Stripe vào tài khoản cá nhân/hộ kinh doanh; giấy tờ nguồn thu ngoại tệ | NC |
 | Xác nhận phí Skool | Mở skool.com/pricing: Hobby 9 USD, Pro 99 USD, ngưỡng 3,9% | NC |
-| Pháp lý | Luật sư rà câu miễn trừ, điều khoản gói 1.000 USD, câu chữ mục 4 (10,0 tr) | TC |
+| Pháp lý | Luật sư rà câu miễn trừ, điều khoản gói 1.000 USD, câu chữ mục 4, buổi 1:1 review danh mục và buổi chuyển pha (mục 3.4) (10,0 tr) | TC |
 | Thuế | Hỏi cơ quan thuế: hộ hay cá nhân kinh doanh, ngưỡng 500 tr hay 1 tỷ/năm | NC |
 | NXB cho ebook | Hỏi 1–2 NXB: báo giá liên kết (giả định 15,0 tr), thời gian cấp phép | NC, TC |
 | Số thật của kênh | Người theo dõi FB + TikTok, gửi Hùng chạy lại mô hình | TC |
@@ -420,8 +420,8 @@ Số TC ghi theo thứ tự **thận trọng (mức sàn) / cơ sở (tham vọn
 | KPI | Tháng 1 | Tháng 2 | Tháng 3 | Nguồn |
 |---|---|---|---|---|
 | Ngày đăng đủ 2 kênh | ≥ 25 | ≥ 25 | ≥ 25 (≥ 80 trong 90 ngày) | KENH |
-| Xem qua 3 giây (TikTok) | ≥ 50% | ≥ 55% | ≥ 60% | KENH |
-| Bình luận/video | ≥ 5 | ≥ 10 | ≥ 20 | KENH |
+| Xem qua 3 giây (TikTok) | ≥ 50% | ≥ 55% | ≥ 60% | KENH (tháng 1, 3); tháng 2 nội suy |
+| Bình luận/video | ≥ 5 | ≥ 10 | ≥ 20 | KENH (tháng 1, 3); tháng 2 nội suy |
 | Người theo dõi | 1.000 / 2.000 | 2.030 / 4.100 | 3.091 / 6.305 | TC |
 | Theo dõi mới → Skool (giả định, không phải ngưỡng) | 2,5% / 5% | 2,5% / 5% | 2,5% / 5% | TC |
 | Thành viên Skool miễn phí | 25 / 100 | 49 / 197 | 72 / 293 | TC |
@@ -489,4 +489,4 @@ Kịch bản thận trọng và "không đáng làm": **không thuê ai trong 24
 2. **Bậc thang 5 tầng dòng tiền**, chấm "Bạn ở đây" ở tầng 5 — làm thumbnail bài nhập môn.
 3. **Biểu đồ cột tháng 3 và 6** theo 3 kịch bản, vẽ đường ngưỡng cổng 3–4 (bảng 1, 7.5; TC mục 5b).
 4. **Cột so sánh 2 phương án gói 1.000 USD** (bảng mục 6, TC).
-5. **Dòng thời gian 10 năm** (chu kỳ BTC → altcoin) — chỉ vẽ sau khi anh giảng bài 2.2, không ghi số lợi nhuận.
+5. **Dòng thời gian 10 năm** (số chu kỳ và độ dài theo lời anh ở bài 2.1–2.2, mỗi chu kỳ BTC → altcoin) — chỉ vẽ sau khi anh giảng, không ghi số lợi nhuận.
