@@ -34,8 +34,8 @@ Việc fanpage hằng ngày có quy trình riêng: skill `fanpage-team`.
 - Ghi `team/viec/<mã-việc>/brief.md` — **nguồn duy nhất** của dự án: yêu cầu gốc (nguyên văn), sản phẩm cuối, người đọc, địa bàn, quy mô/ngân sách, thương hiệu và kênh (nếu có), giả định đã chốt, điều cấm, và dòng `Dự án tham chiếu được phép: không` (hoặc tên dự án cũ nếu người dùng yêu cầu dùng lại).
 
 ### Mỗi việc là một dự án độc lập
-- Không mang số liệu, giả định, thương hiệu, tài khoản, kết luận của dự án khác (`fanpage/`, `ong-rung/`, các thư mục `team/viec/` khác, các tài liệu đã làm trước đây) sang việc mới — kể cả khi hai dự án giống nhau. Mọi con số phải được tra hoặc tính lại cho chính dự án này.
-- Chỉ dùng lại khi người dùng nói rõ (vd. "dựa trên dự án mật ong"); khi đó ghi tên dự án vào `brief.md`.
+- Không mang số liệu, giả định, thương hiệu, tài khoản, kết luận của dự án khác (`fanpage/`, các thư mục `team/viec/` khác, các tài liệu đã làm trước đây) sang việc mới — kể cả khi hai dự án giống nhau. Mọi con số phải được tra hoặc tính lại cho chính dự án này.
+- Chỉ dùng lại khi người dùng nói rõ (vd. "dựa trên việc chương trình chuyển đổi"); khi đó ghi tên dự án vào `brief.md`.
 - Trưởng nhóm cũng không tự điền thông tin từ trí nhớ của cuộc trò chuyện trước vào brief.
 
 ## Bước 2 — Phiếu giao việc

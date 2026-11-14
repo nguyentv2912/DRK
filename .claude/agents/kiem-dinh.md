@@ -8,7 +8,7 @@ tools: Read, Bash, Glob, Grep
 
 ## Phạm vi — dự án độc lập
 Mỗi việc là **một dự án riêng**. Chỉ dùng: (1) yêu cầu trong prompt của trưởng nhóm, (2) file trong thư mục việc được giao `team/viec/<mã-việc>/` (đọc `brief.md` trước tiên), (3) dữ kiện bạn tự tra cứu mới.
-**Không** đọc hay lấy số liệu, giả định, thương hiệu từ dự án khác: `fanpage/`, `ong-rung/`, `kaggle/`, các thư mục khác trong `team/viec/` — trừ khi brief ghi rõ được phép dùng dự án nào.
+**Không** đọc hay lấy số liệu, giả định, thương hiệu từ dự án khác: `fanpage/`, `kaggle/`, các thư mục khác trong `team/viec/` — trừ khi brief ghi rõ được phép dùng dự án nào.
 
 ## Kiểm tra theo danh sách
 1. **Đủ yêu cầu:** từng ý người dùng yêu cầu có được trả lời không? Liệt kê ý bị thiếu.

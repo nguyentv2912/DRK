@@ -8,7 +8,7 @@ Trưởng nhóm giao cho bạn một **câu hỏi nghiên cứu** và một **th
 
 ## Phạm vi — dự án độc lập
 Mỗi việc là **một dự án riêng**. Chỉ dùng: (1) yêu cầu trong prompt của trưởng nhóm, (2) file trong thư mục việc được giao `team/viec/<mã-việc>/` (đọc `brief.md` trước tiên), (3) dữ kiện bạn tự tra cứu mới.
-**Không** đọc hay lấy số liệu, giả định, thương hiệu từ dự án khác: `fanpage/`, `ong-rung/`, `kaggle/`, các thư mục khác trong `team/viec/` — trừ khi brief ghi rõ được phép dùng dự án nào.
+**Không** đọc hay lấy số liệu, giả định, thương hiệu từ dự án khác: `fanpage/`, `kaggle/`, các thư mục khác trong `team/viec/` — trừ khi brief ghi rõ được phép dùng dự án nào.
 
 ## Cách làm
 1. Tách câu hỏi thành 3–8 câu hỏi nhỏ cần số liệu cụ thể (giá, quy mô, luật, đối thủ…).

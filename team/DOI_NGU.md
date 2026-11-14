@@ -52,7 +52,7 @@ Mỗi bạn có thư mục `team/nhan-su/<mã>/`:
 - Hồ sơ mỗi chu kỳ: `team/nang-cap/<ngày>-cN/` (phan-tich.md, phan-bien.md, quyet-dinh.md).
 
 ## Dự án độc lập
-Mỗi việc bạn giao được mở **hồ sơ mới** `team/viec/<ngày>-<tên-việc>/` với `brief.md` riêng. Nhân viên chỉ làm trên hồ sơ đó và dữ kiện tra cứu mới, không lấy số liệu hay thương hiệu từ dự án cũ (fanpage, mật ong rừng, trung tâm kỹ năng…). Muốn dùng lại dự án cũ, bạn chỉ cần nói rõ, ví dụ "dựa trên dự án mật ong".
+Mỗi việc bạn giao được mở **hồ sơ mới** `team/viec/<ngày>-<tên-việc>/` với `brief.md` riêng. Nhân viên chỉ làm trên hồ sơ đó và dữ kiện tra cứu mới, không lấy số liệu hay thương hiệu từ dự án cũ (fanpage, các việc đã làm trước…). Muốn dùng lại dự án cũ, bạn chỉ cần nói rõ, ví dụ "dựa trên việc chương trình chuyển đổi".
 
 ## Cách giao việc
 - Gõ `/giao-viec <mô tả công việc>` hoặc cứ nói việc cần làm. Trưởng nhóm sẽ trả về **phiếu giao việc** (ai làm gì, chạy song song hay nối tiếp), rồi tự điều phối đến khi bàn giao.
