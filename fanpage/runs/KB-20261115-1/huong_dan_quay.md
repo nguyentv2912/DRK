@@ -1,6 +1,6 @@
 # Hướng dẫn quay — KB-20261115-1 | Mùa đông – Gieo hạt | Tập 1: Mùa đông không phải lỗi của bạn
 
-Thời lượng dự kiến: khoảng 4–5 phút (850 chữ, 73 câu). Lời đọc: `kichban.txt` (bản sạch, copy thẳng lên teleprompter).
+Thời lượng dự kiến: khoảng 4–5 phút (khoảng 850 chữ, 86 câu). Lời đọc: `kichban.txt` (bản sạch, copy thẳng lên teleprompter).
 
 ## Trước khi quay
 - [ ] Quay dọc 9:16 hoặc ngang đều được (ngang thì Khoa dựng nửa trên nội dung – nửa dưới khuôn mặt). 1080p 30fps.

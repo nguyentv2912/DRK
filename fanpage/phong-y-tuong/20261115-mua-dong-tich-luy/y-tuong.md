@@ -1,5 +1,5 @@
 # Ý tưởng: Series "Mùa đông – Gieo hạt" (nội dung cho giai đoạn Bitcoin giảm)
-Ngày: 15/11/2026 · Nhóm: Anh, Minh, Ngọc, Phong, Trang · Trạng thái: VÒNG 1 – CHỜ ANH CHỌN TẬP
+Ngày: 15/11/2026 · Nhóm: Anh, Minh, Ngọc, Phong, Trang · Trạng thái: TẬP 1 ĐÃ CHỐT → KB-20261115-1 (đã lên kho kịch bản Drive)
 
 ## Ý gốc của anh (nguyên văn tóm lược)
 Giai đoạn Bitcoin downtrend, nhà đầu tư cần nhiều điểm để bám víu. Nội dung phải: động viên, chạm nỗi đau tiền bạc, an ủi; tạo cho họ kế hoạch đầu tư dài hạn, một tầm nhìn. Lúc người ta sợ hãi thực ra là thời điểm bắt đầu tích lũy dài hạn, không phải lúc sợ hãi. Làm chủ đề phù hợp giai đoạn hiện tại.
