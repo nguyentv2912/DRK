@@ -46,7 +46,7 @@ Tư liệu **không có** chuyện đời thật, nghề nghiệp, năm kinh ngh
 ---
 
 ## 3. Kho câu "thương hiệu" (40 câu, nguyên văn)
-Câu trích **giữ nguyên văn**. Khi đưa vào lời thoại thì đổi xưng hô theo mục 4: "bạn" → "các em", "tôi/mình" (người nói) → "anh", "ta/chúng ta" giữ nguyên hoặc đổi "anh em mình"; "mình" trong câu tự hỏi giữ nguyên. Ví dụ câu 27: "Giá không quan tâm giá vốn của các em." Đổi "Minh sư" thành "người dẫn đường" nếu bài không bàn về người dẫn đường. Câu viết HOA trong gốc thì viết thường lại cho caption.
+Câu trích **giữ nguyên văn**. Khi đưa vào lời thoại thì đổi xưng hô theo mục 4: "tôi" (người nói) → "mình", "bạn" giữ nguyên hoặc đổi "các bạn" khi nói chung, "ta/chúng ta" giữ nguyên; "mình" trong câu tự hỏi giữ nguyên. Ví dụ câu 27: "Giá không quan tâm giá vốn của các bạn." Đổi "Minh sư" thành "người dẫn đường" nếu bài không bàn về người dẫn đường. Câu viết HOA trong gốc thì viết thường lại cho caption.
 
 **A. Tiền và cuộc sống**
 1. "Tài sản là phương tiện. Sự chủ động, bình an, thời gian và chất lượng cuộc sống mới là những mục tiêu." (GT A1)
@@ -105,7 +105,7 @@ Câu trích **giữ nguyên văn**. Khi đưa vào lời thoại thì đổi xư
 ## 4. Giọng văn
 | Mục | Trong tư liệu | Quy ước kênh hiện tại | Quyết định |
 |---|---|---|---|
-| Xưng hô | "tôi – bạn", "chúng ta/ta" khi nói chung. "Mình" chỉ dùng trong câu tự hỏi. MS-D tự xưng ngôi ba "Minh sư". | brand.md cũ ghi "mình – bạn" (cần cập nhật) | **[ĐÃ CHỐT]** anh tự xưng **"anh"**, gọi người xem **"các em"**, áp cho lời thoại và caption. "Mình" trong câu tự hỏi giữ nguyên ("Mình có đang sợ bỏ lỡ?"). Không tự xưng "Minh sư". Câu trích nguyên văn giữ nguyên, chỉ đổi khi chuyển thành lời thoại. |
+| Xưng hô | "tôi – bạn", "chúng ta/ta" khi nói chung. "Mình" chỉ dùng trong câu tự hỏi. MS-D tự xưng ngôi ba "Minh sư". | brand.md ghi "mình – các bạn" (đã sửa) | **[ĐÃ CHỐT 15/11/2026]** trên kênh tự xưng **"mình"**, gọi người xem **"các bạn"** (câu nói với từng người dùng "bạn"), áp cho lời thoại và caption Facebook/TikTok. **"Anh – các em" chỉ dùng nội bộ, khi anh nói với đội; không dùng trên kênh.** "Mình" trong câu tự hỏi giữ nguyên ("Mình có đang sợ bỏ lỡ?"); vì người nói cũng là "mình", đọc lại để câu không bị hiểu nhầm chủ thể. Không tự xưng "Minh sư". Câu trích nguyên văn giữ nguyên, chỉ đổi khi chuyển thành lời thoại. |
 | Tên thương hiệu | "ĐẦU TƯ BÌNH AN", #DauTuBinhAn, slogan "ĐẦU TƯ BÌNH AN – TU TẬP – TÍCH SẢN – CHO ĐI" | "Đạo Đức Đầu Tư", #daoducdautu | **Đề xuất, chờ anh duyệt:** "ĐẠO ĐỨC ĐẦU TƯ" = tên kênh (Facebook, TikTok, #daoducdautu) · "ĐẦU TƯ BÌNH AN" = tên chương trình/cộng đồng Skool · khẩu hiệu "Tu tập – Tích sản – Cho đi" · không tự xưng "Minh Sư". Trong lúc chờ: video/caption chỉ dùng tên kênh; chỉ nhắc "Đầu Tư Bình An" khi nói về chương trình. |
 | Thế đối | "không phải X, mà là Y" · "Bạn không thiếu X, bạn thiếu Y" · "X chưa chắc đã là Y" · "A không phải B" (vô vi không phải bỏ mặc) | Hợp brand | Dùng tối đa 1–2 lần mỗi bài, kẻo thành công thức. |
 | Bộ ba | "tiền, thời gian và lòng tin" · "dữ kiện / giả định / hậu quả" · "muốn gì / sợ mất gì / bằng chứng nào" · "trí tuệ – kỷ luật – trái tim" | Hợp khung ①②③ | Dùng bộ ba cho phần thân, khớp thẻ chữ "thứ nhất/thứ hai/thứ ba". |
@@ -118,7 +118,7 @@ Câu trích **giữ nguyên văn**. Khi đưa vào lời thoại thì đổi xư
 - Mỗi câu tối đa 20 tiếng, tốt nhất 8–15 tiếng. Mỗi câu một dòng trong kịch bản.
 - Tốc độ tính 2,7 tiếng/giây: 90 giây ≈ 240 tiếng, 130 giây ≈ 350 tiếng (mặc định), 180 giây ≈ 480 tiếng.
 - Câu hook tối đa 14 chữ. Viết số bằng chữ trong lời thoại.
-- "Các em" dài hơn "bạn" một tiếng: không lặp "các em" mỗi câu, mỗi đoạn 1–2 lần là đủ; câu nào bỏ được chủ ngữ thì bỏ.
+- "Các bạn" dài hơn "bạn" một tiếng: không lặp "các bạn" mỗi câu, mỗi đoạn 1–2 lần là đủ; câu nào bỏ được chủ ngữ thì bỏ.
 - Câu có "người thứ nhất / người thứ hai" thì đổi thành "người đầu tiên / người kia", tránh bật nhầm thẻ chữ.
 
 ---
@@ -130,7 +130,7 @@ Câu trích **giữ nguyên văn**. Khi đưa vào lời thoại thì đổi xư
 | Ô | Việc làm | Chất liệu lấy từ |
 |---|---|---|
 | Hook (1 dòng) | Câu hỏi chạm / sự thật phũ / khoảnh khắc quen, tối đa 14 chữ | Kho hook dưới đây |
-| Đồng cảm (2–3 câu) | "Anh từng…": **chỉ dùng trải nghiệm anh cung cấp [chờ anh]**. Chưa có thì dùng "Chắc nhiều em từng…" và nói rõ là tình huống giả định | 30N-B, MS-D (tình huống hư cấu) |
+| Đồng cảm (2–3 câu) | "Mình từng…": **chỉ dùng trải nghiệm anh cung cấp [chờ anh]**. Chưa có thì dùng "Chắc nhiều bạn từng…" và nói rõ là tình huống giả định | 30N-B, MS-D (tình huống hư cấu) |
 | Thân ①②③ | 3 ý ngắn: bộ ba dữ kiện/giả định/hậu quả hoặc Tham/Sân/Si | Mục 2 |
 | Câu chốt | 1 câu đáng chụp màn hình | Kho câu mục 3 |
 | Câu hỏi | Câu tự soi hướng giá trị | Mục 4 |
@@ -148,33 +148,33 @@ Bản 90 giây: hook 5s, soi đời 20s, luận đạo 35s (2 ý), hành đạo 
 
 **Bài tập dùng lại được** (30N-B, MS-D, GT): viết 3 dòng "muốn gì / sợ mất gì / bằng chứng nào" · 3 lý do kiếm tiền + 3 điều không đánh đổi · chấm 4 chiều giàu có 1–5 · nghỉ bắt buộc sau lệnh thua · quy đổi mức lỗ giả định thành số tháng chi phí sống · một buổi tối không xem giá · checklist "nguồn gì, rủi ro gì, ai hưởng lợi, nếu sai thì sao?" · tờ giấy 5 mục: mục đích, dữ kiện, giả định, rủi ro, lựa chọn · lỗi – nguyên nhân – cơ chế chặn · viết kịch bản ngược với dự báo của mình · kể lại một quyết định theo 2 phiên bản: cảm xúc và quy trình.
 
-**Kho 15 hook** (đã viết thường lại và đổi sang xưng "anh – các em"; cột nguồn trỏ về câu gốc; ⚡ = hợp mở video ngắn nhất)
+**Kho 15 hook** (đã viết thường lại và đổi sang xưng "mình – các bạn"; cột nguồn trỏ về câu gốc; ⚡ = hợp mở video ngắn nhất)
 | # | Hook | Kiểu | Nguồn |
 |---|---|---|---|
-| 1 | Anh không bán giấc mơ làm giàu từ đầu tư. | Định vị | GT phụ lục |
-| 2 ⚡ | Thị trường không đáng sợ bằng lòng tham của chính các em. | Sự thật phũ | GT phụ lục (bỏ "crypto") |
-| 3 ⚡ | Các em không thiếu cơ hội. Các em thiếu nhận diện rủi ro. | Sự thật phũ | POV 23 |
-| 4 | Thị trường không nợ các em lợi nhuận. | Sự thật phũ | POV 62 |
-| 5 | Các em kiệt sức vì giao phó cuộc đời cho cây nến. | Khoảnh khắc | POV 66 |
-| 6 ⚡ | Người cùng FOMO chưa chắc ở lại khi em lỗ. | Sự thật phũ | POV 77 |
+| 1 | Mình không bán giấc mơ làm giàu từ đầu tư. | Định vị | GT phụ lục |
+| 2 ⚡ | Thị trường không đáng sợ bằng lòng tham của chính các bạn. | Sự thật phũ | GT phụ lục (bỏ "crypto") |
+| 3 ⚡ | Các bạn không thiếu cơ hội. Các bạn thiếu nhận diện rủi ro. | Sự thật phũ | POV 23 |
+| 4 | Thị trường không nợ các bạn lợi nhuận. | Sự thật phũ | POV 62 |
+| 5 | Các bạn kiệt sức vì giao phó cuộc đời cho cây nến. | Khoảnh khắc | POV 66 |
+| 6 ⚡ | Người cùng FOMO chưa chắc ở lại khi bạn lỗ. | Sự thật phũ | POV 77 |
 | 7 | Thức cả đêm nhìn chart không phải năng lực. | Sự thật phũ | POV 63 |
 | 8 ⚡ | Thua một lệnh, sao ta muốn đặt lệnh tiếp ngay? | Câu hỏi | 30N-B6 |
-| 9 | Ba lần thắng liên tiếp đã chứng minh em giỏi? | Câu hỏi | 30N-B7 |
+| 9 | Ba lần thắng liên tiếp đã chứng minh bạn giỏi? | Câu hỏi | 30N-B7 |
 | 10 | Sao khó nhất là rời màn hình khi đang có lãi? | Câu hỏi | 30N-B10 |
-| 11 ⚡ | Một lệnh khiến em mất ngủ, cần xem lại điều gì? | Câu hỏi | 30N-B15 |
-| 12 | Các em muốn con cháu thừa kế tiền, hay cả cách sống? | Câu hỏi | 30N-B27 |
-| 13 ⚡ | Người giúp em kiếm tiền chưa chắc là thầy tốt. | Sự thật phũ | MS-02-01 (rút gọn) |
-| 14 | Em thực sự sợ điều gì khi cắt lỗ? | Câu hỏi | DT#18 |
-| 15 ⚡ | Tắt màn hình rồi, em vẫn nghĩ về tiền? | Khoảnh khắc | 30N-N (rút gọn) |
+| 11 ⚡ | Một lệnh khiến bạn mất ngủ, cần xem lại điều gì? | Câu hỏi | 30N-B15 |
+| 12 | Các bạn muốn con cháu thừa kế tiền, hay cả cách sống? | Câu hỏi | 30N-B27 |
+| 13 ⚡ | Người giúp bạn kiếm tiền chưa chắc là thầy tốt. | Sự thật phũ | MS-02-01 (rút gọn) |
+| 14 | Bạn thực sự sợ điều gì khi cắt lỗ? | Câu hỏi | DT#18 |
+| 15 ⚡ | Tắt màn hình rồi, bạn vẫn nghĩ về tiền? | Khoảnh khắc | 30N-N (rút gọn) |
 
-**5 kiểu CTA** (đã đổi sang "anh – các em"; luôn kèm câu kênh "Theo dõi page để nhận thêm năng lượng kỷ luật mỗi ngày.")
+**5 kiểu CTA** (đã đổi sang "mình – các bạn"; luôn kèm câu kênh "Theo dõi page để nhận thêm năng lượng kỷ luật mỗi ngày.")
 | Kiểu | Mẫu | Nguồn |
 |---|---|---|
-| Câu hỏi tự soi giá trị | "Các em mong người thầy để lại cho mình điều gì ngoài tiền?" | MS-02 |
-| Cam kết 7 ngày | "Chọn một sai lầm để sửa trong 7 ngày, rồi bình luận cam kết của em cho anh biết." | POV 21–40 (bỏ từ khóa "KỶ LUẬT" nếu chưa có quà tặng) |
-| Kể trải nghiệm | "Các em gặp tình huống này bao giờ chưa? Kể anh nghe một bài học thật của em." | DT (CTA chung) |
+| Câu hỏi tự soi giá trị | "Các bạn mong người thầy để lại cho mình điều gì ngoài tiền?" | MS-02 |
+| Cam kết 7 ngày | "Chọn một sai lầm để sửa trong 7 ngày, rồi bình luận cam kết của bạn cho mình biết." | POV 21–40 (bỏ từ khóa "KỶ LUẬT" nếu chưa có quà tặng) |
+| Kể trải nghiệm | "Các bạn gặp tình huống này bao giờ chưa? Kể mình nghe một bài học thật của bạn." | DT (CTA chung) |
 | Lưu để dùng | "Lưu video để tự kiểm tra trước phiên giao dịch kế tiếp." | DT, 30N-B |
-| Làm khác đi | "Chia sẻ với anh một điều em định làm khác đi từ hôm nay." | 30N-N |
+| Làm khác đi | "Chia sẻ với mình một điều bạn định làm khác đi từ hôm nay." | 30N-N |
 
 ---
 
@@ -216,7 +216,7 @@ Miễn trừ: caption dùng câu brand *"Nội dung mang tính chia sẻ, không
 | "Nhân vật ấy không hẳn thiếu thông minh…" gắn cả cho tình huống tích cực (MS-D) | Lệch nghĩa | Bỏ |
 | Câu ghép khuôn vô nghĩa ("không dùng tôi không hứa lợi nhuận chắc chắn như một lời hứa lợi nhuận", POV 42, 47, 60) | Lỗi máy | Không chép |
 | Hook cụt có hai dấu hỏi ("hỏi: thế nào là giàu??"), dấu "?." ở DT, viết thường sai "fomo", "rsi", "livermore" | Lỗi khuôn | Soát chính tả |
-| Câu 25–45 tiếng, giọng giảng bài, tự xưng "Minh sư" ngôi ba | Không hợp video ngắn | Câu ≤ 20 tiếng, xưng "anh – các em" |
+| Câu 25–45 tiếng, giọng giảng bài, tự xưng "Minh sư" ngôi ba | Không hợp video ngắn | Câu ≤ 20 tiếng, xưng "mình – các bạn" |
 | Thời lượng 3–5 phút, "Workshop 45 phút", "Video 90 giây" trên cùng khung 5 phút | Mâu thuẫn định dạng | Chuẩn kênh: 90–180 giây |
 | Link Zalo (POV 081+) | Chưa rõ còn dùng | Không chèn khi chưa được xác nhận |
 | Từ vựng forex/phái sinh (lot, scalping, stop loss, indicator) ở DT | Có thể lệch người xem F0 | Đổi sang lời thường: "khối lượng", "điểm cắt lỗ", "chỉ báo" |
@@ -262,7 +262,7 @@ Cụm trùng ý (mỗi cụm chỉ chọn 1 bài trong 30 ngày): đứng ngoài
 | 33 | Lời khuyên tốt không tước quyền chọn | Hỏi mục tiêu, nói rõ rủi ro, để bạn tự quyết. | MS-02-05 |
 | 34 | Toán học của thua lỗ | Lỗ 50% cần lãi 100% mới về vốn. | GT B4 |
 | 35 | Không ai trả lương vì bạn nhìn biểu đồ | Thức khuya đặt lệnh cho "không phí công" là bẫy. | DT#2 |
-| 36 | Các em sợ gì khi cắt lỗ? | Nhiều khi ta bảo vệ cái tôi hơn bảo vệ vốn. | DT#17, #18 |
+| 36 | Các bạn sợ gì khi cắt lỗ? | Nhiều khi ta bảo vệ cái tôi hơn bảo vệ vốn. | DT#17, #18 |
 | 37 | Giá không quan tâm giá vốn của bạn | Chờ "về bờ" là để giá vốn quyết định thay kế hoạch. | DT#46 |
 | 38 | Thêm chỉ báo không chữa thiếu kỷ luật | Mỗi lần thua lại tải thêm một chỉ báo. | DT#36, POV 22 |
 | 39 | Tâm trạng chi phối lệnh | Vừa cãi nhau xong vẫn bật máy và tăng khối lượng. | DT#22 |
@@ -273,7 +273,7 @@ Chủ đề có tên nhưng **chưa có nội dung** (Năm tầng, Bảy phẩm 
 
 ## 9. Câu hỏi cho anh
 1. **Thương hiệu (duyệt đề xuất mục 4):** kênh "Đạo Đức Đầu Tư", chương trình/cộng đồng Skool "Đầu Tư Bình An", khẩu hiệu "Tu tập – Tích sản – Cho đi". Anh đồng ý không? Hashtag #DauTuBinhAn có dùng cho bài về chương trình không?
-2. **Xưng hô "anh – các em" (đã chốt):** caption Facebook/TikTok cũng xưng vậy, hay caption giữ trung tính? Câu miễn trừ và CTA cố định của kênh có cần đổi theo không?
+2. **Xưng hô [ĐÃ CHỐT 15/11/2026]:** trên kênh (lời thoại, caption Facebook/TikTok) xưng "mình – các bạn"; "anh – các em" chỉ dùng nội bộ với đội. Câu miễn trừ và CTA cố định của kênh vốn trung tính nên giữ nguyên, anh xác nhận giúp.
 3. **Chuyện thật:** anh có thể kể 5–10 trải nghiệm thật (lần thua, lần dừng đúng lúc, lần bị rủ rê) để đội dùng cho đoạn "mình từng…" không?
 4. **Khái niệm còn trống:** định nghĩa từng tầng trong Năm tầng trưởng thành; danh sách Bảy phẩm chất (đội đang suy từ tên bài); 10 giới luật lấy GT A4 làm chuẩn được không?
 5. **5 tầng dòng tiền FED → VC → Protocol → KOL → Retail:** không có trong tư liệu. Anh có tài liệu riêng không, và có muốn đưa lên kênh không?

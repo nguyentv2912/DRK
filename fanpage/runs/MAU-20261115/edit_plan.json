@@ -1,0 +1,20 @@
+{"brand": "ĐẠO ĐỨC ĐẦU TƯ",
+ "title": "Đầu tư để làm gì? Đừng để tiền thành chủ nhân",
+ "hook_title": "KHÔNG BÁN GIẤC MƠ LÀM GIÀU",
+ "hook_accent": "gold",
+ "keywords": {"giấc mơ làm giàu": "red", "thông báo giá": "red", "ghế chủ": "red", "cay cú": "red",
+              "bình an": "gold", "kỷ luật": "gold", "giữ vốn": "green", "quỹ dự phòng": "green",
+              "đứng ngoài": "green", "không đánh đổi": "gold", "chủ nhân": "red"},
+ "cards": [
+   {"trigger": "ghế chủ", "text": "TIỀN NGỒI GHẾ CHỦ", "accent": "red", "sec": 3},
+   {"trigger": "đầu tư để làm gì", "text": "ĐẦU TƯ ĐỂ LÀM GÌ?", "accent": "gold", "sec": 3},
+   {"trigger": "thứ nhất", "kicker": "1", "text": "ĐẠO: TIỀN PHỤC VỤ ĐỜI", "accent": "gold", "sec": 3.5},
+   {"trigger": "thứ hai", "kicker": "2", "text": "ĐỜI: SOI KHOẢNH KHẮC THẬT", "accent": "gold", "sec": 3.5},
+   {"trigger": "thứ ba", "kicker": "3", "text": "ĐẦU TƯ: GIỮ VỐN TRƯỚC", "accent": "green", "sec": 3.5},
+   {"trigger": "có chắc lãi không", "text": "KỶ LUẬT ≠ CHẮC THẮNG", "accent": "red", "sec": 3},
+   {"trigger": "không hứa lãi", "text": "CHIA SẺ, KHÔNG PHẢI LỜI KHUYÊN ĐẦU TƯ", "accent": "gold", "sec": 3},
+   {"trigger": "hai cột", "text": "3 LÝ DO · 3 ĐIỀU KHÔNG ĐỔI", "accent": "green", "sec": 4},
+   {"trigger": "công cụ tạo lựa chọn", "text": "ĐỪNG ĐỂ TIỀN THÀNH CHỦ NHÂN", "accent": "gold", "sec": 4}
+ ],
+ "cta": {"text": "THEO DÕI", "sub": "ĐẠO ĐỨC ĐẦU TƯ — kỷ luật mỗi ngày", "sec": 3.5},
+ "cut_ranges": [], "crop_x": 0.5, "max_pause": 0.45, "music_volume": 0.07}
