@@ -94,7 +94,7 @@ def main(video, tr_json, plan_json, mh_json, out):
         t1 = min(dur - 4, t0 + p.get("sec", 7))
         png = f"{tmp}/p{i}.png"; panel_png(png, p, acc, bg)
         inputs += ["-loop", "1", "-t", f"{dur:.3f}", "-i", png]
-        y = p.get("y", 1470)
+        y = p.get("y", 480 if mh.get("layout") == "split" else 1470)
         filters.append(f"[{k}:v]format=rgba,fade=t=in:st={t0:.2f}:d=0.3:alpha=1,fade=t=out:st={t1-0.3:.2f}:d=0.3:alpha=1[p{i}]")
         filters.append(f"[{last}][p{i}]overlay=0:{y}:enable='between(t,{t0:.2f},{t1:.2f})'[v{k}]")
         last = f"v{k}"; k += 1

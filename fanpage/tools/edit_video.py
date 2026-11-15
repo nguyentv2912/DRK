@@ -26,7 +26,8 @@ edit_plan.json:
   "cta": {"text": "THEO DÕI", "sub": "ĐẠO ĐỨC ĐẦU TƯ — kỷ luật mỗi ngày", "sec": 3.5},
   "crop_x": 0.5,          # vị trí khung dọc theo chiều ngang (0 = trái, 1 = phải)
   "max_pause": 0.45,      # khoảng lặng dài hơn thế này sẽ bị cắt
-  "music_volume": 0.07,
+  "music_volume": 0.22,   # nhạc nền fanpage/assets/nhac/binh-an.mp3 (tự tạo), tự hạ khi có giọng nói
+  "layout": "split",      # tuỳ chọn: quay NGANG -> nửa dưới mặt người nói, nửa trên nội dung/hiệu ứng
   "brand": "ĐẠO ĐỨC ĐẦU TƯ"
 }
 """
@@ -156,7 +157,7 @@ def ts(t):
     return f"{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}"
 
 
-def write_ass(words, segs, keywords, path, total):
+def write_ass(words, segs, keywords, path, total, margin_v=560):
     head = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -165,7 +166,7 @@ WrapStyle: 0
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Sub,DejaVu Sans,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,7,3,2,80,80,560,1
+Style: Sub,DejaVu Sans,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,7,3,2,80,80,{margin_v},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -254,8 +255,15 @@ def render(raw, transcript, plan_path, out):
     total = sum(b - a for a, b in segs)
     tmp = tempfile.mkdtemp(prefix="edit_")
 
-    # khung dọc
-    if sw / sh > W / H:
+    # khung dọc. layout "split": quay ngang -> nửa dưới là mặt người nói, nửa trên là nội dung/hiệu ứng
+    split = plan.get("layout") == "split" and sw / sh > 1
+    cy = 300 if split else 520
+    HH = H // 2
+    if split:
+        fw = int(sw * HH / sh) // 2 * 2
+        fx = int((fw - W) * float(plan.get("crop_x", 0.5)))
+        base = f"scale={fw}:{HH},crop={W}:{HH}:{fx}:0"
+    elif sw / sh > W / H:
         cw, ch = int(sh * W / H) // 2 * 2, sh
         cx = int((sw - cw) * float(plan.get("crop_x", 0.5)))
         base = f"crop={cw}:{ch}:{cx}:0,scale={W}:{H}"
@@ -268,7 +276,11 @@ def render(raw, transcript, plan_path, out):
     with open(listf, "w") as lf:
         for i, (a, b) in enumerate(segs):
             z = zooms[i % 2]
-            vf = base + (f",scale={int(W * z) // 2 * 2}:{int(H * z) // 2 * 2},crop={W}:{H}" if z != 1 else "")
+            fh = HH if split else H
+            vf = base + (f",scale={int(W * z) // 2 * 2}:{int(fh * z) // 2 * 2},crop={W}:{fh}" if z != 1 else "")
+            if split:
+                bg = plan.get("bg", "0x0C1E18")
+                vf += f",pad={W}:{H}:0:{HH}:color={bg},drawbox=x=0:y={HH - 4}:w={W}:h=4:color=0xD6B25E:t=fill"
             vf += f",setsar=1,fps={FPS}"
             d = b - a
             af = f"aresample=48000,afade=t=in:d=0.03,afade=t=out:st={max(0, d - 0.04):.3f}:d=0.04"
@@ -284,13 +296,13 @@ def render(raw, transcript, plan_path, out):
 
     # 2) phụ đề
     ass = os.path.join(tmp, "subs.ass")
-    n_sub = write_ass(kept, segs, plan.get("keywords", {}), ass, total)
+    n_sub = write_ass(kept, segs, plan.get("keywords", {}), ass, total, 990 if split else 560)
 
     # 3) thẻ chữ
     overlays = []  # (png, start, end)
     if plan.get("hook_title"):
         p = os.path.join(tmp, "c_hook.png")
-        card_png(p, plan["hook_title"], accent=plan.get("hook_accent", "red"))
+        card_png(p, plan["hook_title"], accent=plan.get("hook_accent", "red"), y_center=cy)
         overlays.append((p, 0.0, 3.5))
     after = 0.0
     for k, c in enumerate(plan.get("cards", [])):
@@ -303,12 +315,12 @@ def render(raw, transcript, plan_path, out):
         after = t_raw + 0.1
         s = remap(t_raw, segs)
         p = os.path.join(tmp, f"c{k:02d}.png")
-        card_png(p, c["text"], c.get("kicker", ""), c.get("sub", ""), c.get("accent", "gold"))
+        card_png(p, c["text"], c.get("kicker", ""), c.get("sub", ""), c.get("accent", "gold"), y_center=cy)
         overlays.append((p, s, min(total, s + float(c.get("sec", 3.5)))))
     cta = plan.get("cta")
     if cta:
         p = os.path.join(tmp, "c_cta.png")
-        card_png(p, cta["text"], sub=cta.get("sub", ""), accent=cta.get("accent", "gold"))
+        card_png(p, cta["text"], sub=cta.get("sub", ""), accent=cta.get("accent", "gold"), y_center=cy)
         overlays.append((p, max(0, total - float(cta.get("sec", 3.5))), total))
     # thương hiệu góc trên
     from PIL import Image, ImageDraw, ImageFont
@@ -323,11 +335,11 @@ def render(raw, transcript, plan_path, out):
     inputs = ["-i", cat, "-loop", "1", "-i", bp]
     for p, _, _ in overlays:
         inputs += ["-loop", "1", "-i", p]
-    vol = float(plan.get("music_volume", 0.07))
-    music = (f"aevalsrc='{vol}*(0.6*sin(2*PI*110*t)*(0.6+0.4*sin(2*PI*0.25*t))"
-             f"+0.5*sin(2*PI*164.8*t)+0.4*sin(2*PI*220*t)+0.9*sin(2*PI*55*t)*exp(-8*mod(t,0.5)))'"
-             f":s=48000:c=stereo:d={total:.2f}")
-    inputs += ["-f", "lavfi", "-i", music]
+    vol = float(plan.get("music_volume", 0.22))
+    mfile = plan.get("music_file") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "nhac", "binh-an.mp3")
+    if not os.path.exists(mfile):
+        subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), "tao_nhac.py"), mfile, "90"], check=True)
+    inputs += ["-stream_loop", "-1", "-i", mfile]
     mi = 2 + len(overlays)
     ass_esc = ass.replace("\\", "/").replace(":", "\\:")
     fc = [f"[0:v][1:v]overlay=0:0:shortest=1[v0]"]
@@ -339,8 +351,11 @@ def render(raw, transcript, plan_path, out):
     fc.append(f"[{last}]ass='{ass_esc}'[vout]")
     fc.append(f"[0:a]highpass=f=70,acompressor=threshold=-20dB:ratio=3:attack=5:release=80,"
               f"loudnorm=I=-15:TP=-1.5:LRA=9[voice]")
-    fc.append(f"[{mi}:a]afade=t=in:d=1,afade=t=out:st={max(0, total - 2):.2f}:d=2[mus]")
-    fc.append("[voice][mus]amix=inputs=2:duration=first:normalize=0[aout]")
+    fc.append(f"[voice]asplit=2[vo1][vo2]")
+    fc.append(f"[{mi}:a]aresample=48000,aformat=channel_layouts=stereo,volume={vol},atrim=0:{total:.2f},"
+              f"afade=t=in:d=1.5,afade=t=out:st={max(0, total - 2.5):.2f}:d=2.5[mraw]")
+    fc.append("[mraw][vo2]sidechaincompress=threshold=0.03:ratio=4:attack=20:release=400[mus]")
+    fc.append("[vo1][mus]amix=inputs=2:duration=first:normalize=0[aout]")
     run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", *inputs, "-filter_complex", ";".join(fc),
          "-map", "[vout]", "-map", "[aout]", "-t", f"{total:.2f}", "-c:v", "libx264", "-preset", "medium",
          "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", out])
