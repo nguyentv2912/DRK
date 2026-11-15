@@ -28,3 +28,5 @@ Hook = tin nổi bật trong ngày (1 câu, có số liệu + nguồn)
 - Định dạng: **vừa là bài đăng vừa là nội dung quay video** (cả hai).
 - Giờ đăng: có tin thì cập nhật bài; video cố định **ít nhất 1 video/ngày**.
 - Ngọc làm thử 1 bài mẫu với tin crypto mới nhất.
+- 15/11: **Tránh từ nhạy cảm bị nền tảng hạn chế** (ví dụ: mua, bán, kiếm tiền). Đã thay: bán→giảm; lỗ→sụt giảm/mức dừng; lãi→thắng; vay→xoay thêm vốn; vào tiền→tham gia; gọi kèo/bắt đáy→hô hào; tín hiệu mua bán→tín hiệu giao dịch; câu thương hiệu "kiếm tiền…" → "Một quyết định không nên xóa quyền chơi tiếp." (sổ tay câu 25).
+
