@@ -3,7 +3,7 @@
   "chosen": {
     "pillar": "Đạo đức & tỉnh táo (chuyên mục Chủ Nhật: Nguyên tắc vàng của tuần)",
     "topic": "Đầu tư để làm gì? — bài mở đầu giới thiệu kênh (sổ tay mục 8, chủ đề #1)",
-    "angle": "Kênh không dạy đoán giá; kênh dạy để tiền quay về đúng chỗ là công cụ, đi theo mạch ĐẠO (tiền phục vụ cuộc sống) → ĐỜI (bữa cơm bị báo giá cắt ngang) → ĐẦU TƯ (giữ vốn, quỹ dự phòng, dám đứng ngoài).",
+    "angle": "Kênh không dạy đoán giá; kênh giúp người xem để tiền quay về đúng chỗ là công cụ: nguyên tắc sống (tiền phục vụ cuộc sống) → khoảnh khắc đời thường (bữa cơm bị báo giá cắt ngang, tình huống giả định) → quyết định với tiền (giữ vốn, quỹ dự phòng, dám đứng ngoài).",
     "hooks": [
       "Mình không bán giấc mơ làm giàu từ đầu tư.",
       "Tiền đang phục vụ bạn, hay bạn đang phục vụ tiền?",
@@ -13,17 +13,44 @@
     "scoring_formula": "(cảm xúc×3 + hữu ích×3 + video×2 + bình luận×2)/10",
     "structure": "danh-sach",
     "key_points": [
-      {"point": "ĐẠO: tiền phục vụ cuộc sống, không thay thế cuộc sống", "example": "Câu gốc POV 081+, câu thương hiệu #2 (30N-B1)"},
-      {"point": "ĐỜI: soi vào khoảnh khắc thật", "example": "Bữa cơm gia đình bị báo giá cắt ngang (tình huống giả định, theo MS-D14)"},
-      {"point": "ĐẦU TƯ: giữ vốn trước, đứng ngoài là lựa chọn hợp lệ", "example": "Có quỹ dự phòng, không quyết định lúc đang nóng; kỷ luật không bảo đảm thắng"},
-      {"point": "Bài tập tự soi 10 phút", "example": "3 lý do muốn kiếm tiền + 3 điều không đánh đổi (bài tập trong sổ tay mục 5)"}
+      {
+        "point": "Tiền phục vụ cuộc sống, không thay thế cuộc sống",
+        "example": "POV 081+; câu thương hiệu #2 (30N-B1)"
+      },
+      {
+        "point": "Soi cảm xúc trong khoảnh khắc thật",
+        "example": "Bữa cơm bị báo giá cắt ngang (tình huống giả định, theo MS-D14)"
+      },
+      {
+        "point": "Giữ vốn trước, đứng ngoài là lựa chọn hợp lệ",
+        "example": "Quỹ dự phòng; kỷ luật không bảo đảm thắng"
+      },
+      {
+        "point": "Bài tập tự soi 10 phút",
+        "example": "3 lý do muốn kiếm tiền + 3 điều không đánh đổi"
+      }
     ],
-    "why": "Bài đầu tiên cần trả lời 'kênh này là ai, khác gì kênh khác'. Hook #1 trong kho hook là câu định vị gốc của anh (GT phụ lục). Chủ đề #1 có sẵn ví dụ ĐẠO → ĐỜI → ĐẦU TƯ ngay trong sổ tay nên không phải bịa. Không đụng mã/coin, không có số lợi nhuận, không cần 6×6×6. Không trùng 2 bài trước (Tâm lý 10/11, Quản trị rủi ro 14/11). Không trích kinh điển Phật–Nho–Đạo vì không cần, và tránh rủi ro sai xuất xứ."
+    "why": "Bài đầu tiên cần trả lời 'kênh này là ai, khác gì kênh khác'. Hook #1 trong kho hook là câu định vị gốc của anh (GT phụ lục). Chủ đề #1 có sẵn ví dụ ĐẠO → ĐỜI → ĐẦU TƯ ngay trong sổ tay nên không phải bịa. Không đụng mã/coin, không có số lợi nhuận, không cần 6×6×6. Không trùng 2 bài trước (Tâm lý 10/11, Quản trị rủi ro 14/11). Không trích kinh điển Phật–Nho–Đạo vì không cần, và tránh rủi ro sai xuất xứ. Bản sửa sau giám sát: bỏ nhãn Đạo/Đời/Đầu tư (không phải phương pháp anh đặt tên), ghi rõ tình huống giả định, bỏ câu so sánh 'ít ai dạy', cắt còn ≤ 215 chữ."
   },
   "candidates": [
-    {"topic": "Đầu tư để làm gì? (chủ đề #1) — bài mở đầu", "pillar": "Đạo đức & tỉnh táo", "score": 8.7, "reason": "Cảm xúc 9 (bữa cơm, ai cũng có), hữu ích 8 (bài tập làm ngay), video 9 (định vị + 3 bước rất dễ nói), bình luận 9 (câu hỏi 'điều không đánh đổi' trả lời dễ, mang tính cá nhân). Đúng vai bài mở đầu: nói rõ kênh là ai và không làm gì."},
-    {"topic": "Đạo – Trí – Hạnh (chủ đề #4)", "pillar": "Đạo đức & tỉnh táo", "score": 6.9, "reason": "Cảm xúc 6, hữu ích 7, video 8, bình luận 7. Thể hiện hệ tư tưởng nhưng trừu tượng, nhiều từ Hán-Việt; người mới chưa biết kênh dễ lướt qua. Hợp làm bài thứ 2–3."},
-    {"topic": "Người dẫn đường, không phải người hô lệnh (chủ đề #3)", "pillar": "Đạo đức & tỉnh táo", "score": 7.6, "reason": "Cảm xúc 8, hữu ích 8, video 8, bình luận 6. Định vị tốt (không tạo tín đồ, không gọi kèo) nhưng mở đầu kênh bằng chuyện 'thầy tốt/thầy xấu' dễ nghe như tự đề cao mình; nên để tuần sau."}
+    {
+      "topic": "Đầu tư để làm gì? (chủ đề #1) — bài mở đầu",
+      "pillar": "Đạo đức & tỉnh táo",
+      "score": 8.7,
+      "reason": "Cảm xúc 9 (bữa cơm, ai cũng có), hữu ích 8 (bài tập làm ngay), video 9 (định vị + 3 bước rất dễ nói), bình luận 9 (câu hỏi 'điều không đánh đổi' trả lời dễ, mang tính cá nhân). Đúng vai bài mở đầu: nói rõ kênh là ai và không làm gì."
+    },
+    {
+      "topic": "Đạo – Trí – Hạnh (chủ đề #4)",
+      "pillar": "Đạo đức & tỉnh táo",
+      "score": 6.9,
+      "reason": "Cảm xúc 6, hữu ích 7, video 8, bình luận 7. Thể hiện hệ tư tưởng nhưng trừu tượng, nhiều từ Hán-Việt; người mới chưa biết kênh dễ lướt qua. Hợp làm bài thứ 2–3."
+    },
+    {
+      "topic": "Người dẫn đường, không phải người hô lệnh (chủ đề #3)",
+      "pillar": "Đạo đức & tỉnh táo",
+      "score": 7.6,
+      "reason": "Cảm xúc 8, hữu ích 8, video 8, bình luận 6. Định vị tốt (không tạo tín đồ, không gọi kèo) nhưng mở đầu kênh bằng chuyện 'thầy tốt/thầy xấu' dễ nghe như tự đề cao mình; nên để tuần sau."
+    }
   ],
   "source_rewritten": false
 }

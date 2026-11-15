@@ -1,33 +1,28 @@
 Mình không bán giấc mơ làm giàu từ đầu tư.
 
-Đây là Đạo Đức Đầu Tư. Nơi mình nói với các bạn một điều ít ai dạy: hiểu mình trước khi hiểu thị trường.
+Đây là Đạo Đức Đầu Tư, nơi mình cùng các bạn tập hiểu mình trước khi hiểu thị trường.
 
-Chắc nhiều bạn từng thế này.
 Cả nhà đang ăn cơm, điện thoại rung báo giá.
-Bạn cúi xuống xem, rồi cả bữa chẳng nhớ đã ăn gì.
+Bạn cúi xuống xem, rồi cả bữa chẳng nhớ đã ăn gì. (tình huống giả định)
 
 Lúc đó, tiền đã ngồi lên ghế chủ.
 
-Trên kênh, mình sẽ đi cùng các bạn theo ba bước:
+Trên kênh, mình sẽ nói về ba điều:
 
-① Đạo: một nguyên tắc sống.
-Tiền phục vụ cuộc sống, không thay thế cuộc sống.
+① Tiền phục vụ cuộc sống, không thay thế cuộc sống.
 
-② Đời: soi vào khoảnh khắc thật.
-Bữa cơm, giấc ngủ, cơn cay cú sau một lệnh thua.
+② Soi cảm xúc trong khoảnh khắc thật: bữa cơm, giấc ngủ, cơn cay cú sau lệnh thua.
 
-③ Đầu tư: rồi mới đến chuyện tiền.
-Giữ vốn, có quỹ dự phòng, dám đứng ngoài khi chưa hiểu.
+③ Giữ vốn trước: có quỹ dự phòng, dám đứng ngoài khi chưa hiểu.
 
 Mình không gọi kèo, không nêu mã, không hứa lãi.
-Kỷ luật không bảo đảm thắng. Nó chỉ giúp bạn bớt quyết định lúc đang nóng.
+Kỷ luật không bảo đảm thắng, chỉ giúp bạn bớt quyết định lúc đang nóng.
 
 📌 "Tiền là công cụ tạo lựa chọn; đừng biến nó thành chủ nhân."
 
 Bài tập tối nay, mười phút:
 ✅ Viết 3 lý do bạn muốn kiếm tiền.
 ✅ Viết 3 điều bạn không đánh đổi, dù lãi bao nhiêu.
-Dán tờ giấy cạnh chỗ bạn hay xem giá.
 
 Điều đầu tiên bạn không đánh đổi là gì? Kể mình nghe dưới bình luận nhé.
 
