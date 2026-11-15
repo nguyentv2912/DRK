@@ -31,6 +31,7 @@ Cách đầu tư: xuân – gieo đều; hạ – chăm vườn, giữ kỷ lu�
 3. Viết `tap-NN-quay.txt` (sạch) + `tap-NN-kichban.txt` (có nguồn) + `tap-NN-post.md`.
 4. Không nêu giá cụ thể khi các nguồn lệch nhau; không nói "đáy là ngày X", "chắc chắn tăng"; luôn có câu "lịch sử không lặp lại y hệt".
 5. Lọc từ cấm; câu ≤ 20 chữ; hook ≤ 14 chữ.
+6. Mỗi tập có 1 câu ông bà từ `fanpage/tu-lieu/TUC_NGU_DAU_TU.md` (không lặp trong 7 ngày).
 
 ## Lịch tự động (anh chốt 15/11)
 - **~04:52 sáng** (giờ VN): tập mới từ tin hôm qua (đọc `tin-tuc/<hôm qua>.md` + tìm thêm) → tap-NN, KB mới, Drive.
