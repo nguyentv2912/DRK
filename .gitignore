@@ -10,3 +10,4 @@ output/
 *.MOV
 fanpage/runs/*/raw/
 __pycache__/
+fanpage/tu-lieu/goc/
