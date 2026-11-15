@@ -27,7 +27,7 @@ Mở bằng câu nói/hook → **☯ ĐẠO** (một nguyên lý sống, trích 
 Hứa lợi nhuận; dùng "216 lần" như mục tiêu; nêu coin/mã/sàn; dự đoán thị trường; tạo phụ thuộc vào người dạy; chép nguyên văn khuôn mẫu cũ hoặc sách "Đạo Trading"; trích kinh điển Phật – Nho – Đạo khi không chắc xuất xứ; giảng giáo lý (chỉ dùng như đạo lý sống). Chi tiết: sổ tay mục 6–7.
 
 ## Lời ông bà (anh dặn 15/11)
-Mỗi video nên có 1 câu tục ngữ/ca dao/thành ngữ từ `fanpage/tu-lieu/TUC_NGU_DAU_TU.md` (phần mở đầu hoặc Đạo): đọc đúng nguyên văn, giải nghĩa bằng lời đời thường rồi nối vào thị trường; không lặp câu đã dùng trong 7 ngày gần nhất.
+Mỗi video nên có 1 câu tục ngữ/ca dao/thành ngữ từ `fanpage/tu-lieu/TUC_NGU_DAU_TU.md` (phần mở đầu hoặc Đạo): đọc đúng nguyên văn, giải nghĩa bằng lời đời thường rồi nối vào thị trường; không lặp câu đã dùng trong 7 ngày gần nhất. Dẫn dắt theo `fanpage/tu-lieu/BAI_HOC_4_MUA.md`: câu ông bà → chuyện đời → chuyện crypto (tình huống giả định) → bài học làm được ngay → lời tâm sự, chọn đúng mùa thị trường hiện tại.
 
 ## File quay cho chủ kênh (anh dặn 15/11)
 Mỗi video xuất thêm 1 file `.txt` SẠCH để anh copy lên teleprompter: chỉ có lời đọc, mỗi câu một dòng, các phần cách nhau 1 dòng trống. KHÔNG có tiêu đề phần ([MỞ ĐẦU], [KẾT]…), ghi chú quay, (dừng), nguồn, ngày đăng. Ghi chú/nguồn để ở file kịch bản đầy đủ riêng.
