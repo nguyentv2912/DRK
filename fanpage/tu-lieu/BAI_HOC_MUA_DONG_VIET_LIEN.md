@@ -1,16 +1,16 @@
 # Mùa đông – 6 bài học viết liền (bản đọc trôi chảy)
-Viết lại từ dàn ý `BAI_HOC_4_MUA.md` theo ý anh 15/11: đọc liền một mạch như đang tâm sự, không còn nhãn "Đời / Crypto / Bài học". Mỗi bài ~150–200 chữ, đọc khoảng 1 phút – ghép vào phần Đạo hoặc phần Đầu tư của video, hoặc đăng riêng thành bài Facebook.
+Viết lại từ dàn ý `BAI_HOC_4_MUA.md` theo ý anh 15/11: đọc liền một mạch như đang tâm sự, không còn nhãn "Đời / Crypto / Bài học". Chuyện đời viết theo kiểu chung ("ngày xưa ở quê", "thử hình dung") – không bịa chuyện riêng của anh; khi anh kể chuyện thật thì thay vào. Mỗi bài ~150–200 chữ, đọc khoảng 1 phút – ghép vào phần Đạo hoặc phần Đầu tư của video, hoặc đăng riêng thành bài Facebook.
 
 ---
 ## 1. Tích cốc phòng cơ, tích y phòng hàn
-Ngày xưa, mùa gặt nào bà nội mình cũng để riêng một bồ thóc. Nhà có đói mấy, bà cũng không cho ai đụng vào. Bà bảo: "Để dành cho tháng giáp hạt." Ông bà mình gọi đó là tích cốc phòng cơ, tích y phòng hàn: trữ thóc phòng lúc đói, trữ áo phòng lúc rét.
+Ngày xưa ở quê, mùa gặt nào các bà các mẹ cũng để riêng một bồ thóc. Nhà có đói mấy, cũng không ai được đụng vào. Các cụ bảo: "Để dành cho tháng giáp hạt." Ông bà mình gọi đó là tích cốc phòng cơ, tích y phòng hàn: trữ thóc phòng lúc đói, trữ áo phòng lúc rét.
 Mình hay nghĩ tới bồ thóc đó mỗi khi thị trường crypto vào mùa đông. Thử hình dung một anh, lúc thị trường rộn ràng, dồn hết cả quỹ dự phòng vào. Rồi mùa đông tới, con ốm, phải cần một khoản gấp. Anh ấy buộc phải rút ra, đúng lúc tài khoản chỉ còn một nửa.
 Không phải anh ấy chọn sai tài sản. Anh ấy chỉ quên để lại bồ thóc của mình.
 Nên các bạn ơi, trước khi nghĩ tới thị trường, hãy để riêng ít nhất sáu tháng chi phí sống. Khoản đó không đi đâu cả.
-Bà mình không biết đọc biểu đồ. Nhưng bà biết, mùa đông nào rồi cũng đến.
+Ông bà mình không biết đọc biểu đồ. Nhưng ông bà biết, mùa đông nào rồi cũng đến.
 
 ## 2. Khéo ăn thì no, khéo co thì ấm
-Hồi nhỏ nhà mình ít chăn. Đêm nào rét, cả nhà nằm co sát vào nhau, vậy mà vẫn ấm. Ông bà mình nói: khéo ăn thì no, khéo co thì ấm.
+Ngày xưa nhiều nhà ở quê ít chăn. Đêm nào rét, cả nhà nằm co sát vào nhau, vậy mà vẫn ấm. Ông bà mình nói: khéo ăn thì no, khéo co thì ấm.
 Mùa đông của thị trường cũng cần biết co lại như vậy. Co lại là bỏ đòn bẩy. Là đưa quy mô về mức mà đêm mình còn ngủ được. Là cắt bớt những khoản chi chưa thật cần.
 Nhiều người nghĩ co lại là thua, là hèn. Mình thì không nghĩ vậy.
 Người nông dân không ra đồng giữa cơn rét để chứng tỏ mình mạnh. Họ ở trong nhà, giữ ấm, giữ sức, chờ trời ấm lên.
@@ -25,7 +25,7 @@ Các bạn đang ở khúc quanh của dòng sông, chứ chưa phải cuối d�
 
 ## 4. Tái ông thất mã
 Người xưa kể chuyện ông lão ở biên giới bị mất con ngựa. Hàng xóm sang chia buồn, ông chỉ cười: "Biết đâu lại là may." Ít lâu sau, con ngựa quay về, dẫn theo cả một con ngựa tốt. Cái được, cái mất, đâu ai nói trước được.
-Mình có người bạn mất việc ở tuổi bốn mươi, tưởng như sụp đổ. Hai năm sau, anh ấy làm đúng nghề mình thích, sống vui hơn hẳn.
+Thử hình dung một người mất việc ở tuổi bốn mươi, tưởng như sụp đổ. Rồi vài năm sau, người đó lại làm đúng nghề mình thích, sống vui hơn hẳn. Chuyện như vậy, quanh mình đâu có hiếm.
 Mùa đông crypto cũng vậy. Nó lọc đi những dự án yếu. Nó lọc đi cả những thói quen xấu của chính mình. Nhiều người học được kỷ luật thật sự, chính từ lần cháy tài khoản đầu tiên.
 Tối nay, các bạn thử lấy giấy viết ra một điều mà mùa đông này đã dạy mình.
 Mất mát hôm nay, nếu học được, sẽ thành vốn quý nhất của mình.
@@ -37,7 +37,7 @@ Mình mong các bạn làm chuồng trước. Tìm hiểu cách tự giữ tài 
 Đừng đợi mất bò. Tối nay dành ba mươi phút, làm lại cái chuồng của mình.
 
 ## 6. Của rẻ là của ôi
-Đi chợ, gặp món hàng hời bất thường, bà mình thường lắc đầu: "Của rẻ là của ôi." Thứ gì tốt quá mức thì thường có vấn đề.
+Đi chợ, gặp món hàng hời bất thường, các bà các mẹ thường lắc đầu: "Của rẻ là của ôi." Thứ gì tốt quá mức thì thường có vấn đề.
 Mùa đông là mùa kẻ xấu đi tìm người đang mệt. Các bạn sẽ gặp những lời nhắn riêng: "Anh gỡ giúp em", "Dự án cam kết hoàn vốn", "Vào nhóm này đảm bảo thắng". Họ biết mình đang đau, nên họ hứa đúng thứ mình muốn nghe.
 Mình nói thật: trong một thị trường không ai biết trước ngày mai, ai hứa chắc chắn với các bạn, người đó đang không nói thật.
 Lúc mình yếu nhất, là lúc kẻ xấu tìm đến nhiều nhất.
