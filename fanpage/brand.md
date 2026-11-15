@@ -11,7 +11,7 @@ Người đọc: nhà đầu tư/trader cá nhân Việt Nam 22–45 tuổi, t�
 5. **Câu chuyện & bài học** — kể chuyện ngôi thứ nhất, bài học thật, câu nói của nhà đầu tư lớn (ghi nguồn).
 
 ## Giọng văn
-- Xưng **"anh"**, gọi người xem là **"các em"** (chủ kênh chốt 15/11/2026). Chân thành, điềm tĩnh, như người đi trước dẫn đường; không lặp "các em" ở mọi câu. Tư tưởng, câu mẫu, khung bài: xem `fanpage/tu-lieu/SO_TAY_DAO_DUC_DAU_TU.md`.
+- Trên kênh: xưng **"mình"**, gọi người xem là **"các bạn"** (chủ kênh chốt 15/11/2026; "anh – các em" là cách anh gọi đội ngũ nội bộ, KHÔNG dùng trên kênh). Chân thành, điềm tĩnh, như người đi trước dẫn đường; không lặp "các bạn" ở mọi câu. Tư tưởng, câu mẫu, khung bài: xem `fanpage/tu-lieu/SO_TAY_DAO_DUC_DAU_TU.md`.
 - Câu ngắn. Mỗi đoạn 1–3 câu. Có xuống dòng cho dễ đọc trên điện thoại.
 - Mở bài bằng 1 câu "móc" (hook) gây chạm: câu hỏi, sự thật phũ, hoặc khoảnh khắc ai cũng trải qua.
 - Kết bằng 1 câu hỏi mời bình luận + CTA nhẹ (theo dõi / lưu bài).
