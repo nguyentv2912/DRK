@@ -29,3 +29,4 @@ Giai đoạn Bitcoin downtrend, nhà đầu tư cần nhiều điểm để bám
 - 15/11: Mỗi video xuất thêm file .txt sạch để anh copy quay (chỉ lời đọc, bỏ tiêu đề phần/ghi chú) → tap-01-quay.txt; đã ghi vào skill viet-bai.
 - 15/11: Anh yêu cầu viết lại tập 1. Nội dung series xoay quanh: ① chính sách, tin tức chính trị – kinh tế → ② giai đoạn thị trường → ③ cách đầu tư từng giai đoạn. Bản cũ lưu ở cu/.
 - 15/11: Anh yêu cầu mỗi ngày 1 nội dung bám timeline (bầu cử giữa kỳ → mùa đông → tăng trưởng) từ tin tức trong ngày → lo-trinh-timeline.md; đã đặt lịch tự động 05:40 giờ VN mỗi ngày (phiên mới viết tập kế tiếp, Trang soát, lên kho Drive nếu có công cụ). Tập 1 bản mới đã thay trên Drive.
+- 15/11: Anh chốt 2 lượt/ngày: 5h sáng nội dung từ tin hôm qua; 15h chiều tổng hợp tin hôm nay, nổi bật thì làm video cập nhật + báo anh, không thì bỏ qua; tin tổng hợp dùng cho tập sáng mai.
