@@ -1,6 +1,6 @@
 # Hướng dẫn quay — KB-20261115-2 | Mùa đông – Gieo hạt | 6 lời ông bà cho mùa đông crypto
 
-Thời lượng dự kiến: khoảng 3,5–4 phút (700 chữ, 64 câu). Lời đọc: `kichban.txt` (bản sạch, copy thẳng lên teleprompter).
+Thời lượng dự kiến: khoảng 3,5–4 phút (740 chữ, 64 câu). Lời đọc: `kichban.txt` (bản sạch, copy thẳng lên teleprompter).
 
 ## Trước khi quay
 - [ ] Dọc 9:16 hoặc ngang đều được. 1080p 30fps. Sáng trước mặt, phông gọn, màn hình phía sau không hiện tài khoản.
