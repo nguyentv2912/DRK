@@ -1,4 +1,4 @@
-Mùa đông không phải lỗi của các bạn 🍂 3 bài học: đừng dồn một chỗ, đứng xa đòn bẩy, chỉ dùng tiền nhàn rỗi. Các bạn mệt nhất điều gì?
+Mỹ vừa bầu cử xong, crypto vào giữa mùa đông ❄ 4 việc cần làm: giữ ấm, bỏ đòn bẩy, gieo hạt từng đợt, viết kế hoạch mùa thu.
 Chia sẻ, không phải lời khuyên đầu tư.
 
-#daoducdautu #muadonggieohat #tamlydautu #crypto
+#daoducdautu #muadonggieohat #crypto #tamlydautu
