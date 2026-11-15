@@ -26,6 +26,9 @@ Mở bằng câu nói/hook → **☯ ĐẠO** (một nguyên lý sống, trích 
 ## Không được
 Hứa lợi nhuận; dùng "216 lần" như mục tiêu; nêu coin/mã/sàn; dự đoán thị trường; tạo phụ thuộc vào người dạy; chép nguyên văn khuôn mẫu cũ hoặc sách "Đạo Trading"; trích kinh điển Phật – Nho – Đạo khi không chắc xuất xứ; giảng giáo lý (chỉ dùng như đạo lý sống). Chi tiết: sổ tay mục 6–7.
 
+## File quay cho chủ kênh (anh dặn 15/11)
+Mỗi video xuất thêm 1 file `.txt` SẠCH để anh copy lên teleprompter: chỉ có lời đọc, mỗi câu một dòng, các phần cách nhau 1 dòng trống. KHÔNG có tiêu đề phần ([MỞ ĐẦU], [KẾT]…), ghi chú quay, (dừng), nguồn, ngày đăng. Ghi chú/nguồn để ở file kịch bản đầy đủ riêng.
+
 ## Từ nền tảng hạn chế — KHÔNG dùng (chủ kênh nhắc 15/11)
 Không viết: **giá, giá cả, mua, bán, mua bán, kiếm tiền, lãi, lỗ, lợi nhuận, vay, kèo, bắt đáy**. Thay bằng: giá → con số / biểu đồ / màn hình / thị trường; mua → tích lũy / để dành / gieo hạt; bán → rời đi / dừng lại; lãi/lợi nhuận → thành quả / phần thưởng của sự kiên nhẫn; lỗ → sụt giảm / mức dừng; vay → xoay thêm vốn; kèo/bắt đáy → hô hào. Trước khi nộp, lọc lại cả bài + kịch bản + bình luận ghim.
 
