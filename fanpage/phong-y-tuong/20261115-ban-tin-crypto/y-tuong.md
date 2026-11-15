@@ -1,5 +1,5 @@
 # Ý tưởng: Bản tin crypto mỗi ngày theo công thức ĐẠO – ĐỜI – ĐẦU TƯ
-Ngày: 15/11/2026 · Nhóm: Anh, Minh, Ngọc, Phong, Trang · Trạng thái: VÒNG 1 – CHỜ ANH TRẢ LỜI CÂU HỎI
+Ngày: 15/11/2026 · Nhóm: Anh, Minh, Ngọc, Phong, Trang · Trạng thái: VÒNG 2 – LÀM BÀI MẪU
 
 ## Ý gốc của anh (nguyên văn tóm lược)
 Mỗi ngày tìm 1 tin tức / nội dung nổi bật trong ngày về thị trường crypto, tổng hợp thành 1 nội dung theo công thức đạo – đời – đầu tư, gồm: **thị trường, nỗi đau, hướng giải quyết**. Sau đó CTA (kêu gọi hành động): mời nhà đầu tư vào **nhóm Zalo** để giao lưu, học hỏi.
@@ -24,4 +24,7 @@ Hook = tin nổi bật trong ngày (1 câu, có số liệu + nguồn)
 4. Làm thử 1 bài mẫu với tin crypto hôm nay?
 
 ## Anh góp ý
-(chưa có)
+- 15/11: Link Zalo để ở **bình luận ghim** (một bạn comment khi đăng video); bài viết sẵn câu CTA cho bình luận, link anh cập nhật sau → dùng chỗ trống [LINK NHÓM ZALO].
+- Định dạng: **vừa là bài đăng vừa là nội dung quay video** (cả hai).
+- Giờ đăng: có tin thì cập nhật bài; video cố định **ít nhất 1 video/ngày**.
+- Ngọc làm thử 1 bài mẫu với tin crypto mới nhất.
