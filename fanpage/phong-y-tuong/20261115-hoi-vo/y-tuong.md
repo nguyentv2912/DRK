@@ -1,5 +1,5 @@
 # Ý tưởng: "Về nhà hỏi vợ, vợ bảo sao làm ngược lại"
-Ngày: 15/11/2026 · Nhóm: Anh, Minh, Ngọc, Phong · Trạng thái: CHỜ ANH CHỐT
+Ngày: 15/11/2026 · Nhóm: Anh, Minh, Ngọc, Phong · Trạng thái: CHỜ ANH CHỐT — Trang đã phản biện (phan-bien.md), cần anh chọn A/B
 
 ## Ý gốc của anh (nguyên văn)
 - Câu nói: "Phàm những chuyện đại sự trong thiên hạ nên về nhà hỏi vợ, vợ bảo sao cứ làm ngược lại ắt sẽ thành công"
