@@ -22,15 +22,15 @@ Câu thật thà dùng lặp lại: "Không ai biết mùa đông dài bao lâu.
 | 3 | 14/12–27/12 | **GIEO HẠT** | muốn hành động nhưng sợ sai | kế hoạch tích lũy 7 bước, cụ thể, an toàn |
 | 4 | 28/12–10/01 | **CHỜ XUÂN** | sốt ruột, dễ bỏ cuộc | kiên trì, tổng kết năm, lá thư cho mình 5 năm sau |
 
-## 4. Khuôn mỗi ngày: 1 video ~2 phút (anh chốt 15/11)
+## 4. Khuôn mỗi ngày: 1 video 3–5 phút (anh chốt 15/11: chi tiết, giải thích từng ý)
 Mỗi ngày đúng 1 kịch bản theo khuôn **TIN TỨC → ĐẠO → ĐỜI → ĐẦU TƯ → KẾT**:
 | Phần | Thời lượng | Nội dung |
 |---|---|---|
-| TIN TỨC | 0–20 giây | 1 tin crypto mới nhất (nguồn uy tín, nói nguồn), nối vào chủ đề tập: "Nếu các bạn đang…, video này dành cho các bạn." |
-| ĐẠO | ~25 giây | "Thứ nhất, Đạo…" – nguyên lý sống của tập |
-| ĐỜI | ~30 giây | "Thứ hai, Đời…" – nỗi đau, chuyện đời thường |
-| ĐẦU TƯ | ~30 giây | "Thứ ba, Đầu tư…" – việc cụ thể làm được hôm nay (1 bước của kế hoạch gieo hạt) |
-| KẾT | ~15 giây | câu bình an + câu hỏi + Zalo ở bình luận ghim + miễn trừ |
+| TIN TỨC | 40–60 giây | 1 tin crypto mới nhất, giải thích từng thuật ngữ (ETF, đòn bẩy…) bằng lời đời thường (nguồn uy tín, nói nguồn), nối vào chủ đề tập: "Nếu các bạn đang…, video này dành cho các bạn." |
+| ĐẠO | ~60 giây | "Thứ nhất, Đạo…" – nguyên lý sống của tập |
+| ĐỜI | ~60 giây | "Thứ hai, Đời…" – nỗi đau, chuyện đời thường |
+| ĐẦU TƯ | ~80 giây | "Thứ ba, Đầu tư…" – việc cụ thể làm được hôm nay, mỗi việc giải thích "vì sao" + ví dụ có số (1 bước của kế hoạch gieo hạt) |
+| KẾT | ~25 giây | câu bình an + câu hỏi + Zalo ở bình luận ghim + miễn trừ |
 - Chủ đề lấy lần lượt từ kho 40 tập (mục 6); tin tức thay mỗi ngày. Không có tin mới đáng nói → dùng "neo crypto" của tập làm phần mở.
 - Bài Facebook đi kèm cùng nội dung (Ngọc), cùng bình luận ghim.
 - Quy trình mỗi ngày (đề xuất, chờ anh chốt mới đưa vào lịch đội): sáng Ngọc tìm tin → Phong ghép vào kịch bản tập của ngày → Trang soát từ cấm + số liệu → lên kho kịch bản Drive.
