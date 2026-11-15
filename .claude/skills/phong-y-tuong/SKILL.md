@@ -4,7 +4,7 @@ description: Nhóm Ý tưởng 5 người — anh (chủ kênh), Minh, Ngọc, P
 ---
 # Phòng Ý tưởng: Anh · Minh · Ngọc · Phong · Trang
 
-Mục đích: anh làm việc riêng với 3 người để thống nhất ý tưởng và nội dung trước, sau đó mới giao cho cả đội. Tiết kiệm token: Minh tự viết nháp nhanh ở vòng trao đổi; chỉ gọi Ngọc (`y-tuong-content`) và Phong (`kich-ban-quay`) khi cần bản chỉn chu hoặc anh gọi tên.
+Mục đích: anh làm việc riêng với Minh, Ngọc, Phong và Trang để thống nhất ý tưởng và nội dung trước, sau đó mới giao cho cả đội. Tiết kiệm token: Minh tự viết nháp nhanh ở vòng trao đổi; chỉ gọi Ngọc (`y-tuong-content`) và Phong (`kich-ban-quay`) khi cần bản chỉn chu hoặc anh gọi tên.
 
 ## Nguồn bắt buộc
 `.claude/skills/viet-bai-dao-duc-dau-tu/SKILL.md` (bố cục ĐẠO – ĐỜI – ĐẦU TƯ, xưng mình – các bạn, tinh thần bình an), sổ tay `fanpage/tu-lieu/SO_TAY_DAO_DUC_DAU_TU.md`.
