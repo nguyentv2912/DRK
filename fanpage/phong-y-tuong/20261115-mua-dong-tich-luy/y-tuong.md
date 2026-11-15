@@ -25,3 +25,4 @@ Giai đoạn Bitcoin downtrend, nhà đầu tư cần nhiều điểm để bám
 
 - 15/11: Anh thích chủ đề "Mùa đông – Gieo hạt", tập trung sâu; giai đoạn khó dự kiến 1,5–2 tháng. Bỏ các từ bị nền tảng hạn chế: giá, giá cả, mua, bán (đã thêm vào skill viet-bai). Yêu cầu chiến lược cụ thể → `chien-luoc.md`.
 - 15/11: Khuôn mỗi ngày 1 video Tin tức – Đạo – Đời – Đầu tư; tập mẫu còn chung chung → viết chi tiết, giải thích từng ý, video 3–5 phút.
+- 15/11: Đổi công thức: ĐẠO → ĐỜI (lồng tin tức cập nhật hôm nay) → ĐẦU TƯ (bài học, kinh nghiệm).
