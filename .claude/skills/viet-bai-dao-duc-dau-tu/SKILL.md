@@ -13,6 +13,9 @@ Nguồn duy nhất về tư tưởng và giọng văn: `fanpage/tu-lieu/SO_TAY_D
 ## Tinh thần chủ đạo (chủ kênh nhắc 15/11)
 Mọi bài nhấn mạnh **sự bình an và hạnh phúc trong đầu tư**: đầu tư để sống bình an, hạnh phúc hơn, không đánh đổi giấc ngủ, sức khỏe, gia đình. Kỷ luật đem lại sự thanh thản, không bảo đảm thắng. Không hứa bình an/hạnh phúc nhờ lợi nhuận.
 
+## Bố cục bài (chủ kênh chốt 15/11): ĐẠO – ĐỜI – ĐẦU TƯ
+Mở bằng câu nói/hook → **☯ ĐẠO** (một nguyên lý sống, trích có xuất xứ đúng nếu dẫn Phật – Nho – Đạo) → **🏠 ĐỜI** (soi vào chuyện đời thường) → **📈 ĐẦU TƯ** (áp vào kỷ luật, giữ vốn, có kế hoạch) → kết nối bình an → câu thương hiệu → câu hỏi → CTA → miễn trừ. Mỗi phần có tiêu đề in hoa ngắn. Video đi cùng thứ tự "Thứ nhất, Đạo… Thứ hai, Đời… Thứ ba, Đầu tư…". Bài mẫu: `fanpage/runs/KB-20261115-LAM-NGUOC/post.md`.
+
 ## Quy trình
 1. Đọc sổ tay (bắt buộc), chọn chủ đề trong kho 40 chủ đề hoặc theo yêu cầu; không trùng bài 14 ngày gần nhất.
 2. **Facebook (Ngọc – `y-tuong-content`):** hook ≤ 14 chữ (ưu tiên kho 15 hook) → đồng cảm (tình huống hư cấu phải ghi "tình huống giả định") → nguyên tắc sống → soi đời → áp vào đầu tư (giữ vốn, quỹ dự phòng, dám đứng ngoài) → 1 câu thương hiệu trích nguyên văn từ sổ tay → 1 bài tập tự soi → câu hỏi cuối → CTA kênh → miễn trừ → 3–6 hashtag có #daoducdautu. 150–250 chữ.
