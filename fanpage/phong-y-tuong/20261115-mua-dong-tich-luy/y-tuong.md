@@ -27,3 +27,4 @@ Giai đoạn Bitcoin downtrend, nhà đầu tư cần nhiều điểm để bám
 - 15/11: Khuôn mỗi ngày 1 video Tin tức – Đạo – Đời – Đầu tư; tập mẫu còn chung chung → viết chi tiết, giải thích từng ý, video 3–5 phút.
 - 15/11: Đổi công thức: ĐẠO → ĐỜI (lồng tin tức cập nhật hôm nay) → ĐẦU TƯ (bài học, kinh nghiệm).
 - 15/11: Mỗi video xuất thêm file .txt sạch để anh copy quay (chỉ lời đọc, bỏ tiêu đề phần/ghi chú) → tap-01-quay.txt; đã ghi vào skill viet-bai.
+- 15/11: Anh yêu cầu viết lại tập 1. Nội dung series xoay quanh: ① chính sách, tin tức chính trị – kinh tế → ② giai đoạn thị trường → ③ cách đầu tư từng giai đoạn. Bản cũ lưu ở cu/.
