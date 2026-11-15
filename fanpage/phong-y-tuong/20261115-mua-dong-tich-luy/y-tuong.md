@@ -22,4 +22,5 @@ Giai đoạn Bitcoin downtrend, nhà đầu tư cần nhiều điểm để bám
 - Kế hoạch luôn kèm 3 điều kiện: tiền nhàn rỗi · chia nhiều kỳ · khung thời gian dài, chấp nhận có thể sai.
 
 ## Anh góp ý
-(chưa có)
+
+- 15/11: Anh thích chủ đề "Mùa đông – Gieo hạt", tập trung sâu; giai đoạn khó dự kiến 1,5–2 tháng. Bỏ các từ bị nền tảng hạn chế: giá, giá cả, mua, bán (đã thêm vào skill viet-bai). Yêu cầu chiến lược cụ thể → `chien-luoc.md`.
