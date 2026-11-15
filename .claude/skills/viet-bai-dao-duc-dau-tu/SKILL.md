@@ -20,7 +20,7 @@ Mở bằng câu nói/hook → **☯ ĐẠO** (một nguyên lý sống, trích 
 1. Đọc sổ tay (bắt buộc), chọn chủ đề trong kho 40 chủ đề hoặc theo yêu cầu; không trùng bài 14 ngày gần nhất.
 2. **Facebook (Ngọc – `y-tuong-content`):** hook ≤ 14 chữ (ưu tiên kho 15 hook) → đồng cảm (tình huống hư cấu phải ghi "tình huống giả định") → nguyên tắc sống → soi đời → áp vào đầu tư (giữ vốn, quỹ dự phòng, dám đứng ngoài) → 1 câu thương hiệu trích nguyên văn từ sổ tay → 1 bài tập tự soi → câu hỏi cuối → CTA kênh → miễn trừ → 3–6 hashtag có #daoducdautu. 150–250 chữ.
    **Trau chuốt (chủ kênh nhắc 15/11):** văn liền mạch, có hình ảnh và nhịp, không liệt kê khô hay câu cụt; mở tình huống bằng "Thử hình dung…" thay cho ghi "(tình huống giả định)"; mỗi ý ①②③ là một cặp đối "X trước khi Y" có giải thích; đọc to một lượt, câu nào vấp thì viết lại. Bản mẫu đã trau chuốt: `fanpage/runs/MAU-20261115/post.md`.
-3. **Video (Phong – `kich-ban-quay`):** HOOK (0–5 giây) → SOI ĐỜI → LUẬN ĐẠO → HÀNH ĐẠO → ĐÚC KẾT, 140–160 giây, câu ≤ 20 chữ, mỗi câu một dòng.
+3. **Video (Phong – `kich-ban-quay`):** HOOK (0–5 giây) → "Thứ nhất, Đạo…" → "Thứ hai, Đời…" → "Thứ ba, Đầu tư…" → bình an + đúc kết → câu hỏi + CTA; 120–160 giây, câu ≤ 20 chữ, mỗi câu một dòng. Kịch bản mẫu: `fanpage/runs/KB-20261115-LAM-NGUOC/kichban.txt`. Khoa dựng: thẻ chữ ①②③ bật đúng ba chữ "Thứ nhất / Thứ hai / Thứ ba", có nhạc nền, khung viền, tấm minh hoạ; quay ngang thì bố cục nửa trên nội dung – nửa dưới khuôn mặt.
 4. **Giám sát:** Bảo (`giam-sat`) chấm; ĐẠT mới gửi chủ kênh.
 
 ## Không được
