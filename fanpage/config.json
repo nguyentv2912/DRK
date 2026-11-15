@@ -1,7 +1,7 @@
 {
   "brand_name": "ĐẠO ĐỨC ĐẦU TƯ",
   "timezone": "Asia/Ho_Chi_Minh",
-  "publish_mode": "tu-dong",
+  "publish_mode": "nhap",
   "_publish_mode_help": "tu-dong = đội tự đăng sau khi edit và giám sát đạt | nhap = tạo bản nháp trên Metricool để chủ page duyệt",
   "video_seconds": [
     90,
