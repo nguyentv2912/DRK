@@ -12,7 +12,8 @@ Nguồn duy nhất về tư tưởng và giọng văn: `fanpage/tu-lieu/SO_TAY_D
 
 ## Quy trình
 1. Đọc sổ tay (bắt buộc), chọn chủ đề trong kho 40 chủ đề hoặc theo yêu cầu; không trùng bài 14 ngày gần nhất.
-2. **Facebook (Ngọc – `y-tuong-content`):** hook ≤ 14 chữ (ưu tiên kho 15 hook) → đồng cảm (tình huống hư cấu phải ghi "tình huống giả định") → nguyên tắc sống → soi đời → áp vào đầu tư (giữ vốn, quỹ dự phòng, dám đứng ngoài) → 1 câu thương hiệu trích nguyên văn từ sổ tay → 1 bài tập tự soi → câu hỏi cuối → CTA kênh → miễn trừ → 3–6 hashtag có #daoducdautu. ≤ 220 chữ.
+2. **Facebook (Ngọc – `y-tuong-content`):** hook ≤ 14 chữ (ưu tiên kho 15 hook) → đồng cảm (tình huống hư cấu phải ghi "tình huống giả định") → nguyên tắc sống → soi đời → áp vào đầu tư (giữ vốn, quỹ dự phòng, dám đứng ngoài) → 1 câu thương hiệu trích nguyên văn từ sổ tay → 1 bài tập tự soi → câu hỏi cuối → CTA kênh → miễn trừ → 3–6 hashtag có #daoducdautu. 150–250 chữ.
+   **Trau chuốt (chủ kênh nhắc 15/11):** văn liền mạch, có hình ảnh và nhịp, không liệt kê khô hay câu cụt; mở tình huống bằng "Thử hình dung…" thay cho ghi "(tình huống giả định)"; mỗi ý ①②③ là một cặp đối "X trước khi Y" có giải thích; đọc to một lượt, câu nào vấp thì viết lại. Bản mẫu đã trau chuốt: `fanpage/runs/MAU-20261115/post.md`.
 3. **Video (Phong – `kich-ban-quay`):** HOOK (0–5 giây) → SOI ĐỜI → LUẬN ĐẠO → HÀNH ĐẠO → ĐÚC KẾT, 140–160 giây, câu ≤ 20 chữ, mỗi câu một dòng.
 4. **Giám sát:** Bảo (`giam-sat`) chấm; ĐẠT mới gửi chủ kênh.
 

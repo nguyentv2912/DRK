@@ -1,33 +1,31 @@
 Mình không bán giấc mơ làm giàu từ đầu tư.
 
-Đây là Đạo Đức Đầu Tư, nơi mình cùng các bạn tập hiểu mình trước khi hiểu thị trường.
+Thử hình dung một bữa cơm tối.
+Cả nhà quây quần, điện thoại trên bàn khẽ rung.
+Bạn liếc nhìn bảng giá, rồi lặng đi.
+Món ăn vẫn nóng, nhưng tâm trí đã ở một nơi khác.
 
-Cả nhà đang ăn cơm, điện thoại rung báo giá.
-Bạn cúi xuống xem, rồi cả bữa chẳng nhớ đã ăn gì. (tình huống giả định)
+Khoảnh khắc ấy, tiền đã lặng lẽ ngồi vào ghế chủ.
 
-Lúc đó, tiền đã ngồi lên ghế chủ.
+Đạo Đức Đầu Tư bắt đầu từ một câu hỏi giản dị: đầu tư để làm gì, nếu nó lấy đi chính những bữa cơm như thế?
 
-Trên kênh, mình sẽ nói về ba điều:
-
-① Tiền phục vụ cuộc sống, không thay thế cuộc sống.
-
-② Soi cảm xúc trong khoảnh khắc thật: bữa cơm, giấc ngủ, cơn cay cú sau lệnh thua.
-
-③ Giữ vốn trước: có quỹ dự phòng, dám đứng ngoài khi chưa hiểu.
+Ở đây, mình cùng các bạn đi theo một thứ tự:
+① Hiểu mình trước khi hiểu thị trường – biết lúc nào mình đang tham, đang sợ, hay đang cay cú.
+② Giữ cuộc sống trước khi giữ lệnh – quỹ dự phòng, giấc ngủ và gia đình luôn đứng ngoài mọi rủi ro.
+③ Giữ vốn trước khi tìm lãi – chưa hiểu thì đứng ngoài, vì đứng ngoài cũng là một lựa chọn.
 
 Mình không gọi kèo, không nêu mã, không hứa lãi.
-Kỷ luật không bảo đảm thắng, chỉ giúp bạn bớt quyết định lúc đang nóng.
+Kỷ luật không bảo đảm chiến thắng. Nó chỉ giúp ta không quyết định khi lòng đang nóng.
 
 📌 "Tiền là công cụ tạo lựa chọn; đừng biến nó thành chủ nhân."
 
-Bài tập tối nay, mười phút:
+Tối nay, dành mười phút cho chính mình:
 ✅ Viết 3 lý do bạn muốn kiếm tiền.
-✅ Viết 3 điều bạn không đánh đổi, dù lãi bao nhiêu.
+✅ Viết 3 điều bạn sẽ không đánh đổi, dù lãi bao nhiêu.
 
-Điều đầu tiên bạn không đánh đổi là gì? Kể mình nghe dưới bình luận nhé.
+Rồi kể mình nghe: điều đầu tiên bạn không đánh đổi là gì?
 
 Theo dõi page để nhận thêm năng lượng kỷ luật mỗi ngày.
-
 Nội dung mang tính chia sẻ, không phải lời khuyên đầu tư.
 
 #daoducdautu #taichinhcanhan #kyluat #tamlydautu
