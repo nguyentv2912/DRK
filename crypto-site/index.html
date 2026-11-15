@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DRK Crypto Desk – Cộng đồng & Chương trình đối tác đầu tư Crypto</title>
+<meta name="description" content="DRK Crypto Desk: đào tạo, công cụ phân tích và chương trình đối tác dành cho nhà đầu tư tiền mã hoá tại Việt Nam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b14; --bg2:#0d1424; --card:#111a2e; --line:#1e2a44;
+  --text:#e8edf7; --muted:#93a0bb; --brand:#f7b733; --brand2:#ff7a18;
+  --green:#22c55e; --red:#ef4444; --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{width:min(1160px,100% - 32px);margin-inline:auto}
+.grad{background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:700;border:0;cursor:pointer;font-size:15px;transition:.2s}
+.btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#1a1100;box-shadow:0 8px 30px rgba(247,183,51,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(247,183,51,.45)}
+.btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{border-color:var(--brand)}
+section{padding:90px 0}
+.eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin-bottom:12px}
+h2{font-size:clamp(28px,4vw,42px);line-height:1.2;margin-bottom:16px}
+.lead{color:var(--muted);max-width:680px}
+.center{text-align:center}.center .lead{margin-inline:auto}
+
+/* ticker */
+.ticker{background:var(--bg2);border-bottom:1px solid var(--line);font-size:13px;overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-flex;gap:40px;padding:8px 0;animation:scroll 40s linear infinite}
+.ticker span b{margin-right:6px}
+.up{color:var(--green)}.down{color:var(--red)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(7,11,20,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
+.logo i{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;font-style:normal;color:#1a1100}
+.menu{display:flex;gap:28px;font-size:15px;color:var(--muted)}
+.menu a:hover{color:var(--text)}
+.nav .btn{padding:10px 20px}
+.burger{display:none;background:none;border:0;color:var(--text);font-size:26px;cursor:pointer}
+
+/* hero */
+.hero{padding:90px 0 70px;position:relative}
+.hero::before{content:"";position:absolute;inset:-200px 0 auto;height:700px;background:radial-gradient(600px 400px at 75% 30%,rgba(247,183,51,.18),transparent 70%),radial-gradient(500px 400px at 10% 10%,rgba(56,98,255,.18),transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative}
+.badge{display:inline-flex;gap:8px;align-items:center;padding:6px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--muted);margin-bottom:22px;background:rgba(255,255,255,.03)}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+.hero h1{font-size:clamp(34px,5.5vw,60px);line-height:1.1;margin-bottom:20px;font-weight:800}
+.hero p{color:var(--muted);font-size:18px;margin-bottom:32px;max-width:560px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-card{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.hero-card h4{display:flex;justify-content:space-between;font-size:15px;color:var(--muted);font-weight:500;margin-bottom:14px}
+.price-big{font-size:34px;font-weight:800}
+.chart{margin:16px 0 20px;height:140px;width:100%}
+.coins{display:grid;gap:10px}
+.coin{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;font-size:14px}
+.coin .n{display:flex;gap:10px;align-items:center;font-weight:600}
+.coin .ic{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;color:#111}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:70px}
+.stat{padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg2);text-align:center}
+.stat b{display:block;font-size:32px;font-weight:800}
+.stat span{color:var(--muted);font-size:14px}
+
+/* cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.25s}
+.card:hover{border-color:rgba(247,183,51,.5);transform:translateY(-4px)}
+.card .ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:24px;background:rgba(247,183,51,.12);margin-bottom:18px}
+.card h3{font-size:19px;margin-bottom:10px}
+.card p{color:var(--muted);font-size:15px}
+
+/* plans */
+.alt{background:var(--bg2);border-block:1px solid var(--line)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px;position:relative;display:flex;flex-direction:column}
+.plan.hot{border:1.5px solid var(--brand);box-shadow:0 20px 60px rgba(247,183,51,.15)}
+.plan.hot::before{content:"Phổ biến nhất";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--brand),var(--brand2));color:#1a1100;font-size:12px;font-weight:700;padding:4px 14px;border-radius:999px}
+.plan h3{font-size:22px}
+.plan .tag{color:var(--muted);font-size:14px;margin-bottom:18px}
+.plan .rate{font-size:40px;font-weight:800;margin-bottom:4px}
+.plan .rate small{font-size:15px;color:var(--muted);font-weight:500}
+.plan ul{list-style:none;margin:20px 0 28px;display:grid;gap:10px;flex:1}
+.plan li{display:flex;gap:10px;font-size:15px;color:#cdd6e8}
+.plan li::before{content:"✓";color:var(--green);font-weight:800}
+.plan .btn{justify-content:center}
+
+/* conditions */
+.cond-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+.cond-list{display:grid;gap:14px}
+.cond{display:flex;gap:18px;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.cond .num{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-weight:800;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#1a1100}
+.cond h4{font-size:17px;margin-bottom:4px}
+.cond p{color:var(--muted);font-size:14.5px}
+.note{margin-top:24px;padding:18px 20px;border-left:3px solid var(--brand);background:rgba(247,183,51,.06);border-radius:0 12px 12px 0;color:#d9dfeb;font-size:14.5px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px;counter-reset:s}
+.step{position:relative;padding:28px 24px;border:1px dashed var(--line);border-radius:var(--radius)}
+.step::before{counter-increment:s;content:"0" counter(s);font-size:44px;font-weight:800;color:rgba(247,183,51,.25);display:block;line-height:1;margin-bottom:12px}
+.step h4{margin-bottom:6px}.step p{color:var(--muted);font-size:14.5px}
+
+/* form */
+.reg{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+form{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:32px;display:grid;gap:16px}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input,select,textarea{width:100%;padding:13px 15px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;font-size:15px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;gap:10px;font-weight:400;font-size:13.5px;color:var(--muted);align-items:flex-start}
+.check input{width:auto;margin-top:3px}
+.ok{display:none;padding:14px;border-radius:12px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.4);color:#bbf7d0;font-size:14.5px}
+.perks{list-style:none;display:grid;gap:14px;margin-top:24px}
+.perks li{display:flex;gap:12px;color:#cdd6e8}
+.perks li::before{content:"★";color:var(--brand)}
+
+/* faq */
+.faq{max-width:820px;margin:44px auto 0;display:grid;gap:12px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--brand);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:10px;font-size:15px}
+
+/* risk + footer */
+.risk{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.3);border-radius:var(--radius);padding:22px 24px;font-size:14px;color:#f5c2c2}
+.risk b{color:#fecaca}
+footer{border-top:1px solid var(--line);padding:56px 0 30px;color:var(--muted);font-size:14px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:36px}
+.foot h5{color:var(--text);font-size:15px;margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:8px}
+.foot a:hover{color:var(--brand)}
+.copy{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.float-zalo{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#0068ff;color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;box-shadow:0 10px 30px rgba(0,104,255,.5)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:.7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:960px){
+  .hero-grid,.cond-wrap,.reg{grid-template-columns:1fr}
+  .grid3,.plans{grid-template-columns:1fr 1fr}
+  .steps,.stats{grid-template-columns:1fr 1fr}
+  .foot{grid-template-columns:1fr 1fr}
+  .menu{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:var(--bg2);padding:20px 16px;border-bottom:1px solid var(--line)}
+  .menu.open{display:flex}
+  .burger{display:block}
+  .nav .btn{display:none}
+}
+@media (max-width:600px){
+  section{padding:64px 0}
+  .grid3,.plans,.steps,.stats,.foot,.row2{grid-template-columns:1fr}
+  .hero{padding-top:56px}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker" aria-label="Giá crypto">
+  <div class="ticker-track" id="ticker"></div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo"><i>₿</i>DRK <span class="grad">Crypto Desk</span></a>
+    <nav class="menu" id="menu">
+      <a href="#gioithieu">Giới thiệu</a>
+      <a href="#chuongtrinh">Chương trình</a>
+      <a href="#dieukien">Điều kiện</a>
+      <a href="#quytrinh">Quy trình</a>
+      <a href="#faq">Hỏi đáp</a>
+    </nav>
+    <a href="#dangky" class="btn btn-primary">Đăng ký ngay</a>
+    <button class="burger" id="burger" aria-label="Mở menu">☰</button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="reveal">
+        <span class="badge">Đang tuyển 50 đối tác tháng này</span>
+        <h1>Đầu tư <span class="grad">Crypto</span> bài bản.<br>Xây dựng thu nhập bền vững.</h1>
+        <p>DRK Crypto Desk đồng hành cùng nhà đầu tư Việt: đào tạo từ nền tảng, công cụ phân tích on-chain, cộng đồng tín hiệu minh bạch và chương trình đối tác (Broker/IB) với hoa hồng hấp dẫn.</p>
+        <div class="hero-cta">
+          <a href="#dangky" class="btn btn-primary">Trở thành đối tác →</a>
+          <a href="#dieukien" class="btn btn-ghost">Xem điều kiện</a>
+        </div>
+      </div>
+      <div class="hero-card reveal">
+        <h4><span>BTC / USDT</span><span id="btc-chg" class="up">+0.00%</span></h4>
+        <div class="price-big" id="btc-price">$—</div>
+        <svg class="chart" viewBox="0 0 400 140" preserveAspectRatio="none" aria-hidden="true">
+          <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b733" stop-opacity=".45"/><stop offset="1" stop-color="#f7b733" stop-opacity="0"/></linearGradient></defs>
+          <path id="area" fill="url(#g)"/><path id="line" fill="none" stroke="#f7b733" stroke-width="2.5"/>
+        </svg>
+        <div class="coins" id="coins"></div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal"><b class="grad" data-count="12000">0</b><span>Thành viên cộng đồng</span></div>
+      <div class="stat reveal"><b class="grad" data-count="350">0</b><span>Đối tác đang hoạt động</span></div>
+      <div class="stat reveal"><b class="grad" data-count="120">0</b><span>Buổi đào tạo mỗi năm</span></div>
+      <div class="stat reveal"><b class="grad" data-count="24">0</b><span>Giờ hỗ trợ / ngày (24/7)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="gioithieu" class="alt">
+  <div class="container center">
+    <span class="eyebrow">Vì sao chọn chúng tôi</span>
+    <h2>Mọi thứ bạn cần để đầu tư crypto <span class="grad">tự tin hơn</span></h2>
+    <p class="lead">Chúng tôi không hứa hẹn lợi nhuận. Chúng tôi trang bị kiến thức, công cụ và kỷ luật giúp bạn ra quyết định tốt hơn.</p>
+    <div class="grid3" style="text-align:left">
+      <div class="card reveal"><div class="ico">🎓</div><h3>Đào tạo bài bản</h3><p>Lộ trình từ cơ bản đến nâng cao: blockchain, ví, sàn, phân tích kỹ thuật, on-chain và quản trị vốn.</p></div>
+      <div class="card reveal"><div class="ico">📊</div><h3>Công cụ phân tích</h3><p>Dashboard theo dõi dòng tiền cá voi, chỉ báo thị trường và cảnh báo biến động theo thời gian thực.</p></div>
+      <div class="card reveal"><div class="ico">🛡️</div><h3>Quản trị rủi ro</h3><p>Nguyên tắc phân bổ vốn, cắt lỗ, chống lừa đảo và bảo mật ví — ưu tiên bảo toàn tài sản.</p></div>
+      <div class="card reveal"><div class="ico">🤝</div><h3>Cộng đồng chất lượng</h3><p>Nhóm thảo luận được kiểm duyệt, chia sẻ nhận định minh bạch, không “phím hàng” mập mờ.</p></div>
+      <div class="card reveal"><div class="ico">💰</div><h3>Hoa hồng hấp dẫn</h3><p>Đối tác nhận chia sẻ phí giao dịch từ khách hàng giới thiệu, thanh toán định kỳ hàng tuần.</p></div>
+      <div class="card reveal"><div class="ico">🧑‍💼</div><h3>Hỗ trợ 1-1</h3><p>Mỗi đối tác có quản lý riêng hỗ trợ marketing, tài liệu và giải đáp khách hàng.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="chuongtrinh">
+  <div class="container center">
+    <span class="eyebrow">Chương trình đối tác</span>
+    <h2>Chọn cấp độ <span class="grad">phù hợp với bạn</span></h2>
+    <p class="lead">Bắt đầu từ cấp Starter và nâng hạng tự động khi đạt chỉ tiêu. Tỷ lệ chia sẻ tính trên phí giao dịch phát sinh từ khách hàng do bạn giới thiệu.</p>
+    <div class="plans" style="text-align:left">
+      <div class="plan reveal">
+        <h3>Starter</h3><div class="tag">Dành cho người mới bắt đầu</div>
+        <div class="rate">20% <small>chia sẻ phí</small></div>
+        <ul><li>Khoá học Crypto nền tảng</li><li>Link giới thiệu & dashboard</li><li>Tài liệu marketing có sẵn</li><li>Nhóm cộng đồng đối tác</li></ul>
+        <a href="#dangky" class="btn btn-ghost">Đăng ký Starter</a>
+      </div>
+      <div class="plan hot reveal">
+        <h3>Pro Partner</h3><div class="tag">Từ 20 khách hàng hoạt động</div>
+        <div class="rate">35% <small>chia sẻ phí</small></div>
+        <ul><li>Toàn bộ quyền lợi Starter</li><li>Công cụ phân tích on-chain</li><li>Quản lý tài khoản riêng 1-1</li><li>Thưởng KPI hàng tháng</li><li>Hỗ trợ tổ chức hội thảo</li></ul>
+        <a href="#dangky" class="btn btn-primary">Đăng ký Pro</a>
+      </div>
+      <div class="plan reveal">
+        <h3>Master IB</h3><div class="tag">Từ 100 khách hàng hoạt động</div>
+        <div class="rate">50% <small>chia sẻ phí</small></div>
+        <ul><li>Toàn bộ quyền lợi Pro</li><li>Hoa hồng đa tầng (sub-IB)</li><li>Ngân sách marketing riêng</li><li>Sự kiện VIP & đào tạo chuyên sâu</li></ul>
+        <a href="#dangky" class="btn btn-ghost">Liên hệ Master IB</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONDITIONS -->
+<section id="dieukien" class="alt">
+  <div class="container cond-wrap">
+    <div class="reveal">
+      <span class="eyebrow">Điều kiện tham gia</span>
+      <h2>Ai có thể trở thành <span class="grad">đối tác</span>?</h2>
+      <p class="lead">Chúng tôi chào đón cả người mới lẫn nhà đầu tư giàu kinh nghiệm. Chỉ cần đáp ứng các điều kiện cơ bản bên cạnh là bạn có thể bắt đầu.</p>
+      <div class="note"><b>Lưu ý:</b> Chương trình không yêu cầu nộp phí tham gia. DRK Crypto Desk <b>không bao giờ</b> yêu cầu bạn chuyển tiền vào ví cá nhân hay cam kết lợi nhuận cố định.</div>
+    </div>
+    <div class="cond-list">
+      <div class="cond reveal"><div class="num">1</div><div><h4>Từ đủ 18 tuổi</h4><p>Có CCCD/hộ chiếu còn hiệu lực để xác minh danh tính (KYC).</p></div></div>
+      <div class="cond reveal"><div class="num">2</div><div><h4>Có tài khoản sàn đã xác minh</h4><p>Mở và KYC tài khoản trên sàn giao dịch đối tác thông qua link của DRK.</p></div></div>
+      <div class="cond reveal"><div class="num">3</div><div><h4>Hoàn thành khoá học nền tảng</h4><p>Khoá online miễn phí ~6 giờ về blockchain, rủi ro và đạo đức tư vấn.</p></div></div>
+      <div class="cond reveal"><div class="num">4</div><div><h4>Có kênh tiếp cận khách hàng</h4><p>Mạng xã hội, cộng đồng, Zalo/Telegram group… không bắt buộc số lượng tối thiểu.</p></div></div>
+      <div class="cond reveal"><div class="num">5</div><div><h4>Cam kết tuân thủ quy tắc</h4><p>Không hứa hẹn lợi nhuận, không spam, minh bạch về rủi ro với khách hàng.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section id="quytrinh">
+  <div class="container center">
+    <span class="eyebrow">Quy trình</span>
+    <h2>Bắt đầu chỉ với <span class="grad">4 bước</span></h2>
+    <div class="steps" style="text-align:left">
+      <div class="step reveal"><h4>Đăng ký</h4><p>Điền form bên dưới, chuyên viên liên hệ trong 24 giờ.</p></div>
+      <div class="step reveal"><h4>Xác minh</h4><p>KYC tài khoản sàn và nhận link giới thiệu riêng.</p></div>
+      <div class="step reveal"><h4>Đào tạo</h4><p>Hoàn thành khoá nền tảng và nhận bộ tài liệu marketing.</p></div>
+      <div class="step reveal"><h4>Nhận hoa hồng</h4><p>Theo dõi trên dashboard, thanh toán USDT hàng tuần.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section id="dangky" class="alt">
+  <div class="container reg">
+    <div class="reveal">
+      <span class="eyebrow">Đăng ký</span>
+      <h2>Nhận tư vấn & <span class="grad">tài liệu miễn phí</span></h2>
+      <p class="lead">Để lại thông tin, đội ngũ DRK sẽ liên hệ hướng dẫn chi tiết chương trình phù hợp với bạn.</p>
+      <ul class="perks">
+        <li>Ebook “Crypto cho người mới” (PDF)</li>
+        <li>Buổi định hướng 1-1 cùng chuyên viên</li>
+        <li>Truy cập nhóm cộng đồng nội bộ</li>
+      </ul>
+    </div>
+    <form id="form" class="reveal" novalidate>
+      <label>Họ và tên<input name="name" required placeholder="Nguyễn Văn A"></label>
+      <div class="row2">
+        <label>Số điện thoại / Zalo<input name="phone" required pattern="0[0-9]{9}" placeholder="09xx xxx xxx"></label>
+        <label>Email<input name="email" type="email" required placeholder="ban@email.com"></label>
+      </div>
+      <div class="row2">
+        <label>Kinh nghiệm crypto
+          <select name="exp"><option>Chưa có</option><option>Dưới 1 năm</option><option>1–3 năm</option><option>Trên 3 năm</option></select>
+        </label>
+        <label>Quan tâm
+          <select name="interest"><option>Chương trình đối tác</option><option>Khoá học đầu tư</option><option>Công cụ phân tích</option></select>
+        </label>
+      </div>
+      <label>Lời nhắn (không bắt buộc)<textarea name="msg" rows="3" placeholder="Bạn muốn tìm hiểu thêm điều gì?"></textarea></label>
+      <label class="check"><input type="checkbox" required> Tôi hiểu đầu tư tiền mã hoá có rủi ro cao và đồng ý để DRK liên hệ tư vấn.</label>
+      <button class="btn btn-primary" type="submit" style="justify-content:center">Gửi đăng ký</button>
+      <div class="ok" id="ok">✅ Cảm ơn bạn! Chúng tôi sẽ liên hệ trong vòng 24 giờ.</div>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="center"><span class="eyebrow">Hỏi đáp</span><h2>Câu hỏi <span class="grad">thường gặp</span></h2></div>
+    <div class="faq">
+      <details><summary>Tham gia chương trình có mất phí không?</summary><p>Hoàn toàn miễn phí. Bạn chỉ cần đáp ứng các điều kiện tham gia và hoàn thành khoá học nền tảng.</p></details>
+      <details><summary>Hoa hồng được tính và thanh toán thế nào?</summary><p>Hoa hồng là phần chia sẻ từ phí giao dịch mà khách hàng của bạn trả cho sàn. Số liệu cập nhật trên dashboard và được thanh toán bằng USDT mỗi tuần.</p></details>
+      <details><summary>Tôi chưa biết gì về crypto có tham gia được không?</summary><p>Được. Lộ trình đào tạo bắt đầu từ con số 0, có mentor hỗ trợ trong suốt quá trình.</p></details>
+      <details><summary>DRK có cam kết lợi nhuận đầu tư không?</summary><p>Không. Thị trường crypto biến động mạnh, mọi quyết định đầu tư là của bạn. Chúng tôi chỉ cung cấp kiến thức, công cụ và hỗ trợ.</p></details>
+      <details><summary>Làm sao để nâng cấp lên Pro Partner hoặc Master IB?</summary><p>Hệ thống tự động xét hạng hàng tháng dựa trên số khách hàng hoạt động và khối lượng giao dịch.</p></details>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <div class="risk"><b>⚠️ Cảnh báo rủi ro:</b> Tài sản mã hoá có tính biến động rất cao và có thể mất toàn bộ giá trị. Nội dung trên website chỉ mang tính giáo dục, không phải lời khuyên đầu tư. Hãy tìm hiểu kỹ quy định pháp luật hiện hành tại Việt Nam và chỉ đầu tư số tiền bạn có thể chấp nhận mất.</div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div><a href="#" class="logo" style="margin-bottom:14px"><i>₿</i>DRK <span class="grad">Crypto Desk</span></a><p>Cộng đồng giáo dục & chương trình đối tác đầu tư tiền mã hoá dành cho người Việt.</p></div>
+      <div><h5>Khám phá</h5><ul><li><a href="#gioithieu">Giới thiệu</a></li><li><a href="#chuongtrinh">Chương trình</a></li><li><a href="#dieukien">Điều kiện</a></li><li><a href="#faq">Hỏi đáp</a></li></ul></div>
+      <div><h5>Pháp lý</h5><ul><li><a href="#">Điều khoản sử dụng</a></li><li><a href="#">Chính sách bảo mật</a></li><li><a href="#">Công bố rủi ro</a></li></ul></div>
+      <div><h5>Liên hệ</h5><ul><li>Hotline: 0900 000 000</li><li>Email: support@example.com</li><li>Zalo OA · Telegram</li></ul></div>
+    </div>
+    <div class="copy"><span>© <span id="yr"></span> DRK Crypto Desk. All rights reserved.</span><span>Không phải lời khuyên đầu tư.</span></div>
+  </div>
+</footer>
+
+<a class="float-zalo" href="#dangky" aria-label="Liên hệ Zalo">Zalo</a>
+
+<script>
+// Fallback data (dùng khi không gọi được API)
+const COINS=[
+  {id:"bitcoin",sym:"BTC",color:"#f7931a",p:96500,c:1.8},
+  {id:"ethereum",sym:"ETH",color:"#8c9eff",p:3450,c:2.4},
+  {id:"solana",sym:"SOL",color:"#14f195",p:210,c:-1.2},
+  {id:"binancecoin",sym:"BNB",color:"#f3ba2f",p:640,c:0.6},
+  {id:"ripple",sym:"XRP",color:"#cfd8e3",p:2.35,c:-0.8},
+  {id:"dogecoin",sym:"DOGE",color:"#c2a633",p:0.38,c:3.1}
+];
+const fmt=n=>"$"+(n>=1?n.toLocaleString("en-US",{maximumFractionDigits:2}):n.toFixed(4));
+function render(){
+  const pc=c=>`<span class="${c.c>=0?"up":"down"}">${c.c>=0?"+":""}${c.c.toFixed(2)}%</span>`;
+  const t=COINS.map(c=>`<span><b>${c.sym}</b>${fmt(c.p)} ${pc(c)}</span>`).join("");
+  document.getElementById("ticker").innerHTML=t+t;
+  document.getElementById("coins").innerHTML=COINS.slice(1,4).map(c=>`<div class="coin"><span class="n"><span class="ic" style="background:${c.color}">${c.sym[0]}</span>${c.sym}</span><span>${fmt(c.p)}</span>${pc(c)}</div>`).join("");
+  const b=COINS[0];
+  document.getElementById("btc-price").textContent=fmt(b.p);
+  const e=document.getElementById("btc-chg");e.textContent=(b.c>=0?"+":"")+b.c.toFixed(2)+"%";e.className=b.c>=0?"up":"down";
+}
+function drawChart(pts){
+  const min=Math.min(...pts),max=Math.max(...pts),W=400,H=140;
+  const xy=pts.map((v,i)=>[i/(pts.length-1)*W,H-10-(v-min)/(max-min||1)*(H-20)]);
+  const d="M"+xy.map(p=>p.map(n=>n.toFixed(1)).join(",")).join("L");
+  document.getElementById("line").setAttribute("d",d);
+  document.getElementById("area").setAttribute("d",d+`L${W},${H}L0,${H}Z`);
+}
+// Dữ liệu biểu đồ minh hoạ
+let v=100,demo=[];for(let i=0;i<48;i++){v+=Math.sin(i/4)*1.5+(Math.random()-.4)*2;demo.push(v)}
+render();drawChart(demo);
+// Giá thật từ CoinGecko (public API, không cần key)
+fetch("https://api.coingecko.com/api/v3/simple/price?ids="+COINS.map(c=>c.id).join(",")+"&vs_currencies=usd&include_24hr_change=true")
+  .then(r=>r.json()).then(j=>{COINS.forEach(c=>{if(j[c.id]){c.p=j[c.id].usd;c.c=j[c.id].usd_24h_change||0}});render()}).catch(()=>{});
+fetch("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1")
+  .then(r=>r.json()).then(j=>{if(j.prices)drawChart(j.prices.filter((_,i)=>i%6===0).map(p=>p[1]))}).catch(()=>{});
+
+// Menu mobile
+const menu=document.getElementById("menu");
+document.getElementById("burger").onclick=()=>menu.classList.toggle("open");
+menu.querySelectorAll("a").forEach(a=>a.onclick=()=>menu.classList.remove("open"));
+
+// Hiệu ứng xuất hiện + đếm số
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("in");
+  const n=e.target.querySelector("[data-count]");if(n){const to=+n.dataset.count;let s=0;const step=()=>{s+=Math.ceil(to/60);n.textContent=(s>=to?to:s).toLocaleString("vi-VN")+(s>=to&&to>=100?"+":"");if(s<to)requestAnimationFrame(step)};step()}
+  io.unobserve(e.target)}),{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+// Form (demo phía client – nối với Google Sheets/CRM khi triển khai thật)
+document.getElementById("form").addEventListener("submit",e=>{
+  e.preventDefault();const f=e.target;
+  if(!f.checkValidity()){f.reportValidity();return}
+  document.getElementById("ok").style.display="block";f.querySelector("button").disabled=true;
+});
+document.getElementById("yr").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
