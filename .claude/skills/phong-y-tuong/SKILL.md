@@ -22,6 +22,7 @@ Gửi anh xem bản nháp kèm tóm tắt 2–3 ý phản biện của Trang. M�
 Khi anh nói "chốt" / "ok giao đi":
 1. Đặt mã `KB-<YYYYMMDD>-<N>` (N kế tiếp trong ngày), chuyển bản chốt sang `fanpage/runs/<mã>/` gồm `kichban.txt`, `huong_dan_quay.md` (Phong), `post.md`, `tiktok.md` (Ngọc).
 2. `create_file` lên thư mục kịch bản Drive (`scripts_folder_id` trong `fanpage/config.json`), `text/plain`, tiêu đề `<mã> | <chuyên mục> | <chủ đề>`, nội dung teleprompter + checklist; dòng đầu: "QUAY XONG: bỏ video vào thư mục '2. Video thô'." → bài vào **kho kịch bản**, lượt xử lý 09:17 / 10:17 / 21:17 sẽ tự ghép video.
+2b. **Slide trình bày (anh giao Phong 16/11):** mỗi bài chốt có thêm 1 bộ slide đẹp, bắt mắt, dễ đọc để anh trình bày khi quay. Phong soạn nội dung từng slide (bìa → tổng quan → mỗi ý 1 slide: ý chính + chuyện đời + chuyện crypto + việc làm ngay → slide gói lại → lời kết + Zalo + miễn trừ; lời đọc để trong ghi chú người nói). Minh dựng bằng Artifact loại Slides (Phong không có công cụ đăng), giữ cùng phong cách bộ mẫu KB-20261115-2 (nền mực đêm #16242A, giấy dó #F4EEE2, vàng thóc #D9A441; chữ Playfair Display + Be Vietnam Pro). Ghi link vào `fanpage/runs/<mã>/slide.md`.
 3. Trang đọc lại bản chốt một lượt (chỉ nêu điểm chặn nếu có), Bảo (`giam-sat`) chấm nhanh; chưa đạt thì sửa trước khi báo anh.
 4. Commit + push. Báo anh một dòng: "Đã giao cho đội: <mã> – <chủ đề> – link kịch bản. Anh quay xong bỏ vào Video thô (quay ngang được)."
 5. Phần sau chạy theo quy trình đội: anh quay → Khoa dựng (skill `dung-video-dao-duc-dau-tu`) → anh duyệt → Vy tạo nháp/đăng.
