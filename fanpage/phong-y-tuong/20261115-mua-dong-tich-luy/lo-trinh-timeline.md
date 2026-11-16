@@ -1,6 +1,6 @@
 # Lộ trình theo timeline thị trường – Series MÙA ĐÔNG – GIEO HẠT
 Anh chốt 15/11/2026: mỗi ngày 1 nội dung, bám timeline **bầu cử giữa kỳ → thị trường giảm hiện tại → tương lai tăng trưởng**, viết từ tin tức của ngày theo khuôn:
-**① Tin tức chính sách – chính trị – kinh tế → ② Giai đoạn thị trường (4 mùa) → ③ Cách đầu tư giai đoạn này** (file quay .txt sạch, 3–5 phút, không từ cấm).
+**① Tin tức chính sách – chính trị – kinh tế → ② Giai đoạn thị trường (4 mùa) → ③ Cách đầu tư giai đoạn này** (file quay .txt sạch, không từ cấm). **Anh chốt 16/11: video dài cập nhật tin mỗi ngày 5–10 phút (~1.300–2.300 âm tiết); video ngắn ~1 phút quay dồn 1 ngày, đội tự xếp lịch đăng.**
 Nguồn nền: `nhan-dinh-chinh-tri-chu-ky.md`, `nghien-cuu-chinh-tri-my.md`, `phan-tich-4-mua.md`. Kho chủ đề dự phòng (ngày ít tin): `ke-hoach-ca-mua.md`.
 
 ## Chặng A · 16/11–29/11 · SAU BẦU CỬ – GIỮA ĐÔNG

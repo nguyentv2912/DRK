@@ -1,5 +1,5 @@
 # Kế hoạch "1 ngày quay – 30 video" + lịch làm việc tuần của anh
-Ngày lập: 16/11/2026 · Minh soạn, Phong (quay) – Ngọc (nội dung) – Trang góp ý · Trạng thái: CHỜ ANH DUYỆT DANH SÁCH
+Ngày lập: 16/11/2026 · Minh soạn, Phong (quay) – Ngọc (nội dung) – Trang góp ý · Trạng thái: ANH CHỐT 16/11 – ngày quay chỉ quay VIDEO NGẮN; video dài = cập nhật tin mỗi ngày 5–10 phút (lượt sáng viết). Đội tự đăng (publish_mode = tu-dong).
 
 ## Nguyên tắc
 - Quay dồn chỉ dùng nội dung KHÔNG phụ thuộc tin ngày (lời ông bà, bài học mùa đông, kế hoạch gieo hạt, kiến thức). Tin nóng → video cập nhật quay nhanh 10 phút trong ngày (lượt chiều báo).
