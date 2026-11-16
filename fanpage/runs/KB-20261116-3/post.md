@@ -1,6 +1,6 @@
 Sông có khúc, người có lúc. ❄
 
-Mùa đông 2018: Bitcoin mất hơn 80% so với đỉnh, nhiều người tự trách, mất ngủ.
+Mùa đông 2018: Bitcoin mất hơn 80% so với đỉnh. Thử hình dung cảm giác của người ở lại khi đó.
 
 Bài học mùa đông: Bạn đang ở khúc quanh.
 
