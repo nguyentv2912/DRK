@@ -1,0 +1,37 @@
+{
+ "hook_title": "TÍCH CỐC PHÒNG CƠ, TÍCH Y PHÒNG HÀN",
+ "keywords": {
+  "mùa đông": "gold",
+  "bồ thóc": "green",
+  "đòn bẩy": "red",
+  "cụm từ khôi phục": "green",
+  "hứa chắc chắn": "red",
+  "kỷ luật": "gold"
+ },
+ "cards": [
+  {
+   "trigger": "Tích cốc phòng cơ, tích y phòng hàn",
+   "kicker": "1/6",
+   "text": "TÍCH CỐC PHÒNG CƠ, TÍCH Y PHÒNG HÀN",
+   "accent": "gold",
+   "sec": 3
+  },
+  {
+   "trigger": "Bài học rất đơn giản",
+   "kicker": "→",
+   "text": "QUỸ DỰ PHÒNG 6 THÁNG",
+   "accent": "green",
+   "sec": 3
+  }
+ ],
+ "cut_ranges": [],
+ "cta": {
+  "text": "NHÓM ZALO Ở BÌNH LUẬN GHIM",
+  "sub": "ĐẠO ĐỨC ĐẦU TƯ — 6 lời ông bà · 1/6",
+  "sec": 3.5
+ },
+ "crop_x": 0.5,
+ "max_pause": 0.45,
+ "music_volume": 0.18,
+ "brand": "ĐẠO ĐỨC ĐẦU TƯ"
+}
