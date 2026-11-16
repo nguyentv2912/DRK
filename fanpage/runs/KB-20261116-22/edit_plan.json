@@ -1,0 +1,23 @@
+{
+ "hook_title": "ETF LÀ GÌ",
+ "keywords": {},
+ "cards": [
+  {
+   "trigger": "ETF là gì, mà dòng vốn rút ra lại làm thị trường lạnh đi",
+   "kicker": "22/24",
+   "text": "ETF LÀ GÌ",
+   "accent": "gold",
+   "sec": 3
+  }
+ ],
+ "cut_ranges": [],
+ "cta": {
+  "text": "NHÓM ZALO Ở BÌNH LUẬN GHIM",
+  "sub": "ĐẠO ĐỨC ĐẦU TƯ — Mùa đông, Gieo hạt · video ngắn 22/24",
+  "sec": 3.5
+ },
+ "crop_x": 0.5,
+ "max_pause": 0.45,
+ "music_volume": 0.18,
+ "brand": "ĐẠO ĐỨC ĐẦU TƯ"
+}

@@ -1,0 +1,23 @@
+{
+ "hook_title": "GIEO HẠT BƯỚC 4: KHÔNG DỒN MỘT GIỎ",
+ "keywords": {},
+ "cards": [
+  {
+   "trigger": "Kế hoạch gieo hạt, bước bốn: không dồn một giỏ",
+   "kicker": "16/24",
+   "text": "GIEO HẠT BƯỚC 4: KHÔNG DỒN MỘT GIỎ",
+   "accent": "gold",
+   "sec": 3
+  }
+ ],
+ "cut_ranges": [],
+ "cta": {
+  "text": "NHÓM ZALO Ở BÌNH LUẬN GHIM",
+  "sub": "ĐẠO ĐỨC ĐẦU TƯ — Mùa đông, Gieo hạt · video ngắn 16/24",
+  "sec": 3.5
+ },
+ "crop_x": 0.5,
+ "max_pause": 0.45,
+ "music_volume": 0.18,
+ "brand": "ĐẠO ĐỨC ĐẦU TƯ"
+}
