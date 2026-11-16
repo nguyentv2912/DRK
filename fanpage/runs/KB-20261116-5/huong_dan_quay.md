@@ -1,6 +1,6 @@
 # Hướng dẫn quay — KB-20261116-5 | Mùa đông – Gieo hạt | 6 lời ông bà 5/6: Mất bò mới lo làm chuồng
 
-Video ngắn khoảng 1 phút (223 chữ, 18 câu). Lời đọc: `kichban.txt` (bản sạch).
+Video ngắn khoảng 1 phút (223 chữ, 20 câu). Lời đọc: `kichban.txt` (bản sạch).
 - Quay dọc 9:16 hoặc ngang. Sáng trước mặt, mic cài áo, tắt thông báo.
 - Câu tục ngữ đầu video: đọc chậm, rõ từng chữ, nhìn thẳng ống kính.
 - Đoạn câu chuyện thị trường: giọng kể chuyện; câu bài học: chậm lại.

@@ -1,6 +1,6 @@
 # Hướng dẫn quay — KB-20261116-3 | Mùa đông – Gieo hạt | 6 lời ông bà 3/6: Sông có khúc, người có lúc
 
-Video ngắn khoảng 1 phút (204 chữ, 17 câu). Lời đọc: `kichban.txt` (bản sạch).
+Video ngắn khoảng 1 phút (206 chữ, 18 câu). Lời đọc: `kichban.txt` (bản sạch).
 - Quay dọc 9:16 hoặc ngang. Sáng trước mặt, mic cài áo, tắt thông báo.
 - Câu tục ngữ đầu video: đọc chậm, rõ từng chữ, nhìn thẳng ống kính.
 - Đoạn câu chuyện thị trường: giọng kể chuyện; câu bài học: chậm lại.

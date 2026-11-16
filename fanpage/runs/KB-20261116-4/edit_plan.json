@@ -1,12 +1,10 @@
 {
  "hook_title": "TÁI ÔNG THẤT MÃ",
  "keywords": {
-  "mùa đông": "gold",
-  "bồ thóc": "green",
+  "học phí": "gold",
   "đòn bẩy": "red",
-  "cụm từ khôi phục": "green",
-  "hứa chắc chắn": "red",
-  "kỷ luật": "gold"
+  "quỹ dự phòng": "green",
+  "vốn quý": "gold"
  },
  "cards": [
   {
