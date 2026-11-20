@@ -1,0 +1,74 @@
+{
+  "skill": "grok-meme-million-video",
+  "version": "1.8.3",
+  "based_on": "GROK MEME MILLION V1.8.2 - Clear Trading",
+  "title_lines": ["GROK × MEME COIN", "ROAD TO $1M"],
+  "app_name": "Grok Bot",
+  "seed": null,
+  "scenario": {
+    "initial_capital_range": [500, 700],
+    "final_profit_range": [1000, 5000],
+    "n_trades_range": [11, 14],
+    "trade_size_frac_range": [0.12, 0.38],
+    "loss_pct_range": [-0.45, -0.12],
+    "win_pct_range": [0.25, 1.9],
+    "loss_probability": 0.25,
+    "hero_trade_size_frac": 0.3,
+    "label": "CONCEPT TRADES"
+  },
+  "wallet": {
+    "address": null,
+    "note": "Set a Solana wallet address to show VERIFIED ON-CHAIN executions in a separate panel. Null = none shown."
+  },
+  "data": {
+    "solana_rpc": "https://api.mainnet-beta.solana.com",
+    "watchlist_size": 6,
+    "min_liquidity_usd": 50000,
+    "min_volume_h24_usd": 300000,
+    "max_price_deviation": 0.08,
+    "ohlcv_aggregate_min": 5,
+    "ohlcv_limit": 160,
+    "min_candles": 90,
+    "exclude_symbols": ["SOL", "WSOL", "USDC", "USDT", "PUMP", "JUP", "BONK"]
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration": 15.0,
+    "crf": 16,
+    "audio_rate": 48000,
+    "bpm": 128
+  },
+  "storyboard": [
+    {"name": "portfolio", "start": 0.0, "end": 2.5},
+    {"name": "live_screen", "start": 2.5, "end": 6.5},
+    {"name": "execution", "start": 6.5, "end": 9.0},
+    {"name": "agents_activity", "start": 9.0, "end": 12.0},
+    {"name": "finale", "start": 12.0, "end": 15.0}
+  ],
+  "colors": {
+    "bg": "#06090A",
+    "card": "#111618",
+    "card2": "#171D20",
+    "line": "#232B30",
+    "pos": "#20D58B",
+    "neg": "#FF5D72",
+    "text": "#F5F7F9",
+    "text2": "#A0ADB7",
+    "text3": "#6B7780",
+    "gold": "#F4C34D",
+    "blue": "#3B82F6",
+    "purple": "#A78BFA",
+    "orange": "#FB923C"
+  },
+  "typography": {
+    "family": "Inter (SF Pro substitute)",
+    "hero_balance_px": 128,
+    "major_value_px": [64, 100],
+    "section_title_px": 40,
+    "row_title_px": 34,
+    "row_sub_px": 26,
+    "min_text_px": 22
+  }
+}
