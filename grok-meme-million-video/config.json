@@ -1,17 +1,38 @@
 {
   "skill": "grok-meme-million-video",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "based_on": "GROK MEME MILLION V1.8.2 - Clear Trading",
-  "title_lines": ["GROK × MEME COIN", "ROAD TO $1M"],
+  "title_lines": [
+    "GROK × MEME COIN",
+    "ROAD TO $1M"
+  ],
   "app_name": "Grok Bot",
   "seed": null,
   "scenario": {
-    "initial_capital_range": [500, 700],
-    "final_profit_range": [1000, 5000],
-    "n_trades_range": [11, 14],
-    "trade_size_frac_range": [0.12, 0.38],
-    "loss_pct_range": [-0.45, -0.12],
-    "win_pct_range": [0.25, 1.9],
+    "initial_capital_range": [
+      500,
+      700
+    ],
+    "final_profit_range": [
+      1000,
+      5000
+    ],
+    "n_trades_range": [
+      11,
+      14
+    ],
+    "trade_size_frac_range": [
+      0.12,
+      0.38
+    ],
+    "loss_pct_range": [
+      -0.45,
+      -0.12
+    ],
+    "win_pct_range": [
+      0.25,
+      1.9
+    ],
     "loss_probability": 0.25,
     "hero_trade_size_frac": 0.3,
     "label": "CONCEPT TRADES"
@@ -29,7 +50,15 @@
     "ohlcv_aggregate_min": 5,
     "ohlcv_limit": 160,
     "min_candles": 90,
-    "exclude_symbols": ["SOL", "WSOL", "USDC", "USDT", "PUMP", "JUP", "BONK"]
+    "exclude_symbols": [
+      "SOL",
+      "WSOL",
+      "USDC",
+      "USDT",
+      "PUMP",
+      "JUP",
+      "BONK"
+    ]
   },
   "video": {
     "width": 1080,
@@ -41,11 +70,31 @@
     "bpm": 128
   },
   "storyboard": [
-    {"name": "portfolio", "start": 0.0, "end": 2.5},
-    {"name": "live_screen", "start": 2.5, "end": 6.5},
-    {"name": "execution", "start": 6.5, "end": 9.0},
-    {"name": "agents_activity", "start": 9.0, "end": 12.0},
-    {"name": "finale", "start": 12.0, "end": 15.0}
+    {
+      "name": "portfolio",
+      "start": 0.0,
+      "end": 2.5
+    },
+    {
+      "name": "live_screen",
+      "start": 2.5,
+      "end": 6.5
+    },
+    {
+      "name": "execution",
+      "start": 6.5,
+      "end": 9.0
+    },
+    {
+      "name": "agents_activity",
+      "start": 9.0,
+      "end": 12.0
+    },
+    {
+      "name": "finale",
+      "start": 12.0,
+      "end": 15.0
+    }
   ],
   "colors": {
     "bg": "#06090A",
@@ -65,10 +114,40 @@
   "typography": {
     "family": "Inter (SF Pro substitute)",
     "hero_balance_px": 128,
-    "major_value_px": [64, 100],
+    "major_value_px": [
+      64,
+      100
+    ],
     "section_title_px": 40,
     "row_title_px": 34,
     "row_sub_px": 26,
     "min_text_px": 22
+  },
+  "trade_limits": {
+    "win_usd": [
+      12,
+      999.99
+    ],
+    "loss_usd": [
+      10,
+      300
+    ],
+    "max_share_of_total": 0.3,
+    "win_pct": [
+      0.15,
+      2.5
+    ],
+    "loss_pct": [
+      -0.45,
+      -0.1
+    ],
+    "max_size_frac_of_equity": 0.45
+  },
+  "audio": {
+    "music_file": null,
+    "music_bpm": null,
+    "first_downbeat_s": 0.0,
+    "target_lufs": -14.0,
+    "true_peak_dbtp": -1.0
   }
 }

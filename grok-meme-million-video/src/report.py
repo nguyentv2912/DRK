@@ -16,7 +16,7 @@ def m(c, sign=False):
     return (("+" if v >= 0 else "-") if sign else ("-" if v < 0 else "")) + f"${abs(v):,.2f}"
 
 
-L = ["# Visual Critic Report — GROK MEME MILLION V1.8.3", "",
+L = ["# Visual Critic Report — GROK MEME MILLION V1.8.4", "",
      f"- Video: `{R['video']}` · Reference: `{R['reference']}`",
      f"- Automated verdict: **{R['verdict']}** · checks passed **{R['checks_passed']}** · auto score {R['auto_score']}/10",
      f"- Reviewed quality vs. reference: **{RV['quality_score']}/10** (target 9.5)", "",
@@ -37,7 +37,7 @@ L += ["", "## Audio sync (onset rise at each event)", ""]
 L += [f"- {s['t']:>5}s {s['type']:<4} +{s['rise_db']} dB" for s in R["audio_sync"]]
 open(os.path.join(OUT, "VISUAL_CRITIC_REPORT.md"), "w").write("\n".join(L) + "\n")
 
-A = ["# Trading Data Audit — GROK MEME MILLION V1.8.3", "",
+A = ["# Trading Data Audit — GROK MEME MILLION V1.8.4", "",
      f"Snapshot window: {SN['snapshot_started_at']} → {SN['snapshot_finished_at']} (point-in-time; shown on screen as a snapshot/replay, **not realtime**).", "",
      "## Verified watchlist (Solana, GeckoTerminal trending 24h → DEX Screener → Solana RPC)", "",
      "| Symbol | Mint | Pool | DEX | Price USD | 24h | Vol 24h | Liquidity | DS price dev | RPC mint | Checked |", "|---|---|---|---|---|---|---|---|---|---|---|"]

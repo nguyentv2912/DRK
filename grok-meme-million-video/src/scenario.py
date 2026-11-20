@@ -11,17 +11,26 @@ import json, os, random, sys, datetime as dt
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 
-# Fixed event slots (seconds) derived from the 15 s storyboard.
-T_HIST_BANNER = 1.25   # portfolio: SELL banner (token A)
-T_HERO_BUY = 3.35      # live: BUY hero (chart marker)
-T_HERO_TP = 4.75       # live: SELL 50% hero (chart marker)
-T_B_BUY = 5.6          # live: BUY token B (feed)
-T_B_STOP = 6.95        # execution: STOP token B (negative, red banner)
-T_HERO_EXIT = 7.65     # execution: SELL rest hero (chart marker)
-T_C_SELL = 8.45        # execution: SELL token C (banner)
-T_D_SELL = 10.35       # agents/activity: SELL token D (feed row)
-T_E_BUY = 11.25        # agents/activity: BUY token E (feed row)
-T_E_SELL = 12.55       # finale: SELL token E -> final equity reveal
+# Event slots (seconds) from the 15 s storyboard, QUANTIZED to the 1/8-note
+# grid of the 128 BPM soundtrack so every trade lands on a beat (V1.8.4).
+BPM = 128
+EIGHTH = 60 / BPM / 2
+
+
+def q(t):
+    return round(round(t / EIGHTH) * EIGHTH, 6)
+
+
+T_HIST_BANNER = q(1.25)   # portfolio: SELL banner (token A)
+T_HERO_BUY = q(3.35)      # live: BUY hero (chart marker)
+T_HERO_TP = q(4.75)       # live: SELL 50% hero (chart marker)
+T_B_BUY = q(5.6)          # live: BUY token B (feed)
+T_B_STOP = q(6.95)        # execution: STOP token B (negative, red banner)
+T_HERO_EXIT = q(7.65)     # execution: SELL rest hero (chart marker)
+T_C_SELL = q(8.45)        # execution: SELL token C (banner)
+T_D_SELL = q(10.35)       # agents/activity: SELL token D (feed row)
+T_E_BUY = q(11.25)        # agents/activity: BUY token E (feed row)
+T_E_SELL = q(12.6)        # finale: SELL token E -> final equity reveal (drop)
 REVEAL_START, REVEAL_END = 2.5, 9.0
 WINDOW = 72            # candles visible in the terminal
 PRE_REVEALED = 30      # candles already drawn when the live screen opens
@@ -44,7 +53,7 @@ def pick_hero_trades(candles, rng=None, return_score=False):
                 for i1 in range(ib + 5, ib + 15):
                     for i2 in range(i1 + 6, min(WINDOW - 4, i1 + 24)):
                         g1, g2 = cl[i1] / cl[ib] - 1, cl[i2] / cl[ib] - 1
-                        if not (0.10 <= g1 <= 3.0 and g2 >= 0.04):
+                        if not (0.10 <= g1 <= 3.0 and g2 >= 0.08):
                             continue
                         sc = min(g1, 1.2) + 0.6 * min(g2, 1.5) - 0.02 * abs(pre - 28)
                         if best is None or sc > best[0]:
@@ -96,75 +105,139 @@ def build(seed=None):
         return fdv * price / now_price if fdv and real_chart else None
 
     t0 = win[0]["t"]
-    for attempt in range(20000):
+    L = cfg["trade_limits"]
+    WMIN, WMAX = cents(L["win_usd"][0]), cents(L["win_usd"][1])
+    LMIN, LMAX = cents(L["loss_usd"][0]), cents(L["loss_usd"][1])
+    g1, g2 = p1 / pb - 1, p2 / pb - 1
+
+    def size_range(pnl, eq):
+        """Sizes for which pct = pnl/size is allowed and size <= max frac of equity."""
+        lo_f, hi_f = 0.08 * eq, L["max_size_frac_of_equity"] * eq
+        if pnl >= 0:
+            lo, hi = pnl / L["win_pct"][1], pnl / L["win_pct"][0]
+        else:
+            lo, hi = -pnl / -L["loss_pct"][0], -pnl / -L["loss_pct"][1]
+        return max(lo, lo_f), min(hi, hi_f)
+
+    def water_fill(total, weights, lo, hi):
+        """Split `total` cents by weights, clipped to [lo, hi] per slot (iterative)."""
+        n = len(weights)
+        if total < n * lo or total > n * hi:
+            return None
+        out = [None] * n
+        free = list(range(n))
+        rem = total
+        for _ in range(30):
+            ws_ = sum(weights[i] for i in free)
+            changed = False
+            for i in list(free):
+                v = rem * weights[i] / ws_
+                if v > hi or v < lo:
+                    out[i] = hi if v > hi else lo
+                    free.remove(i); rem -= out[i]; changed = True
+            if not changed:
+                break
+        ws_ = sum(weights[i] for i in free) or 1
+        for i in free:
+            out[i] = rem * weights[i] / ws_
+        out = [int(round(v)) for v in out]
+        diff = total - sum(out)
+        order = sorted(range(n), key=lambda i: -out[i])
+        for i in order:  # put rounding cents where they fit
+            if diff == 0:
+                break
+            room = (hi - out[i]) if diff > 0 else (out[i] - lo)
+            d = max(-room, min(room, diff))
+            out[i] += d; diff -= d
+        return out if diff == 0 else None
+
+    for attempt in range(50000):
         cap = cents(rng.uniform(*sc["initial_capital_range"]))
         target = cents(rng.uniform(*sc["final_profit_range"]))
-        n_hist = rng.randint(3, 5)
-        trades = []  # closed results in chronological order
-        eq = cap
-
-        def add(tok, size_c, pct, kind, label, when, agent="Executor", t_video=None, extra=None):
-            nonlocal eq
-            pnl = int(round(size_c * pct))
-            r = {"symbol": tok["symbol"] if tok else hero_sym, "mint": tok["mint"] if tok else None,
-                 "size_c": size_c, "pnl_c": pnl, "pct": pnl / size_c, "kind": kind, "label": label,
-                 "agent": agent, "time": when, "t_video": t_video, "equity_before_c": eq}
-            if extra:
-                r.update(extra)
-            eq += pnl
+        share_cap = int(L["max_share_of_total"] * target)
+        hi_w = min(WMAX, share_cap)
+        n_hist = rng.randint(3, 8)
+        # slot plan in chronological order: hist..., A, H1, B(loss), H2, C, D, E
+        hist_loss = rng.randrange(n_hist) if rng.random() < 0.35 else -1
+        plan = [("hist", k == hist_loss) for k in range(n_hist)] + [("A", False), ("H1", None), ("B", True), ("H2", None), ("C", False), ("D", False), ("E", False)]
+        losses = {i: rng.randint(LMIN, min(LMAX, int(target * .08))) for i, (_, lo_) in enumerate(plan) if lo_}
+        # hero size: target a mid-size position, capped so each half stays within limits
+        eq_est = cap + target * (n_hist + 1) / (n_hist + 7)
+        hs = cents(eq_est / 100 * rng.uniform(0.22, 0.40))
+        half_max = min(hi_w / g1 if g1 > 0 else 1e12, hi_w / g2 if g2 > 0 else 1e12)
+        half = int(min(hs / 2, half_max))
+        hp1, hp2 = int(round(half * g1)), int(round(half * g2))
+        if not all(WMIN <= v <= hi_w for v in (hp1, hp2)):
+            continue
+        win_slots = [i for i, (_, lo_) in enumerate(plan) if lo_ is False]
+        need = target + sum(losses.values()) - hp1 - hp2
+        wts = [rng.gammavariate(2.0, 1.0) for _ in win_slots]
+        wts[-1] *= 2.2  # finale (E) is the biggest win
+        alloc = water_fill(need, wts, WMIN, hi_w)
+        if alloc is None:
+            continue
+        # make sure E is the largest win
+        iE = len(alloc) - 1
+        j = max(range(len(alloc)), key=lambda i: alloc[i])
+        alloc[iE], alloc[j] = alloc[j], alloc[iE]
+        pnl_plan = {}
+        for i, v in zip(win_slots, alloc):
+            pnl_plan[i] = v
+        for i, v in losses.items():
+            pnl_plan[i] = -v
+        # simulate sequentially: choose sizes inside the allowed ranges
+        trades, eq, ok = [], cap, True
+        hero_buy = None
+        times = {"A": (t0 + 300 * 4, T_HIST_BANNER), "C": (win[min(i2 + 2, WINDOW - 1)]["t"] + 600, T_C_SELL),
+                 "D": (win[-1]["t"] + 1500, T_D_SELL), "E": (win[-1]["t"] + 3900, T_E_SELL)}
+        toks = {"A": tokA, "B": tokB, "C": tokC, "D": tokD, "E": tokE}
+        bB = eE = None
+        hk = 0
+        for i, (slot, _) in enumerate(plan):
+            if slot in ("H1", "H2"):
+                if slot == "H1":
+                    if half * 2 > L["max_size_frac_of_equity"] * eq or half * 2 < 0.08 * eq:
+                        ok = False; break
+                    hero_buy = {"symbol": hero_sym, "mint": ohlcv.get("mint"), "size_c": half * 2, "price": pb, "time": win[ib]["t"],
+                                "t_video": T_HERO_BUY, "idx": ib, "mc": mc_at(pb)}
+                    pnl, idx, pr, lab, kind, part, tv = hp1, i1, p1, "take profit 50%", "tp", "50%", T_HERO_TP
+                else:
+                    pnl, idx, pr, lab, kind, part, tv = hp2, i2, p2, "trail 40%", "trail", "", T_HERO_EXIT
+                r = {"symbol": hero_sym, "mint": ohlcv.get("mint"), "size_c": half, "pnl_c": pnl, "kind": kind, "label": lab,
+                     "agent": "Executor", "time": win[idx]["t"], "t_video": tv, "equity_before_c": eq,
+                     "idx": idx, "price": pr, "mc": mc_at(pr), "hero": True, "partial": part}
+            else:
+                pnl = pnl_plan[i]
+                lo, hi = size_range(pnl, eq)
+                if lo > hi:
+                    ok = False; break
+                size = int(rng.uniform(lo, hi))
+                size = max(int(lo) + 1, min(int(hi), size))
+                if slot == "hist":
+                    tok = others[hk % len(others)]; hk += 1
+                    when, tv = t0 - 300 * (n_hist - i) * 6 - 600, None
+                else:
+                    tok = toks[slot]; when, tv = times[slot] if slot != "B" else (win[min(i1 + 8, WINDOW - 1)]["t"], T_B_STOP)
+                if pnl < 0:
+                    kind, lab = "stop", f"-{round(-pnl / size * 100)}% stop"
+                else:
+                    kind = "tp"
+                    lab = "take profit 100%" if slot == "E" else rng.choice(["take profit 50%", "trail 40%"])
+                r = {"symbol": tok["symbol"], "mint": tok["mint"], "size_c": size, "pnl_c": pnl, "kind": kind, "label": lab,
+                     "agent": "Risk" if pnl < 0 else "Executor", "time": when, "t_video": tv, "equity_before_c": eq}
+                if slot == "B":
+                    bB = {"tok": tok, "size_c": size, "time": win[min(i1 + 3, WINDOW - 1)]["t"], "t_video": T_B_BUY}
+                if slot == "E":
+                    eE = {"tok": tok, "size_c": size, "time": win[-1]["t"] + 2400, "t_video": T_E_BUY}
+            eq += r["pnl_c"]
             r["equity_after_c"] = eq
             trades.append(r)
-            return r
-
-        # history (before the video starts) - modest, mixed results
-        hist_budget = target * rng.uniform(0.10, 0.22)
-        ok = True
-        for k in range(n_hist):
-            tok = others[k % len(others)]
-            size = cents(eq / 100 * rng.uniform(*sc["trade_size_frac_range"]) / 1) // 1
-            if rng.random() < sc["loss_probability"]:
-                pct = rng.uniform(*sc["loss_pct_range"]); kind = "stop"; lab = f"-{abs(round(pct*100))}% stop"
-            else:
-                pct = min(rng.uniform(*sc["win_pct_range"]), hist_budget / max(size, 1) / max(1, n_hist - k) * 1.6)
-                pct = max(pct, 0.08); kind = "tp"; lab = rng.choice(["take profit 50%", "trail 40%"])
-            add(tok, size, pct, kind, lab, t0 - 300 * (n_hist - k) * 6 - 600)
-        # A: sell during portfolio
-        sA = cents(eq / 100 * rng.uniform(0.15, 0.3))
-        add(tokA, sA, rng.uniform(0.35, 1.2), "tp", "trail 40%", t0 + 300 * 4, t_video=T_HIST_BANNER)
-        # hero BUY -> TP 50% -> exit rest (REAL prices)
-        hs = cents(eq / 100 * sc["hero_trade_size_frac"])
-        half = hs // 2
-        hero_buy = {"symbol": hero_sym, "size_c": hs, "price": pb, "time": win[ib]["t"], "t_video": T_HERO_BUY,
-                    "idx": ib, "mc": mc_at(pb)}
-        add(hero_tok, half, p1 / pb - 1, "tp", "take profit 50%", win[i1]["t"], t_video=T_HERO_TP,
-            extra={"idx": i1, "price": p1, "mc": mc_at(p1), "hero": True, "partial": "50%"})
-        bB = {"tok": tokB, "size_c": cents(eq / 100 * rng.uniform(0.15, 0.25)), "time": win[min(i1 + 3, WINDOW - 1)]["t"], "t_video": T_B_BUY}
-        add(tokB, bB["size_c"], rng.uniform(-0.38, -0.18), "stop", "-25% stop", win[min(i1 + 8, WINDOW - 1)]["t"],
-            agent="Risk", t_video=T_B_STOP)
-        add(hero_tok, hs - half, p2 / pb - 1, "trail", "trail 40%", win[i2]["t"], t_video=T_HERO_EXIT,
-            extra={"idx": i2, "price": p2, "mc": mc_at(p2), "hero": True, "partial": ""})
-        add(tokC, cents(eq / 100 * rng.uniform(0.18, 0.32)), rng.uniform(0.4, 1.6), "tp", "take profit 50%",
-            win[min(i2 + 2, WINDOW - 1)]["t"] + 600, t_video=T_C_SELL)
-        add(tokD, cents(eq / 100 * rng.uniform(0.2, 0.34)), rng.uniform(0.5, 1.8), "trail", "trail 40%",
-            win[-1]["t"] + 1500, t_video=T_D_SELL)
-        # E: final trade absorbs the residual so total profit == target exactly
-        resid = target - (eq - cap)
-        sE = cents(eq / 100 * rng.uniform(0.28, 0.45))
-        if not (15000 <= resid <= 0.5 * target and sE > 0 and 0.4 <= resid / sE <= 3.5):
+        if not ok or eq - cap != target:
             continue
-        eE = {"tok": tokE, "size_c": sE, "time": win[-1]["t"] + 2400, "t_video": T_E_BUY}
-        add(tokE, sE, resid / sE, "tp", "take profit 100%", win[-1]["t"] + 3900, t_video=T_E_SELL)
-        trades[-1]["pnl_c"] = resid  # exact (pct recomputed below)
-        trades[-1]["equity_after_c"] = trades[-1]["equity_before_c"] + resid
-        eq = trades[-1]["equity_after_c"]
-        # sanity: all non-final trade results "tens to hundreds"
-        if any(abs(t["pnl_c"]) < 800 or abs(t["pnl_c"]) > 150000 for t in trades):
-            continue
-        if eq - cap != target:
-            continue
+        hs = half * 2
         break
     else:
-        sys.exit("scenario: could not satisfy constraints")
+        sys.exit("scenario: could not satisfy trade limits")
     for t in trades:
         t["pct"] = t["pnl_c"] / t["size_c"]
     buys = [dict(hero_buy, kind="buy"),

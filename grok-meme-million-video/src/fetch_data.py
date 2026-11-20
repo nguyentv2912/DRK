@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""GROK MEME MILLION V1.8.3 - market data layer.
+"""GROK MEME MILLION V1.8.4 - market data layer.
 
 Builds a verified Solana meme-token watchlist + real OHLCV for the hero pool.
 

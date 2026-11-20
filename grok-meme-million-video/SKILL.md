@@ -1,12 +1,13 @@
 ---
 name: grok-meme-million-video
-description: Build the "GROK × MEME COIN — ROAD TO $1M" 15-second 9:16 trading-app video (V1.8.3). Reproduces the reference iPhone "Grok Bot" app (balance, equity chart, Live screen terminal with real Solana OHLCV candles, BUY/SELL markers, 5 AI agents, activity feed, iOS banners), adds 3D camera/coins, an original EDM soundtrack, and gates delivery with an automated Visual Critic. Use when asked to make, update or re-render the Grok meme-coin million video.
+description: Build the "GROK × MEME COIN — ROAD TO $1M" 15-second 9:16 trading-app video (V1.8.4). Reproduces the reference iPhone "Grok Bot" app (balance, equity chart, Live screen terminal with real Solana OHLCV candles, BUY/SELL markers, 5 AI agents, activity feed, iOS banners), adds 3D camera/coins, an original EDM soundtrack, and gates delivery with an automated Visual Critic. Use when asked to make, update or re-render the Grok meme-coin million video.
 ---
 
-# GROK MEME MILLION — V1.8.3
+# GROK MEME MILLION — V1.8.4
 
-Skill name is fixed: **grok-meme-million-video** (do not rename). V1.8.3 upgrades
-V1.8.2 "Clear Trading" while keeping the same concept, branding, scenes and data
+Skill name is fixed: **grok-meme-million-video** (do not rename; the project command `/grok`
+in `.claude/commands/grok.md` runs it). V1.8.4 upgrades V1.8.3 (itself built on
+V1.8.2 "Clear Trading") while keeping the same concept, branding, scenes and data
 architecture. Everything on screen is English.
 
 ## One command
@@ -22,12 +23,14 @@ Pipeline (each step is also runnable alone):
 | 1. Market data | `src/fetch_data.py` | `data/market_snapshot.json`, `assets/logos/*.png` |
 | 2. Scenario | `src/scenario.py [seed]` | `data/scenario.json` |
 | 3. Frames | `src/render.py` (`--still T …` for previews) | `output/*_silent.mp4`, `output/layout_registry.json`, `output/timeline.json` |
-| 4. Audio | `src/audio.py` | `output/soundtrack.wav` (48 kHz stereo, −3 dBFS peak) |
+| 3b. 3D coin | `blender -b -P src/blender_coin.py -- assets/coins 72 512 64` (once, cached) | `assets/coins/coin_00..71.png` |
+| 4. Audio | `src/audio.py` + `src/sound/` | `output/soundtrack.wav` (−14 LUFS, ≤ −1 dBTP), `output/stems/*.wav` |
 | 5. Mux | ffmpeg in `build.sh` | `output/grok_meme_million_v1.8.3.mp4` |
 | 6. Visual Critic | `src/critic.py --ref ref.mp4` | `critic_report.json`, `compare_sheet.png`, `contact_sheet.png`, previews; exit 1 = rejected |
 | 7. Reports | `src/report.py` | `VISUAL_CRITIC_REPORT.md`, `TRADING_DATA_AUDIT.md` |
 
-Requirements: Python 3.11+, `skia-python` (needs `libegl1 libgl1`), numpy, scipy, Pillow,
+Requirements: Python 3.11+, `skia-python` (needs `libegl1 libgl1`), numpy, scipy, Pillow, pyloudnorm,
+Blender 4.x (optional: coin sprites; vector fallback otherwise),
 ffmpeg, Inter fonts at `/usr/share/fonts/opentype/inter/`. Network: `api.geckoterminal.com`,
 `api.dexscreener.com`, `api.mainnet-beta.solana.com`, logo CDNs (`assets.geckoterminal.com`,
 `coin-images.coingecko.com`, `dd.dexscreener.com`). `--offline` reuses the last snapshot
@@ -97,8 +100,36 @@ concept labelling on ≥95 % of frames · SFX onset at every event · no clippin
 density and palette vs. reference at 9 matched timestamps. Then inspect
 `compare_sheet.png` by eye, log defects in `data/review_log.json`, fix, re-render.
 
+## V1.8.4 systems
+
+- **3D scene graph** (`render.py`, section *camera*): layers L0 background (z −600, DOF blur, dust),
+  L1 page (z 0), L2 floating chart labels (z +60), L3 chrome (status/tab bar/sticky, only follows the
+  camera in fly-out/end), L4 foreground banners + coins (z +120). One perspective camera
+  (D = 1800) does dolly/truck/crane/yaw/pitch; at rest every layer is pixel-exact. Choreography:
+  portfolio dolly-in, crane on scrolls, push-in on every BUY/SELL, half-bar truck in execution,
+  **3D page fly-out** 11.8–12.64 s instead of a smeared scroll, orbit around the final balance,
+  pull-back behind the end card. Guards: |yaw|,|pitch| ≤ 6°, page text scale ≥ 0.92 (critic).
+- **Coins**: Blender Cycles PBR gold coin (reeded rim, bevel, embossed original Grok Bot mark),
+  72-frame turntable sprites with page shadows along the scene light.
+- **Banner Manager**: IDLE → ENTERING → SHOWN → STACKING | EXITING → GONE. A replaced banner
+  dims and recedes behind the new one (iOS stack) before the new text appears; the sticky balance
+  text is hidden for the whole time the slot is occupied. Critic: no ghost text, ≥ 16 fully
+  visible frames per banner, no < 3-frame flashes in the banner zone.
+- **Sound engine** (`src/sound/`): PolyBLEP oscillators, 7-voice supersaw, resonant envelope
+  filters, 3-layer kick, snare/clap, swung hats, ride, sub + reese bass, pad, pluck, lead hook
+  (A4 C5 E5 D5 | C5 A4 G4 A4), convolution reverb, ping-pong delay, chorus, saturation,
+  sidechain, SFX ducking, bus compression, BS.1770 mastering to −14 LUFS / ≤ −1 dBTP.
+  Arrangement: intro → build → drop A → breakdown → riser → drop B on the finale SELL → end chord.
+  All trade events are quantized to the 1/8-note grid (128 BPM) in `scenario.py`.
+- **Trade limits** (`config.trade_limits`): wins $12–$999.99, losses $10–$300, no trade > 30 % of
+  total profit, size ≤ 45 % of equity, win % 15–250 %, loss % −10…−45 %. Allocation by
+  Dirichlet water-filling; the finale trade is the largest win; hero trades keep real % moves.
+
 ## Changelog
 
+- **1.8.4** — 3D scene graph + camera, Blender coin, 3D fly-out transition, Banner Manager
+  (no ghosting), new sound engine with beat-locked events and LUFS/TP mastering + stems,
+  trade limits with water-fill allocation, ~13 new critic checks, `/grok` command.
 - **1.8.3** — Skia renderer rebuilt to match the reference app; detailed real-OHLCV terminal
   with EMA/RSI/volume/crosshair/price tag; collision-safe BUY/SELL pills; sticky balance;
   odometer digits; 3D camera + coins; original synced soundtrack; 3-source data

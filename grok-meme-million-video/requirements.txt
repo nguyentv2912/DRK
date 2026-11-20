@@ -1,0 +1,7 @@
+skia-python>=87.5
+numpy>=1.26
+scipy>=1.11
+Pillow>=10
+pyloudnorm>=0.1.1
+# system: ffmpeg on PATH; optional: Blender 4.x (only to re-render assets/coins)
+# Linux only: apt-get install -y libegl1 libgl1   (needed by skia-python)

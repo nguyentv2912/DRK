@@ -18,7 +18,7 @@
   },
   {
    "area": "BUY/SELL visibility",
-   "score": 9.5,
+   "score": 9.6,
    "notes": "Triangle + pill + pulse ring; pills auto-placed to avoid candles, other markers, the price tag and legend (0 collisions in 450 frames); synced banner, feed row, sound and camera push."
   },
   {
@@ -33,18 +33,18 @@
   },
   {
    "area": "3D depth",
-   "score": 9.0,
-   "notes": "Perspective camera (tilt on scroll, push-ins on trades), background parallax glows, foreground banners with spring-in scale + depth shadow, thick lit coins with rim/specular, depth-of-field coin burst."
+   "score": 9.5,
+   "notes": "5-layer scene graph with one perspective camera (dolly/crane/yaw/pitch, push-ins on trades, orbit at the finale), DOF background + dust, Blender PBR coin sprites with cast shadows, 3D page fly-out at 11.8-12.64 s; text scale >= 0.92 enforced."
   },
   {
    "area": "Transition rhythm",
    "score": 9.5,
-   "notes": "Storyboard 0-2.5 / 2.5-6.5 / 6.5-9 / 9-12 / 12-15 matches the reference cadence; adaptive multi-sample motion blur only during scrolls."
+   "notes": "Events quantized to the 1/8-note grid; screen-recording-crisp scrolls (no blur except the far-shot fly-out); end card readable from its 3rd frame."
   },
   {
    "area": "Audio sync",
-   "score": 9.5,
-   "notes": "Original 128 BPM synth track, sidechained; banner chime, buy blip, sell chime + count ticks, stop drop, whooshes/scans, riser -> impact at the reveal; every event has a measured onset."
+   "score": 9.3,
+   "notes": "New engine: intro/build/drop/breakdown/riser/drop B arrangement, hook, layered drums, reverb, sidechain; -14.2 LUFS, -1.6 dBTP, stereo correlation 0.77, all events on beat. Score is estimated from measurements (spectrogram, section levels) - not from listening."
   },
   {
    "area": "Data provenance",
@@ -102,6 +102,22 @@
    "verdict": "ACCEPTED (run 2)",
    "found": "35/35 automated checks + manual review of 4.85/4.9/6.95-7.05/7.7/10.6/13.3/14.7 s",
    "fix": "-"
+  },
+  {
+   "verdict": "REJECTED (auto, V1.8.4)",
+   "found": "72 soft frames, 6 banner-zone flashes, finale SELL chime masked by the riser",
+   "fix": "continuous blur; follow-up banners stack instead of exiting; 1/16 drop gap before the finale"
+  },
+  {
+   "verdict": "REJECTED (auto, V1.8.4)",
+   "found": "3-sample blur doubled text on scrolls; odometer left a digit half-rolled on a static balance; sticky popped for 3 frames before a banner",
+   "fix": "no blur on normal scrolls (like the screen-recorded reference), dense blur only in the fly-out; odometer snaps when static; banner owns the slot 0.6 s ahead"
+  },
+  {
+   "verdict": "ACCEPTED (V1.8.4)",
+   "found": "50/50 automated checks + manual review of 12 stills (0.8-14.5 s)",
+   "fix": "-"
   }
- ]
+ ],
+ "version": "1.8.4"
 }

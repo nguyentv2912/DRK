@@ -1,0 +1,552 @@
+{
+ "video": "grok_meme_million_v1.8.4.mp4",
+ "reference": "reference/ (bundled stills)",
+ "verdict": "ACCEPTED",
+ "auto_score": 10.0,
+ "checks_passed": "50/50",
+ "critical": [],
+ "warnings": [],
+ "checks": [
+  {
+   "check": "resolution 1080x1920",
+   "pass": true,
+   "critical": true,
+   "detail": "1080x1920"
+  },
+  {
+   "check": "frame rate 30",
+   "pass": true,
+   "critical": true,
+   "detail": "30/1"
+  },
+  {
+   "check": "codec H.264",
+   "pass": true,
+   "critical": true,
+   "detail": "h264"
+  },
+  {
+   "check": "frame count 450 (no missing frames)",
+   "pass": true,
+   "critical": true,
+   "detail": "450 frames"
+  },
+  {
+   "check": "duration 15.0 s",
+   "pass": true,
+   "critical": true,
+   "detail": "15.000s"
+  },
+  {
+   "check": "audio AAC stereo 48 kHz",
+   "pass": true,
+   "critical": true,
+   "detail": "aac 48000 2ch"
+  },
+  {
+   "check": "no duplicated frames",
+   "pass": true,
+   "critical": true,
+   "detail": "0 near-identical consecutive pairs; min diff 0.129"
+  },
+  {
+   "check": "no frozen stretch > 0.5 s",
+   "pass": true,
+   "critical": true,
+   "detail": "longest low-motion run 0 frames"
+  },
+  {
+   "check": "readable (sharp) frames >= 97%",
+   "pass": true,
+   "critical": true,
+   "detail": "440/450 sharp; soft frames [363, 364, 365, 366, 367, 368, 369, 370, 409, 410]"
+  },
+  {
+   "check": "no ghost flashes in the banner zone (< 3 frames)",
+   "pass": true,
+   "critical": true,
+   "detail": "0 flashes"
+  },
+  {
+   "check": "no overlapping text (same layer)",
+   "pass": true,
+   "critical": true,
+   "detail": "0 overlaps"
+  },
+  {
+   "check": "no horizontally clipped text",
+   "pass": true,
+   "critical": true,
+   "detail": "0 cases"
+  },
+  {
+   "check": "text inside its card/pill",
+   "pass": true,
+   "critical": true,
+   "detail": "0 cases"
+  },
+  {
+   "check": "every visible BUY/SELL marker has its label",
+   "pass": true,
+   "critical": true,
+   "detail": "0 frames with a marker but no label"
+  },
+  {
+   "check": "BUY/SELL labels never cover candles or markers",
+   "pass": true,
+   "critical": true,
+   "detail": "0 hits"
+  },
+  {
+   "check": "chart visible",
+   "pass": true,
+   "critical": true,
+   "detail": "363 frames with the candle plot on screen"
+  },
+  {
+   "check": "BUY marker visible",
+   "pass": true,
+   "critical": true,
+   "detail": "264 frames"
+  },
+  {
+   "check": "SELL marker visible",
+   "pass": true,
+   "critical": true,
+   "detail": "222 frames"
+  },
+  {
+   "check": "no ghost text (two legible overlapping banner/header texts)",
+   "pass": true,
+   "critical": true,
+   "detail": "0 frames"
+  },
+  {
+   "check": "every banner fully visible >= 16 frames",
+   "pass": true,
+   "critical": true,
+   "detail": "10 banners, min 17 frames"
+  },
+  {
+   "check": "page text scale under 3D camera >= 0.92",
+   "pass": true,
+   "critical": true,
+   "detail": "min 0.925 (fly-out 11.8-12.64 s and end card exempt)"
+  },
+  {
+   "check": "camera rotation within +/-6 deg",
+   "pass": true,
+   "critical": true,
+   "detail": "max 5.00 deg"
+  },
+  {
+   "check": "parallax depth: >= 3 layers move differently (2.5-3.15 s)",
+   "pass": true,
+   "critical": true,
+   "detail": "camera-induced layer shifts {'L0': 38.7, 'L1': 1.6, 'L2': 6.2, 'L4': 10.9}"
+  },
+  {
+   "check": "3D coin = Blender PBR render",
+   "pass": true,
+   "critical": false,
+   "detail": "coin mode ['blender']"
+  },
+  {
+   "check": "minimum on-screen font size >= 22 px",
+   "pass": true,
+   "critical": true,
+   "detail": "smallest font 22 px (1080x1920 native)"
+  },
+  {
+   "check": "equity chain = capital + sum(trade P&L)",
+   "pass": true,
+   "critical": true,
+   "detail": "$574.66 + $2068.50 = $2643.16"
+  },
+  {
+   "check": "ROI and multiple",
+   "pass": true,
+   "critical": true,
+   "detail": "ROI 359.95% \u00b7 4.60x"
+  },
+  {
+   "check": "initial capital in $500-$700",
+   "pass": true,
+   "critical": true,
+   "detail": "$574.66"
+  },
+  {
+   "check": "final profit in $1,000-$5,000",
+   "pass": true,
+   "critical": true,
+   "detail": "$2068.50"
+  },
+  {
+   "check": "every win $12-$999.99, every loss $10-$300",
+   "pass": true,
+   "critical": true,
+   "detail": "wins $51.94-$458.30; losses $92.07-$92.07"
+  },
+  {
+   "check": "no single trade > 30% of total profit",
+   "pass": true,
+   "critical": true,
+   "detail": "largest = 22.2% of total"
+  },
+  {
+   "check": "position size <= 45% of equity",
+   "pass": true,
+   "critical": true,
+   "detail": "all trades"
+  },
+  {
+   "check": "trade % within allowed ranges",
+   "pass": true,
+   "critical": true,
+   "detail": "wins [0.15, 2.5], losses [-0.45, -0.1] (hero % = real move)"
+  },
+  {
+   "check": "final equity shown on last frame",
+   "pass": true,
+   "critical": true,
+   "detail": "$2,643.16"
+  },
+  {
+   "check": "final profit not revealed early (<10 s)",
+   "pass": true,
+   "critical": true,
+   "detail": "0 early occurrences"
+  },
+  {
+   "check": "watchlist verified by mint+pool (DEX Screener + RPC)",
+   "pass": true,
+   "critical": true,
+   "detail": "6 tokens: mihao(4Cxj\u2026/Ho1a\u2026), FIONA(B34n\u2026/DjbL\u2026), TTWO(TTWo\u2026/7qZP\u2026), pippin(Dfh5\u2026/8Wwc\u2026), DCTY(9hjB\u2026/3gUa\u2026), VINE(6AJc\u2026/58fz\u2026)"
+  },
+  {
+   "check": "chart candles are byte-identical real OHLCV",
+   "pass": true,
+   "critical": true,
+   "detail": "72 candles from GeckoTerminal /networks/solana/pools/{pool}/ohlcv/minute pool DjbLtX1HRGZZrJgJ7CwTX6SN3D7tBLiytkGwomBUwTVB"
+  },
+  {
+   "check": "hero trade prices = real candle closes",
+   "pass": true,
+   "critical": true,
+   "detail": "entry/exit at candle closes"
+  },
+  {
+   "check": "snapshot not presented as realtime",
+   "pass": true,
+   "critical": true,
+   "detail": "snapshot 2026-11-20T04:54:15Z"
+  },
+  {
+   "check": "no unsupported live/on-chain claims in UI text",
+   "pass": true,
+   "critical": true,
+   "detail": "[]"
+  },
+  {
+   "check": "concept/paper labelling on screen",
+   "pass": true,
+   "critical": true,
+   "detail": "450/450 frames"
+  },
+  {
+   "check": "on-chain executions separated",
+   "pass": true,
+   "critical": true,
+   "detail": "no wallet configured in config.json -> no verified executions are shown"
+  },
+  {
+   "check": "SFX onset at every trade event",
+   "pass": true,
+   "critical": true,
+   "detail": "1.171875s sell +4.7dB; 3.28125s buy +15.4dB; 4.6875s sell +14.8dB; 5.625s buy +14.3dB; 7.03125s stop +17.8dB; 7.734375s sell +7.8dB; 8.4375s sell +11.8dB; 10.3125s sell +10.7dB; 11.25s buy +7.4dB; 12.65625s sell +4.0dB"
+  },
+  {
+   "check": "audio not clipping",
+   "pass": true,
+   "critical": true,
+   "detail": "peak -1.64 dBFS"
+  },
+  {
+   "check": "loudness -14 LUFS +/-1 (TikTok)",
+   "pass": true,
+   "critical": true,
+   "detail": "-14.25 LUFS integrated (decoded AAC)"
+  },
+  {
+   "check": "true peak <= -1.0 dBTP",
+   "pass": true,
+   "critical": true,
+   "detail": "-1.57 dBTP (4x oversampled, decoded AAC)"
+  },
+  {
+   "check": "every trade event on the beat grid (+/-1 frame)",
+   "pass": true,
+   "critical": true,
+   "detail": "max offset 0.0 ms from the 1/8-note grid"
+  },
+  {
+   "check": "no silent gap > 150 ms",
+   "pass": true,
+   "critical": true,
+   "detail": "longest quiet run 0 ms"
+  },
+  {
+   "check": "visual density close to reference (0.6-1.6x)",
+   "pass": true,
+   "critical": false,
+   "detail": "edge density ratio 1.24"
+  },
+  {
+   "check": "dark premium palette like reference",
+   "pass": true,
+   "critical": false,
+   "detail": "dark share ref 0.84 vs new 0.84"
+  }
+ ],
+ "audio_sync": [
+  {
+   "t": 1.171875,
+   "type": "sell",
+   "rise_db": 4.7
+  },
+  {
+   "t": 3.28125,
+   "type": "buy",
+   "rise_db": 15.4
+  },
+  {
+   "t": 4.6875,
+   "type": "sell",
+   "rise_db": 14.8
+  },
+  {
+   "t": 5.625,
+   "type": "buy",
+   "rise_db": 14.3
+  },
+  {
+   "t": 7.03125,
+   "type": "stop",
+   "rise_db": 17.8
+  },
+  {
+   "t": 7.734375,
+   "type": "sell",
+   "rise_db": 7.8
+  },
+  {
+   "t": 8.4375,
+   "type": "sell",
+   "rise_db": 11.8
+  },
+  {
+   "t": 10.3125,
+   "type": "sell",
+   "rise_db": 10.7
+  },
+  {
+   "t": 11.25,
+   "type": "buy",
+   "rise_db": 7.4
+  },
+  {
+   "t": 12.65625,
+   "type": "sell",
+   "rise_db": 4.0
+  }
+ ],
+ "reference_comparison": {
+  "timestamps": [
+   {
+    "t_new": 0.6,
+    "t_ref": 0.6,
+    "ref": {
+     "luma": 18.17826271057129,
+     "edge_density": 7.671657562255859,
+     "green_share": 0.020371946414499607,
+     "red_share": 0.0018219070133963752,
+     "dark_share": 0.8890527974783294
+    },
+    "new": {
+     "luma": 24.68598747253418,
+     "edge_density": 8.92712688446045,
+     "green_share": 0.032623456790123455,
+     "red_share": 0.006957947530864197,
+     "dark_share": 0.9008680555555556
+    }
+   },
+   {
+    "t_new": 2.0,
+    "t_ref": 2.0,
+    "ref": {
+     "luma": 23.536752700805664,
+     "edge_density": 8.186192512512207,
+     "green_share": 0.021919621749408983,
+     "red_share": 0.001826635145784082,
+     "dark_share": 0.8273475177304964
+    },
+    "new": {
+     "luma": 26.64541244506836,
+     "edge_density": 9.320777893066406,
+     "green_share": 0.03620756172839506,
+     "red_share": 0.007415123456790123,
+     "dark_share": 0.8286689814814815
+    }
+   },
+   {
+    "t_new": 3.6,
+    "t_ref": 3.6,
+    "ref": {
+     "luma": 22.91123390197754,
+     "edge_density": 6.841134548187256,
+     "green_share": 0.048397163120567376,
+     "red_share": 0.0017210401891252956,
+     "dark_share": 0.8247218282111899
+    },
+    "new": {
+     "luma": 27.438907623291016,
+     "edge_density": 11.839245796203613,
+     "green_share": 0.024564043209876544,
+     "red_share": 0.012083333333333333,
+     "dark_share": 0.8192110339506172
+    }
+   },
+   {
+    "t_new": 4.9,
+    "t_ref": 4.9,
+    "ref": {
+     "luma": 19.58027458190918,
+     "edge_density": 9.163738250732422,
+     "green_share": 0.008840031520882585,
+     "red_share": 0.0038991331757289205,
+     "dark_share": 0.866903073286052
+    },
+    "new": {
+     "luma": 27.346670150756836,
+     "edge_density": 12.285026550292969,
+     "green_share": 0.02779128086419753,
+     "red_share": 0.012866512345679012,
+     "dark_share": 0.8185185185185185
+    }
+   },
+   {
+    "t_new": 7.0,
+    "t_ref": 7.0,
+    "ref": {
+     "luma": 19.200353622436523,
+     "edge_density": 9.263763427734375,
+     "green_share": 0.010159180457052797,
+     "red_share": 0.003951142631993696,
+     "dark_share": 0.8785421591804571
+    },
+    "new": {
+     "luma": 27.315004348754883,
+     "edge_density": 12.298433303833008,
+     "green_share": 0.022542438271604938,
+     "red_share": 0.0094945987654321,
+     "dark_share": 0.818809799382716
+    }
+   },
+   {
+    "t_new": 8.4,
+    "t_ref": 8.4,
+    "ref": {
+     "luma": 24.499576568603516,
+     "edge_density": 9.349380493164062,
+     "green_share": 0.008197005516154453,
+     "red_share": 0.005263987391646966,
+     "dark_share": 0.8254011032308904
+    },
+    "new": {
+     "luma": 26.866798400878906,
+     "edge_density": 11.937016487121582,
+     "green_share": 0.0226929012345679,
+     "red_share": 0.013717206790123457,
+     "dark_share": 0.8236496913580247
+    }
+   },
+   {
+    "t_new": 10.6,
+    "t_ref": 10.6,
+    "ref": {
+     "luma": 24.12175178527832,
+     "edge_density": 8.72702407836914,
+     "green_share": 0.010468085106382979,
+     "red_share": 0.0035397951142631993,
+     "dark_share": 0.8313617021276596
+    },
+    "new": {
+     "luma": 26.36520767211914,
+     "edge_density": 11.338953971862793,
+     "green_share": 0.00970679012345679,
+     "red_share": 0.00285108024691358,
+     "dark_share": 0.8360030864197531
+    }
+   },
+   {
+    "t_new": 13.2,
+    "t_ref": 13.2,
+    "ref": {
+     "luma": 25.91539192199707,
+     "edge_density": 8.39456558227539,
+     "green_share": 0.04140425531914894,
+     "red_share": 0.0018408195429472024,
+     "dark_share": 0.8035571315996848
+    },
+    "new": {
+     "luma": 29.149168014526367,
+     "edge_density": 10.722633361816406,
+     "green_share": 0.04779899691358025,
+     "red_share": 0.006496913580246914,
+     "dark_share": 0.8061381172839506
+    }
+   },
+   {
+    "t_new": 14.7,
+    "t_ref": 14.7,
+    "ref": {
+     "luma": 25.069196701049805,
+     "edge_density": 8.621068000793457,
+     "green_share": 0.023112687155240348,
+     "red_share": 0.0017399527186761229,
+     "dark_share": 0.8129535066981876
+    },
+    "new": {
+     "luma": 30.90807342529297,
+     "edge_density": 5.5434675216674805,
+     "green_share": 0.03563657407407408,
+     "red_share": 0.00046682098765432096,
+     "dark_share": 0.8683256172839506
+    }
+   }
+  ],
+  "means": {
+   "luma": {
+    "ref": 22.557,
+    "new": 27.413
+   },
+   "edge_density": {
+    "ref": 8.469,
+    "new": 10.468
+   },
+   "green_share": {
+    "ref": 0.021,
+    "new": 0.029
+   },
+   "red_share": {
+    "ref": 0.003,
+    "new": 0.008
+   },
+   "dark_share": {
+    "ref": 0.84,
+    "new": 0.836
+   }
+  }
+ },
+ "min_text_px": 22
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""GROK MEME MILLION V1.8.3 - automated Visual Critic.
+"""GROK MEME MILLION V1.8.4 - automated Visual Critic.
 
 Compares the render with the reference video and gates delivery.
 Exit code 1 = REJECTED (critical defect). Writes output/critic_report.{json,md}
@@ -54,8 +54,8 @@ def visual_stats(im):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--video", default=os.path.join(OUT, "grok_meme_million_v1.8.3.mp4"))
-    ap.add_argument("--ref", required=True)
+    ap.add_argument("--video", default=os.path.join(OUT, "grok_meme_million_v1.8.4.mp4"))
+    ap.add_argument("--ref", default=None, help="reference video; default: bundled reference/ref_<t>.jpg stills")
     a = ap.parse_args()
     crit, warn, checks = [], [], []
 
@@ -88,6 +88,23 @@ def main():
         worst = max(worst, run)
     check("no duplicated frames", dup == 0, f"{dup} near-identical consecutive pairs; min diff {d.min():.3f}")
     check("no frozen stretch > 0.5 s", worst < 15, f"longest low-motion run {worst} frames")
+    # readability: sharpness (variance of Laplacian) per frame vs the video's median
+    fr2 = frames_gray(a.video, 270, 480)
+    lap = (fr2[:, 1:-1, 1:-1] * 4 - fr2[:, :-2, 1:-1] - fr2[:, 2:, 1:-1] - fr2[:, 1:-1, :-2] - fr2[:, 1:-1, 2:])
+    lap = lap[:, : lap.shape[1] // 6 * 6, : lap.shape[2] // 4 * 4]
+    tiles = lap.reshape(len(fr2), 6, lap.shape[1] // 6, 4, lap.shape[2] // 4).var(axis=(2, 4)).reshape(len(fr2), -1)
+    sharp = np.percentile(tiles, 90, axis=1)  # a frame is readable if its text regions are sharp
+    soft = [i for i, v in enumerate(sharp) if v < .6 * np.median(sharp)]
+    check("readable (sharp) frames >= 97%", len(soft) <= .03 * NFR, f"{NFR - len(soft)}/{NFR} sharp; soft frames {soft[:14]}")
+    # banner-zone flashes: edge energy that pops up and vanishes within < 3 frames (ghost text)
+    band = fr[:, int(100 / H * fr.shape[1]):int(300 / H * fr.shape[1]), :]
+    ed = np.abs(np.diff(band, axis=2)).mean((1, 2))
+    regv = json.load(open(os.path.join(OUT, "layout_registry.json")))
+    sv = {int(f): next((x.get("scroll_v", 0) for x in it if x["kind"] == "camera"), 0) for f, it in regv.items()}
+    moving = lambda i: max(abs(sv.get(j, 0)) for j in range(i - 2, i + 3)) > 300  # content scrolling through the zone
+    flashes = [i for i in range(2, len(ed) - 2)
+               if ed[i] - max(ed[i - 2], ed[i + 2]) > .6 and ed[i] - min(ed[i - 1], ed[i + 1]) > .3 and not moving(i)]
+    check("no ghost flashes in the banner zone (< 3 frames)", not flashes, f"{len(flashes)} flashes" + (f" at frames {flashes[:6]}" if flashes else ""))
 
     # ---- C. layout registry (text overlap / clipping / chart labels / markers)
     reg = json.load(open(os.path.join(OUT, "layout_registry.json")))
@@ -95,6 +112,7 @@ def main():
     seen_buy = seen_sell = 0
     live_frames = 0
     min_px = 999
+    ghosts, ban_hold, cams = [], {}, {}
     for fi, items in reg.items():
         fi = int(fi)
         texts = [x for x in items if x["rect"] and x["kind"] not in ("icon",)]
@@ -110,13 +128,25 @@ def main():
                 outbox.append((fi, x["text"]))
         by_layer = {}
         for x in texts:
-            if 0 < x["rect"][3] and x["rect"][1] < H and x["layer"] not in ("banner_out", "page_anim"):
+            if 0 < x["rect"][3] and x["rect"][1] < H and x["layer"] not in ("banner_out", "page_anim") and x.get("a", 1) > .5:
                 by_layer.setdefault(x["layer"], []).append(x)
         for lay, xs in by_layer.items():
             for i in range(len(xs)):
                 for j in range(i + 1, len(xs)):
                     if inter(xs[i]["rect"], xs[j]["rect"], pad=3):
                         overlaps.append((fi, lay, xs[i]["text"], xs[j]["text"]))
+        fg = [x for x in texts if x["layer"] in ("banner", "banner_out", "sticky") and x.get("a", 1) > .15]
+        for i in range(len(fg)):
+            for j in range(i + 1, len(fg)):
+                if fg[i]["layer"] != fg[j]["layer"] or fg[i]["layer"] == "banner_out":
+                    if inter(fg[i]["rect"], fg[j]["rect"], pad=0):
+                        ghosts.append((fi, fg[i]["text"], fg[j]["text"]))
+        for x in texts:
+            if x["layer"] == "banner" and x["kind"] == "text" and x.get("size") == 36 and x.get("a", 1) >= .95:
+                ban_hold[x["text"]] = ban_hold.get(x["text"], 0) + 1
+        cam = next((x for x in items if x["kind"] == "camera"), None)
+        if cam:
+            cams[fi] = cam
         cs = next((x for x in items if x["kind"] == "candles"), None)
         if cs:
             pl = cs["plot"]
@@ -141,6 +171,26 @@ def main():
     check("chart visible", live_frames >= 150, f"{live_frames} frames with the candle plot on screen")
     check("BUY marker visible", seen_buy >= 30, f"{seen_buy} frames")
     check("SELL marker visible", seen_sell >= 30, f"{seen_sell} frames")
+    check("no ghost text (two legible overlapping banner/header texts)", not ghosts, f"{len(ghosts)} frames" + (f", e.g. {ghosts[:2]}" if ghosts else ""))
+    short = {k: v for k, v in ban_hold.items() if v < 16}
+    check("every banner fully visible >= 16 frames", not short and len(ban_hold) > 0, f"{len(ban_hold)} banners, min {min(ban_hold.values()) if ban_hold else 0} frames" + (f", short: {short}" if short else ""))
+    # ---- Part 1: camera / 3D readability
+    END_T = 29 * 60 / CFG["video"]["bpm"]
+    exempt = lambda f: (11.8 <= f / FPS <= 12.64) or f / FPS >= END_T
+    sc_min = min((c_["l1_min_scale"] for f, c_ in cams.items() if not exempt(f)), default=0)
+    check("page text scale under 3D camera >= 0.92", sc_min >= .92, f"min {sc_min:.3f} (fly-out 11.8-12.64 s and end card exempt)")
+    rot = max((max(abs(c_["yaw"]), abs(c_["pitch"])) for c_ in cams.values()), default=0)
+    check("camera rotation within +/-6 deg", rot <= 6.0 + 1e-6, f"max {rot:.2f} deg")
+    def shift(lname, f0, f1):
+        a_, b_ = cams[f0]["layer_centers"][lname], cams[f1]["layer_centers"][lname]
+        return math.hypot(b_[0] - a_[0], b_[1] - a_[1])
+    f0, f1 = int(2.5 * FPS), int(2.83 * FPS)
+    sh = {k: round(shift(k, f0, f1), 1) for k in ("L0", "L1", "L2", "L4")}
+    vals = sorted(sh.values())
+    distinct = 1 + sum(1 for i in range(1, len(vals)) if vals[i] - vals[i - 1] > 2.0)
+    check("parallax depth: >= 3 layers move differently (2.5-3.15 s)", distinct >= 3, f"camera-induced layer shifts {sh}")
+    modes = {c_.get("coin_mode") for c_ in cams.values()}
+    check("3D coin = Blender PBR render", modes == {"blender"}, f"coin mode {sorted(modes)}", critical=False)
     check("minimum on-screen font size >= 22 px", min_px >= 22, f"smallest font {min_px:.0f} px (1080x1920 native)")
 
     # ---- D. calculations
@@ -160,7 +210,21 @@ def main():
     lo, hi = CFG["scenario"]["final_profit_range"]
     check("final profit in $1,000-$5,000", lo * 100 <= fin - cap <= hi * 100, f"${(fin-cap)/100:.2f}")
     mags = [abs(t["pnl_c"]) / 100 for t in SC["trades"]]
-    check("trade results tens-hundreds of $", all(8 <= m <= 1500 for m in mags), f"min ${min(mags):.2f}, max ${max(mags):.2f}", critical=False)
+    TL = CFG["trade_limits"]
+    wins = [t["pnl_c"] / 100 for t in SC["trades"] if t["pnl_c"] >= 0]
+    loss = [-t["pnl_c"] / 100 for t in SC["trades"] if t["pnl_c"] < 0]
+    check("every win $12-$999.99, every loss $10-$300", all(TL["win_usd"][0] <= w_ <= TL["win_usd"][1] for w_ in wins) and all(TL["loss_usd"][0] <= l_ <= TL["loss_usd"][1] for l_ in loss),
+          f"wins ${min(wins):.2f}-${max(wins):.2f}; losses " + (f"${min(loss):.2f}-${max(loss):.2f}" if loss else "none"))
+    share = max(wins) / ((fin - cap) / 100)
+    check("no single trade > 30% of total profit", share <= TL["max_share_of_total"] + 1e-9, f"largest = {share*100:.1f}% of total")
+    okz = all(t["size_c"] <= TL["max_size_frac_of_equity"] * t["equity_before_c"] + 1 for t in SC["trades"] if not t.get("hero"))
+    hb = next(b for b in SC["buys"] if b["symbol"] == SC["hero"]["symbol"])
+    hero_before = next(t["equity_before_c"] for t in SC["trades"] if t.get("hero"))
+    okz = okz and hb["size_c"] <= TL["max_size_frac_of_equity"] * hero_before + 1
+    check("position size <= 45% of equity", okz, "all trades")
+    okp_ = all((TL["win_pct"][0] - 1e-6 <= t["pct"] <= TL["win_pct"][1] + 1e-6) if t["pnl_c"] >= 0 else (TL["loss_pct"][0] - 1e-6 <= t["pct"] <= TL["loss_pct"][1] + 1e-6)
+               for t in SC["trades"] if not t.get("hero"))
+    check("trade % within allowed ranges", okp_, f"wins {TL['win_pct']}, losses {TL['loss_pct']} (hero % = real move)")
     final_txt = "$" + f"{fin/100:,.2f}"
     last = reg[str(NFR - 1)]
     check("final equity shown on last frame", any(x["text"] == final_txt for x in last), final_txt)
@@ -205,22 +269,43 @@ def main():
         sync.append({"t": ev["t"], "type": ev["type"], "rise_db": round(20 * math.log10((after + 1e-9) / (before + 1e-9)), 1)})
     check("SFX onset at every trade event", all(s["rise_db"] > 3 for s in sync), "; ".join(f'{s["t"]}s {s["type"]} +{s["rise_db"]}dB' for s in sync))
     check("audio not clipping", peak < 0.999, f"peak {20*math.log10(peak):.2f} dBFS")
+    import pyloudnorm as pyln
+    from scipy.signal import resample_poly
+    lu = pyln.Meter(48000).integrated_loudness(xs.astype(np.float64))
+    tp = 20 * math.log10(max(np.abs(resample_poly(xs[:, 0], 4, 1)).max(), np.abs(resample_poly(xs[:, 1], 4, 1)).max()))
+    check("loudness -14 LUFS +/-1 (TikTok)", abs(lu - CFG["audio"]["target_lufs"]) <= 1.0, f"{lu:.2f} LUFS integrated (decoded AAC)")
+    check("true peak <= -1.0 dBTP", tp <= CFG["audio"]["true_peak_dbtp"] + 1e-6, f"{tp:.2f} dBTP (4x oversampled, decoded AAC)")
+    e8 = 60 / CFG["video"]["bpm"] / 2
+    offs = [abs(ev["t"] - round(ev["t"] / e8) * e8) for ev in json.load(open(os.path.join(OUT, "timeline.json")))["events"]]
+    check("every trade event on the beat grid (+/-1 frame)", max(offs) <= 1 / FPS, f"max offset {max(offs)*1000:.1f} ms from the 1/8-note grid")
+    w50 = int(.05 * 48000)
+    rms50 = np.sqrt(np.convolve(x ** 2, np.ones(w50) / w50, "valid")[::w50 // 2])
+    quiet = rms50[: int((DUR - .5) / .025)] < 10 ** (-60 / 20)
+    run_, worst_ = 0, 0
+    for qv in quiet:
+        run_ = run_ + 1 if qv else 0; worst_ = max(worst_, run_)
+    check("no silent gap > 150 ms", worst_ * .025 <= .15, f"longest quiet run {worst_*25} ms")
 
     # ---- G. reference comparison + contact sheets
-    rpr = ffprobe(a.ref)
-    rdur = float(rpr["format"]["duration"])
+    rdur = float(ffprobe(a.ref)["format"]["duration"]) if a.ref else DUR
+
+    def ref_frame(t, tr, w=None):
+        if a.ref:
+            return grab(a.ref, tr, w)
+        im = Image.open(os.path.join(ROOT, "reference", f"ref_{t}.jpg")).convert("RGB")
+        return im.resize((w, int(im.height * w / im.width))) if w else im
     pairs = []
-    font = ImageFont.truetype("/usr/share/fonts/opentype/inter/Inter-SemiBold.otf", 26)
+    font = ImageFont.truetype(os.path.join(ROOT, "assets", "fonts", "Inter-SemiBold.otf"), 26)
     sheet = Image.new("RGB", (len(TS) * 380, 2 * 680 + 80), (8, 10, 11))
     dr = ImageDraw.Draw(sheet)
     for k, t in enumerate(TS):
         tr = t * rdur / DUR
-        ri = grab(a.ref, tr).resize((312, 680))
+        ri = ref_frame(t, tr).resize((312, 680))
         ni = grab(a.video, t).resize((382, 680)).crop((35, 0, 347, 680))
         sheet.paste(ri, (k * 380 + 34, 40)); sheet.paste(grab(a.video, t).resize((382, 680)), (k * 380, 720 + 40))
         dr.text((k * 380 + 34, 6), f"REF {tr:.1f}s", fill=(160, 173, 183), font=font)
         dr.text((k * 380 + 34, 726), f"NEW {t:.1f}s", fill=(32, 213, 139), font=font)
-        rs, ns = visual_stats(grab(a.ref, tr, 540)), visual_stats(grab(a.video, t, 540))
+        rs, ns = visual_stats(ref_frame(t, tr, 540)), visual_stats(grab(a.video, t, 540))
         pairs.append({"t_new": t, "t_ref": round(tr, 2), "ref": rs, "new": ns})
     sheet.save(os.path.join(OUT, "compare_sheet.png"))
     agg = {k: (np.mean([p["ref"][k] for p in pairs]), np.mean([p["new"][k] for p in pairs])) for k in pairs[0]["ref"]}
@@ -240,7 +325,7 @@ def main():
 
     n_ok = sum(c["pass"] for c in checks)
     score = round(10 - 1.5 * len(crit) - 0.3 * len(warn), 1)
-    rep = {"video": os.path.basename(a.video), "reference": os.path.basename(a.ref), "verdict": "REJECTED" if crit else "ACCEPTED",
+    rep = {"video": os.path.basename(a.video), "reference": os.path.basename(a.ref) if a.ref else "reference/ (bundled stills)", "verdict": "REJECTED" if crit else "ACCEPTED",
            "auto_score": score, "checks_passed": f"{n_ok}/{len(checks)}", "critical": crit, "warnings": warn, "checks": checks,
            "audio_sync": sync, "reference_comparison": {"timestamps": pairs, "means": {k: {"ref": round(v[0], 3), "new": round(v[1], 3)} for k, v in agg.items()}},
            "min_text_px": round(min_px, 1)}

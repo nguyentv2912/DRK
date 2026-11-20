@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""GROK MEME MILLION V1.8.3 - frame renderer (Skia, 1080x1920, 30 fps).
+"""GROK MEME MILLION V1.8.4 - frame renderer (Skia, 1080x1920, 30 fps).
 
 Reproduces the reference iPhone trading-app structure (balance hero ->
 equity chart -> Live screen terminal -> Bots x5 -> Activity, iOS banners,
@@ -65,7 +65,12 @@ FONT_FILES = {
 
 @functools.lru_cache(None)
 def typeface(kind, wt):
-    return skia.Typeface.MakeFromFile("/usr/share/fonts/opentype/inter/" + FONT_FILES[(kind, wt)])
+    """Bundled Inter (assets/fonts, OFL) first, then the system copy."""
+    for d in (os.path.join(ROOT, "assets", "fonts"), "/usr/share/fonts/opentype/inter"):
+        f = os.path.join(d, FONT_FILES[(kind, wt)])
+        if os.path.exists(f):
+            return skia.Typeface.MakeFromFile(f)
+    raise FileNotFoundError("Inter font not found: " + FONT_FILES[(kind, wt)])
 
 
 @functools.lru_cache(None)
@@ -91,11 +96,13 @@ def P(color, stroke=0, shader=None, blur=0, cap=None):
 
 
 REG = []      # text/label layout registry for the visual critic (pre-camera screen coords)
-CTX = {"layer": "page"}
+CTX = {"layer": "page", "alpha": 1.0}
+L2Q = []      # floating-layer draw queue (chart labels)
+CAMS = {"yaw": 0.0, "pitch": 0.0}
 
 
-def reg(kind, text, rect, container=None, size=None):
-    REG.append({"layer": CTX["layer"], "kind": kind, "text": text, "size": size,
+def reg(kind, text, rect, container=None, size=None, a=1.0):
+    REG.append({"layer": CTX["layer"], "kind": kind, "text": text, "size": size, "a": round(CTX.get("alpha", 1.0) * a, 3),
                 "rect": [round(v, 1) for v in rect], "container": [round(v, 1) for v in container] if container else None})
 
 
@@ -112,8 +119,9 @@ def text(c, s, x, y, size, wt=500, color=None, align="l", disp=False, container=
     if alpha < 1:
         col = skia.ColorSetA(col, int(skia.ColorGetA(col) * alpha))
     c.drawString(s, x, y + cap, f, P(col))
-    if alpha > 0.5:
-        reg(kind, s, (x, y - size * .08, x + w, y + cap + size * .24), container, size)
+    a_eff = alpha * skia.ColorGetA(col) / 255
+    if a_eff * CTX.get("alpha", 1.0) > 0.02:
+        reg(kind, s, (x, y - size * .08, x + w, y + cap + size * .24), container, size, a_eff)
     return w
 
 
@@ -323,7 +331,10 @@ ACT_H = 132
 NAV_Y = 1738
 S_LIVE = CARD_Y - 300
 S_BOTS = BOTS_Y - 300
-KEYS = [(0, 0), (2.5, 26), (3.15, S_LIVE), (9.0, S_LIVE), (9.65, S_BOTS), (11.8, S_BOTS + 300), (12.58, 0), (15, 0)]
+BEAT = 60 / CFG["video"]["bpm"]
+T_DROP = [x for x in VID_TR][-1]["t_video"]   # finale SELL, on the drop
+END_T = round(29 * BEAT, 6)                    # end card on beat 29
+KEYS = [(0, 0), (2.5, 26), (3.15, S_LIVE), (9.0, S_LIVE), (9.65, S_BOTS), (11.8, S_BOTS + 300), (12.04, S_BOTS + 300), (12.40, 0), (15, 0)]
 
 
 def scroll(t):
@@ -380,7 +391,34 @@ def ev_title(e):
 
 # --------------------------------------------------------------- 3D coins
 
+def _load_coin_sprites():
+    d = os.path.join(ROOT, "assets", "coins")
+    fs = sorted(f for f in os.listdir(d) if f.startswith("coin_") and f.endswith(".png")) if os.path.isdir(d) else []
+    return [skia.Image.open(os.path.join(d, f)) for f in fs] if len(fs) >= 24 else []
+
+
+COIN_SPR = _load_coin_sprites()
+COIN_MODE = "blender" if COIN_SPR else "fallback"
+
+
 def draw_coin(c, cx, cy, r, ang, mint=None, alpha=1.0, blur=0.0, shadow=True):
+    """Blender-rendered PBR coin sprite (72-frame turntable); vector fallback if absent."""
+    if not COIN_SPR:
+        return draw_coin_vector(c, cx, cy, r, ang, mint, alpha, blur, shadow)
+    n = len(COIN_SPR)
+    img = COIN_SPR[int(round((ang % (2 * math.pi)) / (2 * math.pi) * n)) % n]
+    if shadow:  # cast on the page, offset along the scene light (-30 deg, 60 deg)
+        c.drawOval(skia.Rect.MakeXYWH(cx - r * .75 + r * .3, cy + r * 1.05, r * 1.5, r * .3), P(hexc("#000000", .5 * alpha), blur=r * .2))
+    size = 2 * r / .76
+    p = skia.Paint(AntiAlias=True)
+    p.setAlphaf(clamp(alpha))
+    if blur > 0.3:
+        p.setImageFilter(skia.ImageFilters.Blur(blur, blur))
+    c.drawImageRect(img, skia.Rect.MakeXYWH(cx - size / 2, cy - size / 2, size, size),
+                    skia.SamplingOptions(skia.FilterMode.kLinear, skia.MipmapMode.kLinear), p)
+
+
+def draw_coin_vector(c, cx, cy, r, ang, mint=None, alpha=1.0, blur=0.0, shadow=True):
     """Coin with real thickness: rim extrusion + lit face + moving specular."""
     ca = math.cos(ang)
     sx = max(0.06, abs(ca))
@@ -422,12 +460,25 @@ def draw_coin(c, cx, cy, r, ang, mint=None, alpha=1.0, blur=0.0, shadow=True):
         c.restore()
 
 
+def card_light(c, r, rad):
+    g = skia.GradientShader.MakeLinear([skia.Point(r.left(), r.top()), skia.Point(r.right(), r.bottom())],
+                                       [hexc("#FFFFFF", .20), hexc("#FFFFFF", 0), hexc("#FFFFFF", 0)], [0, .4, 1])
+    c.drawRoundRect(r, rad, rad, P(hexc("#FFFFFF"), 1.5, shader=g))
+    k = min(1.0, (abs(CAMS["yaw"]) + abs(CAMS["pitch"])) / 5.0)
+    if k > .02:
+        x = r.centerX() + (CAMS["yaw"] / 6.0) * r.width() * .6
+        sh = skia.GradientShader.MakeLinear([skia.Point(x - 220, r.top()), skia.Point(x + 220, r.bottom())],
+                                            [hexc("#FFFFFF", 0), hexc("#FFFFFF", .12 * k), hexc("#FFFFFF", 0)])
+        pp = P(hexc("#FFFFFF"), shader=sh); pp.setBlendMode(skia.BlendMode.kScreen)
+        c.save(); c.clipRRect(skia.RRect.MakeRectXY(r, rad, rad), doAntiAlias=True); c.drawRect(r, pp); c.restore()
+
+
 # ------------------------------------------------------------ status/nav
 
 def clock_ts(t):
     a = HC[SC["reveal"]["pre"]]["t"]
     b = BUYS[-1]["time"] + 1500
-    return a + (b - a) * clamp(t / 12.55) - 900 * (1 - clamp(t / 2.5))
+    return a + (b - a) * clamp(t / T_DROP) - 900 * (1 - clamp(t / 2.5))
 
 
 def status_bar(c, t):
@@ -484,8 +535,11 @@ def nav_bar(c, t):
 
 # ------------------------------------------------------------- odometer
 
-def odometer(c, value_c, x, y, size, wt, color, disp=True, align="l", prefix="$", glow=0.0, layer_kind="value"):
-    """Rolling digits (tabular cells). value_c: float cents."""
+def odometer(c, value_c, x, y, size, wt, color, disp=True, align="l", prefix="$", glow=0.0, layer_kind="value", moving=True):
+    """Rolling digits (tabular cells). value_c: float cents. A static value is snapped to whole
+    cents so no digit is left half-rolled."""
+    if not moving:
+        value_c = round(value_c)
     v = max(0.0, value_c) / 100.0
     whole = f"{int(v):,}"
     s = prefix + whole + "." + f"{int(round((v - int(v)) * 100)) % 100:02d}"
@@ -600,14 +654,14 @@ def portfolio(c, oy, t):
     e = equity(t)
     by = BAL_Y - oy + 44
     # finale reflection / glow
-    fin = seg(t, 12.6, 13.4)
-    glow_k = seg(t, 12.6, 12.9) * (1 - seg(t, 14.5, 15))
+    fin = seg(t, T_DROP, T_DROP + .8)
+    glow_k = seg(t, T_DROP, T_DROP + .3) * (1 - seg(t, 14.5, 15))
     if glow_k > 0:
         c.drawRoundRect(skia.Rect.MakeXYWH(MX - 10, by - 16, 760, 130), 40, 40, P(hexc(COL["pos"], .16 * glow_k), blur=40))
-    wbal, sbal = odometer(c, e, MX, by, 128, 700, hexc(COL["text"]), disp=True)
-    if t > 12.9:
+    wbal, sbal = odometer(c, e, MX, by, 128, 700, hexc(COL["text"]), disp=True, moving=abs(e - equity(t - 1 / FPS)) > .5)
+    if t > T_DROP + .3:
         c.save(); c.clipRect(skia.Rect.MakeXYWH(MX, by - 10, wbal, 120))
-        sheen(c, skia.Rect.MakeXYWH(MX, by - 10, wbal, 120), seg(t, 13.25, 13.95))
+        sheen(c, skia.Rect.MakeXYWH(MX, by - 10, wbal, 120), seg(t, T_DROP + .55, END_T + .25))
         c.restore()
     pnl = e - CAP
     roi = pnl / CAP
@@ -708,9 +762,10 @@ def terminal(c, oy, t, cam):
     card = skia.Rect.MakeXYWH(x0, y0, CARD_W, CARD_H)
     if y0 > H or y0 + CARD_H < 0:
         return
-    c.drawRoundRect(card.makeOffset(0, 18), 34, 34, P(hexc("#000000", .55), blur=28))
+    c.drawRoundRect(card.makeOffset(10, 20), 34, 34, P(hexc("#000000", .6), blur=28))
     c.drawRoundRect(card, 34, 34, P(hexc("#0B1012")))
     c.drawRoundRect(card, 34, 34, P(hexc(COL["line"]), 2))
+    card_light(c, card, 34)
     cont = (card.left(), card.top(), card.right(), card.bottom())
     # header: logo, ticker, pair, dex, price
     hx, hy = x0 + 28, y0 + 26
@@ -915,7 +970,7 @@ def terminal(c, oy, t, cam):
             rr = (pxx, py_, pxx + pw, py_ + ph)
             if rr[1] < PT - 36 or rr[3] > PB + 8:
                 continue
-            if any(not (rr[2] < q[0] or rr[0] > q[2] or rr[3] < q[1] or rr[1] > q[3]) for q in rects + placed):
+            if any(not (rr[2] + 6 < q[0] or rr[0] - 6 > q[2] or rr[3] + 6 < q[1] or rr[1] - 6 > q[3]) for q in rects + placed):
                 continue
             if rr[1] - 4 < cy_ < rr[3] + 4:
                 continue
@@ -926,16 +981,22 @@ def terminal(c, oy, t, cam):
             continue
         placed.append(chosen)
         rr = skia.Rect.MakeLTRB(*chosen)
-        c.saveLayerAlpha(None, int(255 * a))
         ly_ = rr.top() if rr.top() > anchor_y else rr.bottom()
-        c.drawLine(xx, anchor_y, clamp(xx, rr.left() + 12, rr.right() - 12), ly_, P(skia.ColorSetA(mc, 160), 2))
-        c.drawRoundRect(rr.makeOffset(0, 6), 12, 12, P(hexc("#000000", .5), blur=8))
-        c.drawRoundRect(rr, 12, 12, P(hexc("#0E1316")))
-        c.drawRoundRect(rr, 12, 12, P(mc, 3))
-        w1 = text(c, lab1, rr.left() + 16, rr.top() + 12, 25, 800, mc, container=chosen, kind="chart_label")
-        vcol = hexc(COL["pos"] if isbuy or x["pnl_c"] >= 0 else COL["neg"])
-        text(c, lab2, rr.left() + 30 + w1, rr.top() + 12, 25, 700, vcol if not isbuy else hexc(COL["text"]), container=chosen, kind="chart_label")
-        c.restore()
+        c.drawLine(xx, anchor_y, clamp(xx, rr.left() + 12, rr.right() - 12), ly_, P(skia.ColorSetA(mc, int(160 * a)), 2))
+
+        def _pill(c, rr=rr, a=a, mc=mc, lab1=lab1, lab2=lab2, chosen=chosen, isbuy=isbuy, x=x):
+            # L2 floating layer: drawn after the page with its own depth (z = +60)
+            c.saveLayerAlpha(None, int(255 * a))
+            CTX["alpha"] = a
+            c.drawRoundRect(rr.makeOffset(9, 14), 12, 12, P(hexc("#000000", .55), blur=10))
+            c.drawRoundRect(rr, 12, 12, P(hexc("#0E1316")))
+            c.drawRoundRect(rr, 12, 12, P(mc, 3))
+            w1 = text(c, lab1, rr.left() + 16, rr.top() + 12, 25, 800, mc, container=chosen, kind="chart_label")
+            vcol = hexc(COL["pos"] if isbuy or x["pnl_c"] >= 0 else COL["neg"])
+            text(c, lab2, rr.left() + 30 + w1, rr.top() + 12, 25, 700, vcol if not isbuy else hexc(COL["text"]), container=chosen, kind="chart_label")
+            c.restore()
+            CTX["alpha"] = 1.0
+        L2Q.append(_pill)
         events.append((kind, xx, anchor_y, tv, x))
     REG.append({"layer": "page", "kind": "candles", "text": "", "rect": None, "container": None,
                 "candles": [[round(v, 1) for v in r] for r in rects], "plot": [PL, PT, PR, PB],
@@ -1069,6 +1130,7 @@ def bots(c, oy, t):
         r = skia.Rect.MakeXYWH(MX - 14, ry, W - 2 * MX + 28, BOT_H)
         c.drawRoundRect(r.makeOffset(0, 8), 26, 26, P(hexc("#000000", .5), blur=12))
         c.drawRoundRect(r, 26, 26, P(hexc(COL["card"])))
+        card_light(c, r, 26)
         flash = 1 - clamp(prog * 3) if i > 0 else 0
         if flash > 0:
             c.drawRoundRect(r, 26, 26, P(hexc(AG_COL[i], .10 * flash)))
@@ -1157,79 +1219,121 @@ def activity(c, oy, t):
 
 # ---------------------------------------------------------- foreground
 
+# ---- Banner Manager (V1.8.4): IDLE -> ENTERING -> SHOWN -> STACKING|EXITING -> GONE
+BAN_HOLD, BAN_IN, BAN_STACK, BAN_EXIT = 1.5, .30, .22, .30
+
+
+def _banner_plan():
+    plan = []
+    for i, e in enumerate(EVENTS):
+        nxt = EVENTS[i + 1]["t"] if i + 1 < len(EVENTS) else None
+        replaced = nxt is not None and nxt < e["t"] + BAN_HOLD + .6   # close follow-ups stack instead of exiting
+        t_end = min(nxt, e["t"] + BAN_HOLD + .6) if replaced else e["t"] + BAN_HOLD
+        plan.append({"e": e, "t_in": e["t"], "t_end": t_end, "replaced": replaced,
+                     "t_gone": t_end + (BAN_STACK if replaced else BAN_EXIT)})
+    return plan
+
+
+BPLAN = _banner_plan()
+
+
+def slot_occupied(t):
+    """1 while any banner owns the notification slot (smoothed 0.12 s at both ends)."""
+    # a banner due within 0.6 s already owns the slot -> the sticky never pops up for a few frames
+    return max([seg(t, p["t_in"] - .6, p["t_in"] - .3) * (1 - seg(t, p["t_gone"], p["t_gone"] + .12)) for p in BPLAN] + [0])
+
+
 def sticky(c, t, s):
-    cover = max([seg(t, e["t"] - .06, e["t"] + .06) * (1 - seg(t, e["t"] + BAN_DUR, e["t"] + BAN_DUR + .3)) for e in EVENTS] + [0])
     a0 = clamp((s - 300) / 220)
-    a = a0 * (1 - .92 * cover)
     if a0 <= 0:
         return
     CTX["layer"] = "sticky"
     g = skia.GradientShader.MakeLinear([skia.Point(0, 110), skia.Point(0, 300)], [hexc(COL["bg"], a0), hexc(COL["bg"], a0), hexc(COL["bg"], 0)], [0, .72, 1])
     c.drawRect(skia.Rect.MakeXYWH(0, 110, W, 190), P(hexc(COL["bg"]), shader=g))
+    occ = slot_occupied(t)
+    a = a0 * (1 - occ)
     if a <= 0.02:
         CTX["layer"] = "page"
         return
     c.saveLayerAlpha(None, int(255 * a))
+    CTX["alpha"] = a
     e = equity(t)
-    pulse = max([1 - seg(t, x["t_video"] + .55, x["t_video"] + 1.1) for x in VID_TR if t >= x["t_video"] + .55] + [0])
-    if pulse > 0:
-        c.drawRoundRect(skia.Rect.MakeXYWH(W / 2 - 230, 128, 460, 96), 48, 48, P(hexc(COL["pos"], .22 * pulse), blur=30))
-    odometer(c, e, W / 2, 136, 72, 700, hexc(COL["text"]), align="c")
+    if occ < .05:  # P&L flash is deferred while a banner owns the slot
+        pulse = max([1 - seg(t, x["t_video"] + .55, x["t_video"] + 1.1) for x in VID_TR if t >= x["t_video"] + .55] + [0])
+        if pulse > 0:
+            c.drawRoundRect(skia.Rect.MakeXYWH(W / 2 - 230, 128, 460, 96), 48, 48, P(hexc(COL["pos"], .22 * pulse), blur=30))
+    odometer(c, e, W / 2, 136, 72, 700, hexc(COL["text"]), align="c", moving=abs(e - equity(t - 1 / FPS)) > .5)
     pnl = e - CAP
     s2 = f"{'▲' if pnl >= 0 else '▼'} {money(int(round(pnl)), True)} ({pct(pnl / CAP, 1)}) · {e / CAP:.2f}x"
     text(c, s2, W / 2, 230, 30, 600, hexc(COL["pos"] if pnl >= 0 else COL["neg"]), align="c", kind="value")
     c.restore()
+    CTX["alpha"] = 1.0
     CTX["layer"] = "page"
 
 
-BAN_DUR = 1.5
-
-
-def banners(c, t, depth_dx):
-    CTX["layer"] = "banner"
-    evs = [e for e in EVENTS if e["t"] <= t < e["t"] + BAN_DUR + .4]
-    shown = [e for e in EVENTS if e["t"] <= t]
-    for e in evs:
-        later = [x for x in shown if x["t"] > e["t"]]
-        t_out = min([x["t"] for x in later] + [e["t"] + BAN_DUR])
-        kin = spring(seg(t, e["t"], e["t"] + .55))
-        replaced = t_out < e["t"] + BAN_DUR
-        kout = ease(seg(t, t_out, t_out + (.06 if replaced else .35)))
-        if kout >= 1:
-            continue
-        CTX["layer"] = "banner_out" if t >= t_out else "banner"
-        y = lerp(-40, 132, kin) - (40 if replaced else 210) * kout
-        sc = lerp(1.18, 1.0, eout(seg(t, e["t"], e["t"] + .45))) * (1 - (.08 if replaced else 0) * kout)
-        alpha = clamp(seg(t, e["t"] + .067, e["t"] + .16)) * (1 - kout)
-        c.save()
-        c.translate(W / 2 + depth_dx, y + 80)
-        c.scale(sc, sc)
-        c.translate(-W / 2, -80)
-        r = skia.Rect.MakeXYWH(24, 0, W - 48, 160)
-        c.drawRoundRect(r.makeOffset(0, 26), 44, 44, P(hexc("#000000", .65 * alpha), blur=34 * sc))
-        c.drawRoundRect(r, 44, 44, P(hexc("#2B3135", alpha)))
-        c.drawRoundRect(r, 44, 44, P(hexc("#FFFFFF", .08 * alpha), 2))
-        c.saveLayerAlpha(None, int(255 * alpha))
+def _banner_body(c, e, a_text, dim):
+    r = skia.Rect.MakeXYWH(24, 0, W - 48, 160)
+    cont = (r.left(), r.top(), r.right(), r.bottom())
+    if a_text > 0.004:
+        c.saveLayerAlpha(None, int(255 * a_text))
+        CTX["alpha"] = a_text
         ic = skia.Rect.MakeXYWH(52, 34, 92, 92)
         c.drawRoundRect(ic, 22, 22, P(hexc("#0B0F11")))
         app_mark(c, ic.centerX(), ic.centerY(), 30)
-        cont = (r.left(), r.top(), r.right(), r.bottom())
         text(c, ev_title(e), 168, 38, 36, 700, container=cont)
         if e["type"] == "buy":
             parts = [(mc_txt(e.get("mc")) or "paper fill", COL["text"]), (" · Executor", COL["text"])]
         else:
-            parts = []
-            if e.get("mc"):
-                parts.append((mc_txt(e["mc"]) + " · ", COL["text"]))
-            else:
-                parts.append((e["label"] + " · ", COL["text"]))
-            parts.append((f"{money(e['pnl_c'], True)} ({pct(e['pct'])})", COL["pos"] if e["pnl_c"] >= 0 else COL["neg"]))
+            parts = [((mc_txt(e["mc"]) if e.get("mc") else e["label"]) + " · ", COL["text"]),
+                     (f"{money(e['pnl_c'], True)} ({pct(e['pct'])})", COL["pos"] if e["pnl_c"] >= 0 else COL["neg"])]
         xx = 168
         for s_, cc in parts:
             xx += text(c, s_, xx, 92, 31, 500 if cc == COL["text"] else 700, hexc(cc, .9 if cc == COL["text"] else 1), container=cont)
         text(c, "now", W - 150, 40, 26, 500, hexc(COL["text2"]), align="r", container=cont)
         logo(c, e["mint"], W - 92, 80, 34)
         c.restore()
+        CTX["alpha"] = 1.0
+    if dim > 0:
+        c.drawRoundRect(r, 44, 44, P(hexc("#14181B", dim)))
+
+
+def banners(c, t, depth_dx):
+    for p in BPLAN:
+        if not (p["t_in"] <= t < p["t_gone"]):
+            continue
+        e = p["e"]
+        kin = spring(seg(t, p["t_in"], p["t_in"] + BAN_IN))
+        y = lerp(-60, 132, kin)
+        sc = lerp(1.12, 1.0, eout(seg(t, p["t_in"], p["t_in"] + BAN_IN)))
+        a_card = clamp(seg(t, p["t_in"], p["t_in"] + .06))
+        a_text = clamp(seg(t, p["t_in"] + .06, p["t_in"] + .14))
+        dim = 0.0
+        CTX["layer"] = "banner"
+        if t >= p["t_end"]:
+            CTX["layer"] = "banner_out"
+            if p["replaced"]:  # STACKING: recede behind the new banner, text gone before it lands
+                k = ease(seg(t, p["t_end"], p["t_gone"]))
+                sc *= 1 - .06 * k
+                y -= 16 * k
+                a_text *= 1 - seg(t, p["t_end"], p["t_end"] + .06)
+                dim = .7 * seg(t, p["t_end"], p["t_end"] + .06)
+                a_card *= 1 - seg(t, p["t_end"] + .10, p["t_gone"])
+            else:  # EXITING: slide up and out
+                k = ease(seg(t, p["t_end"], p["t_gone"]))
+                y -= 210 * k
+                a_card *= 1 - k
+                a_text *= 1 - k
+        if a_card <= 0.004:
+            continue
+        c.save()
+        c.translate(W / 2 + depth_dx, y + 80)
+        c.scale(sc, sc)
+        c.translate(-W / 2, -80)
+        r = skia.Rect.MakeXYWH(24, 0, W - 48, 160)
+        c.drawRoundRect(r.makeOffset(10, 28), 44, 44, P(hexc("#000000", .65 * a_card), blur=34 * sc))
+        c.drawRoundRect(r, 44, 44, P(hexc("#2B3135", a_card)))
+        c.drawRoundRect(r, 44, 44, P(hexc("#FFFFFF", .08 * a_card), 2))
+        _banner_body(c, e, a_text * a_card, dim * a_card)
         c.restore()
     CTX["layer"] = "page"
 
@@ -1258,7 +1362,7 @@ def _burst(t, oy):
     out = []
     for j in range(16):
         vx = rng.uniform(-620, 620); vy = rng.uniform(-1500, -900); z = rng.uniform(.55, 1.7)
-        t0 = 12.62 + rng.uniform(0, .25); spin = rng.uniform(4, 9)
+        t0 = T_DROP + .02 + rng.uniform(0, .2); spin = rng.uniform(4, 9)
         k = t - t0
         if k <= 0 or k > 1.9:
             continue
@@ -1282,16 +1386,17 @@ def finale_coins(c, t, oy):
 
 
 def end_card(c, t):
-    k = seg(t, 13.75, 14.2)
+    k = seg(t, END_T, END_T + .45)
     if k <= 0:
         return
+    kt = eout(seg(t, END_T, END_T + .16))   # title/numbers readable from the first frames
     CTX["layer"] = "endcard"
     c.drawRect(skia.Rect.MakeWH(W, H), P(hexc(COL["bg"], .80 * k)))
     g = skia.GradientShader.MakeRadial(skia.Point(W / 2, 760), 760, [hexc(COL["pos"], .20 * k), hexc(COL["pos"], 0)])
     c.drawRect(skia.Rect.MakeWH(W, H), P(hexc("#000000"), shader=g))
-    a = k
-    yk = (1 - eout(k)) * 60
-    draw_coin(c, W / 2, 560 + yk + 10 * math.sin(t * 3), 165, .55 * math.sin((t - 13.75) * 2.2) + .25 * (1 - k), None, alpha=a)
+    a = kt
+    yk = (1 - eout(k)) * 30
+    draw_coin(c, W / 2, 560 + yk + 10 * math.sin(t * 3), 165, .55 * math.sin((t - END_T) * 2.2) + .25 * (1 - k), None, alpha=a)
     c.saveLayerAlpha(None, int(255 * a))
     text(c, CFG["title_lines"][0], W / 2, 860 + yk, 84, 900, align="c", disp=True, kind="title")
     t2 = CFG["title_lines"][1]
@@ -1301,7 +1406,7 @@ def end_card(c, t):
     c.drawString(t2, W / 2 - w2 / 2, 990 + yk + f.getMetrics().fCapHeight, f, P(hexc(COL["pos"]), shader=sh))
     reg("title", t2, (W / 2 - w2 / 2, 990 + yk, W / 2 + w2 / 2, 990 + yk + 120))
     cap_r = skia.Rect.MakeXYWH(W / 2 - w2 / 2, 980 + yk, w2, 130)
-    c.save(); c.clipRect(cap_r); sheen(c, cap_r, seg(t, 14.2, 14.9)); c.restore()
+    c.save(); c.clipRect(cap_r); sheen(c, cap_r, seg(t, END_T + .5, END_T + 1.2)); c.restore()
     # final numbers
     py = 1200 + yk
     box = skia.Rect.MakeXYWH(90, py, W - 180, 290)
@@ -1320,44 +1425,86 @@ def end_card(c, t):
 
 
 # ----------------------------------------------------------------- camera
-
+# V1.8.4: 2.5D scene graph. Each layer sits at its own depth z and is projected
+# by one 3D camera (dolly/truck/crane/yaw/pitch, perspective distance D_CAM).
+# At rest every layer maps to itself, so the UI stays pixel-exact.
+D_CAM = 1800.0
+CX, CY = W / 2, H / 2
+Z_BG, Z_PAGE, Z_FLOAT, Z_FG = -600.0, 0.0, 60.0, 120.0
 CAM_EVENTS = [(HB["t_video"], "BUY")] + [(x["t_video"], "SELL") for x in HERO_PARTS]
+DUST = [(float(a_), float(b_), float(r_), float(z_)) for a_, b_, r_, z_ in np.random.RandomState(5).uniform([0, 0, 2, .3], [W, 4200, 7, 1], (40, 4))]
 
 
-def camera(t, s_vel, marker_pts):
-    """Returns (zoom, pivot, tilt_deg)."""
-    z = 1.0
-    piv = (W / 2, 900)
-    for tv, _ in CAM_EVENTS:
-        k = seg(t, tv - .25, tv + .15) * (1 - seg(t, tv + .75, tv + 1.25))
-        if k > 0:
-            z = max(z, 1 + .045 * ease(k))
-            mp = marker_pts.get(round(tv, 3))
+def cam_at(t, marks):
+    cam = {"tx": 0.0, "ty": 0.0, "tz": 0.0, "yaw": 0.0, "pitch": 0.0, "piv": (CX, CY)}
+    k = ease(seg(t, 0, 2.5))
+    cam["tz"] += 40 * k * (1 - ease(seg(t, 2.5, 3.0)))          # slow dolly-in on the portfolio
+    cam["yaw"] += 1.5 * (1 - k)                                     # settle from a slight angle
+    cam["pitch"] += 5 * math.sin(math.pi * seg(t, 2.5, 3.15))      # crane while scrolling to the terminal
+    cam["pitch"] -= 4 * math.sin(math.pi * seg(t, 9.0, 9.65))      # tilt while scrolling to the bots
+    for tv, _ in CAM_EVENTS:                                        # push toward each BUY/SELL marker
+        kk = ease(seg(t, tv - .2, tv + .2)) * (1 - ease(seg(t, tv + .8, tv + 1.3)))
+        if kk > 0:
+            cam["tz"] += 70 * kk
+            mp = marks.get(round(tv, 3))
             if mp:
-                piv = (clamp(mp[0], 300, W - 300), clamp(mp[1], 500, 1300))
-    z *= 1 + .022 * ease(seg(t, 0, 2.5)) * (1 - ease(seg(t, 2.5, 3.0)))
-    piv = (piv[0] + 6 * math.sin(t * 1.3), piv[1] + 8 * math.cos(t * 1.1))
-    # breathing push-in during finale
-    z *= 1 + .02 * ease(seg(t, 12.55, 13.6)) * (1 - seg(t, 13.75, 14.2))
-    tilt = clamp(s_vel / 9000, -1, 1) * 5.0
-    pull = 1 - .025 * min(1, abs(s_vel) / 6000)
-    return z * pull, piv, tilt
+                cam["tx"] += (mp[0] - CX) * .12 * kk
+                cam["ty"] += (mp[1] - CY) * .10 * kk
+    tr = seg(t, 6.5, 6.8) * (1 - seg(t, 8.7, 9.0))                  # half-bar truck during execution
+    cam["tx"] += 14 * tr * math.sin(2 * math.pi * (t - 6.5) / (4 * BEAT))
+    cam["tx"] += 4 * math.sin(t * 1.3); cam["ty"] += 5 * math.cos(t * 1.1)
+    fo = ease(seg(t, 11.8, 12.04)) * (1 - ease(seg(t, 12.40, 12.64)))  # 3D page fly-out
+    cam["tz"] -= 380 * fo; cam["pitch"] += 5 * fo
+    if t >= T_DROP:                                                  # finale orbit around the balance
+        env = ease(seg(t, T_DROP, T_DROP + .3)) * (1 - ease(seg(t, END_T, END_T + .6)))
+        orb = seg(t, T_DROP, END_T)
+        cam["yaw"] += (-3 + 6 * ease(orb)) * env
+        cam["tz"] += 25 * math.sin(math.pi * orb) * env
+        cam["piv"] = (lerp(CX, 400, env), lerp(CY, 430, env))
+    pb = ease(seg(t, END_T, END_T + .8))                             # pull back behind the end card
+    cam["tz"] -= 220 * pb
+    cam["fly"] = max(fo, pb)
+    return cam
 
 
-def persp_matrix(zoom, piv, tilt_deg):
-    """Screen quad -> rotated-about-X, perspective-projected quad (true 3D camera)."""
-    th = math.radians(tilt_deg)
-    d = 2400.0
+def layer_matrix(cam, z, w=1.0, dolly=True):
+    """Project the screen-sized layer at depth z through the camera (weights w)."""
+    yaw, pitch = math.radians(cam["yaw"] * w), math.radians(cam["pitch"] * w)
+    tx, ty, tz = cam["tx"] * w, cam["ty"] * w, (cam["tz"] * w if dolly else 0.0)
+    px, py = cam["piv"]
+    s0 = D_CAM / (D_CAM - z)
     src = [skia.Point(0, 0), skia.Point(W, 0), skia.Point(W, H), skia.Point(0, H)]
     dst = []
     for p in src:
-        x, y = (p.x() - piv[0]) * zoom, (p.y() - piv[1]) * zoom
-        yr, zr = y * math.cos(th), y * math.sin(th)
-        s = d / (d + zr)
-        dst.append(skia.Point(piv[0] + x * s, piv[1] + yr * s))
+        x = CX + (p.x() - CX) / s0 - tx
+        y = CY + (p.y() - CY) / s0 - ty
+        zz = z + tz
+        dx = x - px
+        x, zz = px + dx * math.cos(yaw) + zz * math.sin(yaw), -dx * math.sin(yaw) + zz * math.cos(yaw)
+        dy = y - py
+        y, zz = py + dy * math.cos(pitch) - zz * math.sin(pitch), dy * math.sin(pitch) + zz * math.cos(pitch)
+        sp = D_CAM / (D_CAM - zz)
+        dst.append(skia.Point(CX + (x - CX) * sp, CY + (y - CY) * sp))
     m = skia.Matrix()
     m.setPolyToPoly(src, dst)
     return m
+
+
+def min_text_scale(m):
+    """Smallest local linear scale of the projection over the visible screen (text readability)."""
+    sc = 9.0
+    for gx in (60, W / 2, W - 60):
+        for gy in (140, H / 2, H - 200):
+            p0, p1, p2 = m.mapXY(gx, gy), m.mapXY(gx + 1, gy), m.mapXY(gx, gy + 1)
+            sx = math.hypot(p1.x() - p0.x(), p1.y() - p0.y())
+            sy = math.hypot(p2.x() - p0.x(), p2.y() - p0.y())
+            sc = min(sc, sx, sy)
+    return sc
+
+
+def viewport_clip(c, fly):
+    rad = 64 * fly
+    c.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeWH(W, H), rad, rad), doAntiAlias=True)
 
 
 # ------------------------------------------------------------------ frame
@@ -1365,20 +1512,43 @@ _last_marks = {}
 
 
 def draw_frame(c, t):
-    REG.clear()
+    REG.clear(); L2Q.clear()
     s = scroll(t)
     sv = scroll_vel(t)
-    c.clear(hexc(COL["bg"]))
-    # background parallax layer (slow)
-    for gx, gy, gr, gc, ga in ((160, 380, 520, COL["pos"], .10), (980, 1500, 620, "#3B82F6", .07), (540, 2900, 700, COL["pos"], .07)):
-        y = gy - s * .3
+    cam = cam_at(t, _last_marks)
+    CAMS["yaw"], CAMS["pitch"] = cam["yaw"], cam["pitch"]
+    fly = cam["fly"]
+    c.clear(hexc("#030505") if fly > .01 else hexc(COL["bg"]))
+    endk = seg(t, END_T, END_T + .45)
+    if endk > 0:
+        c.saveLayer(None, skia.Paint(ImageFilter=skia.ImageFilters.Blur(12 * endk, 12 * endk)))
+    M0, M1 = layer_matrix(cam, Z_BG), layer_matrix(cam, Z_PAGE)
+    M2 = layer_matrix(cam, Z_FLOAT)
+    M3 = layer_matrix(cam, Z_PAGE, w=fly)                       # chrome follows the camera only in fly-out/end
+    cam_fg = dict(cam); cam_fg["tz"] = cam["tz"] * fly
+    M4 = layer_matrix(cam_fg, Z_FG)
+    # L0 background: glows + dust, depth-of-field blurred
+    c.save(); c.concat(M0)
+    c.saveLayer(None, skia.Paint(ImageFilter=skia.ImageFilters.Blur(5, 5)))
+    for gx, gy, gr, gc, ga in ((160, 380, 560, COL["pos"], .12), (980, 1500, 660, "#3B82F6", .08), (540, 2900, 720, COL["pos"], .08)):
+        y = gy - s * .25
         sh = skia.GradientShader.MakeRadial(skia.Point(gx, y), gr, [hexc(gc, ga), hexc(gc, 0)])
         c.drawCircle(gx, y, gr, P(hexc(gc), shader=sh))
+    for dx_, dy_, r_, z_ in DUST:
+        y = (dy_ - s * .25 * z_ - t * 12 * z_) % 2400 - 200
+        c.drawCircle(dx_ + 10 * math.sin(t * .7 + dy_), y, r_, P(hexc("#9FFFD6", .10 * z_)))
+    c.restore(); c.restore()
+    # L1 page (the phone screen plate)
     marker_pts = {}
-    # scene layer with 3D camera
-    zoom, piv, tilt = camera(t, sv, _last_marks)
-    c.save()
-    c.concat(persp_matrix(zoom, piv, tilt))
+    c.save(); c.concat(M1)
+    if fly > .01:
+        c.drawRoundRect(skia.Rect.MakeWH(W, H).makeOffset(24, 40), 64, 64, P(hexc("#000000", .7 * fly), blur=60))
+        c.drawRoundRect(skia.Rect.MakeWH(W, H).makeOutset(3, 3), 66, 66, P(hexc("#2A3236", fly), 3))
+    viewport_clip(c, fly)
+    c.drawRect(skia.Rect.MakeWH(W, H), P(hexc(COL["bg"], 1.0 if fly > .01 else 0.0)))
+    if fly > .01:  # keep the page's own glows on the plate
+        sh = skia.GradientShader.MakeRadial(skia.Point(160, 380 - s * .25), 560, [hexc(COL["pos"], .10), hexc(COL["pos"], 0)])
+        c.drawCircle(160, 380 - s * .25, 560, P(hexc(COL["pos"]), shader=sh))
     finale_coins_back(c, t, s)
     portfolio(c, s, t)
     evs = terminal(c, s, t, None) or []
@@ -1386,28 +1556,45 @@ def draw_frame(c, t):
         marker_pts[round(tv, 3)] = (mx, my)
     bots(c, s, t)
     activity(c, s, t)
-    finale_coins(c, t, s)
     c.restore()
     _last_marks.clear(); _last_marks.update(marker_pts)
-    # chrome + foreground (faster parallax)
-    depth_dx = -sv * .004
+    # L2 floating chart labels
+    c.save(); c.concat(M2); viewport_clip(c, fly)
+    for fn in L2Q:
+        fn(c)
+    c.restore()
+    # L3 chrome
+    c.save(); c.concat(M3); viewport_clip(c, fly)
     sticky(c, t, s)
     status_bar(c, t)
     nav_bar(c, t)
+    c.restore()
+    # L4 foreground: coins + banners
     CTX["layer"] = "fx"
-    coin_flights(c, t, [(k, *persp_matrix(zoom, piv, tilt).mapXY(mx, my), tv, x) for k, mx, my, tv, x in evs])
-    banners(c, t, depth_dx)
+    coin_flights(c, t, [(k, *M1.mapXY(mx, my), tv, x) for k, mx, my, tv, x in evs])
+    c.save(); c.concat(M1); finale_coins(c, t, s); c.restore()
+    c.save(); c.concat(M4)
+    banners(c, t, 0.0)
+    c.restore()
+    if endk > 0:
+        c.restore()
     end_card(c, t)
-    # vignette
     vg = skia.GradientShader.MakeRadial(skia.Point(W / 2, H / 2), 1250, [hexc("#000000", 0), hexc("#000000", 0), hexc("#000000", .35)], [0, .7, 1])
     c.drawRect(skia.Rect.MakeWH(W, H), P(hexc("#000000"), shader=vg))
+    REG.append({"layer": "meta", "kind": "camera", "text": "", "rect": None, "container": None,
+                "yaw": round(cam["yaw"], 3), "pitch": round(cam["pitch"], 3), "tz": round(cam["tz"], 2), "fly": round(fly, 3),
+                "l1_min_scale": round(min_text_scale(M1), 4), "coin_mode": COIN_MODE, "scroll_v": round(sv, 1),
+                "layer_centers": {k: [round(v, 2) for v in (m.mapXY(CX, CY).x(), m.mapXY(CX, CY).y())]
+                                  for k, m in (("L0", M0), ("L1", M1), ("L2", M2), ("L4", M4))}})
 
 
 def blur_samples(t):
-    v = abs(scroll_vel(t))
-    if v < 700:
+    """Screen-recording look: no blur on normal scrolls (like the reference). Only the far-shot
+    fly-out scroll gets a smooth blur, sampled densely (<= 2 px between samples)."""
+    if not (12.0 <= t <= 12.44):
         return 1
-    return int(clamp(v / FPS / 4 / 5, 5, 24))  # ~6 px per sub-sample over a 180 deg shutter
+    v = abs(scroll_vel(t)) * .84
+    return int(clamp(math.ceil(v / FPS / 8 / 2), 1, 32))
 
 
 def render_t(t, blur=True):
@@ -1417,7 +1604,7 @@ def render_t(t, blur=True):
     if n > 1:
         acc = None
         for k in range(n):
-            o = (k / (n - 1) - .5) / FPS / 4
+            o = (k / (n - 1) - .5) / FPS / 8
             draw_frame(c, clamp(t + o, 0, DUR - 1e-3))
             a = surf.makeImageSnapshot().toarray(colorType=skia.ColorType.kRGBA_8888_ColorType).astype(np.float32)
             acc = a if acc is None else acc + a
@@ -1435,7 +1622,7 @@ def worker(i):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default=os.path.join(ROOT, "output", "grok_meme_million_v1.8.3_silent.mp4"))
+    ap.add_argument("--out", default=os.path.join(ROOT, "output", "grok_meme_million_v1.8.4_silent.mp4"))
     ap.add_argument("--still", nargs="*", type=float)
     ap.add_argument("--stills-dir", default=os.path.join(ROOT, "output", "stills"))
     ap.add_argument("--jobs", type=int, default=os.cpu_count())
