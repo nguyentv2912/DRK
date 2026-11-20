@@ -135,6 +135,8 @@ def main():
     check("no overlapping text (same layer)", len(overlaps) == 0, f"{len(overlaps)} overlaps" + (f", e.g. {overlaps[:3]}" if overlaps else ""))
     check("no horizontally clipped text", len(offscreen) == 0, f"{len(offscreen)} cases" + (f", e.g. {offscreen[:3]}" if offscreen else ""))
     check("text inside its card/pill", len(outbox) == 0, f"{len(outbox)} cases" + (f", e.g. {outbox[:3]}" if outbox else ""))
+    miss = [int(fi) for fi, items in reg.items() if any(x["kind"] == "pill_missing" for x in items)]
+    check("every visible BUY/SELL marker has its label", not miss, f"{len(miss)} frames with a marker but no label" + (f" (first {miss[:5]})" if miss else ""))
     check("BUY/SELL labels never cover candles or markers", len(label_hits) == 0, f"{len(label_hits)} hits")
     check("chart visible", live_frames >= 150, f"{live_frames} frames with the candle plot on screen")
     check("BUY marker visible", seen_buy >= 30, f"{seen_buy} frames")

@@ -1,0 +1,462 @@
+{
+ "video": "grok_meme_million_v1.8.3.mp4",
+ "reference": "reference.mp4",
+ "verdict": "ACCEPTED",
+ "auto_score": 10.0,
+ "checks_passed": "35/35",
+ "critical": [],
+ "warnings": [],
+ "checks": [
+  {
+   "check": "resolution 1080x1920",
+   "pass": true,
+   "critical": true,
+   "detail": "1080x1920"
+  },
+  {
+   "check": "frame rate 30",
+   "pass": true,
+   "critical": true,
+   "detail": "30/1"
+  },
+  {
+   "check": "codec H.264",
+   "pass": true,
+   "critical": true,
+   "detail": "h264"
+  },
+  {
+   "check": "frame count 450 (no missing frames)",
+   "pass": true,
+   "critical": true,
+   "detail": "450 frames"
+  },
+  {
+   "check": "duration 15.0 s",
+   "pass": true,
+   "critical": true,
+   "detail": "15.000s"
+  },
+  {
+   "check": "audio AAC stereo 48 kHz",
+   "pass": true,
+   "critical": true,
+   "detail": "aac 48000 2ch"
+  },
+  {
+   "check": "no duplicated frames",
+   "pass": true,
+   "critical": true,
+   "detail": "0 near-identical consecutive pairs; min diff 0.086"
+  },
+  {
+   "check": "no frozen stretch > 0.5 s",
+   "pass": true,
+   "critical": true,
+   "detail": "longest low-motion run 0 frames"
+  },
+  {
+   "check": "no overlapping text (same layer)",
+   "pass": true,
+   "critical": true,
+   "detail": "0 overlaps"
+  },
+  {
+   "check": "no horizontally clipped text",
+   "pass": true,
+   "critical": true,
+   "detail": "0 cases"
+  },
+  {
+   "check": "text inside its card/pill",
+   "pass": true,
+   "critical": true,
+   "detail": "0 cases"
+  },
+  {
+   "check": "every visible BUY/SELL marker has its label",
+   "pass": true,
+   "critical": true,
+   "detail": "0 frames with a marker but no label"
+  },
+  {
+   "check": "BUY/SELL labels never cover candles or markers",
+   "pass": true,
+   "critical": true,
+   "detail": "0 hits"
+  },
+  {
+   "check": "chart visible",
+   "pass": true,
+   "critical": true,
+   "detail": "364 frames with the candle plot on screen"
+  },
+  {
+   "check": "BUY marker visible",
+   "pass": true,
+   "critical": true,
+   "detail": "263 frames"
+  },
+  {
+   "check": "SELL marker visible",
+   "pass": true,
+   "critical": true,
+   "detail": "221 frames"
+  },
+  {
+   "check": "minimum on-screen font size >= 22 px",
+   "pass": true,
+   "critical": true,
+   "detail": "smallest font 22 px (1080x1920 native)"
+  },
+  {
+   "check": "equity chain = capital + sum(trade P&L)",
+   "pass": true,
+   "critical": true,
+   "detail": "$522.61 + $3652.55 = $4175.16"
+  },
+  {
+   "check": "ROI and multiple",
+   "pass": true,
+   "critical": true,
+   "detail": "ROI 698.91% \u00b7 7.99x"
+  },
+  {
+   "check": "initial capital in $500-$700",
+   "pass": true,
+   "critical": true,
+   "detail": "$522.61"
+  },
+  {
+   "check": "final profit in $1,000-$5,000",
+   "pass": true,
+   "critical": true,
+   "detail": "$3652.55"
+  },
+  {
+   "check": "trade results tens-hundreds of $",
+   "pass": true,
+   "critical": false,
+   "detail": "min $56.76, max $1377.34"
+  },
+  {
+   "check": "final equity shown on last frame",
+   "pass": true,
+   "critical": true,
+   "detail": "$4,175.16"
+  },
+  {
+   "check": "final profit not revealed early (<10 s)",
+   "pass": true,
+   "critical": true,
+   "detail": "0 early occurrences"
+  },
+  {
+   "check": "watchlist verified by mint+pool (DEX Screener + RPC)",
+   "pass": true,
+   "critical": true,
+   "detail": "6 tokens: mihao(4Cxj\u2026/Ho1a\u2026), FIONA(B34n\u2026/DjbL\u2026), TTWO(TTWo\u2026/7qZP\u2026), pippin(Dfh5\u2026/8Wwc\u2026), DCTY(9hjB\u2026/3gUa\u2026), VINE(6AJc\u2026/58fz\u2026)"
+  },
+  {
+   "check": "chart candles are byte-identical real OHLCV",
+   "pass": true,
+   "critical": true,
+   "detail": "72 candles from GeckoTerminal /networks/solana/pools/{pool}/ohlcv/minute pool DjbLtX1HRGZZrJgJ7CwTX6SN3D7tBLiytkGwomBUwTVB"
+  },
+  {
+   "check": "hero trade prices = real candle closes",
+   "pass": true,
+   "critical": true,
+   "detail": "entry/exit at candle closes"
+  },
+  {
+   "check": "snapshot not presented as realtime",
+   "pass": true,
+   "critical": true,
+   "detail": "snapshot 2026-11-20T04:54:15Z"
+  },
+  {
+   "check": "no unsupported live/on-chain claims in UI text",
+   "pass": true,
+   "critical": true,
+   "detail": "[]"
+  },
+  {
+   "check": "concept/paper labelling on screen",
+   "pass": true,
+   "critical": true,
+   "detail": "450/450 frames"
+  },
+  {
+   "check": "on-chain executions separated",
+   "pass": true,
+   "critical": true,
+   "detail": "no wallet configured in config.json -> no verified executions are shown"
+  },
+  {
+   "check": "SFX onset at every trade event",
+   "pass": true,
+   "critical": true,
+   "detail": "1.25s sell +19.6dB; 3.35s buy +20.3dB; 4.75s sell +20.7dB; 5.6s buy +18.1dB; 6.95s stop +16.0dB; 7.65s sell +24.8dB; 8.45s sell +16.1dB; 10.35s sell +19.7dB; 11.25s buy +19.4dB; 12.55s sell +6.2dB"
+  },
+  {
+   "check": "audio not clipping",
+   "pass": true,
+   "critical": true,
+   "detail": "peak -2.70 dBFS"
+  },
+  {
+   "check": "visual density close to reference (0.6-1.6x)",
+   "pass": true,
+   "critical": false,
+   "detail": "edge density ratio 1.23"
+  },
+  {
+   "check": "dark premium palette like reference",
+   "pass": true,
+   "critical": false,
+   "detail": "dark share ref 0.85 vs new 0.84"
+  }
+ ],
+ "audio_sync": [
+  {
+   "t": 1.25,
+   "type": "sell",
+   "rise_db": 19.6
+  },
+  {
+   "t": 3.35,
+   "type": "buy",
+   "rise_db": 20.3
+  },
+  {
+   "t": 4.75,
+   "type": "sell",
+   "rise_db": 20.7
+  },
+  {
+   "t": 5.6,
+   "type": "buy",
+   "rise_db": 18.1
+  },
+  {
+   "t": 6.95,
+   "type": "stop",
+   "rise_db": 16.0
+  },
+  {
+   "t": 7.65,
+   "type": "sell",
+   "rise_db": 24.8
+  },
+  {
+   "t": 8.45,
+   "type": "sell",
+   "rise_db": 16.1
+  },
+  {
+   "t": 10.35,
+   "type": "sell",
+   "rise_db": 19.7
+  },
+  {
+   "t": 11.25,
+   "type": "buy",
+   "rise_db": 19.4
+  },
+  {
+   "t": 12.55,
+   "type": "sell",
+   "rise_db": 6.2
+  }
+ ],
+ "reference_comparison": {
+  "timestamps": [
+   {
+    "t_new": 0.6,
+    "t_ref": 0.58,
+    "ref": {
+     "luma": 16.85769271850586,
+     "edge_density": 7.642055511474609,
+     "green_share": 0.018751574703955658,
+     "red_share": 0.0020376669186192996,
+     "dark_share": 0.9030344545225497
+    },
+    "new": {
+     "luma": 23.03968048095703,
+     "edge_density": 8.942906379699707,
+     "green_share": 0.03162229938271605,
+     "red_share": 0.0068267746913580245,
+     "dark_share": 0.9036149691358024
+    }
+   },
+   {
+    "t_new": 2.0,
+    "t_ref": 1.94,
+    "ref": {
+     "luma": 22.10588264465332,
+     "edge_density": 8.159318923950195,
+     "green_share": 0.020261715797430083,
+     "red_share": 0.0018723230032753843,
+     "dark_share": 0.839836860670194
+    },
+    "new": {
+     "luma": 25.886014938354492,
+     "edge_density": 9.088338851928711,
+     "green_share": 0.03574845679012346,
+     "red_share": 0.0073668981481481485,
+     "dark_share": 0.8328877314814814
+    }
+   },
+   {
+    "t_new": 3.6,
+    "t_ref": 3.5,
+    "ref": {
+     "luma": 21.256118774414062,
+     "edge_density": 6.779082775115967,
+     "green_share": 0.044890085663895185,
+     "red_share": 0.001880196523053666,
+     "dark_share": 0.8404116276140086
+    },
+    "new": {
+     "luma": 27.610631942749023,
+     "edge_density": 11.981172561645508,
+     "green_share": 0.02873070987654321,
+     "red_share": 0.009870756172839506,
+     "dark_share": 0.8164351851851852
+    }
+   },
+   {
+    "t_new": 4.9,
+    "t_ref": 4.76,
+    "ref": {
+     "luma": 18.16365623474121,
+     "edge_density": 9.237251281738281,
+     "green_share": 0.007621567145376669,
+     "red_share": 0.004062736205593349,
+     "dark_share": 0.8844938901486521
+    },
+    "new": {
+     "luma": 27.69370460510254,
+     "edge_density": 12.255411148071289,
+     "green_share": 0.027883873456790123,
+     "red_share": 0.01447145061728395,
+     "dark_share": 0.808755787037037
+    }
+   },
+   {
+    "t_new": 7.0,
+    "t_ref": 6.8,
+    "ref": {
+     "luma": 17.865875244140625,
+     "edge_density": 9.316868782043457,
+     "green_share": 0.008626228269085412,
+     "red_share": 0.0041477702191987905,
+     "dark_share": 0.8923280423280423
+    },
+    "new": {
+     "luma": 23.55030059814453,
+     "edge_density": 11.304718017578125,
+     "green_share": 0.023721064814814816,
+     "red_share": 0.009484953703703704,
+     "dark_share": 0.8965933641975309
+    }
+   },
+   {
+    "t_new": 8.4,
+    "t_ref": 8.16,
+    "ref": {
+     "luma": 23.1076717376709,
+     "edge_density": 9.393810272216797,
+     "green_share": 0.006876732174351222,
+     "red_share": 0.005257936507936508,
+     "dark_share": 0.837792894935752
+    },
+    "new": {
+     "luma": 27.652191162109375,
+     "edge_density": 12.27431583404541,
+     "green_share": 0.022235725308641974,
+     "red_share": 0.01439621913580247,
+     "dark_share": 0.8206481481481481
+    }
+   },
+   {
+    "t_new": 10.6,
+    "t_ref": 10.29,
+    "ref": {
+     "luma": 22.651092529296875,
+     "edge_density": 8.74296760559082,
+     "green_share": 0.008904950869236584,
+     "red_share": 0.003713151927437642,
+     "dark_share": 0.8453845427059713
+    },
+    "new": {
+     "luma": 26.0418758392334,
+     "edge_density": 11.331427574157715,
+     "green_share": 0.009747299382716049,
+     "red_share": 0.002945601851851852,
+     "dark_share": 0.8347550154320987
+    }
+   },
+   {
+    "t_new": 13.2,
+    "t_ref": 12.82,
+    "ref": {
+     "luma": 24.203676223754883,
+     "edge_density": 8.39499568939209,
+     "green_share": 0.03845427059712774,
+     "red_share": 0.0019526329050138574,
+     "dark_share": 0.8170445956160242
+    },
+    "new": {
+     "luma": 27.324861526489258,
+     "edge_density": 10.54977035522461,
+     "green_share": 0.0443653549382716,
+     "red_share": 0.005775462962962963,
+     "dark_share": 0.8209510030864198
+    }
+   },
+   {
+    "t_new": 14.7,
+    "t_ref": 14.28,
+    "ref": {
+     "luma": 23.585996627807617,
+     "edge_density": 8.652385711669922,
+     "green_share": 0.02092939027462837,
+     "red_share": 0.001922713529856387,
+     "dark_share": 0.8236567775258251
+    },
+    "new": {
+     "luma": 29.883363723754883,
+     "edge_density": 6.392431259155273,
+     "green_share": 0.043645833333333335,
+     "red_share": 0.008956404320987654,
+     "dark_share": 0.8412326388888889
+    }
+   }
+  ],
+  "means": {
+   "luma": {
+    "ref": 21.089,
+    "new": 26.52
+   },
+   "edge_density": {
+    "ref": 8.48,
+    "new": 10.458
+   },
+   "green_share": {
+    "ref": 0.019,
+    "new": 0.03
+   },
+   "red_share": {
+    "ref": 0.003,
+    "new": 0.009
+   },
+   "dark_share": {
+    "ref": 0.854,
+    "new": 0.842
+   }
+  }
+ },
+ "min_text_px": 22
+}

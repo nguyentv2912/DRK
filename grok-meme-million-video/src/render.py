@@ -904,7 +904,7 @@ def terminal(c, oy, t, cam):
         ph = 46
         px_ = clamp(xx - pw / 2, PL + 4, PR - pw - 4)
         cand = []
-        for dyk in range(0, 16):
+        for dyk in range(0, 44):
             if isbuy:
                 cand += [anchor_y + 22 + dyk * 12, anchor_y - 60 - ph - dyk * 12]
             else:
@@ -922,6 +922,7 @@ def terminal(c, oy, t, cam):
             chosen = rr
             break
         if chosen is None:
+            REG.append({"layer": "page", "kind": "pill_missing", "text": lab1, "rect": None, "container": None})
             continue
         placed.append(chosen)
         rr = skia.Rect.MakeLTRB(*chosen)
@@ -1157,13 +1158,17 @@ def activity(c, oy, t):
 # ---------------------------------------------------------- foreground
 
 def sticky(c, t, s):
-    cover = max([seg(t, e["t"], e["t"] + .2) * (1 - seg(t, e["t"] + BAN_DUR, e["t"] + BAN_DUR + .3)) for e in EVENTS] + [0])
-    a = clamp((s - 300) / 220) * (1 - .92 * cover)
-    if a <= 0:
+    cover = max([seg(t, e["t"] - .06, e["t"] + .06) * (1 - seg(t, e["t"] + BAN_DUR, e["t"] + BAN_DUR + .3)) for e in EVENTS] + [0])
+    a0 = clamp((s - 300) / 220)
+    a = a0 * (1 - .92 * cover)
+    if a0 <= 0:
         return
     CTX["layer"] = "sticky"
-    g = skia.GradientShader.MakeLinear([skia.Point(0, 110), skia.Point(0, 300)], [hexc(COL["bg"], .97 * a), hexc(COL["bg"], 0)])
+    g = skia.GradientShader.MakeLinear([skia.Point(0, 110), skia.Point(0, 300)], [hexc(COL["bg"], a0), hexc(COL["bg"], a0), hexc(COL["bg"], 0)], [0, .72, 1])
     c.drawRect(skia.Rect.MakeXYWH(0, 110, W, 190), P(hexc(COL["bg"]), shader=g))
+    if a <= 0.02:
+        CTX["layer"] = "page"
+        return
     c.saveLayerAlpha(None, int(255 * a))
     e = equity(t)
     pulse = max([1 - seg(t, x["t_video"] + .55, x["t_video"] + 1.1) for x in VID_TR if t >= x["t_video"] + .55] + [0])
@@ -1189,13 +1194,13 @@ def banners(c, t, depth_dx):
         t_out = min([x["t"] for x in later] + [e["t"] + BAN_DUR])
         kin = spring(seg(t, e["t"], e["t"] + .55))
         replaced = t_out < e["t"] + BAN_DUR
-        kout = ease(seg(t, t_out, t_out + (.10 if replaced else .35)))
+        kout = ease(seg(t, t_out, t_out + (.06 if replaced else .35)))
         if kout >= 1:
             continue
         CTX["layer"] = "banner_out" if t >= t_out else "banner"
         y = lerp(-40, 132, kin) - (40 if replaced else 210) * kout
         sc = lerp(1.18, 1.0, eout(seg(t, e["t"], e["t"] + .45))) * (1 - (.08 if replaced else 0) * kout)
-        alpha = clamp(seg(t, e["t"] + .08, e["t"] + .24)) * (1 - kout)
+        alpha = clamp(seg(t, e["t"] + .067, e["t"] + .16)) * (1 - kout)
         c.save()
         c.translate(W / 2 + depth_dx, y + 80)
         c.scale(sc, sc)

@@ -1,24 +1,107 @@
 {
  "quality_score": 9.5,
  "areas": [
-  {"area": "UI structure & iPhone layout", "score": 9.5, "notes": "Same order as reference: header -> balance hero -> equity chart -> timeframe tabs -> Live screen -> Bots (5) -> Activity, iOS status bar, banners and tab bar. Fullscreen 1080x1920, no device frame."},
-  {"area": "Typography", "score": 9.5, "notes": "Inter (SF Pro substitute) throughout; balance 128 px, sticky balance 72 px, P&L 42 px, section titles 44 px, rows 34/26 px, smallest 22 px (critic-enforced)."},
-  {"area": "Candlestick readability", "score": 9.5, "notes": "44-candle viewport over ~850 px plot, real OHLCV, EMA7/EMA20, RSI14, right price scale with uniform decimals, time scale, volume, crosshair + time tag, live price tag."},
-  {"area": "BUY/SELL visibility", "score": 9.5, "notes": "Triangle + pill + pulse ring; pills auto-placed to avoid candles, other markers, the price tag and legend (0 collisions in 450 frames); synced banner, feed row, sound and camera push."},
-  {"area": "Chart motion", "score": 9.5, "notes": "Replay reveal of real candles, smoothed auto-range, marching price line, breakout band, coins fly from SELL markers into the sticky balance."},
-  {"area": "Agent activity", "score": 9.0, "notes": "Five distinct vector icons with progress rings/bars, per-event status text, flashing row on change; Scanner cycles the verified watchlist."},
-  {"area": "3D depth", "score": 9.0, "notes": "Perspective camera (tilt on scroll, push-ins on trades), background parallax glows, foreground banners with spring-in scale + depth shadow, thick lit coins with rim/specular, depth-of-field coin burst."},
-  {"area": "Transition rhythm", "score": 9.5, "notes": "Storyboard 0-2.5 / 2.5-6.5 / 6.5-9 / 9-12 / 12-15 matches the reference cadence; adaptive multi-sample motion blur only during scrolls."},
-  {"area": "Audio sync", "score": 9.5, "notes": "Original 128 BPM synth track, sidechained; banner chime, buy blip, sell chime + count ticks, stop drop, whooshes/scans, riser -> impact at the reveal; every event has a measured onset."},
-  {"area": "Data provenance", "score": 10, "notes": "Mint+pool verified on 3 sources, candles byte-identical, snapshot labelled with time, trades labelled CONCEPT/Paper, no on-chain claims."}
+  {
+   "area": "UI structure & iPhone layout",
+   "score": 9.5,
+   "notes": "Same order as reference: header -> balance hero -> equity chart -> timeframe tabs -> Live screen -> Bots (5) -> Activity, iOS status bar, banners and tab bar. Fullscreen 1080x1920, no device frame."
+  },
+  {
+   "area": "Typography",
+   "score": 9.5,
+   "notes": "Inter (SF Pro substitute) throughout; balance 128 px, sticky balance 72 px, P&L 42 px, section titles 44 px, rows 34/26 px, smallest 22 px (critic-enforced)."
+  },
+  {
+   "area": "Candlestick readability",
+   "score": 9.5,
+   "notes": "44-candle viewport over ~850 px plot, real OHLCV, EMA7/EMA20, RSI14, right price scale with uniform decimals, time scale, volume, crosshair + time tag, live price tag."
+  },
+  {
+   "area": "BUY/SELL visibility",
+   "score": 9.5,
+   "notes": "Triangle + pill + pulse ring; pills auto-placed to avoid candles, other markers, the price tag and legend (0 collisions in 450 frames); synced banner, feed row, sound and camera push."
+  },
+  {
+   "area": "Chart motion",
+   "score": 9.5,
+   "notes": "Replay reveal of real candles, smoothed auto-range, marching price line, breakout band, coins fly from SELL markers into the sticky balance."
+  },
+  {
+   "area": "Agent activity",
+   "score": 9.0,
+   "notes": "Five distinct vector icons with progress rings/bars, per-event status text, flashing row on change; Scanner cycles the verified watchlist."
+  },
+  {
+   "area": "3D depth",
+   "score": 9.0,
+   "notes": "Perspective camera (tilt on scroll, push-ins on trades), background parallax glows, foreground banners with spring-in scale + depth shadow, thick lit coins with rim/specular, depth-of-field coin burst."
+  },
+  {
+   "area": "Transition rhythm",
+   "score": 9.5,
+   "notes": "Storyboard 0-2.5 / 2.5-6.5 / 6.5-9 / 9-12 / 12-15 matches the reference cadence; adaptive multi-sample motion blur only during scrolls."
+  },
+  {
+   "area": "Audio sync",
+   "score": 9.5,
+   "notes": "Original 128 BPM synth track, sidechained; banner chime, buy blip, sell chime + count ticks, stop drop, whooshes/scans, riser -> impact at the reveal; every event has a measured onset."
+  },
+  {
+   "area": "Data provenance",
+   "score": 10,
+   "notes": "Mint+pool verified on 3 sources, candles byte-identical, snapshot labelled with time, trades labelled CONCEPT/Paper, no on-chain claims."
+  }
  ],
  "iterations": [
-  {"verdict": "REVIEW", "found": "Flying coins covered the SELL pill; price axis mixed 4/5/6 decimals; banner slightly translucent", "fix": "coins launch after pill settles and travel away from it; axis uses one precision; opaque banners"},
-  {"verdict": "REVIEW", "found": "5-sample motion blur smeared the return scroll into ghost copies and ghosted changing chart text during banner entries; one SELL pill dropped when no slot was free; finale coins left the frame instantly; flat early equity curve", "fix": "adaptive 5-24 sub-samples, 90-degree shutter, blur only on scroll; horizontal pill candidates; ballistic coin burst; time-proportional curve sampling"},
-  {"verdict": "REVIEW", "found": "Axis labels collided with the live price tag and crosshair time tag", "fix": "suppress axis labels near the tags"},
-  {"verdict": "REJECTED (auto)", "found": "253 text overlaps (stacked banners, inserting feed rows), duplicate frame at 1.17 s, audio peak measured on mono downmix", "fix": "exiting banners recede on their own layer; inserting rows tagged as clipped animation; slow camera push-in so no frame is static; -3 dBFS master + stereo peak measurement"},
-  {"verdict": "REJECTED (auto)", "found": "5 overlaps at 5.6 s (banner handoff on the exact frame)", "fix": "banner counts as exiting from its replacement time"},
-  {"verdict": "REVIEW", "found": "SELL triangle sat on the BUY pill; sticky balance peeked behind banners; end coin caught edge-on", "fix": "all marker triangles join the collision set (and the critic check); sticky yields to banners; face-forward coin wobble"},
-  {"verdict": "ACCEPTED", "found": "34/34 automated checks, manual review of 9 matched timestamps vs reference", "fix": "banner handoff tightened to 0.1 s"}
+  {
+   "verdict": "REVIEW",
+   "found": "Flying coins covered the SELL pill; price axis mixed 4/5/6 decimals; banner slightly translucent",
+   "fix": "coins launch after pill settles and travel away from it; axis uses one precision; opaque banners"
+  },
+  {
+   "verdict": "REVIEW",
+   "found": "5-sample motion blur smeared the return scroll into ghost copies and ghosted changing chart text during banner entries; one SELL pill dropped when no slot was free; finale coins left the frame instantly; flat early equity curve",
+   "fix": "adaptive 5-24 sub-samples, 90-degree shutter, blur only on scroll; horizontal pill candidates; ballistic coin burst; time-proportional curve sampling"
+  },
+  {
+   "verdict": "REVIEW",
+   "found": "Axis labels collided with the live price tag and crosshair time tag",
+   "fix": "suppress axis labels near the tags"
+  },
+  {
+   "verdict": "REJECTED (auto)",
+   "found": "253 text overlaps (stacked banners, inserting feed rows), duplicate frame at 1.17 s, audio peak measured on mono downmix",
+   "fix": "exiting banners recede on their own layer; inserting rows tagged as clipped animation; slow camera push-in so no frame is static; -3 dBFS master + stereo peak measurement"
+  },
+  {
+   "verdict": "REJECTED (auto)",
+   "found": "5 overlaps at 5.6 s (banner handoff on the exact frame)",
+   "fix": "banner counts as exiting from its replacement time"
+  },
+  {
+   "verdict": "REVIEW",
+   "found": "SELL triangle sat on the BUY pill; sticky balance peeked behind banners; end coin caught edge-on",
+   "fix": "all marker triangles join the collision set (and the critic check); sticky yields to banners; face-forward coin wobble"
+  },
+  {
+   "verdict": "ACCEPTED",
+   "found": "34/34 automated checks, manual review of 9 matched timestamps vs reference",
+   "fix": "banner handoff tightened to 0.1 s"
+  },
+  {
+   "verdict": "REVIEW (run 2, fresh data)",
+   "found": "FIONA rally filled the space around the SELL 50% marker so its label was skipped at 4.75-5.2 s; page text and a faded sticky balance showed behind incoming banners",
+   "fix": "pill search extended to 44 vertical steps; new critic check 'every visible marker has its label'; sticky mask stays opaque, only its text yields, faster"
+  },
+  {
+   "verdict": "REVIEW (run 2)",
+   "found": "Banner handoff at 6.95 s cross-faded two banners for 2 frames; page text faintly visible under the sticky mask",
+   "fix": "old banner leaves in 0.06 s before the new one appears; sticky mask fully opaque to 72%"
+  },
+  {
+   "verdict": "ACCEPTED (run 2)",
+   "found": "35/35 automated checks + manual review of 4.85/4.9/6.95-7.05/7.7/10.6/13.3/14.7 s",
+   "fix": "-"
+  }
  ]
 }
