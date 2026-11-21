@@ -1,0 +1,174 @@
+<title>Đội AI Đạo Đức Đầu Tư</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: một cột đọc trên điện thoại — lệnh ở trên, dây chuyền chạy theo thứ tự, rồi lịch ngày, tình trạng, lộ trình nâng cấp */
+:root{
+  --bg:#F2F5F3; --surface:#FFFFFF; --ink:#16201B; --muted:#5B6A62; --line:#D7E0DA;
+  --accent:#1F7A5C; --accent-soft:#E1F0E9; --warn:#A8630B; --warn-soft:#FBF0DD; --ok:#1F7A5C; --idle:#9AA8A0;
+  --f-display:"Be Vietnam Pro",system-ui,sans-serif; --f-body:"Be Vietnam Pro",system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1512; --surface:#171F1B; --ink:#E4ECE7; --muted:#97A69E; --line:#2A3630;
+  --accent:#55C49B; --accent-soft:#1B3329; --warn:#E3A44B; --warn-soft:#3A2C17; --ok:#55C49B; --idle:#5E6B64; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1512; --surface:#171F1B; --ink:#E4ECE7; --muted:#97A69E; --line:#2A3630;
+  --accent:#55C49B; --accent-soft:#1B3329; --warn:#E3A44B; --warn-soft:#3A2C17; --ok:#55C49B; --idle:#5E6B64; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+.wrap{max-width:760px;margin:0 auto;display:grid;gap:36px}
+h1,h2{font-family:var(--f-display);text-wrap:balance;margin:0}
+h1{font-size:clamp(26px,5vw,34px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:19px;font-weight:600}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.lede{color:var(--muted);max-width:62ch}
+header{display:grid;gap:10px}
+section{display:grid;gap:14px}
+.cmd{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:10px}
+.cmd label{font-weight:600}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row input{flex:1 1 260px;min-width:0;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+button{font:inherit;font-weight:600;border-radius:8px;padding:10px 16px;cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:var(--surface)}
+button.ghost{background:transparent;color:var(--accent)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:13px;border:1px solid var(--line);background:transparent;color:var(--muted);padding:5px 10px;border-radius:999px;font-weight:500}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.step{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.step:first-child{border-top:0}
+.avatar{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:700;background:var(--accent-soft);color:var(--accent);transition:background .3s,color .3s}
+.step[data-state="idle"] .avatar{background:var(--line);color:var(--muted)}
+.step[data-state="run"] .avatar{background:var(--accent);color:var(--surface)}
+.step .body{min-width:0;display:grid;gap:3px}
+.who{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.who b{font-weight:600}
+.who .role{color:var(--muted);font-size:13px}
+.state{margin-left:auto;font-size:12px;font-family:var(--f-mono);color:var(--muted)}
+.step[data-state="done"] .state{color:var(--ok)}
+.step[data-state="run"] .state{color:var(--accent)}
+.out{color:var(--muted);font-size:14px;overflow-wrap:anywhere}
+.step[data-state="idle"] .out{opacity:.55}
+.step.owner .avatar{background:var(--warn-soft);color:var(--warn)}
+.timeline{display:grid;gap:0;border-left:2px solid var(--line);margin-left:6px}
+.t{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:8px 0 8px 14px;position:relative}
+.t::before{content:"";position:absolute;left:-7px;top:15px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.t.me::before{border-color:var(--warn)}
+.t time{font-family:var(--f-mono);font-weight:600;font-variant-numeric:tabular-nums}
+.t span{min-width:0}
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.st{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:4px;min-width:0}
+.pill{justify-self:start;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px}
+.pill.ok{background:var(--accent-soft);color:var(--ok)}
+.pill.wait{background:var(--warn-soft);color:var(--warn)}
+.st small{color:var(--muted)}
+.levels{display:grid;gap:10px;counter-reset:lv}
+.lv{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.lv .n{font-family:var(--f-mono);font-weight:600;color:var(--accent);border:1px solid var(--accent);border-radius:6px;padding:1px 7px;font-size:13px}
+.lv.now .n{background:var(--accent);color:var(--surface)}
+.lv p{min-width:0}
+.lv p b{display:block}
+.note{font-size:13px;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){.avatar{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Bản chạy thử · cấp 1</span>
+    <h1>Đội AI Đạo Đức Đầu Tư</h1>
+    <p class="lede">Chủ kênh giao việc bằng một câu. Minh nhận lệnh, chia việc, từng bạn làm phần của mình, Bảo chấm trước khi tới tay chủ kênh. Trang này chạy thử dây chuyền đó để thấy chỗ nào đã chạy được, chỗ nào cần nâng cấp.</p>
+  </header>
+
+  <section aria-labelledby="h-cmd">
+    <h2 id="h-cmd">Giao việc</h2>
+    <div class="cmd">
+      <label for="lenh">Lệnh của anh</label>
+      <div class="row">
+        <input id="lenh" value="Làm video về giữ bình an khi thị trường giảm mạnh">
+        <button id="run" type="button">Chạy thử</button>
+        <button id="reset" class="ghost" type="button">Làm lại</button>
+      </div>
+      <div class="chips" aria-label="Lệnh mẫu">
+        <button class="chip" type="button">Làm video về cách đội AI vận hành</button>
+        <button class="chip" type="button">Viết bài: đầu tư để làm gì?</button>
+        <button class="chip" type="button">Làm video về Tham – Sân – Si khi FOMO</button>
+      </div>
+    </div>
+    <ol class="steps" id="steps"></ol>
+    <p class="note">Đây là mô phỏng thứ tự công việc, không gọi nhân viên thật. Việc thật chạy theo lịch ở mục dưới.</p>
+  </section>
+
+  <section aria-labelledby="h-day">
+    <h2 id="h-day">Một ngày của đội</h2>
+    <div class="timeline">
+      <div class="t"><time>05:05</time><span>Ngọc và Phong bổ sung kho cho đủ 3 kịch bản chưa quay trên Google Drive.</span></div>
+      <div class="t me"><time>08:00</time><span>Anh quay 1–3 video, bỏ vào thư mục video thô.</span></div>
+      <div class="t"><time>09:17</time><span>Khoa tìm video mới, ghép đúng kịch bản, dựng phụ đề và thẻ chữ. Vy xếp lịch đăng.</span></div>
+      <div class="t"><time>10:17</time><span>Lượt xử lý thứ hai cho video nộp muộn.</span></div>
+      <div class="t"><time>11:30</time><span>Bài trưa lên Facebook (TikTok 12:00 khi đã nối tài khoản).</span></div>
+      <div class="t"><time>20:00</time><span>Bài tối lên Facebook (TikTok 20:30). Tối đa 2 bài mỗi ngày.</span></div>
+      <div class="t"><time>21:17</time><span>Lượt xử lý cuối ngày, báo anh một dòng: đã đăng gì, kho còn mấy kịch bản.</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-status">
+    <h2 id="h-status">Tình trạng hệ thống</h2>
+    <div class="status">
+      <div class="st"><span class="pill ok">Chạy được</span><b>Lịch tự động</b><small>Kho kịch bản 05:05 và xử lý video 09:17 · 10:17 · 21:17 đã bật.</small></div>
+      <div class="st"><span class="pill ok">Chạy được</span><b>Đăng Facebook</b><small>Đã thử đăng nháp qua Metricool thành công.</small></div>
+      <div class="st"><span class="pill ok">Chạy được</span><b>Sổ tay giọng văn</b><small>Tư tưởng, câu thương hiệu, khung bài; xưng mình – các bạn.</small></div>
+      <div class="st"><span class="pill wait">Chờ anh</span><b>Đăng TikTok @daoducdautu</b><small>Tài khoản nằm ở một Metricool khác. Cần nối vào tài khoản đội đang dùng.</small></div>
+      <div class="st"><span class="pill wait">Chưa thử thật</span><b>Dựng video từ bản quay thật</b><small>Chờ video đầu tiên anh quay để chạy trọn dây chuyền.</small></div>
+      <div class="st"><span class="pill wait">Chờ anh</span><b>Chuyện đời thật của anh</b><small>Sổ tay còn trống mục này; bài sẽ mạnh hơn khi có.</small></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-up">
+    <h2 id="h-up">Lộ trình nâng cấp</h2>
+    <div class="levels">
+      <div class="lv now"><span class="n">Cấp 1</span><p><b>Chạy thử có người duyệt</b>Mỗi kịch bản và bài viết gửi anh duyệt trước khi quay hoặc đăng. Đo xem đội viết đúng giọng anh chưa.</p></div>
+      <div class="lv"><span class="n">Cấp 2</span><p><b>Trọn dây chuyền một video</b>Anh quay 1 video thật → Khoa dựng → Vy đăng Facebook. Sửa mọi chỗ vướng.</p></div>
+      <div class="lv"><span class="n">Cấp 3</span><p><b>Đăng đủ hai nền tảng</b>Nối TikTok @daoducdautu, đăng 1–2 video mỗi ngày tự động, Quân báo cáo số liệu hằng tuần.</p></div>
+      <div class="lv"><span class="n">Cấp 4</span><p><b>Thêm tin tức và chăm sóc khách</b>Kích hoạt Linh (tin crypto hằng ngày) và Thảo (chăm sóc khách) sau khi anh duyệt đề xuất.</p></div>
+      <div class="lv"><span class="n">Cấp 5</span><p><b>Nối sang chương trình Đầu Tư Bình An</b>Video mời vào cộng đồng Skool miễn phí; theo dõi tỷ lệ chuyển đổi ở mốc tháng 3 và tháng 6.</p></div>
+    </div>
+  </section>
+</div>
+
+<script>
+const STEPS = [
+  {i:"M", who:"Minh", role:"Quản lý", out:c=>`Nhận lệnh "${c}". Chia việc: Ngọc → Phong → anh quay → Khoa → Vy. Bảo chấm từng bước.`},
+  {i:"N", who:"Ngọc", role:"Ý tưởng & bài viết", out:c=>`Đọc sổ tay, chọn góc "bình an trước lợi nhuận", viết caption Facebook 150–250 chữ và caption TikTok.`},
+  {i:"P", who:"Phong", role:"Kịch bản quay", out:c=>`Kịch bản 140–160 giây: mở đầu ≤ 14 chữ → soi đời → luận đạo → bài tập → đúc kết. Mỗi câu một dòng.`},
+  {i:"B", who:"Bảo", role:"Giám sát", out:c=>`Chấm theo tiêu chí: đúng giọng, không hứa lãi, không nêu mã. Đạt thì đưa vào kho trên Drive.`},
+  {i:"A", who:"Anh", role:"Chủ kênh", owner:true, out:c=>`Duyệt kịch bản, quay bằng điện thoại, bỏ video vào thư mục video thô.`},
+  {i:"K", who:"Khoa", role:"Dựng video", out:c=>`Bóc lời, cắt câu vấp và khoảng lặng, khung dọc 9:16, phụ đề, thẻ chữ, nhạc nền.`},
+  {i:"V", who:"Vy", role:"Đăng bài", out:c=>`Kiểm đúng tài khoản, xếp lịch Facebook 11:30 hoặc 20:00. TikTok khi đã nối tài khoản.`},
+  {i:"T", who:"Trang", role:"Phản biện", out:c=>`Góp ý sau việc để lần sau làm tốt hơn; ghi vào hồ sơ từng bạn.`}
+];
+const ol = document.getElementById("steps"), input = document.getElementById("lenh");
+let timers = [];
+function render(state){
+  const c = input.value.trim() || "(chưa có lệnh)";
+  ol.innerHTML = STEPS.map((s,k)=>`<li class="step${s.owner?" owner":""}" data-state="${state[k]}">
+    <span class="avatar" aria-hidden="true">${s.i}</span>
+    <div class="body"><div class="who"><b>${s.who}</b><span class="role">${s.role}</span>
+    <span class="state">${state[k]==="done"?"xong":state[k]==="run"?"đang làm…":"chờ"}</span></div>
+    <p class="out">${s.out(c).replace(/</g,"&lt;")}</p></div></li>`).join("");
+}
+function reset(){timers.forEach(clearTimeout);timers=[];render(STEPS.map(()=> "idle"))}
+function run(){
+  reset();
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches, gap = reduce?0:900;
+  const st = STEPS.map(()=> "idle");
+  STEPS.forEach((_,k)=>{
+    timers.push(setTimeout(()=>{st[k]="run";render(st)}, k*gap));
+    timers.push(setTimeout(()=>{st[k]="done";render(st)}, k*gap+gap*0.8));
+  });
+}
+document.getElementById("run").addEventListener("click", run);
+document.getElementById("reset").addEventListener("click", reset);
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{input.value=b.textContent;run()}));
+input.addEventListener("input",()=>render([...ol.children].map(li=>li.dataset.state)));
+render(STEPS.map(()=> "done"));
+</script>

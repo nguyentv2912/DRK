@@ -1,0 +1,35 @@
+{
+ "hook_title": "KHÉO ĂN THÌ NO, KHÉO CO THÌ ẤM",
+ "keywords": {
+  "đòn bẩy": "red",
+  "co lại": "gold",
+  "mất sạch": "red",
+  "hơi ấm": "green"
+ },
+ "cards": [
+  {
+   "trigger": "Khéo ăn thì no, khéo co thì ấm",
+   "kicker": "2/6",
+   "text": "KHÉO ĂN THÌ NO, KHÉO CO THÌ ẤM",
+   "accent": "gold",
+   "sec": 3
+  },
+  {
+   "trigger": "Co lại là bỏ đòn bẩy",
+   "kicker": "→",
+   "text": "BỎ ĐÒN BẨY",
+   "accent": "green",
+   "sec": 3
+  }
+ ],
+ "cut_ranges": [],
+ "cta": {
+  "text": "NHÓM ZALO Ở BÌNH LUẬN GHIM",
+  "sub": "ĐẠO ĐỨC ĐẦU TƯ — 6 lời ông bà · 2/6",
+  "sec": 3.5
+ },
+ "crop_x": 0.5,
+ "max_pause": 0.45,
+ "music_volume": 0.18,
+ "brand": "ĐẠO ĐỨC ĐẦU TƯ"
+}

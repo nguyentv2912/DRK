@@ -1,0 +1,35 @@
+{
+ "hook_title": "CỦA RẺ LÀ CỦA ÔI",
+ "keywords": {
+  "ổn định": "red",
+  "sụp đổ": "red",
+  "lời hứa": "gold",
+  "không nói thật": "red"
+ },
+ "cards": [
+  {
+   "trigger": "Của rẻ là của ôi",
+   "kicker": "6/6",
+   "text": "CỦA RẺ LÀ CỦA ÔI",
+   "accent": "gold",
+   "sec": 3
+  },
+  {
+   "trigger": "Bây giờ mùa đông lại tới, và lời hứa ngọt lại xuất hiện",
+   "kicker": "→",
+   "text": "ĐỨNG XA LỜI HỨA CHẮC CHẮN",
+   "accent": "green",
+   "sec": 3
+  }
+ ],
+ "cut_ranges": [],
+ "cta": {
+  "text": "NHÓM ZALO Ở BÌNH LUẬN GHIM",
+  "sub": "ĐẠO ĐỨC ĐẦU TƯ — 6 lời ông bà · 6/6",
+  "sec": 3.5
+ },
+ "crop_x": 0.5,
+ "max_pause": 0.45,
+ "music_volume": 0.18,
+ "brand": "ĐẠO ĐỨC ĐẦU TƯ"
+}

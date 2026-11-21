@@ -1,0 +1,163 @@
+{
+ "theme": {
+  "accent": [
+   214,
+   178,
+   94
+  ],
+  "bg": [
+   12,
+   30,
+   24
+  ]
+ },
+ "panels": [
+  {
+   "at": 0.8,
+   "sec": 6.5,
+   "title": "1 NGƯỜI THẬT + 7 TRỢ LÝ AI",
+   "items": [
+    {
+     "name": "ANH",
+     "role": "Chủ kênh",
+     "me": true
+    },
+    {
+     "name": "MINH",
+     "role": "Quản lý"
+    },
+    {
+     "name": "NGỌC",
+     "role": "Ý tưởng"
+    },
+    {
+     "name": "PHONG",
+     "role": "Kịch bản"
+    },
+    {
+     "name": "KHOA",
+     "role": "Dựng"
+    },
+    {
+     "name": "VY",
+     "role": "Đăng"
+    },
+    {
+     "name": "BẢO",
+     "role": "Chấm"
+    },
+    {
+     "name": "TRANG",
+     "role": "Phản biện"
+    }
+   ]
+  },
+  {
+   "trigger": "thứ nhất",
+   "sec": 9,
+   "title": "① GIAO VIỆC 1 CÂU",
+   "arrows": true,
+   "items": [
+    {
+     "name": "ANH",
+     "role": "Ra lệnh",
+     "me": true
+    },
+    {
+     "name": "MINH",
+     "role": "Chia việc"
+    },
+    {
+     "name": "ĐỘI",
+     "role": "6 bạn tự làm",
+     "icon": "6"
+    }
+   ],
+   "flash": true
+  },
+  {
+   "trigger": "thứ hai",
+   "sec": 13,
+   "title": "② 05:00 – KHO LUÔN CÓ 3 KỊCH BẢN",
+   "arrows": true,
+   "items": [
+    {
+     "name": "NGỌC",
+     "role": "Ý tưởng"
+    },
+    {
+     "name": "PHONG",
+     "role": "Kịch bản"
+    },
+    {
+     "name": "KHO",
+     "role": "3 bản chờ quay",
+     "icon": "3"
+    }
+   ],
+   "flash": true
+  },
+  {
+   "trigger": "thứ ba",
+   "sec": 15,
+   "title": "③ 08:00 – MÌNH CHỈ VIỆC QUAY",
+   "arrows": true,
+   "items": [
+    {
+     "name": "ANH",
+     "role": "Quay",
+     "me": true
+    },
+    {
+     "name": "KHOA",
+     "role": "Dựng video"
+    },
+    {
+     "name": "VY",
+     "role": "Xếp lịch đăng"
+    }
+   ],
+   "flash": true
+  },
+  {
+   "trigger": "thứ tư",
+   "sec": 12,
+   "title": "④ KIỂM SOÁT CHẤT LƯỢNG",
+   "items": [
+    {
+     "name": "BẢO",
+     "role": "Chấm từng việc"
+    },
+    {
+     "name": "TRANG",
+     "role": "Phản biện"
+    }
+   ],
+   "flash": true
+  },
+  {
+   "type": "minh_hoa",
+   "trigger": "AI làm giúp mình",
+   "sec": 6,
+   "icon": "can_can",
+   "title": "AI LÀM GÌ – MÌNH LÀM GÌ",
+   "text": "AI: việc lặp lại. Mình: trách nhiệm."
+  },
+  {
+   "type": "minh_hoa",
+   "trigger": "thời gian dư ra",
+   "sec": 4,
+   "icon": "trai_tim",
+   "title": "THỜI GIAN DƯ RA",
+   "text": "dành cho gia đình và bình an"
+  },
+  {
+   "type": "trich_dan",
+   "trigger": "giao được công việc",
+   "sec": 5,
+   "title": "ĐÚC KẾT",
+   "text": "Giao được công việc, nhưng không ai giao được trách nhiệm.",
+   "source": "Đạo Đức Đầu Tư"
+  }
+ ]
+}

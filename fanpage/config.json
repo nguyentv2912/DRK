@@ -1,0 +1,68 @@
+{
+  "brand_name": "ĐẠO ĐỨC ĐẦU TƯ",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "publish_mode": "tu-dong",
+  "_publish_mode_help": "tu-dong = đội tự đăng sau khi edit và giám sát đạt | nhap = tạo bản nháp trên Metricool để chủ page duyệt",
+  "video_seconds": [
+    45,
+    600
+  ],
+  "script_delivery_time": "05:30",
+  "channels": [
+    {
+      "network": "facebook",
+      "metricool_brand_id": "7808796",
+      "facebook_type": "REEL",
+      "fallback_type": "POST",
+      "verify": "Đã kiểm tra 2026-11-14: Metricool nhận bài Facebook REEL (bản nháp) từ brand 7808796, media từ dddt-media được chép sang static.metricool.com.",
+      "enabled": true
+    },
+    {
+      "network": "tiktok",
+      "metricool_brand_id": "",
+      "expected_username": "daoducdautu",
+      "enabled": true,
+      "verify": "Trước mỗi lần đăng: getBrandSettings của brand này phải có networksData.tiktokData == expected_username. Sai hoặc trống → KHÔNG đăng TikTok, báo chủ page."
+    }
+  ],
+  "never_post_to": [
+    "instagram:mrpumpsolana",
+    "tiktok:mr.sol56"
+  ],
+  "_never_post_to_help": "Brand 7808796 còn nối TikTok mr.sol56 và Instagram mrpumpsolana của dự án Mr Pump. Không bao giờ đưa instagram hoặc tiktok của brand 7808796 vào providers.",
+  "cta_link": "",
+  "drive": {
+    "root_folder_id": "1Wi6LILdKR6GIhP7q2pBMX0wKqarLNhhh",
+    "scripts_folder_id": "1_bf58L68EYb4FNFJUotHtLl_DeI2GE1C",
+    "raw_folder_id": "1UQedh3qGOSnlDlwOc44aaB2qC30olnSo",
+    "edited_folder_id": "1BLSy4zRcFzKtfVM5YsS7SyG0OQPXogGO",
+    "_help": "Kịch bản: Google Doc tên 'YYYY-MM-DD | chuyên mục | chủ đề' trong scripts_folder (đây cũng là lịch sử chủ đề). Video thô: share anyoneWithLink rồi curl https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t; xử lý xong chuyển vào processed_folder (update_file parentId). Không tải video lên Drive qua connector (giới hạn ~3 MB/lần); video đã edit đi qua media_repo.",
+    "processed_folder_id": "1uRTnyFB-pEIgw7se4G-LuPEKqsrG6SZ4",
+    "scripts_done_folder_id": "1V5HZIhPrEbzafwAGcqiG-fOsmmIwkg0a"
+  },
+  "media_repo": "nguyentv2912/dddt-media",
+  "_media_repo_help": "Repo GitHub công khai chỉ để Metricool lấy video đã edit. Dùng fanpage/tools/media_repo.py put/clear. Xoá video khỏi repo ngay khi Metricool đã sao chép (media chuyển sang static.metricool.com).",
+  "processing_runs": [
+    "09:17",
+    "10:17",
+    "21:17"
+  ],
+  "_processing_help": "Chủ kênh quay 8:00–9:00 và nộp lên Drive; lượt 09:17 xử lý và hẹn đăng buổi sáng; 10:17 dự phòng; 21:17 vét video nộp muộn.",
+  "script_buffer": 3,
+  "_script_buffer_help": "Kho luôn có sẵn ít nhất 3 kịch bản chưa quay (Google Doc trong scripts_folder, KHÔNG nằm trong 'Đã quay'). Tên: 'KB-YYYYMMDD-N | chuyên mục | chủ đề'. Quay + đăng xong → chuyển Doc vào scripts_done_folder.",
+  "post_slots": [
+    {
+      "ten": "trua",
+      "facebook": "11:30",
+      "tiktok": "12:00"
+    },
+    {
+      "ten": "toi",
+      "facebook": "20:00",
+      "tiktok": "20:30"
+    }
+  ],
+  "_post_slots_help": "Tối đa 2 bài/ngày. Mỗi video lấy khung trống sớm nhất (cách hiện tại ≥ 30 phút): trưa hôm nay → tối hôm nay → trưa mai → … Khung đã có bài #daoducdautu là khung bận.",
+  "_video_seconds_help": "Anh chốt 16/11: video ngắn ~1 phút (quay dồn 1 ngày, đội tự xếp lịch), video dài cập nhật tin 5–10 phút mỗi ngày.",
+  "_post_slots_note": "Anh chốt 16/11: mỗi ngày ưu tiên 1 video dài cập nhật tin + 1 video ngắn từ kho quay dồn."
+}

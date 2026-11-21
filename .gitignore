@@ -4,3 +4,10 @@
 *.zip
 *.mp3
 output/
+*.jpg
+!fanpage/runs/*/video_cover.jpg
+*.mov
+*.MOV
+fanpage/runs/*/raw/
+__pycache__/
+fanpage/tu-lieu/goc/
