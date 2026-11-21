@@ -15,7 +15,12 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 from fetch import ddir, default_date, ICT
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-W, H, TH, OY = 1080, 1920, 1440, 240
+W, H, TH, OY = 1080, 1920, 1440, 240          # khung vẽ nội bộ (terminal 3:4 ở y=240)
+# Bố cục TikTok: tránh tab trên (~0–150), nút phải (~x>960 ở giữa màn) và caption dưới (~y>1580)
+TS = 0.91
+TW, TH2 = int(W * TS), int(TH * TS)
+TX, TY = 30, 272
+TITLE_Y, CAP_Y = 172, 234
 FPS, T0, T1, TEND = 30, 2.6, 26.0, 29.0
 HOOK, SCAN0, SCAN_END = 0.95, 1.0, 2.4
 
@@ -326,11 +331,7 @@ class Painter:
         n = self.s.n
         base = Image.new("RGB", (W, H), BG)
         d = ImageDraw.Draw(base)
-        d.text((W // 2, 84), "MR PUMP", font=F("iExtraBold", 72), fill=YELLOW, anchor="mm")
         date_s = dt.datetime.fromisoformat(n["window"][0]).strftime("%d %b %Y")
-        d.text((W // 2, 210), f"Solana · {date_s} · 23:00 → 07:00 (UTC+7)", font=F("Medium", 22), fill=DIM, anchor="mm")
-        d.text((W // 2, OY + TH + 70), "Paper trades simulated on real on-chain prices", font=F("iSemiBold", 28), fill=TXT, anchor="mm")
-        d.text((W // 2, OY + TH + 112), "Not financial advice · data: GeckoTerminal", font=F("Medium", 22), fill=DIM, anchor="mm")
         for y in range(OY + 20, OY + TH - 10, 24):
             for x in range(20, W - 10, 24):
                 d.point((x, y), fill=(18, 40, 30))
@@ -338,7 +339,7 @@ class Painter:
         rr(d, (10, o + 10, W - 10, o + TH - 10), 22, outline=LINE, width=2)
         for i, c in enumerate([(255, 95, 86), (255, 189, 46), (39, 201, 63)]):
             d.ellipse((34 + i * 22, o + 30, 46 + i * 22, o + 42), fill=c)
-        d.text((W // 2 - 40, o + 36), "MR PUMP Terminal — overnight · six agents · log first", font=F("Regular", 16), fill=DIM, anchor="mm")
+        d.text((W // 2 - 40, o + 36), f"MR PUMP Terminal — Solana · {date_s} · 23:00→07:00", font=F("Regular", 16), fill=DIM, anchor="mm")
         dashed_rr(d, (858, o + 22, 1050, o + 50), 8, GREEN, 2, 6, 4)
         d.text((954, o + 36), "paper · real prices", font=F("Medium", 15), fill=GREEN, anchor="mm")
         d.line((12, o + 62, W - 12, o + 62), fill=LINE, width=1)
@@ -442,8 +443,15 @@ class Painter:
         im = self.core(t)
         if t >= T1 + 0.12:
             im = self.report(im, t)
-        self.caption(im, t)
-        return im
+        return self.compose(im, t)
+
+    def compose(self, im, t):
+        out = Image.new("RGB", (W, H), BG)
+        ImageDraw.Draw(out).text((W // 2, TITLE_Y), "MR PUMP", font=F("iExtraBold", 66), fill=YELLOW, anchor="mm")
+        term = im.crop((0, OY, W, OY + TH)).resize((TW, TH2), Image.LANCZOS)
+        out.paste(term, (TX, TY))
+        self.caption(out, t)
+        return out
 
     def caption(self, im, t):
         cur = None
@@ -456,7 +464,7 @@ class Painter:
         w, h = sp.size
         s = 0.8 + 0.2 * k
         spr = sp.resize((max(1, int(w * s)), max(1, int(h * s))), Image.BICUBIC)
-        paste_a(im, spr, (W / 2 - spr.size[0] / 2, 158 - spr.size[1] / 2), a)
+        paste_a(im, spr, (W / 2 - spr.size[0] / 2, CAP_Y - spr.size[1] / 2), a)
 
     def hook(self, t):
         if self._end_core is None:
@@ -494,8 +502,7 @@ class Painter:
                 im.paste(src.crop((0, y, W, y + h)), (dx, y))
             d = ImageDraw.Draw(im)
             d.text((W // 2, OY + 1060), "◀◀  REWIND TO 23:00", font=F("ExtraBold", 40), fill=TXT, anchor="mm")
-        self.caption(im, t)
-        return im
+        return self.compose(im, t)
 
     def report(self, im, t):
         n = self.s.n
