@@ -1,0 +1,154 @@
+<title>Phản biện rủi ro Bến Khởi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap">
+<style>
+/* Layout: một cột ghi nhớ đọc nhanh — kết luận → ma trận rủi ro → tiền đề → cổng quyết định → câu hỏi */
+:root{
+  --bg:#F6F7F5; --surface:#FFFFFF; --fg:#1C2326; --muted:#5A666B; --line:#DDE2E0;
+  --accent:#1F5F73; --red:#B3372E; --red-bg:#F8E3E0; --amber:#9A6A12; --amber-bg:#F6ECD6; --green:#2F6B46; --green-bg:#E2EFE6;
+  --f-head:'Noto Serif',Georgia,serif; --f-body:'Be Vietnam Pro',Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12181A; --surface:#1A2225; --fg:#E7ECEA; --muted:#9AA7AB; --line:#2C373A;
+  --accent:#7FC0D2; --red:#F08B80; --red-bg:#3A2220; --amber:#E2B65C; --amber-bg:#352B17; --green:#86C79C; --green-bg:#1C3024; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12181A; --surface:#1A2225; --fg:#E7ECEA; --muted:#9AA7AB; --line:#2C373A;
+  --accent:#7FC0D2; --red:#F08B80; --red-bg:#3A2220; --amber:#E2B65C; --amber-bg:#352B17; --green:#86C79C; --green-bg:#1C3024; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:980px;margin:0 auto;padding-block:40px 56px;display:flex;flex-direction:column;gap:28px}
+h1,h2{font-family:var(--f-head);text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:clamp(1.7rem,4vw,2.4rem)}
+h2{font-size:1.25rem}
+p{margin:0}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.lead{color:var(--muted);max-width:62ch}
+header{display:flex;flex-direction:column;gap:10px}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--amber);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.verdict strong{font-size:1.15rem;color:var(--amber)}
+section{display:flex;flex-direction:column;gap:14px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:24px;align-items:start}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}}
+/* risk matrix */
+.matrix{display:grid;grid-template-columns:28px repeat(5,minmax(0,1fr));gap:4px;font-size:.78rem}
+.cell{min-height:58px;border-radius:6px;padding:4px;display:flex;flex-wrap:wrap;gap:3px;align-content:flex-start}
+.lo{background:var(--green-bg)} .mid{background:var(--amber-bg)} .hi{background:var(--red-bg)}
+.ax{display:flex;align-items:center;justify-content:center;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip{background:var(--surface);color:var(--red);border:1px solid var(--red);border-radius:4px;padding:0 4px;font-weight:600;font-size:.72rem;line-height:1.5}
+.axis-note{font-size:.78rem;color:var(--muted)}
+/* red list */
+.risks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.risks li{display:grid;grid-template-columns:44px 46px minmax(0,1fr);gap:10px;padding:9px 14px;border-top:1px solid var(--line);align-items:baseline}
+.risks li:first-child{border-top:none}
+.score{font-variant-numeric:tabular-nums;font-weight:700;color:var(--red)}
+.code{font-size:.8rem;color:var(--muted);font-weight:600}
+.risks b{font-weight:600}
+.risks span.fix{display:block;color:var(--muted);font-size:.88rem}
+/* premises */
+.prem{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.prem div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.prem q{font-weight:600;quotes:"“" "”"}
+.prem p{color:var(--muted);font-size:.92rem}
+/* gates */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.92rem}
+th,td{text-align:left;padding:10px 14px;border-top:1px solid var(--line);vertical-align:top}
+thead th{border-top:none;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td:first-child{font-weight:600;white-space:nowrap}
+.when{display:block;font-weight:400;color:var(--muted);font-size:.82rem}
+.no{color:var(--red)}
+.pm{margin:0;padding-left:1.2rem;display:flex;flex-direction:column;gap:6px}
+.qs{margin:0;padding-left:1.3rem;display:flex;flex-direction:column;gap:8px;font-weight:500}
+footer{color:var(--muted);font-size:.82rem;border-top:1px solid var(--line);padding-top:14px}
+</style>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow">Phản biện độc lập · 21/11/2026</p>
+  <h1>Bến Khởi: những rủi ro cần trả lời trước Chuyến 01</h1>
+  <p class="lead">Bản ghi nhớ của một nhóm đọc độc lập, dựa trên 6 tài liệu định hướng bản tháng 11/2026. Chấm 27 rủi ro theo Xác suất × Tác động (1–5 mỗi trục). Dưới đây là phần cốt lõi.</p>
+</header>
+
+<div class="verdict">
+  <p class="eyebrow">Kết luận</p>
+  <strong>Nên làm, có điều kiện.</strong>
+  <p>Ý tưởng đúng thời điểm và có cơ chế minh bạch hiếm thấy. Nhưng 11 rủi ro mức đỏ tập trung vào bốn chỗ: rổ hàng, pháp nhân, tiền vận hành và con người. Chỉ mở Chuyến 01 khi qua được Cổng 0; chưa qua thì dời sang sau Tết thay vì chạy cho kịp mùa quà.</p>
+</div>
+
+<section>
+  <h2>11 rủi ro mức đỏ</h2>
+  <div class="grid2">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="matrix" role="img" aria-label="Ma trận xác suất và tác động của 11 rủi ro mức đỏ">
+        <div class="ax">5</div><div class="cell mid"></div><div class="cell mid"></div><div class="cell hi"><span class="chip">A1</span><span class="chip">B2</span><span class="chip">E1</span></div><div class="cell hi"><span class="chip">C1</span></div><div class="cell hi"></div>
+        <div class="ax">4</div><div class="cell lo"></div><div class="cell mid"></div><div class="cell mid"></div><div class="cell hi"><span class="chip">A3</span><span class="chip">B1</span><span class="chip">C3</span><span class="chip">D1</span><span class="chip">E2</span><span class="chip">E3</span></div><div class="cell hi"></div>
+        <div class="ax">3</div><div class="cell lo"></div><div class="cell lo"></div><div class="cell mid"></div><div class="cell mid"></div><div class="cell hi"><span class="chip">C2</span></div>
+        <div class="ax">2</div><div class="cell lo"></div><div class="cell lo"></div><div class="cell lo"></div><div class="cell mid"></div><div class="cell mid"></div>
+        <div class="ax">1</div><div class="cell lo"></div><div class="cell lo"></div><div class="cell lo"></div><div class="cell lo"></div><div class="cell lo"></div>
+        <div></div><div class="ax">1</div><div class="ax">2</div><div class="ax">3</div><div class="ax">4</div><div class="ax">5</div>
+      </div>
+      <p class="axis-note">Trục dọc: tác động · Trục ngang: xác suất · Ô đỏ: điểm ≥ 15</p>
+    </div>
+    <ul class="risks">
+      <li><span class="score">20</span><span class="code">C1</span><span><b>Rổ hàng không đủ 10–20 sản phẩm qua thẩm định trước 01/2027.</b><span class="fix">Nhắm chủ hàng đã sẵn hồ sơ (OCOP 4–5 sao, đã bán trên sàn), loại ngành nhạy cảm.</span></span></li>
+      <li><span class="score">16</span><span class="code">A3</span><span><b>Chưa có pháp nhân</b>, không ký được hợp đồng, xuất hóa đơn; cá nhân sáng lập chịu trách nhiệm.<span class="fix">Chọn hình thức hoặc đơn vị bảo trợ trước Chuyến 01.</span></span></li>
+      <li><span class="score">16</span><span class="code">B1</span><span><b>Không có tiền vận hành 12 tháng đầu.</b><span class="fix">Ngân sách 2 Chuyến, nguồn chi đã cam kết, tài trợ hiện vật, trần chi.</span></span></li>
+      <li><span class="score">16</span><span class="code">C3</span><span><b>Số đơn không kiểm chứng được</b>: người bán tự báo, dữ liệu nằm trên sàn.<span class="fix">Bắt buộc báo cáo xuất từ trang affiliate, liên kết riêng từng người bán.</span></span></li>
+      <li><span class="score">16</span><span class="code">D1</span><span><b>Sàn cạnh tranh trực tiếp</b> bằng chương trình gửi mẫu, ghép affiliate miễn phí.<span class="fix">Định vị bổ sung cho sàn: chuẩn bị hồ sơ và người bán để vào chương trình sàn tốt hơn.</span></span></li>
+      <li><span class="score">16</span><span class="code">E2</span><span><b>Phụ thuộc người sáng lập</b> ở công cụ, quan hệ và thẩm định.<span class="fix">Viết quy trình thành tài liệu, giao chủ biên thẩm định cho người khác sau Chuyến 01.</span></span></li>
+      <li><span class="score">16</span><span class="code">E3</span><span><b>Đội lõi tình nguyện kiệt sức</b> sau 2 Chuyến.<span class="fix">Quyền lợi bằng văn bản, giới hạn giờ, danh sách người dự bị.</span></span></li>
+      <li><span class="score">15</span><span class="code">A1</span><span><b>“Nhãn thẩm định” bị coi là chứng nhận</b>, bến liên đới khi sản phẩm lỗi.<span class="fix">Không gắn nhãn; chỉ công bố “hồ sơ đã nộp đủ theo danh mục”; xin ý kiến luật sư.</span></span></li>
+      <li><span class="score">15</span><span class="code">B2</span><span><b>Tiền của chủ hàng chen vào điểm chấm</b> khi có tài trợ, phí thương vụ.<span class="fix">Quy chế tách tiền khỏi điểm, công bố nhà tài trợ cạnh kết quả.</span></span></li>
+      <li><span class="score">15</span><span class="code">C2</span><span><b>Người mới khó có đơn trong 8 tuần</b> (ngưỡng 1.000 người theo dõi để gắn giỏ shop khác).<span class="fix">Mục tiêu riêng cho Luồng 2: kênh đủ điều kiện, không ép có đơn.</span></span></li>
+      <li><span class="score">15</span><span class="code">E1</span><span><b>Một sự cố lan truyền</b>, cả bến bị gán mác “lại một nhóm affiliate”.<span class="fix">Quy trình khủng hoảng 24 giờ, chọn sản phẩm an toàn cho Chuyến 01.</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Năm tiền đề cần kiểm trước</h2>
+  <div class="prem">
+    <div><q>Chủ hàng tốt đang thiếu người bán</q><p>Chủ hàng đủ giấy tờ thường đã có sàn. Nhóm thiếu người bán lại hay thiếu đúng hồ sơ bến đòi. Kiểm: phỏng vấn 15 chủ hàng mục tiêu.</p></div>
+    <div><q>Người bán chịu đi 8 tuần không thu phí</q><p>Kênh mạnh đã có agency; người mới cần thu nhập sớm. Kiểm: khảo sát 50 người đăng ký.</p></div>
+    <div><q>Luật mới tạo nhu cầu hàng có hồ sơ</q><p>Đúng về luật, nhưng thực thi với người bán nhỏ có thể chậm. Kiểm: theo dõi các vụ xử phạt đầu tiên.</p></div>
+    <div><q>Nhà tài trợ vào sau 2 Chuyến</q><p>Chưa có thư ý định nào. Kiểm: xin 2–3 thư ý định không ràng buộc trước khi mở.</p></div>
+    <div><q>Đội lõi tình nguyện giữ được</q><p>15–30 giờ/tuần không thù lao gần bằng nửa công việc. Kiểm: thỏa thuận quyền lợi trước khi làm thử.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Nếu tháng 9/2027 bến dừng, nhiều khả năng vì</h2>
+  <ol class="pm">
+    <li>Mở vội cho kịp Tết với 6 sản phẩm; một sản phẩm thực phẩm bị phản ánh, người bán đã nói “Bến Khởi kiểm định”.</li>
+    <li>70% người mới không có đơn sau 8 tuần, truyền miệng “học xong không ra tiền”.</li>
+    <li>Không nhà tài trợ nào ký vì số liệu là người bán tự báo.</li>
+    <li>Người điều hành tình nguyện nghỉ sau Chuyến 02, người sáng lập ôm hết.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Bốn cổng quyết định</h2>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Cổng</th><th>Điều kiện đạt</th><th>Không đạt</th></tr></thead>
+      <tbody>
+        <tr><td>Cổng 0<span class="when">15/12/2026</span></td><td>Pháp nhân hoặc đơn vị bảo trợ, ý kiến luật sư · ngân sách 2 Chuyến có nguồn · ≥ 5 sản phẩm qua vòng điều kiện bắt buộc · đủ 3 vai lõi</td><td class="no">Dời Chuyến 01 sang sau Tết</td></tr>
+        <tr><td>Cổng 1<span class="when">Trước ngày mở</span></td><td>≥ 10 sản phẩm vào rổ · quy chế tách tiền khỏi điểm chấm · quy trình đối chiếu số liệu</td><td class="no">Thí điểm 10–15 người, không công bố rộng</td></tr>
+        <tr><td>Cổng 2<span class="when">Tuần 4 Chuyến 01</span></td><td>≥ 60% nộp bài đều · ≥ 50% người đã có kênh đăng video gắn giỏ · chủ hàng giao ≥ 80% mẫu đã hứa</td><td class="no">Sửa lộ trình ngay trong Chuyến</td></tr>
+        <tr><td>Cổng 3<span class="when">Sau Chuyến 02</span></td><td>≥ 20% có đơn đầu trong 45 ngày (đã đối chiếu) · ≥ 1 thư tài trợ · giữ ≥ 75% đội lõi</td><td class="no">Dừng tuyển, sửa mô hình</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Ba câu cần trả lời ngay</h2>
+  <ol class="qs">
+    <li>Bến là pháp nhân gì, ai ký hợp đồng, ai chịu trách nhiệm cuối cùng?</li>
+    <li>Tiền 2 Chuyến đầu từ đâu, bao nhiêu, trần chi là bao nhiêu?</li>
+    <li>Có chấp nhận dời Chuyến 01 sang sau Tết nếu chưa qua Cổng 0?</li>
+  </ol>
+</section>
+
+<footer>Phản biện độc lập, không phải tài liệu của Bến Khởi. Căn cứ pháp lý đã đối chiếu qua nguồn tóm tắt: Luật Thương mại điện tử 122/2025/QH15, Nghị định 248/2026/NĐ-CP, Luật Quảng cáo sửa đổi 75/2025/QH15, Nghị quyết 198/2025/QH15. Các số liệu địa phương trong tài liệu gốc chưa được kiểm.</footer>
+</div>
