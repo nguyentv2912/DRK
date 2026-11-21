@@ -20,7 +20,7 @@ Cộng đồng "thương mại minh bạch thời AI" tại Đà Nẵng, chợ h
 2. **Phụ thuộc lớn vào người sáng lập và đội tình nguyện.** Đội lõi chưa có; 4 vị trí 15–30 giờ/tuần nhưng quyền lợi "trao đổi riêng" → khó giữ người qua 2–3 Chuyến không thu nhập.
 3. **Bộ máy nặng so với quy mô:** Hội đồng sáng lập, Ban kiểm tra, Đài hải đăng, 3 ban, điều phối… cho 30–50 người → tốn sức điều phối, dễ chậm.
 4. **Nút thắt rổ hàng:** cần 10–20 SP qua 5 lớp + chấm điểm trước 01/2027 (còn khoảng 6 tuần). Hộ KD / OCOP thường thiếu chính giấy tờ mà bến đòi (tài liệu chứng minh công dụng, bảo hộ nhãn hiệu, hóa đơn).
-5. **Kỳ vọng 8 tuần chưa khớp thực tế người mới:** TikTok Shop cần tài khoản ≥1.000 người theo dõi mới gắn giỏ, Shopee Video cần 5 video gốc / 30 ngày → người ở Luồng 2 (kênh chưa đủ) gần như không thể "Cá đầu mùa" trong 8 tuần.
+5. **Kỳ vọng 8 tuần chưa khớp thực tế người mới:** gắn giỏ hàng của shop khác trên TikTok cần tài khoản ≥1.000 người theo dõi (chủ hàng tự gắn giỏ shop mình thì không cần); Shopee Video cần 5 video gốc / 30 ngày → người bán Luồng 2 khó "Cá đầu mùa" trong 8 tuần. (Trang sửa)
 6. **"Nhãn Bến Khởi bảo chứng" khi chưa rõ pháp nhân:** tài liệu chưa nói bến là CLB, hội, doanh nghiệp xã hội hay công ty; ai chịu trách nhiệm khi sản phẩm có nhãn bị khiếu nại.
 7. **Ngôn ngữ ẩn dụ dày** (bến, neo, hoa tiêu, đài hải đăng, thủy thủ, cá đầu mùa…): hay về thương hiệu nhưng khó hiểu với chủ hộ, HTX lớn tuổi.
 8. **Một số điểm dễ bị hiểu sai:** "bộ cơ bản miễn phí, triển khai chuyên sâu do đối tác với giá ưu đãi" có thể bị xem là bán kèm; chỉ số "đơn trên mẫu thử" dễ méo nếu chủ hàng cấp ít mẫu.
@@ -34,7 +34,8 @@ Cộng đồng "thương mại minh bạch thời AI" tại Đà Nẵng, chợ h
 6. Nhân bản ra thành phố khác khi có bộ quy chuẩn và số liệu 2 Chuyến.
 
 ## T – Thách thức
-1. **Cạnh tranh** với MCN/agency affiliate, nhóm dạy affiliate, chương trình đào tạo miễn phí của chính các sàn, và hội doanh nhân sẵn có.
+1. **Cạnh tranh trực tiếp nhất là chính các sàn:** chương trình gửi mẫu miễn phí và ghép affiliate của sàn, chủ hàng vào được mà không phải nộp 5 lớp hồ sơ. Sau đó mới tới MCN/agency, nhóm dạy affiliate, hội doanh nhân.
+7. **Bến có thể bị coi là bên trung gian** theo Luật TMĐT 122/2025 và NĐ 248/2026 → kéo theo nghĩa vụ xác thực affiliate, gỡ liên kết, cung cấp thông tin. (Trang bổ sung)
 2. **Rủi ro uy tín lan rộng:** chỉ một sản phẩm có nhãn bị phản ánh là cả bến mất niềm tin; ngành affiliate vốn có tiếng xấu nên bị nghi ngờ sẵn.
 3. **Luật và chính sách sàn đổi nhanh** (ngưỡng đổi theo quý); văn bản hướng dẫn mới có thể khác cách hiểu hiện tại.
 4. **Cạn sức tình nguyện:** mô hình chạy bằng thời gian, chuyên môn góp không công dễ đuối sau 2–3 Chuyến nếu tài trợ chậm.
@@ -48,7 +49,14 @@ Cộng đồng "thương mại minh bạch thời AI" tại Đà Nẵng, chợ h
 4. **Tách mục tiêu theo luồng:** Luồng 1 (kênh sẵn) đo đơn đầu trong 45 ngày; Luồng 2 đo kênh đủ điều kiện gắn giỏ, không ép có đơn trong 8 tuần.
 5. **Khởi động rổ hàng ngay:** chọn 3–5 chủ hàng đã có giấy tờ đầy đủ (OCOP 4 sao, DN đã bán trên sàn) cho Chuyến 01, tránh ngành hàng nhạy cảm; dời ngày mở nếu chưa đủ 10 SP qua thẩm định.
 6. **Bản "nói thường" cho chủ hàng:** 1 trang, không ẩn dụ, trả lời 3 câu: tôi nộp gì, mất bao lâu, được gì.
-7. **Kiểm lại số liệu và căn cứ trước khi in đại trà:** các con số 6.000+ DN, 107.000+ hộ, 477 OCOP, 83% dùng AI; số hiệu Nghị định về xác thực người tiếp thị liên kết.
+7. **Kiểm lại 4 số liệu địa phương trước khi in đại trà:** 6.000+ DN, 107.000+ hộ, 477 OCOP, 83% dùng AI (căn cứ pháp lý Trang đã kiểm: Luật 122/2025, NĐ 248/2026, Luật QC 75/2025, NQ 198/2025 đều đúng).
+8. **Đo chỉ số sớm ở tuần 3–4 mỗi Chuyến:** tỷ lệ người đã đăng video có gắn giỏ, số mẫu thử chủ hàng thực giao (mốc dừng 20% đến quá muộn).
+9. **Tách tiền khỏi điểm chấm:** tài trợ / deal booking từ chủ hàng không được gắn với điểm hay suất vào rổ; công bố danh sách nhà tài trợ cạnh kết quả chấm.
+10. **Không gắn "nhãn" lên sản phẩm:** chỉ công bố "hồ sơ đã nộp đủ theo danh mục, ngày…" để tránh bị coi là chứng nhận / quảng cáo không chứng minh được; xin ý kiến luật sư trước Chuyến 01.
+11. **Số liệu đơn phải đối chiếu được:** yêu cầu ảnh chụp / báo cáo xuất từ trang affiliate của sàn, hoặc liên kết riêng của từng người bán.
+
+## Kết luận chung (Minh + Trang)
+**Nên làm có điều kiện.** Chỉ mở Chuyến 01 khi đủ 4 điều: (1) có pháp nhân + ý kiến luật sư về vai trò trung gian và cách công bố thẩm định; (2) ngân sách 2 Chuyến với nguồn chi đã cam kết; (3) ≥10 SP qua thẩm định; (4) quy tắc tách tiền chủ hàng khỏi điểm chấm. Thiếu điều nào thì dời ngày mở, không chạy mùa Tết cho kịp.
 
 ## Nếu anh cân nhắc tham gia (Minh lưu ý)
 - Bến có luật "khai báo xung đột lợi ích" và loại "tài chính hứa lợi nhuận" → anh làm ngân hàng / sắp làm với sàn, và có kênh về crypto: nên khai báo rõ, tách vai, không đưa nội dung crypto vào bến.
