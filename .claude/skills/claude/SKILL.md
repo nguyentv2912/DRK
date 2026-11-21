@@ -11,7 +11,7 @@ Trả lời người dùng bằng tiếng Việt; chữ trên video bằng tiế
 `/claude [date=YYYY-MM-DD] [start=USD] [scan|candles|render]` — `date` là ngày bắt đầu đêm (giờ VN). `start` vốn giấy, mặc định $150.
 
 ## 1. Engine
-Thư mục `mrpump/` trong repo (fetch.py, sim.py, render.py, audio.py, run.py, README.md). Chạy `cd mrpump && python3 run.py [--date D] [--start N]` ở chế độ nền (~3–5 phút). Output `mrpump/output/MR_PUMP_<date>.mp4`. Dữ liệu từng ngày lưu ở `mrpump/data/<date>/` và được commit.
+Repo `nguyentv2912/mrpump` (fetch.py, sim.py, render.py, audio.py, run.py, README.md). Chạy `python3 run.py [--date D] [--start N]` ở chế độ nền (~3–5 phút). Output `output/MR_PUMP_<date>.mp4`. Dữ liệu từng ngày lưu ở `data/<date>/` và được commit.
 Cần mạng tới api.geckoterminal.com; bị chặn thì nói rõ, không bịa số thay.
 
 ## 2. Dữ liệu và bộ lọc (thật)
@@ -38,4 +38,4 @@ Chuyển động: số lăn kiểu đồng hồ cơ, chip token bay chip → mas
 EDM 128 BPM F thứ tự tổng hợp: riser intro → drop ~1,9 s (kick 4/4 sidechain, clap, hat, bass nảy, supersaw stab, arp), breakdown ngắn trước 26 s. SFX: hook impact + chuông, tua ngược, tick nhẹ mỗi nến, stamp (lọc), ping (PASS), zip + whoosh (ENTER), tick số lăn, cha-ching (EXIT lời), thud (lỗ), impact + chuỗi coin khi chốt. Loudnorm −14 LUFS, TP −1,5.
 
 ## 7. Quy trình mỗi lần /claude
-1) `python3 run.py` nền (hoặc `--skip-fetch` nếu đã có data). 2) Trích khung ~2, 12, 27 s kiểm tra chồng chữ, số header = RESULT = EQUITY. 3) SendUserFile mp4. 4) Commit `mrpump/data/<date>/` nếu người dùng muốn lưu. 5) Tóm tắt: ngày, số token quét/qua lọc, số lệnh W/L, vốn → kết quả, loudness, giới hạn (paper trade, thiên lệch nếu scan muộn, nhạc/mascot dựng bằng code, chưa nghe bằng tai).
+1) `python3 run.py` nền (hoặc `--skip-fetch` nếu đã có data). 2) Trích khung ~2, 12, 27 s kiểm tra chồng chữ, số header = RESULT = EQUITY. 3) SendUserFile mp4. 4) Commit `data/<date>/` nếu người dùng muốn lưu. 5) Tóm tắt: ngày, số token quét/qua lọc, số lệnh W/L, vốn → kết quả, loudness, giới hạn (paper trade, thiên lệch nếu scan muộn, nhạc/mascot dựng bằng code, chưa nghe bằng tai).
