@@ -6,8 +6,8 @@ All times are Vietnam time (Asia/Ho_Chi_Minh, UTC+07:00).
 ## Schedule
 - Scan + build: 07:00, 15:00, 23:00 (every 8 h), one video per run → 3 videos/day.
 - Posting slots: **12:00, 19:00, 21:00**. Each video takes the **next free slot** after it is
-  built (check both channels with `list_posts` first; a slot is taken if a post with the
-  `GROK` caption is already scheduled there on that channel). Steady state: 23:00 build →
+  built (check both channels with `list_posts` first; a slot is taken if ANY post — GROK,
+  OCTO or Mr Pump share these channels — is scheduled on that channel within 60 minutes of it). Steady state: 23:00 build →
   12:00 next day, 07:00 build → 19:00, 15:00 build → 21:00.
 - Only post a video whose Visual Critic verdict is **ACCEPTED**. If the critic rejects after
   fixes, post nothing and report why.
