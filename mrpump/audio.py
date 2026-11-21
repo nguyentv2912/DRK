@@ -6,7 +6,7 @@ import os, sys, json, wave, datetime as dt
 import numpy as np
 from scipy.signal import butter, sosfilt
 from fetch import default_date
-from render import Story, load, TEND, T1, HERE
+from render import make_story, TEND, T1, T0, HOOK, HERE
 
 SR = 44100
 BPM = 128
@@ -145,6 +145,18 @@ def sfx_loss():                   # thud đi xuống
     return 0.7 * np.tanh(2 * np.sin(2 * np.pi * np.cumsum(f) / SR)) * np.exp(-t * 9)
 
 
+def sfx_whoosh():
+    t = t_(0.35)
+    n = rng.standard_normal(len(t))
+    return 0.5 * bp(n, 500, 4000) * np.sin(np.pi * t / 0.35) ** 2
+
+
+def sfx_rewind():                 # băng tua ngược: sweep đi xuống + rè
+    t = t_(0.3)
+    f = 2400 * np.exp(-t * 9) + 150
+    return 0.35 * np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)) * np.exp(-t * 3) + 0.2 * hp(rng.standard_normal(len(t)), 3000) * np.exp(-t * 6)
+
+
 def sfx_cash():                   # kết: chuỗi coin
     out = np.zeros(int(1.4 * SR))
     for i in range(9):
@@ -200,20 +212,27 @@ def music(dur):
 
 
 def build(date):
-    s = Story(load(date))
+    s = make_story(date)
     dur = TEND
     mix, drop = music(dur)
     sfx = np.zeros_like(mix)
+    add(sfx, impact() * 0.9, 0.02)                    # hook: thẻ kết quả bật lên
+    add(sfx, sfx_win(), 0.12, 0.9)
+    add(sfx, sfx_rewind(), 0.70, 0.8)                  # tua ngược về 23:00
     add(sfx, impact() * 0.6, drop)
     for vt, k, p in s.items:
         if k == "check":
             add(sfx, sfx_pass() if p["ok"] else sfx_block() * 0.7, vt, 0.8)
+        elif k == "pulse":
+            add(sfx, sfx_tick(), vt, 0.25)
         elif k == "enter":
             add(sfx, sfx_enter(), vt, 0.8)
+            add(sfx, sfx_whoosh(), vt, 0.5)
             add(sfx, sfx_tick(), vt + 0.12, 0.8)
         elif k == "exit":
             add(sfx, sfx_win() if p["pnl"] > 0 else sfx_loss(), vt, 0.9 if p["pnl"] > 0 else 0.8)
-            add(sfx, sfx_tick(), vt + 0.2, 0.6)
+            for j in range(6):                         # số lăn
+                add(sfx, sfx_tick(), vt + 0.04 + j * 0.06, 0.35)
     add(sfx, impact(), T1, 1.0)
     add(sfx, sfx_cash() if s.n["end"] >= s.n["start"] else sfx_loss(), T1 + 0.05, 0.8)
     x = mix * 0.55 + sfx * 0.75

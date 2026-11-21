@@ -31,10 +31,11 @@ Kết quả lời hay lỗ đều giữ nguyên. KHÔNG chỉnh tham số để 
 
 ## 5. Hình (theo video mẫu)
 1080×1920: dải trên "MR PUMP" + "1 night · N trending tokens · real 5m prices" + ngày; terminal 3:4 1080×1440 ở y=240; dải dưới ghi chú. Terminal: header (mascot, tên, v1.0-night, đồng hồ, chip trạng thái, balance/trades/wins/losses), cột AGENTS (SCANNER, RUG CHECK, SIZER, EXECUTOR, LOGGER, EQUITY, YOU), LIVE FLOW (chip token, tem FILTERED, 3 nút phát sáng, 4 thẻ), TRADE entry vs exit, `tail -f night.log`, RESULT start vs now, LOG 6 dòng có lý do.
-Thời gian: 0,3–3,4 s quét từng token trending (PASS/FILTERED); 3,6–26 s đêm 23:00→07:00 theo đúng giờ thật của lệnh; 26–28 s chốt kết quả (YOU "reading", nút giữa sáng vàng, "+x% in one night").
+Thời gian (29 s, v2): 0–0,95 s hook = thẻ kết quả thật của đêm (flash-forward) + "REWIND TO 23:00"; 1,0–2,4 s quét token trending (PASS/FILTERED); 2,6–26 s đêm 23:00→07:00 theo giờ thật, mỗi nến 5 phút có một "nhịp" token biến động mạnh nhất (dữ liệu thật); 26–29 s thẻ NIGHT REPORT (số dư, %, số lệnh, win rate, 3 lệnh tốt nhất, lệnh tệ nhất).
+Chuyển động: số lăn kiểu đồng hồ cơ, chip token bay chip → mascot → EXECUTOR khi vào lệnh, số lãi/lỗ bay lên từ thẻ EQUITY, mascot cười + tia sáng khi lời, mếu + giọt mồ hôi + rung + viền đỏ khi lỗ, biểu đồ nến 5 phút thật trong thẻ TRADE, đường số dư trong RESULT. Phụ đề hook đổi theo đoạn ở dải trên (40 px). Chữ tối thiểu 14–16 px.
 
 ## 6. Âm thanh
-EDM 128 BPM F thứ tự tổng hợp: riser intro → drop ~1,9 s (kick 4/4 sidechain, clap, hat, bass nảy, supersaw stab, arp), breakdown ngắn trước 26 s. SFX: stamp (lọc), ping (PASS), zip (ENTER), cha-ching (EXIT lời), thud (lỗ), impact + chuỗi coin khi chốt. Loudnorm −14 LUFS, TP −1,5.
+EDM 128 BPM F thứ tự tổng hợp: riser intro → drop ~1,9 s (kick 4/4 sidechain, clap, hat, bass nảy, supersaw stab, arp), breakdown ngắn trước 26 s. SFX: hook impact + chuông, tua ngược, tick nhẹ mỗi nến, stamp (lọc), ping (PASS), zip + whoosh (ENTER), tick số lăn, cha-ching (EXIT lời), thud (lỗ), impact + chuỗi coin khi chốt. Loudnorm −14 LUFS, TP −1,5.
 
 ## 7. Quy trình mỗi lần /claude
 1) `python3 run.py` nền (hoặc `--skip-fetch` nếu đã có data). 2) Trích khung ~2, 12, 27 s kiểm tra chồng chữ, số header = RESULT = EQUITY. 3) SendUserFile mp4. 4) Commit `mrpump/data/<date>/` nếu người dùng muốn lưu. 5) Tóm tắt: ngày, số token quét/qua lọc, số lệnh W/L, vốn → kết quả, loudness, giới hạn (paper trade, thiên lệch nếu scan muộn, nhạc/mascot dựng bằng code, chưa nghe bằng tai).
