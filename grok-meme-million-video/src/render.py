@@ -1369,7 +1369,9 @@ def _burst(t, oy):
         x = 400 + vx * k
         y = 400 - oy + vy * k + .5 * 1700 * k * k
         a = 1 - seg(k, 1.4, 1.9)
-        out.append((z, x, y, 26 * z, t * spin + j, a))
+        a *= clamp((y - 290) / 120)   # fade out before the banner zone (no 1-frame flashes there)
+        if a > .01:
+            out.append((z, x, y, 26 * z, t * spin + j, a))
     return out
 
 
@@ -1446,10 +1448,11 @@ def cam_at(t, marks):
         kk = ease(seg(t, tv - .2, tv + .2)) * (1 - ease(seg(t, tv + .8, tv + 1.3)))
         if kk > 0:
             cam["tz"] += 70 * kk
-            mp = marks.get(round(tv, 3))
-            if mp:
-                cam["tx"] += (mp[0] - CX) * .12 * kk
-                cam["ty"] += (mp[1] - CY) * .10 * kk
+            # deterministic push target (newest-candle area of the chart). Using the previous
+            # frame's marker position made parallel workers disagree -> 1-frame camera jumps.
+            mx_, my_ = W * .72, CARD_Y - S_LIVE + CH_TOP + 300
+            cam["tx"] += (mx_ - CX) * .12 * kk
+            cam["ty"] += (my_ - CY) * .10 * kk
     tr = seg(t, 6.5, 6.8) * (1 - seg(t, 8.7, 9.0))                  # half-bar truck during execution
     cam["tx"] += 14 * tr * math.sin(2 * math.pi * (t - 6.5) / (4 * BEAT))
     cam["tx"] += 4 * math.sin(t * 1.3); cam["ty"] += 5 * math.cos(t * 1.1)
