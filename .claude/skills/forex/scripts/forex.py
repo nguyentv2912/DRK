@@ -672,23 +672,35 @@ def footer(dr, txt):
 def overlay_label(img, mode, lang):
     dr = ImageDraw.Draw(img)
     txt = LABELS[mode][lang]
-    if mode in ("sim", "demo"):
-        f = F(34, "Bold")
+    if mode in ("sim", "demo"):          # nhãn nhỏ gọn nhưng luôn đọc được; real: không phủ chữ
+        f = F(24, "Bold")
         tw = dr.textlength(txt, font=f)
         x = (W - tw) / 2
-        dr.rounded_rectangle((x - 24, 34, x + tw + 24, 92), 14, fill=(0, 0, 0))
-        dr.text((x, 43), txt, font=f, fill=(255, 210, 60))
-        footer(dr, LABELS["real"][lang])
-    else:
-        footer(dr, txt)
+        dr.rounded_rectangle((x - 16, 40, x + tw + 16, 80), 10, fill=(0, 0, 0))
+        dr.text((x, 47), txt, font=f, fill=(255, 210, 60))
 
 
 # ---------------------------------------------------------------- render
 G = {}
 
 
-def init_worker(data, tl, lang):
-    G["d"] = data; G["tl"] = tl; G["lang"] = lang
+def iphone_rim(size, ox, oy, pw, ph):
+    """Khung titan quanh máy + nút bên hông + bóng đổ (thay cho bàn tay)."""
+    rim = Image.new("RGBA", size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(rim)
+    for k, col in enumerate([(70, 72, 78), (150, 152, 158), (105, 107, 113)]):
+        e = 7 - k * 2
+        d.rounded_rectangle((ox - e, oy - e, ox + pw + e, oy + ph + e), 116 + e, fill=col + (255,))
+    for y0, y1 in ((0.17, 0.21), (0.25, 0.32), (0.34, 0.41)):       # action, volume +/-
+        d.rounded_rectangle((ox - 13, oy + ph * y0, ox - 4, oy + ph * y1), 4, fill=(120, 122, 128, 255))
+    d.rounded_rectangle((ox + pw + 4, oy + ph * 0.27, ox + pw + 13, oy + ph * 0.38), 4, fill=(120, 122, 128, 255))
+    sh = Image.new("RGBA", size, (0, 0, 0, 0))
+    ImageDraw.Draw(sh).rounded_rectangle((ox + 30, oy + 50, ox + pw + 40, oy + ph + 60), 120, fill=(0, 0, 0, 150))
+    return rim, sh.filter(ImageFilter.GaussianBlur(30))
+
+
+def init_worker(data, tl, lang, use_hand=False):
+    G["d"] = data; G["tl"] = tl; G["lang"] = lang; G["use_hand"] = use_hand
     G["dv"] = derive(data)
     G["bg"] = make_background(data.get("seed", 1))
     G["pmask"], G["smask"] = make_phone_mask()
@@ -698,6 +710,8 @@ def init_worker(data, tl, lang):
     G["grain"] = [np.concatenate([rnd.normal(0, 6, (H // 2, W // 2, 1)), rnd.normal(0, 2.5, (H // 2, W // 2, 3))], 2)
                   .astype(np.float32) for _ in range(6)]
     G["thumb"], G["thumb_lift"], G["thumb_shadow"] = thumb_sprite()
+    _b, _f, _ox, _oy = G["hand"]
+    G["rim"], G["pshadow"] = iphone_rim(_b.size, _ox, _oy, SW + 2 * BEZ, SH + 2 * BEZ)
     G["glass"] = glass_overlay(data.get("seed", 1))
     sp = np.full((SH, SW, 3), 0.94, np.float32)
     for c in range(3):
@@ -711,6 +725,21 @@ def scene_at(t, tl):
         if a <= t < b:
             return a, s
     return tl["scenes"][-1][0], tl["scenes"][-1][2]
+
+
+def draw_thumb(canvas_l, t, tl, ox, oy):
+    tx, ty, lift = thumb_state(t, tl["taps"])
+    spr, (kx, ky) = G["thumb"]
+    sh = G["thumb_shadow"]
+    lx, ly = int(ox + BEZ + tx), int(oy + BEZ + ty)
+    so = int(8 + 22 * lift)
+    tmp = Image.new("RGBA", canvas_l.size, (0, 0, 0, 0))
+    tmp.paste(sh, (lx - kx + so, ly - ky + so))
+    canvas_l.alpha_composite(tmp)
+    tmp = Image.new("RGBA", canvas_l.size, (0, 0, 0, 0))
+    tsp = spr if lift < 0.5 else G["thumb_lift"]
+    tmp.paste(tsp, (lx - kx, ly - ky))
+    canvas_l.alpha_composite(tmp)
 
 
 def render_frame(fi):
@@ -733,6 +762,15 @@ def render_frame(fi):
             col = TAP_COLORS[k % len(TAP_COLORS)]
             sd.ellipse((x - r, y - r, x + r, y + r), fill=col + (int(170 * (1 - a)),))
             sd.ellipse((x - 14, y - 14, x + 14, y + 14), fill=col + (int(230 * (1 - a)),))
+    for tt, kind, arg, x, y in tl["taps"]:
+        if kind == "close" and tt + 0.1 <= t < tt + 1.1 and sc == "trade":
+            u = (t - tt - 0.1) / 1.0
+            pr = d["positions"][arg]["profit"]
+            txt = ("+$" if pr >= 0 else "−$") + fmt(abs(pr))
+            al = int(255 * min(1, 4 * (1 - u)))
+            fnt = F(40, "Bold", True)
+            sd.text((SW - 60 - sd.textlength(txt, font=fnt), y - 40 - 90 * u), txt, font=fnt,
+                    fill=(BLUE if pr >= 0 else RED) + (al,))
     a_scr = np.asarray(scr, np.float32) * G["subpix"]
     scr = Image.fromarray(a_scr.clip(0, 255).astype(np.uint8)).convert("RGBA")
     scr.alpha_composite(G["glass"])
@@ -744,22 +782,15 @@ def render_frame(fi):
     phone.paste(scr, (BEZ, BEZ), G["smask"])
     back, front, ox, oy = G["hand"]
     canvas_l = Image.new("RGBA", back.size, (0, 0, 0, 0))
-    canvas_l.alpha_composite(back)
+    if G["use_hand"]:
+        canvas_l.alpha_composite(back)
+    else:
+        canvas_l.alpha_composite(G["pshadow"])
+    canvas_l.alpha_composite(G["rim"])
     canvas_l.alpha_composite(phone, (ox, oy))
-    canvas_l.alpha_composite(front)
-    # ngón cái tay phải: bóng đổ + ngón
-    tx, ty, lift = thumb_state(t, tl["taps"])
-    spr, (kx, ky) = G["thumb"]
-    sh = G["thumb_shadow"]
-    lx, ly = int(ox + BEZ + tx), int(oy + BEZ + ty)
-    so = int(8 + 22 * lift)
-    tmp = Image.new("RGBA", canvas_l.size, (0, 0, 0, 0))
-    tmp.paste(sh, (lx - kx + so, ly - ky + so))
-    canvas_l.alpha_composite(tmp)
-    tmp = Image.new("RGBA", canvas_l.size, (0, 0, 0, 0))
-    tsp = spr if lift < 0.5 else G["thumb_lift"]
-    tmp.paste(tsp, (lx - kx, ly - ky))
-    canvas_l.alpha_composite(tmp)
+    if G["use_hand"]:
+        canvas_l.alpha_composite(front)
+        draw_thumb(canvas_l, t, tl, ox, oy)
     scale, dx, dy, ang = cam_at(t, tl["shots"])
     s = scale * W / pw
     lay = canvas_l.resize((int(canvas_l.width * s), int(canvas_l.height * s)), Image.BILINEAR)
@@ -859,10 +890,10 @@ def synth_audio(tl, path, bpm=92.0, sr=44100):
         w.writeframes((st * 32767).astype(np.int16).tobytes())
 
 
-def render(data, out, dur, keys=None, keydir=None, audio=True, lang="en", workers=None):
+def render(data, out, dur, keys=None, keydir=None, audio=True, lang="en", workers=None, hand=False):
     tl = build_timeline(data, dur)
     if keys:
-        init_worker(data, tl, lang)
+        init_worker(data, tl, lang, hand)
         os.makedirs(keydir, exist_ok=True)
         for k in keys:
             b = render_frame(int(k * FPS))
@@ -875,7 +906,7 @@ def render(data, out, dur, keys=None, keydir=None, audio=True, lang="en", worker
     ff = subprocess.Popen(["ffmpeg", "-nostdin", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24",
                            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "veryfast",
                            "-crf", "19", "-pix_fmt", "yuv420p", silent], stdin=subprocess.PIPE)
-    with Pool(workers or os.cpu_count(), initializer=init_worker, initargs=(data, tl, lang)) as pool:
+    with Pool(workers or os.cpu_count(), initializer=init_worker, initargs=(data, tl, lang, hand)) as pool:
         for i, b in enumerate(pool.imap(render_frame, range(nf), chunksize=4)):
             ff.stdin.write(b)
             if i % 90 == 0:
@@ -904,6 +935,7 @@ def main():
     r.add_argument("--dur", type=float, default=24.0); r.add_argument("--keys", type=float, nargs="*")
     r.add_argument("--keydir", default="keys"); r.add_argument("--no-audio", action="store_true")
     r.add_argument("--lang", default="en", choices=["vi", "en"]); r.add_argument("--workers", type=int)
+    r.add_argument("--hand", action="store_true", help="vẽ tay cầm máy + ngón cái (mặc định tắt)")
     ar = ap.parse_args()
     if ar.cmd == "sim":
         d = make_sim(ar.seed, ar.n, ar.start)
@@ -916,7 +948,7 @@ def main():
         d = json.load(open(ar.data))
         for m in check(d):
             print(m)
-        render(d, ar.out, ar.dur, ar.keys, ar.keydir, not ar.no_audio, ar.lang, ar.workers)
+        render(d, ar.out, ar.dur, ar.keys, ar.keydir, not ar.no_audio, ar.lang, ar.workers, ar.hand)
 
 
 if __name__ == "__main__":

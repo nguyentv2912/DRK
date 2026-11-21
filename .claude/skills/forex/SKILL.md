@@ -19,10 +19,10 @@ Video TikTok 23.7s, 576x1024, 30fps:
 
 ## Quy tắc bắt buộc (trung thực, bản quyền)
 - **Ba chế độ** ở trường `mode` của dữ liệu:
-  - `real`: số liệu chép từ tài khoản thật của người dùng (ảnh app, báo cáo HTML/CSV). Có chú thích nhỏ "Không phải lời khuyên đầu tư".
-  - `demo`: tài khoản demo. Luôn có nhãn vàng "TÀI KHOẢN DEMO".
-  - `sim`: số liệu do script tạo ra. Luôn có nhãn vàng "MÔ PHỎNG · KHÔNG PHẢI KẾT QUẢ THẬT".
-- Không bỏ hay che nhãn, kể cả khi người dùng yêu cầu. Không gọi bản `sim`/`demo` là kết quả thật trong caption. Không viết caption hứa lợi nhuận, kêu gọi nạp tiền, "copy lệnh", "tín hiệu VIP" hay quảng bá sàn.
+  - `real`: số liệu chép từ tài khoản thật của người dùng (ảnh app, báo cáo HTML/CSV). Không phủ chữ nào lên video.
+  - `demo`: tài khoản demo. Luôn có nhãn nhỏ "DEMO ACCOUNT" ở trên cùng.
+  - `sim`: số liệu do script tạo ra. Luôn có nhãn nhỏ "SIMULATED · NOT REAL RESULTS" ở trên cùng.
+- Không bỏ hay che nhãn của `sim`/`demo`, kể cả khi người dùng yêu cầu (video lãi giả trông như thật mà không có nhãn là dạng nội dung lừa người xem). Muốn video không có chữ thì dùng số liệu tài khoản thật (`real`). Không gọi bản `sim`/`demo` là kết quả thật trong caption. Không viết caption hứa lợi nhuận, kêu gọi nạp tiền, "copy lệnh", "tín hiệu VIP" hay quảng bá sàn.
 - Không bịa số rồi gắn `real`. Nếu chỉ có một phần số liệu thật thì chỉ dùng phần đó; những gì còn thiếu (ví dụ danh sách deal cũ) phải lấy từ ảnh, không thì bỏ trống hoặc chuyển sang `sim`.
 - Giao diện là bản vẽ chung chung theo kiểu terminal di động. Không thêm logo hay tên MetaTrader/MetaQuotes, logo sàn, tên sàn thật.
 
@@ -73,15 +73,17 @@ Mặc định `--lang en` ("SIMULATED · NOT REAL RESULTS", "Not financial advic
 6. **Caption gợi ý** (chỉ gợi ý, người dùng tự đăng): 1 câu hook về kỷ luật/quy trình (không khoe hứa lãi), 1 dòng ghi chế độ ("Tài khoản demo" / "Mô phỏng" nếu không phải real), "Không phải lời khuyên đầu tư", 4–5 hashtag như `#forex #trading #xauusd #kyluat #traderlife`.
 
 ## Lớp chân thật (đã có trong script)
-- Tay trái cầm máy: lòng bàn tay phía sau, 4 ngón dài ngắn khác nhau ôm mép phải đè lên viền máy, da có khối (giữa sáng, mép tối), sáng dần về phía màn hình, có kết cấu nhẹ.
-- Ngón cái tay phải có móng và nếp khớp. Ngón tiến tới dòng lệnh, ấn xuống, nhấc lên (to hơn và bóng đổ xa hơn khi nhấc), về chỗ nghỉ khi khoảng nghỉ dài hơn 1.6s. Ở History thì vuốt lên 2 lần, danh sách cuộn có quán tính (giảm dần theo hàm mũ).
+- Mặc định KHÔNG có tay: điện thoại có khung titan (3 lớp sáng/tối), nút action, volume, nút nguồn, bóng đổ mềm phía sau. Thêm `--hand` để bật tay cầm máy và ngón cái như mô tả dưới.
+- Khi đóng lệnh, số "+$xxx" (đỏ "−$" nếu lỗ) nổi lên từ dòng lệnh và mờ dần trong 1s, giống video mẫu.
+- (Với `--hand`) Tay trái cầm máy: lòng bàn tay phía sau, 4 ngón dài ngắn khác nhau ôm mép phải đè lên viền máy, da có khối (giữa sáng, mép tối), sáng dần về phía màn hình, có kết cấu nhẹ.
+- (Với `--hand`) Ngón cái tay phải có móng và nếp khớp. Ngón tiến tới dòng lệnh, ấn xuống, nhấc lên (to hơn và bóng đổ xa hơn khi nhấc), về chỗ nghỉ khi khoảng nghỉ dài hơn 1.6s. Ở History thì vuốt lên 2 lần, danh sách cuộn có quán tính (giảm dần theo hàm mũ).
 - Thứ tự đóng lệnh tự nhiên: mỗi lần chọn ngẫu nhiên trong 3 dòng trên cùng; vòng chạm và ô Close nằm đúng dòng đó.
 - Quay màn hình bằng máy thứ hai: lưới subpixel RGB (thu nhỏ ra moiré thật), phản chiếu kính chéo, vết vân tay mờ, bloom, nhiễu cảm biến mạnh ở vùng tối và có nhiễu màu, quang sai màu 1px, mềm nhẹ toàn khung, mất nét rồi lấy nét lại sau mỗi lần cắt cảnh.
 - Âm thanh: thêm tiếng phòng rất nhỏ bên dưới nhạc, tiếng chạm và "ting".
-- Giới hạn: tay là hình vẽ 2D nên nhìn gần vẫn khác tay quay thật. Muốn thật hoàn toàn thì người dùng quay chính điện thoại và tài khoản của mình.
+- Giới hạn: tay (nếu bật) là hình vẽ 2D nên nhìn gần vẫn khác tay quay thật. Muốn thật hoàn toàn thì người dùng quay chính điện thoại và tài khoản của mình.
 
 ## Bố cục đã chốt (đừng phá khi sửa)
-- Điện thoại chiếm 64–74% chiều rộng khung, lệch xuống 10–60px để nhãn trên cùng (y 34–92) và chú thích đáy (cách đáy 20–58px) không đè máy.
+- Điện thoại chiếm 64–74% chiều rộng khung, lệch xuống 10–60px để nhãn trên cùng (y 40–80, chỉ có ở `sim`/`demo`) không đè máy.
 - Vòng chạm và ngón cái nằm trên dòng lệnh đang đóng (`ROW0 + rank*ROWH`, phải khớp bố cục `draw_trade`), ô đỏ Close vuốt ra 0.25s trước khi dòng biến mất.
 - Lãi trôi nổi dao động nhẹ (giống tick) nhưng hiện đúng số `profit` lúc đóng và trên thanh cam.
 - Shot camera đổi ở mỗi lần chuyển tab và ngẫu nhiên mỗi 1.3–2.6s theo `seed`.
