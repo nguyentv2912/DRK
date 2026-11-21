@@ -44,6 +44,7 @@
   "data": {
     "solana_rpc": "https://api.mainnet-beta.solana.com",
     "watchlist_size": 6,
+    "hero_pick": "top_gainer_24h",
     "min_liquidity_usd": 50000,
     "min_volume_h24_usd": 300000,
     "max_price_deviation": 0.08,

@@ -152,26 +152,35 @@ def main():
     if len(watch) < 3:
         sys.exit("ERROR: fewer than 3 verified tokens - refusing to render market data")
 
-    # Hero pool: real OHLCV. Fetch candidates, pick the one whose REAL candles
-    # contain the clearest tradable structure (same search the scenario uses).
+    # Hero pool: the verified trending token with the strongest real 24h move up
+    # (config data.hero_pick = "top_gainer_24h", default). Its OWN pool OHLCV is the chart
+    # and its own price is shown. A token qualifies only if its real candles contain a
+    # tradable rally (score >= 0); otherwise fall back to the clearest structure.
     sys.path.insert(0, HERE)
     from scenario import pick_hero_trades
+    mode = DCFG.get("hero_pick", "top_gainer_24h")
+    pool_set = sorted(watch, key=lambda c: -c["price_change_h24"]) if mode == "top_gainer_24h" else watch[:5]
     hero, best, sets = None, None, []
-    for c in watch[:5]:
+    for c in pool_set:
         o = get(f"https://api.geckoterminal.com/api/v2/networks/solana/pools/{c['pool']}/ohlcv/"
                 f"minute?aggregate={DCFG['ohlcv_aggregate_min']}&limit={DCFG['ohlcv_limit']}&currency=usd&token=base")
         rows = sorted(((o or {}).get("data") or {}).get("attributes", {}).get("ohlcv_list") or [], key=lambda r: r[0])
         rows = [r for r in rows if min(r[1:5]) > 0]
         fetched = now_iso()
         if len(rows) < DCFG["min_candles"]:
-            sets.append({"symbol": c["symbol"], "pool": c["pool"], "candles": len(rows), "used": False})
+            sets.append({"symbol": c["symbol"], "pool": c["pool"], "h24": c["price_change_h24"], "candles": len(rows), "used": False})
             continue
         cs = [{"t": int(r[0]), "o": r[1], "h": r[2], "l": r[3], "c": r[4], "v": r[5]} for r in rows]
         score = pick_hero_trades(cs, return_score=True)[0]
-        sets.append({"symbol": c["symbol"], "pool": c["pool"], "candles": len(rows), "score": round(score, 3)})
-        if best is None or score > best:
-            best, hero = score, {"symbol": c["symbol"], "mint": c["mint"], "pool": c["pool"], "candles": cs, "fetched_at": fetched}
+        sets.append({"symbol": c["symbol"], "pool": c["pool"], "h24": c["price_change_h24"], "candles": len(rows), "score": round(score, 3)})
+        cand = {"symbol": c["symbol"], "mint": c["mint"], "pool": c["pool"], "candles": cs, "fetched_at": fetched}
         time.sleep(0.6)
+        if mode == "top_gainer_24h" and score >= 0 and c["price_change_h24"] > 0:
+            hero, best = cand, score  # first (= highest 24h gain) tradable token wins
+            break
+        if best is None or score > best:
+            best, hero = score, cand
+    print("hero pick:", mode, "->", hero and hero["symbol"], sets)
     ohlcv = {"status": "unavailable", "candidates": sets}
     if hero:
         ohlcv = {"status": "verified", "source": "GeckoTerminal /networks/solana/pools/{pool}/ohlcv/minute",

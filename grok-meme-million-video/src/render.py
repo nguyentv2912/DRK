@@ -44,9 +44,9 @@ def eout(x):
     return 1 - (1 - x) ** 3
 
 
-def spring(x):  # overshoot settle
-    x = clamp(x)
-    return 1 - math.exp(-6 * x) * math.cos(9 * x) if x < 1 else 1.0
+def spring(x):  # well-damped settle: ~3 % overshoot (the old 12 % overshoot made a 1-frame
+    x = clamp(x)  # edge-energy spike in the banner zone that the critic flags as a ghost flash)
+    return 1 - math.exp(-8 * x) * math.cos(7 * x) if x < 1 else 1.0
 
 
 def lerp(a, b, k):

@@ -71,8 +71,10 @@ ffmpeg, Inter fonts at `/usr/share/fonts/opentype/inter/`. Network: `api.geckote
   volume ≥ $300k. Each pool is cross-checked on DEX Screener (same pool → same base **mint**,
   price within 8 %) and each mint is checked on Solana RPC to be an SPL/Token-2022 mint.
   Tokens are never matched by ticker alone; data from different pools is never mixed.
-- Chart = real 5 m OHLCV of one verified pool (the one whose real candles contain the
-  clearest tradable structure). The critic asserts the drawn candles are byte-identical to
+- Chart = real 5 m OHLCV of one verified pool: the **verified trending token with the
+  highest 24 h price gain** whose real candles contain a tradable rally (`config.data.hero_pick =
+  "top_gainer_24h"`); its own pool's candles and price are shown. Falls back to the clearest
+  structure only if no gainer qualifies (`hero_pick = "best_structure"` restores the old rule). The critic asserts the drawn candles are byte-identical to
   the fetched rows. If OHLCV is unavailable the chart is titled `CONCEPT / SOL` instead.
 - The snapshot time is printed on screen; nothing says "realtime". Header chip says
   **Paper**, the tab says **REPLAY**, balance carries **CONCEPT TRADES**, Activity carries
