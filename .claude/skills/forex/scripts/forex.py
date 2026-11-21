@@ -194,18 +194,26 @@ def build_timeline(d, dur):
               (15.8 * k, 18.0 * k, "chart"), (18.0 * k, 20.4 * k, "trade"), (20.4 * k, dur, "history")]
     trade_scenes = [s for s in scenes if s[2] == "trade"]
     closes = []  # (t_tap, idx)
-    idx = 0
+    taps = []    # (t, kind, arg, x, y) toạ độ trên màn hình
+    rnd0 = random.Random(d.get("seed", 1) * 7 + 3)
+    open_list = list(range(n))
     for (a, b, _), cnt in zip(trade_scenes, g):
         if cnt == 0:
             continue
         step = (b - a - 0.8) / cnt
         for j in range(cnt):
-            closes.append((a + 0.5 + j * step + random.Random(idx).uniform(-0.1, 0.1), idx))
-            idx += 1
-    # chạm tab
-    taps = [(t, "close", i) for t, i in closes]
-    for a, b, s in scenes[1:]:
-        taps.append((a - 0.12, "tab", s))
+            tt = a + 0.5 + j * step + rnd0.uniform(-0.12, 0.12)
+            rank = rnd0.randrange(min(3, len(open_list)))   # không phải lúc nào cũng dòng đầu
+            idx = open_list.pop(rank)
+            closes.append((tt, idx))
+            taps.append((tt, "close", idx, SW - 170 + rnd0.uniform(-30, 30), ROW0 + rank * ROWH + 32))
+    for a, b, sc in scenes[1:]:
+        i = {"chart": 1, "trade": 2, "history": 3}.get(sc, 2)
+        taps.append((a - 0.12, "tab", sc, SW * (i + 0.5) / 5, SH - 105))
+    hs = scenes[-1][0]
+    for tf in (hs + 0.9, hs + 2.3):          # vuốt cuộn danh sách deal
+        if tf < dur - 0.5:
+            taps.append((tf, "flick", None, SW * 0.55, SH * 0.72))
     # jump cut camera shots ~1.3–2.6s
     rnd = random.Random(d.get("seed", 1))
     shots, t = [], 0.0
@@ -220,6 +228,40 @@ def build_timeline(d, dur):
                               ang=rnd.uniform(-4, 4), ph=rnd.uniform(0, 100))))
     shots.sort(key=lambda s: s[0])
     return {"scenes": scenes, "closes": closes, "taps": sorted(taps, key=lambda x: x[0]), "shots": shots, "dur": dur}
+
+
+ROW0, ROWH = 442, 82   # y dòng lệnh đầu tiên và khoảng cách dòng trong tab Trade
+
+
+def thumb_state(t, taps):
+    """Vị trí đầu ngón cái (toạ độ màn hình) và độ nhấc (0 = đang chạm, 1 = lơ lửng)."""
+    REST = (SW + 140, SH + 260)
+    kf = [(-1.0, REST[0], REST[1], 1.0)]
+    prev_end = -1.0
+    for tt, kind, arg, x, y in taps:
+        hx, hy = x + 26, y + 46
+        if tt - prev_end > 1.6:
+            kf.append((prev_end + 0.5, *REST, 1.0))
+            kf.append((tt - 0.5, *REST, 1.0))
+        kf.append((tt - 0.16, hx, hy, 1.0))
+        kf.append((tt, x, y, 0.0))
+        if kind == "flick":
+            kf.append((tt + 0.22, x, y - 520, 0.0))
+            kf.append((tt + 0.42, x + 30, y - 470, 1.0))
+            prev_end = tt + 0.42
+        else:
+            kf.append((tt + 0.1, x, y, 0.0))
+            kf.append((tt + 0.3, hx, hy, 1.0))
+            prev_end = tt + 0.3
+    kf.append((prev_end + 0.5, *REST, 1.0))
+    kf.append((1e9, *REST, 1.0))
+    kf.sort(key=lambda k: k[0])
+    for a, b in zip(kf, kf[1:]):
+        if a[0] <= t < b[0]:
+            u = (t - a[0]) / max(1e-6, b[0] - a[0])
+            u = u * u * (3 - 2 * u)
+            return tuple(a[i] + (b[i] - a[i]) * u for i in (1, 2, 3))
+    return (*REST, 1.0)
 
 
 # ---------------------------------------------------------------- vẽ màn hình
@@ -437,7 +479,11 @@ def draw_history(t, d, st, dv, lang, t0):
     dr = ImageDraw.Draw(img)
     h = d.get("history", {})
     deals = h.get("deals", [])
-    scroll = max(0.0, t - t0 - 0.8) * 260
+    scroll = 0.0
+    for tt, kind, *_ in st["tl"]["taps"]:
+        if kind == "flick" and tt <= t:
+            scroll += 2600 * 0.32 * (1 - math.exp(-(t - tt) / 0.32))
+    scroll = min(scroll, max(0, len(deals) * 74 - (SH - 160 - 560) + 40))
     # danh sách (vẽ trước, header che lên)
     y = 560 - scroll
     for x in deals:
@@ -503,18 +549,94 @@ def make_phone_mask():
     return m, sm
 
 
+def _skin(mask, lx, ly, base=(150, 104, 84), seed=0):
+    """Tô da theo mask: sáng dần về phía màn hình (lx, ly), có kết cấu nhẹ."""
+    m = np.asarray(mask, np.float32) / 255
+    # khối tròn: giữa ngón sáng, mép tối (dùng mask làm mờ như bản đồ độ cao)
+    hb = np.asarray(mask.filter(ImageFilter.GaussianBlur(24)), np.float32) / 255
+    vol = 0.30 + 0.70 * np.clip(hb * 1.6, 0, 1) ** 0.9
+    hh, ww = m.shape
+    yy, xx = np.mgrid[0:hh, 0:ww].astype(np.float32)
+    dist = np.sqrt((xx - lx) ** 2 + (yy - ly) ** 2)
+    light = (0.22 + 0.78 * np.exp(-dist / 300.0)) * vol
+    tex = np.random.default_rng(seed).normal(1, 0.035, (hh // 4 + 1, ww // 4 + 1)).astype(np.float32)
+    tex = np.repeat(np.repeat(tex, 4, 0), 4, 1)[:hh, :ww]
+    rgb = np.stack([base[0] * light * tex, base[1] * light * tex, (base[2] * light + 14 * light) * tex], 2)
+    a = (m * 255).astype(np.uint8)
+    return Image.fromarray(np.dstack([rgb.clip(0, 255).astype(np.uint8), a]), "RGBA")
+
+
 def hand_layer(pw, ph):
-    """Bàn tay tối cầm máy: ngón tay sau mép trái + lòng bàn tay dưới góc trái."""
-    L = Image.new("RGBA", (pw + 400, ph + 400), (0, 0, 0, 0))
-    d = ImageDraw.Draw(L)
-    skin = (58, 40, 34, 255)
+    """Tay trái cầm máy: lòng bàn tay phía sau, 4 ngón ôm mép phải (đè lên viền máy)."""
+    size = (pw + 400, ph + 400)
     ox, oy = 200, 200
-    for k in range(4):
-        y = oy + ph * (0.30 + k * 0.11)
-        d.rounded_rectangle((ox - 150, y, ox + 40, y + ph * 0.085), 60, fill=skin)
-    d.ellipse((ox - 330, oy + ph * 0.72, ox + 260, oy + ph + 300), fill=(48, 33, 28, 255))
-    d.rounded_rectangle((ox + pw - 30, oy + ph * 0.55, ox + pw + 90, oy + ph * 0.63), 50, fill=skin)
-    return L.filter(ImageFilter.GaussianBlur(14)), ox, oy
+    mb = Image.new("L", size, 0)
+    d = ImageDraw.Draw(mb)
+    d.ellipse((ox - 260, oy + ph * 0.58, ox + pw * 0.75, oy + ph + 380), fill=255)      # lòng bàn tay
+    d.rounded_rectangle((ox - 120, oy + ph * 0.50, ox + 40, oy + ph * 0.80), 70, fill=255)  # gốc ngón cái tay trái
+    mb = mb.filter(ImageFilter.GaussianBlur(5))
+    back = _skin(mb, ox + pw * 0.3, oy + ph * 0.7, (96, 68, 56), 1)
+    mf = Image.new("L", size, 0)
+    d = ImageDraw.Draw(mf)
+    FING = [(0.44, 0.070, 150), (0.525, 0.074, 175), (0.615, 0.071, 160), (0.70, 0.060, 120)]
+    for fy, fh, fl in FING:                  # 4 ngón ôm mép phải, chồng lên viền máy ~22px
+        y = oy + ph * fy
+        d.rounded_rectangle((ox + pw - 22, y, ox + pw + fl + 60, y + ph * fh), 50, fill=255)
+    d.rounded_rectangle((ox - 30, oy + ph * 0.62, ox + 26, oy + ph * 0.76), 28, fill=255)  # đầu ngón cái trái ở mép trái
+    mf = mf.filter(ImageFilter.GaussianBlur(2.5))
+    front = _skin(mf, ox + pw - 20, oy + ph * 0.6, (150, 104, 86), 2)
+    ov = Image.new("RGBA", size, (0, 0, 0, 0))
+    fd = ImageDraw.Draw(ov)
+    for fy, fh, fl in FING:                  # đầu ngón bắt sáng màn hình
+        y = oy + ph * fy
+        fd.rounded_rectangle((ox + pw - 18, y + 16, ox + pw + 4, y + ph * fh - 16), 10, fill=(225, 195, 185, 80))
+    ov = ov.filter(ImageFilter.GaussianBlur(3))
+    ov.putalpha(Image.fromarray(np.minimum(np.asarray(ov)[..., 3], np.asarray(front)[..., 3])))
+    front.alpha_composite(ov)
+    front = front.filter(ImageFilter.GaussianBlur(1.2))
+    return back, front, ox, oy
+
+
+def thumb_sprite():
+    """Ngón cái tay phải đi từ góc dưới phải; đầu ngón nằm đúng tâm sprite. Trả về (sprite, tâm), bản nhấc, bóng."""
+    S = 1100
+    c = S // 2
+    m = Image.new("L", (S, S), 0)
+    d = ImageDraw.Draw(m)
+    d.ellipse((c - 62, c - 20, c + 62, c + 190), fill=255)          # đầu ngón (tâm chạm ở trên)
+    d.rounded_rectangle((c - 74, c + 80, c + 74, S + 80), 72, fill=255)   # thân ngón
+    m = m.filter(ImageFilter.GaussianBlur(2))
+    spr = _skin(m, c, c, (205, 150, 126), 3)
+    ov = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    dd = ImageDraw.Draw(ov)
+    dd.ellipse((c - 40, c - 6, c + 40, c + 110), fill=(240, 212, 205, 175))      # móng
+    dd.arc((c - 40, c - 6, c + 40, c + 110), 200, 340, fill=(255, 240, 235, 160), width=4)
+    dd.line((c - 50, c + 260, c + 46, c + 272), fill=(120, 80, 66, 120), width=3)  # nếp khớp
+    spr.alpha_composite(ov.filter(ImageFilter.GaussianBlur(1.5)))
+    spr = spr.resize((int(S * 0.82), int(S * 0.82)), Image.BICUBIC)
+    S = spr.width; c = S // 2
+    spr = spr.rotate(38, resample=Image.BICUBIC)
+    lift = spr.resize((int(S * 1.06), int(S * 1.06)), Image.BILINEAR).crop((int(S * 0.03), int(S * 0.03), int(S * 0.03) + S, int(S * 0.03) + S))
+    a = np.asarray(spr)[..., 3]
+    shadow = Image.fromarray(np.dstack([np.zeros_like(a)] * 3 + [(a * 0.35).astype(np.uint8)]), "RGBA")
+    shadow = shadow.filter(ImageFilter.GaussianBlur(14))
+    return (spr, (c, c)), lift, shadow
+
+
+def glass_overlay(seed):
+    """Phản chiếu kính chéo + vết vân tay mờ trên màn hình."""
+    rnd = np.random.default_rng(seed + 11)
+    yy, xx = np.mgrid[0:SH, 0:SW].astype(np.float32)
+    band = np.exp(-(((xx * 0.55 + yy * 0.45) - SW * 0.9) / 160.0) ** 2) * 16
+    smudge = np.zeros((SH // 8, SW // 8), np.float32)
+    for _ in range(5):
+        cx, cy = rnd.uniform(0, SW // 8), rnd.uniform(SH // 16, SH // 8)
+        r = rnd.uniform(5, 11)
+        y2, x2 = np.mgrid[0:SH // 8, 0:SW // 8]
+        smudge += np.exp(-((x2 - cx) ** 2 + (y2 - cy) ** 2) / (2 * r * r)) * rnd.uniform(4, 9)
+    smudge = np.asarray(Image.fromarray(smudge).resize((SW, SH), Image.BILINEAR)) * rnd.normal(1, 0.5, (SH, SW))
+    a = np.clip(band + smudge, 0, 40).astype(np.uint8)
+    return Image.fromarray(np.dstack([np.full((SH, SW), 255, np.uint8)] * 3 + [a]), "RGBA")
 
 
 def cam_at(t, shots):
@@ -573,7 +695,15 @@ def init_worker(data, tl, lang):
     G["hand"] = hand_layer(SW + 2 * BEZ, SH + 2 * BEZ)
     G["candles"] = candle_series(data)
     rnd = np.random.default_rng(5)
-    G["grain"] = [rnd.normal(0, 7, (H // 2, W // 2)).astype(np.int16) for _ in range(6)]
+    G["grain"] = [np.concatenate([rnd.normal(0, 6, (H // 2, W // 2, 1)), rnd.normal(0, 2.5, (H // 2, W // 2, 3))], 2)
+                  .astype(np.float32) for _ in range(6)]
+    G["thumb"], G["thumb_lift"], G["thumb_shadow"] = thumb_sprite()
+    G["glass"] = glass_overlay(data.get("seed", 1))
+    sp = np.full((SH, SW, 3), 0.94, np.float32)
+    for c in range(3):
+        sp[:, c::3, c] = 1.0
+    sp[1::4, :, :] *= 0.985
+    G["subpix"] = sp
 
 
 def scene_at(t, tl):
@@ -589,37 +719,47 @@ def render_frame(fi):
     st = {"tl": tl, "candles": G["candles"], "clock": d.get("clock", "19:%02d" % (8 + int(t // 8)))}
     t0, sc = scene_at(t, tl)
     if sc == "trade":
-        scr, rows = draw_trade(t, d, st, dv, lang)
-        G.setdefault("rowy", {}).update(rows)
+        scr, _ = draw_trade(t, d, st, dv, lang)
     elif sc == "chart":
         scr, _ = draw_chart(t, d, st, dv, lang)
     else:
         scr, _ = draw_history(t, d, st, dv, lang, t0)
     # vòng chạm màu (touch indicator)
     sd = ImageDraw.Draw(scr, "RGBA")
-    for k, (tt, kind, arg) in enumerate(tl["taps"]):
-        if tt <= t < tt + 0.45:
+    for k, (tt, kind, arg, x, y) in enumerate(tl["taps"]):
+        if kind != "flick" and tt <= t < tt + 0.45:
             a = (t - tt) / 0.45
-            if kind == "close":
-                x, y = SW - 150 + (k * 37) % 60, G.get("rowy", {}).get(arg, 760) + 30
-            else:
-                i = {"chart": 1, "trade": 2, "history": 3}.get(arg, 2)
-                x, y = int(SW * (i + 0.5) / 5), SH - 105
-            r = 18 + 34 * a
+            r = 14 + 26 * a
             col = TAP_COLORS[k % len(TAP_COLORS)]
             sd.ellipse((x - r, y - r, x + r, y + r), fill=col + (int(170 * (1 - a)),))
             sd.ellipse((x - 14, y - 14, x + 14, y + 14), fill=col + (int(230 * (1 - a)),))
+    a_scr = np.asarray(scr, np.float32) * G["subpix"]
+    scr = Image.fromarray(a_scr.clip(0, 255).astype(np.uint8)).convert("RGBA")
+    scr.alpha_composite(G["glass"])
     # điện thoại
     pw, ph = SW + 2 * BEZ, SH + 2 * BEZ
     phone = Image.new("RGBA", (pw, ph), (0, 0, 0, 0))
     body = Image.new("RGBA", (pw, ph), (18, 18, 22, 255))
     phone.paste(body, (0, 0), G["pmask"])
     phone.paste(scr, (BEZ, BEZ), G["smask"])
-    hand, ox, oy = G["hand"]
-    canvas_l = Image.new("RGBA", hand.size, (0, 0, 0, 0))
-    canvas_l.alpha_composite(hand)
+    back, front, ox, oy = G["hand"]
+    canvas_l = Image.new("RGBA", back.size, (0, 0, 0, 0))
+    canvas_l.alpha_composite(back)
     canvas_l.alpha_composite(phone, (ox, oy))
-    # ngón cái trước máy ở mép trái dưới
+    canvas_l.alpha_composite(front)
+    # ngón cái tay phải: bóng đổ + ngón
+    tx, ty, lift = thumb_state(t, tl["taps"])
+    spr, (kx, ky) = G["thumb"]
+    sh = G["thumb_shadow"]
+    lx, ly = int(ox + BEZ + tx), int(oy + BEZ + ty)
+    so = int(8 + 22 * lift)
+    tmp = Image.new("RGBA", canvas_l.size, (0, 0, 0, 0))
+    tmp.paste(sh, (lx - kx + so, ly - ky + so))
+    canvas_l.alpha_composite(tmp)
+    tmp = Image.new("RGBA", canvas_l.size, (0, 0, 0, 0))
+    tsp = spr if lift < 0.5 else G["thumb_lift"]
+    tmp.paste(tsp, (lx - kx, ly - ky))
+    canvas_l.alpha_composite(tmp)
     scale, dx, dy, ang = cam_at(t, tl["shots"])
     s = scale * W / pw
     lay = canvas_l.resize((int(canvas_l.width * s), int(canvas_l.height * s)), Image.BILINEAR)
@@ -640,9 +780,18 @@ def render_frame(fi):
     a = np.asarray(img, np.int16)
     b = np.asarray(small, np.int16)
     out = a + (b * 0.22).astype(np.int16)
-    gr = G["grain"][fi % 6]
-    out += np.repeat(np.repeat(gr, 2, 0), 2, 1)[..., None]
+    # nhiễu cảm biến: mạnh ở vùng tối, có nhiễu màu
+    lum = out.mean(axis=2, keepdims=True)
+    gr = np.repeat(np.repeat(G["grain"][fi % 6], 2, 0), 2, 1)
+    out = out + gr[..., :1] * (1.5 - np.clip(lum, 0, 255) / 200.0) + gr[..., 1:]
+    # quang sai màu nhẹ
+    out[..., 0] = np.roll(out[..., 0], 1, axis=1)
+    out[..., 2] = np.roll(out[..., 2], -1, axis=1)
     img = Image.fromarray(out.clip(0, 255).astype(np.uint8))
+    # lấy nét lại sau mỗi lần cắt cảnh + độ mềm của việc quay màn hình
+    ts = max(s0 for s0, _ in tl["shots"] if s0 <= t)
+    blur = 0.7 + (2.0 * math.exp(-(t - ts) / 0.13) if ts > 0 else 0)
+    img = img.filter(ImageFilter.GaussianBlur(blur))
     overlay_label(img, d["mode"], lang)
     return img.tobytes()
 
@@ -688,7 +837,9 @@ def synth_audio(tl, path, bpm=92.0, sr=44100):
             if L > 0:
                 out[s2:s2 + L] += 0.03 * env(L, 0.0005, 0.012) * rnd.normal(0, 1, L)
     # tiếng chạm + "ting" khi đóng lệnh có lãi
-    for tt, kind, arg in tl["taps"]:
+    room = np.convolve(rnd.normal(0, 1, n), np.ones(40) / 40, "same")
+    out += 0.012 * room / (np.abs(room).max() + 1e-9) * 3
+    for tt, kind, *_ in tl["taps"]:
         s = int(tt * sr)
         if s >= n:
             continue
@@ -708,7 +859,7 @@ def synth_audio(tl, path, bpm=92.0, sr=44100):
         w.writeframes((st * 32767).astype(np.int16).tobytes())
 
 
-def render(data, out, dur, keys=None, keydir=None, audio=True, lang="vi", workers=None):
+def render(data, out, dur, keys=None, keydir=None, audio=True, lang="en", workers=None):
     tl = build_timeline(data, dur)
     if keys:
         init_worker(data, tl, lang)
@@ -752,7 +903,7 @@ def main():
     r = sub.add_parser("render"); r.add_argument("data"); r.add_argument("out")
     r.add_argument("--dur", type=float, default=24.0); r.add_argument("--keys", type=float, nargs="*")
     r.add_argument("--keydir", default="keys"); r.add_argument("--no-audio", action="store_true")
-    r.add_argument("--lang", default="vi", choices=["vi", "en"]); r.add_argument("--workers", type=int)
+    r.add_argument("--lang", default="en", choices=["vi", "en"]); r.add_argument("--workers", type=int)
     ar = ap.parse_args()
     if ar.cmd == "sim":
         d = make_sim(ar.seed, ar.n, ar.start)

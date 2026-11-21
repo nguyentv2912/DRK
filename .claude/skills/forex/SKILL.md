@@ -37,10 +37,10 @@ python3 -I scripts/forex.py sim --seed 7 --n 10 --start 100000 --out data.json
 python3 -I scripts/forex.py check data.json
 # 3. Xem trước khung chính (chỉ xuất PNG, ~2s)
 python3 -I scripts/forex.py render data.json out.mp4 --keys 1 2.4 8 14 22.5 --keydir keys
-# 4. Render đầy đủ (~70s với 4 CPU), 1080x1920, 30fps, 24s, có nhạc
-python3 -I scripts/forex.py render data.json FOREX_<tên>_v1.mp4 [--dur 24] [--lang vi|en] [--no-audio]
+# 4. Render đầy đủ (~2.5 phút với 4 CPU), 1080x1920, 30fps, 24s, có nhạc
+python3 -I scripts/forex.py render data.json FOREX_<tên>_v1.mp4 [--dur 24] [--lang en|vi] [--no-audio]
 ```
-`--lang en` đổi nhãn sang tiếng Anh ("SIMULATED · NOT REAL RESULTS", "Not financial advice"). `--dur` co giãn toàn bộ timeline.
+Mặc định `--lang en` ("SIMULATED · NOT REAL RESULTS", "Not financial advice"); `--lang vi` cho nhãn tiếng Việt. `--dur` co giãn toàn bộ timeline.
 
 ## Dữ liệu (`data.json`)
 ```json
@@ -72,9 +72,17 @@ python3 -I scripts/forex.py render data.json FOREX_<tên>_v1.mp4 [--dur 24] [--l
 5. **Giao**: gửi mp4 bằng SendUserFile kèm tóm tắt: chế độ (real/demo/sim), số lệnh đóng, tổng lãi, Balance đầu → cuối, Balance History, và các lưu ý (biểu đồ minh họa, nhạc tự tạo).
 6. **Caption gợi ý** (chỉ gợi ý, người dùng tự đăng): 1 câu hook về kỷ luật/quy trình (không khoe hứa lãi), 1 dòng ghi chế độ ("Tài khoản demo" / "Mô phỏng" nếu không phải real), "Không phải lời khuyên đầu tư", 4–5 hashtag như `#forex #trading #xauusd #kyluat #traderlife`.
 
+## Lớp chân thật (đã có trong script)
+- Tay trái cầm máy: lòng bàn tay phía sau, 4 ngón dài ngắn khác nhau ôm mép phải đè lên viền máy, da có khối (giữa sáng, mép tối), sáng dần về phía màn hình, có kết cấu nhẹ.
+- Ngón cái tay phải có móng và nếp khớp. Ngón tiến tới dòng lệnh, ấn xuống, nhấc lên (to hơn và bóng đổ xa hơn khi nhấc), về chỗ nghỉ khi khoảng nghỉ dài hơn 1.6s. Ở History thì vuốt lên 2 lần, danh sách cuộn có quán tính (giảm dần theo hàm mũ).
+- Thứ tự đóng lệnh tự nhiên: mỗi lần chọn ngẫu nhiên trong 3 dòng trên cùng; vòng chạm và ô Close nằm đúng dòng đó.
+- Quay màn hình bằng máy thứ hai: lưới subpixel RGB (thu nhỏ ra moiré thật), phản chiếu kính chéo, vết vân tay mờ, bloom, nhiễu cảm biến mạnh ở vùng tối và có nhiễu màu, quang sai màu 1px, mềm nhẹ toàn khung, mất nét rồi lấy nét lại sau mỗi lần cắt cảnh.
+- Âm thanh: thêm tiếng phòng rất nhỏ bên dưới nhạc, tiếng chạm và "ting".
+- Giới hạn: tay là hình vẽ 2D nên nhìn gần vẫn khác tay quay thật. Muốn thật hoàn toàn thì người dùng quay chính điện thoại và tài khoản của mình.
+
 ## Bố cục đã chốt (đừng phá khi sửa)
 - Điện thoại chiếm 64–74% chiều rộng khung, lệch xuống 10–60px để nhãn trên cùng (y 34–92) và chú thích đáy (cách đáy 20–58px) không đè máy.
-- Vòng chạm nằm trên dòng lệnh đang đóng (lấy y thật của dòng), ô đỏ Close vuốt ra 0.25s trước khi dòng biến mất.
+- Vòng chạm và ngón cái nằm trên dòng lệnh đang đóng (`ROW0 + rank*ROWH`, phải khớp bố cục `draw_trade`), ô đỏ Close vuốt ra 0.25s trước khi dòng biến mất.
 - Lãi trôi nổi dao động nhẹ (giống tick) nhưng hiện đúng số `profit` lúc đóng và trên thanh cam.
 - Shot camera đổi ở mỗi lần chuyển tab và ngẫu nhiên mỗi 1.3–2.6s theo `seed`.
 
