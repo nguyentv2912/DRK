@@ -1,8 +1,8 @@
 {
  "schema": "grok-meme-million/market-snapshot@1.8.3",
  "network": "solana",
- "snapshot_started_at": "2026-11-21T01:55:49Z",
- "snapshot_finished_at": "2026-11-21T01:56:05Z",
+ "snapshot_started_at": "2026-11-21T02:22:01Z",
+ "snapshot_finished_at": "2026-11-21T02:22:19Z",
  "realtime": false,
  "note": "Point-in-time snapshot. The video labels it as a snapshot/replay, never as realtime.",
  "watchlist": [
@@ -13,12 +13,12 @@
    "pool": "DjbLtX1HRGZZrJgJ7CwTX6SN3D7tBLiytkGwomBUwTVB",
    "pair": "FIONA / SOL",
    "dex": "pumpswap",
-   "price_usd": 0.0009510580478421272,
-   "price_change_h24": -47.001,
-   "volume_h24": 5606679.70792303,
-   "liquidity_usd": 93387.3264,
-   "market_cap": 969477.23,
-   "fdv_usd": 969477.23,
+   "price_usd": 0.0010414362629084537,
+   "price_change_h24": -35.424,
+   "volume_h24": 5416194.14558099,
+   "liquidity_usd": 93137.8245,
+   "market_cap": 1030786.431,
+   "fdv_usd": 1030786.431,
    "pool_created_at": "2026-11-19T20:53:29Z",
    "gt_image": "https://assets.geckoterminal.com/1sopyh9vztlbskjzbj7zl8gr35sw",
    "source": "geckoterminal.trending_pools(24h)",
@@ -26,23 +26,23 @@
     "dexscreener": {
      "ok": true,
      "pair_match": true,
-     "price_usd": 0.0009495,
-     "price_deviation": 0.0016,
-     "liquidity_usd": 89278.4,
-     "volume_h24": 5204813.75,
-     "price_change_h24": -46.45,
-     "market_cap": 934544.0,
+     "price_usd": 0.001029,
+     "price_deviation": 0.0119,
+     "liquidity_usd": 93008.06,
+     "volume_h24": 4991891.05,
+     "price_change_h24": -40.0,
+     "market_cap": 1013480.0,
      "image_url": "https://cdn.dexscreener.com/cms/images/4K8p9B6a_MUJ5uVR?width=800&height=800&quality=95&format=auto",
      "dex_id": "pumpswap",
      "url": "https://dexscreener.com/solana/djbltx1hrgzzrjgj7cwtx6sn3d7tbliytkgwombuwtvb",
-     "checked_at": "2026-11-21T01:55:49Z"
+     "checked_at": "2026-11-21T02:22:02Z"
     },
     "solana_rpc": {
      "ok": true,
      "program": "token-2022",
      "decimals": 6,
      "supply_raw": "984149792982066",
-     "checked_at": "2026-11-21T01:55:49Z"
+     "checked_at": "2026-11-21T02:22:02Z"
     }
    },
    "verified": true,
@@ -52,63 +52,18 @@
    }
   },
   {
-   "symbol": "CYBERLEEK",
-   "name": "CyberLeek",
-   "mint": "ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg",
-   "pool": "G8kgi7aUpeX8EVR8VMkrth9SKEv5BietWC33UjAiiMGh",
-   "pair": "CYBERLEEK / SOL",
-   "dex": "raydium",
-   "price_usd": 0.0019751937611908353,
-   "price_change_h24": 9.009,
-   "volume_h24": 795822.375611873,
-   "liquidity_usd": 381420.8371,
-   "market_cap": 1443285.43747692,
-   "fdv_usd": 1443285.05017726,
-   "pool_created_at": "2026-08-15T21:07:26Z",
-   "gt_image": "https://coin-images.coingecko.com/coins/images/102175616/large/u5p8iho92d1t5f8m2k95da1j3yer.?1787116786",
-   "source": "geckoterminal.trending_pools(24h)",
-   "verify": {
-    "dexscreener": {
-     "ok": true,
-     "pair_match": true,
-     "price_usd": 0.001979,
-     "price_deviation": 0.0019,
-     "liquidity_usd": 381273.68,
-     "volume_h24": 795776.43,
-     "price_change_h24": 6.81,
-     "market_cap": 1979212.0,
-     "image_url": "https://cdn.dexscreener.com/cms/images/EvHO-m_bFJ_TjSs4?width=800&height=800&quality=95&format=auto",
-     "dex_id": "raydium",
-     "url": "https://dexscreener.com/solana/g8kgi7aupex8evr8vmkrth9skev5bietwc33ujaiimgh",
-     "checked_at": "2026-11-21T01:55:50Z"
-    },
-    "solana_rpc": {
-     "ok": true,
-     "program": "spl-token",
-     "decimals": 9,
-     "supply_raw": "729871093622809484",
-     "checked_at": "2026-11-21T01:55:51Z"
-    }
-   },
-   "verified": true,
-   "logo": {
-    "file": "assets/logos/ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg.png",
-    "source": "https://coin-images.coingecko.com/coins/images/102175616/large/u5p8iho92d1t5f8m2k95da1j3yer.?1787116786"
-   }
-  },
-  {
    "symbol": "GATO",
    "name": "GTA6CAT",
    "mint": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
    "pool": "5E3dXLXGwmTDCokA51WYYaKttjFZBwqCoyUHBUi5gt2m",
    "pair": "GATO / SOL",
    "dex": "pumpswap",
-   "price_usd": 0.003291933589184024,
-   "price_change_h24": 98.647,
-   "volume_h24": 675230.036358906,
-   "liquidity_usd": 192124.4707,
-   "market_cap": 3233591.26119802,
-   "fdv_usd": 3233591.26119802,
+   "price_usd": 0.0029651324420299024,
+   "price_change_h24": 82.845,
+   "volume_h24": 684594.604615358,
+   "liquidity_usd": 182905.3114,
+   "market_cap": 2908163.27796123,
+   "fdv_usd": 2908163.27796123,
    "pool_created_at": "2026-08-25T12:27:21Z",
    "gt_image": "https://assets.geckoterminal.com/vejtkw0ck2yyx4geoxf8kfh58yvv",
    "source": "geckoterminal.trending_pools(24h)",
@@ -116,23 +71,23 @@
     "dexscreener": {
      "ok": true,
      "pair_match": true,
-     "price_usd": 0.003262,
-     "price_deviation": 0.0091,
-     "liquidity_usd": 191976.37,
-     "volume_h24": 675786.82,
-     "price_change_h24": 96.19,
-     "market_cap": 3219836.0,
+     "price_usd": 0.003138,
+     "price_deviation": 0.0583,
+     "liquidity_usd": 188315.53,
+     "volume_h24": 685025.98,
+     "price_change_h24": 94.28,
+     "market_cap": 3097947.0,
      "image_url": "https://cdn.dexscreener.com/cms/images/-8CCNt5h1g4Fnvqj?width=800&height=800&quality=95&format=auto",
      "dex_id": "pumpswap",
      "url": "https://dexscreener.com/solana/5e3dxlxgwmtdcoka51wyyakttjfzbwqcoyuhbui5gt2m",
-     "checked_at": "2026-11-21T01:55:52Z"
+     "checked_at": "2026-11-21T02:22:03Z"
     },
     "solana_rpc": {
      "ok": true,
      "program": "token-2022",
      "decimals": 6,
      "supply_raw": "985430565241795",
-     "checked_at": "2026-11-21T01:55:52Z"
+     "checked_at": "2026-11-21T02:22:03Z"
     }
    },
    "verified": true,
@@ -142,48 +97,48 @@
    }
   },
   {
-   "symbol": "mihao",
-   "name": "ni hao cat",
-   "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
-   "pool": "Ho1aSG6WGH1FfXdEHrK2f4Ggt1Hoxo9s5jcLMDqeyeBz",
-   "pair": "mihao / SOL",
-   "dex": "pumpswap",
-   "price_usd": 0.006595011422851649,
-   "price_change_h24": -14.752,
-   "volume_h24": 1674034.97803705,
-   "liquidity_usd": 298670.9051,
-   "market_cap": 6204683.78661439,
-   "fdv_usd": 6204679.85953435,
-   "pool_created_at": "2026-10-25T16:43:15Z",
-   "gt_image": "https://coin-images.coingecko.com/coins/images/102180225/large/g1i6vgqt2s0oe4tclnb3j8zbg8jz.?1794394690",
+   "symbol": "CYBERLEEK",
+   "name": "CyberLeek",
+   "mint": "ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg",
+   "pool": "G8kgi7aUpeX8EVR8VMkrth9SKEv5BietWC33UjAiiMGh",
+   "pair": "CYBERLEEK / SOL",
+   "dex": "raydium",
+   "price_usd": 0.0019726507728090367,
+   "price_change_h24": 5.517,
+   "volume_h24": 792617.963633393,
+   "liquidity_usd": 380625.5366,
+   "market_cap": 1445937.11534182,
+   "fdv_usd": 1445936.72733059,
+   "pool_created_at": "2026-08-15T21:07:26Z",
+   "gt_image": "https://coin-images.coingecko.com/coins/images/102175616/large/u5p8iho92d1t5f8m2k95da1j3yer.?1787116786",
    "source": "geckoterminal.trending_pools(24h)",
    "verify": {
     "dexscreener": {
      "ok": true,
      "pair_match": true,
-     "price_usd": 0.006592,
-     "price_deviation": 0.0005,
-     "liquidity_usd": 299104.36,
-     "volume_h24": 1530812.23,
-     "price_change_h24": -14.3,
-     "market_cap": 6202032.0,
-     "image_url": "https://cdn.dexscreener.com/cms/images/CN2GXn9xCwxqB6AH?width=800&height=800&quality=95&format=auto",
-     "dex_id": "pumpswap",
-     "url": "https://dexscreener.com/solana/ho1asg6wgh1ffxdehrk2f4ggt1hoxo9s5jclmdqeyebz",
-     "checked_at": "2026-11-21T01:55:53Z"
+     "price_usd": 0.001972,
+     "price_deviation": 0.0003,
+     "liquidity_usd": 380370.36,
+     "volume_h24": 792355.97,
+     "price_change_h24": 4.15,
+     "market_cap": 1972699.0,
+     "image_url": "https://cdn.dexscreener.com/cms/images/EvHO-m_bFJ_TjSs4?width=800&height=800&quality=95&format=auto",
+     "dex_id": "raydium",
+     "url": "https://dexscreener.com/solana/g8kgi7aupex8evr8vmkrth9skev5bietwc33ujaiimgh",
+     "checked_at": "2026-11-21T02:22:04Z"
     },
     "solana_rpc": {
      "ok": true,
-     "program": "token-2022",
-     "decimals": 6,
-     "supply_raw": "940814097601092",
-     "checked_at": "2026-11-21T01:55:53Z"
+     "program": "spl-token",
+     "decimals": 9,
+     "supply_raw": "729871093622809483",
+     "checked_at": "2026-11-21T02:22:04Z"
     }
    },
    "verified": true,
    "logo": {
-    "file": "assets/logos/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump.png",
-    "source": "https://coin-images.coingecko.com/coins/images/102180225/large/g1i6vgqt2s0oe4tclnb3j8zbg8jz.?1794394690"
+    "file": "assets/logos/ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg.png",
+    "source": "https://coin-images.coingecko.com/coins/images/102175616/large/u5p8iho92d1t5f8m2k95da1j3yer.?1787116786"
    }
   },
   {
@@ -193,12 +148,12 @@
    "pool": "8WwcNqdZjCY5Pt7AkhupAFknV2txca9sq6YBkGzLbvdt",
    "pair": "pippin / SOL",
    "dex": "raydium",
-   "price_usd": 0.01826019899934283,
-   "price_change_h24": -2.577,
-   "volume_h24": 5690978.18380576,
-   "liquidity_usd": 3298324.8557,
-   "market_cap": 18258864.656645,
-   "fdv_usd": 18258864.656645,
+   "price_usd": 0.01795423925787587,
+   "price_change_h24": -1.652,
+   "volume_h24": 5579677.09579068,
+   "liquidity_usd": 3266923.445,
+   "market_cap": 17952927.2743064,
+   "fdv_usd": 17952927.2743064,
    "pool_created_at": "2024-11-09T20:27:41Z",
    "gt_image": "https://coin-images.coingecko.com/coins/images/51589/large/pippin_logo.png?1731570163",
    "source": "geckoterminal.trending_pools(24h)",
@@ -206,23 +161,23 @@
     "dexscreener": {
      "ok": true,
      "pair_match": true,
-     "price_usd": 0.01827,
-     "price_deviation": 0.0005,
-     "liquidity_usd": 3303416.98,
-     "volume_h24": 5688987.99,
-     "price_change_h24": -2.26,
-     "market_cap": 18278440.0,
+     "price_usd": 0.01791,
+     "price_deviation": 0.0025,
+     "liquidity_usd": 3268427.63,
+     "volume_h24": 5585763.78,
+     "price_change_h24": -1.74,
+     "market_cap": 17918770.0,
      "image_url": "https://cdn.dexscreener.com/cms/images/d237de55618e54fd7d66593ff2adf3ad8c092398f9049a31f1dcb1b23ad1dff8?width=800&height=800&quality=95&format=auto",
      "dex_id": "raydium",
      "url": "https://dexscreener.com/solana/8wwcnqdzjcy5pt7akhupafknv2txca9sq6ybkgzlbvdt",
-     "checked_at": "2026-11-21T01:55:54Z"
+     "checked_at": "2026-11-21T02:22:06Z"
     },
     "solana_rpc": {
      "ok": true,
      "program": "spl-token",
      "decimals": 6,
      "supply_raw": "999926926132898",
-     "checked_at": "2026-11-21T01:55:54Z"
+     "checked_at": "2026-11-21T02:22:06Z"
     }
    },
    "verified": true,
@@ -232,18 +187,63 @@
    }
   },
   {
+   "symbol": "mihao",
+   "name": "ni hao cat",
+   "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
+   "pool": "Ho1aSG6WGH1FfXdEHrK2f4Ggt1Hoxo9s5jcLMDqeyeBz",
+   "pair": "mihao / SOL",
+   "dex": "pumpswap",
+   "price_usd": 0.006526316179837231,
+   "price_change_h24": -10.696,
+   "volume_h24": 1634824.95839958,
+   "liquidity_usd": 298355.2273,
+   "market_cap": 6169395.93128989,
+   "fdv_usd": 6169392.0265443,
+   "pool_created_at": "2026-10-25T16:43:15Z",
+   "gt_image": "https://coin-images.coingecko.com/coins/images/102180225/large/g1i6vgqt2s0oe4tclnb3j8zbg8jz.?1794394690",
+   "source": "geckoterminal.trending_pools(24h)",
+   "verify": {
+    "dexscreener": {
+     "ok": true,
+     "pair_match": true,
+     "price_usd": 0.006545,
+     "price_deviation": 0.0029,
+     "liquidity_usd": 297881.31,
+     "volume_h24": 1499069.72,
+     "price_change_h24": -12.09,
+     "market_cap": 6158108.0,
+     "image_url": "https://cdn.dexscreener.com/cms/images/CN2GXn9xCwxqB6AH?width=800&height=800&quality=95&format=auto",
+     "dex_id": "pumpswap",
+     "url": "https://dexscreener.com/solana/ho1asg6wgh1ffxdehrk2f4ggt1hoxo9s5jclmdqeyebz",
+     "checked_at": "2026-11-21T02:22:07Z"
+    },
+    "solana_rpc": {
+     "ok": true,
+     "program": "token-2022",
+     "decimals": 6,
+     "supply_raw": "940814053810632",
+     "checked_at": "2026-11-21T02:22:07Z"
+    }
+   },
+   "verified": true,
+   "logo": {
+    "file": "assets/logos/4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump.png",
+    "source": "https://coin-images.coingecko.com/coins/images/102180225/large/g1i6vgqt2s0oe4tclnb3j8zbg8jz.?1794394690"
+   }
+  },
+  {
    "symbol": "CLAUDIA",
    "name": "Claudia",
    "mint": "2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM",
    "pool": "Fe7bpDYCs74GqiCUF14HwgUMToPKV1d9mDYVX5BTohFr",
    "pair": "CLAUDIA / SOL",
    "dex": "pumpswap",
-   "price_usd": 0.006425030651263175,
-   "price_change_h24": 16.839,
-   "volume_h24": 1986043.88388268,
-   "liquidity_usd": 353254.1079,
-   "market_cap": 6078754.37522722,
-   "fdv_usd": 6078754.37522722,
+   "price_usd": 0.006295900424156963,
+   "price_change_h24": 11.443,
+   "volume_h24": 1969599.08811947,
+   "liquidity_usd": 350009.7182,
+   "market_cap": 5957266.81712024,
+   "fdv_usd": 5957266.81712024,
    "pool_created_at": "2026-10-07T01:44:30Z",
    "gt_image": "https://coin-images.coingecko.com/coins/images/102179377/large/e3d43468-6bc2-4264-9e7a-fa70a8c4f1dd.png?1791650789",
    "source": "geckoterminal.trending_pools(24h)",
@@ -251,23 +251,23 @@
     "dexscreener": {
      "ok": true,
      "pair_match": true,
-     "price_usd": 0.006415,
-     "price_deviation": 0.0016,
-     "liquidity_usd": 352133.97,
-     "volume_h24": 1953584.99,
-     "price_change_h24": 15.32,
-     "market_cap": 6070769.0,
+     "price_usd": 0.006264,
+     "price_deviation": 0.0051,
+     "liquidity_usd": 347771.12,
+     "volume_h24": 1947115.16,
+     "price_change_h24": 10.39,
+     "market_cap": 5928026.0,
      "image_url": "https://cdn.dexscreener.com/cms/images/qF2ypYau95TgBZR8?width=800&height=800&quality=95&format=auto",
      "dex_id": "pumpswap",
      "url": "https://dexscreener.com/solana/fe7bpdycs74gqicuf14hwgumtopkv1d9mdyvx5btohfr",
-     "checked_at": "2026-11-21T01:55:56Z"
+     "checked_at": "2026-11-21T02:22:08Z"
     },
     "solana_rpc": {
      "ok": true,
      "program": "token-2022",
      "decimals": 6,
-     "supply_raw": "946213633405822",
-     "checked_at": "2026-11-21T01:55:56Z"
+     "supply_raw": "946213633405812",
+     "checked_at": "2026-11-21T02:22:08Z"
     }
    },
    "verified": true,
@@ -284,7 +284,7 @@
   "symbol": "FIONA",
   "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
   "pool": "DjbLtX1HRGZZrJgJ7CwTX6SN3D7tBLiytkGwomBUwTVB",
-  "fetched_at": "2026-11-21T01:55:59Z",
+  "fetched_at": "2026-11-21T02:22:11Z",
   "candidates": [
    {
     "symbol": "FIONA",
@@ -293,74 +293,34 @@
     "score": 0.857
    },
    {
+    "symbol": "GATO",
+    "pool": "5E3dXLXGwmTDCokA51WYYaKttjFZBwqCoyUHBUi5gt2m",
+    "candles": 160,
+    "score": 0.354
+   },
+   {
     "symbol": "CYBERLEEK",
     "pool": "G8kgi7aUpeX8EVR8VMkrth9SKEv5BietWC33UjAiiMGh",
     "candles": 160,
     "score": -1.0
    },
    {
-    "symbol": "GATO",
-    "pool": "5E3dXLXGwmTDCokA51WYYaKttjFZBwqCoyUHBUi5gt2m",
+    "symbol": "pippin",
+    "pool": "8WwcNqdZjCY5Pt7AkhupAFknV2txca9sq6YBkGzLbvdt",
     "candles": 160,
-    "score": 0.364
+    "score": -1.0
    },
    {
     "symbol": "mihao",
     "pool": "Ho1aSG6WGH1FfXdEHrK2f4Ggt1Hoxo9s5jcLMDqeyeBz",
     "candles": 160,
     "score": 0.34
-   },
-   {
-    "symbol": "pippin",
-    "pool": "8WwcNqdZjCY5Pt7AkhupAFknV2txca9sq6YBkGzLbvdt",
-    "candles": 160,
-    "score": -1.0
    }
   ],
   "candles": [
    {
-    "t": 1795178400,
-    "o": 0.002346339613954982,
-    "h": 0.0024174509069124768,
-    "l": 0.002263730100891613,
-    "c": 0.0022804462642266603,
-    "v": 8433.330252950393
-   },
-   {
-    "t": 1795178700,
-    "o": 0.0022804462642266603,
-    "h": 0.002289553452808367,
-    "l": 0.002116410626292173,
-    "c": 0.00221695137155303,
-    "v": 15669.575551732714
-   },
-   {
-    "t": 1795179000,
-    "o": 0.00221695137155303,
-    "h": 0.0023432415573776703,
-    "l": 0.0021839823485299012,
-    "c": 0.002314700318377813,
-    "v": 3690.092783079708
-   },
-   {
-    "t": 1795179300,
-    "o": 0.002314700318377813,
-    "h": 0.0023304166029304687,
-    "l": 0.002234491005070186,
-    "c": 0.002234491005070186,
-    "v": 2498.2962753449756
-   },
-   {
-    "t": 1795179600,
-    "o": 0.002234491005070186,
-    "h": 0.00228087321322112,
-    "l": 0.002234491005070186,
-    "c": 0.0022424391850977107,
-    "v": 1421.8481200768351
-   },
-   {
     "t": 1795179900,
-    "o": 0.0022424391850977107,
+    "o": 0.0022626015410130594,
     "h": 0.0022687416650185145,
     "l": 0.0022187752054560993,
     "c": 0.0022640789493261824,
@@ -1593,10 +1553,50 @@
    {
     "t": 1795226100,
     "o": 0.0009746035776392078,
-    "h": 0.0009901618129684632,
-    "l": 0.000946424658631289,
-    "c": 0.0009852319414187275,
-    "v": 3611.7709652036183
+    "h": 0.0010514448680607929,
+    "l": 0.000944576120923387,
+    "c": 0.0010486328335936686,
+    "v": 13745.872463314003
+   },
+   {
+    "t": 1795226400,
+    "o": 0.0010486328335936686,
+    "h": 0.00105210647487089,
+    "l": 0.0007634784132191295,
+    "c": 0.0009006143028675008,
+    "v": 27334.66220413685
+   },
+   {
+    "t": 1795226700,
+    "o": 0.0009006143028675008,
+    "h": 0.0009446212531078076,
+    "l": 0.0008788116676015137,
+    "c": 0.0009145116313712613,
+    "v": 10063.939420696908
+   },
+   {
+    "t": 1795227000,
+    "o": 0.0009145116313712613,
+    "h": 0.0010259415480560281,
+    "l": 0.0009112732479097655,
+    "c": 0.0010138268558488668,
+    "v": 7756.128567116155
+   },
+   {
+    "t": 1795227300,
+    "o": 0.0010138268558488668,
+    "h": 0.0010985677941522832,
+    "l": 0.001000584271441619,
+    "c": 0.0010652492415943143,
+    "v": 13730.703516814241
+   },
+   {
+    "t": 1795227600,
+    "o": 0.0010652492415943143,
+    "h": 0.0010802579991235864,
+    "l": 0.0010244230196610835,
+    "c": 0.0010329280290265642,
+    "v": 2016.437904491919
    }
   ]
  },
@@ -1607,102 +1607,102 @@
  "request_log": [
   {
    "url": "https://api.geckoterminal.com/api/v2/networks/solana/trending_pools",
-   "fetched_at": "2026-11-21T01:55:49Z",
+   "fetched_at": "2026-11-21T02:22:02Z",
    "ok": true
   },
   {
    "url": "https://api.dexscreener.com/latest/dex/pairs/solana/DjbLtX1HRGZZrJgJ7CwTX6SN3D7tBLiytkGwomBUwTVB",
-   "fetched_at": "2026-11-21T01:55:49Z",
+   "fetched_at": "2026-11-21T02:22:02Z",
    "ok": true
   },
   {
    "url": "https://api.mainnet-beta.solana.com",
-   "fetched_at": "2026-11-21T01:55:49Z",
-   "ok": true
-  },
-  {
-   "url": "https://api.dexscreener.com/latest/dex/pairs/solana/G8kgi7aUpeX8EVR8VMkrth9SKEv5BietWC33UjAiiMGh",
-   "fetched_at": "2026-11-21T01:55:50Z",
-   "ok": true
-  },
-  {
-   "url": "https://api.mainnet-beta.solana.com",
-   "fetched_at": "2026-11-21T01:55:51Z",
+   "fetched_at": "2026-11-21T02:22:02Z",
    "ok": true
   },
   {
    "url": "https://api.dexscreener.com/latest/dex/pairs/solana/5E3dXLXGwmTDCokA51WYYaKttjFZBwqCoyUHBUi5gt2m",
-   "fetched_at": "2026-11-21T01:55:52Z",
+   "fetched_at": "2026-11-21T02:22:03Z",
    "ok": true
   },
   {
    "url": "https://api.mainnet-beta.solana.com",
-   "fetched_at": "2026-11-21T01:55:52Z",
+   "fetched_at": "2026-11-21T02:22:03Z",
    "ok": true
   },
   {
-   "url": "https://api.dexscreener.com/latest/dex/pairs/solana/Ho1aSG6WGH1FfXdEHrK2f4Ggt1Hoxo9s5jcLMDqeyeBz",
-   "fetched_at": "2026-11-21T01:55:53Z",
-   "ok": true
-  },
-  {
-   "url": "https://api.mainnet-beta.solana.com",
-   "fetched_at": "2026-11-21T01:55:53Z",
-   "ok": true
-  },
-  {
-   "url": "https://api.dexscreener.com/latest/dex/pairs/solana/8WwcNqdZjCY5Pt7AkhupAFknV2txca9sq6YBkGzLbvdt",
-   "fetched_at": "2026-11-21T01:55:54Z",
+   "url": "https://api.dexscreener.com/latest/dex/pairs/solana/G8kgi7aUpeX8EVR8VMkrth9SKEv5BietWC33UjAiiMGh",
+   "fetched_at": "2026-11-21T02:22:04Z",
    "ok": true
   },
   {
    "url": "https://api.mainnet-beta.solana.com",
-   "fetched_at": "2026-11-21T01:55:54Z",
+   "fetched_at": "2026-11-21T02:22:04Z",
    "ok": true
   },
   {
    "url": "https://api.dexscreener.com/latest/dex/pairs/solana/FJk9sajdc2Q4heRPPu3yLzkmf2ZByZkpiHQLv9e2bn5A",
-   "fetched_at": "2026-11-21T01:55:55Z",
+   "fetched_at": "2026-11-21T02:22:05Z",
    "ok": true
   },
   {
    "url": "https://api.mainnet-beta.solana.com",
-   "fetched_at": "2026-11-21T01:55:55Z",
+   "fetched_at": "2026-11-21T02:22:06Z",
+   "ok": true
+  },
+  {
+   "url": "https://api.dexscreener.com/latest/dex/pairs/solana/8WwcNqdZjCY5Pt7AkhupAFknV2txca9sq6YBkGzLbvdt",
+   "fetched_at": "2026-11-21T02:22:06Z",
+   "ok": true
+  },
+  {
+   "url": "https://api.mainnet-beta.solana.com",
+   "fetched_at": "2026-11-21T02:22:06Z",
+   "ok": true
+  },
+  {
+   "url": "https://api.dexscreener.com/latest/dex/pairs/solana/Ho1aSG6WGH1FfXdEHrK2f4Ggt1Hoxo9s5jcLMDqeyeBz",
+   "fetched_at": "2026-11-21T02:22:07Z",
+   "ok": true
+  },
+  {
+   "url": "https://api.mainnet-beta.solana.com",
+   "fetched_at": "2026-11-21T02:22:07Z",
    "ok": true
   },
   {
    "url": "https://api.dexscreener.com/latest/dex/pairs/solana/Fe7bpDYCs74GqiCUF14HwgUMToPKV1d9mDYVX5BTohFr",
-   "fetched_at": "2026-11-21T01:55:56Z",
+   "fetched_at": "2026-11-21T02:22:08Z",
    "ok": true
   },
   {
    "url": "https://api.mainnet-beta.solana.com",
-   "fetched_at": "2026-11-21T01:55:56Z",
+   "fetched_at": "2026-11-21T02:22:08Z",
    "ok": true
   },
   {
    "url": "https://api.geckoterminal.com/api/v2/networks/solana/pools/DjbLtX1HRGZZrJgJ7CwTX6SN3D7tBLiytkGwomBUwTVB/ohlcv/minute",
-   "fetched_at": "2026-11-21T01:55:59Z",
-   "ok": true
-  },
-  {
-   "url": "https://api.geckoterminal.com/api/v2/networks/solana/pools/G8kgi7aUpeX8EVR8VMkrth9SKEv5BietWC33UjAiiMGh/ohlcv/minute",
-   "fetched_at": "2026-11-21T01:56:00Z",
+   "fetched_at": "2026-11-21T02:22:11Z",
    "ok": true
   },
   {
    "url": "https://api.geckoterminal.com/api/v2/networks/solana/pools/5E3dXLXGwmTDCokA51WYYaKttjFZBwqCoyUHBUi5gt2m/ohlcv/minute",
-   "fetched_at": "2026-11-21T01:56:01Z",
+   "fetched_at": "2026-11-21T02:22:12Z",
    "ok": true
   },
   {
-   "url": "https://api.geckoterminal.com/api/v2/networks/solana/pools/Ho1aSG6WGH1FfXdEHrK2f4Ggt1Hoxo9s5jcLMDqeyeBz/ohlcv/minute",
-   "fetched_at": "2026-11-21T01:56:03Z",
+   "url": "https://api.geckoterminal.com/api/v2/networks/solana/pools/G8kgi7aUpeX8EVR8VMkrth9SKEv5BietWC33UjAiiMGh/ohlcv/minute",
+   "fetched_at": "2026-11-21T02:22:13Z",
    "ok": true
   },
   {
    "url": "https://api.geckoterminal.com/api/v2/networks/solana/pools/8WwcNqdZjCY5Pt7AkhupAFknV2txca9sq6YBkGzLbvdt/ohlcv/minute",
-   "fetched_at": "2026-11-21T01:56:04Z",
+   "fetched_at": "2026-11-21T02:22:15Z",
+   "ok": true
+  },
+  {
+   "url": "https://api.geckoterminal.com/api/v2/networks/solana/pools/Ho1aSG6WGH1FfXdEHrK2f4Ggt1Hoxo9s5jcLMDqeyeBz/ohlcv/minute",
+   "fetched_at": "2026-11-21T02:22:18Z",
    "ok": true
   }
  ]
