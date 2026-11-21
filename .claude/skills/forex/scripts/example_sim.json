@@ -1,0 +1,359 @@
+{
+ "mode": "sim",
+ "currency": "USD",
+ "seed": 7,
+ "account": {
+  "balance_start": 105540.47,
+  "leverage": 500
+ },
+ "positions": [
+  {
+   "id": 2089777560,
+   "symbol": "UKOIL",
+   "side": "buy",
+   "lots": 0.52,
+   "open": 95.45,
+   "close": 96.17,
+   "profit": 37.44
+  },
+  {
+   "id": 2087122250,
+   "symbol": "XAUUSD",
+   "side": "buy",
+   "lots": 0.25,
+   "open": 3897.93,
+   "close": 3899.63,
+   "profit": 42.5
+  },
+  {
+   "id": 2089823754,
+   "symbol": "XAUUSD",
+   "side": "buy",
+   "lots": 1.53,
+   "open": 3904.08,
+   "close": 3909.47,
+   "profit": 824.67
+  },
+  {
+   "id": 2082420198,
+   "symbol": "GBPUSD",
+   "side": "buy",
+   "lots": 2.94,
+   "open": 1.26639,
+   "close": 1.26885,
+   "profit": 723.24
+  },
+  {
+   "id": 2089583219,
+   "symbol": "AUDUSD",
+   "side": "buy",
+   "lots": 1.93,
+   "open": 0.65432,
+   "close": 0.65594,
+   "profit": 312.66
+  },
+  {
+   "id": 2088328453,
+   "symbol": "USDJPY",
+   "side": "sell",
+   "lots": 0.65,
+   "open": 158.869,
+   "close": 158.65,
+   "profit": 89.73
+  },
+  {
+   "id": 2084167906,
+   "symbol": "AUDUSD",
+   "side": "sell",
+   "lots": 2.44,
+   "open": 0.65382,
+   "close": 0.65173,
+   "profit": 509.96
+  },
+  {
+   "id": 2087530188,
+   "symbol": "EURUSD",
+   "side": "buy",
+   "lots": 0.7,
+   "open": 1.08327,
+   "close": 1.08485,
+   "profit": 110.6
+  },
+  {
+   "id": 2088203439,
+   "symbol": "US30",
+   "side": "buy",
+   "lots": 0.44,
+   "open": 51506.24,
+   "close": 51572.75,
+   "profit": 29.26
+  },
+  {
+   "id": 2085263809,
+   "symbol": "GBPUSD",
+   "side": "buy",
+   "lots": 2.91,
+   "open": 1.26671,
+   "close": 1.26844,
+   "profit": 503.43
+  }
+ ],
+ "pending": [
+  {
+   "symbol": "XAUUSD",
+   "type": "buy stop",
+   "lots": 1.5,
+   "price": 3906.63
+  }
+ ],
+ "chart": {
+  "symbol": "XAUUSD",
+  "tf": "M1",
+  "last": 3899.63
+ },
+ "history": {
+  "deposit": 100000,
+  "swap": -250.21,
+  "commission": 0.0,
+  "deals": [
+   {
+    "symbol": "GBPUSD",
+    "side": "sell",
+    "lots": 2.91,
+    "time": "2026.11.21 19:11",
+    "profit": 503.43
+   },
+   {
+    "symbol": "US30",
+    "side": "sell",
+    "lots": 0.44,
+    "time": "2026.11.21 19:15",
+    "profit": 29.26
+   },
+   {
+    "symbol": "EURUSD",
+    "side": "sell",
+    "lots": 0.7,
+    "time": "2026.11.21 19:16",
+    "profit": 110.6
+   },
+   {
+    "symbol": "AUDUSD",
+    "side": "buy",
+    "lots": 2.44,
+    "time": "2026.11.21 19:12",
+    "profit": 509.96
+   },
+   {
+    "symbol": "USDJPY",
+    "side": "buy",
+    "lots": 0.65,
+    "time": "2026.11.21 19:17",
+    "profit": 89.73
+   },
+   {
+    "symbol": "AUDUSD",
+    "side": "sell",
+    "lots": 1.93,
+    "time": "2026.11.21 19:13",
+    "profit": 312.66
+   },
+   {
+    "symbol": "GBPUSD",
+    "side": "sell",
+    "lots": 2.94,
+    "time": "2026.11.21 19:16",
+    "profit": 723.24
+   },
+   {
+    "symbol": "XAUUSD",
+    "side": "sell",
+    "lots": 1.53,
+    "time": "2026.11.21 19:11",
+    "profit": 824.67
+   },
+   {
+    "symbol": "XAUUSD",
+    "side": "sell",
+    "lots": 0.25,
+    "time": "2026.11.21 19:11",
+    "profit": 42.5
+   },
+   {
+    "symbol": "UKOIL",
+    "side": "sell",
+    "lots": 0.52,
+    "time": "2026.11.21 19:15",
+    "profit": 37.44
+   },
+   {
+    "symbol": "UKOIL",
+    "side": "sell",
+    "lots": 0.68,
+    "time": "2026.11.19 15:04",
+    "profit": 417.58
+   },
+   {
+    "symbol": "US30",
+    "side": "sell",
+    "lots": 1.14,
+    "time": "2026.11.11 02:46",
+    "profit": 328.95
+   },
+   {
+    "symbol": "BTCUSD",
+    "side": "sell",
+    "lots": 0.44,
+    "time": "2026.11.20 12:01",
+    "profit": 482.02
+   },
+   {
+    "symbol": "UKOIL",
+    "side": "buy",
+    "lots": 0.69,
+    "time": "2026.11.17 02:13",
+    "profit": 371.67
+   },
+   {
+    "symbol": "EURUSD",
+    "side": "buy",
+    "lots": 1.49,
+    "time": "2026.11.17 03:10",
+    "profit": 167.48
+   },
+   {
+    "symbol": "AUDUSD",
+    "side": "sell",
+    "lots": 2.71,
+    "time": "2026.11.16 18:17",
+    "profit": 332.09
+   },
+   {
+    "symbol": "UKOIL",
+    "side": "sell",
+    "lots": 0.97,
+    "time": "2026.11.12 03:11",
+    "profit": -23.17
+   },
+   {
+    "symbol": "USDJPY",
+    "side": "buy",
+    "lots": 1.23,
+    "time": "2026.11.19 06:16",
+    "profit": 60.44
+   },
+   {
+    "symbol": "EURUSD",
+    "side": "sell",
+    "lots": 1.84,
+    "time": "2026.11.19 19:20",
+    "profit": 489.98
+   },
+   {
+    "symbol": "AUDUSD",
+    "side": "buy",
+    "lots": 1.64,
+    "time": "2026.11.20 18:25",
+    "profit": 134.76
+   },
+   {
+    "symbol": "GBPUSD",
+    "side": "buy",
+    "lots": 1.7,
+    "time": "2026.11.16 02:12",
+    "profit": -76.9
+   },
+   {
+    "symbol": "USDJPY",
+    "side": "sell",
+    "lots": 0.74,
+    "time": "2026.11.15 20:03",
+    "profit": -54.48
+   },
+   {
+    "symbol": "EURUSD",
+    "side": "buy",
+    "lots": 2.87,
+    "time": "2026.11.19 01:04",
+    "profit": 439.57
+   },
+   {
+    "symbol": "GBPUSD",
+    "side": "buy",
+    "lots": 2.09,
+    "time": "2026.11.15 20:23",
+    "profit": 183.46
+   },
+   {
+    "symbol": "GBPJPY",
+    "side": "sell",
+    "lots": 2.48,
+    "time": "2026.11.17 16:30",
+    "profit": 79.59
+   },
+   {
+    "symbol": "EURUSD",
+    "side": "buy",
+    "lots": 2.37,
+    "time": "2026.11.14 16:53",
+    "profit": 322.92
+   },
+   {
+    "symbol": "AUDUSD",
+    "side": "buy",
+    "lots": 1.01,
+    "time": "2026.11.18 12:09",
+    "profit": 321.64
+   },
+   {
+    "symbol": "XAUUSD",
+    "side": "sell",
+    "lots": 1.57,
+    "time": "2026.11.11 23:54",
+    "profit": 47.11
+   },
+   {
+    "symbol": "UKOIL",
+    "side": "buy",
+    "lots": 0.48,
+    "time": "2026.11.13 18:34",
+    "profit": 378.6
+   },
+   {
+    "symbol": "UKOIL",
+    "side": "buy",
+    "lots": 0.69,
+    "time": "2026.11.13 08:52",
+    "profit": 136.44
+   },
+   {
+    "symbol": "USDJPY",
+    "side": "buy",
+    "lots": 1.28,
+    "time": "2026.11.15 01:01",
+    "profit": 385.67
+   },
+   {
+    "symbol": "BTCUSD",
+    "side": "sell",
+    "lots": 0.16,
+    "time": "2026.11.19 12:28",
+    "profit": 397.48
+   },
+   {
+    "symbol": "UKOIL",
+    "side": "sell",
+    "lots": 0.26,
+    "time": "2026.11.11 08:30",
+    "profit": 5.89
+   },
+   {
+    "symbol": "USDJPY",
+    "side": "sell",
+    "lots": 1.44,
+    "time": "2026.11.19 01:30",
+    "profit": 461.89
+   }
+  ]
+ }
+}
