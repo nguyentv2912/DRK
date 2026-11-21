@@ -808,6 +808,8 @@ def terminal(c, oy, t, cam):
         sl = [s for s in sl if s]
         los.append(min(s["l"] for s in sl)); his.append(max(s["h"] for s in sl))
     lo, hi = sum(los) / len(los), sum(his) / len(his)
+    # never let the smoothing lag hide the current frame's candles (spikes)
+    lo, hi = min(lo, los[0]), max(hi, his[0])
     pad = (hi - lo) * .10
     lo, hi = lo - pad, hi + pad
     yof = lambda v: PB - (v - lo) / (hi - lo) * (PB - PT)
@@ -889,7 +891,7 @@ def terminal(c, oy, t, cam):
     text(c, f"RSI14 {rs:.1f}", lx + lw + lw2 + 48, ly, 23, 600, hexc(COL["text2"]), container=cont)
     legend_rect = (lx - 4, ly - 6, lx + lw + lw2 + 48 + tw(f"RSI14 {rs:.1f}", 23, 600) + 4, ly + 30)
     # current price line + crosshair
-    cy_ = yof(p)
+    cy_ = clamp(yof(p), PT, PB)
     lastc = candle_state(min(NC - 1, int(math.floor(f))), f) or HC[last]
     cc = hexc(COL["pos"] if lastc["c"] >= lastc["o"] else COL["neg"])
     dash = P(cc, 2)
@@ -966,6 +968,8 @@ def terminal(c, oy, t, cam):
                 cand += [anchor_y - 22 - ph - dyk * 12, anchor_y + 60 + dyk * 12]
         chosen = None
         xs_c = [px_] + [clamp(xx + d, PL + 4, PR - pw - 4) for d in (24, -pw - 24, 60, -pw - 60)]
+        # spikes near the plot edge: also try pills further left/right of the marker
+        xs_c += [clamp(xx + d, PL + 4, PR - pw - 4) for d in (-pw - 100, 100, -pw - 150, 150, -pw - 220, 220)]
         for py_, pxx in [(a_, b_) for b_ in xs_c for a_ in cand]:
             rr = (pxx, py_, pxx + pw, py_ + ph)
             if rr[1] < PT - 36 or rr[3] > PB + 8:
