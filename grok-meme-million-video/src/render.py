@@ -970,7 +970,10 @@ def terminal(c, oy, t, cam):
         xs_c = [px_] + [clamp(xx + d, PL + 4, PR - pw - 4) for d in (24, -pw - 24, 60, -pw - 60)]
         # spikes near the plot edge: also try pills further left/right of the marker
         xs_c += [clamp(xx + d, PL + 4, PR - pw - 4) for d in (-pw - 100, 100, -pw - 150, 150, -pw - 220, 220)]
-        for py_, pxx in [(a_, b_) for b_ in xs_c for a_ in cand]:
+        # last resort: pill beside the marker (same height), left or right of the triangle
+        side = [(anchor_y - ph / 2 + k, clamp(xx + d, PL + 4, PR - pw - 4)) for k in (0, -12, 12, -24, 24, -36, 36)
+                for d in (-pw - 22, 22, -pw - 60, 60)]
+        for py_, pxx in [(a_, b_) for b_ in xs_c for a_ in cand] + side:
             rr = (pxx, py_, pxx + pw, py_ + ph)
             if rr[1] < PT - 36 or rr[3] > PB + 8:
                 continue
