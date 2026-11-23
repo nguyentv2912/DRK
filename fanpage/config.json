@@ -75,5 +75,9 @@
     ],
     "duyet": "ca-tuan",
     "_help": "Anh chốt 23/11: 5 bài/ngày = 2 video (khung 11:30, 20:00) + 3 bài ảnh/chữ (06:30, 09:30, 17:00). Bài ảnh/chữ lên kế hoạch Chủ Nhật, anh duyệt cả tuần một lần (đổi tên file kế hoạch trên Drive thành '... – ĐÃ DUYỆT' hoặc nhắn 'duyệt tuần')."
+  },
+  "zalo_group": {
+    "url": "https://zalo.me/g/u619ttgdwmtnfxkdx89t",
+    "_help": "Nhóm Zalo mới anh tạo 23/11 cho cộng đồng kênh. Dùng trong CTA cuối bài chữ dài/album (tối đa 1 lần/ngày) và bình luận ghim; không dùng nhóm Zalo cũ."
   }
 }
