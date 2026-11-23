@@ -1,0 +1,75 @@
+{
+  "brand_id": "7808796",
+  "network": "facebook",
+  "facebook_type": "REEL",
+  "mode": "tu-dong",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "media_cleared": true,
+  "posts": [
+    {
+      "ngay": "2026-11-24",
+      "gio": "13:30",
+      "video": "/home/user/DRK/fanpage/text-overlay/out/to01/video.mp4",
+      "caption": "/home/user/DRK/fanpage/text-overlay/caption/to01.md",
+      "title": "ĐỪNG MỞ APP khi lòng đang nóng – 10 phút chờ cứu cả tài khoản",
+      "status": "ok",
+      "metricool_id": 438820631,
+      "uuid": "-98901333870621777",
+      "media_metricool": "https://static.metricool.com/planner/202611/7808796-file-5689853426165093184.mp4",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-98901333870621777",
+      "loi": ""
+    },
+    {
+      "ngay": "2026-11-25",
+      "gio": "13:30",
+      "video": "/home/user/DRK/fanpage/text-overlay/out/to02/video.mp4",
+      "caption": "/home/user/DRK/fanpage/text-overlay/caption/to02.md",
+      "title": "3 CÂU HỎI trước khi xuống tiền: hiểu chưa, lỗ tối đa bao nhiêu, nếu sai thì sao",
+      "status": "ok",
+      "metricool_id": 438821241,
+      "uuid": "3459551716265445700",
+      "media_metricool": "https://static.metricool.com/planner/202611/7808796-file-17928302732177158708.mp4",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=3459551716265445700",
+      "loi": ""
+    },
+    {
+      "ngay": "2026-11-26",
+      "gio": "13:30",
+      "video": "/home/user/DRK/fanpage/text-overlay/out/to03/video.mp4",
+      "caption": "/home/user/DRK/fanpage/text-overlay/caption/to03.md",
+      "title": "GIẢM 50% cần tăng 100% mới về vốn – giữ vốn trước khi tìm lãi",
+      "status": "ok",
+      "metricool_id": 438821996,
+      "uuid": "6880035352612782883",
+      "media_metricool": "https://static.metricool.com/planner/202611/7808796-file-10989996401180894851.mp4",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=6880035352612782883",
+      "loi": ""
+    },
+    {
+      "ngay": "2026-11-27",
+      "gio": "13:30",
+      "video": "/home/user/DRK/fanpage/text-overlay/out/to04/video.mp4",
+      "caption": "/home/user/DRK/fanpage/text-overlay/caption/to04.md",
+      "title": "ĐỨNG NGOÀI cũng là một lựa chọn – không có cơ hội nào đáng đổi giấc ngủ",
+      "status": "ok",
+      "metricool_id": 438822663,
+      "uuid": "6855662972351692952",
+      "media_metricool": "https://static.metricool.com/planner/202611/7808796-file-12470461416754283536.mp4",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=6855662972351692952",
+      "loi": ""
+    },
+    {
+      "ngay": "2026-11-28",
+      "gio": "13:30",
+      "video": "/home/user/DRK/fanpage/text-overlay/out/to05/video.mp4",
+      "caption": "/home/user/DRK/fanpage/text-overlay/caption/to05.md",
+      "title": "TIỀN LÀ CÔNG CỤ tạo lựa chọn – đừng biến nó thành chủ nhân",
+      "status": "ok",
+      "metricool_id": 438823285,
+      "uuid": "-8733480418510354834",
+      "media_metricool": "https://static.metricool.com/planner/202611/7808796-file-8596408457763610618.mp4",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-8733480418510354834",
+      "loi": ""
+    }
+  ]
+}

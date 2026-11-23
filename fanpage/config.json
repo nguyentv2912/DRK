@@ -41,7 +41,7 @@
     "scripts_done_folder_id": "1V5HZIhPrEbzafwAGcqiG-fOsmmIwkg0a",
     "weekly_plan_folder_id": "1yBPRIev_Uqjj6HV1NPATEuyRGh3G6GZo"
   },
-  "media_repo": "nguyentv2912/dddt-media",
+  "media_repo": "nguyentv2912/DDDT-MEDIA",
   "_media_repo_help": "Repo GitHub công khai chỉ để Metricool lấy video đã edit. Dùng fanpage/tools/media_repo.py put/clear. Xoá video khỏi repo ngay khi Metricool đã sao chép (media chuyển sang static.metricool.com).",
   "processing_runs": [
     "09:17",
