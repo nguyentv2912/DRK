@@ -11,3 +11,4 @@ output/
 fanpage/runs/*/raw/
 __pycache__/
 fanpage/tu-lieu/goc/
+fanpage/runs/VN-*/video.mp4

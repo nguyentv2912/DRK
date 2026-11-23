@@ -44,6 +44,14 @@ Kế hoạch gốc: `team/viec/2026-11-23-he-thong-dang-bai/ke-hoach.md`. Mã tu
 ## Chế độ `len-lich-tuan` (mỗi lượt 05:05 kiểm tra; hoặc khi anh nhắn "duyệt tuần")
 Tìm trong `weekly_plan_folder_id` file "KẾ HOẠCH TUẦN … – ĐÃ DUYỆT" chưa có `RUN/da-len-lich.json`. Có → Vy (`dang-link`) xếp lịch từng bài ảnh/chữ lên Facebook qua Metricool đúng ngày giờ (ảnh qua `media_repo` hoặc link raw GitHub của `RUN/anh/`), ghi `RUN/da-len-lich.json`, đổi nội dung báo cáo: "Đã lên lịch <n>/21 bài tuần <mã>". Anh sửa trong Doc trước khi đổi tên thì lấy bản trong Doc làm chuẩn.
 
+## Chế độ `video-ngan` (05:05 mỗi ngày) — đội TỰ LÀM và TỰ ĐĂNG 1 video ngắn, không gửi anh duyệt (anh chốt 23/11)
+Video không có mặt anh: chữ động trên nền thương hiệu, nhạc nền, âm thanh hiệu ứng (`fanpage/tools/video_ngan.py`). `RUN=fanpage/runs/VN-<YYYYMMDD>`.
+1. Ngọc (`y-tuong-content`, theo skill `viet-bai-dao-duc-dau-tu` + sổ tay) chọn 1 chủ đề không trùng 14 ngày gần nhất (kể cả bài ảnh/chữ trong `fanpage/tuan/`), viết `RUN/spec.json` (hook ≤ 10 chữ, 3 ý ngắn ≤ 8 chữ + dòng phụ ≤ 14 chữ, trích dẫn kinh điển đúng xuất xứ nếu có, theo mạch Đạo – Đời – Đầu tư) và `RUN/post.md` (caption Facebook 60–120 chữ + câu "Theo dõi page…" + miễn trừ + hashtag có #daoducdautu), `RUN/tiktok.md`.
+2. Khoa (`edit-video`) chạy `python3 fanpage/tools/video_ngan.py RUN/spec.json RUN/video.mp4`, xem 3 khung hình (đầu, giữa, cuối) — chữ không tràn, không lỗi dấu.
+3. Bảo (`giam-sat`) chấm + Trang (`phan-bien`) rà nhanh: không hứa lãi, không mã/coin/số tiền, không trùng ý tuần. CHƯA ĐẠT → sửa (tối đa 2 vòng); vẫn chưa đạt → KHÔNG đăng, báo lỗi.
+4. Vy (`dang-link`) đăng **tự động** (không nháp) Facebook Reel khung 11:30 hôm nay (TikTok cùng giờ nếu brand TikTok đã xác nhận đúng daoducdautu). Nếu khung 11:30 đã có video anh quay thì dời sang khung trống kế tiếp, tối đa 2 video/ngày.
+5. Ghi `RUN/ket-qua.json`, commit `RUN/` (trừ video.mp4). Báo một dòng: "Video ngắn hôm nay: <chủ đề> – <giờ đăng>".
+
 ## Quy tắc
 - Không bao giờ đăng Instagram hay TikTok/Instagram của brand 7808796 (Mr Pump). Xem `never_post_to`.
 - Không đẩy video thô hay video đã edit vào repo DRK (repo công khai). Video đã edit chỉ đi qua `media_repo` và bị xoá sau khi Metricool sao chép.
