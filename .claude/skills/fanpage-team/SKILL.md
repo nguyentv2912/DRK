@@ -18,6 +18,9 @@ Chủ kênh có thể quay 2–3 video một ngày, nên luôn phải có sẵn 
    - `create_file` lên `scripts_folder_id`, `contentMimeType: text/plain`, tiêu đề `<mã> | <chuyên mục> | <chủ đề>`, nội dung = teleprompter + checklist ngắn; dòng đầu: "QUAY XONG: bỏ video vào thư mục '2. Video thô'. Không cần đặt tên file."
 4. Commit + push `fanpage/`. Kết thúc bằng một dòng: "Kho có <n> kịch bản chưa quay: <danh sách mã + chủ đề + link>".
 
+## Thư mục nhận video của anh
+Trước khi tìm video thô, kiểm `inbox_folder_id` (thư mục anh đã mở link chia sẻ): mỗi video mới → tải bằng `curl -L "https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t"` khi file còn ở đó, rồi chuyển vào `raw_folder_id` và xử lý như video thô. Không tự đổi quyền chia sẻ của file nào.
+
 ## Chế độ `xu-ly` (09:17, 10:17 và 21:17 mỗi ngày — có thể có nhiều video)
 1. `search_files`: `parentId = '<raw_folder_id>' and mimeType contains 'video/'`. Không có → kết thúc "Chưa có video mới."
 2. Tải về và ghép với kịch bản:
