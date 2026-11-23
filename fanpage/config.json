@@ -21,7 +21,8 @@
       "network": "tiktok",
       "metricool_brand_id": "",
       "expected_username": "daoducdautu",
-      "enabled": true,
+      "enabled": false,
+      "_disabled_note": "Chủ kênh chốt 23/11: chỉ đăng fanpage Facebook, không nối TikTok. Bật lại khi có thương hiệu Metricool riêng cho daoducdautu.",
       "verify": "Trước mỗi lần đăng: getBrandSettings của brand này phải có networksData.tiktokData == expected_username. Sai hoặc trống → KHÔNG đăng TikTok, báo chủ page."
     }
   ],
