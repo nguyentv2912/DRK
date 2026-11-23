@@ -52,6 +52,9 @@ Video không có mặt anh: chữ động trên nền thương hiệu, nhạc n�
 4. Vy (`dang-link`) đăng **tự động** (không nháp) Facebook Reel khung 11:30 hôm nay (TikTok cùng giờ nếu brand TikTok đã xác nhận đúng daoducdautu). Nếu khung 11:30 đã có video anh quay thì dời sang khung trống kế tiếp, tối đa 2 video/ngày.
 5. Ghi `RUN/ket-qua.json`, commit `RUN/` (trừ video.mp4). Báo một dòng: "Video ngắn hôm nay: <chủ đề> – <giờ đăng>".
 
+## Báo cáo hằng ngày qua Telegram (mọi chế độ)
+Cuối MỖI lượt chạy (kể cả "Chưa có video mới."), thêm 1 dòng vào cuối `fanpage/bao-cao/<YYYYMMDD giờ VN>.txt`: `HH:MM | <chế độ> | <dòng kết thúc của chế độ đó>`; commit + push cùng lần push cuối. Make đọc file lúc 22:00 và gửi qua bot `daotrading_bot`. Không ghi token, chat ID, thông tin cá nhân.
+
 ## Quy tắc
 - Không bao giờ đăng Instagram hay TikTok/Instagram của brand 7808796 (Mr Pump). Xem `never_post_to`.
 - Không đẩy video thô hay video đã edit vào repo DRK (repo công khai). Video đã edit chỉ đi qua `media_repo` và bị xoá sau khi Metricool sao chép.

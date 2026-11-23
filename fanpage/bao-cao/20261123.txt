@@ -1,0 +1,1 @@
+21:00 | Thiết lập | Đã nối Telegram bot daotrading_bot. Từ các lượt chạy tới, đội ghi 1 dòng báo cáo mỗi lượt vào file này; Make gửi cho chủ kênh lúc 22:00 hằng ngày.

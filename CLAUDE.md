@@ -13,4 +13,5 @@ Câu hỏi nhanh, sửa nhỏ, hoặc khi người dùng nói "tự làm" thì t
 - Danh sách nhân viên: `team/DOI_NGU.md` · Bảng điểm: `team/BANG_DIEM.md`
 - Hồ sơ mỗi việc: `team/viec/<YYYY-MM-DD-slug>/`
 - Việc fanpage hằng ngày: skill `fanpage-team`, tài nguyên ở `fanpage/`
+- **Báo cáo hằng ngày qua Telegram (bot `daotrading_bot`):** mọi lượt chạy tự động của kênh ĐẠO ĐỨC ĐẦU TƯ (04:52, 05:05, 09:17, 10:17, 14:47, 21:17), trước khi kết thúc, phải thêm đúng 1 dòng báo cáo vào cuối `fanpage/bao-cao/<YYYYMMDD giờ Việt Nam>.txt` (tạo file nếu chưa có), dạng `HH:MM | <tên lượt> | <kết quả ngắn, 1–3 câu: đã làm gì, giờ đăng, kho kịch bản, lỗi + việc chủ kênh cần làm>`, rồi commit + push cùng lần push cuối của lượt đó. Make tự đọc file này lúc 22:00 và gửi cho chủ kênh. Chỉ ghi nội dung công khai được: không token, mật khẩu, chat ID, thông tin cá nhân (repo công khai). Lượt không có việc vẫn ghi 1 dòng (ví dụ "Chưa có video mới.").
 - Trả lời người dùng bằng tiếng Việt.
