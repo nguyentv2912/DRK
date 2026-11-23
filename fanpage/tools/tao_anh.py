@@ -50,7 +50,10 @@ def wrap(d, text, font, maxw):
             lines.append(cur); cur = w
         else:
             cur = t
-    return lines + ([cur] if cur else [])
+    lines += [cur] if cur else []
+    if len(lines) >= 2 and len(lines[-1].split()) == 1 and len(lines[-2].split()) > 2:  # tránh 1 chữ rớt dòng
+        a = lines[-2].split(); lines[-2] = " ".join(a[:-1]); lines[-1] = a[-1] + " " + lines[-1]
+    return lines
 
 
 def fit(d, text, path, maxw, maxh, start=84, minsize=40, gap=1.32):
