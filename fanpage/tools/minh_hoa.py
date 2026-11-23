@@ -241,7 +241,9 @@ def main(video, tr_json, plan_json, mh_json, out):
             if src is None:
                 print("không thấy trigger:", p["trigger"]); continue
             after = src; t0 = remap(src, segs)
-        t1 = min(dur - 4, t0 + p.get("sec", 7))
+        t1 = min(dur - 0.3, t0 + p.get("sec", 7))
+        if t1 - t0 < 2:
+            t0 = max(0.0, t1 - 2.5)
         png = f"{tmp}/p{i}.png"; panel_png(png, p, acc, bg)
         inputs += ["-loop", "1", "-t", f"{dur:.3f}", "-i", png]
         y = p.get("y", 470 if split else 1450)
