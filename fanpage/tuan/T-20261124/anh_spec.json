@@ -1,0 +1,130 @@
+[
+ {
+  "loai": "trich_dan",
+  "ten": "d24-0930",
+  "chu": "Tiền là công cụ tạo lựa chọn; đừng biến nó thành chủ nhân.",
+  "nguon": "Đạo Đức Đầu Tư"
+ },
+ {
+  "loai": "infographic",
+  "ten": "d25-0930",
+  "tieu_de": "TOÁN HỌC CỦA SỤT GIẢM",
+  "dong": [
+   [
+    "Giảm 20%",
+    "cần tăng 25%"
+   ],
+   [
+    "Giảm 50%",
+    "cần tăng 100%"
+   ],
+   [
+    "Giảm 80%",
+    "cần tăng 400%"
+   ],
+   [
+    "Giảm 90%",
+    "cần tăng 900%"
+   ]
+  ],
+  "chu_thich": "Giữ vốn trước khi tìm thành quả."
+ },
+ {
+  "loai": "trich_dan",
+  "ten": "d25-1700",
+  "chu": "Từ chối thứ chưa hiểu là bản lĩnh chứ không phải yếu đuối.",
+  "nguon": "Đạo Đức Đầu Tư"
+ },
+ {
+  "loai": "album",
+  "ten": "d26-0930",
+  "tieu_de": "4 DẤU HIỆU \"THẦY\" ĐẦU TƯ THIẾU TRÁCH NHIỆM",
+  "trang": [
+   [
+    "1",
+    "Chỉ khoe phần thắng",
+    "giấu phần thua và rủi ro"
+   ],
+   [
+    "2",
+    "Coi phản biện là phản bội",
+    "cần tín đồ, không cần người hiểu"
+   ],
+   [
+    "3",
+    "Dọa để ép đăng ký",
+    "\"lỡ hôm nay là mất cả đời\""
+   ],
+   [
+    "4",
+    "Giấu lợi ích riêng",
+    "không nói ai trả hoa hồng"
+   ]
+  ],
+  "ket": "Lưu lại để tự soi trước khi trao lòng tin."
+ },
+ {
+  "loai": "trich_dan",
+  "ten": "d27-0630",
+  "chu": "Biết thì nói là biết, không biết thì nói là không biết, thế mới thật là biết.",
+  "nguon": "Khổng Tử – Luận Ngữ, thiên Vi Chính"
+ },
+ {
+  "loai": "infographic",
+  "ten": "d28-0930",
+  "tieu_de": "STOP – 4 NHỊP TRƯỚC KHI BẤM NÚT",
+  "dong": [
+   [
+    "S – Dừng",
+    "khi cảm xúc đang mạnh"
+   ],
+   [
+    "T – Nghĩ",
+    "giả định, dữ kiện, nguy cơ"
+   ],
+   [
+    "O – Lựa chọn",
+    "ít hơn, chờ, hay đứng ngoài"
+   ],
+   [
+    "P – Làm",
+    "chỉ khi khớp kế hoạch"
+   ]
+  ],
+  "chu_thich": "Đứng ngoài là lựa chọn hợp lệ."
+ },
+ {
+  "loai": "trich_dan",
+  "ten": "d28-1700",
+  "chu": "Dừng lại không có nghĩa là thiếu tham vọng; đó là cách tạo khoảng trống để phân biệt dữ kiện với cảm xúc.",
+  "nguon": "Đạo Đức Đầu Tư"
+ },
+ {
+  "loai": "album",
+  "ten": "d29-0930",
+  "tieu_de": "4 CÂU HỎI TỰ SOI TRƯỚC KHI XUỐNG TIỀN",
+  "trang": [
+   [
+    "1",
+    "Mình có hiểu nó không?",
+    "nói lại được trong ba câu"
+   ],
+   [
+    "2",
+    "Nếu sai thì sao?",
+    "mức dừng ở đâu, quỹ dự phòng còn nguyên không"
+   ],
+   [
+    "3",
+    "Kế hoạch hay sợ bỏ lỡ?",
+    "gọi tên cảm xúc trước khi bấm nút"
+   ],
+   [
+    "4",
+    "Ai hưởng lợi?",
+    "người rủ rê được gì khi bạn xuống tiền"
+   ]
+  ],
+  "ket": "Lưu lại để tự soi trước mỗi quyết định."
+ }
+]
