@@ -1,14 +1,14 @@
 [
  {
   "loai": "trich_dan",
-  "ten": "d24-0930",
+  "ten": "d24-0630",
   "chu": "Tiền là công cụ tạo lựa chọn; đừng biến nó thành chủ nhân.",
   "nguon": "Đạo Đức Đầu Tư"
  },
  {
   "loai": "infographic",
   "ten": "d25-0930",
-  "tieu_de": "TOÁN HỌC CỦA SỤT GIẢM",
+  "tieu_de": "PHÉP TOÁN SỤT GIẢM",
   "dong": [
    [
     "Giảm 20%",
@@ -38,11 +38,11 @@
  {
   "loai": "album",
   "ten": "d26-0930",
-  "tieu_de": "4 DẤU HIỆU \"THẦY\" ĐẦU TƯ THIẾU TRÁCH NHIỆM",
+  "tieu_de": "4 DẤU HIỆU “THẦY” THIẾU TRÁCH NHIỆM",
   "trang": [
    [
     "1",
-    "Chỉ khoe phần thắng",
+    "Chỉ kể phần thắng",
     "giấu phần thua và rủi ro"
    ],
    [
@@ -53,7 +53,7 @@
    [
     "3",
     "Dọa để ép đăng ký",
-    "\"lỡ hôm nay là mất cả đời\""
+    "“lỡ hôm nay là mất cả đời”"
    ],
    [
     "4",
@@ -61,7 +61,7 @@
     "không nói ai trả hoa hồng"
    ]
   ],
-  "ket": "Lưu lại để tự soi trước khi trao lòng tin."
+  "ket": "Lưu lại để soi trước khi tin ai."
  },
  {
   "loai": "trich_dan",
@@ -76,19 +76,19 @@
   "dong": [
    [
     "S – Dừng",
-    "khi cảm xúc đang mạnh"
+    "cảm xúc đang mạnh"
    ],
    [
     "T – Nghĩ",
-    "giả định, dữ kiện, nguy cơ"
+    "dữ kiện, nguy cơ"
    ],
    [
-    "O – Lựa chọn",
-    "ít hơn, chờ, hay đứng ngoài"
+    "O – Chọn",
+    "chờ, đứng ngoài"
    ],
    [
     "P – Làm",
-    "chỉ khi khớp kế hoạch"
+    "khi khớp kế hoạch"
    ]
   ],
   "chu_thich": "Đứng ngoài là lựa chọn hợp lệ."
@@ -96,7 +96,7 @@
  {
   "loai": "trich_dan",
   "ten": "d28-1700",
-  "chu": "Dừng lại không có nghĩa là thiếu tham vọng; đó là cách tạo khoảng trống để phân biệt dữ kiện với cảm xúc.",
+  "chu": "Di sản nằm trong cuộc đời người khác tốt lên.",
   "nguon": "Đạo Đức Đầu Tư"
  },
  {
@@ -106,7 +106,7 @@
   "trang": [
    [
     "1",
-    "Mình có hiểu nó không?",
+    "Mình hiểu nó chưa?",
     "nói lại được trong ba câu"
    ],
    [
@@ -116,7 +116,7 @@
    ],
    [
     "3",
-    "Kế hoạch hay sợ bỏ lỡ?",
+    "Kế hoạch hay FOMO?",
     "gọi tên cảm xúc trước khi bấm nút"
    ],
    [
@@ -125,6 +125,6 @@
     "người rủ rê được gì khi bạn xuống tiền"
    ]
   ],
-  "ket": "Lưu lại để tự soi trước mỗi quyết định."
+  "ket": "Lưu lại, soi trước mỗi quyết định."
  }
 ]

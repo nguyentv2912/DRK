@@ -1,0 +1,14 @@
+{
+  "id": "test",
+  "title": "10 bài tập luyện não dùng trong thời gian rảnh giúp bạn thông minh gấp nhiều lần",
+  "main": "10 BÀI TẬP LUYỆN NÃO",
+  "supporting": "dùng trong thời gian rảnh giúp bạn thông minh gấp nhiều lần",
+  "video": "inputs/video.mp4",
+  "music": "inputs/music.mp3",
+  "font": "inputs/font.ttf",
+  "duration": 15,
+  "support_ratio": 0.72,
+  "anchor": 0.6666666666666666,
+  "main_line_gap": -4,
+  "support_line_gap": 4
+}
