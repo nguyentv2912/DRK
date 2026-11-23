@@ -55,6 +55,9 @@ TikTok (`info`, brand TikTok đã kiểm tra):
  "draft": false, "autoPublish": true, "descendants": [], "shortener": false, "smartLinkData": {"ids": []}}
 ```
 
+## 4b. Bài ảnh/chữ (chế độ `len-lich-tuan`)
+Mỗi bài trong `fanpage/tuan/<mã>/ke-hoach.json`: chỉ Facebook, `text` = caption, `media` = link ảnh công khai (raw GitHub của file trong `anh/`, hoặc `media_repo.py put`) — album thì nhiều link theo thứ tự; bài chữ thì không có media. Giờ hẹn đúng `ngay` + `gio` (+07:00). Không tạo trùng: trước khi tạo, `getScheduledPosts` ngày đó, đã có bài cùng giờ thì bỏ qua.
+
 ## 5. Dọn kho media
 `getScheduledPosts` cho từng brand trong ngày: khi `media` của các bài vừa tạo đã là link `static.metricool.com` → chạy `media_repo.py clear`. Chưa chuyển → kiểm tra lại sau 2 phút (tối đa 5 lần); vẫn chưa thì để nguyên và ghi chú (lần chạy sau sẽ dọn).
 

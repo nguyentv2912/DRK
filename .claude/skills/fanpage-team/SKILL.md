@@ -1,6 +1,6 @@
 ---
 name: fanpage-team
-description: Vận hành mỗi ngày kênh ĐẠO ĐỨC ĐẦU TƯ trên Facebook + TikTok. "kich-ban" (05:05 hằng ngày) — giữ kho luôn có 3 kịch bản 90–180 giây chưa quay trên Google Drive. "xu-ly" (09:17, 10:17 và 21:17) — tìm các video thô mới, tự ghép với kịch bản, edit, xếp lịch đăng Facebook Reel + TikTok (tối đa 2 bài/ngày), báo cáo. Gọi /fanpage-team kich-ban | xu-ly | <chủ đề>.
+description: Vận hành mỗi ngày kênh ĐẠO ĐỨC ĐẦU TƯ trên Facebook + TikTok (5 bài/ngày: 2 video + 3 ảnh/chữ). "ke-hoach-tuan" (Chủ Nhật) — 21 bài ảnh/chữ cho tuần tới chờ anh duyệt; "len-lich-tuan" — lên lịch tuần đã duyệt. "kich-ban" (05:05 hằng ngày) — giữ kho luôn có 3 kịch bản 90–180 giây chưa quay trên Google Drive. "xu-ly" (09:17, 10:17 và 21:17) — tìm các video thô mới, tự ghép với kịch bản, edit, xếp lịch đăng Facebook Reel + TikTok (tối đa 2 bài/ngày), báo cáo. Gọi /fanpage-team kich-ban | xu-ly | <chủ đề>.
 ---
 # Vận hành kênh ĐẠO ĐỨC ĐẦU TƯ mỗi ngày
 
@@ -32,6 +32,17 @@ Chủ kênh có thể quay 2–3 video một ngày, nên luôn phải có sẵn 
 5. Video đã hẹn đăng thành công ít nhất một kênh → chuyển video thô vào `processed_folder_id` và chuyển Google Doc kịch bản vào `scripts_done_folder_id` (`update_file` đổi `parentId`).
 6. **Quân** báo cáo; **Hà** rà nhanh caption và publish.json. Chủ Nhật lượt 21:17: gọi **Trang** (`phan-bien`) chế độ A cho cả tuần. `python3 team/tools/bang_diem.py`; commit + push (không có video).
 7. Kết thúc bằng một dòng: mỗi video → mã kịch bản, kênh, giờ hẹn đăng; video không ghép được (nếu có); kho còn mấy kịch bản chưa quay.
+
+## Chế độ `ke-hoach-tuan` (Chủ Nhật 05:05, hoặc khi được gọi) — 21 bài ảnh/chữ cho tuần tới
+Kế hoạch gốc: `team/viec/2026-11-23-he-thong-dang-bai/ke-hoach.md`. Mã tuần `T-<YYYYMMDD của Thứ Hai>`, `RUN=fanpage/tuan/<mã>`.
+1. Quân (`tra-loi-bao-cao`) lấy số liệu 7 ngày qua (Metricool), chọn top 5 bài → `RUN/so-lieu.md`.
+2. Ngọc (`y-tuong-content`, theo skill `viet-bai-dao-duc-dau-tu` và sổ tay) viết `RUN/ke-hoach.json`: 21 bài = 7 ngày × 3 khung (06:30, 09:30, 17:00) theo tỷ lệ tuần: 4 chữ nền màu, 4 chữ ngắn, 3 chữ dài, 4 ảnh trích dẫn, 2 infographic, 2 album, (+2 bài chữ thay chỗ nếu thiếu ý). Mỗi bài: `ngay, gio, loai, text (caption), anh (spec cho tao_anh.py nếu có)`. Có 3 bài làm lại từ top 5, 2 bài "chép mô hình" (không chép chữ) từ bài thắng cùng ngách. Mỗi ngày khác dạng, không lặp chủ đề với 14 ngày gần nhất.
+3. Tùng/trưởng nhóm chạy `python3 fanpage/tools/tao_anh.py <spec> RUN/anh/` cho các bài có ảnh. Ảnh không mặt người → được commit.
+4. Bảo chấm + Trang rà (không hứa lãi, không mã/coin, không số tiền trên ảnh, không câu "like nếu đồng ý", không nhắc thương hiệu lớn). Sửa xong mới gửi anh.
+5. `create_file` lên `weekly_plan_folder_id`: Google Doc "KẾ HOẠCH TUẦN <dd/mm–dd/mm> – CHỜ DUYỆT" (bảng 21 bài: ngày, giờ, dạng, caption, link ảnh trên GitHub) + tải ảnh lên cùng thư mục. Kết thúc một dòng: "Kế hoạch tuần chờ anh duyệt: <link>. Duyệt: đổi tên file thành '… – ĐÃ DUYỆT' hoặc nhắn 'duyệt tuần'."
+
+## Chế độ `len-lich-tuan` (mỗi lượt 05:05 kiểm tra; hoặc khi anh nhắn "duyệt tuần")
+Tìm trong `weekly_plan_folder_id` file "KẾ HOẠCH TUẦN … – ĐÃ DUYỆT" chưa có `RUN/da-len-lich.json`. Có → Vy (`dang-link`) xếp lịch từng bài ảnh/chữ lên Facebook qua Metricool đúng ngày giờ (ảnh qua `media_repo` hoặc link raw GitHub của `RUN/anh/`), ghi `RUN/da-len-lich.json`, đổi nội dung báo cáo: "Đã lên lịch <n>/21 bài tuần <mã>". Anh sửa trong Doc trước khi đổi tên thì lấy bản trong Doc làm chuẩn.
 
 ## Quy tắc
 - Không bao giờ đăng Instagram hay TikTok/Instagram của brand 7808796 (Mr Pump). Xem `never_post_to`.

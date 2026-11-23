@@ -1,5 +1,5 @@
 # Kế hoạch & quy trình: Hệ thống đăng bài đều mỗi ngày – Fanpage Đạo Đức Đầu Tư
-Ngày: 23/11/2026 · Lập bởi: Minh – Quản lý · Trạng thái: **CHỜ ANH DUYỆT**
+Ngày: 23/11/2026 · Lập bởi: Minh – Quản lý · Trạng thái: **ANH ĐÃ DUYỆT 23/11** — duyệt cả tuần một lần; page mới, đã bật chuyên nghiệp; 5 bài/ngày ngay từ đầu (2 video + 3 ảnh/chữ); anh tạo nhóm Zalo mới; chia sẻ vào group do anh/admin bấm bằng page
 Nguồn: bài "7 bước" anh gửi (ảnh chụp, 23/11). Áp vào kênh theo sổ tay, skill viết bài (Đạo – Đời – Đầu tư) và skill dựng video.
 
 ## 1. Mục tiêu 90 ngày
