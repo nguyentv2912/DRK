@@ -1023,10 +1023,17 @@ def terminal(c, oy, t, cam):
         c.drawRoundRect(r, 18, 18, P(hexc(COL["pos"] if hl else COL["line"], .9 if hl else 1), 2))
         tc = (r.left(), r.top(), r.right(), r.bottom())
         logo(c, tk["mint"], tx + 34, ty + 34, 22)
-        symb = tk["symbol"][:7]
-        text(c, symb, tx + 66, ty + 18, 27, 700, container=tc)
         chg = tk["price_change_h24"] / 100
-        text(c, pct(chg, 1 if abs(chg) < 10 else 0), r.right() - 14, ty + 20, 23, 700, hexc(COL["pos"] if chg >= 0 else COL["neg"]), align="r", container=tc)
+        if abs(chg) >= 100:  # >= 10,000 %: compact as +26.4k%
+            chs = ("+" if chg >= 0 else "") + f"{chg*100/1000:.1f}k%"
+        else:
+            chs = pct(chg, 1 if abs(chg) < 10 else 0)
+        cw = tw(chs, 23, 700)
+        symb = tk["symbol"][:7]
+        while len(symb) > 3 and tx + 66 + tw(symb, 27, 700) + 10 > r.right() - 14 - cw:
+            symb = symb[:-1]
+        text(c, symb, tx + 66, ty + 18, 27, 700, container=tc)
+        text(c, chs, r.right() - 14, ty + 20, 23, 700, hexc(COL["pos"] if chg >= 0 else COL["neg"]), align="r", container=tc)
         text(c, "$" + fprice(tk["price_usd"]), tx + 16, ty + 64, 23, 600, hexc(COL["text"]), container=tc)
         text(c, "V " + compact(tk["volume_h24"]).lstrip("$"), r.right() - 14, ty + 64, 22, 500, hexc(COL["text2"]), align="r", container=tc)
     snap_t = dt.datetime.strptime(SNAP["snapshot_finished_at"], "%Y-%m-%dT%H:%M:%SZ").strftime("%b %d %H:%M UTC")
