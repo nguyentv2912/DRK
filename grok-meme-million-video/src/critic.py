@@ -101,9 +101,14 @@ def main():
     ed = np.abs(np.diff(band, axis=2)).mean((1, 2))
     regv = json.load(open(os.path.join(OUT, "layout_registry.json")))
     sv = {int(f): next((x.get("scroll_v", 0) for x in it if x["kind"] == "camera"), 0) for f, it in regv.items()}
-    moving = lambda i: max(abs(sv.get(j, 0)) for j in range(i - 2, i + 3)) > 300  # content scrolling through the zone
+    tz = {int(f): next((x.get("tz", 0) for x in it if x["kind"] == "camera"), 0) for f, it in regv.items()}
+    dolly = lambda i: max(abs(tz.get(j + 1, 0) - tz.get(j, 0)) for j in range(i - 2, i + 2)) > 8  # fast camera push-in rescales the band (aliasing at 135 px)
+    moving = lambda i: max(abs(sv.get(j, 0)) for j in range(i - 2, i + 3)) > 300 or dolly(i)  # content scrolling / camera dolly through the zone
     flashes = [i for i in range(2, len(ed) - 2)
-               if ed[i] - max(ed[i - 2], ed[i + 2]) > .6 and ed[i] - min(ed[i - 1], ed[i + 1]) > .3 and not moving(i)]
+               if ed[i] - max(ed[i - 2], ed[i + 2]) > .6 and ed[i] - min(ed[i - 1], ed[i + 1]) > .3 and not moving(i)
+               # a ghost flash vanishes: energy must fall back at least halfway toward the pre-pop level
+               # (a banner spring overshoot peaks once and then settles at the new, higher level)
+               and ed[i + 2] - ed[i - 2] < .5 * (ed[i] - ed[i - 2])]
     check("no ghost flashes in the banner zone (< 3 frames)", not flashes, f"{len(flashes)} flashes" + (f" at frames {flashes[:6]}" if flashes else ""))
 
     # ---- C. layout registry (text overlap / clipping / chart labels / markers)
