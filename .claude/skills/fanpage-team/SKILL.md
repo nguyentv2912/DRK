@@ -58,6 +58,9 @@ Video không có mặt anh: chữ động trên nền thương hiệu, nhạc n�
 ## Báo cáo hằng ngày qua Telegram (mọi chế độ)
 Cuối MỖI lượt chạy (kể cả "Chưa có video mới."), thêm 1 dòng vào cuối `fanpage/bao-cao/<YYYYMMDD giờ VN>.txt`: `HH:MM | <chế độ> | <dòng kết thúc của chế độ đó>`; commit + push cùng lần push cuối. Make đọc file lúc 22:00 và gửi qua bot `daotrading_bot`. Không ghi token, chat ID, thông tin cá nhân.
 
+## Hạn mức tháng (anh chốt 27/11 — áp dụng từ 01/12)
+Metricool chỉ cho khoảng 20 bài/tháng → **4 bài/tuần, đăng 20:00 các ngày Thứ Hai, Thứ Tư, Thứ Sáu, Chủ Nhật** (`han_muc_metricool` trong config). Mọi chế độ có đăng bài phải: (1) chỉ tạo bài đúng ngày trong `lich_tuan`; (2) trước khi tạo, đếm bài tháng này (getScheduledPosts từ ngày 1, bỏ bài ERROR) — đủ `bai_toi_da_thang` thì dừng và báo. Ngày không có lịch: vẫn làm nội dung dự trữ (kịch bản, video, ảnh) nhưng KHÔNG đăng. Tháng 12 đăng bù trước theo `uu_tien_dang_bu` (bài bị lỗi hạn mức cuối tháng 11). `ke-hoach-tuan` chỉ làm 2 bài ảnh/chữ/tuần (Thứ Tư, Chủ Nhật); `video-ngan` chỉ đăng Thứ Sáu.
+
 ## Quy tắc
 - Không bao giờ đăng Instagram hay TikTok/Instagram của brand 7808796 (Mr Pump). Xem `never_post_to`.
 - Không đẩy video thô hay video đã edit vào repo DRK (repo công khai). Video đã edit chỉ đi qua `media_repo` và bị xoá sau khi Metricool sao chép.

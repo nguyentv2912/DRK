@@ -83,5 +83,34 @@
     "url": "https://zalo.me/g/u619ttgdwmtnfxkdx89t",
     "_help": "Nhóm Zalo mới anh tạo 23/11 cho cộng đồng kênh. Dùng trong CTA cuối bài chữ dài/album (tối đa 1 lần/ngày) và bình luận ghim; không dùng nhóm Zalo cũ."
   },
-  "chi_dang_fanpage": true
+  "chi_dang_fanpage": true,
+  "han_muc_metricool": {
+    "bai_toi_da_thang": 20,
+    "_help": "Anh chốt 27/11: Metricool gói hiện tại hết hạn mức sau khoảng 21 bài/tháng (tính chung cả bài Mr Pump trên cùng brand). Từ tháng 12 chia đều: 4 bài/tuần, tối đa 20 bài/tháng. Trước khi tạo bài: đếm bài đã đăng/đã hẹn trong tháng (getScheduledPosts từ ngày 1, mọi status trừ ERROR); đủ 20 thì không tạo, báo chủ kênh.",
+    "lich_tuan": {
+      "thu_hai": {
+        "gio": "20:00",
+        "loai": "video anh quay (inbox/kho), nếu không có thì video text overlay"
+      },
+      "thu_tu": {
+        "gio": "20:00",
+        "loai": "bài ảnh/album/infographic từ kế hoạch tuần"
+      },
+      "thu_sau": {
+        "gio": "20:00",
+        "loai": "video ngắn đội tự làm (video_ngan.py) hoặc text overlay"
+      },
+      "chu_nhat": {
+        "gio": "20:00",
+        "loai": "bài chữ dài Đạo – Đời – Đầu tư (có ảnh trích dẫn)"
+      }
+    },
+    "uu_tien_dang_bu": [
+      "VL-2511-ban-la-ai (video anh)",
+      "VL-2611-an-minh (video anh)",
+      "T-20261124 album 26/11 '4 dấu hiệu thầy'",
+      "text overlay to03 'Giảm 50%'",
+      "video ngắn 26/11, 27/11"
+    ]
+  }
 }
