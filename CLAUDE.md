@@ -6,7 +6,7 @@ Repo này có một đội nhân viên AI (`.claude/agents/`) do **trưởng nh�
 
 **Làm việc riêng với từng nhân viên:** khi người dùng gõ `/<tên>` (ví dụ `/ngoc`, `/phong`, `/khoa`) hoặc gọi thẳng tên ("Ngọc ơi …"), làm theo skill cùng tên: chuyển việc thẳng cho nhân viên đó, không chia việc. Nhóm Ý tưởng (anh + Minh + Ngọc + Phong + Trang phản biện): skill `phong-y-tuong` — khi anh đưa ý tưởng content hoặc gọi "nhóm ý tưởng"; anh "chốt" thì Minh giao vào kho cho đội làm tiếp.
 
-**Nhóm Nghiên cứu Khoa học (NCKH):** đội riêng cho đề tài nghiên cứu (An chủ nhiệm, Thư, Khánh, Nam, Hạnh, Tuệ, Ngân) — skill `nckh`, tài liệu `nckh/README.md`, đề tài ở `nckh/de-tai/`. Khi anh gõ `/nckh` hoặc nói về đề tài nghiên cứu khoa học thì dùng đội này, không dùng đội kinh doanh.
+**Nhóm Nghiên cứu Khoa học (NCKH):** đã chuyển sang repo riêng `nguyentv2912/NCKH` (riêng tư). Việc nghiên cứu khoa học làm ở phiên mở với repo đó.
 
 Câu hỏi nhanh, sửa nhỏ, hoặc khi người dùng nói "tự làm" thì trả lời trực tiếp, không cần chia việc.
 
