@@ -1,0 +1,79 @@
+{
+ "hook_title": "BẦU CỬ MỸ & MÙA ĐÔNG CRYPTO",
+ "keywords": {
+  "mùa đông": "gold",
+  "gieo hạt": "green",
+  "tiền nhàn rỗi": "green",
+  "đòn bẩy": "red",
+  "bầu cử": "gold",
+  "thắt chặt": "red"
+ },
+ "cards": [
+  {
+   "trigger": "Thứ nhất, tin tức tuần này",
+   "kicker": "①",
+   "text": "TIN TỨC CHÍNH TRỊ – KINH TẾ",
+   "accent": "gold",
+   "sec": 3
+  },
+  {
+   "trigger": "Thứ hai, thị trường đang ở mùa nào",
+   "kicker": "②",
+   "text": "4 MÙA CỦA CRYPTO",
+   "accent": "gold",
+   "sec": 3
+  },
+  {
+   "trigger": "Ba chu kỳ trước, mùa đông đều chạm đáy",
+   "kicker": "2014 · 2018 · 2022",
+   "text": "ĐÁY QUANH BẦU CỬ GIỮA KỲ",
+   "accent": "red",
+   "sec": 3.5
+  },
+  {
+   "trigger": "Thứ ba, cách đầu tư trong từng mùa",
+   "kicker": "③",
+   "text": "CÁCH ĐẦU TƯ MÙA ĐÔNG",
+   "accent": "gold",
+   "sec": 3
+  },
+  {
+   "trigger": "Việc một: giữ ấm trước",
+   "kicker": "1",
+   "text": "QUỸ DỰ PHÒNG 6 THÁNG",
+   "accent": "green",
+   "sec": 2.5
+  },
+  {
+   "trigger": "Việc hai: bỏ đòn bẩy",
+   "kicker": "2",
+   "text": "BỎ ĐÒN BẨY",
+   "accent": "red",
+   "sec": 2.5
+  },
+  {
+   "trigger": "Việc ba: gieo hạt từng đợt",
+   "kicker": "3",
+   "text": "GIEO HẠT TỪNG ĐỢT",
+   "accent": "green",
+   "sec": 2.5
+  },
+  {
+   "trigger": "Việc bốn: viết sẵn kế hoạch",
+   "kicker": "4",
+   "text": "VIẾT KẾ HOẠCH MÙA THU",
+   "accent": "gold",
+   "sec": 2.5
+  }
+ ],
+ "cut_ranges": [],
+ "cta": {
+  "text": "NHÓM ZALO Ở BÌNH LUẬN GHIM",
+  "sub": "ĐẠO ĐỨC ĐẦU TƯ — Mùa đông, Gieo hạt · Tập 1",
+  "sec": 3.5
+ },
+ "crop_x": 0.5,
+ "max_pause": 0.45,
+ "music_volume": 0.18,
+ "brand": "ĐẠO ĐỨC ĐẦU TƯ"
+}

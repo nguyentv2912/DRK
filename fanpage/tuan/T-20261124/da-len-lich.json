@@ -1,0 +1,212 @@
+{
+  "tuan": "T-20261124",
+  "brand_id": "7808796",
+  "facebook_page": "1310819422110438 (ĐẠO ĐỨC ĐẦU TƯ)",
+  "network": "facebook",
+  "mode": "tu-dong (draft=false, autoPublish=true)",
+  "created_at": "2026-11-23T20:45:00+07:00",
+  "tong": 18,
+  "ok": 18,
+  "loi": 0,
+  "bo_qua": 0,
+  "bai": [
+    {
+      "ngay": "2026-11-24",
+      "gio": "06:30",
+      "loai": "trich_dan",
+      "chu_de": "#1 Đầu tư để làm gì?",
+      "so_anh": 1,
+      "status": "ok",
+      "metricool_id": 438811752,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-8180823099023798338",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-24",
+      "gio": "09:30",
+      "loai": "nen_mau",
+      "chu_de": "#21 Tích sản thay vì khoe ảnh tài khoản",
+      "so_anh": 0,
+      "status": "ok",
+      "metricool_id": 438811961,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=4369079783141230837",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-24",
+      "gio": "17:00",
+      "loai": "chu_dai",
+      "chu_de": "#14 Đừng đánh đổi gia đình",
+      "so_anh": 0,
+      "status": "ok",
+      "metricool_id": 438812157,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-7578449554661227260",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-25",
+      "gio": "06:30",
+      "loai": "chu_ngan",
+      "chu_de": "#6 Sân hận và giao dịch trả thù",
+      "so_anh": 0,
+      "status": "ok",
+      "metricool_id": 438812207,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-4626126314387257575",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-25",
+      "gio": "09:30",
+      "loai": "infographic",
+      "chu_de": "#34 Toán học của sụt giảm",
+      "so_anh": 1,
+      "status": "ok",
+      "metricool_id": 438812299,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-7697394440727478043",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-25",
+      "gio": "17:00",
+      "loai": "trich_dan",
+      "chu_de": "#20 Người giỏi biết nói không",
+      "so_anh": 1,
+      "status": "ok",
+      "metricool_id": 438812380,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-7755082176903164845",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-26",
+      "gio": "06:30",
+      "loai": "nen_mau",
+      "chu_de": "#5 Soi lòng tham",
+      "so_anh": 0,
+      "status": "ok",
+      "metricool_id": 438812665,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-885782139620474023",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-26",
+      "gio": "09:30",
+      "loai": "album",
+      "chu_de": "#32 Dấu hiệu \"thầy\" thiếu trách nhiệm (chép mô hình: danh sách đánh số)",
+      "so_anh": 6,
+      "status": "ok",
+      "metricool_id": 438812894,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=2687869768270367923",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-26",
+      "gio": "17:00",
+      "loai": "chu_ngan",
+      "chu_de": "#9 Không all-in",
+      "so_anh": 0,
+      "status": "ok",
+      "metricool_id": 438812970,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-5255971381738781657",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-27",
+      "gio": "06:30",
+      "loai": "trich_dan",
+      "chu_de": "#23 Khiêm nhường trước thị trường",
+      "so_anh": 1,
+      "status": "ok",
+      "metricool_id": 438813098,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-1582410859407324315",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-27",
+      "gio": "09:30",
+      "loai": "chu_ngan",
+      "chu_de": "#15 Sức khỏe quý hơn thành quả – tỷ trọng vừa sức",
+      "so_anh": 0,
+      "status": "ok",
+      "metricool_id": 438813172,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-2251161135166700878",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-27",
+      "gio": "17:00",
+      "loai": "chu_dai",
+      "chu_de": "#10 Biết đủ là năng lực",
+      "so_anh": 0,
+      "status": "ok",
+      "metricool_id": 438813379,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=2217148210865194659",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-28",
+      "gio": "06:30",
+      "loai": "nen_mau",
+      "chu_de": "#28 Hạnh phúc không đợi giàu",
+      "so_anh": 0,
+      "status": "ok",
+      "metricool_id": 438813796,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-1142202629814138406",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-28",
+      "gio": "09:30",
+      "loai": "infographic",
+      "chu_de": "#24 Tu tập mỗi ngày – STOP trước khi bấm nút",
+      "so_anh": 1,
+      "status": "ok",
+      "metricool_id": 438813942,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-1409248341206546658",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-28",
+      "gio": "17:00",
+      "loai": "trich_dan",
+      "chu_de": "#27 Giàu có truyền đời",
+      "so_anh": 1,
+      "status": "ok",
+      "metricool_id": 438814053,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=4654750276104242398",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-29",
+      "gio": "06:30",
+      "loai": "chu_ngan",
+      "chu_de": "#22 Học từ thất bại",
+      "so_anh": 0,
+      "status": "ok",
+      "metricool_id": 438814122,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-8180676694854056726",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-29",
+      "gio": "09:30",
+      "loai": "album",
+      "chu_de": "#18 Đầu tư hay đánh bạc? (chép mô hình: câu hỏi tự soi)",
+      "so_anh": 6,
+      "status": "ok",
+      "metricool_id": 438814303,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=8244537456635038970",
+      "error": ""
+    },
+    {
+      "ngay": "2026-11-29",
+      "gio": "17:00",
+      "loai": "chu_dai",
+      "chu_de": "#2 Ai mới thật sự giàu?",
+      "so_anh": 0,
+      "status": "ok",
+      "metricool_id": 438814438,
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7808796&openWithPostUuid=-4272652330994023172",
+      "error": ""
+    }
+  ]
+}

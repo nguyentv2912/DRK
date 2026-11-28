@@ -1,0 +1,19 @@
+{"brand": "ĐẠO ĐỨC ĐẦU TƯ",
+ "title": "Gồng lỗ — thói quen âm thầm giết tài khoản",
+ "hook_title": "BẠN THUA VÌ KHÔNG CHỊU CẮT",
+ "hook_accent": "red",
+ "keywords": {"cắt lỗ": "green", "gồng lỗ": "red", "kiên nhẫn": "gold", "hy vọng": "red", "kỷ luật": "gold",
+              "học phí": "green", "nóng giận": "red", "nhật ký": "green", "kế hoạch": "gold", "còn vốn": "gold",
+              "tỉnh táo": "gold", "mười tám phần trăm": "red"},
+ "cards": [
+   {"trigger": "mười tám phần trăm", "text": "-2% → -18%", "accent": "red", "sec": 3},
+   {"trigger": "vậy làm sao", "text": "THOÁT GỒNG LỖ THẾ NÀO?", "accent": "gold", "sec": 3},
+   {"trigger": "thứ nhất", "kicker": "1", "text": "CẮT LỖ TRƯỚC KHI VÀO", "accent": "green", "sec": 3.5},
+   {"trigger": "thứ hai", "kicker": "2", "text": "LỖ NHỎ LÀ HỌC PHÍ", "accent": "green", "sec": 3.5},
+   {"trigger": "hai mươi lăm phần trăm", "text": "-20% CẦN +25% ĐỂ HOÀ", "accent": "red", "sec": 3},
+   {"trigger": "thứ ba", "kicker": "3", "text": "CẮT XONG THÌ NGHỈ", "accent": "green", "sec": 3.5},
+   {"trigger": "thứ tư", "kicker": "4", "text": "LỆNH LỖ ≠ BẠN KÉM", "accent": "green", "sec": 3.5},
+   {"trigger": "thị trường ngày mai", "text": "CƠ HỘI DÀNH CHO NGƯỜI CÒN VỐN", "accent": "gold", "sec": 4}
+ ],
+ "cta": {"text": "THEO DÕI", "sub": "ĐẠO ĐỨC ĐẦU TƯ — kỷ luật mỗi ngày", "sec": 3.5},
+ "cut_ranges": [], "crop_x": 0.5, "max_pause": 0.45, "music_volume": 0.07}

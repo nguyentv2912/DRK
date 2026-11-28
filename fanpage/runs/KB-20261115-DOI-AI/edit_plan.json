@@ -1,0 +1,51 @@
+{
+ "hook_title": "8 THÀNH VIÊN – CHỈ 1 NGƯỜI THẬT",
+ "keywords": {
+  "bình an": "gold",
+  "trách nhiệm": "gold",
+  "AI": "green",
+  "kỷ luật": "gold",
+  "gia đình": "green",
+  "lặp lại": "red"
+ },
+ "cards": [
+  {
+   "trigger": "thứ nhất",
+   "kicker": "①",
+   "text": "GIAO VIỆC 1 CÂU",
+   "accent": "gold",
+   "sec": 3
+  },
+  {
+   "trigger": "thứ hai",
+   "kicker": "②",
+   "text": "KỊCH BẢN TỪ 5H SÁNG",
+   "accent": "gold",
+   "sec": 3
+  },
+  {
+   "trigger": "thứ ba",
+   "kicker": "③",
+   "text": "MÌNH CHỈ VIỆC QUAY",
+   "accent": "gold",
+   "sec": 3
+  },
+  {
+   "trigger": "thứ tư",
+   "kicker": "④",
+   "text": "CÓ CHẤM ĐIỂM, CÓ PHẢN BIỆN",
+   "accent": "gold",
+   "sec": 3
+  }
+ ],
+ "cut_ranges": [],
+ "cta": {
+  "text": "THEO DÕI",
+  "sub": "ĐẠO ĐỨC ĐẦU TƯ — bình an trong đầu tư",
+  "sec": 3.5
+ },
+ "crop_x": 0.5,
+ "max_pause": 0.45,
+ "music_volume": 0.22,
+ "brand": "ĐẠO ĐỨC ĐẦU TƯ"
+}

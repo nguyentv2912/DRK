@@ -1,0 +1,35 @@
+{
+ "hook_title": "MẤT BÒ MỚI LO LÀM CHUỒNG",
+ "keywords": {
+  "ví cá nhân": "green",
+  "cụm từ khôi phục": "green",
+  "sụp đổ": "red",
+  "làm chuồng": "gold"
+ },
+ "cards": [
+  {
+   "trigger": "Mất bò mới lo làm chuồng",
+   "kicker": "5/6",
+   "text": "MẤT BÒ MỚI LO LÀM CHUỒNG",
+   "accent": "gold",
+   "sec": 3
+  },
+  {
+   "trigger": "Mình mong các bạn làm chuồng trước",
+   "kicker": "→",
+   "text": "TỰ GIỮ TÀI SẢN",
+   "accent": "green",
+   "sec": 3
+  }
+ ],
+ "cut_ranges": [],
+ "cta": {
+  "text": "NHÓM ZALO Ở BÌNH LUẬN GHIM",
+  "sub": "ĐẠO ĐỨC ĐẦU TƯ — 6 lời ông bà · 5/6",
+  "sec": 3.5
+ },
+ "crop_x": 0.5,
+ "max_pause": 0.45,
+ "music_volume": 0.18,
+ "brand": "ĐẠO ĐỨC ĐẦU TƯ"
+}

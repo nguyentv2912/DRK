@@ -1,0 +1,13 @@
+# Phản biện tuần T-20261124 (18 bài ảnh/chữ) – Trang
+Góc nhìn: page mới, cần tăng theo dõi nhanh. Điểm tốt nên giữ: không dính từ cấm; trích dẫn đúng nguồn (Tiên Tiến, ĐĐK ch.44, Vi Chính); #34 Toán sụt giảm, #32 Dấu hiệu "thầy", #18 Câu hỏi tự soi là 3 bài có giá trị thực dụng, dễ lưu và dễ chia sẻ nhất tuần.
+
+**1. Trùng chủ đề và trùng chữ (mức cao).** Có 7/18 bài cùng một ý "dừng / tắt máy / rời màn hình" (#40, #14, #6, #15, #10, #36, #24). "Giấc ngủ yên" lặp ở 6 bài, "bản lĩnh" lặp ở 3 bài (#20 hai lần, #23), và gần như bài nào cũng kết bằng "...và giữ bình an". Người theo dõi mới sẽ thấy page chỉ có một màu. Cách sửa: mỗi tuần tối đa 3 bài cùng một ý; thay câu "bình an" chung chung bằng một hình ảnh cụ thể (bữa cơm, giấc ngủ, con kể chuyện).
+**2. Thiếu lời mời theo dõi đúng chỗ.** Chỉ 3 bài chữ dài có "Theo dõi page", trong khi 3 bài dễ lan nhất (#34, #32, #18) lại không có. #32 còn đặt link Zalo (link ra ngoài thường bị giảm tiếp cận). Cách sửa: thêm "Theo dõi page để nhận thêm bảng tự soi mỗi tuần" vào #34, #32, #18 và bỏ Zalo khỏi #32. Nhiều bài ngắn còn thiếu câu miễn trừ (#6, #20, #23, #15, #36, #18).
+**3. Dễ bị hiểu là giảng đạo hoặc là page cho dân trade.** Bài đầu tiên của page (#40, 06:30) là một dòng về "đóng mở lệnh" và lại hỏi "rời màn hình lúc mấy giờ" vào buổi sáng, vừa lệch giờ vừa kén người đọc. Hãy đưa #1 lên đầu. Ở #36, chữ "sĩ diện" mang ý trách người đọc. #2 có phần ☯ ĐẠO chỉ là khung "bốn chiều", không có nguyên lý sống nào cả, nên chưa đúng bố cục. #34 hỏi "mức dừng bao nhiêu %" dễ khiến bình luận biến thành chỗ xin con số. Nên đổi thành "Các bạn đã viết mức dừng ra giấy chưa?".
+**4. Cân bằng:** có khoảng 7 bài thực dụng và 11 bài triết lý/cảm xúc, tạm ổn. Tuy vậy bài thực dụng đều dồn vào khung 09:30. Nên đổi một bài ở khung 17:00 (vd. #20) thành dạng danh sách để giữ người xem buổi tối.
+**5. #32 sẽ được chia sẻ nhiều hơn** nếu thêm một câu tự ràng buộc: "Áp dụng cho cả page này: thấy mình mắc dấu hiệu nào, các bạn cứ nói thẳng." Câu này tạo uy tín, và giúp bài không bị đọc như đang công kích page khác.
+
+**3 bài nên đổi để tăng chia sẻ:**
+- #1 (09:30 ngày 24), hook sáo. Thay bằng: "Đầu tư để được tự do, sao giờ canh màn hình tới khuya?"; ảnh: "Tiền nên mở thêm lựa chọn, không nên lấy đi giấc ngủ."
+- #20 (17:00 ngày 25), hook chung chung. Thay bằng: "Nghe ba câu này, hãy giữ chặt ví."; ảnh: "'Chắc chắn trong 24 giờ' – 'Cơ hội cuối' – 'Chỉ dành cho người tin': nghe là dừng." (dạng cảnh báo, người đọc dễ gửi cho bố mẹ, bạn bè).
+- #36 (17:00 ngày 28), câu trên ảnh dài 22 chữ và trừu tượng. Thay bằng: "Nhận sai sớm thì nhẹ. Nhận sai muộn thì đau."; hook: "Các bạn có đang ôm một khoản chỉ vì chưa muốn nhận sai?"

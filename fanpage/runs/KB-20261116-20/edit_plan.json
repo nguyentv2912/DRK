@@ -1,0 +1,23 @@
+{
+ "hook_title": "BỐN MÙA CỦA CRYPTO TRONG 1 PHÚT",
+ "keywords": {},
+ "cards": [
+  {
+   "trigger": "Bốn mùa của crypto, trong một phút",
+   "kicker": "20/24",
+   "text": "BỐN MÙA CỦA CRYPTO TRONG 1 PHÚT",
+   "accent": "gold",
+   "sec": 3
+  }
+ ],
+ "cut_ranges": [],
+ "cta": {
+  "text": "NHÓM ZALO Ở BÌNH LUẬN GHIM",
+  "sub": "ĐẠO ĐỨC ĐẦU TƯ — Mùa đông, Gieo hạt · video ngắn 20/24",
+  "sec": 3.5
+ },
+ "crop_x": 0.5,
+ "max_pause": 0.45,
+ "music_volume": 0.18,
+ "brand": "ĐẠO ĐỨC ĐẦU TƯ"
+}

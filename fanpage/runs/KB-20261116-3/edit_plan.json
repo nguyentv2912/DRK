@@ -1,0 +1,35 @@
+{
+ "hook_title": "SÔNG CÓ KHÚC, NGƯỜI CÓ LÚC",
+ "keywords": {
+  "khúc quanh": "gold",
+  "mùa đông": "gold",
+  "tự trách": "red",
+  "dòng sông": "green"
+ },
+ "cards": [
+  {
+   "trigger": "Sông có khúc, người có lúc",
+   "kicker": "3/6",
+   "text": "SÔNG CÓ KHÚC, NGƯỜI CÓ LÚC",
+   "accent": "gold",
+   "sec": 3
+  },
+  {
+   "trigger": "Thị trường có khúc quanh, cũng như đời người có lúc",
+   "kicker": "→",
+   "text": "BẠN ĐANG Ở KHÚC QUANH",
+   "accent": "green",
+   "sec": 3
+  }
+ ],
+ "cut_ranges": [],
+ "cta": {
+  "text": "NHÓM ZALO Ở BÌNH LUẬN GHIM",
+  "sub": "ĐẠO ĐỨC ĐẦU TƯ — 6 lời ông bà · 3/6",
+  "sec": 3.5
+ },
+ "crop_x": 0.5,
+ "max_pause": 0.45,
+ "music_volume": 0.18,
+ "brand": "ĐẠO ĐỨC ĐẦU TƯ"
+}
