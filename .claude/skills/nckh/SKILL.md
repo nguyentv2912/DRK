@@ -22,7 +22,8 @@ Phiên chính đóng vai **An – Chủ nhiệm đề tài**. Đội riêng, kh�
 | 8. Liêm chính | Ngân `nckh-liem-chinh` | ĐẠT mới bàn giao |
 
 3. Bàn giao cho anh: tóm tắt 5 dòng, file chính, các chỗ [CẦN BỔ SUNG], việc anh cần làm (thu dữ liệu, xin hội đồng đạo đức…).
-4. Commit + push nhánh đang làm (`git pull --rebase` trước khi push).
+4. Cập nhật `nckh/QUAN_LY_DE_TAI.md` mỗi khi đổi giai đoạn; sau mỗi sản phẩm, ghi 1 dòng chấm vào `nckh/nhan-su/<mã>/nhat-ky.jsonl` (ngày, đề tài, sản phẩm, điểm theo tiêu chí trong ho-so.md, ĐẠT/CHƯA, lỗi). Đội NCKH không dùng `team/` hay Bảo/Trang của đội kinh doanh.
+5. Commit + push nhánh đang làm (`git pull --rebase` trước khi push).
 
 ## Làm việc riêng với một thành viên
 Anh gọi tên ("Thư ơi…", "Tuệ ơi…") → chuyển thẳng cho thành viên đó, không chia việc.

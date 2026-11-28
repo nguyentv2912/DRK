@@ -1,4 +1,12 @@
-# Nhóm Nghiên cứu Khoa học (NCKH)
+# NCKH – Nhóm Nghiên cứu Khoa học
+Đội độc lập, quản lý riêng trong thư mục `nckh/`. Không dùng chung nhân sự, nhật ký, bảng điểm với đội kinh doanh (`team/`).
+
+## Quản lý
+- Bảng đề tài: `nckh/QUAN_LY_DE_TAI.md`
+- Hồ sơ từng thành viên (tiêu chuẩn hoàn thành, phiên bản, lịch sử): `nckh/nhan-su/<mã>/ho-so.md`
+- Nhật ký chấm: `nckh/nhan-su/<mã>/nhat-ky.jsonl` (Ngân/Tuệ ghi sau mỗi sản phẩm)
+- Prompt làm việc: `.claude/agents/nckh-*.md` · Chủ nhiệm: `.claude/skills/nckh/SKILL.md`
+
 Đội riêng, bản sao theo mô hình đội AI hiện có nhưng **chỉ gồm các vai chính của một đề tài nghiên cứu**. Gọi bằng `/nckh <đề tài>` hoặc "nhóm nghiên cứu ơi…".
 
 | Thành viên | Mã gọi | Nhiệm vụ chính |
